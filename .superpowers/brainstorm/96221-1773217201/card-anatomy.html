@@ -1,0 +1,107 @@
+<h2>What does a reconstructed slide look like on canvas?</h2>
+<p class="subtitle">Each chart from your deck becomes canvas cards. Which layout feels right?</p>
+
+<div class="cards" style="gap:28px;">
+
+  <!-- Option A -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)" style="width:300px;">
+    <div class="card-image" style="padding:16px;background:#fafafa;border-bottom:1px solid #eee;">
+      <div style="font-size:11px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;">Option A — All-in-one card</div>
+      <div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;background:white;font-size:11px;">
+        <div style="background:#f8f9fa;padding:8px 10px;border-bottom:1px solid #eee;font-weight:600;font-size:10px;">Weekly Revenue Trend</div>
+        <!-- mini chart mockup -->
+        <div style="padding:8px 10px;display:flex;align-items:flex-end;gap:4px;height:60px;">
+          <div style="flex:1;background:#e2e8f0;height:40%;border-radius:2px;"></div>
+          <div style="flex:1;background:#e2e8f0;height:60%;border-radius:2px;"></div>
+          <div style="flex:1;background:#e2e8f0;height:50%;border-radius:2px;"></div>
+          <div style="flex:1;background:#e2e8f0;height:80%;border-radius:2px;"></div>
+          <div style="flex:1;background:#374151;height:95%;border-radius:2px;"></div>
+          <div style="flex:1;background:#e2e8f0;height:70%;border-radius:2px;"></div>
+          <div style="flex:1;background:#e2e8f0;height:65%;border-radius:2px;"></div>
+        </div>
+        <!-- commentary -->
+        <div style="padding:8px 10px;border-top:1px solid #eee;font-size:10px;color:#374151;line-height:1.4;">
+          <span style="font-weight:600;">Commentary:</span> Friday revenue hit $19.5K, +12% vs last week. Weekend uplift is consistent.
+        </div>
+        <!-- follow-ups -->
+        <div style="padding:6px 10px;border-top:1px solid #eee;background:#f8f9fa;">
+          <div style="font-size:9px;color:#6b7280;font-weight:600;margin-bottom:4px;">FOLLOW-UPS</div>
+          <div style="font-size:9px;color:#374151;cursor:pointer;padding:2px 0;">→ What drove Friday spike?</div>
+          <div style="font-size:9px;color:#374151;cursor:pointer;padding:2px 0;">→ Compare to 4-week avg</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Single card</h3>
+      <p>Chart + commentary + follow-ups in one card. Compact, self-contained. Deck slides map 1:1 to canvas cards.</p>
+    </div>
+  </div>
+
+  <!-- Option B -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)" style="width:300px;">
+    <div class="card-image" style="padding:16px;background:#fafafa;border-bottom:1px solid #eee;">
+      <div style="font-size:11px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;">Option B — Chart + Commentary pair</div>
+      <div style="display:flex;gap:6px;">
+        <!-- chart card -->
+        <div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;background:white;font-size:10px;flex:1.2;">
+          <div style="background:#f8f9fa;padding:6px 8px;border-bottom:1px solid #eee;font-weight:600;font-size:9px;">Weekly Revenue</div>
+          <div style="padding:6px 8px;display:flex;align-items:flex-end;gap:3px;height:52px;">
+            <div style="flex:1;background:#e2e8f0;height:40%;border-radius:1px;"></div>
+            <div style="flex:1;background:#e2e8f0;height:65%;border-radius:1px;"></div>
+            <div style="flex:1;background:#e2e8f0;height:55%;border-radius:1px;"></div>
+            <div style="flex:1;background:#374151;height:95%;border-radius:1px;"></div>
+            <div style="flex:1;background:#e2e8f0;height:70%;border-radius:1px;"></div>
+          </div>
+          <div style="padding:4px 8px;border-top:1px solid #eee;font-size:8px;color:#6b7280;">Refreshed 2m ago</div>
+        </div>
+        <!-- commentary card -->
+        <div style="border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;background:white;font-size:10px;flex:1;display:flex;flex-direction:column;">
+          <div style="background:#f8f9fa;padding:6px 8px;border-bottom:1px solid #eee;font-weight:600;font-size:9px;">Commentary</div>
+          <div style="padding:6px 8px;font-size:9px;color:#374151;line-height:1.4;flex:1;">Friday +12% vs last week. Weekend uplift consistent.</div>
+          <div style="padding:4px 8px;border-top:1px solid #eee;">
+            <div style="font-size:8px;color:#6b7280;margin-bottom:2px;">FOLLOW-UPS</div>
+            <div style="font-size:8px;color:#374151;">→ What drove Friday?</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Card pair</h3>
+      <p>Chart card + commentary card side-by-side. Commentary can be repositioned, pinned, or replaced independently.</p>
+    </div>
+  </div>
+
+  <!-- Option C -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)" style="width:300px;">
+    <div class="card-image" style="padding:16px;background:#fafafa;border-bottom:1px solid #eee;">
+      <div style="font-size:11px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;">Option C — Chart hub + satellite cards</div>
+      <div style="position:relative;height:120px;display:flex;align-items:center;justify-content:center;">
+        <!-- center chart -->
+        <div style="border:1px solid #e2e8f0;border-radius:8px;background:white;font-size:9px;width:110px;position:relative;z-index:2;">
+          <div style="background:#f8f9fa;padding:5px 7px;border-bottom:1px solid #eee;font-weight:600;font-size:8px;">Weekly Revenue</div>
+          <div style="padding:5px 7px;display:flex;align-items:flex-end;gap:2px;height:38px;">
+            <div style="flex:1;background:#e2e8f0;height:45%;border-radius:1px;"></div>
+            <div style="flex:1;background:#e2e8f0;height:65%;border-radius:1px;"></div>
+            <div style="flex:1;background:#374151;height:90%;border-radius:1px;"></div>
+            <div style="flex:1;background:#e2e8f0;height:70%;border-radius:1px;"></div>
+          </div>
+        </div>
+        <!-- commentary satellite top-right -->
+        <div style="position:absolute;top:2px;right:10px;border:1px solid #e2e8f0;border-radius:6px;background:white;width:90px;padding:5px 7px;font-size:8px;color:#374151;line-height:1.3;z-index:1;">
+          <div style="font-weight:600;margin-bottom:2px;color:#6b7280;font-size:7px;">COMMENTARY</div>
+          Friday +12% vs last week...
+        </div>
+        <!-- challenge satellite bottom-left -->
+        <div style="position:absolute;bottom:2px;left:10px;border:1px solid #e2e8f0;border-radius:6px;background:white;width:90px;padding:5px 7px;font-size:8px;color:#374151;line-height:1.3;z-index:1;">
+          <div style="font-weight:600;margin-bottom:2px;color:#6b7280;font-size:7px;">CHALLENGE</div>
+          Is this actually a trend or just noise?
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>Hub + satellites</h3>
+      <p>Chart is the anchor. Commentary, challenges, and drill-downs appear as smaller linked cards around it.</p>
+    </div>
+  </div>
+
+</div>

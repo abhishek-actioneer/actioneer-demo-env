@@ -1,0 +1,202 @@
+[
+  {
+    "id": "flipkart-k-001",
+    "content": "The E-Commerce marketplace dataset covers 107,551 orders placed by 30,444 buyers across 4,000 sellers and 55,000 products, recorded between June 1, 2024 and May 31, 2026 (24 months).",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "flipkart-k-002",
+    "content": "Non-cancelled GMV is ₹17.97 crore at an average order value of ₹1,758, with ₹4.49 crore of discounts applied. GMV should always exclude Cancelled orders; including them overstates demand.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "flipkart-k-003",
+    "content": "Marketplace take-rate revenue is ₹2.18 crore on ₹17.97 crore of line GMV — a 12.1% blended commission. Platform revenue comes from order_items.commission_inr, not from GMV directly.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "flipkart-k-004",
+    "content": "GMV lives at the line level: orders.gmv_inr is the sum of its order_items.line_gmv_inr (net of item discount). For category/brand/seller cuts, aggregate from order_items; for buyer/basket cuts, aggregate from orders. Never sum order-level GMV after joining to items, or it multiplies.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "flipkart-k-005",
+    "content": "Order fulfilment: 101,628 Delivered (94.5%), 5,320 Cancelled (4.9%), 603 In Transit (0.6%). The ~5% cancellation rate is the headline leakage between order and delivery.",
+    "level": "global",
+    "category": "Metric range",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "flipkart-k-006",
+    "content": "On-time delivery (SLA met) is 88.1% of delivered orders. Delivery SLA is a primary trust metric on marketplaces — it feeds seller ratings and repeat-purchase rate, so track it by seller_tier and fulfilment_model.",
+    "level": "global",
+    "category": "Metric range",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "flipkart-k-007",
+    "content": "Browse-to-buy funnel (sessions): of 1,792,516 sessions, 14.4% added to cart, 8.5% started checkout, and 6.0% placed an order. Cart-to-order conversion is ~42%, so the largest drop-off is view → add-to-cart.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "flipkart-k-008",
+    "content": "The sessions funnel flags (viewed_product_flag → added_to_cart_flag → started_checkout_flag → placed_order_flag) are strictly nested subsets — each stage is a subset of the prior. Use them directly for conversion funnels; placed_order_flag rows carry the order_id.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "flipkart-k-009",
+    "content": "Return rate is 11.0% of delivered/returned items. Returns only exist for items that were delivered first, and refund_inr is non-zero only for Refund-type returns (Replacement returns refund nothing). Compute return rate over delivered items, not all orders.",
+    "level": "global",
+    "category": "Metric range",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "flipkart-k-010",
+    "content": "28.1% of buyers are repeat buyers (more than one lifetime order). Repeat-purchase rate is the core retention metric for a marketplace; new-buyer share is high here because acquisition is ongoing across the 24-month window.",
+    "level": "global",
+    "category": "Metric range",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "flipkart-k-011",
+    "content": "Buyer segments (New, Casual, Core, VIP) are derived from lifetime behavior. A small VIP/Core cohort typically drives a disproportionate share of GMV, so always weight revenue analysis by segment rather than treating buyers as uniform.",
+    "level": "global",
+    "category": "Segment",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "flipkart-k-012",
+    "content": "City tier (1 = metro through 4 = small-town 'Bharat') strongly shapes AOV, category mix, payment method (COD share rises in tier 3/4), and return behavior. Segment by city_tier before comparing buyer cohorts.",
+    "level": "global",
+    "category": "Segment",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "flipkart-k-013",
+    "content": "Seller health is a two-sided concern: track on-time rate, return rate, and rating by seller_tier (Bronze→Platinum) and fulfilment_model (Flipkart Fulfilled vs Self Ship). Platform-fulfilled sellers generally hit SLA more reliably than self-ship.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "flipkart-k-014",
+    "content": "Two distinct ad systems exist: ad_campaigns is seller advertising (Product Listing/Search/Display, with ROAS), while acquisition_spend is the platform's own buyer-acquisition spend (CAC by channel). Do not mix them — one is seller monetization, the other is buyer CAC.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "flipkart-k-015",
+    "content": "Seasonality is real and large: Big Billion Days (Sep–Oct) and Diwali drive order and GMV spikes far above baseline (calendar_events marks them). Always check whether a period overlaps a sale event before reading a trend as organic.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "flipkart-k-016",
+    "content": "Industry benchmark: typical e-commerce site-wide conversion is 2–3% (Statista). This dataset's 6% session-to-order looks higher because sessions are product-intent sessions (all viewed a product), not raw visits — so compare cautiously.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "flipkart-k-017",
+    "content": "Industry benchmark: blended e-commerce return rates run ~10–15% (apparel/fashion 20–30%, electronics lower). The 11.0% here is realistic for a mixed-category marketplace.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "flipkart-k-018",
+    "content": "Industry benchmark: marketplace commission/take rates generally fall in the 5–20% band depending on category (electronics low single digits, fashion/accessories high teens). The 12.1% blended take rate is within range, but it should be analyzed per category.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "flipkart-k-019",
+    "content": "Cancelled and returned orders must be handled explicitly in revenue math: net realized revenue = delivered GMV − refunds. Reporting gross GMV without netting cancellations and returns overstates the business.",
+    "level": "global",
+    "category": "Reporting",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "flipkart-k-020",
+    "content": "Reviews are tied to verified purchases (verified_purchase_flag) and a specific order. Average rating and review volume by product/seller are trust signals — low ratings concentrated in a seller or category often precede rising returns.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  }
+]

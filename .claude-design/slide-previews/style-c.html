@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style C: Terminal Dark</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 100%; height: 100%;
+    overflow: hidden;
+    background: #03050A;
+  }
+
+  .slide {
+    width: 100vw; height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(2rem, 6vw, 6rem);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle grid background */
+  .slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,200,150,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,200,150,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  /* Glow orb top right */
+  .glow {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,200,150,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .mono-label {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(0.65rem, 0.9vw, 0.8rem);
+    color: rgba(0,200,150,0.6);
+    letter-spacing: 0.1em;
+    margin-bottom: clamp(2rem, 4vw, 4rem);
+    opacity: 0;
+    animation: fadein 0.5s 0.2s forwards;
+  }
+
+  .mono-label::before {
+    content: '> ';
+    color: rgba(0,200,150,0.4);
+  }
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.8rem, 7.5vw, 8rem);
+    font-weight: 700;
+    color: #E8F5F0;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    opacity: 0;
+    animation: slideup 0.9s 0.4s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+
+  h1 .highlight {
+    color: #00C896;
+    position: relative;
+  }
+
+  /* Underline on highlight */
+  h1 .highlight::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    bottom: 0.05em;
+    height: 0.06em;
+    background: #00C896;
+    opacity: 0.4;
+  }
+
+  .divider {
+    width: 1px;
+    height: clamp(2rem, 4vw, 4rem);
+    background: rgba(0,200,150,0.2);
+    margin: clamp(1.5rem, 3vw, 3rem) 0;
+    opacity: 0;
+    animation: fadein 0.5s 0.9s forwards;
+  }
+
+  .sub {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(0.85rem, 1.4vw, 1.1rem);
+    font-weight: 300;
+    color: rgba(232,245,240,0.45);
+    max-width: 480px;
+    line-height: 1.65;
+    opacity: 0;
+    animation: slideup 0.7s 1.0s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+
+  /* Slide number */
+  .slide-num {
+    position: absolute;
+    bottom: clamp(1.5rem, 3vw, 3rem);
+    right: clamp(2rem, 6vw, 6rem);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: rgba(0,200,150,0.3);
+    opacity: 0;
+    animation: fadein 0.5s 1.2s forwards;
+  }
+
+  @keyframes fadein {
+    to { opacity: 1; }
+  }
+  @keyframes slideup {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="glow"></div>
+    <div class="mono-label">sentinel.demo / 2026</div>
+    <h1>We thought people<br>wanted <span class="highlight">Agents</span><br>doing the work.</h1>
+    <div class="divider"></div>
+    <p class="sub">Full automation. Background Agents. Zero human in the loop. We built for that — and then learned something uncomfortable.</p>
+    <div class="slide-num">Style C — Terminal Dark</div>
+  </div>
+</body>
+</html>

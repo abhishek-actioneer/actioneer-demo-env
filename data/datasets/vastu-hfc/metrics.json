@@ -1,0 +1,709 @@
+{
+  "rootMetricId": "m-total-aum",
+  "metrics": [
+    {
+      "id": "m-total-aum",
+      "name": "Total Assets Under Management (AUM)",
+      "description": "Total disbursed amount of all currently active and non-performing loans across both HFC and Finserve entities.",
+      "type": "kpi",
+      "category": "Portfolio",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(disbursed_amount) AS value FROM loans_full WHERE loan_status IN ('active', 'npa')",
+      "timeSeriesSql": "SELECT CAST(date_trunc('month', disbursement_date) AS DATE) AS date, SUM(disbursed_amount) AS value FROM loans_full WHERE loan_status IN ('active', 'npa') GROUP BY 1 ORDER BY date",
+      "table": "loans_full",
+      "column": "disbursed_amount",
+      "timeColumn": "disbursement_date",
+      "formula": "SUM(disbursed_amount)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "entity",
+        "product_type",
+        "state",
+        "city_tier",
+        "loan_status"
+      ],
+      "relationships": []
+    },
+    {
+      "id": "m-total-disbursements",
+      "name": "Total Disbursements",
+      "description": "Aggregate amount of capital disbursed to borrowers since inception.",
+      "type": "kpi",
+      "category": "Growth",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(disbursed_amount) AS value FROM loans_full",
+      "timeSeriesSql": "SELECT CAST(date_trunc('month', disbursement_date) AS DATE) AS date, SUM(disbursed_amount) AS value FROM loans_full GROUP BY 1 ORDER BY date",
+      "table": "loans_full",
+      "column": "disbursed_amount",
+      "timeColumn": "disbursement_date",
+      "formula": "SUM(disbursed_amount)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "entity",
+        "product_type",
+        "sourcing_channel"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-aum",
+          "metricName": "Total Assets Under Management (AUM)",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-gnpa-pct",
+      "name": "Gross NPA (GNPA) %",
+      "description": "Percentage of the active portfolio that is non-performing (90+ DPD or Stage 3).",
+      "type": "kpi",
+      "category": "Quality",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT (SUM(CASE WHEN stage = 3 THEN 1 ELSE 0 END) * 1.0 / COUNT(*)) AS value FROM loans_full WHERE loan_status IN ('active', 'npa')",
+      "timeSeriesSql": "SELECT month AS date, gnpa_pct AS value FROM monthly_company_kpis ORDER BY date",
+      "table": "loans_full",
+      "column": "stage",
+      "timeColumn": "disbursement_date",
+      "formula": "COUNT(Stage 3 Loans) / COUNT(Active + NPA Loans)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "entity",
+        "product_type",
+        "state",
+        "employment_type"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-aum",
+          "metricName": "Total Assets Under Management (AUM)",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-collection-efficiency",
+      "name": "Collection Efficiency %",
+      "description": "Ratio of total EMI amount collected versus total EMI amount due in a given period.",
+      "type": "kpi",
+      "category": "Operations",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT SUM(amount_paid) / NULLIF(SUM(amount_due), 0) AS value FROM collections_full",
+      "timeSeriesSql": "SELECT month AS date, collection_efficiency / 100.0 AS value FROM monthly_collections ORDER BY date",
+      "table": "collections_full",
+      "column": "amount_paid",
+      "timeColumn": "due_date",
+      "formula": "SUM(amount_paid) / SUM(amount_due)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "entity",
+        "state",
+        "payment_mode"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-gnpa-pct",
+          "metricName": "Gross NPA (GNPA) %",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-avg-yield",
+      "name": "Average Portfolio Yield",
+      "description": "The weighted average annual interest rate across the active loan portfolio.",
+      "type": "indicator",
+      "category": "Portfolio",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT SUM(interest_rate * disbursed_amount) / SUM(disbursed_amount) / 100.0 AS value FROM loans_full WHERE loan_status IN ('active', 'npa')",
+      "timeSeriesSql": "SELECT month AS date, avg_yield / 100.0 AS value FROM monthly_company_kpis ORDER BY date",
+      "table": "loans_full",
+      "column": "interest_rate",
+      "timeColumn": "disbursement_date",
+      "formula": "SUM(rate * amount) / SUM(amount)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "entity",
+        "product_type",
+        "sourcing_channel"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-aum",
+          "metricName": "Total Assets Under Management (AUM)",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-cost-of-funds",
+      "name": "Cost of Funds",
+      "description": "Weighted average cost of borrowings from banks, NHB, and other debt sources.",
+      "type": "indicator",
+      "category": "Financial",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT SUM(interest_rate * outstanding_amount_cr) / SUM(outstanding_amount_cr) / 100.0 AS value FROM funding_full",
+      "timeSeriesSql": "SELECT month AS date, weighted_avg_cost / 100.0 AS value FROM (SELECT date_trunc('month', start_date) as month, SUM(interest_rate * outstanding_amount_cr)/SUM(outstanding_amount_cr) as weighted_avg_cost FROM funding_full GROUP BY 1) ORDER BY date",
+      "table": "funding_full",
+      "column": "interest_rate",
+      "timeColumn": "start_date",
+      "formula": "SUM(rate * outstanding) / SUM(outstanding)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "source_type",
+        "is_fixed_rate"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-avg-yield",
+          "metricName": "Average Portfolio Yield",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-bounce-rate",
+      "name": "Bounce Rate %",
+      "description": "Percentage of EMI presentations that failed (bounced) on first presentation.",
+      "type": "indicator",
+      "category": "Operations",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT COUNT(CASE WHEN bounce = true THEN 1 END) * 1.0 / COUNT(*) AS value FROM collections_full",
+      "timeSeriesSql": "SELECT month AS date, bounce_rate / 100.0 AS value FROM monthly_collections ORDER BY date",
+      "table": "collections_full",
+      "column": "bounce",
+      "timeColumn": "due_date",
+      "formula": "COUNT(bounced) / COUNT(total presentations)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "entity",
+        "payment_mode",
+        "product_type"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-collection-efficiency",
+          "metricName": "Collection Efficiency %",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-avg-ticket-size",
+      "name": "Average Ticket Size",
+      "description": "The mean disbursed amount per loan across the portfolio.",
+      "type": "indicator",
+      "category": "Growth",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT AVG(disbursed_amount) AS value FROM loans_full",
+      "timeSeriesSql": "SELECT month AS date, avg_ticket_size AS value FROM monthly_company_kpis ORDER BY date",
+      "table": "loans_full",
+      "column": "disbursed_amount",
+      "timeColumn": "disbursement_date",
+      "formula": "AVG(disbursed_amount)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "entity",
+        "product_type",
+        "city_tier"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-disbursements",
+          "metricName": "Total Disbursements",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-avg-ltv",
+      "name": "Average LTV Ratio",
+      "description": "Mean Loan-to-Value ratio across the portfolio, indicating collateral coverage.",
+      "type": "indicator",
+      "category": "Quality",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT AVG(ltv_ratio) AS value FROM loans_full",
+      "timeSeriesSql": "SELECT month AS date, avg_ltv AS value FROM monthly_company_kpis ORDER BY date",
+      "table": "loans_full",
+      "column": "ltv_ratio",
+      "timeColumn": "disbursement_date",
+      "formula": "AVG(ltv_ratio)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "entity",
+        "product_type",
+        "property_type"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-gnpa-pct",
+          "metricName": "Gross NPA (GNPA) %",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-ntc-borrower-pct",
+      "name": "New-to-Credit (NTC) %",
+      "description": "Percentage of loans disbursed to customers with no prior credit history (Bureau Score = 0).",
+      "type": "indicator",
+      "category": "Portfolio",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT COUNT(CASE WHEN is_ntc = true THEN 1 END) * 1.0 / COUNT(*) AS value FROM loans_full",
+      "timeSeriesSql": "SELECT CAST(date_trunc('month', disbursement_date) AS DATE) AS date, COUNT(CASE WHEN is_ntc = true THEN 1 END) * 1.0 / COUNT(*) AS value FROM loans_full GROUP BY 1 ORDER BY date",
+      "table": "loans_full",
+      "column": "is_ntc",
+      "timeColumn": "disbursement_date",
+      "formula": "COUNT(is_ntc = true) / COUNT(total)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "entity",
+        "age",
+        "employment_type"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-gnpa-pct",
+          "metricName": "Gross NPA (GNPA) %",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-pcr-stage-3",
+      "name": "Provision Coverage Ratio (Stage 3)",
+      "description": "The ratio of provisions held against non-performing (Stage 3) loans.",
+      "type": "diagnostic",
+      "category": "Quality",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT pcr_stage_3 / 100.0 AS value FROM ecl_provisions WHERE month = (SELECT MAX(month) FROM ecl_provisions)",
+      "timeSeriesSql": "SELECT CAST(month AS DATE) AS date, pcr_stage_3 / 100.0 AS value FROM ecl_provisions ORDER BY date",
+      "table": "ecl_provisions",
+      "column": "pcr_stage_3",
+      "timeColumn": "month",
+      "formula": "Provision (Stage 3) / Exposure (Stage 3)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "entity"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-gnpa-pct",
+          "metricName": "Gross NPA (GNPA) %",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-hfc-disbursement-mix",
+      "name": "HFC Disbursement Mix %",
+      "description": "Percentage of total disbursements contributed by the Housing Finance entity.",
+      "type": "diagnostic",
+      "category": "Growth",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT SUM(CASE WHEN entity = 'hfc' THEN disbursed_amount ELSE 0 END) / SUM(disbursed_amount) AS value FROM loans_full",
+      "timeSeriesSql": "SELECT CAST(date_trunc('month', disbursement_date) AS DATE) AS date, SUM(CASE WHEN entity = 'hfc' THEN disbursed_amount ELSE 0 END) / SUM(disbursed_amount) AS value FROM loans_full GROUP BY 1 ORDER BY date",
+      "table": "loans_full",
+      "column": "disbursed_amount",
+      "timeColumn": "disbursement_date",
+      "formula": "SUM(hfc) / SUM(total)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "product_type",
+        "state"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-disbursements",
+          "metricName": "Total Disbursements",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-self-employed-mix",
+      "name": "Self-Employed Borrower Mix %",
+      "description": "Share of borrowers that are self-employed (formal or informal), which is Vastu's core segment.",
+      "type": "indicator",
+      "category": "Portfolio",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT COUNT(CASE WHEN employment_type LIKE 'self_employed%' THEN 1 END) * 1.0 / COUNT(*) AS value FROM loans_full",
+      "timeSeriesSql": "SELECT CAST(date_trunc('month', disbursement_date) AS DATE) AS date, COUNT(CASE WHEN employment_type LIKE 'self_employed%' THEN 1 END) * 1.0 / COUNT(*) AS value FROM loans_full GROUP BY 1 ORDER BY date",
+      "table": "loans_full",
+      "column": "employment_type",
+      "timeColumn": "disbursement_date",
+      "formula": "COUNT(self_employed) / COUNT(total)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "entity",
+        "income_category"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-avg-yield",
+          "metricName": "Average Portfolio Yield",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-dsa-sourcing-pct",
+      "name": "DSA Sourcing %",
+      "description": "Percentage of loans sourced via Direct Selling Agents (DSA) vs other channels.",
+      "type": "indicator",
+      "category": "Operations",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT dsa_sourced_pct / 100.0 AS value FROM monthly_company_kpis WHERE month = (SELECT MAX(month) FROM monthly_company_kpis)",
+      "timeSeriesSql": "SELECT month AS date, dsa_sourced_pct / 100.0 AS value FROM monthly_company_kpis ORDER BY date",
+      "table": "monthly_company_kpis",
+      "column": "dsa_sourced_pct",
+      "timeColumn": "month",
+      "formula": "COUNT(Sourcing Channel = 'dsa') / COUNT(Total)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "entity",
+        "state"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-disbursements",
+          "metricName": "Total Disbursements",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-active-loan-count",
+      "name": "Active Loan Count",
+      "description": "The number of unique loans that are currently in 'active' status.",
+      "type": "kpi",
+      "category": "Portfolio",
+      "valueFormat": "integer",
+      "aggregation": "count",
+      "valueSql": "SELECT COUNT(loan_id) AS value FROM loans_full WHERE loan_status = 'active'",
+      "timeSeriesSql": "SELECT month AS date, active_loans AS value FROM monthly_company_kpis ORDER BY date",
+      "table": "loans_full",
+      "column": "loan_id",
+      "timeColumn": "disbursement_date",
+      "formula": "COUNT(loan_id)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "entity",
+        "product_type",
+        "branch_name"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-aum",
+          "metricName": "Total Assets Under Management (AUM)",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-total-assigned-aum",
+      "name": "Total Assigned AUM",
+      "description": "Total value of loans sold/assigned to other banks or financial institutions (Direct Assignment).",
+      "type": "kpi",
+      "category": "Financial",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(amount_assigned_cr) * 10000000 AS value FROM assignment_summary",
+      "timeSeriesSql": "SELECT transaction_date AS date, amount_assigned_cr * 10000000 AS value FROM assignment_summary ORDER BY date",
+      "table": "assignment_summary",
+      "column": "amount_assigned_cr",
+      "timeColumn": "transaction_date",
+      "formula": "SUM(amount_assigned_cr)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "buyer_type",
+        "buyer_name"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-aum",
+          "metricName": "Total Assets Under Management (AUM)",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-co-lending-aum",
+      "name": "Co-Lending AUM",
+      "description": "AUM originated specifically under co-lending arrangements with partners (Finserve).",
+      "type": "indicator",
+      "category": "Portfolio",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(aum) AS value FROM co_lending_performance",
+      "timeSeriesSql": "SELECT CAST(date_trunc('month', disbursement_date) AS DATE) AS date, SUM(disbursed_amount) AS value FROM loans_full WHERE co_lending_partner != '' GROUP BY 1 ORDER BY date",
+      "table": "co_lending_performance",
+      "column": "aum",
+      "timeColumn": "disbursement_date",
+      "formula": "SUM(AUM from Co-lending Partners)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "partner_name",
+        "partner_type"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-aum",
+          "metricName": "Total Assets Under Management (AUM)",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-net-npa-movement",
+      "name": "Net NPA Addition",
+      "description": "The net increase in NPA stock (Additions - Upgradations - Recoveries - Write-offs).",
+      "type": "diagnostic",
+      "category": "Quality",
+      "valueFormat": "currency",
+      "aggregation": "derived_ratio",
+      "valueSql": "SELECT (SUM(additions_cr) - SUM(upgradations_cr) - SUM(recoveries_cr) - SUM(write_offs_cr)) * 10000000 AS value FROM npa_quarterly_movement",
+      "timeSeriesSql": "SELECT CAST(substring(quarter, 1, 4) || '-' || (CASE WHEN quarter LIKE '%Q1%' THEN '04-01' WHEN quarter LIKE '%Q2%' THEN '07-01' WHEN quarter LIKE '%Q3%' THEN '10-01' ELSE '01-01' END) AS DATE) AS date, (additions_cr - upgradations_cr - recoveries_cr - write_offs_cr) * 10000000 AS value FROM npa_quarterly_movement ORDER BY date",
+      "table": "npa_quarterly_movement",
+      "column": "additions_cr",
+      "timeColumn": "quarter",
+      "formula": "(Additions - Upgradations - Recoveries - WriteOffs)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "entity"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-gnpa-pct",
+          "metricName": "Gross NPA (GNPA) %",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-weighted-avg-holding-period",
+      "name": "Avg Loan Holding Period (Months)",
+      "description": "Average duration for which loans were held on books before being assigned/sold.",
+      "type": "indicator",
+      "category": "Portfolio",
+      "valueFormat": "number",
+      "aggregation": "ratio",
+      "valueSql": "SELECT SUM(amount_assigned_cr * wtd_avg_holding_period_months) / SUM(amount_assigned_cr) AS value FROM assignment_summary",
+      "timeSeriesSql": "SELECT transaction_date AS date, wtd_avg_holding_period_months AS value FROM assignment_summary ORDER BY date",
+      "table": "assignment_summary",
+      "column": "wtd_avg_holding_period_months",
+      "timeColumn": "transaction_date",
+      "formula": "SUM(Holding * Amount) / SUM(Amount)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "buyer_type"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-assigned-aum",
+          "metricName": "Total Assigned AUM",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-stage-2-exposure-pct",
+      "name": "Stage 2 Exposure %",
+      "description": "Portfolio percentage classified as Stage 2 (61-90 DPD), an early indicator of stress.",
+      "type": "indicator",
+      "category": "Quality",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT stage_2_pct / 100.0 AS value FROM stage_distribution WHERE cohort_month = (SELECT MAX(cohort_month) FROM stage_distribution)",
+      "timeSeriesSql": "SELECT CAST(cohort_month || '-01' AS DATE) AS date, stage_2_pct / 100.0 AS value FROM stage_distribution ORDER BY date",
+      "table": "stage_distribution",
+      "column": "stage_2_pct",
+      "timeColumn": "cohort_month",
+      "formula": "Stage 2 Loans / Total Loans",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "entity"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-gnpa-pct",
+          "metricName": "Gross NPA (GNPA) %",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-avg-bureau-score",
+      "name": "Avg CIBIL Score",
+      "description": "Mean CIBIL score for borrowers who are not New-to-Credit.",
+      "type": "indicator",
+      "category": "Quality",
+      "valueFormat": "integer",
+      "aggregation": "sum",
+      "valueSql": "SELECT AVG(bureau_score) AS value FROM loans_full WHERE bureau_score > 0",
+      "timeSeriesSql": "SELECT CAST(date_trunc('month', disbursement_date) AS DATE) AS date, AVG(bureau_score) AS value FROM loans_full WHERE bureau_score > 0 GROUP BY 1 ORDER BY date",
+      "table": "loans_full",
+      "column": "bureau_score",
+      "timeColumn": "disbursement_date",
+      "formula": "AVG(CIBIL Score > 0)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "entity",
+        "income_category"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-gnpa-pct",
+          "metricName": "Gross NPA (GNPA) %",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-opex-employee-cost-cr",
+      "name": "Annual Employee OpEx",
+      "description": "Total estimated annual CTC of the workforce currently active.",
+      "type": "indicator",
+      "category": "Operations",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(total_annual_ctc_lakh) / 100.0 AS value FROM branches_full",
+      "timeSeriesSql": "SELECT CAST(date_trunc('month', open_date) AS DATE) AS date, SUM(total_annual_ctc_lakh) / 100.0 AS value FROM branches_full GROUP BY 1 ORDER BY date",
+      "table": "branches_full",
+      "column": "total_annual_ctc_lakh",
+      "timeColumn": "open_date",
+      "formula": "SUM(total_annual_ctc_lakh) / 100",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "entity",
+        "state",
+        "branch_type"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-active-branches",
+          "metricName": "Active Branch Count",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-female-employee-pct",
+      "name": "Female Employee %",
+      "description": "Percentage of the workforce identifying as female.",
+      "type": "indicator",
+      "category": "Operations",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT female_pct / 100.0 AS value FROM employee_summary WHERE entity = 'hfc' LIMIT 1",
+      "timeSeriesSql": "SELECT CAST(date_trunc('month', join_date) AS DATE) AS date, COUNT(CASE WHEN gender = 'female' THEN 1 END) * 1.0 / COUNT(*) AS value FROM raw_employees GROUP BY 1 ORDER BY date",
+      "table": "employee_summary",
+      "column": "female_pct",
+      "timeColumn": "join_date",
+      "formula": "Female Count / Total Count",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "entity",
+        "function_type"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-opex-employee-cost-cr",
+          "metricName": "Annual Employee OpEx",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-total-active-branches",
+      "name": "Active Branch Count",
+      "description": "Total number of physical branch locations currently operational.",
+      "type": "indicator",
+      "category": "Operations",
+      "valueFormat": "integer",
+      "aggregation": "count",
+      "valueSql": "SELECT COUNT(*) AS value FROM raw_branches WHERE is_active = true",
+      "timeSeriesSql": "SELECT CAST(date_trunc('month', open_date) AS DATE) AS date, COUNT(*) AS value FROM raw_branches WHERE is_active = true GROUP BY 1 ORDER BY date",
+      "table": "raw_branches",
+      "column": "branch_id",
+      "timeColumn": "open_date",
+      "formula": "COUNT(Branch ID)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "entity",
+        "state",
+        "branch_type"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-disbursements",
+          "metricName": "Total Disbursements",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-avg-monthly-income",
+      "name": "Avg Borrower Monthly Income",
+      "description": "The mean monthly income of borrowers across the portfolio.",
+      "type": "indicator",
+      "category": "Portfolio",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT AVG(monthly_income_inr) AS value FROM loans_full",
+      "timeSeriesSql": "SELECT CAST(date_trunc('month', disbursement_date) AS DATE) AS date, AVG(monthly_income_inr) AS value FROM loans_full GROUP BY 1 ORDER BY date",
+      "table": "loans_full",
+      "column": "monthly_income_inr",
+      "timeColumn": "disbursement_date",
+      "formula": "AVG(monthly_income_inr)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "income_category",
+        "employment_type"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-avg-ticket-size",
+          "metricName": "Average Ticket Size",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    }
+  ]
+}

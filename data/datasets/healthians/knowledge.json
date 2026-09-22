@@ -1,0 +1,212 @@
+[
+  {
+    "id": "healthians-k-001",
+    "content": "The dataset contains 230,941 at-home diagnostic bookings placed by 28,590 booking customers (out of 35,284 total signups), recorded between March 29, 2024 and May 25, 2026. It includes 201,220 health reports and 787,729 CRM messages.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-002",
+    "content": "96.3% of bookings reach 'completed' status (222,455 bookings) and only 3.7% are cancelled (8,486). Use booking_status = 'completed' to scope operational and clinical analysis to fulfilled visits.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-003",
+    "content": "The average booking is charged ₹765 (total_paid_inr) against an advertised package price of ₹690, with a ~₹85 consumables-and-transport fee revealed at checkout. Gross booking value across the 26 months is ₹176.6M.",
+    "level": "global",
+    "category": "Metric range",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-004",
+    "content": "Full Body checkups are the demand anchor with 65,019 bookings and ₹68.4M in revenue, followed by Diabetes/HbA1c (47,564), Thyroid (37,150) and Cardiac/Lipid (27,877). Full Body alone is ~28% of all bookings.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-005",
+    "content": "Repeat behaviour is strong: 90.4% of booking customers (25,852 of 28,590) place 2 or more bookings, averaging 8.08 lifetime bookings each. Diagnostics is fundamentally a recurring-testing business, not a one-off transaction.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-006",
+    "content": "Repeat frequency is concentrated by archetype: chronic_subscriber customers average 23.5 bookings each and annual_checker 4.0, while one_and_done average just 2.4. Chronic subscribers (3,899 customers) drive a disproportionate share of volume.",
+    "level": "global",
+    "category": "Segment",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-007",
+    "content": "There are 3,881 chronic-test subscriptions (3,142 active) covering recurring HbA1c, thyroid and similar retests, with a mean adherence of 76.7%. Customers with an active subscription generate 17.8% of total booking value.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-008",
+    "content": "On-time phlebotomist arrival shows a clear city-tier gradient: metro 87.5%, tier1 80.8%, tier2 72.2% (overall 80.4%). No-show rate is 9.48% in tier2 versus 2.33% in metro, and average report TAT is 17 hours.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-009",
+    "content": "Report engagement is healthy: 84.8% of the 201,220 reports are viewed by the customer. This view step is the gateway to counseling and follow-up, so report-view rate is the leading indicator for downstream re-booking.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-010",
+    "content": "97.5% of reports contain at least one abnormal parameter and 36.5% contain a critical (clinically urgent) flag. This abnormal-finding volume is the core clinical signal feeding the Abnormal Finding to Follow-up funnel.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-011",
+    "content": "Of 28,166 customers who received an abnormal result, 9,435 (33.5%) went on to book a follow-up test. At the booking level, only 12.3% of completed bookings end in a follow-up, marking the single biggest retention leak in the lifecycle.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-012",
+    "content": "Counseling is the strongest lever on follow-up: completed bookings where the customer took counseling re-book a follow-up 37.8% of the time, versus effectively 0% without counseling. Counseling is taken on 32.5% of completed bookings, so there is large upside in increasing counseling uptake.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-013",
+    "content": "The Smart Report engine issued 294,058 personalised retest recommendations and 42.1% (123,654) were actually booked within the recommended window, a useful baseline for measuring retest-nudge effectiveness via future_tests_full.booked_within_window.",
+    "level": "global",
+    "category": "Reporting",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-014",
+    "content": "WhatsApp is both the highest-volume and highest-converting CRM channel: 305,076 sends at 91.2% open and 4.05% conversion. Push converts at 1.5%, SMS 0.87%, and email lags at 20.9% open / 0.17% conversion. WhatsApp should anchor retest and reactivation nudges.",
+    "level": "global",
+    "category": "Reporting",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-015",
+    "content": "Seasonality is sharp and exploitable. Full Body checkups run 1.41x higher in Jan-Mar (tax-season 80D deduction window), and fever/infection bookings spike 13.7x in Jul-Sep dengue season (~2,146/month versus ~157/month off-season). Use EXTRACT(month FROM booking_date) to slice these windows.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-016",
+    "content": "Clinically, 72.8% of all customers are Vitamin D deficient or severely deficient, the largest single abnormal-finding population and a natural anchor for supplement-and-retest campaigns. Filter via raw_customers.vitamin_d_status.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-017",
+    "content": "Customer satisfaction has headroom: across 69,360 NPS responses, 23.5% are promoters versus 32.1% detractors, giving a net NPS of about -9 (average score 6.97). Delayed reports and phlebotomist issues are the main detractor drivers via support_full.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-018",
+    "content": "Pricing integrity is sound despite the checkout fee: only 0.13% of bookings (308) trigger a billing dispute, and 35% of bookings carry a coupon discount: discounting is meaningful but not the primary volume driver.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-019",
+    "content": "Industry benchmark: a 90%+ repeat-booking rate and 8 lifetime tests per active customer place Healthians well above the typical Indian diagnostics norm (40-55% repeat within 12 months), reflecting the chronic-care and annual-checkup mix.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-020",
+    "content": "Industry benchmark: an average order value of ₹765 sits in the mid-range for organised at-home diagnostics in India (₹600-₹1,200), where full-body and chronic panels carry the AOV and single-parameter tests dilute it.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "healthians-k-021",
+    "content": "Industry benchmark: a net NPS near zero is below the 30-50 range seen at top-tier diagnostics brands; closing TAT breaches (17.9% in metro, 13.5% in tier2) is the most direct path to lifting it, since delayed reports are the leading detractor category.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  }
+]

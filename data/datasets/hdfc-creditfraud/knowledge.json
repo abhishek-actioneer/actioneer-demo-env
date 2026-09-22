@@ -1,0 +1,202 @@
+[
+  {
+    "id": "hdfc-k-001",
+    "content": "The Credit Risk dataset covers 1,928,413 card transactions across roughly 5,000 cardholders and 4,000 cards, recorded between June 1, 2024 and May 31, 2026 (24 months).",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "hdfc-k-002",
+    "content": "Confirmed fraud is rare: only 2,197 of 1,928,413 transactions are flagged fraud (0.114% by count). Always reason about fraud in basis points, not whole percentages, and never expect fraud to dominate transaction-level aggregates.",
+    "level": "global",
+    "category": "Metric range",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "hdfc-k-003",
+    "content": "The transactions table keys on card_id and merchant_id, not customer_id. To analyze fraud by customer segment, join transactions → cards → customers on card_id then customer_id.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "hdfc-k-004",
+    "content": "Across 382 fraud episodes, ₹6.15 crore was attempted, ₹4.18 crore (68%) was prevented by real-time blocking, and ₹1.97 crore (32%) was actually lost. 'Amount prevented' vs 'amount lost' is the headline effectiveness metric for the fraud program.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "hdfc-k-005",
+    "content": "Fraud typology mix by episode: CNP international e-commerce is largest at 98 episodes (26%), followed by OTP social-engineering account takeover (65, 17%), card testing (60, 16%), skimming/clone (50, 13%), and lost/stolen (40, 10%). Mule cycling, merchant collusion, and subscription drain make up the tail.",
+    "level": "global",
+    "category": "Segment",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "hdfc-k-006",
+    "content": "Card-not-present (CNP) international e-commerce is both the most common and the highest-loss typology, which is typical: no chip/PIN present, cross-border rules are weaker, and recovery is hardest once funds leave the country.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "hdfc-k-007",
+    "content": "Card-testing (BIN attack) episodes show as a rapid burst of small-value authorizations on a card within minutes, as fraudsters validate stolen card numbers before a large purchase. Velocity and small-amount-cluster rules are the primary defense.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "hdfc-k-008",
+    "content": "OTP social-engineering account takeover (ATO) is the second-largest typology: the customer is tricked into sharing an OTP, so the transaction passes 3DS authentication. Auth success does not imply a genuine transaction — pair auth_method with behavioral risk signals.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "hdfc-k-009",
+    "content": "Alert quality is the core operational tension: of 32,857 alerts, 29,442 were dispositioned false positive and only 1,519 true positive — a precision of about 4.9% among resolved alerts (roughly 19 false alerts per real fraud). 1,896 remain unresolved.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "hdfc-k-010",
+    "content": "Low alert precision is expected in fraud operations because misses are far costlier than false alarms, so rules are tuned for recall. The real cost of a high false-positive rate is customer friction (good transactions declined) and analyst workload, not direct loss.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "hdfc-k-011",
+    "content": "Analyst average handle time is about 793 seconds (~13 minutes) per alert, with 1,422 alerts breaching their SLA target. Handle time and SLA-breach rate are the key queue-health metrics; segment them by shift (DAY/EVENING/NIGHT) to find staffing gaps.",
+    "level": "global",
+    "category": "Metric range",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "hdfc-k-012",
+    "content": "Liability outcomes on resolved fraud cases: 1,143 zero-liability (72%), 379 limited-liability (24%), and 72 customer-liable (4.5%). Zero-liability dominates because most genuine victims report quickly.",
+    "level": "global",
+    "category": "Metric range",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "hdfc-k-013",
+    "content": "Liability follows RBI's limited-liability framework (circular dated 6 July 2017): a customer bears zero liability when unauthorized use is reported within 3 working days, and limited liability for delays of 4–7 working days. The reporting_delay_bucket field maps directly to this rule.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "hdfc-k-014",
+    "content": "A fraud episode groups multiple fraudulent transactions on the same compromise into one incident. Count episodes (not individual transactions) when measuring fraud incidents, typologies, and detection time; count transactions only for amount math.",
+    "level": "global",
+    "category": "Reporting",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "hdfc-k-015",
+    "content": "Detection source matters for benchmarking: system real-time catches drive 'amount prevented', while customer-reported and batch detections usually correlate with higher 'amount lost' because the fraud completed before a block. Compare time_to_detect across detection_source values.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "hdfc-k-016",
+    "content": "Industry benchmark: global card fraud runs roughly 6–7 basis points of transaction value (Nilson Report). This dataset's 0.114% fraud-by-count is in a realistic range for an Indian issuer once weighted by amount, where intl CNP skews loss higher than count.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "hdfc-k-017",
+    "content": "Industry benchmark: well-run card-fraud systems target alert precision in the 5–20% range and recall (fraud-caught) above 80%; chasing higher precision usually sacrifices catch rate. Use this to frame whether the current 4.9% precision needs rule tuning.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "hdfc-k-018",
+    "content": "A clean fraud-detection funnel for this data is: transaction → risk-scored → alert raised → analyst decision → disposition (true/false positive) → blocking action → case resolution. Each stage narrows; conversion between stages reveals where loss leaks through.",
+    "level": "global",
+    "category": "Reporting",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "hdfc-k-019",
+    "content": "When computing fraud-loss rates, use amount_lost_inr from fraud_episodes as the numerator and total approved purchase value as the denominator. Do not divide loss by transaction count — that mixes value and volume.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "hdfc-k-020",
+    "content": "Customer segments (Classic, Preferred, Imperia) carry different risk and spend profiles; premium tiers see more international and high-ticket spend, so absolute fraud exposure can be higher even when their fraud rate is similar. Always segment fraud metrics by customer tier before drawing conclusions.",
+    "level": "global",
+    "category": "Segment",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  }
+]

@@ -1,0 +1,202 @@
+[
+  {
+    "id": "presto-k-001",
+    "content": "The Presto dataset covers 29,998 player installs, 161,997 gameplay sessions, and 485,734 ad impressions recorded between August 1, 2025 and February 28, 2026 (~212 days).",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "presto-k-002",
+    "content": "Every install maps to exactly one unique user_id (29,998 installs = 29,998 distinct players), so player-level joins across installs, sessions, and ad_impression_events are 1:1 on user_id.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "presto-k-003",
+    "content": "Channel install mix: organic is the largest source at 35.0% (10,500 installs), followed by Facebook 29.9% (8,958), Vungle 14.9% (4,479), AdMob 13.6% (4,071), and Moloco 6.6% (1,990). 65% of installs are paid.",
+    "level": "global",
+    "category": "Segment",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "presto-k-004",
+    "content": "Lifetime ad revenue: $107,116 reported (gross MMP) settles to $99,942 post-fraud, a $7,174 invalid-traffic loss (6.7% of reported). After the 30% platform fee, net booked revenue is $69,959.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "presto-k-005",
+    "content": "This is an ad-funded title: all in-game revenue comes from ad impressions (rewarded + interstitial). There is no in-app-purchase or payer table, so never report IAP, ARPPU, or payer-conversion metrics for Presto.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "presto-k-006",
+    "content": "Rewarded video drives 60.2% of settled ad revenue ($60,145) versus 39.8% from interstitial ($39,797). Rewarded is the monetisation backbone despite serving the minority of impressions.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "presto-k-007",
+    "content": "Fraud rate is strongly channel-specific: Vungle ~17.0%, Moloco ~14.0%, AdMob ~11.0%, Facebook ~6.0%, organic ~3.5%. Lowest-CPI channels carry the highest invalid-traffic risk, so settled revenue diverges from reported most on Vungle and Moloco.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "presto-k-008",
+    "content": "Total UA spend is $67,662 for 19,498 paid installs, a blended CPI of $3.47. Facebook absorbs $40,236 of spend (CPI $4.49), AdMob $13,683 ($3.36), Vungle $7,956 ($1.78), Moloco $5,787 ($2.91).",
+    "level": "global",
+    "category": "Metric",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "presto-k-009",
+    "content": "Blended D90 ROAS is 1.27: the average paid install is projected to return 1.27x its acquisition cost by day 90. By channel: Facebook 1.32 and AdMob 1.29 are strongest; Moloco 1.18; Vungle 1.07 is the thinnest payback despite the lowest CPI.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "presto-k-010",
+    "content": "Blended retention: D7 is 42.2%, D14 is 29.4%, D30 is 15.0% across all elapsed cohorts. These are the headline stickiness figures for the game.",
+    "level": "global",
+    "category": "Metric range",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "presto-k-011",
+    "content": "Casual mobile benchmarks: D1 retention ~30-40%, D7 ~12-18%, D30 ~5-8% for the median casual title. Presto's D7 of 42% and D30 of 15% sit well above casual median, closer to strong mid-core retention, a genuine product-quality signal.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "presto-k-012",
+    "content": "Engagement tier is the single strongest retention lever. High-engagement installs (5+ games in first 7 days) reach 25.5% D30 retention versus 14.0% for medium and 6.5% for low, roughly 3.9x the low-tier retention.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "presto-k-013",
+    "content": "Only 29.9% of installs (8,965 players) reach the high-engagement tier; 32.9% land low (9,881). Shifting install mix toward high-engagement is the highest-leverage move for LTV, since high-tier players retain ~3.9x better.",
+    "level": "global",
+    "category": "Segment",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "presto-k-014",
+    "content": "ARPDAU (settled ad revenue per active player-day) is $0.66 blended. ARPDAU is roughly flat across the window, so total ad-revenue growth is volume-driven (more installs), not monetisation improvement.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "presto-k-015",
+    "content": "Blended ARPI (lifetime settled ad revenue per install) is $3.33 against a blended CPI of $3.47, so the average paid install is near break-even on observed revenue alone: the gap closes only as cohorts age into their D90+ tail.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "presto-k-016",
+    "content": "8.05% of installs (2,414 players) are fraud-flagged for impression-stuffing. These users report ad revenue but it never settles, so always exclude is_fraud = true when measuring true LTV, ROAS, or channel quality.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "presto-k-017",
+    "content": "Facebook moved to a 5-game targeting criterion from January 2026 (is_new_targeting = true, 2,133 players). The new cohort carries a higher high-engagement mix; the Jan 2026 cohort shows 18.1% D30 retention versus 15.5% for the Aug 2025 cohort: early evidence the targeting change is working.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "presto-k-018",
+    "content": "Industry ROAS benchmark: a healthy ad-funded UA channel targets D90 ROAS >= 1.0 (break-even by day 90) and recovers fully by D120-D180. Presto's Facebook (1.32) and AdMob (1.29) clear this comfortably; Vungle at 1.07 is marginal and most exposed to fraud erosion.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "presto-k-019",
+    "content": "Emerging markets (IN, BR, ID, MX) account for 14,167 installs. They show strong early retention then steep churn, so D7/D14-anchored LTV models over-project these geos, so discount emerging-market early LTV when sizing the UA-doubling decision.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "presto-k-020",
+    "content": "When reporting revenue, always state which lens: settled_revenue is the marketing/fraud-adjusted view ($99,942), net_revenue is Finance's post-platform-fee booked view ($69,959), and reported_revenue ($107,116) overstates both. Default to settled for channel quality and net for cash reporting.",
+    "level": "global",
+    "category": "Reporting",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  }
+]

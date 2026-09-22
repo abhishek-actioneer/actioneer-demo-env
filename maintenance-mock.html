@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maintenance Banner · Sentinel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Baby Sentinel tokens (clerk-auth-merged) ─────────────────── */
+    :root {
+      --radius: 0.625rem;
+      --background:        oklch(0.955 0.015 70);
+      --foreground:        oklch(0.25  0.020 55);
+      --card:              oklch(0.962 0.014 70);
+      --card-foreground:   oklch(0.25  0.020 55);
+      --muted:             oklch(0.930 0.020 70);
+      --muted-foreground:  oklch(0.45  0.018 55);
+      --border:            oklch(0.875 0.022 70);
+      --sidebar:           oklch(0.940 0.018 70);
+      --sidebar-border:    oklch(0.875 0.022 70);
+      --secondary:         oklch(0.930 0.020 70);
+
+      /* Amber — maintenance state */
+      --amber-surface:     oklch(0.965 0.040 78);
+      --amber-border:      oklch(0.880 0.075 72);
+      --amber-text:        oklch(0.42  0.110 58);
+      --amber-icon:        oklch(0.54  0.130 56);
+      --amber-dot:         oklch(0.65  0.150 54);
+
+      /* Green — resolved state */
+      --green-surface:     oklch(0.960 0.035 155);
+      --green-border:      oklch(0.870 0.065 150);
+      --green-text:        oklch(0.38  0.110 150);
+      --green-icon:        oklch(0.48  0.130 150);
+
+      /* Task panel */
+      --task-checked:      oklch(0.55  0.018 55);
+      --task-pending:      oklch(0.72  0.015 65);
+    }
+
+    .dark {
+      --background:        oklch(0.175 0.002 75);
+      --foreground:        oklch(0.87  0.015 65);
+      --card:              oklch(0.195 0.002 75);
+      --card-foreground:   oklch(0.87  0.015 65);
+      --muted:             oklch(0.220 0.002 75);
+      --muted-foreground:  oklch(0.52  0.008 65);
+      --border:            oklch(0.265 0.002 75);
+      --sidebar:           #181818;
+      --sidebar-border:    oklch(0.265 0.002 75);
+      --secondary:         oklch(0.220 0.002 75);
+
+      --amber-surface:     oklch(0.225 0.055 55);
+      --amber-border:      oklch(0.330 0.085 54);
+      --amber-text:        oklch(0.80  0.120 62);
+      --amber-icon:        oklch(0.80  0.145 60);
+      --amber-dot:         oklch(0.75  0.155 58);
+
+      --green-surface:     oklch(0.215 0.050 155);
+      --green-border:      oklch(0.310 0.080 150);
+      --green-text:        oklch(0.78  0.130 155);
+      --green-icon:        oklch(0.72  0.145 152);
+
+      --task-checked:      oklch(0.62  0.008 65);
+      --task-pending:      oklch(0.38  0.004 65);
+    }
+
+    /* ── Reset ────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--background);
+      color: var(--foreground);
+      min-height: 100vh;
+      padding: 48px 40px 80px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Page chrome ─────────────────────────────────────────────── */
+    .page-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted-foreground);
+      margin-bottom: 16px;
+    }
+
+    .section { margin-bottom: 56px; }
+
+    /* ── App shell ───────────────────────────────────────────────── */
+    .app-shell {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--background);
+    }
+
+    /* Topbar */
+    .topbar {
+      height: 44px;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      border-bottom: 1px solid var(--border);
+      gap: 8px;
+    }
+    .topbar-logo {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .sentinel-icon {
+      display: grid;
+      grid-template-columns: repeat(3, 5px);
+      gap: 1.5px;
+    }
+    .sentinel-icon span {
+      width: 5px;
+      height: 5px;
+      border-radius: 1px;
+      background: oklch(0.55 0.18 155);
+    }
+    .sentinel-icon span:nth-child(5) { background: oklch(0.45 0.16 155); }
+    .topbar-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--foreground);
+    }
+    .topbar-sep { width: 1px; height: 16px; background: var(--border); margin: 0 4px; }
+    .topbar-path { font-size: 12px; color: var(--muted-foreground); }
+
+    /* Content area (fake blurred chat below the banner) */
+    .shell-body {
+      display: flex;
+      min-height: 300px;
+    }
+    .shell-sidebar {
+      width: 220px;
+      background: var(--sidebar);
+      border-right: 1px solid var(--sidebar-border);
+      padding: 12px 8px;
+      flex-shrink: 0;
+    }
+    .sidebar-item {
+      height: 32px;
+      border-radius: 7px;
+      margin-bottom: 2px;
+      background: var(--muted);
+      opacity: 0.4;
+    }
+    .sidebar-item.active { opacity: 0.7; }
+    .shell-main {
+      flex: 1;
+      padding: 20px 24px;
+      filter: blur(1.5px);
+      opacity: 0.5;
+      pointer-events: none;
+      user-select: none;
+    }
+    .fake-msg {
+      height: 14px;
+      border-radius: 4px;
+      background: var(--muted);
+      margin-bottom: 10px;
+    }
+    .fake-msg.short { width: 55%; }
+    .fake-msg.medium { width: 75%; }
+    .fake-msg.long { width: 90%; }
+
+    /* ── Banner ──────────────────────────────────────────────────── */
+    .banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 40px;
+      font-size: 12.5px;
+      font-weight: 450;
+      padding: 0 16px;
+      border-bottom: 1px solid var(--amber-border);
+      background: var(--amber-surface);
+      color: var(--amber-text);
+      animation: slide-down 0.3s cubic-bezier(0.23, 1, 0.32, 1) both;
+    }
+    .banner.resolved {
+      border-bottom-color: var(--green-border);
+      background: var(--green-surface);
+      color: var(--green-text);
+      animation: none;
+    }
+
+    .banner-icon {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+    }
+
+    /* Spinning updating icon */
+    .icon-spin { animation: spin 1.2s linear infinite; }
+
+    .banner-text { line-height: 1; }
+    .banner-text b { font-weight: 600; }
+
+    .banner-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--green-icon);
+      background: none;
+      border: 1px solid var(--green-border);
+      border-radius: 6px;
+      padding: 3px 10px;
+      cursor: pointer;
+      margin-left: 4px;
+      transition: opacity 0.15s;
+    }
+    .banner-cta:hover { opacity: 0.75; }
+
+    @keyframes slide-down {
+      from { opacity: 0; transform: translateY(-100%); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.4; }
+    }
+
+    /* ── Task progress card ──────────────────────────────────────── */
+    .task-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      width: 540px;
+      font-size: 13px;
+    }
+
+    /* Card header */
+    .task-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .task-header-left {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .task-status-icon {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+    .task-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--foreground);
+    }
+    .task-header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .task-progress-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted-foreground);
+      font-variant-numeric: tabular-nums;
+    }
+    .task-progress-label.paused { color: var(--amber-icon); }
+    .hide-details {
+      font-size: 12px;
+      color: var(--muted-foreground);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    /* Progress row */
+    .task-progress-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px 8px;
+    }
+    .progress-bar-track {
+      flex: 1;
+      height: 3px;
+      background: var(--muted);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: var(--foreground);
+      border-radius: 99px;
+      transition: width 0.5s ease;
+    }
+    .progress-bar-fill.paused {
+      background: var(--amber-icon);
+    }
+
+    /* Checklist */
+    .task-checklist {
+      padding: 0 16px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
+    /* Vertical connector line */
+    .task-checklist::before {
+      content: '';
+      position: absolute;
+      left: 23px;
+      top: 6px;
+      bottom: 6px;
+      width: 1px;
+      background: var(--border);
+    }
+
+    .task-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 5px 0;
+      position: relative;
+    }
+    .task-item-icon {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      margin-top: 1px;
+      position: relative;
+      z-index: 1;
+    }
+    .task-item-text {
+      font-size: 12.5px;
+      line-height: 1.4;
+      color: var(--task-checked);
+    }
+    .task-item-text.complete { color: var(--task-checked); }
+    .task-item-text.active   { color: var(--foreground); font-weight: 500; }
+    .task-item-text.pending  { color: var(--task-pending); }
+
+    /* ── Icon helpers ─────────────────────────────────────────────── */
+    /* Checkmark (SVG inline) — rendered via data URI trick */
+    .icon-check { color: var(--task-checked); }
+    .icon-pause { color: var(--amber-icon); animation: pulse 2s ease-in-out infinite; }
+    .icon-pending { color: var(--task-pending); }
+
+    /* Agent chip */
+    .agent-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin: 6px 16px 14px;
+      padding: 5px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--secondary);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted-foreground);
+      cursor: pointer;
+    }
+    .agent-chip-icon {
+      display: grid;
+      grid-template-columns: repeat(3, 4px);
+      gap: 1px;
+    }
+    .agent-chip-icon span {
+      width: 4px;
+      height: 4px;
+      border-radius: 0.5px;
+      background: oklch(0.55 0.18 155);
+    }
+
+    /* Resume button */
+    .resume-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: 0 16px 16px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      background: var(--green-surface);
+      border: 1px solid var(--green-border);
+      color: var(--green-text);
+      font-size: 12.5px;
+      font-weight: 500;
+      cursor: pointer;
+      width: fit-content;
+      transition: opacity 0.15s;
+    }
+    .resume-btn:hover { opacity: 0.8; }
+
+    /* Paused notice (inside card) */
+    .paused-notice {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin: 0 16px 14px;
+      padding: 9px 12px;
+      border-radius: 8px;
+      background: var(--amber-surface);
+      border: 1px solid var(--amber-border);
+      font-size: 12px;
+      color: var(--amber-text);
+    }
+
+    /* ── Grid layout for side-by-side states ─────────────────────── */
+    .two-col {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .two-col-item { flex: 1; min-width: 280px; }
+    .state-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted-foreground);
+      margin-bottom: 10px;
+    }
+
+    /* ── Theme toggle ─────────────────────────────────────────────── */
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .theme-toggle button {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--muted-foreground);
+      cursor: pointer;
+    }
+    .theme-toggle button.active {
+      background: var(--foreground);
+      color: var(--background);
+      border-color: var(--foreground);
+    }
+
+    hr.divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 8px 0 24px;
+    }
+
+    .mock-title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .mock-subtitle {
+      font-size: 13px;
+      color: var(--muted-foreground);
+      margin-bottom: 48px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Theme toggle -->
+  <div class="theme-toggle">
+    <button class="active" onclick="setTheme('dark')">Dark</button>
+    <button onclick="setTheme('light')">Light</button>
+  </div>
+
+  <h1 class="mock-title">Maintenance Banner</h1>
+  <p class="mock-subtitle">Sentinel · Deployment interruption UX · April 2026</p>
+
+  <!-- ────────────────────────────────────────────────────── -->
+  <!-- 1. BANNER — two states                                 -->
+  <!-- ────────────────────────────────────────────────────── -->
+  <div class="section">
+    <p class="page-label">01 — Deployment banner</p>
+    <hr class="divider" />
+
+    <div class="two-col">
+
+      <!-- A: Deploying -->
+      <div class="two-col-item">
+        <p class="state-label">A · Deployment in progress</p>
+        <div class="app-shell">
+          <!-- Topbar -->
+          <div class="topbar">
+            <div class="topbar-logo">
+              <div class="sentinel-icon">
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+              </div>
+              <span class="topbar-name">Sentinel</span>
+            </div>
+            <div class="topbar-sep"></div>
+            <span class="topbar-path">Stable Money</span>
+          </div>
+          <!-- Banner: deploying -->
+          <div class="banner">
+            <!-- Spinning refresh icon -->
+            <svg class="banner-icon icon-spin" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color: var(--amber-icon)">
+              <path d="M14 8A6 6 0 1 1 9.5 2.6"/>
+              <path d="M10 2l-.5 2.5L12 5"/>
+            </svg>
+            <span class="banner-text"><b>Sentinel is updating</b> &thinsp;&middot;&thinsp; Active queries have been paused and will resume when the update is complete</span>
+          </div>
+          <!-- Shell body -->
+          <div class="shell-body">
+            <div class="shell-sidebar">
+              <div class="sidebar-item" style="width:60%; height:20px; margin-bottom:16px;"></div>
+              <div class="sidebar-item active" style="width:100%;"></div>
+              <div class="sidebar-item" style="width:90%;"></div>
+              <div class="sidebar-item" style="width:95%;"></div>
+            </div>
+            <div class="shell-main">
+              <div class="fake-msg long"></div>
+              <div class="fake-msg medium"></div>
+              <div class="fake-msg short"></div>
+              <div class="fake-msg long" style="margin-top:20px;"></div>
+              <div class="fake-msg medium"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- B: Update complete -->
+      <div class="two-col-item">
+        <p class="state-label">B · Update complete</p>
+        <div class="app-shell">
+          <div class="topbar">
+            <div class="topbar-logo">
+              <div class="sentinel-icon">
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+              </div>
+              <span class="topbar-name">Sentinel</span>
+            </div>
+            <div class="topbar-sep"></div>
+            <span class="topbar-path">Stable Money</span>
+          </div>
+          <!-- Banner: resolved -->
+          <div class="banner resolved">
+            <svg class="banner-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--green-icon)">
+              <circle cx="8" cy="8" r="6"/>
+              <path d="M5.5 8.5l1.5 1.5 3-3"/>
+            </svg>
+            <span class="banner-text"><b>Update complete</b> &thinsp;&middot;&thinsp; Your paused analysis is ready to resume</span>
+            <button class="banner-cta">
+              Resume analysis
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                <path d="M2.5 6h7M7 3.5L9.5 6 7 8.5"/>
+              </svg>
+            </button>
+          </div>
+          <!-- Shell body -->
+          <div class="shell-body">
+            <div class="shell-sidebar">
+              <div class="sidebar-item" style="width:60%; height:20px; margin-bottom:16px;"></div>
+              <div class="sidebar-item active" style="width:100%;"></div>
+              <div class="sidebar-item" style="width:90%;"></div>
+              <div class="sidebar-item" style="width:95%;"></div>
+            </div>
+            <div class="shell-main">
+              <div class="fake-msg long"></div>
+              <div class="fake-msg medium"></div>
+              <div class="fake-msg short"></div>
+              <div class="fake-msg long" style="margin-top:20px;"></div>
+              <div class="fake-msg medium"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ────────────────────────────────────────────────────── -->
+  <!-- 2. TASK CARD — paused state                            -->
+  <!-- ────────────────────────────────────────────────────── -->
+  <div class="section">
+    <p class="page-label">02 — Task progress card · Paused state</p>
+    <hr class="divider" />
+
+    <div class="two-col">
+
+      <!-- A: Mid-deployment (paused, no action yet) -->
+      <div class="two-col-item">
+        <p class="state-label">A · Paused — deployment in progress</p>
+        <div class="task-card">
+          <!-- Header -->
+          <div class="task-header">
+            <div class="task-header-left">
+              <!-- Pause icon -->
+              <svg class="task-status-icon" viewBox="0 0 16 16" fill="currentColor" style="color: var(--amber-icon)">
+                <rect x="4" y="3" width="3" height="10" rx="1"/>
+                <rect x="9" y="3" width="3" height="10" rx="1"/>
+              </svg>
+              <span class="task-title">Task paused</span>
+            </div>
+            <div class="task-header-right">
+              <span class="task-progress-label paused">42%</span>
+              <button class="hide-details">Hide details ↑</button>
+            </div>
+          </div>
+
+          <!-- Progress bar -->
+          <div class="task-progress-row">
+            <div class="progress-bar-track">
+              <div class="progress-bar-fill paused" style="width: 42%"></div>
+            </div>
+          </div>
+
+          <!-- Paused notice -->
+          <div class="paused-notice">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" style="color: var(--amber-icon); flex-shrink:0">
+              <rect x="3.5" y="2.5" width="2.5" height="9" rx="0.8"/>
+              <rect x="8" y="2.5" width="2.5" height="9" rx="0.8"/>
+            </svg>
+            Paused mid-run · Sentinel was updated during this analysis. It will resume once the update is complete.
+          </div>
+
+          <!-- Checklist -->
+          <div class="task-checklist">
+
+            <div class="task-item">
+              <svg class="task-item-icon icon-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5.5"/><path d="M4.5 7l2 2 3-3"/></svg>
+              <span class="task-item-text complete">Ask clarifying questions about funnel definition</span>
+            </div>
+
+            <div class="task-item">
+              <svg class="task-item-icon icon-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5.5"/><path d="M4.5 7l2 2 3-3"/></svg>
+              <span class="task-item-text complete">Write question to question.txt</span>
+            </div>
+
+            <div class="task-item">
+              <svg class="task-item-icon icon-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5.5"/><path d="M4.5 7l2 2 3-3"/></svg>
+              <span class="task-item-text complete">Retrieve relevant metrics and schema for registration and payment events</span>
+            </div>
+
+            <div class="task-item">
+              <svg class="task-item-icon icon-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5.5"/><path d="M4.5 7l2 2 3-3"/></svg>
+              <span class="task-item-text complete">Delegate data queries — Task 1: Data availability check (DISCOVERED: user_id is NULL on registration events)</span>
+            </div>
+
+            <div class="task-item">
+              <svg class="task-item-icon icon-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5.5"/><path d="M4.5 7l2 2 3-3"/></svg>
+              <span class="task-item-text complete">Redesign approach using personalization_context first occurrence as new user proxy</span>
+            </div>
+
+            <!-- Paused item (was in-progress) -->
+            <div class="task-item">
+              <svg class="task-item-icon icon-pause" viewBox="0 0 14 14" fill="currentColor"><rect x="3" y="2.5" width="2.5" height="9" rx="0.75"/><rect x="8.5" y="2.5" width="2.5" height="9" rx="0.75"/></svg>
+              <span class="task-item-text active" style="color: var(--amber-text)">Delegate redesigned queries — Task A: Overall + Category funnel</span>
+            </div>
+
+            <div class="task-item">
+              <svg class="task-item-icon icon-pending" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5.5"/></svg>
+              <span class="task-item-text pending">Delegate redesigned queries — Task B: Platform + Days-to-payment breakdowns</span>
+            </div>
+
+            <div class="task-item">
+              <svg class="task-item-icon icon-pending" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5.5"/></svg>
+              <span class="task-item-text pending">Build visualisations for the funnel</span>
+            </div>
+
+            <div class="task-item">
+              <svg class="task-item-icon icon-pending" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5.5"/></svg>
+              <span class="task-item-text pending">Perform statistical significance tests on top insights</span>
+            </div>
+
+            <div class="task-item">
+              <svg class="task-item-icon icon-pending" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5.5"/></svg>
+              <span class="task-item-text pending">Write final report</span>
+            </div>
+
+            <div class="task-item">
+              <svg class="task-item-icon icon-pending" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5.5"/></svg>
+              <span class="task-item-text pending">Run critique agent and refine</span>
+            </div>
+
+            <div class="task-item">
+              <svg class="task-item-icon icon-pending" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5.5"/></svg>
+              <span class="task-item-text pending">Send report to client</span>
+            </div>
+
+          </div><!-- /checklist -->
+
+          <!-- Agent chip -->
+          <div class="agent-chip">
+            <div class="agent-chip-icon">
+              <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+            </div>
+            Data Analysis Agent
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 3l3 3-3 3"/></svg>
+          </div>
+
+        </div><!-- /task-card -->
+      </div>
+
+      <!-- B: After deployment (resume CTA) -->
+      <div class="two-col-item">
+        <p class="state-label">B · Update complete — resume available</p>
+        <div class="task-card">
+          <!-- Header -->
+          <div class="task-header">
+            <div class="task-header-left">
+              <svg class="task-status-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--green-icon)">
+                <circle cx="8" cy="8" r="6"/>
+                <path d="M5.5 8.5l1.5 1.5 3-3"/>
+              </svg>
+              <span class="task-title">Task paused</span>
+            </div>
+            <div class="task-header-right">
+              <span class="task-progress-label">42%</span>
+              <button class="hide-details">Hide details ↑</button>
+            </div>
+          </div>
+
+          <!-- Progress bar -->
+          <div class="task-progress-row">
+            <div class="progress-bar-track">
+              <div class="progress-bar-fill" style="width: 42%"></div>
+            </div>
+          </div>
+
+          <!-- Checklist (same as above, abbreviated) -->
+          <div class="task-checklist">
+            <div class="task-item">
+              <svg class="task-item-icon icon-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5.5"/><path d="M4.5 7l2 2 3-3"/></svg>
+              <span class="task-item-text complete">Ask clarifying questions about funnel definition</span>
+            </div>
+            <div class="task-item">
+              <svg class="task-item-icon icon-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5.5"/><path d="M4.5 7l2 2 3-3"/></svg>
+              <span class="task-item-text complete">Write question to question.txt</span>
+            </div>
+            <div class="task-item">
+              <svg class="task-item-icon icon-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5.5"/><path d="M4.5 7l2 2 3-3"/></svg>
+              <span class="task-item-text complete">Retrieve relevant metrics and schema for registration and payment events</span>
+            </div>
+            <div class="task-item">
+              <svg class="task-item-icon icon-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5.5"/><path d="M4.5 7l2 2 3-3"/></svg>
+              <span class="task-item-text complete">Delegate data queries — Task 1: Data availability check</span>
+            </div>
+            <div class="task-item">
+              <svg class="task-item-icon icon-check" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="5.5"/><path d="M4.5 7l2 2 3-3"/></svg>
+              <span class="task-item-text complete">Redesign approach using personalization_context first occurrence as new user proxy</span>
+            </div>
+            <!-- Resumable item -->
+            <div class="task-item">
+              <svg class="task-item-icon" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--muted-foreground)"><circle cx="7" cy="7" r="5.5"/></svg>
+              <span class="task-item-text" style="color: var(--muted-foreground)">Delegate redesigned queries — Task A: Overall + Category funnel</span>
+            </div>
+            <div class="task-item">
+              <svg class="task-item-icon icon-pending" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5.5"/></svg>
+              <span class="task-item-text pending">Delegate redesigned queries — Task B: Platform + Days-to-payment breakdowns</span>
+            </div>
+            <div class="task-item">
+              <svg class="task-item-icon icon-pending" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5.5"/></svg>
+              <span class="task-item-text pending">Build visualisations for the funnel</span>
+            </div>
+            <div class="task-item">
+              <svg class="task-item-icon icon-pending" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5.5"/></svg>
+              <span class="task-item-text pending">Write final report</span>
+            </div>
+            <div class="task-item">
+              <svg class="task-item-icon icon-pending" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5.5"/></svg>
+              <span class="task-item-text pending">Run critique agent and refine</span>
+            </div>
+            <div class="task-item">
+              <svg class="task-item-icon icon-pending" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7" cy="7" r="5.5"/></svg>
+              <span class="task-item-text pending">Send report to client</span>
+            </div>
+          </div>
+
+          <!-- Agent chip -->
+          <div class="agent-chip" style="margin-bottom:10px;">
+            <div class="agent-chip-icon">
+              <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+            </div>
+            Data Analysis Agent
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 3l3 3-3 3"/></svg>
+          </div>
+
+          <!-- Resume CTA -->
+          <button class="resume-btn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--green-icon)">
+              <circle cx="7" cy="7" r="5.5"/>
+              <path d="M5.5 8.5l1.5 1.5 3-3"/>
+            </svg>
+            Resume analysis from step 6
+          </button>
+
+        </div><!-- /task-card -->
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function setTheme(t) {
+      document.documentElement.classList.toggle('dark', t === 'dark');
+      document.querySelectorAll('.theme-toggle button').forEach(b => {
+        b.classList.toggle('active', b.textContent.trim().toLowerCase() === t);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+[
+  {
+    "id": "1927136c-609f-4401-903d-3e802f734b33",
+    "content": "The dataset contains 187,362 loan records spanning from April 2022 to March 2025 across two primary entities.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "0ac3b6ae-46dc-4456-b95c-92d35cb18eaa",
+    "content": "The 'hfc' entity is the largest by volume, with the home_purchase product alone accounting for 52,618 loans and ₹70.86B in disbursements.",
+    "level": "global",
+    "category": "Segment",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "81d9678f-75e5-436a-bd6a-9cc3977df655",
+    "content": "Average yields differ significantly by entity: 15.13% for the 'hfc' housing book compared to 20.60% for the 'finserve' vehicle and MSME book.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "41948c09-c10c-450e-9896-7a62e62bb5da",
+    "content": "The 'hfc' entity maintains a conservative average LTV of 45.08%, while the 'finserve' entity operates at a higher risk profile with 68.01% LTV.",
+    "level": "global",
+    "category": "Metric range",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "ad301854-10aa-4889-832d-0d8a2e4e484f",
+    "content": "As of March 2025, the 'finserve' entity reported a bounce rate of 34.15%, which is significantly higher than the 25.32% recorded for 'hfc'.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "292032dd-1ba0-4f12-87bf-be5f4400ef44",
+    "content": "Maharashtra and Rajasthan are the top states by disbursement, contributing ₹20.23B and ₹19.72B respectively to the portfolio.",
+    "level": "global",
+    "category": "Segment",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "5e35538c-6c2f-45b1-843b-76aabb28cc66",
+    "content": "Asset quality in the housing book ('hfc') is strong, with Stage 3 exposure totaling approximately ₹831.6M against an AUM of ₹85.14B (approx. 0.98% GNPA).",
+    "level": "global",
+    "category": "Insight",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "7babe1f0-863e-4132-aced-e389d1efcab3",
+    "content": "The 'hfc' book has a much longer average tenure of 156.88 months compared to the 'finserve' book's average of 55.54 months.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "afe796c8-5967-482e-8255-35cf2930d809",
+    "content": "Always filter by 'entity' (hfc vs finserve) when analyzing yields or risk, as they represent distinct business models (housing vs vehicle/MSME).",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "e5541460-bb8c-4c75-81a7-7bf526a39299",
+    "content": "Assets Under Management (AUM) must be calculated by summing disbursed_amount only for loans with status 'active' or 'npa'.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "7fb2ecb8-155d-4548-840a-89108d493d7a",
+    "content": "Stage 3 (NPA) is defined by DPD buckets npa_90, npa_180, and npa_360_plus, representing loans overdue by more than 90 days.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "691b6692-e7d2-4ef2-b120-cd428dbef7d5",
+    "content": "Housing finance companies typically follow IndAS 109, requiring significantly higher Provision Coverage Ratios (PCR) for Stage 3 assets (approx. 40%).",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "df718070-282e-46ab-98e2-89b9ccfd4c37",
+    "content": "The 'is_ntc' flag identifies New-to-Credit borrowers (Bureau Score 0), a segment often targeted for micro-housing to drive financial inclusion.",
+    "level": "global",
+    "category": "Segment",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "6223e3ef-aa64-462e-994a-e3c05d507e63",
+    "content": "In this portfolio, ~81% of borrowers are self-employed; monitoring 'employment_type' is critical as this segment is more sensitive to economic volatility.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "828e5bab-97ed-4486-b4a4-36f4ec34f481",
+    "content": "DSA-sourced loans often exhibit higher delinquency rates than direct sales; performance should be monitored via the 'sourcing_channel_performance' table.",
+    "level": "global",
+    "category": "Reporting",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "d38f0eda-081e-4d2a-8fa1-205538f078e0",
+    "content": "Loan-to-Value (LTV) is stored as a decimal (e.g., 0.45 = 45%); the median LTV of ~45% suggests a very high equity buffer from borrowers.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "c3737e2c-d5b9-4696-bad0-fe63c2b76ab0",
+    "content": "The industry benchmark for collection efficiency in affordable housing is >95%; 'hfc' is aligned with this at 95.31% as of March 2025.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "e55c31fd-76e2-4599-9299-1f182127a609",
+    "content": "Industry-standard bounce rates for retail lending usually hover around 20%; 'finserve's' 34% rate indicates a higher-than-average presentation risk.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "dc69433a-b09b-4805-81c9-0c4e5d03ecb3",
+    "content": "Credit agencies view a single-state concentration of >15% of AUM as a risk; Maharashtra's concentration should be monitored as it nears this threshold.",
+    "level": "global",
+    "category": "Metric range",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fac78403-71fe-4298-abda-659c232fbbf3",
+    "content": "Yields for used CV and MSME lending in the Indian NBFC sector typically range from 18% to 25% to cover higher operational and credit costs.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "67771854-0a5d-48dc-8d25-e2f14b3c2b83",
+    "content": "For reporting purposes, the Indian Fiscal Year (FY) runs from April to March; FY25 data covers April 2024 through March 2025.",
+    "level": "global",
+    "category": "Reporting",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-23T12:07:43.044Z",
+    "addedBy": "Actioneer AI"
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "selections": [
+    {
+      "company": "Vastu Housing Finance",
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-sept-24-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260503%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260503T230209Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=33a6340acbe56c82d701553db4f87b864ca3d3d2f1c092011655bf7b254cac61",
+      "reason": "Specific PDF document for Liquidity Risk Management (LRM) as of September 2024, providing recent financial data.",
+      "priority": 1
+    },
+    {
+      "company": "Vastu Housing Finance",
+      "url": "https://www.careratings.com/upload/CompanyFiles/PR/202407140712_Vastu_Housing_Finance_Corporation_Limited.pdf",
+      "reason": "Recent credit rating report (July 2024) from CARE Ratings containing detailed financial analysis and metrics.",
+      "priority": 3
+    },
+    {
+      "company": "Vastu Housing Finance",
+      "url": "https://vastu-hfc-website.s3.ap-south-1.amazonaws.com/uploads/public/assets/pdf/financial-reports/LCR-Dec-25-VHFC.pdf",
+      "reason": "Specific PDF document for Liquidity Coverage Ratio (LCR) hosted on company cloud storage, providing balance sheet insights.",
+      "priority": 1
+    },
+    {
+      "company": "Avanse Financial Services",
+      "url": "https://www.avanse.com/pdf/Financial%20Statement%20FY24.pdf",
+      "reason": "Specific PDF of audited standalone financial statements for the full fiscal year 2024.",
+      "priority": 1
+    },
+    {
+      "company": "Avanse Financial Services",
+      "url": "https://www.avanse.com/pdf/Rating%20Rationale%20-%20Brickwork%20-%20AFSL%20-%2013-Jan-25.pdf",
+      "reason": "Highly recent credit rating rationale (January 2025) containing updated liquid asset and borrowing data.",
+      "priority": 3
+    },
+    {
+      "company": "Avanse Financial Services",
+      "url": "https://www.avanse.com/pdf/financials/Annual-Report-FY2022-23.pdf",
+      "reason": "Official comprehensive Annual Report for FY 2022-23 including Management Discussion and Analysis.",
+      "priority": 1
+    }
+  ]
+}

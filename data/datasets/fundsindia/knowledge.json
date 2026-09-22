@@ -1,0 +1,212 @@
+[
+  {
+    "id": "fundsindia-k-001",
+    "content": "The dataset contains 50,000 sample investors and 462,517 mutual-fund transactions recorded across the platform sample window of June 1, 2024 to May 28, 2026 (as-of date for relative windows is 2026-05-28).",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-002",
+    "content": "Of 462,517 transactions, 447,508 (96.8%) are successful, 13,137 (2.8%) failed, and 1,872 (0.4%) are pending. A purchase is defined as status = 'success' AND txn_type IN ('sip_installment','lumpsum','stp_purchase'); never filter txn_type = 'purchase'.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-003",
+    "content": "Successful purchases total ₹3,070,072,000 (≈₹3.07B) of inflow across 130 fund schemes from 18 AMCs, supported by 1,164,479 Mixpanel-style behaviour events for funnel and discovery analysis.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-004",
+    "content": "The platform has 30,802 SIP registrations: 15,287 active (49.6%), 10,866 cancelled, and 4,649 paused. 21,594 unique investors have set up at least one SIP. The active SIP book commits ₹70,642,500 in monthly debits.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-005",
+    "content": "The average SIP ticket is ₹4,620 with a median of ₹3,000, indicating a long tail of larger SIPs pulling the mean above the typical investor. Average ticket is stable (~₹4,620) across active, paused, and cancelled SIPs.",
+    "level": "global",
+    "category": "Metric range",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-006",
+    "content": "Equity is the largest category by inflow at ₹879.6M, followed by ELSS (tax-saving) at ₹765.3M and Debt at ₹417.3M. Equity-style categories (equity, elss, index, global) account for 61.7% of total invested value, an equity-heavy book.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-007",
+    "content": "The investor activation funnel converts 15,000 cohort signups to 10,067 first-time investors, a 67.1% activation rate. KYC verification is strong (14,231 verified) but ~2,300 investors complete KYC yet never make a first investment, the largest single drop in the funnel.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-008",
+    "content": "Activation rate varies little by acquisition channel: wealth_conversations (69.5%) and calculator (68.7%) lead, while organic (66.1%) and social (66.6%) trail. The 3.4pt spread shows channel quality is fairly even at the activation stage; differentiation shows up later in retention and ticket size.",
+    "level": "global",
+    "category": "Segment",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-009",
+    "content": "FundsIndia Select (curated) funds retain materially better: 60.2% of FI Select SIPs are still active versus 46.8% for non-Select SIPs, a 13.4pt retention advantage. Steering new SIPs into FI Select funds is the clearest lever on long-term book health.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-010",
+    "content": "NACH mandate SIP installments fail at 6.3% versus only 1.9% for UPI autopay. The 4.4pt gap is a hidden driver of involuntary SIP churn; migrating NACH mandates to UPI autopay protects active-book continuity.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-011",
+    "content": "T30 (metro) and B30 (smaller-city) investors are near-identical on SIP behaviour: T30 averages ₹4,613 per SIP with 49.8% active, B30 averages ₹4,634 with 49.3% active. B30 is not a lower-value cohort here, it is a genuine growth surface with comparable ticket and retention.",
+    "level": "global",
+    "category": "Segment",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-012",
+    "content": "ELSS (tax-saving) SIP creation spikes sharply in tax season: Jan-Mar averages 1,186 new ELSS SIPs per month versus 346 in other months, a 3.4x lift. Plan ELSS campaigns and capacity for the Q4 (Jan-Mar) window each fiscal year.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-013",
+    "content": "Pre-redemption advisory calls retain 55.2% of at-risk investors: of 2,964 pre-redemption calls, 1,636 ended with the investor following advice and staying invested (outcome = 'followed'), versus 34.5% ignored. This intervention is the single highest-leverage retention action on the platform.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-014",
+    "content": "SIP cancellations are led by returns_unsatisfactory (3,844) and financial_constraint (2,935); goal_achieved (1,755) is a positive 'graduation' exit, while switched_platform (1,239) is direct competitive churn worth monitoring.",
+    "level": "global",
+    "category": "Reporting",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-015",
+    "content": "CRM campaigns are high-volume but low-conversion: 300,000 sends at a 23.7% open rate convert at just 0.03% overall. Pre-redemption (0.33% conversion, 38.7% open) and welcome_series (0.12%) are the strongest types; broad fund_recommendation blasts (0.02%) are the weakest per send.",
+    "level": "global",
+    "category": "Reporting",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-016",
+    "content": "Goal tracking shows 54.1% of 65,000 goals on-track and 8.6% already achieved, leaving roughly 4 in 10 goals at-risk or off-track, the core re-engagement opportunity for advisory and step-up nudges.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-017",
+    "content": "A SEBI-driven KYC stress event is visible in Jun-Jul 2024: kyc_status = 'on_hold' runs at 13.3% for signups in that window versus 9.4% for the rest of the sample. KYC support tickets cluster in the same months; exclude or annotate this window when reading activation cohorts.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-018",
+    "content": "Estimated trailing commission (the platform's revenue) is concentrated in a few AMCs: HDFC Mutual Fund leads monthly estimated commission, followed by Mirae Asset and Axis Mutual Fund. Average trailing commission across AMCs is ~0.71% p.a.; FundsIndia distributes only regular plans, so all trailing_commission_pct values are > 0.",
+    "level": "global",
+    "category": "Reporting",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-019",
+    "content": "External benchmark: healthy SIP continuation (still-active after 12 months) for Indian wealthtech platforms typically runs 65-80% for curated/recommended funds and 45-55% for the broad book. FundsIndia's 60.2% FI Select vs 46.8% non-Select retention sits within these norms, with curated funds outperforming.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-020",
+    "content": "External benchmark: Indian mutual-fund SIP books are structurally equity-heavy, with equity-oriented schemes commonly making up 55-70% of SIP inflows industry-wide (AMFI). FundsIndia's 61.7% equity-style allocation is squarely in line with this norm.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "fundsindia-k-021",
+    "content": "External benchmark: trailing commission for distributing regular mutual-fund plans in India typically ranges 0.5-1.2% p.a. depending on category (debt/liquid at the low end, equity/ELSS at the high end). FundsIndia's ~0.71% average AMC trailing commission is consistent with an equity-weighted regular-plan book.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-05-20T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  }
+]

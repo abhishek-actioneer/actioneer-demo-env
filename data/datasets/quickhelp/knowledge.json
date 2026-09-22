@@ -1,0 +1,222 @@
+[
+  {
+    "id": "fc5a26a0-44ca-4834-a6da-5b9870c43a94",
+    "content": "The dataset contains 205,785 bookings and 14,939 unique customers recorded between February 1, 2025, and February 28, 2026.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "147f6a52-1f00-4eb2-9232-ce1ee732c749",
+    "content": "Kitchen Cleaning (Standard tier) generated the highest gross value of ₹4,983,894, while Laundry (Standard tier) had the highest volume with 13,433 bookings.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "f4f63c4b-f2aa-4d13-995b-c362d7396df1",
+    "content": "The average booking value (GMV) is consistently approximately ₹440 across all five hubs, with a average contribution margin of 23%.",
+    "level": "global",
+    "category": "Metric range",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "76be3894-27c9-4a50-907a-f5a7aaa136e3",
+    "content": "On-time arrival performance shows a massive urban-rural divide: Metropolitan areas achieve 52.23% on-time rates compared to just 2.98% in Semi-Urban areas.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "9b0f1bc5-ea4c-4a65-9324-c8fe29176fe8",
+    "content": "SMS campaigns achieve the highest open rate at 94.91% (assumed), but WhatsApp is the primary scale driver with 595,622 sends and a 0.44% conversion rate.",
+    "level": "global",
+    "category": "Reporting",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "092b12a1-7438-4a0c-b6dd-fb68610a8598",
+    "content": "The growth funnel shows high initial intent with 18,000 signups, but significant retention decay as only 1,118 customers reach their third booking within 30 days.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "11955a3f-f6e8-4cf4-a59d-41c56731e28a",
+    "content": "Operational flags indicate that 40% of all bookings (82,202) involve a promotional campaign, highlighting a heavy reliance on discounting for volume.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "25017983-3f07-40f5-8c89-23fc8d265b5d",
+    "content": "In-app messaging is the most efficient conversion channel with a rate of 0.61%, despite having the lowest send volume (18,380).",
+    "level": "global",
+    "category": "Insight",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "74707e5a-031d-4413-a266-f442dc724784",
+    "content": "Average arrival time is 10.48 minutes in Metropolitan areas, closely aligning with the target SLA of 10 minutes.",
+    "level": "global",
+    "category": "Metric range",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "bee84137-50e4-451b-a89d-c81cf5cfd0c8",
+    "content": "Commission rates are tiered by service complexity: Quick services (30m) are charged at 25-27% while Premium services (120m) reach 30-32%.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "5b15abaa-097b-46e8-bae9-1eb37045f5c7",
+    "content": "Contribution margin is calculated by deducting payment fees, promo costs, referral rewards, and allocated support costs from the commission earned.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "abfc32be-ad54-48de-b765-8210244a5c1b",
+    "content": "A 'frequency_cap_hit' flag in the comms_full view indicates the message was suppressed; these rows must be excluded when calculating delivery costs or CTR.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "6eddad2c-acae-4587-82b7-96ea7379e10e",
+    "content": "Retention for on-demand home services is typically measured by the 'second_booking_14d' milestone, which signals the transition from trial to habitual use.",
+    "level": "global",
+    "category": "Reporting",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "cc32841f-ca2e-4ff4-99b3-9119c2f8af13",
+    "content": "The platform uses last-touch attribution for CRM, where 'converted' is true only if a booking is made within 24 hours of a click event.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "6feedaf4-3e24-4e5c-9c63-2f11e9ccd9c6",
+    "content": "Partner earnings are net of commission and penalties but inclusive of incentives; net payout is settled weekly every Wednesday (T+3).",
+    "level": "global",
+    "category": "Reporting",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "e9dcf59a-fe07-465c-aec5-fe6062e81223",
+    "content": "High cancellation or rescheduling rates (currently ~7,000 rows) often correlate with high traffic density or extreme weather events like storms.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "64357e6b-f315-4c75-ac97-ae6419ad8cd9",
+    "content": "The platform take rate of ~28% is in line with global home-service industry standards of 20-30% (e.g., Urban Company, TaskRabbit).",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "ad9d044e-eece-4f31-b415-668defe8459b",
+    "content": "An NPS of 29 is considered healthy for the gig economy, where industry benchmarks for home services generally range between 20 and 50.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "5ed74893-7105-42fe-9ece-3fb6202f9f23",
+    "content": "A 52% on-time arrival rate in metropolitan zones is standard for on-demand services, where 10-minute SLAs are often impacted by 'last-mile' navigation.",
+    "level": "global",
+    "category": "Metric range",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "e5ea34de-2fb5-40b1-8566-a5717115cff3",
+    "content": "Industry-standard CAC-to-LTV ratios for sustainable growth are typically 1:3; use the monthly_company_kpis table to monitor this ratio over time.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "d97f1c33-0063-4a29-8cd1-79e8cf9c727f",
+    "content": "Referral K-factors (referral signups per active user) in successful service apps typically aim for 0.15 to 0.25 to drive organic growth.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "3b6cd62d-b79b-46a8-80dc-45298c8e803d",
+    "content": "Payment processing fees of 1.8% for cards and 0% for UPI are standard benchmarks for the Indian fintech ecosystem.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-03-16T19:16:22.746Z",
+    "addedBy": "Actioneer AI"
+  }
+]

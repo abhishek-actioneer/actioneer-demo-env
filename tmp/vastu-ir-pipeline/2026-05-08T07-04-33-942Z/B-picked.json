@@ -1,0 +1,112 @@
+[
+  {
+    "company": "Aavas Financiers",
+    "doc": {
+      "url": "https://www.aavas.in/uploads/pdf/investorrelease29102020-998637295.pdf",
+      "title": "Investor Release on Financial Results",
+      "period": "2020-9986",
+      "type": "quarterly_results",
+      "originalIndex": 106,
+      "reason": "Latest Q4 audited results",
+      "fy": 2020
+    }
+  },
+  {
+    "company": "Aavas Financiers",
+    "doc": {
+      "url": "https://www.aavas.in/uploads/pdf/aavasinvestor-presentationq4-fy2025-42953184.pdf",
+      "title": "Investor Presentation",
+      "period": "fy2025-4295",
+      "type": "investor_presentation",
+      "originalIndex": 27,
+      "reason": "Latest investor presentation",
+      "fy": 2025
+    }
+  },
+  {
+    "company": "Aptus Value Housing Finance",
+    "doc": {
+      "url": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf",
+      "title": "Annual Report 2024-2025",
+      "period": "2024-2025",
+      "type": "annual_report",
+      "originalIndex": 3,
+      "reason": "Annual report (FY25)",
+      "fy": 2025
+    }
+  },
+  {
+    "company": "Aptus Value Housing Finance",
+    "doc": {
+      "url": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf",
+      "title": "Annual Report 2023-2024",
+      "period": "FY24",
+      "type": "annual_report",
+      "originalIndex": 4,
+      "reason": "Prior annual report (FY24)",
+      "fy": 2024
+    }
+  },
+  {
+    "company": "Home First Finance",
+    "doc": {
+      "url": "https://homefirstindia.com/files/Financial%20Result%20Q4%20FY23.pdf",
+      "title": "Financial%20Result%20Q4%20FY23.pdf",
+      "period": "Q4 FY23",
+      "type": "quarterly_results",
+      "originalIndex": 23,
+      "reason": "Latest Q4 audited results",
+      "fy": 2023,
+      "quarter": 4
+    }
+  },
+  {
+    "company": "Home First Finance",
+    "doc": {
+      "url": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf",
+      "title": "Annual Report 2024-25",
+      "period": "FY25",
+      "type": "annual_report",
+      "originalIndex": 0,
+      "reason": "Annual report (FY25)",
+      "fy": 2025
+    }
+  },
+  {
+    "company": "Home First Finance",
+    "doc": {
+      "url": "https://homefirstindia.com/files/HomeFirst%20Q1FY26%20Investor%20Press%20Release.pdf",
+      "title": "Investor Press Release",
+      "period": "Q1FY26",
+      "type": "investor_presentation",
+      "originalIndex": 37,
+      "reason": "Latest investor presentation"
+    }
+  },
+  {
+    "company": "India Shelter Finance",
+    "doc": {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf",
+      "title": "Financial Results March 2026",
+      "period": "March 2026",
+      "type": "quarterly_results",
+      "originalIndex": 3,
+      "reason": "Latest Q4 audited results",
+      "fy": 2026,
+      "quarter": 4
+    }
+  },
+  {
+    "company": "India Shelter Finance",
+    "doc": {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf",
+      "title": "Investor Presentation March 2026",
+      "period": "March 2026",
+      "type": "investor_presentation",
+      "originalIndex": 68,
+      "reason": "Latest investor presentation",
+      "fy": 2026,
+      "quarter": 4
+    }
+  }
+]

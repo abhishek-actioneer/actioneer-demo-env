@@ -1,0 +1,996 @@
+USER REQUEST:
+compare Vastu Housing Finance to Aavas Financiers, Aptus Value Housing Finance, Home First Finance and India Shelter Finance on financials of last 2 years
+
+PLAN:
+- Subject: Vastu Housing Finance (Indian affordable housing finance)
+- Competitors: Aavas Financiers, Aptus Value Housing Finance, Home First Finance, India Shelter Finance
+- Time scope: last_2_years
+- Focus: financials, strategy
+
+
+=== Vastu Housing Finance ===
+
+
+--- SOURCE: Audited Financial Result for quarter and year ended 31st March 2026
+URL: https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Result-for-quarter-and-year-ended-31st-March-2026.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T073517Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=ce5bd7d0cd37b7dba8954248d6470a2fe112f605d39035fabd9f11cd586cc7f1
+
+
+# Financial Data Extraction Report: Vastu FY26
+
+## Executive Summary
+An attempt was made to extract structured financial data from the provided PDF document (Audited Financial Result for quarter and year ended 31st March 2026). However, the document content could not be accessed or retrieved during the research phase. As a result, all requested financial metrics, strategic moves, and management discussion highlights returned null values. 
+
+## Financial Metrics Analysis
+Because the source document was inaccessible, no quantitative data could be extracted for the FY26 reporting period. The table below summarizes the targeted metrics and their current extraction status.
+
+| Metric | Extracted Value | Source Quote |
+|---|---|---|
+| Assets Under Management (INR Cr) | Null | N/A |
+| AUM YoY Growth | Null | N/A |
+| Total Disbursements (INR Cr) | Null | N/A |
+| Net Worth / Total Equity (INR Cr) | Null | N/A |
+| Total Income / Revenue (INR Cr) | Null | N/A |
+| Net Interest Income (INR Cr) | Null | N/A |
+| Profit After Tax (INR Cr) | Null | N/A |
+| PAT YoY Growth | Null | N/A |
+| Gross NPA | Null | N/A |
+| Net NPA | Null | N/A |
+| Net Interest Margin | Null | N/A |
+| Return on Assets | Null | N/A |
+| Return on Equity | Null | N/A |
+| Capital Adequacy Ratio (CRAR) | Null | N/A |
+
+The lack of data prevents any meaningful comparative analysis or assessment of the company's financial health, asset quality, or profitability for the FY26 period. 
+
+## Operational and Strategic Highlights
+
+### Branch and Employee Network
+No data was found regarding the total branch count, employee count, average loan ticket size, or total customer count. 
+
+### Strategic Moves and Management Discussion
+The extraction process yielded no strategic actions (such as capital raises, M&A, leadership changes, geographic expansion, regulatory actions, or new product launches). Furthermore, no Management Discussion & Analysis (MD&A) highlights or earnings-call narrative beats could be summarized from the empty context. 
+
+**Next Steps:** To complete this competitor research report, the source PDF must be manually downloaded from the provided Oracle Cloud storage URL and processed through an alternative OCR or document parsing tool that can successfully read the text and tables within the file.
+
+
+--- SOURCE: ANNUAL REPORT 2024-25
+URL: https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T073517Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=32d3938c9afee7d3cf1e856cbe3631cfc05549d180ee75b76b0c044d287dea45
+
+
+# Competitor Research Report: Vastu Housing Finance FY25
+
+## Executive Summary
+The requested financial metrics and strategic highlights for Vastu Housing Finance's FY25 Annual Report could not be extracted. The source document was either inaccessible during the research phase or contained no extractable text matching the required fields. Consequently, all targeted financial and strategic data points remain null.
+
+## Financial Metrics Analysis
+
+Due to the lack of accessible data in the provided context, a comprehensive financial analysis cannot be performed. The extraction yielded no results for the following critical areas:
+
+### Portfolio and Growth Metrics
+No data was recovered regarding the Assets Under Management (AUM), year-over-year AUM growth, or total disbursements for the FY25 reporting period. Furthermore, operational scale indicators such as total branch count, employee headcount, average ticket size, and total customer count are unavailable.
+
+### Profitability and Capital Adequacy
+Key performance indicators essential for evaluating the financial health of the institution could not be extracted. 
+
+| Metric Category | Targeted Fields | Status |
+| :--- | :--- | :--- |
+| **Income & Profitability** | Total Income, Net Interest Income (NII), Profit After Tax (PAT), PAT YoY Growth | Data Unavailable |
+| **Return Metrics** | Net Interest Margin (NIM), Return on Assets (ROA), Return on Equity (ROE) | Data Unavailable |
+| **Asset Quality** | Gross NPA (GNPA), Net NPA (NNPA) | Data Unavailable |
+| **Capital** | Net Worth, Capital Adequacy Ratio (CRAR) | Data Unavailable |
+
+The absence of these metrics prevents any comparative analysis or assessment of the company's fiscal performance for FY25.
+
+## Strategic Moves and Management Highlights
+
+No strategic initiatives, capital raises, mergers and acquisitions, leadership changes, geographic expansions, or new product launches were identified in the available text. Additionally, Management Discussion & Analysis (MD&A) highlights and earnings narrative beats could not be summarized due to the lack of source material. Future assessments will require direct access to the readable text of the FY25 Annual Report.
+
+
+--- SOURCE: ANNUAL REPORT 2023-24
+URL: https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T073517Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=3e8e7e8dc46b3a8d4412ea222fd2d47668713fa0c406c9998e4a153db3301bae
+
+
+# Vastu Housing Finance FY24 Financial Extraction Report
+
+## Executive Summary
+The requested financial data extraction for Vastu Housing Finance's FY24 Annual Report could not be completed. The research context and search operations yielded no accessible data, citations, or excerpts from the specified document URL. Consequently, all requested financial metrics, strategic moves, and Management Discussion & Analysis (MD&A) highlights are currently unavailable. 
+
+## Financial Metrics Overview
+
+Due to the lack of accessible source material, all target extraction fields have returned null values. Below is the status of the requested data points:
+
+| Metric Category | Specific Field | Extraction Status |
+| :--- | :--- | :--- |
+| **Portfolio & Growth** | AUM (INR Cr) | Data Unavailable |
+| | AUM YoY Growth (%) | Data Unavailable |
+| | Disbursements (INR Cr) | Data Unavailable |
+| **Profitability** | Total Income (INR Cr) | Data Unavailable |
+| | Net Interest Income (INR Cr) | Data Unavailable |
+| | Profit After Tax (INR Cr) | Data Unavailable |
+| | PAT YoY Growth (%) | Data Unavailable |
+| | Net Interest Margin (%) | Data Unavailable |
+| **Asset Quality** | Gross NPA (%) | Data Unavailable |
+| | Net NPA (%) | Data Unavailable |
+| **Return & Capital** | Return on Assets (%) | Data Unavailable |
+| | Return on Equity (%) | Data Unavailable |
+| | CRAR (%) | Data Unavailable |
+| | Net Worth (INR Cr) | Data Unavailable |
+| **Operational Metrics** | Branch Count | Data Unavailable |
+| | Employee Count | Data Unavailable |
+| | Average Ticket Size (INR Lakh) | Data Unavailable |
+| | Customer Count | Data Unavailable |
+
+*Key Takeaway:* Without access to the primary PDF document or secondary search results containing the FY24 financial highlights, no quantitative analysis or competitor benchmarking can be performed at this time.
+
+## Strategic Initiatives and MD&A
+
+### Strategic Moves
+No recent strategic actions—such as capital raises, mergers and acquisitions, leadership changes, geographic expansions, regulatory actions, or new product launches—could be identified from the provided context. 
+
+### Management Discussion & Analysis (MD&A)
+Key narrative beats and management commentary regarding the FY24 reporting period are unavailable. To proceed with this competitor research report, direct access to the Vastu Housing Finance FY24 Annual Report PDF or alternative financial databases is required.
+
+
+=== Aavas Financiers ===
+
+
+--- SOURCE: Financial Result approved by the Board of Directors
+URL: https://www.aavas.in/uploads/pdf/financials-85794283.pdf
+
+# Aavas Financiers Limited Q1 FY26 Performance & Strategic Outlook – Profitability Surge, Capital-Market Moves, and Asset-Quality Strength
+
+## Executive Summary
+
+Aavas Financiers Limited delivered a robust performance for the quarter ended June 30, 2025 (Q1 FY26), characterized by strong profitability, exceptional asset quality, and a pivotal shift in corporate ownership [1]. The company reported a Profit After Tax (PAT) of ₹139.23 Crore (13,923.34 lakh), up from ₹126.10 Crore in the corresponding quarter of the previous year, maintaining a high Net Profit Margin of 22.17% [1]. Asset quality remains a key strength, with Gross Non-Performing Assets (GNPA) at 1.22% and Net Non-Performing Assets (NNPA) at 0.84% [1]. 
+
+Strategically, the most significant development is the acquisition of a 48.96% controlling stake by Aquilo House Pte. Ltd., marking a transition from the previous promoter group [1]. The company is exceptionally well-capitalized, boasting a Capital Risk Adequacy Ratio (CRAR) of 43.20%, far exceeding regulatory requirements, and a robust Liquidity Coverage Ratio of 128.28% [1]. With a net worth of ₹4,509.81 Crore (4,50,980.69 lakh) and active expansion of its co-lending and loan assignment programs, Aavas is well-positioned to leverage its strong balance sheet for accelerated growth in the housing finance sector [1].
+
+## Financial Performance Dashboard
+
+Aavas Financiers demonstrated solid top-line and bottom-line growth during the quarter ended June 30, 2025. Total income reached ₹627.93 Crore (62,793.49 lakh), compared to ₹542.55 Crore (54,255.50 lakh) in the same quarter the previous year [1]. This growth was primarily driven by interest income, which stood at ₹548.94 Crore (54,894.10 lakh) [1]. The company's focus on operational efficiency and margin preservation resulted in a strong Profit Before Tax of ₹179.12 Crore (17,912.86 lakh) and a PAT of ₹139.23 Crore [1].
+
+**Table 1: Core Financial Metrics (Q1 FY26 vs Q1 FY25)**
+
+| Metric | Q1 FY26 (INR Crore) | Q1 FY25 (INR Crore) | YoY Trend |
+| :--- | :--- | :--- | :--- |
+| Total Income | 627.93 | 542.55 | Positive |
+| Interest Income | 548.94 | 479.74 | Positive |
+| Profit Before Tax (PBT) | 179.12 | 160.94 | Positive |
+| Profit After Tax (PAT) | 139.23 | 126.10 | Positive |
+| Net Worth | 4,509.81 | Not Disclosed | N/A |
+
+*Takeaway: The company has successfully expanded its revenue base while maintaining strict control over expenses, leading to a healthy expansion in net profitability and a strong Net Profit Margin of 22.17% [1].*
+
+## Asset-Quality & Risk Profile
+
+The company's credit underwriting standards continue to yield excellent results, keeping non-performing assets at record lows. As of June 30, 2025, the GNPA stood at 1.22%, and the NNPA was 0.84% [1]. The Provision Coverage Ratio (PCR) is maintained at a healthy 57.46% [1]. 
+
+To further optimize its risk profile and free up capital, Aavas actively engaged in loan transfers during the quarter. The company transferred 3,500 loan accounts through assignment, amounting to ₹376.71 Crore (37,671 lakh), retaining a 10% beneficial economic interest [1]. Additionally, it transferred 1,463 loan accounts through co-lending, amounting to ₹249.95 Crore (24,995 lakh), with a 20% retention [1]. Notably, the company did not acquire or transfer any stressed loans during this period [1].
+
+## Capital Structure & Liquidity
+
+Aavas Financiers maintains a highly conservative and robust capital structure. The Capital Risk Adequacy Ratio (CRAR) stands at an impressive 43.20%, providing massive headroom for future asset growth and acting as a strong buffer against macroeconomic shocks [1]. The Debt-Equity Ratio is comfortable at 3.17, and the Total Debts to Total Assets ratio is 0.74 [1].
+
+Liquidity remains a strong suit, with a Liquidity Coverage Ratio (LCR) of 128.28%, well above the regulatory minimum [1]. The company has actively tapped the debt markets to optimize its funding costs.
+
+**Table 2: Recent Debt Issuances and Utilization**
+
+| Instrument Type | Date of Raising | Amount Raised (INR Crore) | Funds Utilized (INR Crore) | Deviation |
+| :--- | :--- | :--- | :--- | :--- |
+| NCD (Private Placement) | Oct 29, 2024 | 630.00 | 292.46 | No |
+| NCD (Private Placement) | Apr 28, 2025 | 100.00 | 100.00 | No |
+| NCD (Private Placement) | Apr 28, 2025 | 100.00 | 21.10 | No |
+| NCD (Private Placement) | Jun 26, 2025 | 200.00 | NIL | No |
+
+*Takeaway: The company has successfully raised ₹1,030 Crore through NCDs over recent months, ensuring ample liquidity to fund its disbursement pipeline while maintaining 100% security cover on its secured listed NCDs [1].*
+
+## Ownership & Governance Changes
+
+A landmark event for the company occurred during the quarter with a complete shift in promoter control. On August 10, 2024, share sale agreements were executed, leading to an open offer by Aquilo House Pte. Ltd. [1]. As of June 30, 2025, Aquilo House Pte. Ltd. acquired an aggregate of 38,757,228 equity shares, representing 48.96% of the paid-up share capital [1]. 
+
+Consequently, the previous sellers (Lake District Holdings Limited, Partners Group ESCL Limited, and Partners Group Private Equity) ceased to be promoters, and Aquilo House Pte. Ltd. assumed control and was reclassified as the new promoter [1]. This transition is expected to bring new strategic perspectives and potential governance realignments.
+
+## Strategic Transactions & Business Model Evolution
+
+Beyond the ownership change, Aavas is evolving its business model to diversify income streams and align employee interests. The company is seeing a shift toward fee-based income, with fees and commission income reaching ₹23.24 Crore (2,324.71 lakh) for the quarter [1]. Furthermore, the gain on derecognition of financial instruments under the amortized cost category contributed a significant ₹47.49 Crore (4,749.09 lakh) to the revenue [1].
+
+To align talent with long-term shareholder value, the company allotted 2,220 equity shares to eligible employees under the Employee Stock Option Plan at a premium price of ₹1,580.20 per share, and an additional 1,020 shares under the Performance Stock Option Plan at ₹10.00 per share [1].
+
+## Management Discussion & Analysis Highlights
+
+While a formal MDA section is not explicitly detailed in the financial results document, the underlying narrative from the data highlights several key strategic beats:
+1. **Profitability and Margin Strength:** The company is successfully maintaining a high Net Profit Margin (22.17%) despite broader market pressures [1].
+2. **Asset Quality Discipline:** Strict underwriting has kept GNPA (1.22%) and NNPA (0.84%) at industry-leading lows [1].
+3. **Capital Abundance:** A CRAR of 43.20% provides a massive runway for unhindered growth [1].
+4. **Successful Transition:** The seamless acquisition of a 48.96% stake by Aquilo House Pte. Ltd. marks a new era of backing for the firm [1].
+
+## Operational Footprint
+
+The financial results document focuses primarily on standalone financial metrics and does not disclose specific operational footprint details such as total branch count, total employee count, average ticket size, or total customer base for the quarter ended June 30, 2025 [1]. The company remains primarily engaged in the business of housing finance within India, operating as a single reportable segment [1].
+
+## Outlook & Strategic Recommendations
+
+Aavas Financiers enters the remainder of FY26 from a position of immense financial strength. The combination of high capital adequacy, low non-performing assets, and a fresh controlling shareholder provides a unique catalyst for accelerated market penetration.
+
+**Strategic Recommendations:**
+
+1. **Leverage Capital for Tier-2/Tier-3 Expansion:** With a CRAR of 43.20% [1], the company is over-capitalized. Management should aggressively deploy this capital to expand the loan book, particularly in underserved semi-urban and rural markets where yields are higher, thereby optimizing the Return on Equity (ROE).
+
+
+
+--- SOURCE: Financial Result approved by the Board of Directors
+URL: https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf
+
+# Aavas Financiers FY 2025 Board-Approved Results – Growth, Quality & Capital Strategies
+
+## 1. Executive Summary
+
+Aavas Financiers has delivered a robust financial performance for the fiscal year ended March 31, 2025, characterized by significant asset expansion, strong profitability, and stable asset quality. Total assets grew to ₹18,61,847.40 lakh, supported by a solid net worth of ₹4,36,083.23 lakh [1]. The company achieved a Profit After Tax (PAT) of ₹57,410.82 lakh, reflecting disciplined credit underwriting and operational efficiency [1]. 
+
+Strategically, the Board has positioned the company for continued growth by approving an ₹8,500 crore limit for Non-Convertible Debentures (NCDs) to diversify funding sources [1]. While asset quality remains pristine with Gross NPA at 1.08% and Net NPA at 0.73%, rising finance costs necessitate careful margin management [1]. The leadership continuity, underscored by the re-appointment of Mr. Sandeep Tandon as Chairperson, provides a stable foundation for executing these strategic initiatives [1].
+
+## 2. Financial Performance Overview
+
+The FY 2025 results demonstrate strong top-line growth translating effectively into bottom-line profitability, driven primarily by core lending operations.
+
+### 2.1 Revenue & Income Breakdown
+
+Total income for FY 2025 reached ₹2,35,841.50 lakh, a substantial increase from ₹2,02,029.64 lakh in the previous year [1]. The revenue mix remains heavily concentrated in core operations, with interest income contributing ₹2,01,767.67 lakh [1]. Non-interest income streams, including fees and commission income (₹10,753.74 lakh) and net gain on fair value changes (₹2,185.55 lakh), provided supplementary revenue [1].
+
+### 2.2 Profitability Metrics
+
+Profitability metrics highlight the company's operational leverage and pricing power.
+
+| Metric | FY 2025 (₹ in Lakh) | FY 2024 (₹ in Lakh) | Trend |
+| :--- | :--- | :--- | :--- |
+| **Total Income** | 2,35,841.50 | 2,02,029.64 | Upward |
+| **Finance Costs** | 1,00,746.84 | 82,836.07 | Upward |
+| **Profit Before Tax** | 73,258.91 | 62,444.98 | Upward |
+| **Profit After Tax (PAT)** | 57,410.82 | 49,069.42 | Upward |
+| **Basic EPS (₹)** | 72.54 | 62.03 | Upward |
+
+*Takeaway: The ~17% growth in PAT outpaced the rise in finance costs, indicating effective yield management and cost control despite a higher interest rate environment [1].*
+
+## 3. Balance Sheet Strength
+
+Aavas Financiers maintains a highly capitalized and liquid balance sheet, providing a strong buffer against macroeconomic headwinds.
+
+### 3.1 Asset Composition & Growth
+
+Total assets expanded to ₹18,61,847.40 lakh as of March 31, 2025, up from ₹16,51,945.36 lakh in the previous year [1]. The loan portfolio remains the dominant asset class, growing to ₹16,22,970.93 lakh [1]. This expansion was supported by a strategic deployment of capital and robust disbursement momentum throughout the fiscal year.
+
+### 3.2 Equity & Net Worth
+
+The company's net worth stands at a formidable ₹4,36,083.23 lakh, comprising equity share capital of ₹7,915.37 lakh and other equity of ₹4,28,167.86 lakh [1]. This strong equity base supports a conservative debt-to-equity ratio of 3.18, providing ample headroom for future leverage and portfolio expansion [1].
+
+## 4. Asset Quality & Credit Risk
+
+Asset quality remains a key differentiator for Aavas Financiers, reflecting stringent underwriting standards in its target segments.
+
+| Asset Quality Metric | FY 2025 |
+| :--- | :--- |
+| **Gross Non-Performing Assets (GNPA)** | 1.08% |
+| **Net Non-Performing Assets (NNPA)** | 0.73% |
+| **Provision Coverage Ratio** | 60.87% |
+
+*Takeaway: The stability of GNPA at 1.08% and NNPA at 0.73% underscores the resilience of the borrower base and the effectiveness of the company's collection mechanisms [1].*
+
+## 5. Capital Adequacy & Liquidity
+
+The company's capital and liquidity positions remain well above regulatory requirements, ensuring operational stability. The Capital Risk Adequacy Ratio (CRAR) stands at a robust 44.50%, providing significant capacity to absorb potential credit shocks and fund future growth [1]. The Liquidity Coverage Ratio (LCR) for the year ended March 31, 2025, was reported at 128.12%, indicating sufficient high-quality liquid assets to meet short-term obligations [1].
+
+## 6. Strategic Moves & Governance
+
+The Board of Directors executed several key strategic and governance actions during the April 24, 2025 meeting to align with long-term growth objectives.
+
+### 6.1 Capital Raising Initiatives
+
+To support the expanding loan book and optimize the cost of funds, the Board approved an overall limit of ₹8,500 crore for the issuance of Non-Convertible Debentures (NCDs) [1]. The Executive Committee has been authorized to issue these securities in multiple tranches through private placement, subject to shareholder approval [1].
+
+### 6.2 Shareholder-Centric Policies & Governance
+
+Governance and employee alignment were strengthened through key appointments and equity issuances:
+* **Leadership:** Mr. Sandeep Tandon was re-appointed as Chairperson of the Board of Directors [1].
+* **Auditors:** M/s Chandrasekaran Associates were appointed as Secretarial Auditors for a five-year term commencing FY 2025-26 [1].
+* **Employee Equity:** The company allotted 3,250 and 1,200 equity shares under the Employee Stock Option Plan at a premium, alongside 9,510 shares under the Performance Stock Option Plan [1].
+
+## 7. Risks & Mitigation
+
+While the financial performance is strong, the primary risk lies in the rising cost of funds. Finance costs increased to ₹1,00,746.84 lakh in FY 2025 [1]. To mitigate potential Net Interest Margin (NIM) compression, the company must successfully execute its ₹8,500 crore NCD issuance strategy to lock in favorable long-term rates and diversify its liability profile [1].
+
+## 8. Recommendations & Action Plan
+
+Based on the FY 2025 results, the following strategic actions are recommended:
+1. **Execute NCD Issuance:** Rapidly operationalize the ₹8,500 crore NCD authorization to optimize the liability mix and secure long-term funding before potential market rate shifts.
+2. **Monitor Margin Pressure:** Implement dynamic pricing models on new disbursements to pass on rising finance costs while remaining competitive in the core housing finance market.
+3. **Leverage Capital Base:** Utilize the robust 44.50% CRAR to aggressively capture market share in high-yielding, underpenetrated geographic segments without compromising the pristine 1.08% GNPA metric.
+
+## References
+
+1. *Fetched web page*. https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf
+
+
+--- SOURCE: Financial Result approved by the Board of Directors
+URL: https://www.aavas.in/uploads/pdf/finaloutcome25042024-1252982600.pdf
+
+# Aavas Financiers FY24 Performance Review & Strategic Outlook
+
+## 1. Executive Summary
+
+Aavas Financiers demonstrated robust growth and stable asset quality in FY24, balancing aggressive loan book expansion with disciplined risk management. The company's financial results highlight significant momentum in core lending operations, though operational cash outflows suggest a need for optimized working capital management. 
+
+Key strategic insights include:
+* **Robust Loan Portfolio Expansion**: Loans grew to ₹14,004.37 Cr (14,00,436.68 lakh) versus ₹11,476.27 Cr a year earlier [1]. The company should prioritize scaling credit underwriting capacity while tightening risk-grade monitoring.
+* **Strong Profitability Momentum**: Profit After Tax (PAT) for the year reached ₹490.69 Cr (49,069.42 lakh), up from ₹430.07 Cr in FY23 [1]. 
+* **Low Asset Quality Amid Growth**: Gross NPA (GNPA) stayed at 0.94% and Net NPA (NNPA) at 0.67% [1]. 
+* **Solid Capital Cushion**: The Capital Risk Adequacy Ratio (CRAR) was reported at 43.99%, well above regulatory minimums [1].
+* **Operational Cash Flow Pressure**: Net cash used in operating activities was -₹1,98,659.13 lakh, with the end-of-year cash position falling to ₹2,055.80 lakh [1].
+
+## 2. Financial Performance Overview
+
+The FY24 financial results reflect a strong top-line and bottom-line trajectory, driven primarily by core interest income and effective cost management.
+
+### 2.1 Assets Under Management & Loan Book
+
+The company's loan book expanded significantly, reaching ₹14,004.37 Cr (14,00,436.68 lakh) by the end of FY24, compared to ₹11,476.27 Cr (11,47,627.45 lakh) in FY23 [1]. This growth underscores Aavas's successful penetration in its target housing finance markets.
+
+### 2.2 Income Statement Highlights
+
+Total income for FY24 stood at ₹2,020.30 Cr (2,02,029.64 lakh), a substantial increase from ₹1,610.15 Cr (1,61,014.56 lakh) in the previous year [1]. Interest income remains the dominant revenue driver, contributing ₹1,734.65 Cr (1,73,465.04 lakh) [1]. 
+
+| Metric (FY24) | Amount (₹ Lakh) | Amount (₹ Cr Equivalent) |
+| :--- | :--- | :--- |
+| Total Income | 2,02,029.64 | 2,020.30 |
+| Interest Income | 1,73,465.04 | 1,734.65 |
+| Profit Before Tax | 62,444.98 | 624.45 |
+| Profit After Tax (PAT) | 49,069.42 | 490.69 |
+
+*The income statement highlights a strong reliance on interest income, suggesting future opportunities to diversify into fee-based ancillary services.*
+
+## 3. Asset Quality & Risk Profile
+
+Despite the rapid expansion of the loan portfolio, Aavas Financiers has maintained strict control over its asset quality, a critical indicator of sustainable growth in the housing finance sector.
+
+### 3.1 NPA Trends & Drivers
+
+Asset quality metrics remained highly stable. The Gross Non-Performing Assets (GNPA) ratio stood at 0.94%, and the Net Non-Performing Assets (NNPA) ratio was 0.67% [1]. The provision coverage ratio was reported at 64.33% [1].
+
+### 3.2 Capital Adequacy & Liquidity
+
+The company is exceptionally well-capitalized to fund its next phase of expansion. The Capital Risk Adequacy Ratio (CRAR) is 43.99%, and the Liquidity Coverage Ratio (LCR) is 106.14% [1]. 
+
+## 4. Capital Structure & Funding Strategy
+
+Aavas's balance sheet reflects a conservative yet growth-oriented capital structure, utilizing a mix of equity, debt securities, and strategic employee incentives.
+
+### 4.1 Debt Composition & Cost
+
+The company's net worth at the end of FY24 was ₹3,773.32 Cr (3,77,331.52 lakh) [1]. The debt-to-equity ratio stands at 3.27, indicating a balanced leverage approach [1]. Borrowings (other than debt securities) totaled ₹10,932.98 Cr (10,93,298.26 lakh) [1].
+
+### 4.2 Equity Actions & ESOP
+
+To align employee interests with long-term value creation, Aavas allotted 35,302 equity shares at INR 215.25 and 47,529 equity shares at INR 328.00 to eligible employees under its Employee Stock Option Plan during FY24 [1].
+
+## 5. Operational Efficiency & Cash Flow
+
+While profitability is strong, the cash flow statement reveals the working capital intensity of the company's rapid loan disbursement strategy.
+
+### 5.1 Cash Flow Statement Deep-Dive
+
+Net cash used in operating activities was significant at -₹1,98,659.13 lakh, primarily driven by the increase in loans (-₹2,54,636.13 lakh) [1]. This was offset by net cash from financing activities totaling ₹2,47,728.37 lakh, largely from proceeds from borrowings [1]. Cash and cash equivalents at the end of the year stood at ₹2,055.80 lakh [1].
+
+## 6. Strategic Moves & Growth Initiatives
+
+Management has actively utilized capital markets and portfolio management tactics to optimize the balance sheet and secure funding.
+
+### 6.1 Capital Raising & Funding
+
+Aavas maintained at least 100% security cover on its secured listed non-convertible debentures (NCDs) as of March 31, 2024, by creating an exclusive charge on specific book debts and receivables [1]. 
+
+### 6.2 Portfolio Management Tactics
+
+During FY24, the company executed significant loan assignments, transferring 16,934 loans amounting to ₹1,38,107 lakh [1]. The company retained a 10% beneficial economic interest (MRR) and maintained 100% tangible security coverage on these assigned loans [1].
+
+## References
+
+1. *Fetched web page*. https://www.aavas.in/uploads/pdf/finaloutcome25042024-1252982600.pdf
+
+
+=== Aptus Value Housing Finance ===
+
+
+--- SOURCE: Annual Report 2024-2025
+URL: https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf
+
+{
+ "aum_inr_cr": 10865,
+ "aum_inr_cr_quote": "The consolidated AUM stood at ₹10,865 crore as of March 31, 2025",
+ "aum_yoy_pct": 25,
+ "aum_yoy_pct_quote": "marking a 25% YoY increase over ₹8,722 crore in FY24.",
+ "disbursements_inr_cr": 3604,
+ "disbursements_inr_cr_quote": "Loan Disbursements ( ` crore) 3,604 vs 3,127",
+ "net_worth_inr_cr": 4317,
+ "net_worth_inr_cr_quote": "Net Worth ( ` crore) 4,317 vs 3,768",
+ "total_income_inr_cr": 1798,
+ "total_income_inr_cr_quote": "increase in total income, which rose from ₹1,409 crore to ₹1,798 crore.",
+ "nii_inr_cr": null,
+ "nii_inr_cr_quote": null,
+ "pat_inr_cr": 751,
+ "pat_inr_cr_quote": "Net profit grew by 23% to ₹751 crore from ₹612 crore in FY24.",
+ "pat_yoy_pct": 23,
+ "pat_yoy_pct_quote": "Net profit grew by 23% to ₹751 crore from ₹612 crore in FY24.",
+ "gnpa_pct": 1.19,
+ "gnpa_pct_quote": "Gross NPAs increased slightly to 1.19% from 1.07%",
+ "nnpa_pct": 0.89,
+ "nnpa_pct_quote": "net NPAs rose to 0.89% from 0.80%",
+ "nim_pct": 12.96,
+ "nim_pct_quote": "Net Interest Margin (NIM) stood at 12.96% for FY25",
+ "roa_pct": 7.73,
+ "roa_pct_quote": "Return on Assets (ROA) stood at 7.73%, compared to 8.00% in FY24.",
+ "roe_pct": 18.76,
+ "roe_pct_quote": "The Return on Equity (ROE) improved to 18.76% in FY25 from 17.25%",
+ "crar_pct": 71,
+ "crar_pct_quote": "The company maintained a conservative approach with a capital adequacy ratio of 71%",
+ "branches": 300,
+ "branches_quote": "Aptus closed FY25 with a network of 300 branches, up from 262 in FY24",
+ "employees": 3351,
+ "employees_quote": "Total workforce as of March 31, 2025: 3,351 employees",
+ "avg_ticket_size_inr_lakh": null,
+ "avg_ticket_size_inr_lakh_quote": null,
+ "customers": 161597,
+ "customers_quote": "In FY25, Aptus reached a base of 1,61,597 live customers, marking a 21% increase over FY24.",
+ "reporting_period": "FY25",
+ "strategic_moves": [
+ {
+ "date": "2024-04",
+ "description": "Launch of mobile-first Lead Origination System (LOS)",
+ "quote": "launch of a mobile-first, fully digital Lead Origination System (LOS) in April 2024."
+ },
+ {
+ "date": null,
+ "description": "Geographic expansion into Maharashtra and Odisha",
+ "quote": "net addition of 38 branches, including 10 new branches in the new markets of Maharashtra and Odisha."
+ }
+ ],
+ "mda_highlights": [
+ "AUM grew 25% YoY to ₹10,865 crore, driven by branch expansion and a fully digital Loan Origination System.",
+ "Asset quality saw a slight dip with GNPA at 1.19% and NNPA at 0.89%, though provision coverage remains steady at 25%.",
+ "NIM compressed slightly to 12.96% due to rising borrowing costs, but ROE improved to 18.76%."
+ ]
+}
+
+
+--- SOURCE: Annual Report 2023-2024
+URL: https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf
+
+# Aptus Value Housing Finance FY24: Growth, Profitability, and Expansion Insights
+
+## Executive Summary
+
+Aptus Value Housing Finance delivered exceptional double-digit growth across its assets, earnings, and operational reach in FY24, solidifying its position in the affordable housing finance sector. The company's Assets Under Management (AUM) surged to ₹8,722 crores, representing a robust 29% year-on-year increase [1]. This growth was fueled by a 31% jump in loan disbursements, which reached ₹3,127 crores [1]. Profitability mirrored this expansion, with Profit After Tax (PAT) climbing 22% to ₹612 crores on the back of ₹1,417 crores in total income [1]. 
+
+Crucially, Aptus achieved this rapid expansion while improving its asset quality. Gross Non-Performing Assets (GNPA) improved to 1.07%, and Net Non-Performing Assets (NNPA) fell to 0.80% [1]. The company maintains a formidable capital buffer, with a Capital Adequacy Ratio (CRAR) of 73.03%, well above regulatory requirements [1]. With the addition of 31 new branches and a 25% increase in its customer base to 133,499, Aptus has established a strong platform for sustained, profitable growth in underserved Tier-2, Tier-3, and Tier-4 markets [1].
+
+## Financial Performance
+
+Aptus demonstrated strong top-line and bottom-line momentum in FY24, driven by efficient operations and a broadening customer base. Total income grew by 25% to ₹1,417 crores, up from ₹1,134 crores in FY23 [1]. This revenue expansion was primarily supported by a 25% increase in interest income, which reached ₹1,320 crores, alongside fee and other income growth from ₹75 crores to ₹97 crores [1]. 
+
+The company's profitability metrics remain highly attractive. Profit Before Tax (PBT) increased by 21% to ₹793 crores, while PAT grew by 22% to ₹612 crores [1]. This earnings growth translated into strong shareholder returns, with Return on Equity (ROE) improving to 17.25% from 16.34% in the previous year, and Return on Assets (ROA) remaining robust at 8.00% [1].
+
+| Metric | FY23 | FY24 | YoY Growth |
+| :--- | :--- | :--- | :--- |
+| **Assets Under Management (AUM)** | ₹6,738 cr | ₹8,722 cr | 29% |
+| **Disbursements** | ₹2,395 cr | ₹3,127 cr | 31% |
+| **Total Income** | ₹1,134 cr | ₹1,417 cr | 25% |
+| **Profit After Tax (PAT)** | ₹503 cr | ₹612 cr | 22% |
+| **Net Worth** | ₹3,339 cr | ₹3,768 cr | 13% |
+
+*The 29% AUM growth and 31% disbursement surge highlight Aptus's successful market penetration, while the 22% PAT growth confirms the scalability and profitability of its lending model [1].*
+
+## Asset Quality & Risk Metrics
+
+Maintaining a high-quality loan book remains a core priority for Aptus, and FY24 results indicate highly effective credit risk management despite rapid portfolio growth. The company successfully reduced its non-performing assets, with the GNPA ratio improving to 1.07% (down from 1.15% in FY23) and the NNPA ratio improving to 0.80% (down from 0.86%) [1]. 
+
+These improvements are attributed to stringent credit evaluation processes, robust risk management practices, and highly effective collection strategies [1]. Notably, Aptus achieved a remarkable collection efficiency of 100.15% in Q4 FY24, underscoring the strength of its collections infrastructure [1]. The Net Interest Margin (NIM) remained healthy at 13.45%, reflecting efficient asset-liability management [1].
+
+| Risk & Margin Metric | FY23 | FY24 | Trend |
+| :--- | :--- | :--- | :--- |
+| **Gross NPA (GNPA)** | 1.15% | 1.07% | Improved (-0.08 pp) |
+| **Net NPA (NNPA)** | 0.86% | 0.80% | Improved (-0.06 pp) |
+| **Net Interest Margin (NIM)** | 13.88% | 13.45% | Slight Compression |
+| **Provision Coverage Ratio (PCR)** | 1.06% | 1.06% | Stable |
+| **Capital Adequacy Ratio (CRAR)** | 77.38% | 73.03% | Moderated but highly robust |
+
+*Asset quality improvements alongside a 100.15% Q4 collection efficiency validate Aptus's underwriting standards, even as the company aggressively expands its loan book [1].*
+
+## Operational Expansion
+
+Aptus significantly scaled its physical footprint in FY24 to capture growing demand in low- and middle-income segments. The company expanded its geographic presence by opening 31 new branches, bringing the total network to 262 branches across 6 states and 1 Union territory [1]. A key milestone in this expansion was the opening of its first branch in Maharashtra, signaling a strategic push into new regional markets [1].
+
+Branch maturity plays a critical role in AUM generation. As of March 31, 2024, branches less than 1 year old averaged ₹4.47 crore in AUM; branches 1-3 years old averaged ₹22.03 crore; and branches older than 3 years averaged ₹41.63 crore [1]. This progressive increase demonstrates the company's ability to optimize operational efficiency and generate higher revenue as branches mature [1].
+
+| Branch Vintage | Average AUM per Branch (FY24) | Strategic Implication |
+| :--- | :--- | :--- |
+| **< 1 Year Old** | ₹4.47 crore | Initial market seeding and customer acquisition phase |
+| **1 - 3 Years Old** | ₹22.03 crore | Rapid scaling and deepening of local market penetration |
+| **> 3 Years Old** | ₹41.63 crore | Mature cash-generation engines driving core profitability |
+
+*The clear correlation between branch age and AUM output provides a predictable growth runway as the 31 newly added branches mature over the next 12-36 months [1].*
+
+## Capital Structure & Adequacy
+
+Aptus maintains a fortress balance sheet that provides substantial headroom for future growth. The company's net worth increased by 13% to ₹3,768 crores in FY24, up from ₹3,339 crores in FY23 [1]. To fund its expanding loan portfolio, borrowings rose to ₹5,200 crores from ₹3,786 crores, resulting in a debt-to-equity ratio of 1.38:1 (up from 1.14:1 in FY23) [1].
+
+Despite the increase in leverage, capital adequacy remains exceptionally strong. The CRAR stood at 73.03% at the end of FY24, consisting almost entirely of Tier I capital (72.44%) [1]. This is vastly superior to the regulatory minimum requirements set by the NHB/RBI, ensuring the company has a solid financial foundation to absorb potential macroeconomic shocks and fund aggressive expansion without immediate equity dilution [1]. Furthermore, Aptus maintains significant liquidity, including ₹620 crores in undrawn sanctions from banks and the NHB [1].
+
+## Customer & Market Reach
+
+Aptus's core mission of serving low- and middle-income groups, self-employed individuals, and small business owners yielded significant customer growth in FY24. The total customer base expanded by 25% to reach 133,499 customers [1]. During the year, the company's disbursements of ₹3,127 crores facilitated affordable housing solutions for 37,535 families [1].
+
+The company's strategy relies on understanding the unique financial circumstances of informal segment borrowers who are often underserved by traditional banks. By offering flexible repayment options, competitive interest rates, and minimal documentation requirements—supported by an average ticket size that makes housing finance accessible—Aptus has successfully entrenched itself in rural and semi-urban markets [1].
+
+## Strategic Initiatives & Outlook
+
+Aptus executed several key strategic moves in FY24 to future-proof its operations and sustain its growth trajectory:
+
+* **Geographic Expansion (FY24):** Opened 31 new branches, expanding the network to 262 locations. *Quote: "During FY24, we expanded our geographic footprint by opening 31 new branches, including our first branch in Maharashtra."* [1]
+* **Leadership & Talent Enhancement (FY24):** Bolstered operational support structures. *Quote: "We also focused on strengthening our middle management across key IT, credit, technical, legal, and collections functions to support our growing operations."* [1]
+* **Digital Transformation (FY24):** Advanced paperless lending and analytics. *Quote: "Widespread adoption of data-driven customer-centric digital technologies lead to paperless lending processes."* [1]
+
+Looking ahead, management's outlook foc
+
+
+--- SOURCE: Annual Report 2022-2023
+URL: https://aptusindia.s3.amazonaws.com/Aptus_AR_2022-23.pdf
+
+# Aptus Value Housing Finance FY23 Competitor Research Report
+
+## Executive Summary
+
+Aptus Value Housing Finance demonstrated exceptional growth and operational efficiency in FY23, solidifying its position in the affordable housing finance sector. The company achieved a 30% year-on-year growth in Assets Under Management (AUM), reaching ₹6,738 Crores [1]. This expansion was driven by a 46% surge in loan disbursements, which totaled ₹2,394 Crores for the fiscal year [1]. 
+
+Strategically, Aptus is prioritizing deep market penetration in southern states while initiating geographical diversification, notably entering Odisha and planning expansion into Maharashtra [1]. The company maintained robust profitability despite interest rate headwinds, sustaining a Return on Assets (ROA) of 8.44% and expanding its Return on Equity (ROE) to 16.34% [1]. Asset quality remains a strong competitive advantage, with Gross Non-Performing Assets (GNPA) improving to 1.15% [1].
+
+## Financial Performance & Profitability
+
+Aptus delivered stellar financial results in FY23, characterized by high growth in both top-line income and bottom-line profitability. The company successfully navigated a challenging macroeconomic environment marked by rising interest rates.
+
+| Financial Metric | FY23 Value | YoY Growth / Context |
+| :--- | :--- | :--- |
+| **Assets Under Management (AUM)** | ₹6,738 Cr | >30% YoY growth [1] |
+| **Total Disbursements** | ₹2,394 Cr | 46% YoY increase [1] |
+| **Total Income** | ₹1,129 Cr | 34% YoY growth [1] |
+| **Profit After Tax (PAT)** | ₹503 Cr | 36% YoY growth [1] |
+| **Net Worth** | ₹3,339 Cr | Strong capital base [1] |
+| **Return on Assets (ROA)** | 8.44% | Consistent year-on-year [1] |
+| **Return on Equity (ROE)** | 16.34% | Increased from 14.45% in FY22 [1] |
+| **Spreads (NIM proxy)** | 14.3% | Increased by 65 basis points [1] |
+
+The 36% growth in Profit After Tax outpaced the 34% growth in total income, indicating strong operational leverage and cost management [1]. Furthermore, the ability to expand spreads by 65 basis points to 14.3% during a period of significant interest rate headwinds highlights Aptus's pricing power and effective liability management [1].
+
+## Asset Quality & Risk Management
+
+Aptus maintained stringent credit risk management protocols, resulting in improved asset quality metrics across the board. The company achieved a collection efficiency of over 100%, which directly contributed to a reduction in soft bucket outstanding and overdues [1].
+
+| Asset Quality Metric | FY23 Value | FY22 Value | Trend |
+| :--- | :--- | :--- | :--- |
+| **Gross NPA (GNPA)** | 1.15% | 1.19% | Improved [1] |
+| **Net NPA (NNPA)** | 0.86% | 0.88% | Improved [1] |
+| **30+ Days Past Due (DPD)** | 5.90% | 9.91% | Significant Improvement [1] |
+| **Provision Coverage Ratio** | 1.06% | 0.80% | Strengthened [1] |
+
+The sharp reduction in the 30+ DPD rate from 9.91% to 5.90% is a critical leading indicator of portfolio health, suggesting that future NPA formation will likely remain subdued [1]. The company also prudently increased its provision coverage ratio, providing a stronger buffer against potential future credit losses [1].
+
+## Operational Scale & Strategic Expansion
+
+Aptus's growth is underpinned by a deliberate strategy of deep market penetration rather than thin, pan-India expansion. The company focuses on clustering branches to ensure comprehensive carpet coverage, aiming for a branch every 70 to 80 kilometers in its core operating states [1].
+
+### Network and Customer Base Expansion
+
+During FY23, Aptus expanded its physical footprint and customer reach significantly:
+* **Branch Network:** Added 23 new branches, bringing the total network to 231 branches across Tamil Nadu, Andhra Pradesh, Telangana, Karnataka, and Odisha [1].
+* **Customer Base:** The active customer base grew by 28% year-on-year, exceeding 107,000 live customers [1].
+* **Human Capital:** The company expanded its workforce to 2,405 employees to support its growing operations [1].
+
+### Geographic Diversification
+
+While maintaining its stronghold in the South, Aptus has initiated strategic geographic diversification. The company successfully commenced operations in Odisha and is actively planning to add new branches in Maharashtra [1]. This targeted expansion allows Aptus to tap into new growth markets while applying its proven, localized underwriting and collection models.
+
+## Management Discussion & Analysis (MD&A) Highlights
+
+The management's narrative for FY23 centers on execution, resilience, and sustainable growth. Key strategic takeaways from the MD&A include:
+
+* **Robust Portfolio Expansion:** AUM grew by over 30% to ₹6,738 Crores, driven by a 46% surge in disbursements (₹2,394 Crores), underscoring strong demand in the affordable housing segment [1].
+* **Exceptional Capital Utilization:** Management emphasized the company's industry-leading return metrics, with ROA holding steady at 8.44% and ROE rising to 16.34%, reflecting highly efficient capital allocation [1].
+* **Asset Quality Resilience:** Despite macroeconomic pressures, proactive collection efforts improved asset quality, bringing Gross NPA down to 1.15% and Net NPA to 0.86% [1].
+* **Strategic Network Growth:** The addition of 23 new branches (totaling 231) aligns with the company's strategy of deep market penetration and localized customer engagement [1].
+
+## References
+
+1. *Fetched web page*. https://aptusindia.s3.amazonaws.com/Aptus_AR_2022-23.pdf
+
+
+=== Home First Finance ===
+
+
+--- SOURCE: Investor Presentation
+URL: https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf
+
+{
+ "aum_inr_cr": 15878,
+ "aum_inr_cr_quote": "Our Assets Under Management (AUM) grew to ₹ 15,878 crore",
+ "aum_yoy_pct": 24.9,
+ "aum_yoy_pct_quote": "registering a robust 24.9% YoY and 6.4% QoQ growth.",
+ "disbursements_inr_cr": 5423.6,
+ "disbursements_inr_cr_quote": "Loan disbursals... 54,236",
+ "net_worth_inr_cr": 4356.5,
+ "net_worth_inr_cr_quote": "Net Worth... 43,565",
+ "total_income_inr_cr": 1922.72,
+ "total_income_inr_cr_quote": "Total Income... 19,227.2",
+ "nii_inr_cr": 783.81,
+ "nii_inr_cr_quote": "Net Interest Income... 7,838.1",
+ "pat_inr_cr": 540,
+ "pat_inr_cr_quote": "For FY26, Profit After Tax (PAT) stood at ₹ 540 crore",
+ "pat_yoy_pct": 41.4,
+ "pat_yoy_pct_quote": "Profit After Tax (PAT) stood at ₹ 540 crore, 41.4% YoY",
+ "gnpa_pct": 1.8,
+ "gnpa_pct_quote": "GNPA at 1.8% (improved by 20bps QoQ)",
+ "nnpa_pct": 1.4,
+ "nnpa_pct_quote": "Net Stage 3 assets / Net NPA (3)... 1.4%",
+ "nim_pct": 5.7,
+ "nim_pct_quote": "Net Interest Margin... 5.7%",
+ "roa_pct": 3.9,
+ "roa_pct_quote": "Profit after tax on average total assets (ROA)... 3.9%",
+ "roe_pct": 15.7,
+ "roe_pct_quote": "translating into a Return on Equity (RoE) of 15.7%",
+ "crar_pct": 44.1,
+ "crar_pct_quote": "CRAR (%)... 44.1%",
+ "branches": 171,
+ "branches_quote": "taking the total to 171 branches and 373 touchpoints.",
+ "employees": 1855,
+ "employees_quote": "taking total headcount to 1,855.",
+ "avg_ticket_size_inr_lakh": 12.0,
+ "avg_ticket_size_inr_lakh_quote": "ATS: 12.0 L",
+ "customers": 139171,
+ "customers_quote": "1,39,171 Customers",
+ "reporting_period": "FY26 Q4",
+ "strategic_moves": [
+ {
+ "date": "2026-03",
+ "description": "Expanded branch network",
+ "quote": "During FY26, we expanded our network by adding 16 branches and 12 touchpoints"
+ },
+ {
+ "date": null,
+ "description": "Raised capital through QIP",
+ "quote": "Raised ₹ 1,250 Cr through QIP"
+ },
+ {
+ "date": null,
+ "description": "NCD investment by IFC",
+ "quote": "₹ 2,800 Mn NCD investment by IFC – a step towards sustainability and green financing"
+ }
+ ],
+ "mda_highlights": [
+ "AUM grew to ₹ 15,878 crore, registering a robust 24.9% YoY and 6.4% QoQ growth.",
+ "Disbursement grew by 23.5% YoY and 19.3% QoQ, to an all time high of ₹ 1,572 Crore.",
+ "Asset quality strengthened materially, driving a meaningful reduction in GNPA to 1.8%.",
+ "Q4 Profit after Tax grew by 42.7% YoY and 6.6% QoQ to ₹ 149 Crore.",
+ "Well positioned to deliver ~25% YoY AUM growth in FY27 driven by distribution expansion and tech integration."
+ ]
+}
+
+
+--- SOURCE: Annual Report 2024-25
+URL: https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf
+
+# Home First FY 25 Competitive Snapshot: Growth Drivers, Profitability Upside & Capital-Strength Risks
+
+## Executive Summary
+
+Home First Finance Company India Ltd. delivered a robust financial and operational performance in FY25, characterized by significant portfolio expansion and sustained profitability. Assets Under Management (AUM) surged by 31.1% year-over-year to reach ₹12,712.72 Crores, driven by a 21.2% increase in annual disbursements to ₹4,805 Crores [1]. Despite this rapid growth, the company maintained stable asset quality, with Gross Non-Performing Assets (GNPA) holding steady at 1.7% and Net Non-Performing Assets (NNPA) at 1.3% [1]. 
+
+Profitability metrics remained exceptionally strong, with Profit After Tax (PAT) growing 25.0% to ₹382.07 Crores, yielding a Return on Equity (RoE) of 16.5% [1]. The company's capital position was further fortified post-FY25 through a ₹1,250 Crore Qualified Institutional Placement (QIP) in April 2025, pushing the Capital Adequacy Ratio (CRAR) to a highly robust 32.8% [1]. Operationally, Home First expanded its physical footprint to 155 branches and 361 touchpoints, serving an active customer base of 117,989, of which approximately 89% are women [1]. The strategic imperative moving forward is to leverage this excess capital and expanded network to capture further market share while maintaining stringent cost controls and underwriting discipline.
+
+## Financial Performance Overview
+
+### FY25 Revenue and Profitability Expansion
+
+FY25 marked a period of significant top-line and bottom-line growth for Home First. Total income increased by 33.1% to ₹1,539.20 Crores, up from ₹1,156.55 Crores in FY24 [1]. This was primarily driven by a 32.0% increase in interest income on term loans, which reached ₹1,280.16 Crores [1]. Net Interest Income (NII) also saw substantial growth, reaching ₹566.79 Crores compared to ₹470.95 Crores in the previous year [1]. 
+
+The company's ability to scale efficiently is evident in its profitability metrics. Profit After Tax (PAT) rose by 25.0% to ₹382.07 Crores [1]. While Return on Assets (RoA) saw a slight moderation to 3.5% (down from 3.8% in FY24), Return on Equity (RoE) improved by 100 basis points to 16.5% [1].
+
+| Metric | FY24 | FY25 | YoY Growth / Variance |
+| :--- | :--- | :--- | :--- |
+| Total Income | ₹1,156.55 Cr | ₹1,539.20 Cr | 33.1% |
+| Net Interest Income (NII) | ₹470.95 Cr | ₹566.79 Cr | 20.3% |
+| Profit After Tax (PAT) | ₹305.72 Cr | ₹382.07 Cr | 25.0% |
+| Return on Assets (RoA) | 3.8% | 3.5% | -30 bps |
+| Return on Equity (RoE) | 15.5% | 16.5% | +100 bps |
+
+*Key Takeaway:* Home First successfully translated its 31.1% AUM growth into a 25.0% increase in net profit, demonstrating strong operating leverage and effective margin management despite a rising cost of borrowing environment.
+
+## Asset Quality & Risk Metrics
+
+### Stable Portfolio Health Amidst Rapid Growth
+
+A critical highlight of Home First's FY25 performance is the stability of its asset quality despite aggressive portfolio expansion. The company's centralized, data-science-backed underwriting process has proven resilient. Gross Non-Performing Assets (GNPA) remained flat at 1.7% as of March 2025, identical to the March 2024 figure [1]. Net Non-Performing Assets (NNPA) saw a marginal uptick to 1.3% from 1.2% in the previous year [1]. Credit costs were tightly controlled, remaining in line with FY24 at 30 basis points [1].
+
+| Asset Quality Metric | Mar'24 (FY24) | Mar'25 (FY25) | Trend |
+| :--- | :--- | :--- | :--- |
+| Gross NPA (GNPA) | 1.7% | 1.7% | Stable |
+| Net NPA (NNPA) | 1.2% | 1.3% | +10 bps |
+| Credit Cost | 30 bps | 30 bps | Stable |
+| Portfolio Yield | 13.5% | 13.6% | +10 bps |
+| Cost of Borrowing (CoB) | 8.2% | 8.4% | +20 bps |
+
+*Key Takeaway:* The stability in GNPA at 1.7% indicates that the 21.2% growth in disbursements was achieved without compromising underwriting standards, though the slight compression in spreads (due to a 20 bps rise in CoB) warrants monitoring [1].
+
+## Capital Structure & Funding Strategy
+
+### Fortified Balance Sheet Post-QIP
+
+Home First's capital position is exceptionally strong, providing a significant runway for future growth. The Net Worth of the company increased to ₹2,521.28 Crores as of March 31, 2025, up from ₹2,121.49 Crores in FY24 [1]. The Capital Adequacy Ratio (CRAR) stood at a robust 32.8% at the end of FY25 [1]. 
+
+In April 2025, the company successfully completed a maiden Qualified Institutional Placement (QIP), raising ₹1,250 Crores from marquee institutional investors [1]. During FY25, the company also collaborated with 35 lenders to raise ₹5,371 Crores through various modes, ensuring diversified and stable funding [1].
+
+| Capital & Funding Metric | FY24 | FY25 | Strategic Implication |
+| :--- | :--- | :--- | :--- |
+| Net Worth | ₹2,121.49 Cr | ₹2,521.28 Cr | Enhanced capacity to absorb risk and fund expansion. |
+| CRAR | Not specified | 32.8% | Massive capital buffer well above regulatory requirements. |
+| Debt to Equity Ratio | 3.4 | 3.8 | Slight increase in leverage, but remains conservative. |
+| Total Funds Raised | - | ₹5,371 Cr | Demonstrates strong lender confidence and diversified access. |
+
+*Key Takeaway:* The ₹1,250 Crore QIP significantly reduces leverage and provides Home First with a formidable capital advantage to aggressively pursue market share in its focus states [1].
+
+## Operational Scale & Efficiency
+
+### Network Expansion and Productivity
+
+Home First aggressively expanded its physical footprint in FY25. The company added 75 new branches over the last three years, bringing the total branch count to 155 as of March 2025 (up from 133 in March 2024) [1]. Total touchpoints reached 361, covering 141 districts across 13 states and one union territory [1]. 
+
+To support this expansion, the employee base grew to 1,634 from 1,249 in the previous year [1]. Despite this rapid headcount addition, productivity remained relatively stable. Disbursement per employee stood at ₹3.3 Crores in FY25, slightly down from ₹3.5 Crores in FY24, while Opex-to-Average Total Assets improved to 2.7% from 2.9% [1].
+
+| Operational Metric | FY24 | FY25 | Growth / Variance |
+| :--- | :--- | :--- | :--- |
+| Physical Branches | 133 | 155 | +22 branches |
+| Total Touchpoints | Not specified | 361 | Significant network density |
+| Total Employees | 1,249 | 1,634 | +385 employees |
+| Disbursement / Employee | ₹3.5 Cr | ₹3.3 Cr | Slight moderation due to new hires |
+| Opex to Average Assets | 2.9% | 2.7% | -20 bps (Efficiency gain) |
+
+*Key Takeaway:* The improvement in the Opex-to-Assets ratio to 2.7% demonstrates that Home First's technology-driven processes are successfully absorbing the costs of rapid branch and employee expansion [1].
+
+## Market Reach & Customer Base
+
+### Deepening Penetration in Focus Markets
+
+Home First's customer base grew by 24% to reach 117,989 active customers by the end of FY25 [1]. The company maintains a strong focus on financial inclusion and the aspiring middle class. Notably, approximately 89% of the borrowers in FY25 were women, and loans provided to Economically Weaker Sections (EWS) and Low-Income Groups (LIG) accounted for 61% of the total AUM [1]. 
+
+Geographically, the company continues to concentrate on its core markets. As of March 2025, 114 of its branches were located in the western and southern states of India (Maharashtra, Gujarat, Tamil Nadu, Karnataka, Andhra Pradesh, and Telangana), which the company identifies as its focus states [1].
+
+## Strategic Initiatives & Growth Drivers
+
+### Key Actions Shaping FY25 and Beyond
+
+Home First executed several strategic moves in FY25 to solidify its market position and diversify its revenue streams.
+
+* **Capital Raise (Apr 2025):** Successfully completed a maiden QIP, raising ₹1,250 Crores to strengthen the balance sheet and reduce leverage [1].
+* **Geographic Expansion (FY25):** Expanded reach into 10 new districts and added 22 new physical branches, bringing the total to 155 branches across 141 di
+
+
+--- SOURCE: Investor Press Release
+URL: https://homefirstindia.com/files/HomeFirst_Q4FY26_Press_Release.pdf
+
+# Home First FY26 Q4 Performance Dashboard: Growth, Profitability, and Capital Strength
+
+## Executive Summary
+
+Home First Finance Company India Limited delivered a robust performance in Q4 FY26, characterized by a 25% year-over-year AUM expansion, record profitability, and a significantly fortified capital base [1]. The company successfully navigated a dynamic macroeconomic environment, achieving an AUM of ₹15,878 Crore and a Profit After Tax (PAT) of ₹540 Crore for the full fiscal year [1]. 
+
+The most critical strategic development is the recent ₹1,250 Crore equity fund raise in April 2026, which propelled the Capital Adequacy Ratio (CRAR) to an exceptional 44.1% [1]. While this provides a massive runway for future origination and geographic expansion, it introduces near-term equity dilution challenges that management must balance against margin preservation. Asset quality remains a strong point, with Gross Non-Performing Assets (GNPA) improving to 1.8% [1]. Moving into FY27, the company is well-positioned to achieve its guided ~25% AUM growth, provided it can effectively deploy its excess capital while managing slight spread compressions [1].
+
+## Financial Performance Overview
+
+Home First's FY26 results demonstrate strong top-line growth translating effectively into bottom-line profitability. The company achieved its highest-ever quarterly disbursements of ₹1,572 Crore in Q4 FY26, driving total fiscal disbursements to ₹5,424 Crore [1]. 
+
+| Metric | FY26 (₹ Cr) / % | YoY Change |
+|--------|----------------|-----------|
+| AUM | 15,878 Cr | +24.9% |
+| Disbursements | 5,424 Cr | +12.9% |
+| Total Income | 1,923 Cr | +24.9% |
+| PAT | 540 Cr | +41.4% |
+| ROA | 3.9% | +40 bps |
+| ROE | 15.7% | - |
+| CRAR | 44.1% | +11.3 ppt |
+| GNPA | 1.8% | -20 bps QoQ |
+| Cost to Income | 32.5% | -330 bps |
+| Branches | 171 | +16 YoY |
+| Employees | 1,855 | +221 YoY |
+
+*Key Takeaways*: The 41.4% YoY surge in PAT significantly outpaced the 24.9% growth in Total Income, highlighting strong operating leverage and cost control [1]. The massive jump in CRAR is directly attributable to the April 2026 capital raise, fundamentally altering the company's balance sheet strength [1].
+
+## Asset Quality & Risk Management
+
+Asset quality strengthened materially throughout the quarter, reflecting disciplined underwriting and a stabilizing credit environment [1]. Early-stage delinquencies showed pronounced improvement, with 1+ DPD dropping by 60 bps QoQ to 4.7%, and 30+ DPD improving by 50 bps QoQ to 3.2% [1]. 
+
+Consequently, GNPA reached a highly manageable 1.8%, a 20 bps improvement from the previous quarter [1]. The company maintains a conservative provisioning stance, with an ECL provision of ₹108 Crore as of March 2026, resulting in a GNPA to total provision coverage ratio (PCR) of 44.9% [1]. Credit costs remained steady at 40 bps for the quarter, aligning perfectly with management's guidance of 30–40 bps [1].
+
+## Capital Structure & Funding Strategy
+
+The defining event for Home First's capital structure was the ₹1,250 Crore equity fund raise completed in April 2026 [1]. This infusion dramatically increased the company's net worth to ₹4,357 Crore (up from ₹2,521 Crore in March 2025) and pushed total CRAR to 44.1%, with Tier I capital at 43.8% [1]. 
+
+Total borrowings stood at ₹10,590 Crore as of March 2026, supported by a robust liquidity buffer of ₹3,126 Crore [1]. The cost of borrowings improved by 10 bps QoQ to 7.9% [1]. However, the Ex-CL Spread on loans experienced a slight compression, reducing by 10 bps QoQ to 5.3% [1].
+
+## Operational Efficiency & Cost Management
+
+Home First demonstrated significant improvements in operational efficiency during FY26. The Cost to Income ratio for the full year improved dramatically by 330 bps to 32.5%, down from 35.8% in FY25 [1]. For Q4 FY26 specifically, the ratio stood at an even more efficient 32.0% [1]. 
+
+To support its growth trajectory, the company expanded its workforce by 221 employees, primarily in customer-facing roles, bringing the total headcount to 1,855 [1]. Despite this headcount growth, the Opex to Asset ratio remained highly controlled at 2.7% for FY26 [1].
+
+## Growth Initiatives & Strategic Moves
+
+The company executed several key strategic initiatives to expand its footprint and market positioning:
+
+* **Capital Raise**: The ₹1,250 Crore equity raise in April 2026 provides a massive war chest for future growth and insulates the balance sheet against macroeconomic shocks [1].
+* **Network Expansion**: During FY26, Home First added 16 new branches and 12 touchpoints, bringing its total network to 171 branches and 373 touchpoints across 13 States and Union Territories [1].
+* **ESG Integration**: Under its Green Homes initiative, the company certified 140 additional homes during Q4, bringing the cumulative count to 450 as of March 2026, reinforcing its commitment to sustainable growth [1].
+
+## Market Position & Competitive Landscape
+
+Home First remains deeply entrenched in the affordable housing sector, targeting first-time homebuyers in low and middle-income groups [1]. Housing loans constitute the vast majority of the portfolio, contributing 83% of the total AUM [1]. Furthermore, the Economically Weaker Section (EWS) and Lower Income Group (LIG) categories form approximately 70% of the customer base [1]. The company is actively increasing its presence in emerging affordable housing markets such as Uttar Pradesh, Uttarakhand, Madhya Pradesh, and Rajasthan [1].
+
+## Risks & Mitigation
+
+* **Spread Compression**: The Ex-CL spread reduced by 10 bps QoQ to 5.3% [1]. The company must actively manage its cost of funds (currently at 7.9%) and optimize its asset mix to prevent further margin erosion [1].
+* **Equity Dilution**: While the recent capital raise fortifies the balance sheet, the enlarged equity base will naturally pressure Return on Equity (ROE) in the near term. Q4 FY26 ROE stood at 14%, though pre-money adjusted ROE was a stronger 17.5% [1].
+* **Bounce Rates**: April 2026 bounce rates remained range-bound at 16.3% [1]. While early-stage delinquencies have improved, this metric requires continuous monitoring to preempt asset quality deterioration.
+
+## Recommendations & Action Plan
+
+1. **Accelerate Capital Deployment**: With a CRAR of 44.1% [1], Home First is overcapitalized. Management should aggressively deploy this capital into high-yield affordable housing corridors, particularly in the newly targeted states of UP, MP, and Rajasthan, to offset the ROE dilution caused by the recent fund raise.
+2. **Defend Net Interest Margins**: To combat the 10 bps QoQ spread compression [1], the company should leverage its improved credit rating and enlarged equity base to negotiate lower borrowing costs, aiming to push the cost of borrowings below the current 7.9% [1].
+3. **Sustain Operational Leverage**: Having achieved a Cost to Income ratio of 32.0% in Q4 [1], the company should deepen its technology integration to ensure that the addition of 16 new branches [1] does not reverse these efficiency gains.
+4. **Maintain Asset Quality Rigor**: Continue the disciplined underwriting that brought GNPA down to 1.8% [1]. Set internal KPIs to maintain 1+ DPD strictly below 5.0% (currently 4.7%) as the loan book scales toward the ~25% YoY growth target for FY27 [1].
+
+## References
+
+1. *Fetched web page*. https://homefirstindia.com/files/HomeFirst_Q4FY26_Press_Release.pdf
+
+
+=== India Shelter Finance ===
+
+
+--- SOURCE: Financial Results March 2026
+URL: https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf
+
+
+# Competitor Research Report: India Shelter Financial Results (March 2026)
+
+## Executive Summary
+
+Currently, the specific financial document located at the provided AWS S3 URL (Financial Results March 2026 for India Shelter) cannot be retrieved or accessed from the external server. Because the source document is unavailable, the requested financial metrics—including Assets Under Management (AUM), Profit After Tax (PAT), Gross/Net NPA percentages, disbursements, and strategic moves—cannot be extracted or analyzed at this time. 
+
+### Next Steps for Data Extraction
+
+To proceed with the competitor analysis and generate the required structured data:
+* **Provide Direct Excerpts:** Paste the raw text, tables, or key financial highlights directly into the prompt.
+* **Upload the Document:** If the platform allows, upload the PDF directly rather than linking to a restricted or expired AWS S3 bucket. 
+
+Once the raw data or document text is provided, a complete extraction of all requested fields (AUM, YoY growth, NII, NIM, ROA, ROE, CRAR, branch counts, and MD&A highlights) can be accurately mapped to your required schema and analyzed for strategic insights.
+
+
+--- SOURCE: Integrated Annual Report- 2024-25
+URL: https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1751527210017-Integrated+Annual+Report-+2024-25.pdf
+
+
+# Competitor Research Report: India Shelter Finance Corporation FY25
+
+## Executive Summary
+This report addresses the extraction of key financial and strategic metrics from the India Shelter Finance Corporation Integrated Annual Report for FY25. Based on the research parameters and document accessibility during the current reporting period, no verifiable data could be extracted from the specified source document. All targeted financial indicators, including Assets Under Management (AUM), disbursements, net worth, and profitability metrics, remain unconfirmed. 
+
+## Financial Metrics Analysis
+
+Due to document accessibility constraints, the targeted financial performance indicators for FY25 could not be retrieved. 
+
+### Core Financial Indicators
+The following table outlines the targeted metrics and their current extraction status:
+
+| Metric | Target Field | Status | Extracted Value |
+| :--- | :--- | :--- | :--- |
+| **Assets Under Management** | `aum_inr_cr` | Data Unavailable | Null |
+| **AUM YoY Growth** | `aum_yoy_pct` | Data Unavailable | Null |
+| **Total Disbursements** | `disbursements_inr_cr` | Data Unavailable | Null |
+| **Net Worth** | `net_worth_inr_cr` | Data Unavailable | Null |
+| **Total Income** | `total_income_inr_cr` | Data Unavailable | Null |
+| **Net Interest Income** | `nii_inr_cr` | Data Unavailable | Null |
+| **Profit After Tax (PAT)** | `pat_inr_cr` | Data Unavailable | Null |
+
+*Key Takeaway: A complete financial assessment cannot be conducted until the primary FY25 Integrated Annual Report is successfully parsed and verified.*
+
+### Asset Quality and Efficiency Ratios
+Similarly, critical ratios regarding asset quality and operational efficiency yielded no results from the automated extraction:
+
+| Metric | Target Field | Status | Extracted Value |
+| :--- | :--- | :--- | :--- |
+| **Gross NPA** | `gnpa_pct` | Data Unavailable | Null |
+| **Net NPA** | `nnpa_pct` | Data Unavailable | Null |
+| **Net Interest Margin** | `nim_pct` | Data Unavailable | Null |
+| **Return on Assets** | `roa_pct` | Data Unavailable | Null |
+| **Return on Equity** | `roe_pct` | Data Unavailable | Null |
+| **Capital Adequacy (CRAR)** | `crar_pct` | Data Unavailable | Null |
+
+*Key Takeaway: Risk and profitability margins remain opaque without access to the underlying NPA and margin disclosures.*
+
+### Operational Scale
+Operational footprint metrics, including branch network size (`branches`), total headcount (`employees`), average ticket size (`avg_ticket_size_inr_lakh`), and total customer base (`customers`), are currently marked as null. 
+
+## Strategic Moves & MDA Highlights
+
+### Strategic Initiatives
+No recent strategic actions, capital raises, mergers and acquisitions, leadership changes, geographic expansions, or new product launches (`strategic_moves`) could be identified from the provided context. 
+
+### Management Discussion & Analysis (MD&A)
+Key narrative beats and management commentary (`mda_highlights`) are unavailable. Future analysis will require direct manual review of the FY25 document to synthesize management's forward-looking statements and market positioning.
+
+
+--- SOURCE: Investor Presentation March 2026
+URL: https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf
+
+{
+ "aum_inr_cr": 11044,
+ "aum_inr_cr_quote": "Gross AUM grew 29% YoY to Rs. 11,044 Cr",
+ "aum_yoy_pct": 29,
+ "aum_yoy_pct_quote": "Gross AUM grew 29% YoY to Rs. 11,044 Cr",
+ "disbursements_inr_cr": 3834,
+ "disbursements_inr_cr_quote": "Disbursements 3,834 Rs. Crore",
+ "net_worth_inr_cr": 3198,
+ "net_worth_inr_cr_quote": "Net Worth 3,198 Rs. Crore",
+ "total_income_inr_cr": 1528.6,
+ "total_income_inr_cr_quote": "Total Income 1,528.6",
+ "nii_inr_cr": null,
+ "nii_inr_cr_quote": null,
+ "pat_inr_cr": 503.1,
+ "pat_inr_cr_quote": "Profit after Tax 503.1",
+ "pat_yoy_pct": 33,
+ "pat_yoy_pct_quote": "PAT 33% YoY",
+ "gnpa_pct": 1.2,
+ "gnpa_pct_quote": "Gross Stage 3 and Net Stage 3 at 1.2% and 0.9%",
+ "nnpa_pct": 0.9,
+ "nnpa_pct_quote": "Gross Stage 3 and Net Stage 3 at 1.2% and 0.9%",
+ "nim_pct": 12.5,
+ "nim_pct_quote": "Net Interest Margin (NIM) to Average Total Asset 12.5%",
+ "roa_pct": 5.8,
+ "roa_pct_quote": "ROA (PAT to Average Total Assets) 5.8%",
+ "roe_pct": 17.0,
+ "roe_pct_quote": "ROE (PAT to Average Net Worth) 17.0%",
+ "crar_pct": 55.8,
+ "crar_pct_quote": "CRAR (%) 55.8%",
+ "branches": 307,
+ "branches_quote": "Geographic presence stood at 307 locations as of 31st March’26",
+ "employees": 4800,
+ "employees_quote": "Employees 4,800",
+ "avg_ticket_size_inr_lakh": 10,
+ "avg_ticket_size_inr_lakh_quote": "ATS continues at Rs. 10 Lacs",
+ "customers": 138371,
+ "customers_quote": "No of Customers 1,38,371",
+ "reporting_period": "FY26",
+ "strategic_moves": [
+ {
+ "date": "2026-03",
+ "description": "Geographic expansion with 41 new branches added during the year.",
+ "quote": "Added 6 new branches during the quarter, for the year added 41 branches."
+ },
+ {
+ "date": null,
+ "description": "Collaborating with IFC for Green Housing Certification.",
+ "quote": "Collaborating with IFC for Green Housing Certification under EGDE Programme"
+ }
+ ],
+ "mda_highlights": [
+ "Gross AUM grew 29% YoY to Rs. 11,044 Cr, maintaining a granular portfolio with an ATS of Rs. 10 Lacs.",
+ "Profit after tax grew by 33% YoY to Rs. 503.1 Crs, driven by strong net income growth and operational efficiencies.",
+ "Cost of Funds (COF) improved by 50bps YoY to 8.2% as of March’26, with spreads stable at 6.6%.",
+ "Asset quality remains robust with Gross Stage 3 at 1.2% and Net Stage 3 at 0.9%."
+ ]
+}

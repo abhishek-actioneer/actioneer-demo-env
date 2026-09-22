@@ -1,0 +1,4361 @@
+USER REQUEST:
+compare Vastu Housing Finance to Aavas Financiers, Aptus Value Housing Finance, Home First Finance and India Shelter Finance on financials of last 2 years
+
+PLAN:
+- Subject: Vastu Housing Finance (Indian affordable housing finance)
+- Competitors: Aavas Financiers, Aptus Value Housing Finance, Home First Finance, India Shelter Finance
+- Time scope: last_2_years
+- Focus: financials, strategy
+
+
+=== Vastu Housing Finance ===
+
+
+--- SOURCE: ANNUAL REPORT 2023-24
+URL: https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T071225Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=d7c42aa1fff46e1b14ca64a62c2935bc91b577d5b28946641e709398206fe127
+
+Income (NII), reflecting efficient management of interest-
+earning assets and liabilities.
+A 27% YoY increase in Profit After Tax (PAT) underscores
+enhanced profitability, with a PAT of ₹361 crore on a
+consolidated basis and a RoA of 4.6%. The asset quality
+remains strong, reflected in the reporting of only 0.89%
+gross stage 3 assets.
+Our strategic planning, innovative tech-driven delivery
+models, prudent risk management approach, and strong
+governance, supported by an agile organisational
+design, continue to enable us to be future-ready and
+poised for robust, high-quality growth. This was further
+established by an external credit rating <sup>*</sup> of AA- (Stable)
+by multiple credit rating agencies and the raising of over
+~₹3,000 crore of debt capital in FY24.
+We are deeply honored to share that we welcomed IFC -
+International Finance Corporation (World Bank) into the
+Vastu fraternity with an equity investment of $40 million.
+Additionally, our longstanding investors infused primary
+
+...
+
+**FY22**
+**FY24**
+**AUM** **(₹ in Cr)** **| 40%**  **YoY**
+**FY20**
+**FY21**
+**FY23**
+**FY22**
+**FY24**
+1,770
+2,413
+3,372
+5,293
+**7,419**
+Business Metrics
+KEY PERFORMANCE INDICATORS
+**Vastu Housing Finance Corporation Limited**
+28
+**Annual Report 2023-24**
+**PAT** **(₹ in Cr)** **| 21%**  **YoY**
+**FY20**
+**FY21**
+**FY23**
+**FY22**
+**FY24**
+92
+100
+176
+274
+**332**
+**FY20**
+**FY21**
+**FY22**
+**FY23**
+**FY24**
+**FY20**
+**FY21**
+**FY22**
+**FY23**
+**FY24**
+**Gross Stage 3 Assets**
+**NII** **(₹ in Cr)** **| 30%**  **YoY**
+161
+207
+321
+483
+**627**
+**FY20**
+**FY21**
+**FY23**
+**FY22**
+**FY24**
+**Net Worth** **(₹ in Cr)** **| 40%**  **YoY**
+**FY20**
+**FY21**
+**FY23**
+**FY22**
+887
+995
+2,106
+2,398
+**3,359**
+**FY24**
+0
+.
+3
+3
+%
+0
+.
+4
+5
+%
+1 .
+1
+4
+%
+0 .
+8
+8
+%
+**0**
+**.** **8**
+**9**
+**%**
+**4**
+**.** **8**
+**%**
+5
+. 7
+%
+5
+.
+4
+%
+4
+.
+0
+%
+4
+.
+5
+%
+**ROA**
+Financial Metrics
+29
+Financial Statements
+**Corporate Overview**
+Statutory Reports
+CATALYST
+FOR CHANGE
+NURTURING SOCIAL AND
+ENVIRONMENTAL INITIATIVES
+
+...
+
+institutional, professionally-run platform. Fortifying our
+technology, risk management and people capabilities,
+we continue to approach business with a future-ready
+outlook and a keenness for financial sustainability.
+This year we welcome International Finance Corporation
+(IFC) and Faering Capital as our shareholders.
+**Snapshot**
+**Particulars**
+**Consolidated**
+**Standalone**
+**(₹ crore)**
+**FY24**
+**FY23**
+**YoY**
+**FY24**
+**FY23**
+**YoY**
+Live accounts
+1,08,104
+67,800
+59%
+61,842
+44,948
+38%
+AUM
+9,137
+6,097
+50%
+7,419
+5,293
+40%
+Disbursement
+4,951
+3,616
+37%
+3,548
+2,909
+22%
+Branches
+206
+179
++27
+172
+149
++23
+Net Worth
+3,398
+2,408
+41%
+3,359
+2,398
+40%
+Borrowings
+5,148
+3,476
+48%
+3,880
+2,769
+40%
+NII
+745
+531
+40%
+627
+483
+30%
+PAT
+361
+285
+27%
+332
+274
+21%
+**Global Economic Overview – The Economic**
+**Outlook is Brightening**
+The global economy remains remarkably resilient despite
+compounded repercussions stemming from a series of
+adverse shocks experienced over the past three years
+
+...
+
+**Geographic Presence:** The Company has a
+diversified presence in India, spread across 14
+states, with no state contributing more than 15%
+of the total AUM. In FY24, the Company added 27
+branches, taking its consolidated branch network
+to 206 branches from 179 in FY23.
+▪
+**Portfolio:** The Company’s AUM crossed the ₹7,000
+crore milestone in FY24, growing 40% YoY to
+₹7,419 crore from ₹5,293 crore in FY23. Housing
+loans grew faster (49% YoY) than non-housing
+loans (27% YoY), contributing 63% of AUM as
+against 59% in the previous year. On-book loans
+grew 38% YoY to ₹6,067 crore in FY24 from 4,400
+crore in FY23.
+▪
+**Disbursements:** Loan disbursements in FY24
+grew 22% YoY to ₹3,548 crore as against ₹2,909
+crore in FY23, led by focus on housing loans (grew
+36% YoY). Housing loans comprised 69% of the
+disbursements in FY24 compared to 62% in the
+previous fiscal.
+**Product and Customer Profile**
+The Company primarily offers two key products – housing
+
+...
+
+rising leverage throughout the year.
+▪
+**Leverage:** As of March 31, 2024, the Company
+reported a debt-to-equity ratio of 1.16 as against
+1.15 as on March 31, 2023. Period-end leverage
+largely remained stable YoY, led by a primary equity
+capital infusion of ₹620 crore in March 2024. The
+Company reported CRAR of 63.8% as-end March
+2024, significantly higher than the regulatory
+requirement of 15%.
+▪
+**Return on Net Worth** : The Company delivered
+a return on average net worth of 11.5% in FY24
+(12.9% adjusted for the period-end equity infusion)
+higher than 12.2% in FY23.
+**Asset Quality**
+▪
+**Non-Performing Assets (NPA):** Gross stage 3
+assets on AUM remain amongst the best in the
+industry at 0.89% in FY24 vs 0.88% in FY23. Net
+Stage 3 assets as of March 31, 2024 was 0.70% in
+FY24 vs 0.68% in FY23.
+▪
+**Provision Coverage Ratio (PCR):**
+Total
+ECL
+provisions on the total book was 0.73% as at-end
+FY24 as against 0.77% in FY23. PCR on Stage 3
+assets remained constant at 27%, more than
+
+...
+
+a strong foundation in technology, analytics, distribution,
+risk and people. The business was operationalised in
+September 2019 and has grown to effectively complement
+the parent, making Vastu a one-stop shop for the diverse
+credit needs of middle India. The Company is present in 13
+states with 68 branches as of March 31, 2024.
+**Key Financial and Operational Highlights of Vastu**
+**Finserve for the year ended March 31, 2024 are**
+**as follows**
+▪
+**AUM:** Vastu Finserve’s AUM grew by 114% YoY to
+₹1,717 crore in FY24 from ₹803 crore in FY23.
+▪
+**Disbursements:** Disbursement grew by 99% to
+₹1,403 crore in FY24 vs ₹707 crore in FY23.
+▪
+**Profitability:** The Company in FY24 delivered a
+PAT of ₹29 crore in FY24, registering 161% YoY
+growth from ₹11 crore in FY23. Return on average
+total assets (RoAA) increased to 2.0% in FY24 vs
+1.6% in FY23.
+▪
+**Leverage:** As of March 31, 2024, the Company
+reported a debt-to-equity ratio of 2.35 as against
+2.28 as of March 31, 2023. Period-end leverage
+
+
+--- SOURCE: ANNUAL REPORT 2024-25
+URL: https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T071225Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=57fe361a6f83ca09738f9ccd55cc7011e2c1c7611d01e10484aedbf5638d801a
+
+**Corporate Overview**
+Statutory Reports
+Financial Statements
+Annual Report 2024-25 | 05
+**Business Metrics**
+**Key Performance**
+**Indicators** **Consolidated**
+**Financial Metrics**
+5-year CAGR
+5-year CAGR
+**AUM**
+**45%**
+( H in Cr)
+( H in Cr)
+FY25
+FY24
+FY23
+6,097
+FY22
+3,657
+FY21
+2,559
+9,137
+**11,423**
+FY25
+FY24
+FY23
+3,616
+FY22
+1,763
+FY21
+1,103
+4,951
+**5,073**
+**Disbursement** **47%**
+FY25
+FY24
+FY23
+FY22
+FY21
+2,408
+2,125
+988
+3,398
+**3,754**
+**Net Worth**
+**34%**
+( H in Cr)
+**PAT**
+**29%**
+( H in Cr)
+FY25
+FY24
+FY23
+FY22
+FY21
+285
+182
+96
+361
+**324**
+FY25
+FY24
+FY23
+67,800
+FY22
+39,477
+FY21
+25,827
+1,08,104
+**1,44,118**
+**Active Loans** **55%**
+(Nos.)
+(%)
+**ROA**
+FY25
+FY24
+FY23
+FY22
+FY21
+3 .
+2
+4
+.
+6
+5
+.
+4
+5
+.
+2
+3
+.
+7
+(Times)
+**Debt to Equity**
+FY25
+FY24
+FY23
+FY22
+FY21
+1 .
+9
+1
+.
+5
+1
+.
+4
+0
+.
+7
+1
+.
+7
+( H in Cr)
+**41%**
+**Net Interest Income**
+FY25
+FY24
+FY23
+FY22
+FY21
+7
+9
+7
+6
+1
+9
+4
+4
+7
+2
+7
+8
+1
+8
+1
+FY25
+FY24
+FY23
+FY22
+FY21
+179
+126
+95
+206
+**226**
+**Branches**
+(Nos.)
+06
+07
+**Corporate Overview**
+Statutory Reports
+Financial Statements
+Annual Report 2024-25 |
+**Business Metrics**
+**Key Performance**
+**Indicators –**
+**Standalone**
+FY25
+FY24
+FY23
+5,293
+FY22
+3,372
+FY21
+2,413
+7,419
+**9,102**
+**AUM**
+**39%**
+FY25
+FY24
+FY23
+2,398
+FY22
+2,106
+FY21
+995
+3,359
+**3,719**
+**Net Worth**
+**33%**
+**Net Interest**
+**Income**
+FY25
+FY24
+FY23
+404
+FY22
+254
+FY21
+175
+511
+**640**
+**35%**
+FY25
+FY24
+FY23
+274
+FY22
+176
+FY21
+100
+332
+**328**
+**PAT**
+**29%**
+FY25
+FY24
+FY23
+149
+FY22
+100
+FY21
+75
+172
+**191**
+**Branches**
+FY25
+FY24
+FY23
+2,909
+FY22
+1,548
+FY21
+951
+3,548
+**3,604**
+**Disbursement** **37%**
+**Business Metrics**
+**Financial Metrics**
+5-year CAGR
+5-year CAGR
+**Credit Cost**
+FY25
+FY24
+FY23
+FY22
+FY21
+0 .
+4
+3
+0
+.
+3
+7
+0
+.
+3
+4
+0
+.
+6
+6
+0
+.
+5
+2
+**ROA**
+FY25
+FY24
+FY23
+FY22
+FY21
+3 .
+8
+4
+.
+8
+5
+.
+7
+5
+.
+4
+4
+.
+0
+**Home Loans**
+FY25
+FY24
+FY23
+FY22
+FY21
+7
+7
+7
+7
+7
+0
+6
+6
+6
+5
+**Gross Stage 3 Assets**
+FY25
+FY24
+FY23
+FY22
+FY21
+1 .
+3
+1
+0
+.
+8
+9
+0
+.
+8
+8
+1
+.
+1
+4
+0
+.
+4
+5
+( H in Cr)
+(%)
+(%)
+(%)
+(%)
+( H in Cr)
+(Nos.)
+( H in Cr)
+
+...
+
+at 1.3% as of March 2025. Our NBFC business recorded
+42% YoY growth, with AUM reaching ₹2,435 crore and
+Gross NPA at 2.2%. Our focus on organic interest income
+with long term sustainability backed with adequate liquidity,
+company decided to strategically slow down on Direct
+Assignment during the year leading to lower profitability
+in DA pools. Core profitability (PBT ex-DA Income) grew
+**Message from the Chairperson**
+21% YoY in FY25. These numbers reflect the strength of
+our operating model and the agility of our execution teams.
+Vastu also made strategic strides in terms of unlocking the
+larger goal of becoming a retail financing company with an
+additional product expansion into Micro-housing and MSME
+offerings. This business is now present in 128 branches with
+a combined AUM of over ₹1,100 crore.
+In FY25, Vastu expanded its network by 20 new branches,
+supported by a team of 5,500+ employees. We also
+continued to invest in our technology backbone—the launch
+
+...
+
+Management Discussion and Analysis
+**78**
+Board’s Report
+**107** Corporate Governance Report
+Financial Statements
+**118** Standalone Independent Auditor’s Report
+**130** Standalone Financial Statements
+**216** Consolidated Independent Auditor’s Report
+**224** Consolidated Financial Statements
+50
+51
+**Corporate Overview**
+Statutory Reports
+Financial Statements
+Annual Report 2024-25 |
+**Management**
+**Discussion**
+**and Analysis**
+**Snapshot**
+**Particulars**
+**Standalone**
+**Consolidated**
+**2024-25**
+**2023-24**
+**YoY**
+**2024-25**
+**2023-24**
+**YoY**
+Active Loans (#)
+79,294
+61,842
+28%
+1,44,118
+1,08,104
+33%
+AUM
+9,102
+7,419
+23%
+11,423
+9,137
+25%
+Disbursement
+**3,604**
+**3,548**
+**2%**
+**5,073**
+**4,951**
+**2%**
+Branches (#)
+191
+172
+19
+226
+206
+20
+Net Worth
+3,719
+3,359
+11%
+3,754
+3,398
+10%
+Borrowings
+5,319
+3,880
+37%
+7,051
+5,148
+37%
+NII
+**640**
+**511**
+**25%**
+**797**
+**619**
+**29%**
+Core Income*
+381
+310
+23%
+405
+335
+21%
+PAT
+**328**
+**332**
+**-1%**
+**324**
+**361**
+**-10%**
+
+...
+
+credit platform for underserved and peri-urban customers.
+Leveraging shared capabilities in technology, analytics,
+distribution, and risk management, Vastu Finserve has
+expanded its footprint to 74 branches across 14 states and
+Union Territories as of 31 March 2025.
+**FY25 Key Financial and Operational**
+**Highlights**
+**Assets Under Management (AUM)**
+AUM grew 42% YoY to ₹2,435 crore in FY25 from
+₹1,717 crore in FY24, reflecting strong demand and deeper
+market penetration.
+**Disbursements**
+Disbursements totalled ₹1,583 crore in FY25, growing 12%
+YoY, despite macroeconomic headwinds in select markets.
+**Net Interest Income (NII)**
+NII increased 60% YoY to ₹157 crore in FY25 (from ₹98 crore
+in FY24), in line with loan book expansion and improved
+interest spreads.
+**Securitisation**
+Total securitisation reduced to ₹188 crore in FY25 (from ₹355
+crore in FY24), resulting in a net loss of ₹9 crore from Direct
+Assignment transactions, compared to ₹19 crore net income
+in FY24.
+
+
+=== Aavas Financiers ===
+
+
+--- SOURCE: Financial Result approved by the Board of Directors
+URL: https://www.aavas.in/uploads/pdf/outcome-46562990.pdf
+
+**Statement of financial results for the quarter and half year ended September 30, 2025**
+**(INR in lakh)**
+**Particulars**
+**Quarter ended**
+**Half Year ended**
+**Year ended**
+**30.09.2025**
+**30.06.2025**
+**30.09.2024**
+**30.09.2025**
+**30.09.2024**
+**31.03.2025**
+**(Unaudited)**
+**(Unaudited)**
+**(Unaudited)**
+**(Unaudited)**
+**(Unaudited)**
+**(Audited)**
+**1 Revenue from operations**
+Interest income
+56,362.44
+54,894.10
+49,061.32
+1,11,256.54
+97,035.95
+2,01,767.67
+Fees and commission income
+2,755.75
+2,324.71
+2,424.78
+5,080.46
+5,037.80
+10,753.74
+Gain on derecognition of financial instruments under
+amortised cost category
+7,011.17
+4,749.09
+5,854.26
+11,760.26
+8,907.55
+20,743.56
+Net gain on fair value changes
+572.49
+788.21
+575.86
+1,360.70
+1,173.75
+2,185.55
+**Total revenue from operations**
+**66,701.85**
+**62,756.11**
+**57,916,22**
+**1,29,457.96**
+**1,12,155.05**
+**2,35,450.52**
+**II**
+Other income
+43.28
+37.38
+129.24
+80.66
+145.91
+390.98
+**III Total income (l+ll)**
+**66,745.13**
+
+...
+
+**14,12,823.92**
+**Non-financial liabilities**
+Current tax liabilities (net)
+1,311.25
+498.91
+-
+Provisions
+892.90
+791.10
+913.56
+Deferred tax liabilities (net)
+8,313.72
+6,325.21
+7,557.15
+Other non-financial liabilities
+3,623.11
+5,089.47
+4,469.54
+**Sub-total - Non-financial Liabilities**
+**14,140.98**
+**12,704.69**
+**12,940.25**
+**Equity**
+Equity share capital
+7,916,14
+7,914.16
+7,915.37
+Other equity
+4,60,070.86
+3,96,922.80
+4,28,167.86
+**Sub-total - Equity**
+**4,67,987.00**
+**4,04,836.96**
+**4,36,083.23**
+**Total Liabilities and Equity**
+**19,44,104.00**
+**16,88,512.07**
+**18,61,847.40**
+**AAVAS FINANCIERS LIMITED**
+**(CIN:L65922RJ2011PLC034297)**
+**Statement of financial results for the quarter and half year ended September 30, 2025**
+**Statement of Cash Flows**
+**(INR in Lakh)**
+**Year ended**
+**Particulars**
+**30.09.2025**
+**30.09.2024**
+**31.03.2025**
+**(Unaudited)**
+**(Unaudited)**
+**(Audited)**
+**Cash flow from operating activities:**
+
+...
+
+2025 and subject to limited review by the joint statutory auditors of the Company.
+5 During the half year ended September 30, 2025, the Company has allotted 4,820 and 1,461 equity shares to eligible employees under Employee stock Option Plan at a price
+of INR 1,580.20 and 215.25 per equity share at premium of INR 1,570.20 and 205.25 per equity share respectively. The Company has also allotted 1,407 equity shares to
+eligible employees under Performance stock Option Plan at a price of INR 10.00 per equity share.
+6 Disclosures pursuant to RBI Notification-RBI/DOR/2021-22/86 DOR.STR,REC.51/21.04.04S/2021-22 dated September 24, 2021
+(a) Details of transfer through assignment in respect of loans not in default during the quarter and half year ended September 30, 2025
+**Particulars**
+**Quarter ended**
+**September 30, 2025**
+**Half year ended**
+**September 30, 2025**
+Entity
+NBFC (Housing Finance Company)
+NBFC (Housing Finance Company)
+Count of loan accounts assigned
+4416 Loans
+7916 Loans
+Amount of loan accounts assigned
+INR 47,549 Lakh
+INR 85,220 Lakh
+Weighted average maturity
+129 months
+133 months
+Weighted average holding period
+7 month
+9 month
+Retention of beneficial economic interest (MRR)
+10%
+10%
+Tangible security coverage
+100%
+100%
+Rating wise distribution of rated loans
+Unrated
+Unrated
+(b) Details of transfer through Co-lending in resepct of loans not in default during the quarter and half year ended September 30, 2025
+**Particulars**
+**Quarter ended**
+**September 30, 2025**
+**Half year ended**
+**September 30, 2025**
+Entity
+-
+NBFC (Housing Finance Company)
+Count of loan accounts assigned
+-
+1,463 Loans
+Amount of loan accounts assigned
+-
+INR 24,995 lakh
+Weighted average maturity
+-
+215 months
+Weighted average holding period
+-
+8 month
+Retention of beneficial economic interest (MRR)
+-
+20%
+Tangible security coverage
+-
+100%
+Rating wise distribution of rated loans
+-
+Unrated
+
+...
+
+9 The Company has maintained at-least 100% security cover on its secured listed non-convertible debentures (NCDs) as on September 30, 2025 (by creating exclusive charge on
+hypothecation of specific and identified book debts/receivables). The proceeds of the NCDs, utilised till the end of the reporting period, were used for the objects that were
+stated in the respective offer documents,
+10 The Company is engaged primarily in the business of housing finance within india and there are no separate reportable segments as per Ind AS 108 dealing with Operating
+Segments.
+11 Figures for the previous year/periods have been regrouped and/or reclassified wherever considered necessary. The impact, if any, are not material to financial results.
+**AAVAS FINANCIERS LIMITED**
+**(CIN: L65922RJ2011PLC034297)**
+**Statement of financial results for the quarter and half year ended September 30, 2025**
+For and on behalf of the Board of Directors
+_^_
+AAVAS FINANCIERS LIMITED
+_&_
+Place: Mumbai
+
+...
+
+Sector specific equivalent ratios, as applicable
+i)
+Gross Non-Performing Assets (GNPA)
+1.24%
+1.24%
+N)
+Net Non-Performing Assets (NNPA)
+0.85%
+0.85%
+iii)
+Provision coverage ratio
+58.27%
+58.27%
+iv)
+Capital Risk Adequacy Ratio (CRAR)
+46.42%
+46.42%
+v)
+Liquidity Coverage Ratio (Calculated as per RBI guidelines)
+142.90%
+135.59%
+**Note: 1.** Debt service coverage ratio, Interest service coverage ratio, Current Ratio, Long term debt to working capital, Bad debts to
+account receivable ratio, Current liability ratio, Debtors Turnover, Inventory Turnover, Operating Margin(%) are not applicable, being a
+Housing Finance Company (HFC)
+**Note: 2.** Debt Equity Ratio = (Debt securities+Borrowings+Subordinated liabilities-!- Interest accrued on total debt)/Networth
+Total Debts to Total Assets= (Debt securities+Borrowings+Subordinated liabilities-!- Interest accrued on total debt)/Total assets
+Provision Coverage Ratio (PCR)(%) = Total impairment loss allowance / Gross Stage III Loans.
+
+
+--- SOURCE: Financial Result approved by the Board of Directors
+URL: https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf
+
+**Statement of financial results for the quarter and year ended March 31,2025**
+**(INR in lakh)**
+**Particulars**
+**Quarter ended**
+**Year ended**
+**31.03.2025**
+**31.12.2024**
+**31.03.2024**
+**31.03.2025**
+**31.03.2024**
+**(Audited)**
+**Refer Note 5**
+**(Unaudited)**
+**(Audited)**
+**Refer Note 5**
+**(Audited)**
+**(Audited)**
+**1 Revenue from operations**
+Interest income
+53,526.20
+51,205.52
+45,861.80
+2,01,767.67
+1,73,465.04
+Fees and commission income
+3,097.71
+2,618.23
+2,849.08
+10,753.74
+8,671.68
+Gain on derecognition of financial instruments under
+amortised cost category
+6,516.42
+5,319.59
+5,511.94
+20,743.56
+17,954.91
+Net gain on fair value changes
+480.97
+530.83
+379.17
+2,185.55
+1,658.19
+**Total revenue from operations**
+**63,621.30**
+**59,674.17**
+**54,601.99**
+**2,35,450.52**
+**2,01,749.82**
+**II**
+Other income
+127.50
+117.56
+78.22
+390.98
+279.82
+**III Total income (l+ll)**
+**63,748.80**
+**59,791.73**
+**54,680.21**
+**2,35,841.50**
+**2,02,029.64**
+**IV Expenses**
+Finance costs
+26,473.75
+
+...
+
+April 24, 2025 and subject to audit by the joint statutory auditors of the Company who have expressed an unqualified opinion . The financial results for the
+quarter and year ended March 31, 2024 were audited by Walker Chandiok & Co LLP, Chartered Accountants.
+5 The figures for the last quarter are balancing figures between audited figures in respect of full financial year and the unaudited published year to date
+figures upto the third quarter of the financial year.
+6 During the year ended March 31, 2025, the Company has allotted 3,250 and 1,200 equity shares to eligible employees under Employee stock Option Plan at
+a price of INR 328.00 and 1,580.20 per equity share at premium of INR 318.00 and 1,570.20 per equity share respectively. The Company has also allotted
+9,510 equity shares to eligible employees under Performance stock Option Plan at a price of INR 10.00 per equity share.
+7 Aavas Finserv Limited, erstwhile wholly owned subsidiary ("subsidiary") of the Company which was under voluntary liquidation, has received dissolution
+order from NCLT dated January 28, 2025. Aavas Financiers Limited don't have any subsidiary/associate/joint venture company(ies), as on March 31, 2025.
+8 Disclosures pursuant to RBI Notification-RBI/DOR/2021-22/86 DOR.STR.REC.51/21.04.048/2021-22 dated September 24, 2021
+(a) Details of transfer through assignment in respect of loans not in default during the quarter and year ended March 31, 2025.
+**Particulars**
+**Quarter ended**
+**March 31, 2025**
+**Year ended**
+**March 31, 2025**
+Entity
+NBFC (Housing Finance Company)
+NBFC (Housing Finance Company)
+Count of loan accounts assigned
+4,994 loans
+17,783 loans
+Amount of loan accounts assigned
+INR 50,397 lakh
+INR 1,69,178 lakh
+Weighted average maturity
+137 months
+131 months
+Weighted average holding period
+9 months
+9 months
+Retention of beneficial economic interest (MRR)
+10%
+10%
+Tangible security coverage
+100%
+100%
+Rating wise distribution of rated loans
+Unrated
+Unrated
+(b) Details of transfer through Co-lending in resepct of loans not in default during the quarter and year ended March 31, 2025.
+Particulars
+**Quarter ended**
+**March 31,2025**
+**Year ended**
+**March 31,2025**
+Entity
+NBFC (Housing Finance Company)
+NBFC (Housing Finance Comoanvl
+Count of loan accounts assigned
+283 loans
+840 loans
+Amount of loan accounts assigned
+INR 4,119 lakh
+INR 12,602 lakh
+Weighted average maturity
+195 months
+182 months
+Weighted average holding period
+2 months
+2 months
+Retention of beneficial economic interest (MRR)
+20%
+20%
+Tangible security coverage
+100%
+100%
+Rating wise distribution of rated loans
+Unrated
+Unrated
+(c) The Company has not transferred or acquired, any stressed loans during the quarter and year ended March 31, 2025.
+(d) The Company has not acquired, any loans not in default during the quarter and year ended March 31, 2025.
+
+...
+
+* Amount paid by the borrower during the half year is net of additions.
+**AAVAS FINANCIERS LIMITED**
+**(CIN: L65922RJ2011PLC034297)**
+**Statement of financial results for the quarter and year ended March 31,2025**
+10 Disclosure in compliance with Regulation 52(4) of the SEBI (Listing Obligation and Disclosure Requirements) Regulation, 2015 for the quarter and year ended
+March 31, 2025 is attached as Annexure A.
+11 The Company has maintained at-least 100% security cover on its secured listed non-convertible debentures (NCDs) as on March 31, 2025 (by creating
+exclusive charge on hypothecation of specific and identified book debts/receivables). The proceeds of the NCDs, utilised till the end of the reporting period,
+were used for the objects that were stated in the respective offer documents.
+12 The Company is engaged primarily in the business of housing finance within india and there are no separate reportable segments as per Ind AS 108 dealing
+with Operating Segments.
+
+...
+
+72.54
+-Diluted
+19.26
+71.97
+e)
+Total Debts to Total Assets
+0.74
+0.74
+h)
+Net Profit Margin(%)
+24.11%
+24.34%
+0
+Sector specific equivalent ratios, as applicable
+0
+Gross Non-Performing Assets (GNPA)
+1.08%
+1.08%
+if)
+Net Non-Performing Assets (NNPA)
+0.73%
+0.73%
+Hi)
+Provision coverage ratio
+60.87%
+60.87%
+iv)
+Capital Risk Adequacy Ratio (CRAR)
+44.50%
+44.50%
+v)
+Liquidity Coverage Ratio (Calculated as per RBI guidelines)
+124.55%
+128.12%
+**Note: 1.** Debt service coverage ratio. Interest service coverage ratio. Current Ratio, Long term debt to working capital, Bad debts to
+account receivable ratio, Current liability ratio, Debtors Turnover, Inventory Turnover, Operating Margin(%) are not applicable, being a
+Housing Finance Company (HFC)
+**Note: 2.** Debt Equity Ratio = (Debt securities+Borrowings+Subordinated liabilities+ Interest accrued on total debt)/Networth
+Total Debts to Total Assets= (Debt securities+Borrowings+Subordinated liabilitiest Interest accrued on total debt)/Total assets
+
+
+--- SOURCE: Financial Result approved by the Board of Directors
+URL: https://www.aavas.in/uploads/pdf/financials-85794283.pdf
+
+**AAVAS FINANCIERS LIMITED**
+**(CIN:L65922RJ2011PLC034297)**
+**Statement of financial results for the quarter ended June 30, 2025**
+**(INR in lakh)**
+**Particulars**
+**Quarter ended**
+**Year ended**
+**30.06.2025**
+**31.03.2025**
+**30.06.2024**
+**31.03.2025**
+**(Unaudited)**
+**(Audited)**
+**Refer Note 3**
+**(Unaudited)**
+**(Audited)**
+**1 Revenue from operations**
+Interest income
+54,894.10
+53,526.20
+47,974.63
+2,01,767.67
+Fees and commission income
+2,324.71
+3,097.71
+2,613.02
+10,753.74
+Gain on derecognition of financial instruments under
+amortised cost category
+4,749.09
+6,516.42
+3,053.29
+20,743.56
+Net gain on fair value changes
+788.21
+480.97
+597.89
+2,185.55
+**Total revenue from operations**
+**62,756.11**
+**63,621.30**
+**54,238.83**
+**2,35,450.52**
+**II**
+Other income
+37.38
+127.50
+16.67
+390.98
+**III Total income (l+ll)**
+**62,793.49**
+**63,748.80**
+**54,255.50**
+**2,35,841.50**
+**IV Expenses**
+Finance costs
+27,134.93
+26,473.75
+23,517.36
+1,00,746.84
+Fees and commission expense
+224.92
+258.40
+
+...
+
+Requirements) Regulations, 2015, as amended (the "Listing Regulations").
+2 The above financial results have been reviewed and recommended by the Audit Committee and approved by the Board of Directors at
+its meeting held on August 12, 2025 and subject to limited review by the joint statutory auditors of the Company. The financial results
+for the quarter ended June 30, 2024 were reviewed by Walker Chandiok & Co LLP, Chartered Accountants.
+3 The figures for the quarter ended March 31, 2025 represent balancing figures between audited figures for the year ended March 31,
+2025 and year to date figures upto December 31, 2024 which were subjected to limited review by joint statutory auditors of the
+company.
+4 Pursuant to purchase of shares under separate share sale agreements entered into by each of (i) Lake District Holdings Limited ("LDHL")
+(ii) Partners Group ESCL Limited ("PGEL"), (iii) Partners Group Private Equity (Master Fund), LLC ("PGPE"), (LDHL, PGEL and PGPE
+
+...
+
+Option Plan at a price of INR 1,580.20 per equity share at premium of INR 1,570.20 per equity share. The Company has also allotted
+1,020 equity shares to eligible employees under Performance stock Option Plan at a price of INR 10.00 per equity share.
+6 Disclosures pursuant to RBI Notification-RBI/DOR/2021-22/86 DOR.STR.REC.51/21.04.048/2021-22 dated September 24, 2021
+(a) Details of transfer through assignment in respect of loans not in default during the quarter ended June 30, 2025.
+**Particulars**
+**Quarter ended**
+**June 30, 2025**
+Entity
+NBFC (Housing Finance Company)
+Count of loan accounts assigned
+3,500 Loans
+Amount of loan accounts assigned
+INR 37,671 lakh
+Weighted average maturity
+138 months
+Weighted average holding period
+11 Months
+Retention of beneficial economic interest (MRR)
+10%
+Tangible security coverage
+100%
+Rating wise distribution of rated loans
+Unrated
+**AAVAS FINANCIERS LIMITED**
+**(CIN:L65922RJ2011PLC034297)**
+**Statement of financial results for the quarter ended June 30, 2025**
+(b) Details of transfer through Co-lending in respect of loans not in default during the quarter ended June 30, 2025.
+**Particulars**
+**Quarter ended**
+**June 30, 2025**
+Entity
+NBFC (Housing Finance Company)
+Count of loan accounts assigned
+1,463 Loans
+Amount of loan accounts assigned
+INR 24,995 lakh
+Weighted average maturity
+215 months
+Weighted average holding period
+8 Months
+Retention of beneficial economic interest (MRR)
+20%
+Tangible security coverage
+100%
+Rating wise distribution of rated loans
+Unrated
+(c) The Company has not transferred or acquired, any stressed loans during the quarter ended June 30, 2025.
+(d) The Company has not acquired, any loans not in default during the quarter ended June 30, 2025.
+7 Disclosure in compliance with Regulation 52(4) of the SEBI (Listing Obligation and Disclosure Requirements) Regulation, 2015 for the
+quarter ended June 30, 2025 is attached as Annexure A.
+8 The Company has maintained at-least 100% security cover on its secured listed non-convertible debentures (NCDs) as on June 30, 2025
+(by creating exclusive charge on hypothecation of specific and identified book debts/receivables). The proceeds of the NCDs, utilised till
+the end of the reporting period, were used for the objects that were stated in the respective offer documents.
+9 The Company is engaged primarily in the business of housing finance within india and there are no separate reportable segments as per
+Ind AS 108 dealing with Operating Segments.
+10 Figures for the previous year/periods have been regrouped and/or reclassified wherever considered necessary. The impact, if any, are
+not material to financial results.
+**Place: Mumbai**
+**Date: August 12, 2025**
+**For and on behalf of the Board of Directors**
+**AAVAS FINANCIERS LIMITED**
+**Sachinderpalsingh Jitendrasingh Bhinder**
+**(Managing Director & CEO)**
+**DIN-08697657**
+%
+**AAVAS FINANCIERS LIMITED**
+**(CIN: L65922RJ2011PLC034297)**
+**Annexure A**
+**Disclosures in compliance with regulation 52(4) of the Securities and Exchange Board of India (listing**
+**Obligations and Disclosure Requirements) Regulations, 2015 for the quarter ended June 30,2025**
+**Particulars**
+**For the quarter ended June**
+**30, 2025**
+a)
+Debt Equity Ratio
+3.17
+b)
+Outstanding redeemable preference shares (quantity and value)
+NA
+c)
+Capital redemption reserve/Debenture redemption reserve
+NA
+d)
+Net worth (lakh)
+4,50,980.69
+e)
+Net profit aftertax (lakh)
+13,923.34
+f)
+Earnings per share (INR) (EPS for the quarters are not annualised)
+-Basic
+17.59
+-Diluted
+17.45
+g)
+Total Debts to Total Assets
+0.74
+**h)**
+Net Profit Margin(%)
+22.17%
+i)
+Sector specific equivalent ratios, as applicable
+i)
+Gross Non-Performing Assets (GNPA)
+1.22%
+ii)
+Net Non-Performing Assets (NNPA)
+0.84%
+iii)
+Provision coverage ratio
+57.46%
+iv)
+Capital Risk Adequacy Ratio (CRAR)
+43.20%
+v)
+Liquidity Coverage Ratio (Calculated as per RBI guidelines)
+
+
+=== Aptus Value Housing Finance ===
+
+
+--- SOURCE: Annual Report 2023-2024
+URL: https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf
+
+which `54,500 crore is earmarked
+
+for PMAY (Rural). These
+substantial allocations highlight
+the government’s commitment to
+enhancing housing infrastructure
+across the country, particularly
+in rural regions. At Aptus, we
+align our strategies with these
+national priorities, ensuring that
+our efforts contribute significantly
+to the broader goal of affordable
+housing.
+
+Strategy
+Looking ahead, we are poised for
+continued growth and innovation.
+Our strategic priorities include
+expanding our geographic
+footprint in all existing markets,
+focusing on deeper penetration
+in the markets we ventured in
+recent times such as Odisha
+
+and Maharashtra. We are
+committed to strengthening
+cyber security to protect data,
+maintain trust and reputation
+and ensure business continuity.
+We have been leveraging
+technology to automate our
+operations, using AI/ML-driven
+credit scoring models and
+digital platforms for customer
+engagement. Additionally, we
+plan to strengthen our analytics
+capabilities to drive better
+decision-making and improve
+customer experiences.
+
+We recognise the importance
+of sustainable practices and
+are dedicated to incorporating
+them into our business model.
+Our initiatives aim to reduce our
+environmental impact, promote
+energy efficiency, and support
+community development.
+By fostering a culture of
+sustainability, we contribute to
+a healthier planet and enhance
+our long-term viability and
+competitiveness.
+
+Performance
+The financial year 2023-24
+has been remarkable for
+Aptus. Despite a challenging
+macroeconomic environment,
+we have demonstrated strong
+economic performance. Our
+Assets Under Management
+(AUM) grew by 29% year-on-year
+to `8,722 crores, reflecting our
+robust market presence and
+customer trust. We achieved a
+31% increase in disbursements,
+amounting to `3,127 crores.
+Our Net Interest Margin (NIM)
+remained healthy at 13.45%,
+and we reported a Profit After
+Tax (PAT) of `612 crores, a
+significant 22% increase from
+the previous year. Our Return
+
+...
+
+part of its commitment to create
+societal impact. 74% of the company’s
+borrowers are self-employed,
+reflecting on Aptus’ mission.
+
+RURAL FOCUS:
+
+With 78% of its operations
+concentrated in rural areas, Aptus is
+dedicated to fostering development
+in semi-urban and rural regions,
+ensuring that economic growth and
+housing opportunities extend beyond
+urban centers. This dual focus
+highlights Aptus’ strategic efforts to
+make a meaningful impact, driving
+progress and uplifting communities
+that are often overlooked.
+
+AFFORDABLE TICKET SIZE:
+
+With our average ticket size, Aptus
+makes housing finance accessible
+and affordable for a more significant
+population segment.
+
+APTUS Annual Report 2023-24
+30
+APTUS Annual Report 2023-24
+31
+
+Financial Capital
+
+Aptus creates significant value through
+its financial capital by maintaining
+robust growth in assets under
+management (AUM), efficient profit and
+loss management, and strong balance
+sheet health. In FY24, Aptus achieved
+a 29% increase in AUM, driven by
+strategic expansions and effective market
+penetration. The company reported
+substantial income growth, stable
+net interest margins, and improved
+profitability, with a profit after tax of
+`612 crores. Aptus also enhanced asset
+quality, achieving better GNPA and NNPA
+ratios, and maintained strong liquidity
+with significant undrawn sanctions from
+NHB. This comprehensive approach
+to financial management ensures
+sustainable growth and long-term value
+creation for its stakeholders.
+
+TOTAL DISBURSEMENTS
+DURING FY24
+
+Disbursements: In FY24, total
+disbursements were `3,127
+crores, up from `2,395 crores in
+FY23, marking a significant 31%
+increase
+year-on-year.
+
+The 31% disbursement growth
+reflects our robust loan
+origination processes and
+effective market penetration
+strategies. This increase
+underscores our ability to
+meet the growing demand for
+affordable housing finance and
+small business loans in our target
+markets, particularly in Tier-3 and
+Tier-4 cities.
+
+BORROWING AND LIQUIDITY
+
+...
+
+The increase in total income
+and PAT demonstrates our
+strong revenue generation
+capabilities and profitability. The
+improvement in ROE reflects
+better utilisation of shareholders’
+equity, enhancing value creation.
+Our focus on productivity,
+collection efficiencies, and cost
+management has been key in
+maintaining these solid financial
+metrics.
+
+REVENUE MARGINS
+
+Interest Income: FY24 interest
+income was `1,320 crores, up
+25% from `1,058 crores in FY23.
+
+Fee and Other Income: Grew
+`97 crores from `75 crores.
+
+Operating Margin: Maintained
+strong margins with effective
+cost management.
+
+The substantial interest and fee
+income growth underscores our
+success in expanding lending
+operations and enhancing
+service offerings. Maintaining
+strong operating margins despite
+increased expenses highlights
+our operational efficiency and
+strategic cost management. Our
+focus on increasing leads through
+digital channels and improving
+collection efficiencies supports
+these solid financial results.
+
+BALANCE SHEET
+HIGHLIGHTS
+
+Net Worth: Increased to `3,768
+crores from `3,339 crores in
+FY23.
+
+Borrowings: Rose to `5,200
+crores from `3,786 crores in
+FY23.
+
+Asset Quality: GNPA improved
+to 1.07% from 1.15%, and NNPA
+to 0.80% from 0.86%.
+
+The increase in net worth and
+borrowings reflects our financial
+strength and capacity to leverage
+debt for growth. Improved asset
+quality showcases effective credit
+risk management, reducing
+potential losses from non-
+performing assets and ensuring
+financial stability. Our provision
+coverage ratio of 1.06% and
+strong capital adequacy ratio
+indicate robust financial health
+and preparedness for future
+growth.
+
++22%
+PAT YoY
+
+13.45%
+NIM
+17.25%
+RoE
+
++25%
+Revenue YoY
+
+informed decisions. We also have
+a credit application, which helps
+verify details of a customer’s
+residence and business and is
+integrated with our core lending
+application for credit evaluation.
+
+Collection Management System
+
+We have set up a robust and
+tiered, collections management
+
+...
+
+Aptus generates 100% of its
+leads in-house in an organic
+way through its customer
+app, Bandhu app, social
+media campaigns, and
+network of 262 branches.
+
+The company does not rely
+on DSAs or builders, ensuring
+direct and personalised
+customer interactions. This
+approach helps Aptus maintain
+control over the quality of
+customer acquisition and build
+long lasting relationships.
+
+INCLUSIVE PRODUCTS
+FOR CUSTOMERS
+
+Creating financial inclusion is the
+mission of Aptus. Aptus’ inclusive
+financial products cater to the
+diverse needs of its customer
+base. The way through which
+Aptus achieves its mission is
+offering tailored loan products for
+low- and middle-income groups,
+self-employed individuals, and
+small business owners, who are
+otherwise underserved by Banks
+due to them being in informal
+segment. By understanding the
+unique financial circumstances of
+these segments, Aptus provides
+flexible repayment options,
+competitive interest rates,
+and minimal documentation
+requirements. This inclusivity
+ensures that more individuals
+and families are benefitted and
+provided with resources to
+change their lives in a progressive
+way.
+
+KEY HIGHLIGHTS AND ACHIEVEMENTS
+
+Aptus has expanded its reach to 262 branches,
+adding 31 new branches in FY24, including
+its first branch in Maharashtra.
+
+Disbursements increased by 31% year-on-
+year to `3,127 crores.
+
+The company’s customer base grew by 25% to
+1,33,499 customers in FY24.
+
+Aptus continues to focus on expanding its
+footprint in existing geographies and entering
+new markets like Odisha and Maharashtra.
+
+The company has achieved an AUM of `8,722
+crores, reflecting a 29% year-on-year growth.
+
+Aptus maintains a low GNPA of 1.07% and a
+high NIM of 13.45%.
+
+APTUS Annual Report 2023-24
+38
+APTUS Annual Report 2023-24
+39
+
+Customer Feedback &
+Retention Mechanisms
+
+We engage customers through direct communication
+channels. This feedback helps us enhance services and
+address customer needs effectively. Customers seek
+
+...
+
+considering the risks in its businesses, expectations of
+
+
+--- SOURCE: Annual Report 2024-2025
+URL: https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf
+
+**Aptus closed FY25 with a network of 300 branches, up from 262 in FY24 — a**
+**net addition of 38 branches, including 10 new branches in the new markets**
+**of Maharashtra and Odisha. The company also expanded in its core states**
+**of Tamil Nadu, Andhra Pradesh, Telangana, and Karnataka. This strategic**
+**branch expansion supports contiguous market penetration and future**
+**scalability.**
+**Product-wise, the company continues to operate a secured loan portfolio**
+**focused on home loans and small business loans. The consolidated AUM**
+**stood at ₹10,865 crore as of March 31, 2025, marking a 25% YoY increase**
+**over ₹8,722 crore in FY24. Average ticket sizes ranged from ₹9.2 lakh for**
+**home loans, quasi-home loans and ₹8.3 lakh for business loans with an**
+**average tenure of 10 to 15 years.**
+2
+APTUS Integrated Annual Report 2024-25
+**Key Metrics (FY25 vs FY24)**
+**Branches**
+300 vs 262
+**+38** 
+**Loan Disbursements (** ` **crore)**
+3,604 vs 3,127
+**15%** 
+**AUM (** ` **crore)**
+10,865 vs 8,722
+**25%** 
+3
+APTUS Integrated Annual Report 2024-25
+**Empowering Performance – Delivering**
+**Scalable and Sustainable Growth**
+**Aptus continued to deliver robust financial results in FY25. Net profit grew**
+**by 23% to ₹751 crore from ₹612 crore in FY24. This growth was driven by a**
+**28% increase in total income, which rose from ₹1,409 crore to ₹1,798 crore.**
+**Net Interest Margin (NIM) stood at 12.96% for FY25, marginally down from**
+**13.35% in FY24 due to increase in cost of borrowings (up from 8.55% to**
+**8.68%).**
+**The Return on Equity (ROE) improved to 18.76% in FY25 from 17.25% the year**
+**before, while Return on Assets (ROA) stood at 7.73%, compared to 8.00%**
+**in FY24. Despite the expansion, the opex-to-assets ratio was optimized**
+**further to 2.63% from 2.70% in FY24, indicating operating leverage.**
+**The company maintained a conservative approach with a capital**
+**adequacy ratio of 71% and a healthy liquidity buffer of ₹1,155 crore,**
+**including ₹678 crore in undrawn bank sanctions. Asset quality remained**
+**stable, with a provision coverage ratio (PCR) of 25% on NPA and a steady**
+**credit cost of 0.29%.**
+**Gross NPAs increased slightly to 1.19% from 1.07%, and net NPAs rose**
+**to 0.89% from 0.80%, reflecting prudent provisioning amid loan book**
+**expansion.**
+APTUS Integrated Annual Report 2024-25
+4
+**ROE**
+18.76 vs 17.25 %
+
+**ROA**
+7.73 vs 8.00 %
+**-27 bps** <sup></sup>
+**Opex to Assets**
+2.63 vs 2.70 %
+**0.07%** 
+**-39 bps**
+
+**NIM**
+12.96 vs 13.35 %
+**PAT (** ` **crore)**
+751 vs 612
+**23%** 
+**Total Income (** ` **crore)**
+1,798 vs 1,409
+**28%** 
+**+15%**
+**Disbursement (** ` **crore)**
+3604 vs 3127
+
+**+25%**
+**AUM (** ` **crore)**
+10,865 vs 8,722
+
+**Net Worth (** ` **crore)**
+4,317 vs 3,768
+**15%** 
+**Key Metrics (FY25 vs FY24)**
+**+151 bps**
+APTUS Integrated Annual Report 2024-25
+5
+**Empowering Capability –**
+
+...
+
+Asset growth, profitability, and operational efficiencies all improved year over
+year, reinforcing its position as one of the best-performing housing finance
+companies in the segment.
+**PAT**
+( ` Crores)
+YoY Change: **+23%**
+**751**
+**612**
+**FY 25**
+**FY 24**
+**ROE**
+(%)
+YoY Change: **+151 bps**
+**17.25**
+**18.76**
+**FY 25**
+**FY 24**
+**ROA**
+(%)
+YoY Change: **-27 bps**
+**8.00**
+**7.73**
+**FY 25**
+**FY 24**
+**AUM**
+( ` Crores)
+YoY Change: **+25%**
+**FY 25**
+**10,865**
+**8,722**
+**FY 24**
+**Disbursements**
+( ` Crores)
+YoY Change: **+15%**
+**FY 25**
+**3,604**
+**3,127**
+**FY 24**
+**Total Income**
+( ` Crores)
+YoY Change: **+28%**
+**FY 25**
+**1,798**
+**1,409**
+**FY 24**
+APTUS Integrated Annual Report 2024-25
+31
+**Corporate Governance**
+**Framework and Priorities**
+**Regulatory Adherence**
+Corporate governance is the key to smooth
+business operations. Aptus strives to adopt best
+practices and ensures adherence to all applicable
+regulatory requirements. By prioritising transparency,
+
+...
+
+By synergising technology, talent, prudent governance, and deep customer
+insight, Aptus transforms capital inputs into meaningful outcomes—driving
+inclusive growth, operational scalability, and sustained stakeholder value
+across geographies.
+**WHAT WE DO**
+**KEY OUTCOMES IN FY25**
+Expanded presence in underserved
+areas through physical and tech-
+enabled branch operations
+Expanded to 300 branches (added
+38), optimised branch productivity,
+improved AUM per branch with
+maturity
+Prudent capital deployment and
+risk management to ensure strong
+margins and returns
+23% increase in PAT, 28% rise in total
+income, ROE at 18.76%, strong liquidity
+with ₹678 Cr undrawn sanctions
+Built regional teams, offered
+incentives, and digitised HR to
+enhance productivity and retention
+Staff strength at 3,351, productivity
+gains across field roles, 100%
+appraisal coverage, digitised HR
+systems
+Enabled paperless disbursals, digital
+onboarding, AI-powered credit
+scoring, and collections
+
+...
+
+strategic initiative expanded the Company’s lender
+base and underscored investor confidence in its
+creditworthiness and financial discipline.
+As on March 31, 2025, the Company maintained a
+strong liquidity buffer of approximately ` 1,155 crores,
+APTUS Integrated Annual Report 2024-25
+80
+**3,351**
+**Employees**
+**YoY +433**
+**71%**
+**CRAR**
+**1.19%**
+**Gross NPA**
+**YoY +12 bps**
+**AA-**
+**Credit**
+**Rating**
+**0.89%**
+**Net NPA**
+**YoY +9 bps**
+**₹ 751 Cr**
+**PAT**
+**YoY +23%**
+**25%**
+**PCR (NPA)**
+**7.73%**
+**ROA**
+**₹ 4,317 Cr**
+**Net Worth**
+**18.8%**
+**ROE**
+including undrawn sanctions of ` 678 crores. This
+ensures ample financial flexibility to meet business
+requirements
+and
+pursue
+growth
+opportunities
+without compromising on risk standards.
+The Company remains well-capitalized, with a net
+worth exceeding ` 4,317 crores. The capital adequacy
+ratio stood at a robust 71% as of March 31, 2025,
+well above regulatory thresholds, demonstrating
+
+
+=== Home First Finance ===
+
+
+--- SOURCE: Annual Report 2024-25
+URL: https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf
+
+We have been delivering high growth since our
+
+inception without compromising on quality of the
+
+growth. India presents enormous opportunities in the
+
+affordable housing space that must be dealt
+
+responsibly. Being a lender to low-income households,
+
+our strength of liability franchise is paramount to fulfil
+
+the growing customer aspirations at affordable terms
+
+and be efficient in our operations to generate the right
+
+returns. Our calibrated business expansion approach
+
+involves optimising growth and portfolio quality to
+
+maintain the leadership position in the industry.
+
+A housing financing company, like ours, requires
+
+financial capital as underlying core input to support
+
+operations by enabling lending to consumers. Major
+
+components of financial capital are assets, borrowings,
+
+and equity and serves as the foundation for the
+
+operations of the business. Our resiliency in efficiently
+
+managing these inputs results in steady growth,
+
+exceptional profitability parameters, and customer
+
+satisfaction.
+
+4,141
+5,308
+7,198
+9,698
+3,618
+
+FY20
+FY22
+FY21
+FY23
+FY24
+FY25
+
+4.7%
+5.4%
+6.4%
+5.8%
+5.1%
+
+2.5%
+
+3.6%^
+3.9%
+3.8%
+2.7%
+
+8.7%
+
+11.8%#
+13.5%
+15.5%
+10.9%
+
+2.7%
+2.7%
+3.0%
+2.9%
+3.5%
+
+1.8%
+
+^^
+2.3%
+
+^^
+1.6%
+
+1.7%^^
+1.0%
+
+1.2%
+
+^^
+1.8%
+
+^^
+1.1%
+
+1.2%^^
+0.8%
+
+12,713
+
+5.2%
+
+3.5%
+
+16.5%
+
+2.7%
+
+^^
+1.7%
+
+^^
+1.3%
+
+Key financial metrics over the years reflect our resilience and strategic progress:
+
+^Adjusted RoA at 3.6% computed considering Adjusted PAT for FY22 without the impact of one-time deferred tax liability adjustment.
+# Adjusted RoE at 11.8% computed considering Adjusted PAT for FY22 without the impact of one-time deferred tax liability adjustment
+
+^^ Our Gross Stage 3 (GNPA) as at Mar’25 stands at 1.7% in line with RBI circular dated 12 Nov’21 (Mar’24/Mar’23/Mar’22: 1.7%/1.6%/2.3%) Prior to such
+
+classification, it stands at 1.4% (Mar’24/Mar’23/Mar’22: 1.1%/0.9%/1.3%). Our Net Stage 3 (NNPA) as at Mar’25 stands at 1.3% in line with RBI circular dated
+
+...
+
+especially in the affordable space (`5–25 lacs housing loan ticket
+size range). Addressing this shortage presents a substantial
+financing opportunity of `29 lakh Crs ($ 355 bn) by 2030. We believe
+that affordable housing finance is expected to deliver mid-teen
+growth in terms of value, in line with previous decade. Structural
+reforms and initiatives by the government and conducive
+regulatory framework provides the right landscape to harness this
+opportunity.
+
+As economic development accelerates and urbanization deepens,
+HomeFirst is well-positioned to capture rising housing demand and
+support financial inclusion as we continue to focus on our mission
+of being the Fastest Provider of Home Finance for the Aspiring
+Middle Class, delivered with Ease and Transparency.
+
+171
+
+1.
+Snapshot of FY25 and key updates
+
+During FY25, HomeFirst continued to scale its business
+across its 13 states / UT. Annual disbursals were `4,805
+Crs rising 21.2% on a YoY basis; AUM, at `12,713 Crs,
+grew 31.1% on YoY basis. This performance was driven
+by continuous expansion of our granular distribution
+network across our key markets, strong liquidity,
+effective risk management, the seamless integration of
+technology across processes and a highly experienced,
+trained, and motivated workforce. Our collections
+remained strong leading to stable asset quality with
+Gross Stage 3 (GNPA) at 1.7% compared to 1.7% as of
+Mar'24; prior to RBI classification circular of Nov'21, it
+stands at 1.4% (Mar'24: 1.4%). Credit cost for FY25 was at
+30bps in-line with 30bps for FY24. These efforts resulted
+in a best-in-class return on assets (RoA) of 3.5% (FY24:
+3.8%) and a return on equity (RoE) of 16.5% (FY24:
+15.5%). Net profit saw a substantial increase of 25.0%,
+reaching `382 Crs.
+
+In Apr'25, HomeFirst has successfully completed its
+maiden Qualified Institutional Placement (QIP), raising
+`1,250 Crs. The strong participation underscores the
+continued confidence of the investor community in
+
+...
+
+our borrowing cost.
+
+Profit After Tax (PAT): Continued increased in scale
+with stable asset quality and effective utilization of
+operating leverage has led to remarkable growth of
+25.0% in our Profit After Tax (PAT), rising from `306 Cr in
+FY24 to `382 Cr in FY25. As a result, our Return on Equity
+(RoE) surpassed the critical 16% threshold, increasing
+from 15.5% in FY24 to 16.5% in FY25.
+
+Operating Expenses: We continue to reap the benefits
+of our technology-driven, customised business flows
+which are complemented by our unique people strategy
+to ensure high productivity and thus, low cost. Despite
+considerable expansion in our operations – branch
+count (155 as of Mar'25 vs. 133 as of Mar'24) and
+employee count (1,634 as of Mar'25 vs. 1,249 as of
+Mar'24), we maintained our high productivity ratios with
+disbursement per employee and branch for FY25 at `3.3
+Crs and `33.4 Crs respectively, in-line with FY24 – `3.5 Crs
+and `32.5 Crs respectively. Consequently, our opex-to-
+average total assets for FY25 was at 2.7% (down from
+2.9% for FY24).
+
+Management Discussion
+and Analysis
+
+5.0%
+5.6%
+5.7%
+5.4%
+5.1%
+5.0%
+5.6%
+5.7%
+5.5%
+5.2%
+
+FY21
+FY22
+FY23
+FY24
+FY25
+
+13.5%
+13.4%
+13.5%
+13.5%
+13.4%
+
+13.6%
+13.5%
+13.6%
+13.6%
+13.5%
+
+8.3%
+8.3%
+8.4%
+8.4%
+8.4%
+
+8.2%
+8.3%
+8.3%
+8.4%
+8.4%
+
+5.2%
+5.1%
+5.1%
+5.1%
+5.0%
+5.4%
+5.2%
+5.3%
+5.2%
+5.1%
+
+Q4FY24
+Q1FY25
+Q2FY25
+Q3FY25
+Q4FY25
+
+13.0%
+12.8%
+13.1%
+13.6%
+13.5%
+
+13.0%
+12.8%
+13.1%
+13.6%
+13.6%
+
+8.0%
+
+7.2%
+7.4%
+
+8.2%
+8.4%
+
+8.0%
+
+7.2%
+7.4%
+
+8.1%
+8.4%
+
+ Net Interest Spread Movement
+
+Portfolio Yield
+Portfolio Yield
+
+(Ex CL)
+COB
+ COB
+(Ex CL)
+Spread (Overall)
+Spread (Ex CL)
+
+189
+
+Profit After Tax (`Crs)
+
+100
+
+174
+
+228
+
+306
+
+382
+
+83
+88
+92
+97
+
+105
+
+FY21
+FY22*
+FY23
+FY24
+FY25
+Q4FY24 Q1FY25 Q2FY25 Q3FY25 Q4FY25
+
+*`174 Cr is Adjusted PAT for FY22 without the positive impact of a one-time deferred tax liability adjustment
+
+Particulars
+
+Opening Equity as on Mar'24
+
+Add: Shares issued during the year – represents increase on account of face value for the shares
+
+...
+
+further reinforced with a pan-India presence through 155
+physical branches and 361 touchpoints led by
+technology-driven distribution, diversified funding
+sources, and strong risk management practices and
+contiguous expansion. In FY25, your Company’s
+customer-centric approach played a crucial role in
+achieving a key milestone of crossing of  `10,000 Crores
+in Assets Under Management (“AUM”). As on Mar’25, the
+AUM of the Company was `12,712.72 Crores.
+
+Post the end of FY25, your Company, has successfully
+raised primary capital amounting to `1,250 Crores from
+Qualified Institutional Buyers by way of issuance of
+Equity Shares in accordance with the Qualified
+Institutions Placement as defined in SEBI (ICDR)
+Regulations. In pursuance of the said transaction, the
+Company has raised capital from foreign institutional
+investors, domestic mutual funds and insurance
+companies – both new and existing – affirming strong
+and continued confidence of shareholders in the
+Company.
+
+Dividend:
+
+In accordance with Regulation 43A of the Securities and
+Exchange Board of India (Listing Obligations and
+Disclosure Requirements) Regulations, 2015 (the “SEBI
+Listing Regulations”), the Company has formulated
+and adopted a Dividend Distribution Policy. The
+Dividend Distribution Policy is available on the
+website of the Company.
+
+In view of the overall performance of the Company
+during FY25, the Board at its meeting held on May 1, 2025
+has recommended a final dividend of ` 3.70/- per equity
+shares with face value of `2/- (Rupees Two only) each,
+which is equivalent to 185% of the face value of the equity
+shares, subject to the approval of the members at its
+ensuing Annual General Meeting of the Company, to be
+paid out as dividend. The Dividend payout ratio for FY25
+shall be 10%, if approved by the shareholders.
+
+In terms of the provisions of the Income Tax Act, 1961,
+dividend income is taxable in the hands of the members,
+and therefore will be subject to deduction of applicable
+
+...
+
+the needs of different regions and customers and is a
+
+
+--- SOURCE: Investor Press Release
+URL: https://homefirstindia.com/files/HomeFirst_Q4FY26_Press_Release.pdf
+
+▪ **AUM at** **₹** **15,878 Cr; strong growth of 24.9% y-o-y and 6.4% q-o-q.**
+▪ **Disbursal reaches new high of** **₹** **1,572 Cr with a y-o-y growth of 23.5% and a q-o-q of 19.3%.**
+▪ **Asset Quality Strengthens: 1+/30+/GNPA at 4.7%/3.2%/1.8%; QoQ improvement of 60bps, 50bps, 20bps**
+▪ **PAT grows by 42.7% y-o-y and 6.6% q-o-q to** **₹** **149 Cr. RoA at 4.1%.**
+Home First Finance Company India Limited
+Press Release: 6th May, 2026, Mumbai
+**Key Performance Indicators for Q4 & FY26**
+_(1) IGAAP basis and Excludes Co-Lending._
+**_Investors & Analyst can download the excel version of operational & financial numbers from our website link._**
+₹ 15,878 Cr
++24.9%
++6.4%
+**Q4FY26 Assets Under Mgmt (AUM)**
+₹ 1,572 Cr
+**Q4FY26 Disbursement**
+1.8%
++10 bps
+-20 bps
+**Q4FY26 Gross Stage 3 / POS (GNPA%)**
+₹ 149 Cr
+**Q4FY26 Profit After Tax (PAT)**
+y-o-y
+q-o-q
+**Q4FY26 in brief**
++23.5%
++19.3%
++6.6%
+**Particulars**
+**Q4FY26**
+**Q4FY25**
+**y-o-y**
+**Q3FY26**
+**q-o-q**
+**FY26**
+**FY25**
+**y-o-y**
+AUM ( ₹ Cr)
+**15,878**
+12,713
+24.9%
+14,925
+6.4%
+**15,878**
+**12,713**
+24.9%
+Disbursement ( ₹ Cr)
+**1,572**
+1,273
+23.5%
+1,318
+19.3%
+**5,424**
+**4,805**
+12.9%
+Total Income ( ₹ Cr)
+**505**
+416
+21.3%
+484
+4.4%
+**1,923**
+**1,539**
+24.9%
+PAT ( ₹ Cr)
+**149**
+105
+42.7%
+140
+6.6%
+**540**
+**382**
+41.4%
+Spread (%) <sup>(1)</sup>
+**5.3%**
+5.1%
++20 bps
+5.4%
+-10 bps
+**5.3%**
+**5.2%**
++10 bps
+ROA (%)
+**4.1%**
+3.5%
++60 bps
+4.0%
++10 bps
+**3.9%**
+**3.5%**
++40 bps
+Gross Stage 3 (%)
+**1.8%**
+1.7%
++10 bps
+2.0%
+-20 bps
+**1.8%**
+**1.7%**
++10 bps
+Cost to Income (%)
+**32.0%**
+35.7%
+-370 bps
+32.1%
+-10 bps
+**32.5%**
+**35.8%**
+-330 bps
++42.7%
+**Commenting on the performance Mr. Manoj Viswanathan, MD & CEO said,**
+India maintains macroeconomic stability despite a global landscape disturbed by Middle Eastern conflicts and
+shifting trade dynamics. Domestic demand continues to be supported by stable policy settings and gradually
+improving economic momentum.
+Against this backdrop, the Company delivered a strong Q4FY26 and FY26 performance, marked by sustained
+business momentum and enduring profitability. Our Assets Under Management (AUM) grew to ₹ 15,878 Crore,
+registering a robust 24.9% YoY and 6.4% QoQ growth. We achieved strong growth in originations and
+disbursements during this quarter, anchored in disciplined underwriting and rigorous risk management. This
+enabled us to navigate a dynamic operating environment while further strengthening portfolio quality and
+operational resilience.
+During the quarter, disbursement grew by 23.5% YoY and 19.3% QoQ, to an all time high of ₹ 1,572 Crore. We
+continued to scale our distribution footprint in key affordable housing markets. During FY26, we expanded our
+network by adding 16 branches and 12 touchpoints, taking the total to 171 branches and 373 touchpoints. To
+support this growth, we strengthened our workforce with the addition of 221 employees, primarily in
+customer-facing roles, taking total headcount to 1,855.
+We also delivered a very strong operating performance – our Q4 Profit after Tax grew by 42.7% YoY and 6.6%
+QoQ to ₹ 149 Crore supported by Net Total Income growth of 37.0% YoY and 6.9% QoQ to ₹ 310 Crore; RoA
+stood at 4.1%. For FY26, Profit After Tax (PAT) stood at ₹ 540 Crore, 41.4% YoY, translating into a Return on
+Equity (RoE) of 15.7% (pre-money RoE of 16.8%).
+On a QoQ basis, Asset quality has strengthened materially, with a pronounced improvement in early-stage
+delinquencies (1+ and 30+ DPD), driving a meaningful reduction in GNPA. This structural improvement,
+underpinned by a stabilizing credit environment, reflects our disciplined and risk-calibrated growth strategy. 1+
+DPD at 4.7% (improved by 60bps QoQ), 30+ DPD at 3.2% (improved by 50bps QoQ), GNPA at 1.8% (improved by
+20bps QoQ), and credit cost steady at 40bps. We continue to maintain disciplined risk management with credit
+cost guidance of 30 – 40bps even as we scale.
+We remain committed to responsible and sustainable growth. Under our Green Homes initiative, we certified
+140 additional homes during the quarter, taking the cumulative count to 450 as of March 2026.
+As we move into FY27, we are well positioned to deliver ~25% YoY AUM growth, driven by continued expansion
+of our distribution footprint, deeper technology integration, diversified funding sources, and a strong,
+embedded risk governance framework, reaffirming the strength of our portfolio and the resilience and stability
+of our business.
+Backed by robust fundamentals and disciplined execution, we remain confident in our ability to consistently
+capture emerging opportunities and scale with precision. This next phase of growth will be defined by greater
+ambition, sharper execution, and a clear focus on building a market-leading franchise.
+**Key Highlights for Q4FY26**
+**Distribution:**
+▪
+The Company has 171 branches (+6 from Dec’25 and +16 from Mar’25 ) with presence in 13 States / UT.
+▪
+
+...
+
+ROE at 14% (up by 30 bps q-o-q) due to enlarged equity base post recent fund raise; pre-money adjusted RoE at
+17.5% (up by 40 bps q-o-q).
+4.5%
+5.3%
+4.7%
+Mar'25
+Dec'25
+Mar'26
+**Q4FY26 Performance Summary**
+**Assets Under Management**
+_in_ ₹ _Cr_
+**Profit After Tax**
+_in_ ₹ _Cr_
+105
+140
+149
+Q4 FY25
+Q3 FY26
+Q4 FY26
+12,713
+14,925
+15,878
+Mar'25
+Dec'25
+Mar'26
+**Opex to Asset**
+2.7%
+2.7%
+2.7%
+Q4 FY25
+Q3 FY26
+Q4 FY26
+**Net Worth**
+_in_ ₹ _Cr_
+2,521
+4,180
+4,357
+Mar'25
+Dec'25
+Mar'26
+**Disbursement**
+_in_ ₹ _Cr_
+1,273
+1,318
+1,572
+Q4 FY25
+Q3 FY26
+Q4 FY26
+**DPD 1+**
+**DPD 30+**
+3.0%
+3.7%
+3.2%
+Mar'25
+Dec'25
+Mar'26
+**Gross / Net Stage 3 (GNPA/NNPA)**
+**Gross Stage 3**
+**Net Stage 3**
+4.0%
+4.2%
+4.5%
+4.7%
+Mar'23
+Mar'24
+Mar'25
+Mar'26
+**FY26 Performance Summary**
+**Assets Under Management**
+_in_ ₹ _Cr_
+**Profit After Tax**
+_in_ ₹ _Cr_
+228
+306
+382
+540
+FY23
+FY24
+FY25
+FY26
+7,198
+9,698
+12,713
+15,878
+Mar'23
+Mar'24
+Mar'25
+Mar'26
+**Opex to Asset**
+3.0%
+2.9%
+2.7%
+2.7%
+FY23
+FY24
+FY25
+FY26
+**Net Worth**
+
+
+--- SOURCE: Investor Presentation
+URL: https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf
+
+Investor Presentation – Q4 FY26 | Home First Finance Company India Ltd.
+**Executive Summary | FY26**
+FY26 Highlights
+3
+**Assets Under Management (AUM)**
+**Spread** <sup>**(1)**</sup>
+**Profit After Tax (PAT)**
+**Disbursement**
+**Opex to Assets**
+**Return On Assets (ROA)**
+**Gross Stage 3 / POS (GNPA)**
+**DPD 30+ / POS**
+**Return On Equity (ROE)** <sup>**(2)**</sup>
+y-o-y
+₹ 54,236 Mn
+5.3%
+2.7%
+3.9%
+15.7%
+₹ 5,404 Mn
+3.2%
+1.8%
++10 bps
++24.9%
++12.9%
++10 bps
+0 bps
++20 bps
++40 bps
+-80 bps
++41.4%
+(1) As per IGAAP. Excludes Co-lending
+(2) Pre-money ROE (adjusted for QIP) for FY26 – 16.8%
+₹ 1,58,777 Mn
+Investor Presentation – Q4 FY26 | Home First Finance Company India Ltd.
+**Executive Summary | Q4FY26**
+Q4FY26 Highlights
+4
+**Assets Under Management (AUM)**
+**Spread** <sup>**(1)**</sup>
+**Profit After Tax (PAT)**
+**Disbursement**
+**Opex to Assets**
+**Return On Assets (ROA)**
+**Gross Stage 3 / POS (GNPA)**
+**DPD 30+ / POS**
+**Return On Equity (ROE)** <sup>**(2)**</sup>
+y-o-y
+q-o-q
+₹ 15,724 Mn
+
+...
+
+achieved strong growth in originations and disbursements during this quarter, anchored in disciplined underwriting and rigorous risk
+management. This enabled us to navigate a dynamic operating environment while further strengthening portfolio quality and operational
+resilience.
+During the quarter, disbursement grew by 23.5% YoY and 19.3% QoQ, to an all time high of ₹ 1,572 Crore. We continued to scale our distribution
+footprint in key affordable housing markets. During FY26, we expanded our network by adding 16 branches and 12 touchpoints, taking the total
+to 171 branches and 373 touchpoints. To support this growth, we strengthened our workforce with the addition of 221 employees, primarily in
+customer-facing roles, taking total headcount to 1,855.
+We also delivered a very strong operating performance – our Q4 Profit after Tax grew by 42.7% YoY and 6.6% QoQ to ₹ 149 Crore supported by Net Total Income growth of 37.0% YoY
+
+...
+
+Young, empowered employees with a customer centric mindset. 1,855 employees with a
+median age of 26 years.
+Investor Presentation – Q4 FY26 | Home First Finance Company India Ltd.
+20
+200
+690
+1,629
+3,368
+5,477
+8,473
+13,559
+24,436
+36,183
+41,411
+53,803
+71,980
+96,978
+1,27,127
+1,58,777
+**2010**
+**2011**
+**2012**
+**2013**
+**2014**
+**2015**
+**2016**
+**2017**
+**2018**
+**2019**
+**2020**
+**2021**
+**2022**
+**2023**
+**2024**
+**2025**
+**2026**
+AA- (+ve)
+Early Days and Proof of Concept
+**Our Journey**
+7
+Corporate Information
+Consolidation
+Note:AUM in INR Million
+(1) Aether has co-invested with True North. Waverly owns 100%of Aether Class B Shares. Waverly is a wholly-owned indirect subsidiary of GIC (Ventures) Pte. Ltd
+(2) Investment by Orange Clove Investments B.V (an affiliate of Warburg Pincus). Warburg Invested on 1stOctober 2020
+Incorporation
+Series A
+Started
+Operations
+in Gujarat
+and Tamil
+Nadu
+Alpha TC
+Holdings
+Private
+Limited
+(Tata Capital)
+1,000
+customers
+Series B
+Became
+Pr ofitable
+5,000
+
+...
+
+FY22
+FY23
+FY24
+FY25
+FY26
+Q4FY25 Q1FY26 Q2FY26 Q3FY26 Q4FY26
+Note: Fiscal year ending 31 <sup>st</sup> March. A/E – Average Total Assets / AverageEquity.
+(1) Adjusted PAT, Adjusted RoA and Adjusted RoE FY22 is computed considering Adjusted PAT without the impact of one-time deferred tax liability adjustment
+Equity Raised
+_(_ _₹_ _Mn )_
+A / E
+(1)
+(1)
+(1)
+4.0x
+13,172
+3.3x
+3.5x
+4.1x
+4.7x
+3.4x
+4.9x
+4.1x
+32
+53
+62
+337
+13,172
+337
+12,495
+**Profit After Tax (** **₹** **Mn )**
+**Net worth (** **₹** **Mn )**
+**Return on Average Assets**
+**Return on Average Equity**
+Pre-money ROE
+(adjusted for QIP)
+stands at 17.5%
+for Q4FY26
+12,715
+3.5x
+3.4x
+12,940
+Investor Presentation – Q4 FY26 | Home First Finance Company India Ltd.
+42.7% growth y-o-y
+6.6% growth q-o-q
+**ECL Provisions Summary**
+40
+Financial Updates
+**Total Provision Coverage Ratio**
+Particulars (in ₹ Mn)
+Stage 1
+Stage 2
+Stage 3
+Loan
+Commitment
+Total
+**For period ended** **Mar’26**
+Loans – Principal Outstanding
+1,28,106.4
+1,865.6
+2,404.3
+
+...
+
+(3) Pursuant to the RBI circular dated 12 Nov 2021, Dec’ 21 onwards, the Company has aligned its definition of default requiring repayment of entire arrears of interest and principal for loan accounts classified as NPAs to be upgraded as ‘standard’ asset.
+Investor Presentation – Q4 FY26 | Home First Finance Company India Ltd.
+**Particulars (in** **₹** **Mn)**
+**_FY17_**
+**_FY18_**
+**_FY19_**
+**_FY20_**
+**_FY21_**
+**_FY22_**
+**_FY23_**
+**_FY24_**
+**_FY25_**
+**_FY26_**
+**_CAGR %_**
+**Operational Information**
+Number of Branches
+36
+42
+60
+68
+72
+80
+111
+133
+155
+171
+Loan disbursals
+4,244
+7,455
+15,728
+16,183
+10,966
+20,305
+30,129
+39,634
+48,053
+54,236
+AUM
+8,473
+13,559
+24,436
+36,184
+41,411
+53,803
+71,980
+96,978
+1,27,127
+1,58,777
+38.5%
+Number of Employees
+200
+382
+675
+696
+687
+851
+993
+1,249
+1,634
+1,855
+**Financial Information**
+Income from Operations
+916
+1,326
+2,637
+4,108
+4,891
+5,957
+7,910
+11,374
+15,299
+19,146
+Interest Expenses
+533
+647
+1,249
+1,912
+2,166
+2,148
+3,033
+4,987
+7,134
+7,896
+
+...
+
+Glossary
+**Terms**
+**Explanation**
+**AUM - Assets Under Management**
+Assets Under Management/Gross Loan Assets represents the aggregate of current principal
+outstanding and overdue principal outstanding, if any, for all loan assets under management
+which includes loan assets held by the Company as of the last day of the relevant year or
+period as well as loan assets which have been transferred
+by the Company by way of
+assignment and are outstanding as of the last day of the relevant year or period.
+**POS - Principal Outstanding**
+Loans – Principal outstanding represents gross principal outstanding of loans as of the last
+day of the relevant period or year as per the restated financial statements.
+**NII - Net Interest Income**
+Net Interest Income represents interest income on term loans minus Interest on
+borrowings, Interest on debt securities and other interest expense for the relevant year or
+period
+**NIMs - Net Interest Margin**
+Net Interest Income / Average total assets
+
+
+=== India Shelter Finance ===
+
+
+--- SOURCE: Financial Results March 2026
+URL: https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf
+
+The Statement includes the results for the quarter ended March 31, 2026 being the balancing figure
+between the audited figures in respect of the full financial year ended March 31, 2026 and the
+published unaudited year-to-date figures up to the third quarter of the current financial year, which
+were subjected to a limited review by us, as required under the Listing Regulations.
+
+For S.R. Batliboi & Associates LLP
+Chartered Accountants
+ICAI Fir
+gistration Number: 101049W/E300004
+
+per Amit Kabra
+Partner
+Membership Number: 094533
+_
+UDIN: 26094 < 22 HCDECH S>SD
+Place of Signature: Gurugram
+Date: May 02, 2026
+
+India Shelter Finance Corporation Limited
+Registered office:- 6th Floor, Plot No 15, Sector 44, Institutional Area, Gurugram-122 002
+
+CIN:
+L65922HR1998PLC042782 | Website: www.indiashelter.in
+
+Audited standalone statement of profit & loss for the quarter and year ended 31 March 2026
+(Amount in tLakhs)
+For the quarter ended
+For the year ended
+
+Particulars
+31 March 2026 | 31 December 2025 | 31 March 2025 | 31 March 2026 | 31 March 2025
+TAudited]
+TUnaudited)
+TAudited)
+TAudited]
+TAudited)
+
+Refer Note- 12
+Refer Note- 12
+
+1 |Revenue from operations
+
+(i)
+|interest income
+33,721.56
+31,027.15
+26,735.38
+1,23,056.27
+94,228.57
+
+(ii)
+|Fees and commission income
+3,811.22
+3,614.39
+3,851.59
+14,732.00
+11,454.21
+
+{iii} |Net gain on fair value changes
+88.63
+135.06
+235.72
+569.49
+961.60
+
+(iv) |Net gain on derecognition of financial instruments under amortised cost
+
+|category
+3,443.43
+4,173.68
+1,875.90
+14,641.53
+9,805.54
+
+[Total revenue from operations
+31,064.84
+38,95028|
+ 32,69859|
+15299929
+1,16449.92
+
+2_|Other income
+3.97
+212
+12.94
+19.39
+1,029.94
+
+3_[Total income(1+2)
+31,068.81
+3895240|
+ 32,71153|
+ 153,01868|
+1,17,47986
+
+4
+|Expenses
+
+(i)
+|Finance costs
+11,518.85
+11,352.51
+10,159.18
+44,480.24
+35,487.55
+
+(ii) |impairment on financial instruments
+787.72
+1,267.15
+31136
+4,031.98
+2,643.02
+
+{iii} |Employee benefits expenses
+794335
+8,030.56
+6,157.57
+29,778.92
+22,908.45
+
+...
+
+accounts as on 30 September 2025) classified as standard as on 31 March 2026.
+**personal loan includes housing loan & non housing loan.
+
+10. Disclosure pursuant to Reserve Bank of India notification RBI/2021-22/86 DOR.STR.REC.51/21.04.048/2021-22 dated 24
+
+September 2021:
+
+a)
+Details of loans not in default transferred through assignment during the year ended 31 March 2026.
+
+Particulars
+Year ended 31st March 2026
+
+Count of loan accounts assigned
+13,623
+
+Amount of loan account assigned
+1,02,165.90 lakhs
+
+Retention of beneficial economic interest (MRR)
+12,654.31 lakhs
+
+Weighted average Residual Tenure of the loans transferred
+9.79 years
+
+Weighted average holding period
+1.03 years
+
+Coverage of tangible security coverage (LTV)
+48.02%
+
+Rating wise distribution of rated loans
+Unrated
+
+b)
+Details of loans not in default transferred through Co-Lending during the year ended 31 March 2026.
+Particulars
+Year ended 31st March 2026
+Count of loan accounts assigned
+2,178
+Amount of loan account assigned
+23,948.80 lakhs
+Retention of beneficial economic interest (MRR)
+20%
+Weighted average Residual Tenure of the loans transferred
+11.11 years
+Weighted average holding period
+0.22 years
+Coverage of tangible security coverage (LTV)
+48.27%
+Rating wise distribution of rated loans
+-
+Unrated
+
+¢)
+The Company has not acquired, any loan not in default during the year ended 31 March 2026.
+d) The Company has not transferred/acquired, any stressed/non-performing loan during the year ended
+31 March
+2026.
+e
+Copps
+(&
+Ly
+\
+
+and Disclosure Requirements) Regulations, 2015 are as follows:
+
+11. Additional Information pursuant to Regulation 52(4) of the Securities and Exchange Board of India (Listing Obligations
+
+As at 31° March 2026
+Particulars
+
+Net Worth
+3,19,812.46 lakhs
+
+Debt -Equity Ratio
+1.95 times
+
+Total Debts to Total Assets
+)
+0.65
+
+Net Profit Margin (%)
+33.01%
+
+Gross NPA ratio
+1.25%
+
+Net NPA ratio
+0.93%
+
+Provision Coverage ratio on Stage 3 assets
+25.41%
+Outstanding redemption reserve/ Debenture redemption reserve
+N.A
+
+Outstanding redeemable preference shares
+N.A
+
+Capital redemption reserve/Debenture redemption reserve
+N.A
+
+Profit after Tax
+50,506.43 lakhs
+
+Earnings Per Share- Basic
+46.63
+
+Earnings Per Share- Diluted
+45.13
+
+Liquidity Coverage Ratio (LCR) (as per RBI guidelines)
+127.63%
+
+Note 1: Debt Service coverage ratio, Interest Coverage ratio, Current ratio, Operating Margin, Long term debt to
+working capital, Bad debts to account receivable, Current Liability, Debtors turnover, Inventory turnover ratios are
+
+not applicable to us.
+Note 2: Debt-Equity Ratio = (Debt Securities+ Borrowings) / Net worth
+Total Debts to Total Assets = (Debt Securities+ Borrowings) / Total Assets
+
+Provision Coverage ratio on Stage 3 assets = Impairment allowance on Stage 3 / Gross Stage 3 loans
+
+12. The amounts for the quarter ended 31 March 2026 and 31 March 2025 are the balancing figures between the audited
+figures in respect of the full financial year and year-to-date figures up to the third quarter of the relevant financial
+year which were subjected to limited review by statutory auditors.
+
+13. Figures for the previous year/periods have been regrouped and/or reclassified wherever considered necessary in line
+with the financial results for the current year/period. The impact, if any, are not material to financial results.
+
+For and on behalf of the Board of Directors of
+
+India Shelter Finance Corporation Limited
+
+XM\‘% é“}fl
+2o a“‘\é\
+N
+=
+Gug
+~
+Rupinder Singh
+&y
+/Q N
+Managing Director
+& CEO W
+'
+(DIN: 09153382)
+
+Place: Gurugram
+Date: 02 May 2026
+
+S.R. BATLIBOI & ASSOCIATES LLP
+SCitor
+s Curuarom - 122 003
+
+Chartered Accountants
+Haryana, India
+
+Tel: +91 124 681 6000
+
+Independent Auditor’s Report on the Quarterly and Year to Date Consolidated Financial Results of
+the Company Pursuant to the Regulation 33 and 52 of the SEBI (Listing Obligations and Disclosure
+Requirements) Regulations, 2015, as amended
+
+To
+The Board of Directors of
+
+...
+
+01, 2025 to December 15, 2025 (being the date of loss of control). These financial statements have been
+audited by its statutory auditor.
+
+The independent auditor's report on the financial results/financial information of the entity have been
+furnished to us by the Management and our opinion on the Statement in so far as it relates to the amounts
+and disclosures included in respect of the subsidiary is based solely on the reports of such auditors and the
+procedures performed by us as stated in paragraph above.
+
+The Statement includes the results for the quarter ended March 31, 2026 being the balancing figures
+between the audited figures in respect of the full financial year ended March 31, 2026 and the published
+unaudited year-to-date figures up to the end of the third quarter of the current financial year, which were
+subjected to a limited review by us, as required under the Listing Regulations.
+
+For S.R. Batliboi & Associates LLP
+Chartered Accountants
+ICAI Firga,Registration Number: 101049W/E300004
+
+I
+
+=
+
+per Amit Kabra
+Partner
+Membership Number: 094533
+UDIN: 26044 S22LNTCLomo 666U
+Place of Signature: Gurugram
+Date: May 02, 2026
+
+India Shelter Finance Corporation Limited
+Registered office:- 6th Floor, Plot No 15, Sector 44, Institutional Area, Gurugram-122 002
+
+CIN: 165922HR1998P1 C042782 | Website: www.i iashelter.i n
+
+Audited consolidated statement of profit & loss for the quarter and year ended 31 March 2026
+
+(Amount in Lakhs)
+For the quarter ended
+For the year ended
+
+[Particulars
+31 March 2026 | 31 December 2025 | 31 March 2025 | 31 March 2026 | 31 March 2025
+TAudited)
+Unaudited)
+TAudited)
+TAudited)
+TAudited)
+Refer Note- 14
+Refer Note- 14
+
+1 |Revenue from operations
+
+(i) |interestincome
+33,479.81
+31,050.77
+2676576
+1,22,896.18
+94,342.86
+
+(ii) |Fees and commission income
+381122
+3,614.39
+3,851.59
+14,732.00
+11,454.21
+
+(i) Net gain on fair value changes
+8863
+135.06
+235.72
+569.49
+961.60
+
+iv) |Net gain on derecognition of financial instruments under amortised cost]
+
+...
+
+3,19,812.46
+2,70,873.54
+L tafliabilities and equity
+9,61,4
+
+
+--- SOURCE: Integrated Annual Report- 2024-25
+URL: https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1751527210017-Integrated+Annual+Report-+2024-25.pdf
+
+142
+
+1,964
+
+248
+
+215
+
+2,646
+
+378
+251
+
+3,355
+
+2020-21
+2021-22
+2022-23
+2023-24
+2024-25
+
+323
+
+460
+
+606
+
+861
+
+1,176
+
+2020-21
+2021-22
+2022-23
+2023-24
+2024-25
+
+1.4
+
+1.6
+
+0.8
+
+0.7
+
+0.8
+
+2020-21
+2021-22
+2022-23
+2023-24
+2024-25
+
+2,199
+
+3,073
+
+4,359
+
+6,084
+
+8,189
+
+Gross stage - 3 assets
+(%)
+Return on equity
+(%)
+
+2020-21
+2021-22
+2022-23
+2023-24
+2024-25
+
+1.9
+
+2.1
+
+1.1
+
+1.0
+1.0
+
+2020-21
+2021-22
+2022-23
+2023-24
+2024-25
+
+9.8
+
+12.8
+13.4
+
+14.0
+
+15.1
+
+Return on assets
+(%)
+Net worth
+(` In Crs)
+
+2020-21
+2021-22
+2022-23
+2023-24
+2024-25
+
+4.1
+
+4.5
+
+4.1
+
+4.9
+
+5.6
+
+2020-21
+2021-22
+2022-23
+2023-24
+2024-25
+
+937
+1,076
+
+1,241
+
+2,299
+
+2,709
+
+Corporate overview
+
+6
+7
+Integrated Annual Report 2024-25
+India Shelter Finance Corporation Limited
+
+01
+02
+03
+Financial Prudence
+
+2024-25
+Glancing through
+
+Number of States We
+are Present in
+15
+
+Customers Registered
+on the App
+80%
+
+Trees Planted
+25,000
+
+Assets Under Management (AUM) |
+up by 35% YoY
+` 8,189 Crs
+
+PAT |
+up by 53% YoY
+` 378 Crs
+
+Number of
+Branches
+266
+
+Digital
+Collections
+95%
+
+Average Loan Ticket Size
+` 10 Lacs
+
+ROA5.6%
+
+Presence in Tier II & Tier III Cities
+91%
+
+Service Requests Raised on
+the App
+70%
+
+Disbursement |
+up by 27% YoY
+` 3,355 Crs
+
+Networth
+` 2,709 Crs
+
+Number of Active
+Customers
+109,277
+
+Account Aggregator
+Penetration
+40%
+
+Lives Benefitted through
+CSR Activities
+31,377
+
+Number of Independent
+Directors
+4
+
+Average Tenure of Board
+Members
+4.02 Years
+
+Women’s Representation
+on the Board
+29%
+
+Loan to Value (LTV)
+52%
+
+ROE15.1%
+
+E-Nach Mandates
+100%
+
+Credit Rating*
+AA-(Stable)
+
+E-Signing
+99%
+
+In-House Sourcing
+99%
+
+Book Value per Share
+(BVPS)
+` 251
+
+Operational
+Performance
+
+Digital
+Performance
+
+Business
+Performance
+
+ESG
+Performance
+
+Financial
+Performance
+
+*  CARE Rating (AA- Stable),
+ICRA (AA- Stable), IND RA (AA- Stable)
+
+Corporate overview
+
+8
+9
+Integrated Annual Report 2024-25
+India Shelter Finance Corporation Limited
+
+01
+02
+03
+Key Performance Indicators
+
+Homeownership a Reality
+Making the Dream of
+
+...
+
+market penetration, a sturdy branch-led
+distribution model, and a digital-first
+engagement approach, we are closing
+credit gaps and enabling families to
+realise their homeownership dreams.
+This integrated approach allows us to
+effectively bridge credit gaps for LIG
+and MIG customers, helping
+families in India’s growing cities achieve
+their dream of owning a home.
+
+Corporate overview
+
+12
+13
+Integrated Annual Report 2024-25
+India Shelter Finance Corporation Limited
+
+01
+02
+03
+Management Message
+
+Consistent Performance
+and Resilience in Action
+
+We remain committed to resilience and
+disciplined execution, ensuring strong
+financial and operational performance.
+This year, our Assets Under Management
+(AUM) expanded by 35% YoY to ` 8,189
+Crs, fuelled by a disbursements reaching
+` 3,355 Crs, indicating our deepening
+market position and customer-first
+approach. We continue to maintain
+our focus on profitability, with PAT
+reaching ` 378 Crs. Amid evolving
+macroeconomic conditions, we are
+strategically positioned with strong
+liquidity, backed by recent equity
+raises and an upgrade in our ratings.
+
+To achieve this, we have identified
+key strategic priorities:
+
+Expanding Strategically for
+Deeper Market Penetration
+
+Strengthening our presence in existing
+markets remains a priority. We aim to
+deepen penetration by expanding
+across 15 states and utilising our branch
+network. During the year, we added
+43 new branches, with a vision to add
+around 40 to 45 branches annually over
+the next few years, to ensure consistent
+
+Redefining Customer
+Experience with a
+Relationship-First Approach
+
+A customer-first mindset is embedded
+in our business model, shaping
+every interaction and decision we
+make. Our employees are more than
+service providers; they are trusted
+advisors and brand ambassadors,
+ensuring every customer receives
+guidance and support throughout
+their homeownership journey. With
+99% of our loans sourced directly,
+we have cultivated a relationship-
+
+...
+
+while ensuring financial stability. Our commitment to innovation, governance, and customer empowerment enables us to unlock new
+opportunities, drive responsible growth, and create a lasting impact.
+
+INDIA SHELTER’S PERFORMANCE DURING 2024-25
+
+Operational Performance
+
+Assets Under Management (AUM)
+
+As of 31 March, 2025, our AUM increased to ` 8,189.2 Crs, compared to ` 6,084.0 Crs in the previous financial year, reflecting a growth of 35%.
+
+Disbursements
+
+As of 31 March, 2025, our total disbursements rose to ` 3,355.1 Crs, compared to ` 2,646.0 Crs in the previous financial year, marking a growth of 27%.
+
+Financial Performance
+
+We delivered strong financial performance in 2024-25. Total income saw a 37% year-on-year (Y-o-Y) growth, rising to ` 1,175.9 Crs in
+2024-25 from ` 861.4 Crs in 2023-24. Finance costs increased by 23% Y-o-Y, reaching `  353.4 Crs in 2024-25  from ` 287.0 Crs in
+2023-24. Additionally, net total income witnessed a 43% Y-o-Y increase, climbing to ` 822.5 Crs  in 2024-25 from ` 574.4 Crs in
+2023-24.
+
+Operating expenses grew to ` 306.9 Crs in 2024-25 from ` 236.0 Crs in 2023-24, driven by our strategic focus on expanding the Branch
+Network, workforce, investing in technology, and enhancing brand visibility amid strong business momentum. Pre-provisioning operating
+profit increased 52% Y-o-Y, reaching ` 515.6 Crs in 2024-25  from ` 338.4 Crs in 2023-24. Asset quality improvements helped contain credit
+costs at ` 26.4 Crs in 2024-25 compared to ` 19.2 Crs in 2023-24.
+
+Profit before Tax stood at ` 489.2 Crs. After accounting for income tax of ` 111.3 Crs, the Profit after Tax (PAT) increased 53% Y-o-Y, reaching
+` 377.9 Crs in 2024-25, up from ` 247.6 Crs in the previous year.
+
+S
+
+T
+
+W
+
+O
+
+SWOT Analysis
+S - Strengths
+
+•
+Extensive footprint across 15 states to serve a large customer base effectively.
+
+•
+Adoption of digital lending platforms improving loan processing efficiency.
+
+•
+
+...
+
+35.2
+26.3
+Diluted EPS
+33.9
+25.2
+
+Key Ratios
+
+Particulars
+2024-25
+2023-24
+Total Revenue to Average Total Assets
+17.4%
+17.1%
+Finance Cost to Average Total Assets
+5.2%
+5.7%
+Spread to Average Total Assets
+12.1%
+11.4%
+Operating Expenses to Average Total Assets
+4.5%
+4.7%
+Credit Cost to Average Total Assets
+0.4%
+0.4%
+PBT to Average Total Assets
+7.2%
+6.3%
+ROA (PAT to Average Total Assets)
+5.6%
+4.9%
+Leverage (Average Total Assets to Average Net Worth)
+2.7
+2.9
+ROE (PAT to Average Net Worth)
+15.1%
+14.0%
+Cost-to-Income
+37.3%
+41.1%
+Operating Expenses/AUM
+4.3%
+4.5%
+CRAR
+60.6%
+70.9%
+Book Value per Share
+251.1
+214.7
+
+Annexure 7 (Contd.)
+
+STATUTORY REPORTS
+01
+02
+03
+
+161
+India Shelter Finance Corporation Limited
+
+RESOURCE MOBILISATION
+
+Net Worth
+
+As of 31 March, 2025, the net worth of India Shelter stood at ` 2,709 Crs.
+
+ESOP Allotment
+
+During the year, we issued and allotted 8,44,151 equity shares
+under our Employee Stock Option Plan (ESOP), following the
+exercise of stock options by eligible employees.
+
+Term Loans from Banks and Financial Institutions
+
+In 2024-25, we raised ` 2,047 Crs in funding from banks and
+financial institutions, with a weighted average tenure of more than
+five years. As of 31 March, 2025, the undrawn sanctioned amount
+stood at ` 570 Crs. Term loans from banks and financial institutions
+constituted 54% of total borrowings.
+
+Refinance from National Housing Bank (NHB)
+
+Under the NHB refinance scheme, India Shelter received a
+fresh sanction of ` 450 Crs in 2024-25. During the financial year,
+` 459 Crs was availed, including disbursements of `210 Crs from
+the previous year’s sanction. As of 31 March, 2025, the outstanding
+NHB refinance stood at 15% of total borrowings, with an undrawn
+sanctioned amount of ` 201 Crs as of 31 March, 2025.
+
+Non-Convertible Debentures (NCDs)
+
+In 2024-25, we have issued ` 50 Crs Non-Convertible Debentures
+(NCD) to bank. As of 31 March, 2025, the outstanding proportion of
+Non-Convertible Debentures (NCDs) was 1% of total borrowings.
+
+...
+
+Public Deposits
+ -
+ -
+ -
+ -
+
+(g)
+Securitisation- Pass Through Certificates
+ 38,790.42
+ 7,078.05
+
+*Includes loan repayable on dem
+
+
+--- SOURCE: Investor Presentation March 2026
+URL: https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf
+
+**FY26 Snapshot**
+1 – Includes AUM and Partner’s Share in Co -Lending Loans | 2 – On disbursement | 3 – Sanctioned LTV On Gross AUM | 4 - PCR – Stage 3 | 5 – CARE Rating, ICRA, IND RA
+**Investors and Analysts can download the excel factsheet from our** **website**
+**3**
+**Gross AUM** <sup>**1**</sup>
+**29% YoY**
+**PAT**
+**33% YoY**
+**Net Worth**
+**Disbursement**
+**In-House Sourcing**
+**Employees**
+**States**
+**Branches**
+**LTV** <sup>**1**</sup>
+**Spread**
+**Secured Book**
+**Average Ticket Size** <sup>**2**</sup>
+**Rs. Lakhs**
+**10**
+**Credit Cost**
+**PCR** <sup>**3**</sup>
+**Credit Rating** <sup>**4**</sup>
+**CRAR | Leverage**
+**Gross Stage 3**
+**Net Stage 3**
+**ROA**
+**ROE**
+**4,800**
+**1.2%**
+**5.8%**
+**17.0%**
+**0.9%**
+**100%**
+**15**
+**307**
+**25%**
+**56% | 3.0**
+**AA-**
+**0.5%**
+**52%**
+**99%**
+**3,834**
+**Rs. Crore**
+**11,044**
+**Rs. Crore**
+**503**
+**Rs. Crore**
+**3,198**
+**Rs. Crore**
+**6.6%**
+**+41 Branches**
+**YoY**
+Business
+Metrics &
+Expansion
+•
+
+...
+
+Net Income grew by **30% YoY** to **Rs. 293 Crs** in Q4FY26 as against **Rs. 226 Crs** in Q4FY25
+•
+In Q4FY26, Opex to Gross AUM improved to **3.9%** from **4.1%** in Q4FY25
+Asset
+Quality
+•
+Gross Stage 3 and Net Stage 3 at **1.2%** and **0.9%** as of 31 <sup>st</sup> March’26 as against **1.0%** and
+**0.8%** as of 31 <sup>st</sup> March’25
+•
+30+ DPD at **4.0%** as of 31 <sup>st</sup> March’26
+•
+Credit Cost for the quarter at **0.3%**
+Profitability <sup>1</sup>
+•
+Profit after tax grew by **27% YoY** to **Rs. 138 Crs** in Q4FY26 as against **Rs. 108 Crs** in Q4FY25
+•
+In Q4, the annualized RoA stood at **5.9%** as against **5.8%** in Q4FY25
+•
+In Q3, the annualized RoE stood at **17.6%** as against **16.3%** in Q4FY25
+**4**
+**Key Highlights & Executive Summary** **–** **Q4FY26**
+**Disbursement**
+**1,040**
+Rs. Crore
+**PAT**
+**138**
+Rs. Crore
+**ROE**
+**17.6%**
+**Gross Stage 3**
+**1.2%**
+**Gross AUM**
+**11,044**
+Rs. Crore
+**Spread**
+**6.6%**
+India Shelter Finance Corporation Limited
+
+...
+
+Strong focus on Corporate Governance, led by
+diverse Board with extensive experience in
+various facets of Banking and Finance
+**Experienced Team**
+Company is being run by experienced
+professional management team backed by
+marquee investors
+**Tech enabled Underwriting & Risk**
+Tech backed and tested underwriting and risk
+management which has remained robust
+through business cycles with most of the
+business process digitized end to end
+**Rs.** **11,044** **Crs**
+Gross AUM
+**1,38,371**
+No of Customers
+Gross AUM (Rs. Crores)
+**39%**
+**CAGR**
+**(FY20-FY26)**
+**7**
+**Growth Journey**
+4
+21
+58
+117
+228
+399
+548
+801
+1,178
+1,520
+2,199
+3,073
+4,360
+6,227
+8,535
+11,044
+FY11
+FY12
+FY13
+FY14
+FY15
+FY16
+FY17
+FY18
+FY19
+FY20
+FY21
+FY22
+FY23
+FY24
+FY25
+FY26
+Commenced
+operations
+from
+Rajasthan
+First
+Investment
+by Sequoia
+ICRA credit
+rating of
+BB+ (stable)
+Expanded
+to 5 states
+Investment
+from
+Gross AUM
+crosses
+Rs. 100 Crs
+Gross AUM
+crosses
+Rs. 200 Crs
+Presence in
+7 States
+Investment
+from
+Gross AUM
+crosses
+
+...
+
+Q4FY25
+Q1FY26
+Q2FY26
+Q3FY26
+Q4FY26
+Stage 3/ GNPA (%)
+1.0%
+1.2%
+1.2%
+1.5%
+1.2%
+Q4FY25
+Q1FY26
+Q2FY26
+Q3FY26
+Q4FY26
+**15**
+**16**
+**Cost of Funds Trending down**
+Yield and COF is position as at the end of relevant period and is excluding amortized upfront income/ expense as per IND AS
+6.6%
+6.0%
+6.1%
+6.2%
+6.6%
+15.0%
+14.7%
+14.9%
+14.9%
+14.8%
+8.4%
+8.7%
+8.8%
+8.7%
+8.2%
+**FY22**
+**FY23**
+**FY24**
+**FY25**
+**FY26**
+Spread
+Yield
+CoB
+Yield, Cost of Funds & Spread (%)
+6.2%
+6.6%
+6.6%
+14.9%
+14.9%
+14.8%
+8.7%
+8.3%
+8.2%
+**Q4FY25**
+**Q3FY26**
+**Q4FY26**
+Spread
+Yield
+CoB
+▪
+Disbursement yield is at 14.6%
+▪
+Marginal COB is at 7.9%
+**17**
+**Extensive Pan-India Distribution Network**
+Geographically Diversified with Contiguous
+Expansion
+Scope for Operating Leverage
+(Vintage- wise Gross AUM/ branch, March’26)
+> 5 years Vintage – 15 states
+**Branch Vintage**
+**No of**
+**Branches**
+**Gross AUM**
+**(Rs. Crs)**
+**Gross AUM**
+**/Branch**
+**Q4FY26**
+**Gross AUM**
+**/Branch**
+**FY21**
+Up to 1 year
+43
+558
+13
+1
+
+...
+
+109,277
+138,371
+Employees
+523
+740
+1,126
+1,219
+1,576
+2,200
+2,709
+3,323
+3,818
+4,800
+Disbursements
+236
+404
+566
+551
+895
+1,295
+1,964
+2,646
+3,355
+3,834
+Gross AUM
+548
+801
+1,178
+1,520
+2,199
+3,073
+4,360
+6,227
+8,535
+11,044
+**Financial**
+Net Total Income
+71
+91
+122
+156
+218
+312
+398
+574
+822
+1,085
+Operating Expenses
+37
+57
+77
+80
+85
+133
+182
+236
+307
+391
+Credit Cost
+2
+3
+3
+12
+20
+12
+14
+19
+26
+40
+Profit before Tax
+32
+32
+41
+64
+113
+167
+202
+319
+489
+653
+Profit after Tax
+21
+22
+30
+47
+87
+128
+155
+248
+378
+503
+Networth
+351
+568
+800
+848
+937
+1,076
+1,241
+2,299
+2,709
+3,198
+**Ratios**
+Cost to Income
+52.4%
+62.3%
+63.5%
+51.5%
+39.1%
+42.7%
+45.7%
+41.1%
+37.3%
+36.1%
+GNPA
+0.7%
+1.3%
+1.4%
+1.3%
+1.9%
+2.1%
+1.1%
+1.0%
+1.0%
+1.2%
+RoA
+4.0%
+2.9%
+2.7%
+3.0%
+4.1%
+4.5%
+4.1%
+4.9%
+5.6%
+5.8%
+Leverage <sup>1</sup>
+1.7
+1.7
+1.7
+1.9
+2.4
+2.8
+3.2
+2.9
+2.7
+3.0
+RoE
+6.7%
+4.9%
+4.4%
+5.7%
+9.8%
+12.8%
+13.4%
+14.0%
+15.1%
+17.0%
+CRAR
+109%
+101%
+91%
+81%
+72%
+56%
+53%
+71%
+61%
+56%
+**34**
+**Key Growth Strategies**
+Grow and Diversify
+Distribution
+Network
+Deepening branch
+
+...
+
+Collection Efficiency
+Total amount of EMIs received in the month (including arrears of previous months)/ Total amount of EMIs due for the month
+Leverage
+Leverage represents the ratio of Average Total Assets to Average Net Worth for the relevant period
+**41**
+**Glossary**
+Abbreviation
+Expansion
+AI
+Artificial Intelligence
+ALM
+Asset liability management
+ATS
+Average Ticket Size
+Gross AUM
+Gross Assets under management
+BPS
+Basis Points
+BRE
+Business rule engine
+CAGR
+Compound annual growth rate
+COF
+Cost of funds
+CRAR
+Capital adequacy ratio or Capital to risk
+assets ratio
+CX
+Customer experience
+DPD
+Days Past Due
+ECB
+External commercial borrowing
+ECL
+Expected credit loss
+EMI
+Equated monthly instalments
+e-NACH
+Electronic National Automated Clearing
+House
+EPS
+Earnings Per Share
+EWS
+Economically weaker section
+FII
+Foreign institutional investor
+FOIR
+Fixed Obligation to Income Ratio
+FPC
+Fair Practice Code
+FPI
+Foreign Portfolio Investor
+GMA
+Gross Managed Assets
+Abbreviation
+Expansion
+GNPA

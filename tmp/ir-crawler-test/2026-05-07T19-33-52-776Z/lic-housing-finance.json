@@ -1,0 +1,24 @@
+{
+  "source": "footer",
+  "homepageUrl": "https://lichousing.com",
+  "irIndexUrl": "https://www.lichousing.com/investors/financial-results",
+  "documents": [
+    {
+      "url": "https://cdn.lichousing.com/2025/06/Deposit_Interest_Rate_19.06.2025.pdf",
+      "title": "Deposit Interest Rates",
+      "type": "other"
+    },
+    {
+      "url": "https://cdn.lichousing.com/2025/01/LICHFL-GSTN-Details.pdf",
+      "title": "LICHFL GSTN Details",
+      "type": "other"
+    },
+    {
+      "url": "https://cdn.lichousing.com/2026/05/Interest-Rate-Range-for-Contracted-loans-for-Q4FY26.pdf",
+      "title": "Interest rate range of contracted loans",
+      "period": "Q4FY26",
+      "type": "quarterly_results"
+    }
+  ],
+  "warnings": []
+}

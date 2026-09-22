@@ -1,0 +1,18 @@
+{
+  "ownCompany": {
+    "name": "Vastu Housing Finance",
+    "websiteGuess": "vastuhfc.com",
+    "sector": "Indian housing finance / NBFC"
+  },
+  "competitors": [
+    {
+      "name": "Avanse Financial Services",
+      "websiteGuess": "avanse.com"
+    }
+  ],
+  "timeScope": "last_2_years",
+  "focusAreas": [
+    "financials",
+    "strategy"
+  ]
+}

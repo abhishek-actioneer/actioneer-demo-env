@@ -1,0 +1,30 @@
+{
+  "$schema": "https://cursor.com/schemas/hooks.json",
+  "hooks": {
+    "post_edit": [
+      {
+        "name": "lint-touched-files",
+        "description": "Run ESLint on the file the agent just edited.",
+        "command": "pnpm exec eslint --max-warnings=0 \"$CURSOR_FILE\"",
+        "continueOnError": false,
+        "match": {
+          "paths": ["src/**/*.ts", "src/**/*.tsx", "scripts/**/*.ts", "scripts/**/*.mjs"]
+        }
+      }
+    ],
+    "pre_pr": [
+      {
+        "name": "typecheck",
+        "description": "Ensure the project type-checks before opening a PR.",
+        "command": "pnpm exec tsc --noEmit",
+        "continueOnError": false
+      },
+      {
+        "name": "lint-all",
+        "description": "Final lint pass over the whole repo before the PR.",
+        "command": "pnpm lint",
+        "continueOnError": false
+      }
+    ]
+  }
+}

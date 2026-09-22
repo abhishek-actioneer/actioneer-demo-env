@@ -1,0 +1,274 @@
+{
+  "id": "yesbank-cards",
+  "label": "Credit Bank",
+  "dbFile": "data/datasets/yesbank-cards/yesbank-cards.duckdb",
+  "primaryTable": "transactions",
+  "userIdField": "customer_id",
+  "dateField": "txn_ts",
+  "dateRange": {
+    "start": "2024-06-01 00:02:32+05:30",
+    "end": "2026-05-31 23:59:53+05:30"
+  },
+  "isDynamic": true,
+  "isSample": true,
+  "sourceType": "csv",
+  "sourceFiles": [
+    "transactions.csv",
+    "statements.csv",
+    "campaign_history.csv",
+    "card_lifecycle_events.csv",
+    "propensity_events.csv",
+    "product_holdings.csv",
+    "cards.csv",
+    "customers.csv",
+    "service_tickets.csv",
+    "merchants.csv",
+    "data_dictionary.csv",
+    "calendar_events.csv",
+    "offers_catalog.csv",
+    "hero_case_index.csv"
+  ],
+  "schemaContext": "DATABASE ENGINE: DuckDB\n\nPRIMARY TABLE: transactions (~1,351,919 rows)\n  - txn_id                 VARCHAR                     -- unique transaction identifier\n  - card_id                VARCHAR                     -- card identifier; joins to cards.card_id\n  - txn_ts                 TIMESTAMP WITH TIME ZONE    -- transaction timestamp; preserve timezone in filtering/truncation\n  - amount_inr             DOUBLE                      -- transaction amount in INR\n  - currency               VARCHAR                     -- original transaction currency code (AED, GBP, INR, SGD, THB, USD)\n  - fx_amount              DOUBLE                      -- original foreign-currency amount; mostly null for INR transactions\n  - merchant_id            VARCHAR                     -- merchant identifier; joins to merchants.merchant_id\n  - mcc                    BIGINT                      -- merchant category code; categorical, not arithmetic\n  - channel                VARCHAR                     -- transaction channel (ATM_CASH_AD, CONTACTLESS, ECOM, INTL_ECOM, INTL_POS, POS, UPI)\n  - pos_entry_mode         VARCHAR                     -- POS entry mode (CHIP, SWIPE, TAP); high nulls for non-POS/ecom\n  - auth_method            VARCHAR                     -- auth method (OTP_3DS, PIN, TAP_NO_PIN)\n  - otp_attempts           DOUBLE                      -- OTP attempts; logically integer-like (1.0, 2.0, 3.0)\n  - token_used_flag        BOOLEAN                     -- whether tokenization was used; may be null\n  - txn_city               VARCHAR                     -- transaction city\n  - txn_country            VARCHAR                     -- transaction country code (AE, FR, GB, ID, IN, MY, SG, TH, US)\n  - device_id              VARCHAR                     -- device identifier for digital transactions; often null\n  - ip_address             VARCHAR                     -- IP address string for digital session analysis\n  - txn_type               VARCHAR                     -- transaction type (AUTOPAY, EMI_CONVERSION, FEE, PURCHASE, REFUND, REVERSAL)\n  - response               VARCHAR                     -- auth outcome (APPROVED, DECLINED)\n  - decline_reason         VARCHAR                     -- decline reason for declined rows (3DS_FAILED, EXPIRED_CARD, INCORRECT_CVV, INSUFFICIENT_LIMIT, ISSUER_DECLINE)\n  - emi_converted_flag     BOOLEAN                     -- EMI conversion flag (false, true)\n  - emi_tenure_months      DOUBLE                      -- EMI tenure months; discrete-like (3.0, 6.0, 9.0, 12.0, 18.0, 24.0)\n  - is_intl_flag           BOOLEAN                     -- international transaction flag (false, true)\n  - forex_markup_paid_inr  DOUBLE                      -- forex markup paid in INR; mostly null\n  - surcharge_levied_inr   VARCHAR                     -- surcharge amount in INR stored as VARCHAR; cast before aggregation\n  - original_txn_id        VARCHAR                     -- original transaction reference for refunds/reversals\n  - customer_id            VARCHAR                     -- customer identifier; joins to customers.customer_id\n\nTABLE: statements (~95,825 rows)\n  - statement_id           VARCHAR    -- statement cycle identifier\n  - card_id                VARCHAR    -- card identifier; joins to cards.card_id\n  - cycle_start            DATE       -- billing cycle start date\n  - cycle_end              DATE       -- billing cycle end date\n  - due_date               DATE       -- payment due date\n  - total_spend_inr        DOUBLE     -- billed spend in statement cycle\n  - payments_received_inr  DOUBLE     -- payments received against statement\n  - min_due_inr            DOUBLE     -- minimum due amount\n  - revolve_flag           BOOLEAN    -- revolver flag (false, true)\n  - interest_charged_inr   DOUBLE     -- statement interest charged\n  - fees_inr               DOUBLE     -- statement fees\n  - closing_balance_inr    DOUBLE     -- closing balance at cycle end\n  - utilization_pct        DOUBLE     -- utilization percentage; likely on 0-100 scale\n  - dpd_bucket             VARCHAR    -- delinquency bucket (CURRENT, 1-29, 30-59, 60-89, 90+); use custom sort order\n  - customer_id            VARCHAR    -- customer identifier\n\nTABLE: campaign_history (~53,227 rows)\n  - campaign_id            VARCHAR                     -- campaign/contact identifier\n  - offer_id               VARCHAR                     -- offer identifier; joins to offers_catalog.offer_id\n  - customer_id            VARCHAR                     -- customer identifier\n  - card_id                VARCHAR                     -- targeted card identifier\n  - channel                VARCHAR                     -- contact channel (APP_PUSH, EMAIL, IVR, RM_CALL, SMS)\n  - contact_cost_inr       DOUBLE                      -- contact execution cost in INR\n  - created_ts             TIMESTAMP WITH TIME ZONE    -- campaign record creation timestamp\n  - sent_ts                TIMESTAMP WITH TIME ZONE    -- send timestamp\n  - delivered_ts           TIMESTAMP WITH TIME ZONE    -- delivery timestamp; may be null\n  - opened_ts              TIMESTAMP WITH TIME ZONE    -- open timestamp; qualify because service_tickets also has opened_ts\n  - clicked_ts             TIMESTAMP WITH TIME ZONE    -- click timestamp; mostly null\n  - outcome                VARCHAR                     -- outcome (CLICKED_NO_CONVERT, CONVERTED, IGNORED, OPTED_OUT)\n  - outcome_ts             TIMESTAMP WITH TIME ZONE    -- outcome timestamp\n  - application_ts         TIMESTAMP WITH TIME ZONE    -- application timestamp; mostly null\n  - approved_ts            TIMESTAMP WITH TIME ZONE    -- approval timestamp; mostly null\n  - fulfilled_ts           TIMESTAMP WITH TIME ZONE    -- fulfillment timestamp; mostly null\n  - first_use_ts           TIMESTAMP WITH TIME ZONE    -- first use after fulfillment; mostly null\n  - conversion_value_inr   DOUBLE                      -- value from conversion; mostly null except converted cases\n\nTABLE: card_lifecycle_events (~12,365 rows)\n  - event_id               VARCHAR                     -- lifecycle event identifier\n  - card_id                VARCHAR                     -- card identifier\n  - event_ts               TIMESTAMP WITH TIME ZONE    -- event timestamp\n  - event_type             VARCHAR                     -- lifecycle type (ACTIVATED, CLOSED, ISSUED, LIMIT_INCREASED, REWARDS_PLAN_CHANGED, UPGRADED_TO)\n  - old_value              VARCHAR                     -- previous value; interpretation depends on event_type\n  - new_value              VARCHAR                     -- new value; interpretation depends on event_type\n  - linked_card_id         VARCHAR                     -- related card id for upgrades/replacements\n  - reason                 VARCHAR                     -- encoded event reason\n  - initiated_by           VARCHAR                     -- initiator (CUSTOMER_APP, CUSTOMER_NETBANKING, SYSTEM)\n  - customer_id            VARCHAR                     -- customer identifier\n\nTABLE: propensity_events (~10,356 rows)\n  - event_id               VARCHAR                     -- propensity event identifier\n  - customer_id            VARCHAR                     -- customer identifier\n  - card_id                VARCHAR                     -- card identifier\n  - event_ts               TIMESTAMP WITH TIME ZONE    -- event timestamp\n  - event_type             VARCHAR                     -- propensity event type (DORMANCY_ONSET, EMI_ELIGIBLE_BIGTICKET, FIRST_INTL_TXN, LIFE_EVENT_WEDDING_PATTERN, MILESTONE_SPEND, RENT_PAYMENT_ONSET, SALARY_JUMP_DETECTED, SPEND_TRAJECTORY_CROSS, TRAVEL_BOOKING_CLUSTER, UTILITY_SURCHARGE_HIT)\n  - supporting_txn_ids     VARCHAR                     -- pipe-delimited supporting transaction ids; split before joining to transactions\n  - detail_json            VARCHAR                     -- JSON payload stored as text; parse with JSON functions\n\nTABLE: product_holdings (~5,666 rows)\n  - holding_id             VARCHAR    -- product holding identifier\n  - customer_id            VARCHAR    -- customer identifier\n  - product_type           VARCHAR    -- held product type (DEMAT, FD, INSURANCE_HEALTH, INSURANCE_LIFE, PERSONAL_LOAN, RD, SALARY_ACCT, SAVINGS)\n  - opened_date            DATE       -- product opening date\n  - value_band             VARCHAR    -- product value band (<50K, 50K-1L, 1L-2L, 2L-5L, 5L-10L); ordered text\n  - status                 VARCHAR    -- product holding status (ACTIVE, CLOSED)\n  - source_campaign_id     VARCHAR    -- originating campaign id; joins to campaign_history.campaign_id\n\nTABLE: cards (~5,139 rows)\n  - card_id                         VARCHAR    -- card identifier\n  - customer_id                     VARCHAR    -- customer identifier\n  - previous_card_id                VARCHAR    -- predecessor card id for replacement/upgrade chains\n  - masked_pan                      VARCHAR    -- masked PAN; not guaranteed globally unique over time\n  - network                         VARCHAR    -- network (MASTERCARD, RUPAY, VISA)\n  - product                         VARCHAR    -- card product (BankBazaar FinBooster, ELITE+, Klick, MARQUEE, POP-CLUB, RESERV, Select, YES ELITE, YES PREMIA)\n  - tier                            VARCHAR    -- tier (Co-brand-LTF, Digital, Entry-premium, Legacy, Mid-premium, Premium-travel, Super-premium, UPI-cashback)\n  - annual_fee                      BIGINT     -- annual fee amount\n  - fee_waived_flag                 BOOLEAN    -- annual fee waived flag\n  - credit_limit_current            BIGINT     -- current credit limit\n  - issue_date                      DATE       -- issue date\n  - rewards_subscription_plan       VARCHAR    -- rewards plan label (3X, 5X, NONE); treat as encoded category\n  - upi_linked_flag                 BOOLEAN    -- card linked for UPI\n  - status                          VARCHAR    -- card status (ACTIVE, CLOSED, DORMANT)\n  - legacy_migration_pending_flag   BOOLEAN    -- pending migration from legacy portfolio\n  - closure_reason                  VARCHAR    -- closure reason (BT_TO_COMPETITOR, FEE, INACTIVITY, SERVICE_ISSUE)\n\nTABLE: customers (~4,000 rows)\n  - customer_id                     VARCHAR    -- customer identifier\n  - full_name                       VARCHAR    -- synthetic full name\n  - gender                          VARCHAR    -- gender (F, M)\n  - dob                             DATE       -- date of birth\n  - age                             BIGINT     -- age in years; snapshot-style derived field\n  - city                            VARCHAR    -- customer residence city; qualify because merchants also has city\n  - state                           VARCHAR    -- customer residence state abbreviation\n  - pincode                         BIGINT     -- postal code; categorical geography, not arithmetic\n  - masked_mobile                   VARCHAR    -- masked mobile number\n  - email                           VARCHAR    -- email address; lowercase if doing exact text comparisons\n  - relationship_since              DATE       -- relationship start date\n  - kyc_status                      VARCHAR    -- KYC status (RE_KYC_DUE, VERIFIED)\n  - home_branch_city                VARCHAR    -- home branch city\n  - salary_account_with_yes_flag    BOOLEAN    -- salary account with Credit Bank flag\n  - cibil_band                      VARCHAR    -- credit score band (650-699, 700-749, 750-799, 800+); ordered text\n  - employment_type                 VARCHAR    -- employment type (Professional, Retired, Salaried, Self-employed)\n  - monthly_income_band             VARCHAR    -- monthly income band (25K-50K, 50K-1L, 1L-2L, 2L-4L, 4L+); ordered text\n  - tenure_months                   BIGINT     -- relationship tenure in months\n  - rm_assigned_flag                BOOLEAN    -- relationship manager assigned flag\n  - email_opt_in_flag               BOOLEAN    -- email marketing consent\n  - sms_opt_in_flag                 BOOLEAN    -- SMS marketing consent\n  - push_opt_in_flag                BOOLEAN    -- push marketing consent\n  - dnd_flag                        BOOLEAN    -- do-not-disturb suppression flag\n\nTABLE: service_tickets (~2,407 rows)\n  - ticket_id               VARCHAR                     -- service ticket identifier\n  - customer_id             VARCHAR                     -- customer identifier\n  - opened_ts               TIMESTAMP WITH TIME ZONE    -- ticket open timestamp; qualify because campaign_history also has opened_ts\n  - channel                 VARCHAR                     -- service channel (APP, BRANCH, EMAIL, PHONEBANKING, SOCIAL)\n  - category                VARCHAR                     -- ticket category (CARD_DELIVERY, FEE_DISPUTE, OFFER_SPAM_COMPLAINT, OTHER, REWARDS_ISSUE, SURCHARGE_COMPLAINT)\n  - linked_campaign_id      VARCHAR                     -- linked campaign id when applicable\n  - resolved_ts             TIMESTAMP WITH TIME ZONE    -- resolution timestamp\n  - csat_1_5                DOUBLE                      -- CSAT score 1-5 stored as DOUBLE\n\nTABLE: merchants (~2,001 rows)\n  - merchant_id             VARCHAR    -- merchant identifier\n  - merchant_name           VARCHAR    -- merchant display name\n  - mcc                     BIGINT     -- merchant category code\n  - mcc_description         VARCHAR    -- MCC description\n  - category                VARCHAR    -- merchant category label\n  - city                    VARCHAR    -- merchant city\n  - state                   VARCHAR    -- merchant state\n  - country                 VARCHAR    -- merchant country code (AE, FR, GB, ID, IN, MY, SG, TH, US)\n  - channel                 VARCHAR    -- merchant channel (ECOM, MIXED, POS, UPI_QR)\n  - risk_tier               VARCHAR    -- merchant risk tier (HIGH, LOW, MEDIUM)\n  - onboarded_since         DATE       -- merchant onboarding date\n\nTABLE: data_dictionary (~164 rows)\n  - table                   VARCHAR    -- documented table name; may need quoting because `table` can be reserved\n  - column                  VARCHAR    -- documented column name; may need quoting because `column` can be reserved\n  - dtype                   VARCHAR    -- documented dtype (bool, datetime64[ns], datetime64[us], float64, int64, object, str)\n  - description             VARCHAR    -- column description text\n  - valid_values            VARCHAR    -- allowed values; may be pipe-delimited\n  - joins_to                VARCHAR    -- suggested join target as text like `cards.card_id`\n\nTABLE: calendar_events (~28 rows)\n  - event_name              VARCHAR    -- calendar/seasonal event name\n  - start_date              VARCHAR    -- event start date as YYYY-MM-DD string; cast to DATE\n  - end_date                VARCHAR    -- event end date as YYYY-MM-DD string; cast to DATE\n  - overall_multiplier      DOUBLE     -- demand/activity multiplier\n  - category_effects        VARCHAR    -- pipe-delimited key:value category multipliers; parse when needed\n  - note                    VARCHAR    -- narrative note about event effects\n\nTABLE: offers_catalog (~25 rows)\n  - offer_id                VARCHAR    -- offer identifier\n  - offer_name              VARCHAR    -- offer name\n  - offer_type              VARCHAR    -- offer type (CARD_UPGRADE, CROSS_SELL_CARD, EMI_CONVERSION, FD, FOREX_REPOSITIONING, INSURANCE_ATTACH, LIMIT_ENHANCEMENT, PERSONAL_LOAN_PREAPPROVED, REWARDS_SUBSCRIPTION_UPSELL, WINBACK)\n  - source_product          VARCHAR    -- source product(s); may be pipe-delimited multi-product values\n  - target_product          VARCHAR    -- target product (ELITE+, Klick, MARQUEE, POP-CLUB, RESERV, Select)\n  - eligibility_rule_text   VARCHAR    -- human-readable eligibility rule\n  - eligibility_rule_json   VARCHAR    -- JSON eligibility rule stored as text\n  - expected_value_inr      BIGINT     -- expected offer value in INR\n  - validity_window         VARCHAR    -- free-form period label (FY25-FY26, Jan-Mar, Jan-Mar heavy, Sep-Nov, always-on, post-Jan-2026)\n\nTABLE: hero_case_index (~12 rows)\n  - hero_id                 VARCHAR    -- curated hero case id (Y1-Y12)\n  - title                   VARCHAR    -- hero case title\n  - customer_id             VARCHAR    -- customer identifier\n  - card_id                 VARCHAR    -- card identifier\n  - campaign_ids            VARCHAR    -- pipe-delimited campaign ids; split before joining to campaign_history\n  - key_txn_ids             VARCHAR    -- pipe-delimited transaction ids; split before joining to transactions\n  - window_start            DATE       -- hero case analysis window start\n  - window_end              DATE       -- hero case analysis window end\n  - expected_outcome        VARCHAR    -- expected business storyline/outcome\n  - narrative               VARCHAR    -- narrative explanation\n\nDATA CONTEXT:\n- This is a credit-card growth analytics dataset centered on transaction behavior, statement outcomes, lifecycle changes, propensity triggers, and campaign performance.\n- `transactions` is the operational fact table for spend, approvals/declines, EMI, UPI, forex, surcharge, and merchant behavior.\n- `statements` supports repayment, utilization, revolve, fees, interest, and delinquency analysis at billing-cycle grain.\n- `campaign_history` plus `offers_catalog` supports outreach funnel, conversion, cost, and ROI analysis.\n- `cards` and `customers` provide product, credit-limit, consent, and demographic segmentation.\n- `card_lifecycle_events` and `propensity_events` capture upgrade, activation, dormancy, travel, big-ticket, salary-jump, and surcharge-related triggers.\n- Geographic analysis is available via transaction city/country, customer city/state, merchant city/state/country, and home branch city.\n- Several columns are sparse, encoded, or multi-valued; use careful filters, casting, and parsing before analysis.\n\nENTITY METADATA:\n  Primary entity identifier: customer_id \u2014 use this column for SELECT DISTINCT, COUNT(DISTINCT), segment definitions, cohort analysis, and entity-level joins.\n  Primary date column: txn_ts \u2014 use this column for time-series analysis, DATE_TRUNC, trend charts, and period filtering. May be stored as VARCHAR \u2014 cast with ::TIMESTAMP or strptime() as needed.",
+  "systemContext": "You are Actioneer, an AI-powered bank cards portfolio and growth analytics assistant. You are analyzing data for: Credit Bank.\nDomain: credit cards growth analytics\nCurrency: INR\n\nFocus on cardholder growth, spend behavior, and portfolio monetization across transactions, statements, campaigns, and lifecycle events. Key questions include customer segmentation and cohorts, upgrade/cross-sell conversion, EMI and forex monetization, delinquency/utilization trends, and campaign effectiveness by channel, product, and timing. Also analyze retention signals such as dormancy, service issues, fee sensitivity, and card lifecycle transitions.\n\nResponse guidelines:\n- Use markdown: headers (##, ###), tables, bullet points, bold for emphasis\n- Cite specific numbers from the query results \u2014 never hallucinate data\n- Be analytical and actionable \u2014 what should the business do?\n- Note any limitations in the data\n- Do NOT include suggested follow-up questions in your response \u2014 they are generated separately\n- Never use emojis",
+  "agents": [
+    {
+      "id": "daily-metrics",
+      "queries": [
+        {
+          "description": "Daily transaction volume, approved volume, and approved spend trend",
+          "hint": "Use `date_trunc('day', t.txn_ts)` as the grain; compute `COUNT(*)`, `SUM(CASE WHEN t.response='APPROVED' THEN 1 ELSE 0 END)`, and `SUM(CASE WHEN t.response='APPROVED' THEN t.amount_inr ELSE 0 END)` from `transactions t` grouped by day."
+        },
+        {
+          "description": "Monthly spend and transaction trend by channel",
+          "hint": "Group `transactions t` by `date_trunc('month', t.txn_ts)` and `t.channel`; aggregate `COUNT(*)` and `SUM(t.amount_inr)`; keep `t.channel` qualified because other tables also have `channel`."
+        },
+        {
+          "description": "International vs domestic trend over time",
+          "hint": "Group `transactions t` by `date_trunc('month', t.txn_ts)` and `t.is_intl_flag`; compare `SUM(t.amount_inr)`, `AVG(t.amount_inr)`, and approval rate using `AVG(CASE WHEN t.response='APPROVED' THEN 1.0 ELSE 0.0 END)`."
+        },
+        {
+          "description": "Statement cycle trend for billed spend, payments, revolve rate, and utilization",
+          "hint": "Use `statements s`; group by `date_trunc('month', s.cycle_end)` or raw `s.cycle_end`; aggregate `SUM(s.total_spend_inr)`, `SUM(s.payments_received_inr)`, `AVG(CASE WHEN s.revolve_flag THEN 1.0 ELSE 0.0 END)`, and `AVG(s.utilization_pct)`."
+        },
+        {
+          "description": "Campaign delivery and conversion trend by month",
+          "hint": "From `campaign_history ch`, group by `date_trunc('month', ch.sent_ts)` and optionally `ch.channel`; calculate sent, delivered, opened, clicked, and converted counts with conditional `COUNT`/`SUM(CASE WHEN ... IS NOT NULL ...)`."
+        },
+        {
+          "description": "Card issuance, activation, closure, and upgrade event trend",
+          "hint": "Use `card_lifecycle_events cle`; group by `date_trunc('month', cle.event_ts)` and `cle.event_type`; count events to show lifecycle momentum over time."
+        }
+      ]
+    },
+    {
+      "id": "rev-opt",
+      "queries": [
+        {
+          "description": "Spend and approval breakdown by card product and tier",
+          "hint": "Join `transactions t` to `cards c` on `t.card_id = c.card_id`; group by `c.product, c.tier`; compute `SUM(t.amount_inr)`, `COUNT(*)`, approval rate, and average ticket size."
+        },
+        {
+          "description": "Forex markup revenue by product, network, and international channel",
+          "hint": "Filter `transactions t` where `t.is_intl_flag = true`; join `cards c`; group by `c.product, c.network, t.channel`; aggregate `SUM(t.forex_markup_paid_inr)` and `SUM(t.amount_inr)`."
+        },
+        {
+          "description": "Fee and interest revenue by delinquency and revolve behavior",
+          "hint": "Use `statements s`; group by `s.dpd_bucket, s.revolve_flag`; aggregate `SUM(s.fees_inr)`, `SUM(s.interest_charged_inr)`, `AVG(s.closing_balance_inr)`, and sort `dpd_bucket` with a CASE expression rather than lexicographically."
+        },
+        {
+          "description": "EMI conversion economics by tenure and product",
+          "hint": "Join `transactions t` to `cards c`; filter `t.emi_converted_flag = true OR t.txn_type='EMI_CONVERSION'`; group by `c.product, CAST(t.emi_tenure_months AS BIGINT)`; aggregate count and `SUM(t.amount_inr)`."
+        },
+        {
+          "description": "Surcharge burden by merchant category and utility-like behavior",
+          "hint": "From `transactions t`, cast `t.surcharge_levied_inr` to DOUBLE; group by `t.mcc` and optionally join `merchants m` on `merchant_id` for `m.mcc_description`; aggregate `SUM(CAST(t.surcharge_levied_inr AS DOUBLE))`."
+        },
+        {
+          "description": "Top merchants by approved spend and transaction count",
+          "hint": "Join `transactions t` to `merchants m` on `t.merchant_id = m.merchant_id`; filter `t.response='APPROVED'`; group by `m.merchant_name, m.category`; order by `SUM(t.amount_inr) DESC` and `LIMIT 20`."
+        }
+      ]
+    },
+    {
+      "id": "user-segmentation",
+      "queries": [
+        {
+          "description": "Customer RFM segmentation using transaction history",
+          "hint": "Aggregate `transactions t` by `t.customer_id`; compute recency from `MAX(t.txn_ts)`, frequency as approved transaction count, monetary as `SUM(CASE WHEN t.response='APPROVED' THEN t.amount_inr ELSE 0 END)`; bucket with CASE statements."
+        },
+        {
+          "description": "Customer segments by card product mix and spend intensity",
+          "hint": "Join `customers cu`, `cards c`, and `transactions t`; aggregate by `cu.customer_id` to get count distinct `c.card_id`, count distinct `c.product`, approved spend, and average monthly spend."
+        },
+        {
+          "description": "Inactive and dormant customer identification",
+          "hint": "Find customers/cards with no recent transactions using `MAX(t.txn_ts)` by `customer_id` or `card_id`; combine with `cards.status` and `propensity_events` where `event_type='DORMANCY_ONSET'`."
+        },
+        {
+          "description": "Segment performance by income band, CIBIL band, and employment type",
+          "hint": "Join `customers cu` to `transactions t` and/or `statements s`; group by `cu.monthly_income_band, cu.cibil_band, cu.employment_type`; compute spend, approval rate, revolve rate, and utilization."
+        },
+        {
+          "description": "UPI-linked versus non-UPI-linked card behavior",
+          "hint": "Join `cards c` to `transactions t`; group by `c.upi_linked_flag`; compare `SUM(CASE WHEN t.channel='UPI' THEN t.amount_inr ELSE 0 END)`, total spend, and active card rates."
+        },
+        {
+          "description": "Rewards plan segment comparison",
+          "hint": "Join `cards c` to `transactions t`; group by `c.rewards_subscription_plan`; compare average spend, contactless share, travel/international share, and statement revolve behavior via optional join to `statements s`."
+        }
+      ]
+    },
+    {
+      "id": "cohort-retention",
+      "queries": [
+        {
+          "description": "Card vintage cohort retention by issue month",
+          "hint": "Use `cards c` as cohort anchor with `date_trunc('month', c.issue_date)`; join to `transactions t` and count cards with approved transactions in each months-since-issue bucket."
+        },
+        {
+          "description": "Customer repeat purchase behavior after first approved transaction",
+          "hint": "Find first approved `txn_ts` per `customer_id` from `transactions`; self-join or use window functions to measure time to second approved transaction and repeat rates by month."
+        },
+        {
+          "description": "Campaign conversion to first use lag",
+          "hint": "From `campaign_history ch`, filter rows with `ch.outcome='CONVERTED'` or non-null `first_use_ts`; compute `datediff('day', ch.fulfilled_ts, ch.first_use_ts)` and summarize by `ch.channel` or `offer_id`."
+        },
+        {
+          "description": "Dormancy reactivation rate after propensity signals",
+          "hint": "Use `propensity_events pe` filtered to `event_type='DORMANCY_ONSET'`; join future `transactions t` on `customer_id` or `card_id` with `t.txn_ts > pe.event_ts`; calculate share with a subsequent approved transaction within 30/60/90 days."
+        },
+        {
+          "description": "Upgrade cohort behavior before and after card upgrade",
+          "hint": "Use `card_lifecycle_events cle` where `event_type='UPGRADED_TO'`; compare approved transaction spend in pre/post 30- or 90-day windows around `cle.event_ts` using `transactions t` joined on `card_id` or `linked_card_id`."
+        },
+        {
+          "description": "Statement revolve persistence across cycles",
+          "hint": "From `statements s`, order by `s.card_id, s.cycle_end`; use window functions like `lag(revolve_flag)` to measure consecutive revolve sequences and retention into future delinquency buckets."
+        }
+      ]
+    },
+    {
+      "id": "geographic",
+      "queries": [
+        {
+          "description": "Approved spend and transaction count by transaction city and country",
+          "hint": "Group `transactions t` by `t.txn_city, t.txn_country`; filter or split by `t.response='APPROVED'`; aggregate spend and counts."
+        },
+        {
+          "description": "Customer residence geography versus transaction geography comparison",
+          "hint": "Join `transactions t` to `customers cu` on `t.customer_id = cu.customer_id`; compare `cu.city/cu.state` against `t.txn_city/t.txn_country`; group by customer and transaction regions."
+        },
+        {
+          "description": "Merchant geography performance by category and risk tier",
+          "hint": "Join `transactions t` to `merchants m` on `t.merchant_id = m.merchant_id`; group by `m.city, m.state, m.country, m.category, m.risk_tier`; aggregate approved spend and decline rate."
+        },
+        {
+          "description": "International corridor analysis by currency and country",
+          "hint": "From `transactions t`, filter `t.is_intl_flag = true`; group by `t.txn_country, t.currency, t.channel`; aggregate `SUM(t.amount_inr)`, `SUM(t.fx_amount)`, and `SUM(t.forex_markup_paid_inr)`."
+        },
+        {
+          "description": "Home branch city distribution of high-value customers",
+          "hint": "Join `customers cu` to `transactions t` or `statements s`; define high-value using approved spend or closing balance thresholds; group by `cu.home_branch_city`."
+        }
+      ]
+    },
+    {
+      "id": "data-quality",
+      "queries": [
+        {
+          "description": "NULL rates for all key fields",
+          "hint": "COUNT(*) - COUNT(col) for each column"
+        },
+        {
+          "description": "Daily volume anomaly detection",
+          "hint": "COUNT(*) GROUP BY date, look for drops"
+        },
+        {
+          "description": "Duplicate record check",
+          "hint": "COUNT(*) vs COUNT(DISTINCT id)"
+        },
+        {
+          "description": "Value range validation",
+          "hint": "MIN/MAX/AVG for numeric columns, check for outliers"
+        },
+        {
+          "description": "Referential integrity across core joins",
+          "hint": "Left join `transactions.card_id` to `cards.card_id`, `transactions.customer_id` to `customers.customer_id`, `transactions.merchant_id` to `merchants.merchant_id`; count unmatched rows."
+        },
+        {
+          "description": "Consistency checks for international and EMI fields",
+          "hint": "Validate rows where `is_intl_flag=true` but `currency='INR'` or missing `forex_markup_paid_inr`/`fx_amount`; validate `emi_converted_flag=true` with null `emi_tenure_months`."
+        }
+      ]
+    }
+  ],
+  "queryDescriptions": {
+    "daily-metrics": [
+      "Daily transaction volume, approved volume, and approved spend trend",
+      "Monthly spend and transaction trend by channel",
+      "International vs domestic trend over time",
+      "Statement cycle trend for billed spend, payments, revolve rate, and utilization",
+      "Campaign delivery and conversion trend by month",
+      "Card issuance, activation, closure, and upgrade event trend"
+    ],
+    "rev-opt": [
+      "Spend and approval breakdown by card product and tier",
+      "Forex markup revenue by product, network, and international channel",
+      "Fee and interest revenue by delinquency and revolve behavior",
+      "EMI conversion economics by tenure and product",
+      "Surcharge burden by merchant category and utility-like behavior",
+      "Top merchants by approved spend and transaction count"
+    ],
+    "user-segmentation": [
+      "Customer RFM segmentation using transaction history",
+      "Customer segments by card product mix and spend intensity",
+      "Inactive and dormant customer identification",
+      "Segment performance by income band, CIBIL band, and employment type",
+      "UPI-linked versus non-UPI-linked card behavior",
+      "Rewards plan segment comparison"
+    ],
+    "cohort-retention": [
+      "Card vintage cohort retention by issue month",
+      "Customer repeat purchase behavior after first approved transaction",
+      "Campaign conversion to first use lag",
+      "Dormancy reactivation rate after propensity signals",
+      "Upgrade cohort behavior before and after card upgrade",
+      "Statement revolve persistence across cycles"
+    ],
+    "geographic": [
+      "Approved spend and transaction count by transaction city and country",
+      "Customer residence geography versus transaction geography comparison",
+      "Merchant geography performance by category and risk tier",
+      "International corridor analysis by currency and country",
+      "Home branch city distribution of high-value customers"
+    ],
+    "data-quality": [
+      "NULL rates for all key fields",
+      "Daily volume anomaly detection",
+      "Duplicate record check",
+      "Value range validation",
+      "Referential integrity across core joins",
+      "Consistency checks for international and EMI fields"
+    ]
+  },
+  "multiAgentPrompt": "daily-metrics|1| \u2014 Daily transaction volume, approved volume, and approved spend trend\ndaily-metrics|2| \u2014 Monthly spend and transaction trend by channel\ndaily-metrics|3| \u2014 International vs domestic trend over time\ndaily-metrics|4| \u2014 Statement cycle trend for billed spend, payments, revolve rate, and utilization\ndaily-metrics|5| \u2014 Campaign delivery and conversion trend by month\ndaily-metrics|6| \u2014 Card issuance, activation, closure, and upgrade event trend\nrev-opt|1| \u2014 Spend and approval breakdown by card product and tier\nrev-opt|2| \u2014 Forex markup revenue by product, network, and international channel\nrev-opt|3| \u2014 Fee and interest revenue by delinquency and revolve behavior\nrev-opt|4| \u2014 EMI conversion economics by tenure and product\nrev-opt|5| \u2014 Surcharge burden by merchant category and utility-like behavior\nrev-opt|6| \u2014 Top merchants by approved spend and transaction count\nuser-segmentation|1| \u2014 Customer RFM segmentation using transaction history\nuser-segmentation|2| \u2014 Customer segments by card product mix and spend intensity\nuser-segmentation|3| \u2014 Inactive and dormant customer identification\nuser-segmentation|4| \u2014 Segment performance by income band, CIBIL band, and employment type\nuser-segmentation|5| \u2014 UPI-linked versus non-UPI-linked card behavior\nuser-segmentation|6| \u2014 Rewards plan segment comparison\ncohort-retention|1| \u2014 Card vintage cohort retention by issue month\ncohort-retention|2| \u2014 Customer repeat purchase behavior after first approved transaction\ncohort-retention|3| \u2014 Campaign conversion to first use lag\ncohort-retention|4| \u2014 Dormancy reactivation rate after propensity signals\ncohort-retention|5| \u2014 Upgrade cohort behavior before and after card upgrade\ncohort-retention|6| \u2014 Statement revolve persistence across cycles\ngeographic|1| \u2014 Approved spend and transaction count by transaction city and country\ngeographic|2| \u2014 Customer residence geography versus transaction geography comparison\ngeographic|3| \u2014 Merchant geography performance by category and risk tier\ngeographic|4| \u2014 International corridor analysis by currency and country\ngeographic|5| \u2014 Home branch city distribution of high-value customers\ndata-quality|1| \u2014 NULL rates for all key fields\ndata-quality|2| \u2014 Daily volume anomaly detection\ndata-quality|3| \u2014 Duplicate record check\ndata-quality|4| \u2014 Value range validation\ndata-quality|5| \u2014 Referential integrity across core joins\ndata-quality|6| \u2014 Consistency checks for international and EMI fields",
+  "domainHints": "6. Qualify shared column names with table aliases in joins: `channel`, `status`, `city`, `state`, `category`, `opened_ts`, and `event_type` appear in multiple tables with different meanings.\n7. Preserve time zone semantics on all `TIMESTAMP WITH TIME ZONE` fields (`transactions.txn_ts`, campaign timestamps, event timestamps, ticket timestamps); use `date_trunc(...)` directly on the timestamp and avoid casting away timezone unless explicitly needed.\n8. Parse string dates only where required: `calendar_events.start_date` and `calendar_events.end_date` are VARCHAR in `YYYY-MM-DD` format, so use `CAST(start_date AS DATE)` / `CAST(end_date AS DATE)` before date arithmetic.\n9. Treat encoded text and numeric-like categories as dimensions, not measures: `mcc`, `pincode`, `dpd_bucket`, `cibil_band`, `monthly_income_band`, `value_band`, and `rewards_subscription_plan` need grouping or custom sort order rather than arithmetic.\n10. Cast mis-typed numeric columns before aggregation: `transactions.surcharge_levied_inr` is VARCHAR and should be cast with `CAST(surcharge_levied_inr AS DOUBLE)`; `otp_attempts` and `emi_tenure_months` are DOUBLE but logically discrete counts.\n11. Handle multi-value and sparse fields carefully: `propensity_events.supporting_txn_ids`, `hero_case_index.campaign_ids`, and `hero_case_index.key_txn_ids` are pipe-delimited; `fx_amount`, `forex_markup_paid_inr`, `decline_reason`, `emi_tenure_months`, and campaign conversion timestamps are mostly null and should be filtered with context-aware conditions.",
+  "reportMeta": {
+    "totalEvents": "13,51,919 rows",
+    "totalUsers": "4,000 unique customers",
+    "dateRangeLabel": "2024-06-01 00:02:32+05:30 to 2026-05-31 23:59:53+05:30",
+    "dbName": "yesbank-cards.duckdb"
+  },
+  "summaryTableHint": "Query the `transactions` table directly for card spend and usage analysis, then join to `cards`, `customers`, `statements`, `campaign_history`, and event tables for lifecycle, credit, and campaign context.",
+  "suggestedPrompts": [
+    "How have approved transaction count and approved `amount_inr` trended month over month by `channel`?",
+    "Which `cards.product` and `cards.tier` generate the highest approved spend, and how do their approval rates compare?",
+    "What is the conversion funnel from `sent_ts` to `opened_ts`, `clicked_ts`, and `outcome='CONVERTED'` by `campaign_history.channel` and `offers_catalog.offer_type`?",
+    "Do customers with high `utilization_pct` and `revolve_flag=true` show higher `interest_charged_inr` and worse `dpd_bucket` outcomes?",
+    "Which customers or cards showed a `DORMANCY_ONSET` propensity event and then reactivated within 30 or 60 days with an approved transaction?",
+    "How much forex markup and surcharge revenue comes from international transactions, and which `txn_country`, `currency`, and `cards.product` contribute the most?"
+  ],
+  "welcomeSubtitle": "Ask about card spend, campaigns, customer segments, statements, and growth drivers.",
+  "currency": "INR",
+  "companyName": "Credit Bank"
+}

@@ -1,0 +1,16 @@
+[
+  { "language": "Kannada", "text": "ha", "lastAssistantText": "Can we talk for a minute?", "expectClarify": true, "expectTrapId": "kn_ha_vs_huh" },
+  { "language": "Kannada", "text": "ella", "lastAssistantText": "Need extra funds?", "expectClarify": true, "expectTrapId": "kn_illa_vs_ella" },
+  { "language": "Kannada", "text": "illa", "lastAssistantText": "Can we talk for a minute?", "expectClarify": false, "expectIntent": "no" },
+  { "language": "Tamil", "text": "amma", "lastAssistantText": "Can we talk for a minute?", "expectClarify": true, "expectTrapId": "ta_aama_vs_amma" },
+  { "language": "Tamil", "text": "ille", "lastAssistantText": "Can we talk for a minute?", "expectClarify": true, "expectTrapId": "ta_illa_vs_ille" },
+  { "language": "Tamil", "text": "aama", "lastAssistantText": "Can we talk for a minute?", "expectClarify": false, "expectIntent": "yes" },
+  { "language": "Telugu", "text": "aa", "lastAssistantText": "Can we talk for a minute?", "expectClarify": true, "expectTrapId": "te_aa_vs_avunu" },
+  { "language": "Telugu", "text": "leda", "lastAssistantText": "Can we talk for a minute?", "expectClarify": true, "expectTrapId": "te_ledu_vs_leda" },
+  { "language": "Odia", "text": "ha", "lastAssistantText": "Can we talk for a minute?", "expectClarify": true, "expectTrapId": "or_ha_vs_huh" },
+  { "language": "Odia", "text": "naa", "lastAssistantText": "Can we talk for a minute?", "expectClarify": true, "expectTrapId": "or_na_vs_naa" },
+  { "language": "Tamil", "text": "aama", "lastAssistantText": "Shall I schedule a callback?", "expectClarify": false },
+  { "language": "Hindi", "text": "ha", "lastAssistantText": "Can we talk for a minute?", "expectClarify": true, "expectTrapId": "hi_ha_vs_huh" },
+  { "language": "Hinglish", "text": "haan", "lastAssistantText": "Can we talk for a minute?", "expectClarify": false, "expectIntent": "yes" },
+  { "language": "English", "text": "yes", "lastAssistantText": "Can we talk for a minute?", "expectClarify": false, "expectIntent": "yes" }
+]

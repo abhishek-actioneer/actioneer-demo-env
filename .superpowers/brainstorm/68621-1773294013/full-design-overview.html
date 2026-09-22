@@ -1,0 +1,111 @@
+<h2>Full interaction design</h2>
+<p class="subtitle">Three touch points — comment icons, challenge click, and update toolbar button</p>
+
+<div class="mockup">
+  <div class="mockup-header">Deck canvas — annotated</div>
+  <div class="mockup-body" style="padding:0;overflow:hidden;">
+
+    <!-- Toolbar -->
+    <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid #e2e8f0;background:#fafafa;font-size:11px;">
+      <span style="color:#374151;">← Decks</span>
+      <span style="flex:1;text-align:center;font-weight:600;color:#111827;">Q1 Growth Review</span>
+      <span style="color:#6b7280;font-size:10px;">analyzed 2h ago</span>
+      <button style="border:1px solid #e2e8f0;border-radius:4px;padding:3px 8px;font-size:10px;background:white;color:#374151;">↻ Re-analyze</button>
+      <!-- Challenge button -->
+      <button style="border:1px solid #e2e8f0;border-radius:4px;padding:3px 8px;font-size:10px;background:white;color:#374151;">View research ↗</button>
+      <!-- NEW button -->
+      <button style="border:1px solid #3E63DD;border-radius:4px;padding:3px 8px;font-size:10px;background:#eff6ff;color:#3E63DD;font-weight:600;">Update with comments ●</button>
+      <div style="background:#22c55e;width:6px;height:6px;border-radius:50%;"></div>
+    </div>
+
+    <!-- Canvas area -->
+    <div style="display:flex;padding:16px;gap:12px;background:#f8f9fa;min-height:260px;">
+
+      <!-- Slide cluster -->
+      <div style="display:flex;gap:8px;align-items:flex-start;">
+
+        <!-- Hub card with comment icon -->
+        <div style="position:relative;border:1px solid #e2e8f0;border-radius:8px;background:white;padding:10px;width:120px;box-shadow:0 1px 3px rgba(0,0,0,.06);">
+          <!-- Comment icon top-right -->
+          <div style="position:absolute;top:6px;right:6px;display:flex;align-items:center;gap:3px;cursor:pointer;">
+            <div style="width:14px;height:14px;border:1.5px solid #d1d5db;border-radius:3px;display:flex;align-items:center;justify-content:center;">
+              <div style="font-size:8px;color:#6b7280;">💬</div>
+            </div>
+            <!-- Unread dot -->
+            <div style="width:5px;height:5px;background:#3E63DD;border-radius:50%;"></div>
+          </div>
+          <div style="font-size:9px;font-weight:600;color:#6b7280;margin-bottom:4px;margin-right:20px;">REVENUE BY DAY</div>
+          <div style="background:#e5e7eb;border-radius:4px;height:55px;margin-bottom:6px;"></div>
+          <div style="font-size:8px;color:#374151;">Jan revenue $2.4M, +12% vs Dec</div>
+          <div style="margin-top:6px;padding-top:6px;border-top:1px solid #f3f4f6;">
+            <div style="font-size:7px;color:#9ca3af;">1 comment</div>
+          </div>
+        </div>
+
+        <!-- Satellites column -->
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <!-- Analysis satellite -->
+          <div style="border:1px solid #e2e8f0;border-radius:6px;background:white;padding:7px 9px;width:140px;position:relative;">
+            <div style="font-size:7px;font-weight:700;color:#6b7280;letter-spacing:.05em;margin-bottom:3px;">ANALYSIS</div>
+            <div style="font-size:8px;color:#374151;line-height:1.4;">Revenue grew 12% MoM driven by mobile conversions...</div>
+          </div>
+
+          <!-- Challenge satellite — clickable -->
+          <div style="border:1.5px solid #374151;border-radius:6px;background:white;padding:7px 9px;width:140px;position:relative;cursor:pointer;">
+            <div style="position:absolute;top:-7px;right:8px;background:#374151;color:white;font-size:6px;padding:1px 5px;border-radius:3px;">click to discuss</div>
+            <div style="font-size:7px;font-weight:700;color:#6b7280;letter-spacing:.05em;margin-bottom:3px;">CHALLENGE</div>
+            <div style="font-size:8px;color:#374151;line-height:1.4;">Is this a real trend or campaign noise?</div>
+          </div>
+
+          <!-- Reply card (NEW — after update) -->
+          <div style="border:1.5px solid #3E63DD;border-radius:6px;background:#eff6ff;padding:7px 9px;width:140px;position:relative;">
+            <div style="position:absolute;top:-7px;left:8px;background:#3E63DD;color:white;font-size:6px;padding:1px 5px;border-radius:3px;">added by update</div>
+            <div style="font-size:7px;font-weight:700;color:#3E63DD;letter-spacing:.05em;margin-bottom:3px;">REPLY</div>
+            <div style="background:#dbeafe;border-radius:3px;padding:3px 4px;font-size:7px;color:#1e40af;margin-bottom:3px;">You: "What about the Tuesday dip?"</div>
+            <div style="font-size:8px;color:#374151;line-height:1.4;">The Tue dip correlates with a Northeast delivery delay on Jan 9th...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Side panel (open state) -->
+      <div style="border:1px solid #e2e8f0;border-radius:8px;background:white;width:200px;flex-shrink:0;display:flex;flex-direction:column;box-shadow:0 2px 8px rgba(0,0,0,.08);">
+        <div style="padding:8px 10px;border-bottom:1px solid #e2e8f0;display:flex;align-items:center;justify-content:space-between;">
+          <div style="font-size:9px;font-weight:700;color:#111827;">Comments — Revenue by Day</div>
+          <div style="font-size:10px;color:#6b7280;cursor:pointer;">✕</div>
+        </div>
+        <div style="flex:1;padding:8px 10px;overflow-y:auto;">
+          <!-- existing comment -->
+          <div style="margin-bottom:8px;">
+            <div style="display:flex;align-items:center;gap:4px;margin-bottom:3px;">
+              <div style="background:#374151;color:white;font-size:7px;border-radius:3px;padding:1px 4px;">YOU</div>
+              <div style="font-size:7px;color:#9ca3af;">2 min ago</div>
+            </div>
+            <div style="font-size:8px;color:#374151;background:#f3f4f6;padding:4px 6px;border-radius:4px;">What about the Tuesday dip?</div>
+          </div>
+          <!-- AI response placeholder -->
+          <div style="margin-bottom:8px;">
+            <div style="display:flex;align-items:center;gap:4px;margin-bottom:3px;">
+              <div style="background:#e5e7eb;color:#374151;font-size:7px;border-radius:3px;padding:1px 4px;">AI</div>
+              <div style="font-size:7px;color:#9ca3af;">just now</div>
+            </div>
+            <div style="font-size:8px;color:#374151;background:#f3f4f6;padding:4px 6px;border-radius:4px;">Good catch — the dip on Jan 9 aligns with a Northeast delivery delay logged by ops...</div>
+          </div>
+        </div>
+        <div style="padding:6px 8px;border-top:1px solid #e2e8f0;">
+          <input style="width:100%;border:1px solid #e2e8f0;border-radius:4px;padding:4px 6px;font-size:8px;color:#374151;box-sizing:border-box;" placeholder="Add a comment..." />
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Legend -->
+    <div style="padding:8px 12px;border-top:1px solid #e2e8f0;background:#fafafa;display:flex;gap:16px;font-size:9px;color:#6b7280;">
+      <span>💬 icon on hub cards → opens comment thread</span>
+      <span>Click CHALLENGE card → opens same thread panel</span>
+      <span>● dot = has unread comments</span>
+      <span style="color:#3E63DD;">"Update with comments" → adds REPLY cards</span>
+    </div>
+  </div>
+</div>
+
+<p class="subtitle" style="margin-top:12px;">Does this match your vision? Let me know in terminal — then I'll cover the data flow next.</p>

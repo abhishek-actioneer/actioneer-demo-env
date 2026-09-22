@@ -1,0 +1,216 @@
+city_id,city,state,tier
+C001,Bengaluru,Karnataka,metro
+C002,Chennai,Tamil Nadu,metro
+C003,Delhi,Delhi,metro
+C004,Gurgaon,Haryana,metro
+C005,Hyderabad,Telangana,metro
+C006,Kolkata,West Bengal,metro
+C007,Mumbai,Maharashtra,metro
+C008,Noida,Uttar Pradesh,metro
+C009,Pune,Maharashtra,metro
+C010,Ahmedabad,Gujarat,tier1
+C011,Amritsar,Punjab,tier1
+C012,Bhopal,Madhya Pradesh,tier1
+C013,Bhubaneswar,Odisha,tier1
+C014,Chandigarh,Punjab,tier1
+C015,Faridabad,Haryana,tier1
+C016,Ghaziabad,Uttar Pradesh,tier1
+C017,Guwahati,Assam,tier1
+C018,Howrah,West Bengal,tier1
+C019,Indore,Madhya Pradesh,tier1
+C020,Jabalpur,Madhya Pradesh,tier1
+C021,Jaipur,Rajasthan,tier1
+C022,Jalandhar,Punjab,tier1
+C023,Jamshedpur,Jharkhand,tier1
+C024,Jodhpur,Rajasthan,tier1
+C025,Kanpur,Uttar Pradesh,tier1
+C026,Kochi,Kerala,tier1
+C027,Kota,Rajasthan,tier1
+C028,Lucknow,Uttar Pradesh,tier1
+C029,Ludhiana,Punjab,tier1
+C030,Meerut,Uttar Pradesh,tier1
+C031,Mohali,Punjab,tier1
+C032,Mysuru,Karnataka,tier1
+C033,Nagpur,Maharashtra,tier1
+C034,Nashik,Maharashtra,tier1
+C035,Patna,Bihar,tier1
+C036,Panchkula,Haryana,tier1
+C037,Raipur,Chhattisgarh,tier1
+C038,Rajkot,Gujarat,tier1
+C039,Ranchi,Jharkhand,tier1
+C040,Surat,Gujarat,tier1
+C041,Udaipur,Rajasthan,tier1
+C042,Vadodara,Gujarat,tier1
+C043,Varanasi,Uttar Pradesh,tier1
+C044,Vijayawada,Andhra Pradesh,tier1
+C045,Visakhapatnam,Andhra Pradesh,tier1
+C046,Agra,Uttar Pradesh,tier1
+C047,Allahabad,Uttar Pradesh,tier1
+C048,Greater Noida,Uttar Pradesh,tier1
+C049,Gwalior,Madhya Pradesh,tier1
+C050,Haridwar Rishikesh,Uttarakhand,tier1
+C051,Kolhapur,Maharashtra,tier1
+C052,Dehradun Vikasnagar,Uttarakhand,tier1
+C053,Guntur,Andhra Pradesh,tier1
+C054,Kakinada,Andhra Pradesh,tier1
+C055,Karimnagar,Telangana,tier1
+C056,Warangal,Telangana,tier1
+C057,Ahilyanagar,Maharashtra,tier2
+C058,Ahmednagar,Maharashtra,tier2
+C059,Ahmadnagar,Maharashtra,tier2
+C060,Ajmer,Rajasthan,tier2
+C061,Akola,Maharashtra,tier2
+C062,Aligarh,Uttar Pradesh,tier2
+C063,Almora,Uttarakhand,tier2
+C064,Alwar,Rajasthan,tier2
+C065,Ambala,Haryana,tier2
+C066,Ambedkar Nagar,Uttar Pradesh,tier2
+C067,Amravati,Maharashtra,tier2
+C068,Amroha,Uttar Pradesh,tier2
+C069,Anand,Gujarat,tier2
+C070,Ayodhya,Uttar Pradesh,tier2
+C071,Azamgarh,Uttar Pradesh,tier2
+C072,Baghpat,Uttar Pradesh,tier2
+C073,Bahadurgarh,Haryana,tier2
+C074,Bahraich,Uttar Pradesh,tier2
+C075,Banda,Uttar Pradesh,tier2
+C076,Barabanki,Uttar Pradesh,tier2
+C077,Baraut,Uttar Pradesh,tier2
+C078,Bardhaman,West Bengal,tier2
+C079,Bareilly,Uttar Pradesh,tier2
+C080,Batala,Punjab,tier2
+C081,Begusarai,Bihar,tier2
+C082,Belgaum,Karnataka,tier2
+C083,Bharatpur,Rajasthan,tier2
+C084,Bhatinda,Punjab,tier2
+C085,Bhilai Durg,Chhattisgarh,tier2
+C086,Bhilwara,Rajasthan,tier2
+C087,Bhiwadi,Rajasthan,tier2
+C088,Bhiwani,Haryana,tier2
+C089,Bijnor,Uttar Pradesh,tier2
+C090,Bikaner,Rajasthan,tier2
+C091,Bilaspur,Chhattisgarh,tier2
+C092,Bokaro,Jharkhand,tier2
+C093,Budhana,Uttar Pradesh,tier2
+C094,Bulandshahar,Uttar Pradesh,tier2
+C095,Buldhana,Maharashtra,tier2
+C096,Chhatrapati Sambhajinagar Aurangabad,Maharashtra,tier2
+C097,Chhindwara,Madhya Pradesh,tier2
+C098,Chomu,Rajasthan,tier2
+C099,Darbhanga,Bihar,tier2
+C100,Deoband,Uttar Pradesh,tier2
+C101,Deoghar,Jharkhand,tier2
+C102,Deulpur,West Bengal,tier2
+C103,Dhampur,Uttar Pradesh,tier2
+C104,Dhanbad,Jharkhand,tier2
+C105,Durgapur,West Bengal,tier2
+C106,Etah,Uttar Pradesh,tier2
+C107,Etawah,Uttar Pradesh,tier2
+C108,Faizabad,Uttar Pradesh,tier2
+C109,Farrukhabad,Uttar Pradesh,tier2
+C110,Firozabad,Uttar Pradesh,tier2
+C111,Gadarpur,Uttarakhand,tier2
+C112,Gandhinagar,Gujarat,tier2
+C113,Ganganagar,Rajasthan,tier2
+C114,Gaya,Bihar,tier2
+C115,Ghazipur,Uttar Pradesh,tier2
+C116,Gonda,Uttar Pradesh,tier2
+C117,Gorakhpur,Uttar Pradesh,tier2
+C118,Greater Noida Pc,Uttar Pradesh,tier2
+C119,Guna,Madhya Pradesh,tier2
+C120,Hajipur,Bihar,tier2
+C121,Haldwani,Uttarakhand,tier2
+C122,Hapur,Uttar Pradesh,tier2
+C123,Hardoi,Uttar Pradesh,tier2
+C124,Hathras,Uttar Pradesh,tier2
+C125,Hazaribagh,Jharkhand,tier2
+C126,Hisar,Haryana,tier2
+C127,Hoshiarpur,Punjab,tier2
+C128,Jalalabad,Punjab,tier2
+C129,Jalaun,Uttar Pradesh,tier2
+C130,Jalgaon,Maharashtra,tier2
+C131,Jalna,Maharashtra,tier2
+C132,Jamnagar,Gujarat,tier2
+C133,Jaunpur,Uttar Pradesh,tier2
+C134,Jhansi,Uttar Pradesh,tier2
+C135,Jhunjhunu,Rajasthan,tier2
+C136,Jind,Haryana,tier2
+C137,Kaithal,Haryana,tier2
+C138,Karnal,Haryana,tier2
+C139,Kasganj,Uttar Pradesh,tier2
+C140,Kashipur,Uttarakhand,tier2
+C141,Katihar,Bihar,tier2
+C142,Katni,Madhya Pradesh,tier2
+C143,Khatauli,Uttar Pradesh,tier2
+C144,Khekra,Uttar Pradesh,tier2
+C145,Khurja,Uttar Pradesh,tier2
+C146,Kolar,Karnataka,tier2
+C147,Kuchaman,Rajasthan,tier2
+C148,Kurukshetra,Haryana,tier2
+C149,Lakhimpur,Uttar Pradesh,tier2
+C150,Latehar,Jharkhand,tier2
+C151,Latur,Maharashtra,tier2
+C152,Mainpuri,Uttar Pradesh,tier2
+C153,Malerkotla,Punjab,tier2
+C154,Mathura,Uttar Pradesh,tier2
+C155,Mehsana,Gujarat,tier2
+C156,Mirzapur,Uttar Pradesh,tier2
+C157,Modinagar,Uttar Pradesh,tier2
+C158,Moga,Punjab,tier2
+C159,Moradabad,Uttar Pradesh,tier2
+C160,Motihari,Bihar,tier2
+C161,Muktsar,Punjab,tier2
+C162,Munger,Bihar,tier2
+C163,Muzaffarnagar,Uttar Pradesh,tier2
+C164,Muzaffarpur,Bihar,tier2
+C165,Nagina,Uttar Pradesh,tier2
+C166,Nalanda,Bihar,tier2
+C167,Nanded,Maharashtra,tier2
+C168,Narsinghpur,Madhya Pradesh,tier2
+C169,Palanpur,Gujarat,tier2
+C170,Palghar,Maharashtra,tier2
+C171,Palwal,Haryana,tier2
+C172,Panipat,Haryana,tier2
+C173,Paschim Medinipur,West Bengal,tier2
+C174,Patiala,Punjab,tier2
+C175,Pratapgarh,Uttar Pradesh,tier2
+C176,Puri,Odisha,tier2
+C177,Raebareli,Uttar Pradesh,tier2
+C178,Ramgarh,Jharkhand,tier2
+C179,Rampur,Uttar Pradesh,tier2
+C180,Ratlam,Madhya Pradesh,tier2
+C181,Rewa,Madhya Pradesh,tier2
+C182,Rewari,Haryana,tier2
+C183,Rohtak,Haryana,tier2
+C184,Roorkee,Uttarakhand,tier2
+C185,Rudrapur Udham Singh Nagar,Uttarakhand,tier2
+C186,Sagar,Madhya Pradesh,tier2
+C187,Saharanpur,Uttar Pradesh,tier2
+C188,Samastipur,Bihar,tier2
+C189,Sambhal,Uttar Pradesh,tier2
+C190,Sangli,Maharashtra,tier2
+C191,Sarjapura,Karnataka,tier2
+C192,Sasaram,Bihar,tier2
+C193,Satara,Maharashtra,tier2
+C194,Satna,Madhya Pradesh,tier2
+C195,Shahabad,Haryana,tier2
+C196,Shahjahanpur,Uttar Pradesh,tier2
+C197,Shamli,Uttar Pradesh,tier2
+C198,Sikar,Rajasthan,tier2
+C199,Sirsa,Haryana,tier2
+C200,Sitamarhi,Bihar,tier2
+C201,Sitapur,Uttar Pradesh,tier2
+C202,Sohna,Haryana,tier2
+C203,Sonipat,Haryana,tier2
+C204,Srinagar,Jammu & Kashmir,tier2
+C205,Sultanpur,Uttar Pradesh,tier2
+C206,Tarn Taran,Punjab,tier2
+C207,Thanabhawan,Uttar Pradesh,tier2
+C208,Tonk,Rajasthan,tier2
+C209,Tumkur,Karnataka,tier2
+C210,Ujjain,Madhya Pradesh,tier2
+C211,Una,Himachal Pradesh,tier2
+C212,Vasco,Goa,tier2
+C213,Wardha,Maharashtra,tier2
+C214,Yavatmal,Maharashtra,tier2
+C215,Yamuna Nagar,Haryana,tier2

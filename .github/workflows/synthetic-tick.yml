@@ -1,0 +1,86 @@
+name: Daily synthetic tick
+
+# Fires one tick per sample dataset every day at 13:00 IST (07:30 UTC).
+# Each dataset is its own matrix job — one failure does not block the other.
+# Hitting the manual tick endpoint (not the in-process scheduler) lets us
+# keep SYNTHETIC_ENABLED=false on Railway so the app doesn't try to schedule
+# its own ticks; this workflow is the single source of truth for cadence.
+#
+# The 12h idempotency guard on `runTick` prevents double-firing if this
+# workflow runs twice in a day (manual `workflow_dispatch` + scheduled).
+#
+# Required GitHub repo secrets (Settings → Secrets and variables → Actions):
+#   CRON_SECRET — must match the Railway env var of the same name
+#   PROD_HOST   — e.g. https://demo.actioneer.com (no trailing slash)
+
+on:
+  schedule:
+    - cron: '30 7 * * *'   # 13:00 IST
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Bypass the 12h idempotency guard'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+
+permissions:
+  contents: read
+
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        dataset: [quickhelp, vastu-hfc]
+    steps:
+      - name: Tick ${{ matrix.dataset }}
+        env:
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          PROD_HOST: ${{ secrets.PROD_HOST }}
+          FORCE: ${{ inputs.force }}
+        run: |
+          set -euo pipefail
+          if [ -z "${CRON_SECRET}" ] || [ -z "${PROD_HOST}" ]; then
+            echo "::error::Missing required secrets CRON_SECRET and/or PROD_HOST"
+            exit 1
+          fi
+
+          url="${PROD_HOST}/api/admin/synthetic/tick?datasetId=${{ matrix.dataset }}"
+          if [ "${FORCE:-false}" = "true" ]; then
+            url="${url}&force=true"
+          fi
+
+          echo "POST ${url}"
+          response_file=$(mktemp)
+          http_code=$(curl --max-time 600 -s -o "${response_file}" -w "%{http_code}" \
+            -X POST \
+            -H "x-cron-secret: ${CRON_SECRET}" \
+            "${url}")
+
+          echo "HTTP ${http_code}"
+          echo "Response body:"
+          head -c 4000 "${response_file}" || true
+          echo
+
+          if [ "${http_code}" != "200" ]; then
+            echo "::error::Tick for ${{ matrix.dataset }} failed with HTTP ${http_code}"
+            exit 1
+          fi
+
+          status=$(jq -r '.status // "unknown"' < "${response_file}" 2>/dev/null || echo "unknown")
+          rows=$(jq -c '.rowsInserted // {}' < "${response_file}" 2>/dev/null || echo '{}')
+          echo "Tick status: ${status}"
+          echo "Rows inserted: ${rows}"
+
+          # status="ok" → tick fired and committed
+          # status="skipped" → idempotency guard or plan disabled (acceptable)
+          # status="error" → tick attempted but failed; surfaces non-zero
+          if [ "${status}" = "error" ]; then
+            echo "::error::Tick for ${{ matrix.dataset }} reported status=error"
+            exit 1
+          fi

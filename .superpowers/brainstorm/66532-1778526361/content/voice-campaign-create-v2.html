@@ -1,0 +1,122 @@
+<h2>Updated Creation Flow — Offer Catalog Picker</h2>
+<p class="subtitle">Segment + Offer from catalog → Generate Script → Numbers → Launch</p>
+
+<div class="mockup">
+  <div class="mockup-header">/voice-campaigns/new</div>
+  <div class="mockup-body" style="padding:0; background:#0a0a0a; font-size:13px; color:#ccc;">
+    <div style="display:flex; height:520px;">
+
+      <!-- Left: form -->
+      <div style="flex:1; padding:20px; display:flex; flex-direction:column; gap:16px; border-right:1px solid #1a1a1a; overflow-y:auto;">
+
+        <div>
+          <div style="font-size:15px; font-weight:600; color:#e0e0e0;">New Voice Campaign</div>
+          <div style="font-size:12px; color:#555; margin-top:2px;">Pick a segment and offer — Sentinel writes the script</div>
+        </div>
+
+        <!-- Segment -->
+        <div>
+          <div style="font-size:11px; color:#666; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:5px;">Segment</div>
+          <div style="background:#111; border:1px solid #2a2a2a; border-radius:6px; padding:9px 12px; display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+            <span style="color:#e0e0e0;">High-Value Investors · 12.4k users</span>
+            <span style="color:#555; font-size:10px;">▼</span>
+          </div>
+        </div>
+
+        <!-- Offer picker -->
+        <div>
+          <div style="font-size:11px; color:#666; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:5px;">Offer</div>
+          <div style="display:flex; flex-direction:column; gap:6px;">
+
+            <!-- Selected offer -->
+            <div style="background:#111; border:1px solid #e0e0e0; border-radius:6px; padding:10px 12px; cursor:pointer; position:relative;">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                <div>
+                  <div style="font-size:12px; font-weight:500; color:#e0e0e0;">Sovereign Gold Bond</div>
+                  <div style="font-size:11px; color:#666; margin-top:2px;">SGB-Q1-2024 · investment</div>
+                </div>
+                <div style="font-size:10px; color:#888; background:#1a1a1a; border:1px solid #2a2a2a; border-radius:3px; padding:2px 6px;">Selected ✓</div>
+              </div>
+              <div style="font-size:11px; color:#888; margin-top:6px; font-style:italic;">"Gold + 2.5% guaranteed returns"</div>
+              <div style="font-size:11px; color:#555; margin-top:2px;">₹5,890/gram · min ₹5,000</div>
+            </div>
+
+            <!-- Other offers collapsed -->
+            <div style="background:#0d0d0d; border:1px solid #1e1e1e; border-radius:6px; padding:9px 12px; cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <div style="font-size:12px; color:#888;">Flexi Fixed Deposit</div>
+                <div style="font-size:11px; color:#555;">FD-FLEXI-12M · 8.5% p.a.</div>
+              </div>
+            </div>
+
+            <div style="background:#0d0d0d; border:1px solid #1e1e1e; border-radius:6px; padding:9px 12px; cursor:pointer; display:flex; justify-content:space-between; align-items:center;">
+              <div>
+                <div style="font-size:12px; color:#888;">Large Cap SIP</div>
+                <div style="font-size:11px; color:#555;">MF-LARGECAP-SIP · ₹500/month</div>
+              </div>
+            </div>
+
+            <div style="font-size:11px; color:#555; padding:4px 2px; cursor:pointer;">+ 1 more offer · Upload new CSV ↗</div>
+          </div>
+        </div>
+
+        <!-- Voice -->
+        <div style="display:flex; gap:10px;">
+          <div style="flex:1;">
+            <div style="font-size:11px; color:#666; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:5px;">Agent Voice</div>
+            <div style="background:#111; border:1px solid #2a2a2a; border-radius:6px; padding:8px 12px; cursor:pointer; font-size:12px; color:#e0e0e0;">Priya (Hindi-EN) ▼</div>
+          </div>
+          <div style="flex:1;">
+            <div style="font-size:11px; color:#666; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:5px;">Language</div>
+            <div style="background:#111; border:1px solid #2a2a2a; border-radius:6px; padding:8px 12px; cursor:pointer; font-size:12px; color:#e0e0e0;">English ▼</div>
+          </div>
+        </div>
+
+        <!-- Phone numbers -->
+        <div>
+          <div style="font-size:11px; color:#666; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:5px;">Phone Numbers</div>
+          <textarea style="width:100%; background:#111; border:1px solid #2a2a2a; border-radius:6px; padding:9px 12px; font-size:12px; color:#bbb; resize:none; font-family:'Geist Mono',monospace; box-sizing:border-box;" rows="3" placeholder="+91 98765 43210&#10;+91 87654 32109&#10;+91 76543 21098"></textarea>
+          <div style="font-size:11px; color:#555; margin-top:3px;">3 numbers entered</div>
+        </div>
+
+        <button style="background:#e0e0e0; color:#0a0a0a; border:none; border-radius:6px; padding:10px; font-size:13px; font-weight:600; cursor:pointer; width:100%; margin-top:auto;">Generate Script →</button>
+      </div>
+
+      <!-- Right: script preview (appears after generate) -->
+      <div style="flex:1; padding:20px; display:flex; flex-direction:column; gap:14px; overflow-y:auto;">
+
+        <div style="font-size:11px; color:#666; text-transform:uppercase; letter-spacing:0.04em;">Generated Script</div>
+
+        <!-- Why this script -->
+        <div style="background:#0d0d0d; border:1px solid #1e1e1e; border-radius:6px; padding:10px 12px; font-size:12px; color:#666; line-height:1.5;">
+          <span style="color:#555; font-size:10px; text-transform:uppercase; letter-spacing:0.04em; display:block; margin-bottom:4px;">Sentinel's reasoning</span>
+          Segment is 35–50, avg portfolio ₹4.2L, high MF affinity. Gold bond framing chosen — equity exposure signals suggest comfort with market-linked upside. CTA kept soft (callback) given cold-call context.
+        </div>
+
+        <!-- Script text -->
+        <div style="background:#111; border:1px solid #2a2a2a; border-radius:6px; padding:14px; font-size:12.5px; color:#bbb; line-height:1.7; font-family:'Geist Mono',monospace; flex:1; overflow-y:auto;">
+          "Hello, am I speaking with [Name]?<br><br>
+          This is Priya calling from Stable Money. I noticed you have an active investment portfolio with us — thank you for trusting us!<br><br>
+          I'm calling about an exciting opportunity — our Sovereign Gold Bond scheme. It gives you 2.5% annual interest guaranteed by the Government of India, plus the full benefit of gold price appreciation. No storage headaches, no making charges.<br><br>
+          Many of our customers with similar profiles have found it a smart way to diversify beyond mutual funds. The minimum is just ₹5,000.<br><br>
+          Would you like our team to call you back with the full details? It takes only 5 minutes to get started."
+        </div>
+
+        <!-- Edit row -->
+        <div style="display:flex; gap:8px;">
+          <button style="flex:1; font-size:12px; color:#888; background:#111; border:1px solid #2a2a2a; border-radius:6px; padding:8px; cursor:pointer;">Edit script</button>
+          <button style="flex:1; font-size:12px; color:#888; background:#111; border:1px solid #2a2a2a; border-radius:6px; padding:8px; cursor:pointer;">Regenerate</button>
+        </div>
+
+        <!-- Launch -->
+        <button style="background:#e0e0e0; color:#0a0a0a; border:none; border-radius:6px; padding:11px; font-size:13px; font-weight:600; cursor:pointer; width:100%;">Launch 3 Calls →</button>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:14px; font-size:13px; color:#888;">
+  Left panel: segment + offer from catalog + numbers. Right panel: generated script with Sentinel's reasoning. Does this layout work?
+</div>

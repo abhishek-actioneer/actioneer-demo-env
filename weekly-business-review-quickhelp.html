@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Business Review — Quick Help · Jan 6–12, 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0c0c0c;--surface:#161616;--border:#222;
+  --text:#f0f0f0;--muted:#555;--dim:#2a2a2a;
+  --accent:#E8A838;
+  --chart-bg:#ffffff;--chart-border:#e8e8e8;
+}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+#deck{width:100vw;height:100vh;position:relative;overflow:hidden}
+
+/* Slides */
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:44px 72px 64px;opacity:0;transition:opacity 0.28s ease;pointer-events:none}
+.slide.active{opacity:1;pointer-events:all}
+
+/* Inner content wrapper */
+.inner{width:100%;max-width:1060px;display:flex;flex-direction:column;height:100%}
+
+/* Header */
+.hd{flex-shrink:0;margin-bottom:18px}
+.eye{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.title{font-size:clamp(20px,2.4vw,28px);font-weight:700;letter-spacing:-.025em}
+.sub{font-size:12px;color:var(--muted);margin-top:3px}
+
+/* Body grid: chart left, commentary right */
+.body-grid{flex:1;min-height:0;display:grid;grid-template-columns:3fr 1fr;gap:28px;align-items:start}
+
+/* Chart card — light mode */
+.chart-wrap{
+  position:relative;height:100%;min-height:0;
+  background:var(--chart-bg);
+  border-radius:10px;
+  padding:18px 18px 14px;
+  border:1px solid var(--chart-border);
+}
+
+/* Commentary */
+.commentary{display:flex;flex-direction:column;gap:14px;padding-top:4px}
+.commentary ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.commentary li{font-size:12px;color:#888;line-height:1.6;padding-left:14px;position:relative}
+.commentary li::before{content:'—';position:absolute;left:0;color:var(--muted)}
+.commentary li strong{color:#bbb;font-weight:600}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:2px solid var(--accent);border-radius:6px;padding:14px 16px;margin-top:4px}
+.callout .cl{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.callout .cv{font-size:clamp(18px,2.2vw,26px);font-weight:800;letter-spacing:-.03em;color:var(--text)}
+.callout .cs{font-size:11px;color:var(--muted);margin-top:2px}
+
+/* Cover slide */
+.cover-inner{max-width:900px;width:100%}
+.big-title{font-size:clamp(36px,5vw,60px);font-weight:800;letter-spacing:-.04em;line-height:1.05}
+.cover-sub{font-size:15px;color:var(--muted);margin-top:10px}
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-top:44px}
+.kpi{background:var(--bg);padding:24px 22px}
+.kl{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.kv{font-size:clamp(20px,2.5vw,28px);font-weight:700;letter-spacing:-.02em}
+.kv.accent{color:var(--accent)}
+.ks{font-size:11px;color:#333;margin-top:4px}
+
+/* Nav */
+#nav{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;z-index:100}
+.nb{width:28px;height:28px;border:1px solid var(--border);background:var(--surface);border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text)}
+.nb:hover{background:var(--dim)}
+.dots{display:flex;gap:5px}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--dim);cursor:pointer;transition:background .2s}
+.dot.on{background:var(--accent)}
+#ctr{position:fixed;top:18px;right:24px;font-size:10px;color:#333;letter-spacing:.06em}
+#logo{position:fixed;top:18px;left:24px;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#292929}
+
+/* Big number badge for retention slide */
+.big-badge{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 20px;text-align:center;margin-top:8px}
+.big-badge .bb-val{font-size:clamp(28px,3.5vw,42px);font-weight:800;letter-spacing:-.04em;color:var(--accent)}
+.big-badge .bb-lbl{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+@media print{
+  @page{size:landscape;margin:0}
+  html,body{height:auto;overflow:visible;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  #deck{position:static!important;height:auto!important;overflow:visible!important;width:100%}
+  .slide{position:relative!important;inset:auto!important;opacity:1!important;pointer-events:all!important;display:flex!important;height:100vh;width:100vw;break-after:page;page-break-after:always;overflow:hidden}
+  .slide:last-child{break-after:avoid;page-break-after:avoid}
+  #nav,#ctr,#logo{display:none!important}
+}
+</style>
+</head>
+<body>
+<div id="logo">Sentinel</div>
+<div id="ctr">1 / 7</div>
+<div id="deck">
+
+<!-- Slide 0: Cover -->
+<div class="slide active" id="s0">
+  <div class="cover-inner">
+    <div class="eye">Weekly Business Review · Quick Help</div>
+    <div class="big-title">Jan 6–12, 2025</div>
+    <p class="cover-sub">Seven days of home-services performance · Bangalore operations</p>
+    <div class="kpi-row">
+      <div class="kpi">
+        <div class="kl">Total Revenue</div>
+        <div class="kv accent">₹27.8L</div>
+        <div class="ks">₹27,76,572 · 7-day</div>
+      </div>
+      <div class="kpi">
+        <div class="kl">Bookings</div>
+        <div class="kv">5,513</div>
+        <div class="ks">787 / day avg</div>
+      </div>
+      <div class="kpi">
+        <div class="kl">On-Time Rate</div>
+        <div class="kv">64.52%</div>
+        <div class="ks">SLA: arrive ≤ 10 min</div>
+      </div>
+      <div class="kpi">
+        <div class="kl">New Customers</div>
+        <div class="kv">4</div>
+        <div class="ks">3,062 unique · 99.87% repeat</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 1: Daily Revenue Trend -->
+<div class="slide" id="s1">
+  <div class="inner">
+    <div class="hd">
+      <div class="eye">Revenue Trend</div>
+      <div class="title">Daily Revenue — Jan 6–12</div>
+      <div class="sub">Completed bookings · ₹ INR · payment_status = success</div>
+    </div>
+    <div class="body-grid">
+      <div class="chart-wrap"><canvas id="ch-daily"></canvas></div>
+      <div class="commentary">
+        <ul>
+          <li><strong>Wednesday Jan 8</strong> was the peak at ₹4.38L (845 bookings), the single highest day of the week.</li>
+          <li><strong>Saturday Jan 11</strong> was the trough at ₹3.61L (717 bookings) — a 17.6% drop from peak.</li>
+          <li>Revenue recovered on <strong>Sunday Jan 12</strong> to ₹3.95L, typical of weekend cleanup demand.</li>
+          <li>Thursday had the <strong>best on-time rate</strong> at 67.04% despite being the 4th highest revenue day.</li>
+        </ul>
+        <div class="callout">
+          <div class="cl">Week Total</div>
+          <div class="cv">₹27.8L</div>
+          <div class="cs">5,513 bookings · ₹504 avg</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 2: Revenue by Service Type -->
+<div class="slide" id="s2">
+  <div class="inner">
+    <div class="hd">
+      <div class="eye">Product Mix</div>
+      <div class="title">Revenue by Service Type</div>
+      <div class="sub">Top 8 service types · sorted by total revenue</div>
+    </div>
+    <div class="body-grid">
+      <div class="chart-wrap"><canvas id="ch-service"></canvas></div>
+      <div class="commentary">
+        <ul>
+          <li><strong>Move-in/Move-out</strong> leads at ₹3.71L — high-ticket, session-intensive bookings.</li>
+          <li><strong>After-Party Clean</strong> ranks 2nd at ₹3.47L with high booking volume (388) — event-driven demand.</li>
+          <li>Top 3 types together = <strong>₹10.38L</strong>, 37.4% of weekly revenue.</li>
+          <li><strong>Fan Cleaning</strong> at ₹1.60L is the most price-compressed service at ₹455/booking avg.</li>
+        </ul>
+        <div class="callout">
+          <div class="cl">Top Service</div>
+          <div class="cv">₹3,71,033</div>
+          <div class="cs">Move-in / Move-out · 336 bookings</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 3: Service Tier Mix -->
+<div class="slide" id="s3">
+  <div class="inner">
+    <div class="hd">
+      <div class="eye">Tier Distribution</div>
+      <div class="title">Service Tier Mix</div>
+      <div class="sub">Revenue share vs booking count by tier (quick / standard / extended / premium)</div>
+    </div>
+    <div class="body-grid">
+      <div class="chart-wrap"><canvas id="ch-tier"></canvas></div>
+      <div class="commentary">
+        <ul>
+          <li><strong>Premium</strong> tier (120 min) generates 47.2% of revenue with only 24.7% of bookings — highest yield per session.</li>
+          <li><strong>Quick</strong> tier (30 min) has the most bookings (1,404) yet lowest revenue (₹2.82L) — volume without value.</li>
+          <li><strong>Extended</strong> captures the most bookings after Quick (1,391) with 2.4× the revenue at ₹6.88L.</li>
+          <li>Revenue per booking: Premium ₹961 · Extended ₹495 · Standard ₹366 · Quick ₹201.</li>
+        </ul>
+        <div class="callout">
+          <div class="cl">Premium Share</div>
+          <div class="cv">47.2%</div>
+          <div class="cs">Revenue · ₹13.1L of ₹27.8L</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 4: Customer Acquisition & Retention -->
+<div class="slide" id="s4">
+  <div class="inner">
+    <div class="hd">
+      <div class="eye">Retention</div>
+      <div class="title">Customer Acquisition &amp; Retention</div>
+      <div class="sub">New vs repeat customers this week · 3,062 unique customers active</div>
+    </div>
+    <div class="body-grid">
+      <div class="chart-wrap"><canvas id="ch-retention"></canvas></div>
+      <div class="commentary">
+        <ul>
+          <li>Only <strong>4 first-time customers</strong> this week — the platform is operating almost entirely on existing demand.</li>
+          <li><strong>3,058 repeat customers</strong> drove 99.87% of all bookings, a sign of entrenched habit loops.</li>
+          <li>Average of <strong>1.80 bookings/customer</strong> for the week among active users.</li>
+          <li>Near-zero new acquisition means growth depends on <strong>upsell and frequency</strong>, not acquisition funnels.</li>
+        </ul>
+        <div class="big-badge">
+          <div class="bb-val">99.87%</div>
+          <div class="bb-lbl">Repeat Booking Rate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 5: Operational Efficiency -->
+<div class="slide" id="s5">
+  <div class="inner">
+    <div class="hd">
+      <div class="eye">Operational Efficiency</div>
+      <div class="title">On-Time Rate by Hub</div>
+      <div class="sub">% bookings where partner arrived within SLA (≤ 10 min) · top 10 hubs by volume · sorted best → worst</div>
+    </div>
+    <div class="body-grid">
+      <div class="chart-wrap"><canvas id="ch-ontime"></canvas></div>
+      <div class="commentary">
+        <ul>
+          <li><strong>Banashankari Hub</strong> leads at 78.73% — 14 pp above the city average of 64.52%.</li>
+          <li><strong>Malleswaram Hub</strong> is second at 71.93% despite 456 bookings — a top performer at scale.</li>
+          <li><strong>Whitefield Hub</strong> is the lowest at 60.92% — likely traffic-density driven (Jam conditions).</li>
+          <li><strong>Peenya Hub</strong> (highest volume, 1,260 bookings) holds 67.38% — above average for the busiest zone.</li>
+        </ul>
+        <div class="callout">
+          <div class="cl">Avg On-Time Rate</div>
+          <div class="cv">64.52%</div>
+          <div class="cs">City-wide · SLA target 100%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 6: Hub Performance -->
+<div class="slide" id="s6">
+  <div class="inner">
+    <div class="hd">
+      <div class="eye">Geographic Performance</div>
+      <div class="title">Hub Revenue Ranking</div>
+      <div class="sub">Total revenue (₹ INR) · payment_status = success · Jan 6–12</div>
+    </div>
+    <div class="body-grid">
+      <div class="chart-wrap"><canvas id="ch-hub"></canvas></div>
+      <div class="commentary">
+        <ul>
+          <li><strong>Peenya Hub</strong> dominates at ₹6.26L — 2.3× the next hub (Rajajinagar ₹3.35L).</li>
+          <li>Top 3 hubs (Peenya, Rajajinagar, Yelahanka) contribute <strong>₹12.1L</strong> — 43.6% of total revenue.</li>
+          <li><strong>BTM Layout and JP Nagar</strong> are near parity at ~₹1.95L each — cross-hub demand from central Bangalore.</li>
+          <li><strong>Marathahalli Hub</strong> at ₹83.6K is the smallest — capacity or demand constraint to diagnose.</li>
+        </ul>
+        <div class="callout">
+          <div class="cl">Top Hub</div>
+          <div class="cv">₹6,26,268</div>
+          <div class="cs">Peenya Hub · 1,260 bookings</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /#deck -->
+
+<div id="nav">
+  <button class="nb" id="prev">&#8592;</button>
+  <div class="dots" id="dots"></div>
+  <button class="nb" id="next">&#8594;</button>
+</div>
+
+<script>
+// ── Data ─────────────────────────────────────────────────────────────────────
+const DATA = {
+  kpis: { revenue: 2776572, bookings: 5513, onTimePct: 64.52, newCustomers: 4, uniqueCustomers: 3062 },
+  daily: {
+    labels: ['Mon Jan 6','Tue Jan 7','Wed Jan 8','Thu Jan 9','Fri Jan 10','Sat Jan 11','Sun Jan 12'],
+    revenue: [378807, 422027, 438434, 403059, 378237, 361090, 394918],
+    bookings: [760, 841, 845, 801, 761, 717, 788],
+    onTime: [64.47, 62.78, 64.26, 67.04, 63.99, 64.30, 64.85]
+  },
+  serviceType: {
+    labels: ['Move-in/Move-out','After-Party Clean','Deep Cleaning','Complete Wardrobe','Fridge Surface','Full House','Kitchen Cabinet','Fan Cleaning'],
+    revenue: [371033, 347057, 319945, 272925, 182854, 178647, 167247, 159727],
+    bookings: [336, 388, 319, 321, 382, 324, 334, 351]
+  },
+  tiers: {
+    labels: ['Premium','Extended','Standard','Quick'],
+    revenue: [1310960, 688475, 495165, 281972],
+    bookings: [1364, 1391, 1354, 1404]
+  },
+  retention: {
+    newCustomers: 4,
+    repeatCustomers: 3058,
+    totalCustomers: 3062,
+    repeatPct: 99.87
+  },
+  onTimeByHub: {
+    labels: ['Banashankari','Malleswaram','Basavanagudi','Peenya','Indiranagar','Yelahanka','BTM Layout','JP Nagar','Rajajinagar','Whitefield'],
+    pct: [78.73, 71.93, 67.52, 67.38, 66.57, 65.78, 64.63, 64.52, 61.53, 60.92]
+  },
+  hubRevenue: {
+    labels: ['Peenya','Rajajinagar','Yelahanka','Malleswaram','BTM Layout','JP Nagar','Basavanagudi','Indiranagar','Banashankari','Marathahalli'],
+    revenue: [626268, 335375, 250049, 221375, 198625, 193399, 189940, 185135, 116766, 83639]
+  }
+};
+
+// ── Chart.js global defaults (light mode) ────────────────────────────────────
+Chart.register(ChartDataLabels);
+Chart.defaults.color = '#888';
+Chart.defaults.borderColor = '#efefef';
+Chart.defaults.font.family = "Inter, -apple-system, sans-serif";
+Chart.defaults.font.size = 11;
+// Disable datalabels globally; each chart opts in explicitly
+Chart.defaults.plugins.datalabels = { display: false };
+
+// ── Color palette (light chart background) ───────────────────────────────────
+const ACCENT    = '#c17f24';   // darker amber — readable on white
+const ACCENT_BG = '#E8A838';   // original amber (for dark bg elements)
+const C1 = '#1a1a1a';          // bar highlight (top / best)
+const C2 = '#555';
+const C3 = '#888';
+const C4 = '#aaa';
+const C5 = '#ccc';
+const GRID = '#f0f0f0';
+const TICK = '#999';
+const LABEL_DARK = '#333';
+const LABEL_MED  = '#666';
+
+function fmtL(n) { return '₹' + (n / 100000).toFixed(1) + 'L'; }
+function fmtPct(n) { return n.toFixed(1) + '%'; }
+
+// ── Slide navigation ──────────────────────────────────────────────────────────
+const TOTAL = 7;
+let cur = 0;
+const allSlides = () => document.querySelectorAll('.slide');
+const dotsEl = document.getElementById('dots');
+const ctrEl  = document.getElementById('ctr');
+
+for (let i = 0; i < TOTAL; i++) {
+  const d = document.createElement('span');
+  d.className = 'dot' + (i === 0 ? ' on' : '');
+  d.addEventListener('click', () => goTo(i));
+  dotsEl.appendChild(d);
+}
+
+const chartRefs = {};
+function goTo(n) {
+  allSlides()[cur].classList.remove('active');
+  dotsEl.children[cur].classList.remove('on');
+  cur = (n + TOTAL) % TOTAL;
+  allSlides()[cur].classList.add('active');
+  dotsEl.children[cur].classList.add('on');
+  ctrEl.textContent = (cur + 1) + ' / ' + TOTAL;
+  Object.values(chartRefs).forEach(c => c && c.resize && c.resize());
+}
+
+document.getElementById('prev').addEventListener('click', () => goTo(cur - 1));
+document.getElementById('next').addEventListener('click', () => goTo(cur + 1));
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goTo(cur + 1);
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   goTo(cur - 1);
+});
+
+// ── Charts ────────────────────────────────────────────────────────────────────
+function initCharts() {
+
+  // ── Slide 1: Daily Revenue Line ─────────────────────────────────────────
+  const peakRev = Math.max(...DATA.daily.revenue);
+  const troughRev = Math.min(...DATA.daily.revenue);
+
+  chartRefs.daily = new Chart(document.getElementById('ch-daily'), {
+    type: 'line',
+    data: {
+      labels: DATA.daily.labels,
+      datasets: [{
+        label: 'Revenue',
+        data: DATA.daily.revenue,
+        borderColor: ACCENT,
+        borderWidth: 2.5,
+        pointBackgroundColor: DATA.daily.revenue.map(v =>
+          v === peakRev ? ACCENT : v === troughRev ? '#c0392b' : '#fff'
+        ),
+        pointBorderColor: DATA.daily.revenue.map(v =>
+          v === peakRev ? ACCENT : v === troughRev ? '#c0392b' : '#ccc'
+        ),
+        pointBorderWidth: 2,
+        pointRadius: DATA.daily.revenue.map(v =>
+          v === peakRev || v === troughRev ? 7 : 5
+        ),
+        backgroundColor: 'rgba(193,127,36,0.07)',
+        fill: true,
+        tension: 0.38
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: false },
+        datalabels: {
+          display: true,
+          align: 'top',
+          anchor: 'end',
+          offset: 4,
+          font: { size: 10, weight: '600' },
+          color: ctx => {
+            const v = ctx.dataset.data[ctx.dataIndex];
+            return v === peakRev ? ACCENT : v === troughRev ? '#c0392b' : LABEL_MED;
+          },
+          formatter: v => fmtL(v)
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: GRID, drawBorder: false },
+          ticks: { color: TICK, font: { size: 11 } }
+        },
+        y: {
+          grid: { color: GRID },
+          ticks: {
+            color: TICK,
+            font: { size: 10 },
+            callback: v => fmtL(v)
+          },
+          min: 300000,
+          max: 490000
+        }
+      },
+      layout: { padding: { top: 28 } }
+    }
+  });
+
+  // ── Slide 2: Service Type Horizontal Bar ────────────────────────────────
+  chartRefs.service = new Chart(document.getElementById('ch-service'), {
+    type: 'bar',
+    data: {
+      labels: DATA.serviceType.labels,
+      datasets: [{
+        label: 'Revenue',
+        data: DATA.serviceType.revenue,
+        backgroundColor: [C1, C2, C3, C4, C5, C5, C5, C5],
+        borderRadius: 3,
+        borderSkipped: false
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: false },
+        datalabels: {
+          display: true,
+          anchor: 'end',
+          align: 'right',
+          offset: 5,
+          font: { size: 10, weight: '600' },
+          color: ctx => ctx.dataIndex <= 1 ? LABEL_DARK : LABEL_MED,
+          formatter: v => fmtL(v)
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: GRID },
+          ticks: { color: TICK, font: { size: 10 }, callback: v => fmtL(v) },
+          max: 440000
+        },
+        y: {
+          grid: { display: false },
+          ticks: { color: ctx => ctx.index === 0 ? C1 : TICK, font: { size: 10 } }
+        }
+      },
+      layout: { padding: { right: 54 } }
+    }
+  });
+
+  // ── Slide 3: Tier Mix Doughnut ───────────────────────────────────────────
+  const tierColors = [C1, C2, C4, C5];
+  const tierTotal  = DATA.tiers.revenue.reduce((a, b) => a + b, 0);
+
+  chartRefs.tier = new Chart(document.getElementById('ch-tier'), {
+    type: 'doughnut',
+    data: {
+      labels: DATA.tiers.labels,
+      datasets: [{
+        data: DATA.tiers.revenue,
+        backgroundColor: tierColors,
+        borderColor: '#fff',
+        borderWidth: 3,
+        hoverOffset: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '58%',
+      plugins: {
+        legend: {
+          display: true,
+          position: 'right',
+          labels: {
+            color: '#555',
+            font: { size: 11 },
+            padding: 18,
+            generateLabels: chart => {
+              return chart.data.labels.map((lbl, i) => ({
+                text: lbl + '  ' + (chart.data.datasets[0].data[i] / tierTotal * 100).toFixed(1) + '%',
+                fillStyle: tierColors[i],
+                strokeStyle: '#fff',
+                lineWidth: 0,
+                index: i
+              }));
+            }
+          }
+        },
+        tooltip: { enabled: false },
+        datalabels: {
+          display: ctx => (ctx.dataset.data[ctx.dataIndex] / tierTotal) > 0.08,
+          color: ctx => {
+            const i = ctx.dataIndex;
+            return i <= 1 ? '#fff' : LABEL_DARK;
+          },
+          font: { size: 12, weight: '700' },
+          formatter: (v, ctx) => {
+            const pct = (v / tierTotal * 100).toFixed(1) + '%';
+            const bk  = DATA.tiers.bookings[ctx.dataIndex].toLocaleString();
+            return [pct, bk + ' bk'];
+          }
+        }
+      }
+    }
+  });
+
+  // ── Slide 4: Retention — stacked % bar ──────────────────────────────────
+  // Show new vs repeat as a single 100% stacked horizontal bar,
+  // plus a vertical count bar for clarity
+  chartRefs.retention = new Chart(document.getElementById('ch-retention'), {
+    type: 'bar',
+    data: {
+      labels: ['Customer\nMix'],
+      datasets: [
+        {
+          label: 'Repeat',
+          data: [DATA.retention.repeatCustomers],
+          backgroundColor: C1,
+          borderRadius: { topRight: 4, bottomRight: 4 },
+          borderSkipped: false
+        },
+        {
+          label: 'New',
+          data: [DATA.retention.newCustomers],
+          backgroundColor: C5,
+          borderRadius: { topLeft: 4, bottomLeft: 4 },
+          borderSkipped: false
+        }
+      ]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: true,
+          position: 'bottom',
+          labels: { color: '#666', font: { size: 11 }, padding: 16 }
+        },
+        tooltip: { enabled: false },
+        datalabels: {
+          display: true,
+          anchor: 'center',
+          align: 'center',
+          font: { size: 13, weight: '700' },
+          color: ctx => ctx.datasetIndex === 0 ? '#fff' : LABEL_DARK,
+          formatter: (v, ctx) => {
+            const pct = (v / DATA.retention.totalCustomers * 100).toFixed(2) + '%';
+            return v.toLocaleString() + '\n(' + pct + ')';
+          }
+        }
+      },
+      scales: {
+        x: {
+          stacked: true,
+          grid: { color: GRID },
+          ticks: { color: TICK, font: { size: 10 } }
+        },
+        y: {
+          stacked: true,
+          grid: { display: false },
+          ticks: { display: false }
+        }
+      },
+      layout: { padding: { top: 20, bottom: 10 } }
+    }
+  });
+
+  // ── Slide 5: On-Time by Hub ─────────────────────────────────────────────
+  const maxOT = Math.max(...DATA.onTimeByHub.pct);
+  const minOT = Math.min(...DATA.onTimeByHub.pct);
+
+  chartRefs.ontime = new Chart(document.getElementById('ch-ontime'), {
+    type: 'bar',
+    data: {
+      labels: DATA.onTimeByHub.labels,
+      datasets: [
+        {
+          label: 'On-Time %',
+          data: DATA.onTimeByHub.pct,
+          backgroundColor: DATA.onTimeByHub.pct.map(v =>
+            v === maxOT ? C1 : v === minOT ? '#c0392b' : C4
+          ),
+          borderRadius: 3,
+          borderSkipped: false
+        },
+        {
+          // Avg reference line rendered as a scatter/line overlay
+          label: 'Avg 64.52%',
+          type: 'line',
+          data: Array(DATA.onTimeByHub.labels.length).fill(64.52),
+          borderColor: 'rgba(100,100,100,0.4)',
+          borderWidth: 1.5,
+          borderDash: [5, 4],
+          pointRadius: 0,
+          fill: false,
+          datalabels: { display: false }
+        }
+      ]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: true,
+          position: 'bottom',
+          labels: {
+            color: '#666',
+            font: { size: 10 },
+            padding: 12,
+            filter: (item) => item.datasetIndex === 1
+          }
+        },
+        tooltip: { enabled: false },
+        datalabels: {
+          display: ctx => ctx.datasetIndex === 0,
+          anchor: 'end',
+          align: 'right',
+          offset: 5,
+          font: { size: 10, weight: '600' },
+          color: ctx => {
+            const v = ctx.dataset.data[ctx.dataIndex];
+            return v === maxOT ? C1 : v === minOT ? '#c0392b' : LABEL_MED;
+          },
+          formatter: v => fmtPct(v)
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: GRID },
+          ticks: { color: TICK, font: { size: 10 }, callback: v => v + '%' },
+          min: 54,
+          max: 88
+        },
+        y: {
+          grid: { display: false },
+          ticks: {
+            color: (ctx) => {
+              const v = DATA.onTimeByHub.pct[ctx.index];
+              return v === maxOT ? C1 : v === minOT ? '#c0392b' : TICK;
+            },
+            font: { size: 11 }
+          }
+        }
+      },
+      layout: { padding: { right: 48 } }
+    }
+  });
+
+  // ── Slide 6: Hub Revenue ────────────────────────────────────────────────
+  chartRefs.hub = new Chart(document.getElementById('ch-hub'), {
+    type: 'bar',
+    data: {
+      labels: DATA.hubRevenue.labels,
+      datasets: [{
+        label: 'Revenue',
+        data: DATA.hubRevenue.revenue,
+        backgroundColor: DATA.hubRevenue.revenue.map((v, i) =>
+          i === 0 ? C1 : i <= 2 ? C3 : C5
+        ),
+        borderRadius: 3,
+        borderSkipped: false
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: false },
+        datalabels: {
+          display: true,
+          anchor: 'end',
+          align: 'right',
+          offset: 5,
+          font: { size: 10, weight: '600' },
+          color: ctx => ctx.dataIndex === 0 ? C1 : LABEL_MED,
+          formatter: v => fmtL(v)
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: GRID },
+          ticks: { color: TICK, font: { size: 10 }, callback: v => fmtL(v) },
+          max: 720000
+        },
+        y: {
+          grid: { display: false },
+          ticks: {
+            color: ctx => ctx.index === 0 ? C1 : TICK,
+            font: (ctx) => ({ size: 11, weight: ctx.index === 0 ? '600' : '400' })
+          }
+        }
+      },
+      layout: { padding: { right: 54 } }
+    }
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => setTimeout(initCharts, 80));
+</script>
+</body>
+</html>

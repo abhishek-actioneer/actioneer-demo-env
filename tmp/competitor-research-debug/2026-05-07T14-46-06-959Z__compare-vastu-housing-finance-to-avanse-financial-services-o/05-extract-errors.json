@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-sept-24-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260503%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260503T230209Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=33a6340acbe56c82d701553db4f87b864ca3d3d2f1c092011655bf7b254cac61",
+    "errorType": "http_error",
+    "httpStatusCode": 403,
+    "content": ""
+  },
+  {
+    "url": "https://vastu-hfc-website.s3.ap-south-1.amazonaws.com/uploads/public/assets/pdf/financial-reports/LCR-Dec-25-VHFC.pdf",
+    "errorType": "http_error",
+    "httpStatusCode": 403,
+    "content": ""
+  },
+  {
+    "url": "https://www.avanse.com/pdf/Financial%20Statement%20FY24.pdf",
+    "errorType": "fetch_error",
+    "httpStatusCode": 304,
+    "content": ""
+  }
+]

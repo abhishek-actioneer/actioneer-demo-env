@@ -1,0 +1,1001 @@
+[
+  {
+    "id": "card_transaction_recorded",
+    "displayName": "Card Transaction Recorded",
+    "category": "Card Spend",
+    "table": "transactions",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Transaction Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_type",
+        "displayName": "Transaction Type",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "response",
+        "displayName": "Authorization Response",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "currency",
+        "displayName": "Currency",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_country",
+        "displayName": "Transaction Country",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "auth_method",
+        "displayName": "Auth Method",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "is_intl_flag",
+        "displayName": "International Transaction",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "emi_converted_flag",
+        "displayName": "EMI Converted",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "purchase_approved",
+    "displayName": "Purchase Approved",
+    "category": "Card Spend",
+    "table": "transactions",
+    "filterSQL": "txn_type = 'PURCHASE' AND response = 'APPROVED'",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Transaction Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "currency",
+        "displayName": "Currency",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_country",
+        "displayName": "Transaction Country",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "auth_method",
+        "displayName": "Auth Method",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "pos_entry_mode",
+        "displayName": "POS Entry Mode",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "is_intl_flag",
+        "displayName": "International Transaction",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "purchase_declined",
+    "displayName": "Purchase Declined",
+    "category": "Card Spend",
+    "table": "transactions",
+    "filterSQL": "txn_type = 'PURCHASE' AND response = 'DECLINED'",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Transaction Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "decline_reason",
+        "displayName": "Decline Reason",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "currency",
+        "displayName": "Currency",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_country",
+        "displayName": "Transaction Country",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "auth_method",
+        "displayName": "Auth Method",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "upi_payment_approved",
+    "displayName": "UPI Payment Approved",
+    "category": "Card Spend",
+    "table": "transactions",
+    "filterSQL": "channel = 'UPI' AND txn_type = 'PURCHASE' AND response = 'APPROVED'",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "txn_country",
+        "displayName": "Transaction Country",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "currency",
+        "displayName": "Currency",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "response",
+        "displayName": "Authorization Response",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "ecommerce_purchase_approved",
+    "displayName": "E-commerce Purchase Approved",
+    "category": "Card Spend",
+    "table": "transactions",
+    "filterSQL": "channel IN ('ECOM','INTL_ECOM') AND txn_type = 'PURCHASE' AND response = 'APPROVED'",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Digital Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "currency",
+        "displayName": "Currency",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_country",
+        "displayName": "Transaction Country",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "auth_method",
+        "displayName": "Auth Method",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "token_used_flag",
+        "displayName": "Token Used",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "international_spend_approved",
+    "displayName": "International Spend Approved",
+    "category": "Card Spend",
+    "table": "transactions",
+    "filterSQL": "is_intl_flag = true AND txn_type = 'PURCHASE' AND response = 'APPROVED'",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Transaction Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "currency",
+        "displayName": "Currency",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_country",
+        "displayName": "Transaction Country",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "auth_method",
+        "displayName": "Auth Method",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "contactless_purchase_approved",
+    "displayName": "Contactless Purchase Approved",
+    "category": "Card Spend",
+    "table": "transactions",
+    "filterSQL": "channel = 'CONTACTLESS' AND txn_type = 'PURCHASE' AND response = 'APPROVED'",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "pos_entry_mode",
+        "displayName": "POS Entry Mode",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_country",
+        "displayName": "Transaction Country",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "auth_method",
+        "displayName": "Auth Method",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "tokenized_transaction_used",
+    "displayName": "Tokenized Transaction Used",
+    "category": "Card Spend",
+    "table": "transactions",
+    "filterColumn": "token_used_flag",
+    "filterValue": "true",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Transaction Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_type",
+        "displayName": "Transaction Type",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "response",
+        "displayName": "Authorization Response",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "auth_method",
+        "displayName": "Auth Method",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "currency",
+        "displayName": "Currency",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "emi_conversion_completed",
+    "displayName": "EMI Conversion Completed",
+    "category": "Credit Management",
+    "table": "transactions",
+    "filterColumn": "emi_converted_flag",
+    "filterValue": "true",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "txn_type",
+        "displayName": "Transaction Type",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "emi_tenure_months",
+        "displayName": "EMI Tenure Months",
+        "type": "number",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "channel",
+        "displayName": "Transaction Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "response",
+        "displayName": "Authorization Response",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "refund_processed",
+    "displayName": "Refund Processed",
+    "category": "Card Spend",
+    "table": "transactions",
+    "filterColumn": "txn_type",
+    "filterValue": "REFUND",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Transaction Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "response",
+        "displayName": "Authorization Response",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "currency",
+        "displayName": "Currency",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_country",
+        "displayName": "Transaction Country",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "reversal_processed",
+    "displayName": "Reversal Processed",
+    "category": "Card Spend",
+    "table": "transactions",
+    "filterColumn": "txn_type",
+    "filterValue": "REVERSAL",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Transaction Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "response",
+        "displayName": "Authorization Response",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "currency",
+        "displayName": "Currency",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "statement_generated",
+    "displayName": "Statement Generated",
+    "category": "Billing & Repayment",
+    "table": "statements",
+    "countColumn": "statement_id",
+    "valueColumn": "total_spend_inr",
+    "dateColumn": "cycle_end",
+    "properties": [
+      {
+        "column": "revolve_flag",
+        "displayName": "Revolved Balance",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "dpd_bucket",
+        "displayName": "DPD Bucket",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "utilization_pct",
+        "displayName": "Utilization Percent",
+        "type": "number",
+        "cardinalityHint": "medium"
+      }
+    ]
+  },
+  {
+    "id": "balance_revolved",
+    "displayName": "Balance Revolved",
+    "category": "Billing & Repayment",
+    "table": "statements",
+    "filterColumn": "revolve_flag",
+    "filterValue": "true",
+    "countColumn": "statement_id",
+    "valueColumn": "closing_balance_inr",
+    "dateColumn": "cycle_end",
+    "properties": [
+      {
+        "column": "dpd_bucket",
+        "displayName": "DPD Bucket",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "utilization_pct",
+        "displayName": "Utilization Percent",
+        "type": "number",
+        "cardinalityHint": "medium"
+      }
+    ]
+  },
+  {
+    "id": "interest_charged",
+    "displayName": "Interest Charged",
+    "category": "Billing & Repayment",
+    "table": "statements",
+    "filterSQL": "interest_charged_inr > 0",
+    "countColumn": "statement_id",
+    "valueColumn": "interest_charged_inr",
+    "dateColumn": "cycle_end",
+    "properties": [
+      {
+        "column": "revolve_flag",
+        "displayName": "Revolved Balance",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "dpd_bucket",
+        "displayName": "DPD Bucket",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "delinquency_30_plus",
+    "displayName": "Delinquency 30+ Observed",
+    "category": "Risk & Delinquency",
+    "table": "statements",
+    "filterSQL": "dpd_bucket IN ('30-59','60-89','90+')",
+    "countColumn": "statement_id",
+    "valueColumn": "closing_balance_inr",
+    "dateColumn": "cycle_end",
+    "properties": [
+      {
+        "column": "dpd_bucket",
+        "displayName": "DPD Bucket",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "revolve_flag",
+        "displayName": "Revolved Balance",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "marketing_contact_sent",
+    "displayName": "Marketing Contact Sent",
+    "category": "Campaign Engagement",
+    "table": "campaign_history",
+    "filterSQL": "sent_ts IS NOT NULL",
+    "countColumn": "campaign_id",
+    "valueColumn": "contact_cost_inr",
+    "dateColumn": "sent_ts",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Campaign Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "outcome",
+        "displayName": "Campaign Outcome",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "marketing_contact_delivered",
+    "displayName": "Marketing Contact Delivered",
+    "category": "Campaign Engagement",
+    "table": "campaign_history",
+    "filterSQL": "delivered_ts IS NOT NULL",
+    "countColumn": "campaign_id",
+    "valueColumn": "contact_cost_inr",
+    "dateColumn": "delivered_ts",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Campaign Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "outcome",
+        "displayName": "Campaign Outcome",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "campaign_opened",
+    "displayName": "Campaign Opened",
+    "category": "Campaign Engagement",
+    "table": "campaign_history",
+    "filterSQL": "opened_ts IS NOT NULL",
+    "countColumn": "campaign_id",
+    "valueColumn": "contact_cost_inr",
+    "dateColumn": "opened_ts",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Campaign Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "outcome",
+        "displayName": "Campaign Outcome",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "campaign_clicked",
+    "displayName": "Campaign Clicked",
+    "category": "Campaign Engagement",
+    "table": "campaign_history",
+    "filterSQL": "clicked_ts IS NOT NULL",
+    "countColumn": "campaign_id",
+    "valueColumn": "contact_cost_inr",
+    "dateColumn": "clicked_ts",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Campaign Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "outcome",
+        "displayName": "Campaign Outcome",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "offer_converted",
+    "displayName": "Offer Converted",
+    "category": "Campaign Conversion",
+    "table": "campaign_history",
+    "filterColumn": "outcome",
+    "filterValue": "CONVERTED",
+    "countColumn": "campaign_id",
+    "valueColumn": "conversion_value_inr",
+    "dateColumn": "outcome_ts",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Campaign Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "offer_opted_out",
+    "displayName": "Offer Opted Out",
+    "category": "Campaign Engagement",
+    "table": "campaign_history",
+    "filterColumn": "outcome",
+    "filterValue": "OPTED_OUT",
+    "countColumn": "campaign_id",
+    "valueColumn": "contact_cost_inr",
+    "dateColumn": "outcome_ts",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Campaign Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "card_issued",
+    "displayName": "Card Issued",
+    "category": "Card Lifecycle",
+    "table": "card_lifecycle_events",
+    "filterColumn": "event_type",
+    "filterValue": "ISSUED",
+    "countColumn": "event_id",
+    "dateColumn": "event_ts",
+    "properties": [
+      {
+        "column": "reason",
+        "displayName": "Issue Reason",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "initiated_by",
+        "displayName": "Initiated By",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "card_activated",
+    "displayName": "Card Activated",
+    "category": "Onboarding",
+    "table": "card_lifecycle_events",
+    "filterColumn": "event_type",
+    "filterValue": "ACTIVATED",
+    "countColumn": "event_id",
+    "dateColumn": "event_ts",
+    "properties": [
+      {
+        "column": "reason",
+        "displayName": "Activation Reason",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "initiated_by",
+        "displayName": "Initiated By",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "credit_limit_increased",
+    "displayName": "Credit Limit Increased",
+    "category": "Credit Management",
+    "table": "card_lifecycle_events",
+    "filterColumn": "event_type",
+    "filterValue": "LIMIT_INCREASED",
+    "countColumn": "event_id",
+    "dateColumn": "event_ts",
+    "properties": [
+      {
+        "column": "reason",
+        "displayName": "Limit Change Reason",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "initiated_by",
+        "displayName": "Initiated By",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "card_upgraded",
+    "displayName": "Card Upgraded",
+    "category": "Card Lifecycle",
+    "table": "card_lifecycle_events",
+    "filterColumn": "event_type",
+    "filterValue": "UPGRADED_TO",
+    "countColumn": "event_id",
+    "dateColumn": "event_ts",
+    "properties": [
+      {
+        "column": "reason",
+        "displayName": "Upgrade Reason",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "initiated_by",
+        "displayName": "Initiated By",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "new_value",
+        "displayName": "Upgraded To",
+        "type": "string",
+        "cardinalityHint": "medium"
+      }
+    ]
+  },
+  {
+    "id": "card_closed",
+    "displayName": "Card Closed",
+    "category": "Retention",
+    "table": "card_lifecycle_events",
+    "filterColumn": "event_type",
+    "filterValue": "CLOSED",
+    "countColumn": "event_id",
+    "dateColumn": "event_ts",
+    "properties": [
+      {
+        "column": "reason",
+        "displayName": "Closure Reason",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "initiated_by",
+        "displayName": "Initiated By",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "propensity_triggered",
+    "displayName": "Propensity Triggered",
+    "category": "Customer Signals",
+    "table": "propensity_events",
+    "countColumn": "event_id",
+    "dateColumn": "event_ts",
+    "properties": [
+      {
+        "column": "event_type",
+        "displayName": "Propensity Type",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "dormancy_detected",
+    "displayName": "Dormancy Detected",
+    "category": "Retention",
+    "table": "propensity_events",
+    "filterColumn": "event_type",
+    "filterValue": "DORMANCY_ONSET",
+    "countColumn": "event_id",
+    "dateColumn": "event_ts",
+    "properties": []
+  },
+  {
+    "id": "big_ticket_emi_eligible",
+    "displayName": "Big-ticket EMI Eligible",
+    "category": "Credit Management",
+    "table": "propensity_events",
+    "filterColumn": "event_type",
+    "filterValue": "EMI_ELIGIBLE_BIGTICKET",
+    "countColumn": "event_id",
+    "dateColumn": "event_ts",
+    "properties": []
+  },
+  {
+    "id": "first_international_txn_detected",
+    "displayName": "First International Transaction Detected",
+    "category": "Customer Signals",
+    "table": "propensity_events",
+    "filterColumn": "event_type",
+    "filterValue": "FIRST_INTL_TXN",
+    "countColumn": "event_id",
+    "dateColumn": "event_ts",
+    "properties": []
+  },
+  {
+    "id": "travel_booking_cluster_detected",
+    "displayName": "Travel Booking Cluster Detected",
+    "category": "Customer Signals",
+    "table": "propensity_events",
+    "filterColumn": "event_type",
+    "filterValue": "TRAVEL_BOOKING_CLUSTER",
+    "countColumn": "event_id",
+    "dateColumn": "event_ts",
+    "properties": []
+  },
+  {
+    "id": "utility_surcharge_hit_detected",
+    "displayName": "Utility Surcharge Hit Detected",
+    "category": "Customer Signals",
+    "table": "propensity_events",
+    "filterColumn": "event_type",
+    "filterValue": "UTILITY_SURCHARGE_HIT",
+    "countColumn": "event_id",
+    "dateColumn": "event_ts",
+    "properties": []
+  },
+  {
+    "id": "service_ticket_opened",
+    "displayName": "Service Ticket Opened",
+    "category": "Service",
+    "table": "service_tickets",
+    "countColumn": "ticket_id",
+    "valueColumn": "csat_1_5",
+    "dateColumn": "opened_ts",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Service Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "category",
+        "displayName": "Ticket Category",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "service_ticket_resolved",
+    "displayName": "Service Ticket Resolved",
+    "category": "Service",
+    "table": "service_tickets",
+    "filterSQL": "resolved_ts IS NOT NULL",
+    "countColumn": "ticket_id",
+    "valueColumn": "csat_1_5",
+    "dateColumn": "resolved_ts",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Service Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "category",
+        "displayName": "Ticket Category",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "offer_spam_complaint_opened",
+    "displayName": "Offer Spam Complaint Opened",
+    "category": "Service",
+    "table": "service_tickets",
+    "filterColumn": "category",
+    "filterValue": "OFFER_SPAM_COMPLAINT",
+    "countColumn": "ticket_id",
+    "valueColumn": "csat_1_5",
+    "dateColumn": "opened_ts",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Service Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "surcharge_complaint_opened",
+    "displayName": "Surcharge Complaint Opened",
+    "category": "Service",
+    "table": "service_tickets",
+    "filterColumn": "category",
+    "filterValue": "SURCHARGE_COMPLAINT",
+    "countColumn": "ticket_id",
+    "valueColumn": "csat_1_5",
+    "dateColumn": "opened_ts",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Service Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "cross_sell_product_opened",
+    "displayName": "Cross-sell Product Opened",
+    "category": "Campaign Conversion",
+    "table": "product_holdings",
+    "countColumn": "holding_id",
+    "dateColumn": "opened_date",
+    "properties": [
+      {
+        "column": "product_type",
+        "displayName": "Product Type",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "value_band",
+        "displayName": "Value Band",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "status",
+        "displayName": "Holding Status",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "campaign_sourced_product_opened",
+    "displayName": "Campaign-sourced Product Opened",
+    "category": "Campaign Conversion",
+    "table": "product_holdings",
+    "filterSQL": "source_campaign_id IS NOT NULL",
+    "countColumn": "holding_id",
+    "dateColumn": "opened_date",
+    "properties": [
+      {
+        "column": "product_type",
+        "displayName": "Product Type",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "value_band",
+        "displayName": "Value Band",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "status",
+        "displayName": "Holding Status",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  }
+]

@@ -1,0 +1,102 @@
+<h2>Voice Campaign Creation Page</h2>
+<p class="subtitle">Single page — fill offer details, generate script, paste numbers, launch</p>
+
+<div class="split">
+
+  <!-- State 1: Before script generation -->
+  <div class="mockup">
+    <div class="mockup-header">Step 1 — Configure</div>
+    <div class="mockup-body" style="padding:0; background:#0a0a0a; font-size:13px; color:#ccc;">
+      <div style="padding:20px; display:flex; flex-direction:column; gap:18px;">
+
+        <!-- Page title -->
+        <div>
+          <div style="font-size:16px; font-weight:600; color:#e0e0e0;">New Voice Campaign</div>
+          <div style="font-size:12px; color:#555; margin-top:3px;">Sentinel will generate the call script from your offer brief</div>
+        </div>
+
+        <!-- Segment picker -->
+        <div>
+          <div style="font-size:11px; color:#666; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px;">Segment</div>
+          <div style="background:#111; border:1px solid #2a2a2a; border-radius:6px; padding:9px 12px; display:flex; justify-content:space-between; align-items:center; cursor:pointer;">
+            <span style="color:#e0e0e0;">High-Value Investors (12.4k users)</span>
+            <span style="color:#555; font-size:11px;">▼</span>
+          </div>
+        </div>
+
+        <!-- Offer brief -->
+        <div>
+          <div style="font-size:11px; color:#666; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px;">Offer Brief</div>
+          <textarea style="width:100%; background:#111; border:1px solid #2a2a2a; border-radius:6px; padding:10px 12px; font-size:13px; color:#bbb; resize:none; font-family:inherit; box-sizing:border-box; line-height:1.5;" rows="4" placeholder="Describe the product and key selling points...
+e.g. Sovereign Gold Bond at 2.5% annual interest + gold appreciation, min ₹5000, no storage risk"></textarea>
+        </div>
+
+        <!-- Voice / language -->
+        <div style="display:flex; gap:12px;">
+          <div style="flex:1;">
+            <div style="font-size:11px; color:#666; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px;">Agent Voice</div>
+            <div style="background:#111; border:1px solid #2a2a2a; border-radius:6px; padding:9px 12px; display:flex; justify-content:space-between; cursor:pointer;">
+              <span style="color:#e0e0e0;">Priya (Female, Hindi-EN)</span>
+              <span style="color:#555; font-size:11px;">▼</span>
+            </div>
+          </div>
+          <div style="flex:1;">
+            <div style="font-size:11px; color:#666; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px;">Language</div>
+            <div style="background:#111; border:1px solid #2a2a2a; border-radius:6px; padding:9px 12px; display:flex; justify-content:space-between; cursor:pointer;">
+              <span style="color:#e0e0e0;">English</span>
+              <span style="color:#555; font-size:11px;">▼</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Generate button -->
+        <button style="background:#e0e0e0; color:#0a0a0a; border:none; border-radius:6px; padding:10px 20px; font-size:13px; font-weight:600; cursor:pointer; width:100%;">Generate Script →</button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- State 2: After script generation -->
+  <div class="mockup">
+    <div class="mockup-header">Step 2 — Review & Launch</div>
+    <div class="mockup-body" style="padding:0; background:#0a0a0a; font-size:13px; color:#ccc;">
+      <div style="padding:20px; display:flex; flex-direction:column; gap:18px;">
+
+        <!-- Confirmed config -->
+        <div style="background:#111; border:1px solid #1e1e1e; border-radius:6px; padding:10px 12px; font-size:12px; color:#666; display:flex; gap:16px;">
+          <span>Segment: <span style="color:#999;">High-Value Investors</span></span>
+          <span>·</span>
+          <span>Offer: <span style="color:#999;">Gold Bond Scheme</span></span>
+        </div>
+
+        <!-- Generated script -->
+        <div>
+          <div style="font-size:11px; color:#666; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px; display:flex; justify-content:space-between;">
+            <span>Generated Script</span>
+            <span style="color:#555; cursor:pointer; text-transform:none; letter-spacing:0; font-size:11px;">Edit ↗</span>
+          </div>
+          <div style="background:#111; border:1px solid #2a2a2a; border-radius:6px; padding:12px; font-size:12px; color:#aaa; line-height:1.65; font-family: 'Geist Mono', monospace; max-height:160px; overflow-y:auto;">
+            "Hello, am I speaking with [Name]? This is Priya from Stable Money. I'm calling because based on your investment profile, I think our Sovereign Gold Bond could be a great fit. It gives you 2.5% guaranteed annual interest plus the benefit of gold price appreciation — with zero storage risk. Many investors with your profile are using it to diversify. Do you have two minutes to know more?"
+          </div>
+          <div style="margin-top:6px; font-size:11px; color:#555;">Sentinel used: age band 35–50, high MF affinity, avg portfolio ₹4.2L</div>
+        </div>
+
+        <!-- Phone numbers -->
+        <div>
+          <div style="font-size:11px; color:#666; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:6px;">Phone Numbers</div>
+          <textarea style="width:100%; background:#111; border:1px solid #2a2a2a; border-radius:6px; padding:10px 12px; font-size:12px; color:#bbb; resize:none; font-family:'Geist Mono',monospace; box-sizing:border-box;" rows="4" placeholder="+91 98765 43210
++91 87654 32109
++91 76543 21098"></textarea>
+          <div style="font-size:11px; color:#555; margin-top:4px;">3 numbers · calls go out immediately</div>
+        </div>
+
+        <!-- Launch -->
+        <button style="background:#e0e0e0; color:#0a0a0a; border:none; border-radius:6px; padding:10px 20px; font-size:13px; font-weight:600; cursor:pointer; width:100%;">Launch 3 Calls</button>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top:16px; font-size:13px; color:#888;">Left = configure + generate. Right = review script + paste numbers + launch. Does this two-step feel right, or should it be a single scrollable page?</div>

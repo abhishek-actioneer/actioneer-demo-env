@@ -1,0 +1,964 @@
+{
+  "metrics": [
+    {
+      "id": "m-gmv",
+      "name": "Gross Merchandise Value (GMV)",
+      "description": "Total value of all successful service bookings in INR.",
+      "type": "kpi",
+      "category": "Financial Performance",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(booking_value) AS value FROM bookings WHERE payment_status = 'success'",
+      "timeSeriesSql": "SELECT booking_date AS date, SUM(booking_value) AS value FROM bookings WHERE payment_status = 'success' GROUP BY 1 ORDER BY 1",
+      "table": "bookings",
+      "column": "booking_value",
+      "timeColumn": "booking_date",
+      "formula": "SUM(booking_value)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "service_type",
+        "service_tier",
+        "hub_name",
+        "city",
+        "acquisition_source"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-net-revenue",
+          "metricName": "Net Revenue",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-net-revenue",
+      "name": "Net Revenue",
+      "description": "Total commission earned by the platform from successful bookings.",
+      "type": "kpi",
+      "category": "Financial Performance",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(commission_earned) AS value FROM bookings_economics WHERE payment_status = 'success'",
+      "timeSeriesSql": "SELECT booking_date AS date, SUM(commission_earned) AS value FROM bookings_economics WHERE payment_status = 'success' GROUP BY 1 ORDER BY 1",
+      "table": "bookings_economics",
+      "column": "commission_earned",
+      "timeColumn": "booking_date",
+      "formula": "SUM(commission_earned)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "service_type",
+        "service_tier",
+        "hub_name"
+      ],
+      "relationships": []
+    },
+    {
+      "id": "m-completion-rate",
+      "name": "Booking Completion Rate",
+      "description": "Ratio of completed bookings to total bookings requested.",
+      "type": "kpi",
+      "category": "Operations",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT completion_rate AS value FROM weekly_company_kpis ORDER BY week_start DESC LIMIT 1",
+      "timeSeriesSql": "SELECT week_start AS date, completion_rate AS value FROM weekly_company_kpis ORDER BY date",
+      "table": "weekly_company_kpis",
+      "column": "completion_rate",
+      "timeColumn": "week_start",
+      "formula": "completed_bookings / total_bookings",
+      "timeGrain": "weekly",
+      "dimensions": [],
+      "relationships": [
+        {
+          "metricId": "m-gmv",
+          "metricName": "Gross Merchandise Value (GMV)",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-contribution-margin-pct",
+      "name": "Contribution Margin %",
+      "description": "Profitability per booking after all variable costs and discounts.",
+      "type": "diagnostic",
+      "category": "Financial Performance",
+      "valueFormat": "percent",
+      "aggregation": "derived_ratio",
+      "valueSql": "SELECT AVG(contribution_margin_pct) AS value FROM bookings_economics WHERE payment_status = 'success'",
+      "timeSeriesSql": "SELECT booking_date AS date, AVG(contribution_margin_pct) AS value FROM bookings_economics WHERE payment_status = 'success' GROUP BY 1 ORDER BY 1",
+      "table": "bookings_economics",
+      "column": "contribution_margin_pct",
+      "timeColumn": "booking_date",
+      "formula": "SUM(contribution_margin) / SUM(booking_value)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "service_type",
+        "hub_name",
+        "ltv_bucket"
+      ],
+      "relationships": []
+    },
+    {
+      "id": "m-blended-cac",
+      "name": "Blended CAC",
+      "description": "Total marketing spend (Ads + Comms + Referrals) divided by new customers.",
+      "type": "kpi",
+      "category": "Financial Performance",
+      "valueFormat": "currency",
+      "aggregation": "derived_ratio",
+      "valueSql": "SELECT blended_cac AS value FROM weekly_company_kpis ORDER BY week_start DESC LIMIT 1",
+      "timeSeriesSql": "SELECT week_start AS date, blended_cac AS value FROM weekly_company_kpis ORDER BY date",
+      "table": "weekly_company_kpis",
+      "column": "blended_cac",
+      "timeColumn": "week_start",
+      "formula": "(total_ad_spend + total_comms_cost + total_referral_rewards) / new_customers",
+      "timeGrain": "weekly",
+      "dimensions": [],
+      "relationships": [
+        {
+          "metricId": "m-ltv-cac-ratio-30d",
+          "metricName": "LTV:CAC Ratio (30-Day)",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-nps-score",
+      "name": "Net Promoter Score (NPS)",
+      "description": "Measure of customer loyalty based on survey scores (0-10).",
+      "type": "kpi",
+      "category": "Service Quality",
+      "valueFormat": "number",
+      "aggregation": "derived_ratio",
+      "valueSql": "SELECT (SUM(CASE WHEN score >= 9 THEN 1 WHEN score <= 6 THEN -1 ELSE 0 END) * 100.0 / COUNT(*)) AS value FROM survey_full WHERE survey_type = 'nps'",
+      "timeSeriesSql": "SELECT CAST(submitted_at AS DATE) AS date, (SUM(CASE WHEN score >= 9 THEN 1 WHEN score <= 6 THEN -1 ELSE 0 END) * 100.0 / COUNT(*)) AS value FROM survey_full WHERE survey_type = 'nps' GROUP BY 1 ORDER BY 1",
+      "table": "survey_full",
+      "column": "score",
+      "timeColumn": "submitted_at",
+      "formula": "(% Promoters - % Detractors)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "service_type",
+        "hub_name",
+        "ltv_bucket",
+        "category"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-repeat-rate",
+          "metricName": "Customer Repeat Rate",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-on-time-arrival-rate",
+      "name": "On-Time Arrival Rate",
+      "description": "Percentage of bookings where the partner arrived within the SLA target.",
+      "type": "indicator",
+      "category": "Operations",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT on_time_pct AS value FROM weekly_company_kpis ORDER BY week_start DESC LIMIT 1",
+      "timeSeriesSql": "SELECT week_start AS date, on_time_pct AS value FROM weekly_company_kpis ORDER BY date",
+      "table": "weekly_company_kpis",
+      "column": "on_time_pct",
+      "timeColumn": "week_start",
+      "formula": "COUNT(CASE WHEN on_time THEN 1 END) / COUNT(*)",
+      "timeGrain": "weekly",
+      "dimensions": [
+        "hub_name",
+        "service_type",
+        "weather",
+        "traffic_density"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-csat-avg",
+          "metricName": "Average CSAT",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-mau",
+      "name": "Monthly Active Users (MAU)",
+      "description": "Number of unique customers who had at least one app session in the last 30 days.",
+      "type": "kpi",
+      "category": "Product Engagement",
+      "valueFormat": "integer",
+      "aggregation": "unique_count",
+      "valueSql": "SELECT COUNT(DISTINCT customer_id) AS value FROM daily_sessions WHERE session_date >= CURRENT_DATE - INTERVAL '30 days'",
+      "timeSeriesSql": "SELECT DATE_TRUNC('month', session_date) AS date, COUNT(DISTINCT customer_id) AS value FROM daily_sessions GROUP BY 1 ORDER BY 1",
+      "table": "daily_sessions",
+      "column": "customer_id",
+      "timeColumn": "session_date",
+      "formula": "COUNT(DISTINCT customer_id)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "platform"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-gmv",
+          "metricName": "Gross Merchandise Value (GMV)",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-ltv-cac-ratio-30d",
+      "name": "LTV:CAC Ratio (30-Day)",
+      "description": "Ratio of the average 30-day LTV to the Blended CAC.",
+      "type": "diagnostic",
+      "category": "Financial Performance",
+      "valueFormat": "number",
+      "aggregation": "derived_ratio",
+      "valueSql": "SELECT ltv_cac_ratio AS value FROM monthly_company_kpis ORDER BY month DESC LIMIT 1",
+      "timeSeriesSql": "SELECT month AS date, ltv_cac_ratio AS value FROM monthly_company_kpis ORDER BY date",
+      "table": "monthly_company_kpis",
+      "column": "ltv_cac_ratio",
+      "timeColumn": "month",
+      "formula": "ltv_30d_avg / blended_cac",
+      "timeGrain": "monthly",
+      "dimensions": [],
+      "relationships": []
+    },
+    {
+      "id": "m-activation-rate",
+      "name": "Activation Rate",
+      "description": "Percentage of signups that complete their first booking.",
+      "type": "indicator",
+      "category": "Growth & Acquisition",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT activation_rate_pct AS value FROM activation_metrics ORDER BY month DESC LIMIT 1",
+      "timeSeriesSql": "SELECT month AS date, activation_rate_pct AS value FROM activation_metrics ORDER BY date",
+      "table": "activation_metrics",
+      "column": "activation_rate_pct",
+      "timeColumn": "month",
+      "formula": "first_bookers / signups",
+      "timeGrain": "monthly",
+      "dimensions": [],
+      "relationships": [
+        {
+          "metricId": "m-mau",
+          "metricName": "Monthly Active Users (MAU)",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-avg-arrival-time",
+      "name": "Average Arrival Time",
+      "description": "Average time in minutes taken by partners to arrive at the customer location.",
+      "type": "indicator",
+      "category": "Operations",
+      "valueFormat": "number",
+      "aggregation": "sum",
+      "valueSql": "SELECT avg_arrival_min AS value FROM weekly_company_kpis ORDER BY week_start DESC LIMIT 1",
+      "timeSeriesSql": "SELECT week_start AS date, avg_arrival_min AS value FROM weekly_company_kpis ORDER BY date",
+      "table": "weekly_company_kpis",
+      "column": "avg_arrival_min",
+      "timeColumn": "week_start",
+      "formula": "AVG(arrival_time_min)",
+      "timeGrain": "weekly",
+      "dimensions": [
+        "hub_name",
+        "weather",
+        "traffic_density"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-on-time-arrival-rate",
+          "metricName": "On-Time Arrival Rate",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-ad-roas",
+      "name": "Ad Spend ROAS",
+      "description": "Return on Ad Spend calculated as GMV from first bookings divided by ad spend.",
+      "type": "diagnostic",
+      "category": "Growth & Acquisition",
+      "valueFormat": "number",
+      "aggregation": "derived_ratio",
+      "valueSql": "SELECT ROUND(SUM(roas * spend_inr) / NULLIF(SUM(spend_inr), 0), 2) AS value FROM ad_full",
+      "timeSeriesSql": "SELECT date, roas AS value FROM ad_full ORDER BY date",
+      "table": "ad_full",
+      "column": "roas",
+      "timeColumn": "date",
+      "formula": "Revenue / Spend",
+      "timeGrain": "daily",
+      "dimensions": [
+        "platform",
+        "ad_campaign_name",
+        "audience_type"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-gmv",
+          "metricName": "Gross Merchandise Value (GMV)",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-crm-conversion-rate",
+      "name": "CRM Conversion Rate",
+      "description": "Percentage of sent CRM messages that resulted in a booking within 24 hours.",
+      "type": "indicator",
+      "category": "Growth & Acquisition",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT SUM(CASE WHEN converted THEN 1 ELSE 0 END) * 1.0 / COUNT(*) AS value FROM comms_full WHERE delivered = true",
+      "timeSeriesSql": "SELECT CAST(sent_at AS DATE) AS date, SUM(CASE WHEN converted THEN 1 ELSE 0 END) * 1.0 / COUNT(*) AS value FROM comms_full WHERE delivered = true GROUP BY 1 ORDER BY 1",
+      "table": "comms_full",
+      "column": "converted",
+      "timeColumn": "sent_at",
+      "formula": "SUM(converted) / COUNT(delivered)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "camp_type",
+        "user_segment_at_send"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-gmv",
+          "metricName": "Gross Merchandise Value (GMV)",
+          "direction": "drives",
+          "type": "influence"
+        },
+        {
+          "metricId": "m-repeat-rate",
+          "metricName": "Customer Repeat Rate",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-avg-partner-rating",
+      "name": "Average Partner Rating",
+      "description": "Mean rating given to partners by customers after bookings.",
+      "type": "indicator",
+      "category": "Service Quality",
+      "valueFormat": "number",
+      "aggregation": "sum",
+      "valueSql": "SELECT avg_partner_rating AS value FROM weekly_company_kpis ORDER BY week_start DESC LIMIT 1",
+      "timeSeriesSql": "SELECT week_start AS date, avg_partner_rating AS value FROM weekly_company_kpis ORDER BY date",
+      "table": "weekly_company_kpis",
+      "column": "avg_partner_rating",
+      "timeColumn": "week_start",
+      "formula": "AVG(partner_rating)",
+      "timeGrain": "weekly",
+      "dimensions": [
+        "hub_name",
+        "service_type"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-csat-avg",
+          "metricName": "Average CSAT",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-partner-churn-rate",
+      "name": "Partner Churn Rate",
+      "description": "Percentage of partners who had zero shifts this month compared to the previous month.",
+      "type": "diagnostic",
+      "category": "Operations",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT partner_churn_rate AS value FROM monthly_company_kpis ORDER BY month DESC LIMIT 1",
+      "timeSeriesSql": "SELECT month AS date, partner_churn_rate AS value FROM monthly_company_kpis ORDER BY date",
+      "table": "monthly_company_kpis",
+      "column": "partner_churn_rate",
+      "timeColumn": "month",
+      "formula": "Inactive Partners / Total Partners",
+      "timeGrain": "monthly",
+      "dimensions": [],
+      "relationships": [
+        {
+          "metricId": "m-active-partners",
+          "metricName": "Active Partner Count",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-avg-order-value",
+      "name": "Average Booking Value (ABV)",
+      "description": "The average INR value of a successful booking.",
+      "type": "indicator",
+      "category": "Financial Performance",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT gmv / NULLIF(total_bookings, 0) AS value FROM weekly_company_kpis ORDER BY week_start DESC LIMIT 1",
+      "timeSeriesSql": "SELECT week_start AS date, (gmv / total_bookings) AS value FROM weekly_company_kpis ORDER BY date",
+      "table": "weekly_company_kpis",
+      "column": "gmv",
+      "timeColumn": "week_start",
+      "formula": "SUM(booking_value) / COUNT(booking_id)",
+      "timeGrain": "weekly",
+      "dimensions": [
+        "service_type",
+        "service_tier"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-gmv",
+          "metricName": "Gross Merchandise Value (GMV)",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-referral-k-factor",
+      "name": "Referral K-Factor",
+      "description": "Average number of new signups generated by each active referrer.",
+      "type": "diagnostic",
+      "category": "Growth & Acquisition",
+      "valueFormat": "number",
+      "aggregation": "derived_ratio",
+      "valueSql": "SELECT referral_k_factor AS value FROM monthly_company_kpis ORDER BY month DESC LIMIT 1",
+      "timeSeriesSql": "SELECT month AS date, referral_k_factor AS value FROM monthly_company_kpis ORDER BY date",
+      "table": "monthly_company_kpis",
+      "column": "referral_k_factor",
+      "timeColumn": "month",
+      "formula": "referral_signups / active_referrers",
+      "timeGrain": "monthly",
+      "dimensions": [],
+      "relationships": [
+        {
+          "metricId": "m-installs-total",
+          "metricName": "Total App Installs",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-crm-open-rate",
+      "name": "Push/Email Open Rate",
+      "description": "Ratio of opened messages to delivered messages (excluding SMS).",
+      "type": "indicator",
+      "category": "Growth & Acquisition",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT SUM(CASE WHEN opened THEN 1 ELSE 0 END) * 1.0 / COUNT(*) AS value FROM comms_full WHERE delivered = true AND channel IN ('push', 'email')",
+      "timeSeriesSql": "SELECT CAST(sent_at AS DATE) AS date, SUM(CASE WHEN opened THEN 1 ELSE 0 END) * 1.0 / COUNT(*) AS value FROM comms_full WHERE delivered = true AND channel IN ('push', 'email') GROUP BY 1 ORDER BY 1",
+      "table": "comms_full",
+      "column": "opened",
+      "timeColumn": "sent_at",
+      "formula": "SUM(opened) / COUNT(delivered)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "user_segment_at_send"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-crm-conversion-rate",
+          "metricName": "CRM Conversion Rate",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-app-sessions-per-user",
+      "name": "Sessions Per User",
+      "description": "Average number of app sessions per user in a day.",
+      "type": "indicator",
+      "category": "Product Engagement",
+      "valueFormat": "number",
+      "aggregation": "sum",
+      "valueSql": "SELECT AVG(session_count) AS value FROM daily_sessions",
+      "timeSeriesSql": "SELECT session_date AS date, AVG(session_count) AS value FROM daily_sessions GROUP BY 1 ORDER BY 1",
+      "table": "daily_sessions",
+      "column": "session_count",
+      "timeColumn": "session_date",
+      "formula": "SUM(session_count) / COUNT(DISTINCT customer_id)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "platform"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-repeat-rate",
+          "metricName": "Customer Repeat Rate",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-signup-to-booking-latency",
+      "name": "Signup to Book Days",
+      "description": "Average number of days from user signup to their first booking.",
+      "type": "diagnostic",
+      "category": "Growth",
+      "valueFormat": "number",
+      "aggregation": "sum",
+      "valueSql": "SELECT signup_to_book_days_avg AS value FROM monthly_company_kpis ORDER BY month DESC LIMIT 1",
+      "timeSeriesSql": "SELECT month AS date, signup_to_book_days_avg AS value FROM monthly_company_kpis ORDER BY date",
+      "table": "monthly_company_kpis",
+      "column": "signup_to_book_days_avg",
+      "timeColumn": "month",
+      "formula": "AVG(days_to_first_booking)",
+      "timeGrain": "monthly",
+      "dimensions": []
+    },
+    {
+      "id": "m-partner-net-payout",
+      "name": "Total Partner Payout",
+      "description": "Total net earnings paid out to partners including incentives and minus penalties.",
+      "type": "kpi",
+      "category": "Financial Performance",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(net_payout) AS value FROM partner_payouts WHERE payout_status = 'processed'",
+      "timeSeriesSql": "SELECT payout_week_start AS date, SUM(net_payout) AS value FROM partner_payouts WHERE payout_status = 'processed' GROUP BY 1 ORDER BY 1",
+      "table": "partner_payouts",
+      "column": "net_payout",
+      "timeColumn": "payout_week_start",
+      "formula": "SUM(net_payout)",
+      "timeGrain": "weekly",
+      "dimensions": [
+        "payout_status"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-contribution-margin-pct",
+          "metricName": "Contribution Margin %",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-promo-burn",
+      "name": "Promo Discount Burn",
+      "description": "Total value of platform-funded discounts given to customers.",
+      "type": "indicator",
+      "category": "Financial Performance",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(promo_discount_funded) AS value FROM bookings_economics WHERE payment_status = 'success'",
+      "timeSeriesSql": "SELECT booking_date AS date, SUM(promo_discount_funded) AS value FROM bookings_economics WHERE payment_status = 'success' GROUP BY 1 ORDER BY 1",
+      "table": "bookings_economics",
+      "column": "promo_discount_funded",
+      "timeColumn": "booking_date",
+      "formula": "SUM(promo_discount_funded)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "service_tier",
+        "hub_name"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-contribution-margin-pct",
+          "metricName": "Contribution Margin %",
+          "direction": "drives",
+          "type": "influence"
+        },
+        {
+          "metricId": "m-gmv",
+          "metricName": "Gross Merchandise Value (GMV)",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-take-rate",
+      "name": "Platform Take Rate",
+      "description": "Revenue as a percentage of GMV.",
+      "type": "diagnostic",
+      "category": "Financial Performance",
+      "valueFormat": "percent",
+      "aggregation": "derived_ratio",
+      "valueSql": "SELECT take_rate AS value FROM weekly_company_kpis ORDER BY week_start DESC LIMIT 1",
+      "timeSeriesSql": "SELECT week_start AS date, take_rate AS value FROM weekly_company_kpis ORDER BY date",
+      "table": "weekly_company_kpis",
+      "column": "take_rate",
+      "timeColumn": "week_start",
+      "formula": "Revenue / GMV",
+      "timeGrain": "weekly",
+      "dimensions": [],
+      "relationships": [
+        {
+          "metricId": "m-net-revenue",
+          "metricName": "Net Revenue",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-funnel-signup-to-profile",
+      "name": "Signup to Profile %",
+      "description": "Conversion rate from signup complete to profile completion.",
+      "type": "diagnostic",
+      "category": "Growth & Acquisition",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT conversion_rate_pct AS value FROM funnel_conversion_metrics WHERE stage = 'profile_done' ORDER BY month DESC LIMIT 1",
+      "timeSeriesSql": "SELECT month AS date, conversion_rate_pct AS value FROM funnel_conversion_metrics WHERE stage = 'profile_done' ORDER BY date",
+      "table": "funnel_conversion_metrics",
+      "column": "conversion_rate_pct",
+      "timeColumn": "month",
+      "formula": "Profile Done / Total Signups",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "stage"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-activation-rate",
+          "metricName": "Activation Rate",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-csat-avg",
+      "name": "Average CSAT",
+      "description": "Customer Satisfaction score averaged from post-booking surveys (1-5 scale).",
+      "type": "indicator",
+      "category": "Service Quality",
+      "valueFormat": "number",
+      "aggregation": "sum",
+      "valueSql": "SELECT csat_avg AS value FROM weekly_company_kpis ORDER BY week_start DESC LIMIT 1",
+      "timeSeriesSql": "SELECT week_start AS date, csat_avg AS value FROM weekly_company_kpis ORDER BY date",
+      "table": "weekly_company_kpis",
+      "column": "csat_avg",
+      "timeColumn": "week_start",
+      "formula": "AVG(score)",
+      "timeGrain": "weekly",
+      "dimensions": [
+        "hub_name",
+        "service_type"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-nps-score",
+          "metricName": "Net Promoter Score (NPS)",
+          "direction": "drives",
+          "type": "influence"
+        },
+        {
+          "metricId": "m-repeat-rate",
+          "metricName": "Customer Repeat Rate",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-partner-incentives",
+      "name": "Total Incentives Paid",
+      "description": "Bonus amounts earned by partners for performance or shift completion.",
+      "type": "indicator",
+      "category": "Financial Performance",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT total_incentives AS value FROM monthly_partner_economics ORDER BY month DESC LIMIT 1",
+      "timeSeriesSql": "SELECT month AS date, total_incentives AS value FROM monthly_partner_economics ORDER BY date",
+      "table": "monthly_partner_economics",
+      "column": "total_incentives",
+      "timeColumn": "month",
+      "formula": "SUM(incentive_earned)",
+      "timeGrain": "monthly",
+      "dimensions": [],
+      "relationships": [
+        {
+          "metricId": "m-partner-net-payout",
+          "metricName": "Total Partner Payout",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-repeat-rate",
+      "name": "Customer Repeat Rate",
+      "description": "Percentage of unique customers in a week who have booked before.",
+      "type": "indicator",
+      "category": "Product Engagement",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT repeat_rate AS value FROM weekly_company_kpis ORDER BY week_start DESC LIMIT 1",
+      "timeSeriesSql": "SELECT week_start AS date, repeat_rate AS value FROM weekly_company_kpis ORDER BY date",
+      "table": "weekly_company_kpis",
+      "column": "repeat_rate",
+      "timeColumn": "week_start",
+      "formula": "repeat_customers / unique_customers",
+      "timeGrain": "weekly",
+      "dimensions": [],
+      "relationships": [
+        {
+          "metricId": "m-mau",
+          "metricName": "Monthly Active Users (MAU)",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-gross-burn",
+      "name": "Gross Burn",
+      "description": "Total spend across ads, CRM communications, and referral rewards.",
+      "type": "kpi",
+      "category": "Financial Performance",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT gross_burn AS value FROM weekly_company_kpis ORDER BY week_start DESC LIMIT 1",
+      "timeSeriesSql": "SELECT week_start AS date, gross_burn AS value FROM weekly_company_kpis ORDER BY date",
+      "table": "weekly_company_kpis",
+      "column": "gross_burn",
+      "timeColumn": "week_start",
+      "formula": "total_ad_spend + total_comms_cost + total_referral_rewards",
+      "timeGrain": "weekly",
+      "dimensions": [],
+      "relationships": [
+        {
+          "metricId": "m-blended-cac",
+          "metricName": "Blended CAC",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-installs-total",
+      "name": "Total App Installs",
+      "description": "Count of unique app installs from paid and organic sources.",
+      "type": "indicator",
+      "category": "Growth & Acquisition",
+      "valueFormat": "integer",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(installs) AS value FROM ad_platform_metrics",
+      "timeSeriesSql": "SELECT month AS date, SUM(installs) AS value FROM ad_platform_metrics GROUP BY 1 ORDER BY 1",
+      "table": "ad_platform_metrics",
+      "column": "installs",
+      "timeColumn": "month",
+      "formula": "SUM(installs)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "platform"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-mau",
+          "metricName": "Monthly Active Users (MAU)",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-active-partners",
+      "name": "Active Partner Count",
+      "description": "Number of unique partners who completed at least one shift in the period.",
+      "type": "indicator",
+      "category": "Operations",
+      "valueFormat": "integer",
+      "aggregation": "sum",
+      "valueSql": "SELECT active_partners AS value FROM weekly_company_kpis ORDER BY week_start DESC LIMIT 1",
+      "timeSeriesSql": "SELECT week_start AS date, active_partners AS value FROM weekly_company_kpis ORDER BY date",
+      "table": "weekly_company_kpis",
+      "column": "active_partners",
+      "timeColumn": "week_start",
+      "formula": "COUNT(DISTINCT partner_id)",
+      "timeGrain": "weekly",
+      "dimensions": [],
+      "relationships": [
+        {
+          "metricId": "m-completion-rate",
+          "metricName": "Booking Completion Rate",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-1774443190302",
+      "name": "Average Booking Value",
+      "description": "The average booking value across all successful bookings, excluding failed or refunded transactions.",
+      "type": "diagnostic",
+      "category": "Revenue",
+      "valueFormat": "number",
+      "aggregation": "count",
+      "valueSql": "SELECT AVG(booking_value) AS value FROM bookings WHERE payment_status = 'success'",
+      "timeSeriesSql": "SELECT booking_date AS date, AVG(booking_value) AS value FROM bookings WHERE payment_status = 'success' GROUP BY 1 ORDER BY 1",
+      "table": "bookings",
+      "column": "",
+      "timeColumn": "date",
+      "formula": "AVG(booking_value)",
+      "relationships": []
+    },
+    {
+      "id": "m-1774444132410",
+      "name": "Partner Shift Completion Rate",
+      "description": "The percentage of total partner shifts that reached 'served' status.",
+      "type": "diagnostic",
+      "category": "Revenue",
+      "valueFormat": "number",
+      "aggregation": "count",
+      "valueSql": "SELECT (COUNT(CASE WHEN status = 'served' THEN 1 END) * 100.0 / COUNT(*)) AS value FROM partner_shifts",
+      "timeSeriesSql": "SELECT shift_date AS date, (COUNT(CASE WHEN status = 'served' THEN 1 END) * 100.0 / COUNT(*)) AS value FROM partner_shifts GROUP BY 1 ORDER BY 1",
+      "table": "partner_shifts",
+      "column": "",
+      "timeColumn": "date",
+      "formula": "(COUNT(CASE WHEN status = 'served' THEN 1 END) / COUNT(*)) * 100",
+      "relationships": []
+    },
+    {
+      "id": "m-1774444377315",
+      "name": "CRM Open Rate",
+      "description": "The percentage of total communications sent that were opened by the recipient.",
+      "type": "diagnostic",
+      "category": "Revenue",
+      "valueFormat": "number",
+      "aggregation": "count",
+      "valueSql": "SELECT (COUNT(CASE WHEN opened = true THEN 1 END) * 100.0 / COUNT(*)) AS value FROM comms_full",
+      "timeSeriesSql": "SELECT CAST(sent_at AS DATE) AS date, (COUNT(CASE WHEN opened = true THEN 1 END) * 100.0 / COUNT(*)) AS value FROM comms_full GROUP BY 1 ORDER BY 1",
+      "table": "comms_full",
+      "column": "",
+      "timeColumn": "date",
+      "formula": "(COUNT(CASE WHEN opened = true THEN 1 END) / COUNT(*)) * 100",
+      "relationships": []
+    },
+    {
+      "id": "m-1774468191339",
+      "name": "Booking Cancellation Rate",
+      "description": "Percentage of total bookings marked as inactive.",
+      "type": "diagnostic",
+      "category": "Revenue",
+      "valueFormat": "number",
+      "aggregation": "count",
+      "valueSql": "SELECT (COUNT(CASE WHEN is_active = false THEN 1 END) * 100.0) / COUNT(*) AS value FROM bookings",
+      "timeSeriesSql": "SELECT booking_date AS date, (COUNT(CASE WHEN is_active = false THEN 1 END) * 100.0) / COUNT(*) AS value FROM bookings GROUP BY 1 ORDER BY 1",
+      "table": "bookings",
+      "column": "",
+      "timeColumn": "date",
+      "formula": "(count_inactive_bookings / total_bookings) * 100",
+      "relationships": []
+    },
+    {
+      "id": "m-1774469121312",
+      "name": "Booking Cancellation Rate",
+      "description": "Refunded bookings percentage for orders exceeding 500 value.",
+      "type": "diagnostic",
+      "category": "Revenue",
+      "valueFormat": "number",
+      "aggregation": "count",
+      "valueSql": "SELECT (COUNT(CASE WHEN payment_status = 'refunded' THEN 1 END) * 100.0 / COUNT(*)) AS value FROM bookings WHERE booking_value > 500",
+      "timeSeriesSql": "SELECT booking_date AS date, (COUNT(CASE WHEN payment_status = 'refunded' THEN 1 END) * 100.0 / COUNT(*)) AS value FROM bookings WHERE booking_value > 500 GROUP BY 1 ORDER BY 1",
+      "table": "bookings",
+      "column": "",
+      "timeColumn": "date",
+      "formula": "(COUNT(CASE WHEN payment_status = 'refunded' AND booking_value > 500 THEN 1 END) / COUNT(CASE WHEN booking_value > 500 THEN 1 END)) * 100.0",
+      "relationships": []
+    },
+    {
+      "id": "m-1774472613874",
+      "name": "CRM Push Open Rate",
+      "description": "Percentage of delivered CRM push notifications that were opened",
+      "type": "diagnostic",
+      "category": "Revenue",
+      "valueFormat": "number",
+      "aggregation": "count",
+      "valueSql": "SELECT (COUNT(CASE WHEN opened = true THEN 1 END) * 100.0 / NULLIF(COUNT(CASE WHEN delivered = true THEN 1 END), 0)) AS value FROM comms_full WHERE channel = 'push'",
+      "timeSeriesSql": "SELECT CAST(sent_at AS DATE) AS date, (COUNT(CASE WHEN opened = true THEN 1 END) * 100.0 / NULLIF(COUNT(CASE WHEN delivered = true THEN 1 END), 0)) AS value FROM comms_full WHERE channel = 'push' GROUP BY 1 ORDER BY 1",
+      "table": "comms_full",
+      "column": "",
+      "timeColumn": "date",
+      "formula": "(count(opened = true) / count(delivered = true)) * 100",
+      "relationships": []
+    },
+    {
+      "id": "m-1774473875757",
+      "name": "Return on Ad Spend",
+      "description": "Revenue generated for every rupee spent on advertising.",
+      "type": "diagnostic",
+      "category": "Revenue",
+      "valueFormat": "number",
+      "aggregation": "count",
+      "valueSql": "SELECT date AS date, SUM(roas * spend_inr) / NULLIF(SUM(spend_inr), 0) AS value FROM ad_full GROUP BY 1 ORDER BY 1",
+      "timeSeriesSql": "SELECT date AS date, SUM(roas * spend_inr) / NULLIF(SUM(spend_inr), 0) AS value FROM ad_full GROUP BY 1 ORDER BY 1",
+      "table": "ad_full",
+      "column": "",
+      "timeColumn": "date",
+      "formula": "SUM(roas * spend_inr) / SUM(spend_inr)",
+      "relationships": []
+    },
+    {
+      "id": "m-1774510239200",
+      "name": "Partner Shift Completion Rate",
+      "description": "Percentage of shifts served excluding null status records.",
+      "type": "diagnostic",
+      "category": "Revenue",
+      "valueFormat": "number",
+      "aggregation": "count",
+      "valueSql": "SELECT (COUNT(CASE WHEN status = 'served' THEN 1 END) * 100.0 / COUNT(status)) AS value FROM partner_shifts",
+      "timeSeriesSql": "SELECT shift_date AS date, (COUNT(CASE WHEN status = 'served' THEN 1 END) * 100.0 / COUNT(status)) AS value FROM partner_shifts GROUP BY 1 ORDER BY 1",
+      "table": "partner_shifts",
+      "column": "",
+      "timeColumn": "date",
+      "formula": "(COUNT(CASE WHEN status = 'served' THEN 1 END) / COUNT(status)) * 100",
+      "relationships": []
+    },
+    {
+      "id": "m-1774616898230",
+      "name": "GMV excluding Sarjapur Hub",
+      "description": "Total revenue across all hubs excluding Sarjapur Hub.",
+      "type": "diagnostic",
+      "category": "Revenue",
+      "valueFormat": "number",
+      "aggregation": "count",
+      "valueSql": "SELECT SUM(revenue) AS value FROM hub_metrics WHERE hub_name != 'Sarjapur Hub'",
+      "timeSeriesSql": "SELECT CURRENT_DATE AS date, SUM(revenue) AS value FROM hub_metrics WHERE hub_name != 'Sarjapur Hub' GROUP BY 1 ORDER BY 1",
+      "table": "hub_metrics",
+      "column": "",
+      "timeColumn": "date",
+      "formula": "SUM(revenue) FILTER (WHERE hub_name != 'Sarjapur Hub')",
+      "relationships": []
+    },
+    {
+      "id": "m-1774868971566",
+      "name": "Daily Booking Count",
+      "description": "Total number of service bookings created each day.",
+      "type": "diagnostic",
+      "category": "Revenue",
+      "valueFormat": "number",
+      "aggregation": "count",
+      "valueSql": "SELECT COUNT(booking_id) AS value FROM bookings",
+      "timeSeriesSql": "SELECT booking_date AS date, COUNT(booking_id) AS value FROM bookings GROUP BY 1 ORDER BY 1",
+      "table": "bookings",
+      "column": "",
+      "timeColumn": "date",
+      "formula": "COUNT(booking_id)",
+      "relationships": []
+    }
+  ]
+}

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Living Deck — Design Review</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #e8e8e8;
+    min-height: 100vh;
+    padding: 32px;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap');
+
+  /* ─── Page title ─── */
+  .page-title {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 13px;
+    font-style: italic;
+    color: #555;
+    letter-spacing: .02em;
+    margin-bottom: 32px;
+  }
+
+  /* ─── Concern blocks ─── */
+  .concerns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .concern {
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 14px 16px;
+    background: #111;
+  }
+  .concern.warn { border-color: #3a3a3a; }
+  .concern.fix  { border-color: #2a2a2a; background: #0f0f0f; }
+  .concern-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 6px;
+  }
+  .concern-label.warn { color: #888; }
+  .concern-label.fix  { color: #aaa; }
+  .concern h4 { font-size: 11px; font-weight: 600; color: #ccc; margin-bottom: 4px; }
+  .concern p  { font-size: 10px; color: #666; line-height: 1.6; }
+  .concern code { font-family: 'DM Mono', monospace; font-size: 9px; background: #1a1a1a; padding: 1px 4px; border-radius: 3px; color: #aaa; }
+
+  /* ─── Divider ─── */
+  .section-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #444;
+    margin-bottom: 16px;
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after { content:''; flex:1; height:1px; background:#1e1e1e; }
+
+  /* ─── Refined mockup ─── */
+  .deck-app {
+    background: #fafafa;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #1e1e1e;
+    color: #0a0a0a;
+    font-family: 'DM Sans', -apple-system, sans-serif;
+  }
+
+  /* Top bar */
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    border-bottom: 1px solid #e8e8e8;
+    background: white;
+  }
+  .deck-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #0a0a0a;
+  }
+  .deck-meta {
+    font-size: 10px;
+    color: #aaa;
+    font-family: 'DM Mono', monospace;
+    margin-top: 1px;
+  }
+  .topbar-actions { display: flex; gap: 8px; align-items: center; }
+  .btn-ghost {
+    font-size: 10px;
+    padding: 5px 11px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background: white;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .btn-solid {
+    font-size: 10px;
+    padding: 5px 11px;
+    border: 1px solid #0a0a0a;
+    border-radius: 5px;
+    background: #0a0a0a;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .challenge-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: white;
+    opacity: .7;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:.4} 50%{opacity:1} }
+
+  /* Canvas area */
+  .canvas-area {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    padding: 20px 24px 28px;
+    background: #f5f5f5;
+    min-height: 340px;
+    align-items: flex-start;
+  }
+  .canvas-area::-webkit-scrollbar { height: 4px; }
+  .canvas-area::-webkit-scrollbar-track { background: transparent; }
+  .canvas-area::-webkit-scrollbar-thumb { background: #ddd; border-radius: 2px; }
+
+  /* Slide cluster */
+  .cluster {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 210px;
+    max-width: 210px;
+    margin-right: 28px;
+    flex-shrink: 0;
+  }
+
+  /* Hub card */
+  .hub {
+    border: 1.5px solid #0a0a0a;
+    border-radius: 8px;
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  }
+  .hub-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 10px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .hub-title { font-size: 10px; font-weight: 600; }
+  .hub-actions { display: flex; gap: 5px; align-items: center; }
+  .icon-btn {
+    width: 18px; height: 18px;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    background: #fafafa;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    font-size: 9px;
+    color: #888;
+  }
+  .chart-area {
+    padding: 8px 10px;
+    height: 80px;
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+  }
+  .bar { flex: 1; border-radius: 2px 2px 0 0; background: #e0e0e0; }
+  .bar.hi { background: #0a0a0a; }
+  .hub-cta {
+    padding: 6px 10px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background .12s;
+  }
+  .hub-cta:hover { background: #fafafa; }
+  .hub-cta span { font-size: 9px; color: #555; }
+  .hub-cta-arrow { font-size: 9px; color: #bbb; }
+
+  /* Satellite cards */
+  .sat {
+    border: 1px solid #e8e8e8;
+    border-radius: 7px;
+    background: white;
+    overflow: hidden;
+  }
+  .sat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 10px 0;
+  }
+  .sat-label {
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    color: #bbb;
+  }
+  .sat-body { padding: 4px 10px 8px; }
+  .sat-text { font-size: 9px; color: #444; line-height: 1.55; }
+
+  /* Commentary — clickable */
+  .sat.commentary {
+    cursor: pointer;
+    transition: border-color .12s, box-shadow .12s;
+  }
+  .sat.commentary:hover {
+    border-color: #ccc;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  }
+  .sat.commentary .sat-header::after {
+    content: '↗';
+    font-size: 9px;
+    color: #ccc;
+  }
+
+  /* Follow-ups */
+  .followup-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 0;
+    font-size: 9px;
+    color: #555;
+    cursor: pointer;
+    border-bottom: 1px solid #f5f5f5;
+    transition: color .1s;
+  }
+  .followup-item:last-child { border-bottom: none; }
+  .followup-item:hover { color: #0a0a0a; }
+  .followup-arrow { color: #ccc; font-size: 8px; transition: transform .1s; }
+  .followup-item:hover .followup-arrow { transform: translateX(2px); color: #888; }
+
+  /* Challenge card */
+  .sat.challenge {
+    border-color: #0a0a0a;
+    border-width: 1px;
+  }
+  .sat.challenge .sat-label { color: #0a0a0a; }
+  .challenge-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 8px;
+    color: #888;
+    text-decoration: none;
+    margin-top: 5px;
+    padding: 3px 7px;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    margin-left: 10px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: border-color .1s, color .1s;
+  }
+  .challenge-link:hover { border-color: #aaa; color: #333; }
+
+  /* Slide index badge */
+  .slide-index {
+    font-size: 8px;
+    font-family: 'DM Mono', monospace;
+    color: #ccc;
+    text-align: center;
+    margin-bottom: 2px;
+  }
+
+  /* Chat panel overlay (preview) */
+  .chat-panel-preview {
+    position: relative;
+    margin-top: 16px;
+    background: white;
+    border: 1px solid #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 320px;
+  }
+  .chat-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border-bottom: 1px solid #f0f0f0;
+    background: white;
+  }
+  .chat-panel-context {
+    font-size: 9px;
+    color: #888;
+    font-family: 'DM Mono', monospace;
+    margin-top: 1px;
+  }
+  .chat-panel-title { font-size: 11px; font-weight: 600; }
+  .chat-close { font-size: 12px; color: #ccc; cursor: pointer; }
+  .chat-report {
+    padding: 12px 14px;
+    max-height: 160px;
+    overflow-y: auto;
+    background: #fafafa;
+  }
+  .report-section { margin-bottom: 10px; }
+  .report-h { font-size: 9px; font-weight: 700; color: #0a0a0a; margin-bottom: 4px; letter-spacing: .03em; }
+  .report-p { font-size: 9px; color: #555; line-height: 1.6; }
+  .chat-input-area {
+    display: flex;
+    gap: 6px;
+    padding: 8px 12px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .chat-input {
+    flex: 1;
+    font-size: 10px;
+    padding: 5px 9px;
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+    color: #444;
+    background: white;
+    outline: none;
+  }
+  .chat-send {
+    width: 28px; height: 28px;
+    border: 1px solid #0a0a0a;
+    border-radius: 5px;
+    background: #0a0a0a;
+    color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px;
+    cursor: pointer;
+  }
+
+  /* ─── Annotation callouts ─── */
+  .annotations {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .annotation {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 7px;
+    padding: 10px 12px;
+  }
+  .annotation-num {
+    font-size: 9px;
+    font-family: 'DM Mono', monospace;
+    color: #444;
+    margin-bottom: 4px;
+  }
+  .annotation h5 { font-size: 10px; font-weight: 600; color: #ccc; margin-bottom: 3px; }
+  .annotation p  { font-size: 9px; color: #555; line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<p class="page-title">Living Deck — UX clarity + design review</p>
+
+<!-- Concerns -->
+<div class="section-label">Clarity issues to resolve</div>
+<div class="concerns">
+  <div class="concern warn">
+    <div class="concern-label warn">Concern 01</div>
+    <h4>Column height with 4 satellites</h4>
+    <p>Hub + commentary + follow-ups + challenge = very tall clusters. After Challenge deck runs, vertical scroll within horizontal scroll becomes awkward. Commentary and follow-ups could default collapsed.</p>
+  </div>
+  <div class="concern warn">
+    <div class="concern-label warn">Concern 02</div>
+    <h4>Two chat entry points, one action</h4>
+    <p>Clicking commentary and clicking "Ask about this" both open a chat panel but load different things. The visual affordance needs to distinguish "open existing report" (commentary ↗) from "start new thread" (Ask about this →).</p>
+  </div>
+  <div class="concern fix">
+    <div class="concern-label fix">Resolved in mockup</div>
+    <h4>"Refresh all" label underscopes the action</h4>
+    <p>Since refresh now triggers deep research per chart, <code>Refresh all</code> is misleading. Renamed to <code>↻ Re-analyze</code> to signal the full pipeline runs — not just a data pull.</p>
+  </div>
+  <div class="concern fix">
+    <div class="concern-label fix">Resolved in mockup</div>
+    <h4>Follow-ups look like static text</h4>
+    <p>Follow-up questions need a hover affordance — arrow animates right on hover. Each item is clearly a clickable thread-starter, not just commentary.</p>
+  </div>
+</div>
+
+<!-- Refined mockup -->
+<div class="section-label">Refined deck canvas</div>
+<div class="deck-app">
+  <!-- Top bar -->
+  <div class="topbar">
+    <div>
+      <div class="deck-name">Weekly Business Review</div>
+      <div class="deck-meta">8 slides · analyzed 2 min ago</div>
+    </div>
+    <div class="topbar-actions">
+      <button class="btn-ghost">↻ Re-analyze</button>
+      <button class="btn-solid">
+        <span class="challenge-dot"></span>
+        Challenge deck
+      </button>
+    </div>
+  </div>
+
+  <!-- Canvas -->
+  <div class="canvas-area">
+
+    <!-- Cluster 1 — no challenge yet -->
+    <div class="cluster">
+      <div class="slide-index">01</div>
+      <div class="hub">
+        <div class="hub-header">
+          <span class="hub-title">Weekly Revenue</span>
+          <div class="hub-actions">
+            <div class="icon-btn">↻</div>
+          </div>
+        </div>
+        <div class="chart-area">
+          <div class="bar" style="height:45%"></div>
+          <div class="bar" style="height:62%"></div>
+          <div class="bar" style="height:54%"></div>
+          <div class="bar" style="height:78%"></div>
+          <div class="bar hi" style="height:95%"></div>
+          <div class="bar" style="height:70%"></div>
+          <div class="bar" style="height:64%"></div>
+        </div>
+        <div class="hub-cta">
+          <span>Ask about this</span>
+          <span class="hub-cta-arrow">→</span>
+        </div>
+      </div>
+      <div class="sat commentary">
+        <div class="sat-header">
+          <span class="sat-label">Analysis</span>
+        </div>
+        <div class="sat-body">
+          <p class="sat-text">Friday revenue at $19.5K, +12% WoW. Weekend uplift pattern consistent for 3 consecutive weeks — not noise.</p>
+        </div>
+      </div>
+      <div class="sat">
+        <div class="sat-header"><span class="sat-label">Follow-ups</span></div>
+        <div class="sat-body">
+          <div class="followup-item">
+            <span class="followup-arrow">›</span>
+            What drove the Friday spike?
+          </div>
+          <div class="followup-item">
+            <span class="followup-arrow">›</span>
+            Compare to 4-week rolling avg
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cluster 2 — with challenge -->
+    <div class="cluster">
+      <div class="slide-index">02</div>
+      <div class="hub">
+        <div class="hub-header">
+          <span class="hub-title">Cohort Retention</span>
+          <div class="hub-actions">
+            <div class="icon-btn">↻</div>
+          </div>
+        </div>
+        <div class="chart-area" style="align-items:center; padding-bottom:12px;">
+          <svg viewBox="0 0 120 55" style="width:100%;height:100%;" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="0,5 25,14 50,25 75,34 100,40 120,44" fill="none" stroke="#0a0a0a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="0,12 25,24 50,36 75,43 100,48 120,52" fill="none" stroke="#ccc" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="4,3"/>
+          </svg>
+        </div>
+        <div class="hub-cta">
+          <span>Ask about this</span>
+          <span class="hub-cta-arrow">→</span>
+        </div>
+      </div>
+      <div class="sat commentary">
+        <div class="sat-header"><span class="sat-label">Analysis</span></div>
+        <div class="sat-body">
+          <p class="sat-text">W6 retention 32% (Cohort A), lagging 8pp behind prior cohort. Gap widens after week 3 inflection.</p>
+        </div>
+      </div>
+      <div class="sat">
+        <div class="sat-header"><span class="sat-label">Follow-ups</span></div>
+        <div class="sat-body">
+          <div class="followup-item">
+            <span class="followup-arrow">›</span>
+            Why does Cohort B diverge at W3?
+          </div>
+          <div class="followup-item">
+            <span class="followup-arrow">›</span>
+            Show W1–W8 for both cohorts
+          </div>
+        </div>
+      </div>
+      <div class="sat challenge">
+        <div class="sat-header"><span class="sat-label">Challenge</span></div>
+        <div class="sat-body">
+          <p class="sat-text">8pp gap correlates with acquisition channel — paid users churn faster post-W3. Product quality is not the driver.</p>
+        </div>
+        <a class="challenge-link" href="#">View research ↗</a>
+      </div>
+    </div>
+
+    <!-- Cluster 3 — loading state -->
+    <div class="cluster" style="opacity:.4;">
+      <div class="slide-index">03</div>
+      <div class="hub" style="border-color:#ccc;">
+        <div class="hub-header">
+          <span class="hub-title" style="color:#bbb;">Geographic Revenue</span>
+        </div>
+        <div class="chart-area" style="align-items:center; justify-content:center;">
+          <span style="font-size:9px; color:#ccc; font-family:monospace;">analyzing…</span>
+        </div>
+        <div class="hub-cta" style="opacity:.4; pointer-events:none;">
+          <span>Ask about this</span>
+          <span class="hub-cta-arrow">→</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:flex-start;padding-top:40px;color:#ccc;font-size:11px;min-width:36px;font-family:monospace;">+5</div>
+  </div>
+</div>
+
+<!-- Chat panel preview -->
+<div class="section-label">Chat panel (opens on commentary click)</div>
+<div style="display:flex; gap: 20px; align-items: flex-start;">
+  <div class="chat-panel-preview">
+    <div class="chat-panel-header">
+      <div>
+        <div class="chat-panel-title">Cohort Retention</div>
+        <div class="chat-panel-context">deep research · slide 02</div>
+      </div>
+      <span class="chat-close">✕</span>
+    </div>
+    <div class="chat-report">
+      <div class="report-section">
+        <div class="report-h">Finding</div>
+        <div class="report-p">The retention gap between Cohort A and B is not explained by product changes or seasonality. Cross-referencing acquisition_channel shows paid CAC users have 23% lower W4 retention across all cohorts since Q3.</div>
+      </div>
+      <div class="report-section">
+        <div class="report-h">Supporting data</div>
+        <div class="report-p">Organic users: 38% W6 retention. Paid users: 28% W6 retention. Delta consistent across 4 consecutive cohorts.</div>
+      </div>
+      <div class="report-section">
+        <div class="report-h">Implication</div>
+        <div class="report-p">Acquisition mix shift toward paid (now 61% of new users) is mechanically suppressing aggregate retention metrics.</div>
+      </div>
+    </div>
+    <div class="chat-input-area">
+      <input class="chat-input" placeholder="Ask a follow-up…" />
+      <div class="chat-send">↑</div>
+    </div>
+  </div>
+
+  <!-- Annotations -->
+  <div class="annotations" style="flex:1;">
+    <div class="annotation">
+      <div class="annotation-num">01</div>
+      <h5>Analysis label, not "Commentary"</h5>
+      <p>Renamed from "Commentary" — this is deep research output, not editorial notes. "Analysis" better signals the depth behind it.</p>
+    </div>
+    <div class="annotation">
+      <div class="annotation-num">02</div>
+      <h5>↗ icon signals "open report"</h5>
+      <p>Commentary cards show ↗ in the header — distinct from "Ask about this →" on hub. Two entry points, visually differentiated.</p>
+    </div>
+    <div class="annotation">
+      <div class="annotation-num">03</div>
+      <h5>Challenge card uses full border</h5>
+      <p>Full dark border on challenge card (matching hub weight) signals it's a first-class finding, not just another satellite.</p>
+    </div>
+    <div class="annotation">
+      <div class="annotation-num">04</div>
+      <h5>Slide index numbers</h5>
+      <p>Small monospace slide numbers above each cluster preserve deck order legibility during horizontal scroll without adding visual noise.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

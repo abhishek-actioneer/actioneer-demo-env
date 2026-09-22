@@ -1,0 +1,162 @@
+[
+  {
+    "id": "sc-kb-01",
+    "content": "The dataset covers 206,149 loans across 165,000 borrowers, disbursed between June 2024 and May 2026. Treat the data as of 2026-05-31 when anchoring relative windows.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-07-01T00:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "sc-kb-02",
+    "content": "Total AUM (disbursed amount on active + NPA loans) is approximately ₹1,689 crore (₹16.89B) across 154,234 live loans held by 131,332 active borrowers.",
+    "level": "global",
+    "category": "Metric range",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-07-01T00:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "sc-kb-03",
+    "content": "Use loans_full for loan-level analysis, borrowers_full for borrower-level segments (one row per borrower, with rolled-up loan and repayment behavior), collections_full for EMI analysis, applications_full for the origination funnel, and crosssell_full for the personal-loan cross-sell funnel. loans_full is loan-grained and double-counts multi-loan borrowers, so never build user segments directly on it.",
+    "level": "global",
+    "category": "Reporting",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-07-01T00:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "sc-kb-04",
+    "content": "Product types are two_wheeler, used_two_wheeler, consumer_durable, used_car, and personal. Personal loans exist only as cross-sell to existing borrowers (see is_crosssell and crosssell_full).",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-07-01T00:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "sc-kb-05",
+    "content": "DPD bucket to IndAS stage mapping: Stage 1 = current, sma_0 (1-30 DPD), sma_1 (31-60 DPD); Stage 2 = sma_2 (61-90 DPD); Stage 3 = npa_90, npa_180, npa_360_plus (90+ DPD). GNPA is the count or value of Stage 3 loans over live (active + npa) loans.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-07-01T00:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "sc-kb-06",
+    "content": "Gross NPA (GNPA) is 5.28% of the live book (8,151 Stage-3 loans). Consumer-finance NBFC GNPA typically runs 4-7%, higher than secured housing finance, so this is within the normal band for the asset class.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-07-01T00:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "sc-kb-07",
+    "content": "Collection efficiency (amount collected / amount due across the EMI ledger) is 94.8%. The first-presentation bounce rate is 22.0%, which is typical for a self-employed, dealer-sourced consumer book that relies on NACH mandates.",
+    "level": "global",
+    "category": "Metric range",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-07-01T00:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "sc-kb-08",
+    "content": "Sourcing channels are dealer_pos (financed at the dealer point-of-sale), dsa (direct sales agent), direct (walk-in/branch), and digital_saathi (in-app digital channel for existing/repeat borrowers).",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-07-01T00:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "sc-kb-09",
+    "content": "The dealer network has 2,500 dealers: raahi_authorized_2w (brand-authorized two-wheeler), multi_brand_2w, used_car_dealer, electronics_retail, and sub_dealer. Use dealers_full or dealer_leaderboard for dealer-level performance.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-07-01T00:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "sc-kb-10",
+    "content": "The pre-approved personal-loan cross-sell funnel converts 12.75% of offers to a disbursed loan, for ₹507 crore (₹5.07B) of cross-sell disbursement. Offers are routed via the Saathi app, SMS, and telecalling; the app channel carries the most volume.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-07-01T00:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "sc-kb-11",
+    "content": "The application funnel has a 74.6% approval-to-disbursal rate. Rejections carry a rejection_reason: doc_mismatch, existing_overdue, fraud_flag, high_foir, insufficient_income, low_bureau_score, or negative_area. Use rejection_reason_summary for the breakdown.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-07-01T00:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "sc-kb-12",
+    "content": "30% of borrowers are New-to-Credit (bureau_score = 0, is_ntc = true) and 23% are repeat borrowers on their second or third loan. The average bureau score of credit-tested borrowers is 721.",
+    "level": "global",
+    "category": "Segment",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-07-01T00:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "sc-kb-13",
+    "content": "Collection action types escalate with delinquency: sms_reminder and call (soft), field_visit and demand_notice (mid), legal_notice, repossession_notice and repossession (hard). Action results are promise_to_pay, partial_payment, resolved, no_contact, dispute, and escalated. A single call rarely resolves a case, so recovery funnels run low by design.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-07-01T00:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "sc-kb-14",
+    "content": "Income category is derived from monthly income: ews (< ₹25K/month, economically weaker), lig (₹25-50K, low income), mig (₹50K+, middle income). Most borrowers are self-employed informal (small traders, gig workers, shopkeepers) in the ews and lig bands.",
+    "level": "global",
+    "category": "Segment",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-07-01T00:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "sc-kb-15",
+    "content": "All monetary amounts are in absolute INR (₹), not lakh or crore. Convert for reporting: 1 lakh = 100,000; 1 crore = 10,000,000. LTV (ltv_ratio) is stored as a decimal, e.g. 0.81 = 81%.",
+    "level": "global",
+    "category": "Visualisation",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-07-01T00:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "sc-kb-16",
+    "content": "For voice and messaging campaigns, borrowers_full carries a mobile number for every borrower plus rolled-up context (worst_dpd_bucket, total_overdue, bounce_rate_pct, ontime_rate_pct, primary_product_type, state). Natural campaigns: collections/recovery calls to delinquent DPD buckets, EMI due-date reminders, and pre-approved cross-sell offers to clean payers.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-07-01T00:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  }
+]

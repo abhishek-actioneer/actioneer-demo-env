@@ -1,0 +1,4 @@
+data/
+.reference/
+analysis-service/bioprints/
+analysis-service/baselines/

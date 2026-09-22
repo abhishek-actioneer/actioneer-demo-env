@@ -1,0 +1,80 @@
+<h2>Voice Campaign Card — Chat Flow</h2>
+<p class="subtitle">How the call campaign appears inline in the chat after Sentinel generates the script</p>
+
+<div class="mockup">
+  <div class="mockup-header">Segment Chat — High-Value Users</div>
+  <div class="mockup-body" style="padding: 0; background: #0a0a0a;">
+
+    <!-- Chat thread -->
+    <div style="display:flex; flex-direction:column; gap:12px; padding:16px; max-height:480px; overflow-y:auto;">
+
+      <!-- User message -->
+      <div style="display:flex; justify-content:flex-end;">
+        <div style="background:#1a1a1a; border:1px solid #2a2a2a; border-radius:12px 12px 2px 12px; padding:10px 14px; max-width:320px; font-size:13px; color:#e0e0e0;">
+          create a voice campaign to cross-sell our Gold Bond scheme to this segment
+        </div>
+      </div>
+
+      <!-- Sentinel generating -->
+      <div style="display:flex; gap:10px; align-items:flex-start;">
+        <div style="width:26px; height:26px; border-radius:50%; background:#1a1a1a; border:1px solid #2a2a2a; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:11px; color:#888;">S</div>
+        <div style="flex:1;">
+          <div style="font-size:12px; color:#666; margin-bottom:6px;">Analysing segment profile and generating call script…</div>
+
+          <!-- Voice campaign card -->
+          <div style="background:#111; border:1px solid #2a2a2a; border-radius:10px; overflow:hidden; margin-top:4px;">
+
+            <!-- Card header -->
+            <div style="padding:12px 14px; border-bottom:1px solid #1e1e1e; display:flex; align-items:center; justify-content:space-between;">
+              <div style="display:flex; align-items:center; gap:8px;">
+                <div style="width:7px; height:7px; border-radius:50%; background:#e0e0e0;"></div>
+                <span style="font-size:13px; font-weight:500; color:#e0e0e0;">Voice Campaign</span>
+              </div>
+              <span style="font-size:11px; color:#555; background:#1a1a1a; border:1px solid #2a2a2a; padding:2px 8px; border-radius:4px;">Gold Bond Scheme</span>
+            </div>
+
+            <!-- Generated script -->
+            <div style="padding:12px 14px; border-bottom:1px solid #1e1e1e;">
+              <div style="font-size:11px; color:#666; margin-bottom:6px; letter-spacing:0.04em; text-transform:uppercase;">Generated Script</div>
+              <div style="font-size:12.5px; color:#bbb; line-height:1.6; background:#0d0d0d; border:1px solid #1e1e1e; border-radius:6px; padding:10px 12px; font-family: 'Geist Mono', monospace;">
+                "Hello [Name], this is Priya calling from Stable Money. Based on your profile, I wanted to share an exciting opportunity — our Sovereign Gold Bond scheme currently offers 2.5% annual interest on top of gold price appreciation. Many of our customers with your investment pattern have found this a great way to diversify. Do you have 2 minutes to know more?"
+              </div>
+              <div style="margin-top:8px; display:flex; gap:6px;">
+                <button style="font-size:11px; color:#888; background:transparent; border:1px solid #2a2a2a; border-radius:4px; padding:3px 8px; cursor:pointer;">Edit script</button>
+                <button style="font-size:11px; color:#888; background:transparent; border:1px solid #2a2a2a; border-radius:4px; padding:3px 8px; cursor:pointer;">Regenerate</button>
+              </div>
+            </div>
+
+            <!-- Segment insight -->
+            <div style="padding:10px 14px; border-bottom:1px solid #1e1e1e; background:#0d0d0d;">
+              <div style="font-size:11px; color:#555; margin-bottom:4px;">WHY THIS SCRIPT</div>
+              <div style="font-size:12px; color:#666; line-height:1.5;">Segment skews 35–50 age band, avg portfolio ₹4.2L, high mutual fund affinity. Gold bond framing chosen over FD due to equity exposure signals.</div>
+            </div>
+
+            <!-- Phone numbers input -->
+            <div style="padding:12px 14px; border-bottom:1px solid #1e1e1e;">
+              <div style="font-size:11px; color:#666; margin-bottom:6px; letter-spacing:0.04em; text-transform:uppercase;">Phone Numbers</div>
+              <textarea style="width:100%; background:#0d0d0d; border:1px solid #2a2a2a; border-radius:6px; padding:8px 10px; font-size:12px; color:#bbb; resize:none; font-family:inherit; box-sizing:border-box;" rows="3" placeholder="+91 98765 43210, +91 87654 32109, +91 76543 21098&#10;One per line or comma-separated"></textarea>
+              <div style="font-size:11px; color:#555; margin-top:4px;">0 numbers added</div>
+            </div>
+
+            <!-- Actions -->
+            <div style="padding:12px 14px; display:flex; align-items:center; justify-content:space-between;">
+              <div style="font-size:12px; color:#555;">Calls go out immediately on launch</div>
+              <div style="display:flex; gap:8px;">
+                <button style="font-size:12px; color:#888; background:transparent; border:1px solid #2a2a2a; border-radius:6px; padding:6px 12px; cursor:pointer;">Cancel</button>
+                <button style="font-size:12px; color:#e0e0e0; background:#1a1a1a; border:1px solid #333; border-radius:6px; padding:6px 16px; cursor:pointer; font-weight:500;">Launch Calls →</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:20px; font-size:13px; color:#888;">
+  Does this card flow feel right? Key question: should the <strong>phone numbers</strong> be entered here on the card, or would you prefer a separate input before the script generates?
+</div>

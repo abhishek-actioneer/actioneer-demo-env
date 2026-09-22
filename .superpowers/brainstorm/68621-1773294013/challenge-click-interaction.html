@@ -1,0 +1,66 @@
+<h2>What happens when you click a challenge card?</h2>
+<p class="subtitle">Currently nothing happens. What interaction model feels right?</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9fa;padding:16px;font-family:monospace;font-size:11px;line-height:1.5;">
+      <div style="border:1px solid #e2e8f0;border-radius:8px;padding:10px;background:white;width:180px;margin:0 auto;">
+        <div style="font-size:9px;font-weight:700;color:#6b7280;letter-spacing:.05em;margin-bottom:4px;">CHALLENGE</div>
+        <div style="font-size:10px;color:#374151;margin-bottom:8px;">Is this actually a trend or just noise?</div>
+        <div style="border-top:1px solid #e2e8f0;padding-top:8px;margin-top:4px;">
+          <div style="font-size:9px;color:#6b7280;margin-bottom:4px;">↕ expanded view</div>
+          <div style="font-size:9px;color:#374151;margin-bottom:6px;">Full analysis: The 3-day spike correlates with a marketing campaign. Underlying trend is flat. Recommend segmenting campaign traffic before concluding...</div>
+          <div style="border:1px solid #e2e8f0;border-radius:4px;padding:4px;font-size:9px;color:#9ca3af;background:#f9fafb;">Add your note...</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Expand In-Place</h3>
+      <p>Clicking the card expands it vertically: shows the full challenge analysis + a text box to add your own note/rebuttal. Stays on the canvas.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9fa;padding:16px;display:flex;gap:8px;align-items:flex-start;">
+      <div style="border:1px solid #e2e8f0;border-radius:8px;padding:10px;background:white;width:120px;flex-shrink:0;">
+        <div style="font-size:9px;font-weight:700;color:#6b7280;letter-spacing:.05em;margin-bottom:4px;">CHALLENGE</div>
+        <div style="font-size:9px;color:#374151;">Is this actually a trend or just noise?</div>
+        <div style="margin-top:6px;font-size:8px;color:#3E63DD;font-weight:600;">● selected</div>
+      </div>
+      <div style="border:1px solid #e2e8f0;border-radius:8px;padding:10px;background:white;flex:1;min-width:0;">
+        <div style="font-size:9px;font-weight:700;color:#374151;margin-bottom:4px;">Challenge Thread</div>
+        <div style="font-size:8px;color:#6b7280;margin-bottom:4px;padding:4px;background:#f3f4f6;border-radius:4px;">AI: The spike correlates with a campaign. Underlying trend is flat...</div>
+        <div style="font-size:8px;color:#374151;margin-bottom:4px;padding:4px;background:#eff6ff;border-radius:4px;">You: But the week prior also showed gains?</div>
+        <div style="border:1px solid #e2e8f0;border-radius:4px;padding:4px;font-size:8px;color:#9ca3af;background:#f9fafb;margin-top:6px;">Reply...</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Side Panel Thread</h3>
+      <p>Clicking opens a comment thread panel (right side). Shows the challenge, lets you reply back-and-forth with the AI in a conversation. Like the existing canvas comment thread.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9fa;padding:16px;font-family:monospace;font-size:11px;line-height:1.5;position:relative;">
+      <div style="display:flex;gap:6px;align-items:flex-start;">
+        <div style="border:1px solid #e2e8f0;border-radius:8px;padding:8px;background:white;width:110px;flex-shrink:0;">
+          <div style="font-size:9px;font-weight:700;color:#6b7280;letter-spacing:.05em;margin-bottom:4px;">CHALLENGE</div>
+          <div style="font-size:9px;color:#374151;">Is this actually a trend or just noise?</div>
+        </div>
+        <div style="font-size:16px;color:#6b7280;margin-top:14px;">→</div>
+        <div style="border:1px dashed #3E63DD;border-radius:8px;padding:8px;background:#eff6ff;width:110px;flex-shrink:0;">
+          <div style="font-size:9px;font-weight:700;color:#3E63DD;letter-spacing:.05em;margin-bottom:4px;">RESPONSE</div>
+          <div style="font-size:9px;color:#374151;">AI deep-dive spawned from this challenge. The trend is driven by...</div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Spawn Response Card</h3>
+      <p>Clicking triggers the AI to generate a deeper "response" card linked to this challenge. A new card appears on the canvas with full analysis. Challenge card links visually to response card.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px;">Or tell me in the terminal if you have a different vision entirely.</p>

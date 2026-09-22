@@ -1,0 +1,8 @@
+{
+  "source": "failed",
+  "homepageUrl": "https://vastuhfc.com",
+  "documents": [],
+  "warnings": [
+    "Could not fetch https://vastuhfc.com (network error or non-HTML response)."
+  ]
+}

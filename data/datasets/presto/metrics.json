@@ -1,0 +1,348 @@
+{
+  "rootMetricId": "m-settled-ad-revenue",
+  "metrics": [
+    {
+      "id": "m-settled-ad-revenue",
+      "name": "Settled Ad Revenue",
+      "description": "Total post-fraud ad revenue that actually settled: the marketing-truth revenue line (excludes invalid traffic).",
+      "type": "kpi",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT ROUND(SUM(settled_revenue), 2) AS value FROM ad_impression_events",
+      "timeSeriesSql": "SELECT CAST(ts AS DATE) AS date, ROUND(SUM(settled_revenue), 2) AS value FROM ad_impression_events GROUP BY 1 ORDER BY 1",
+      "table": "ad_impression_events",
+      "column": "settled_revenue",
+      "timeColumn": "ts",
+      "formula": "SUM(settled_revenue)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "platform",
+        "country",
+        "ad_format",
+        "ad_platform"
+      ],
+      "relationships": [
+        { "metricId": "m-reported-ad-revenue", "metricName": "Reported Ad Revenue", "direction": "driven_by", "type": "component" },
+        { "metricId": "m-net-revenue", "metricName": "Net Revenue (Post-Platform-Fee)", "direction": "drives", "type": "component" },
+        { "metricId": "m-arpdau", "metricName": "ARPDAU", "direction": "driven_by", "type": "component" }
+      ]
+    },
+    {
+      "id": "m-reported-ad-revenue",
+      "name": "Reported Ad Revenue",
+      "description": "Gross MMP-reported ad revenue before fraud settlement: what the dashboards show before invalid traffic is removed.",
+      "type": "kpi",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT ROUND(SUM(revenue), 2) AS value FROM ad_impression_events",
+      "timeSeriesSql": "SELECT CAST(ts AS DATE) AS date, ROUND(SUM(revenue), 2) AS value FROM ad_impression_events GROUP BY 1 ORDER BY 1",
+      "table": "ad_impression_events",
+      "column": "revenue",
+      "timeColumn": "ts",
+      "formula": "SUM(revenue)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "platform",
+        "country",
+        "ad_format"
+      ],
+      "relationships": [
+        { "metricId": "m-fraud-loss", "metricName": "Fraud Revenue Loss", "direction": "drives", "type": "component" }
+      ]
+    },
+    {
+      "id": "m-net-revenue",
+      "name": "Net Revenue (Post-Platform-Fee)",
+      "description": "Settled ad revenue after the 30% platform fee: the revenue Finance actually books.",
+      "type": "kpi",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT ROUND(SUM(net_revenue), 2) AS value FROM ad_impression_events",
+      "timeSeriesSql": "SELECT CAST(ts AS DATE) AS date, ROUND(SUM(net_revenue), 2) AS value FROM ad_impression_events GROUP BY 1 ORDER BY 1",
+      "table": "ad_impression_events",
+      "column": "net_revenue",
+      "timeColumn": "ts",
+      "formula": "SUM(net_revenue)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "platform",
+        "country"
+      ],
+      "relationships": []
+    },
+    {
+      "id": "m-fraud-loss",
+      "name": "Fraud Revenue Loss",
+      "description": "Reported revenue that never settled due to impression-stuffing fraud (reported minus settled).",
+      "type": "diagnostic",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT ROUND(SUM(revenue) - SUM(settled_revenue), 2) AS value FROM ad_impression_events",
+      "timeSeriesSql": "SELECT CAST(ts AS DATE) AS date, ROUND(SUM(revenue) - SUM(settled_revenue), 2) AS value FROM ad_impression_events GROUP BY 1 ORDER BY 1",
+      "table": "ad_impression_events",
+      "column": "settled_revenue",
+      "timeColumn": "ts",
+      "formula": "SUM(revenue) - SUM(settled_revenue)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "country",
+        "platform"
+      ],
+      "relationships": []
+    },
+    {
+      "id": "m-installs",
+      "name": "Total Installs",
+      "description": "Count of all player installs across paid and organic channels.",
+      "type": "kpi",
+      "category": "Acquisition",
+      "valueFormat": "integer",
+      "aggregation": "count",
+      "valueSql": "SELECT COUNT(*) AS value FROM installs",
+      "timeSeriesSql": "SELECT install_date AS date, COUNT(*) AS value FROM installs GROUP BY 1 ORDER BY 1",
+      "table": "installs",
+      "column": "user_id",
+      "timeColumn": "install_date",
+      "formula": "COUNT(*)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "platform",
+        "country",
+        "engagement_tier"
+      ],
+      "relationships": [
+        { "metricId": "m-ua-spend", "metricName": "UA Spend", "direction": "driven_by", "type": "component" }
+      ]
+    },
+    {
+      "id": "m-dau",
+      "name": "Daily Active Players (Avg)",
+      "description": "Average distinct active player-days per calendar day across the dataset window.",
+      "type": "kpi",
+      "category": "Engagement",
+      "valueFormat": "integer",
+      "aggregation": "average",
+      "valueSql": "SELECT ROUND(COUNT(*) * 1.0 / COUNT(DISTINCT CAST(session_date AS DATE)), 0) AS value FROM sessions",
+      "timeSeriesSql": "SELECT CAST(session_date AS DATE) AS date, COUNT(*) AS value FROM sessions GROUP BY 1 ORDER BY 1",
+      "table": "sessions",
+      "column": "user_id",
+      "timeColumn": "session_date",
+      "formula": "active_player_days / calendar_days",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "platform",
+        "country"
+      ],
+      "relationships": []
+    },
+    {
+      "id": "m-arpdau",
+      "name": "ARPDAU",
+      "description": "Average ad revenue per active player-day: the core ad-monetisation efficiency metric.",
+      "type": "indicator",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "average",
+      "valueSql": "SELECT ROUND(SUM(ad_revenue) / NULLIF(COUNT(*), 0), 4) AS value FROM sessions",
+      "timeSeriesSql": "SELECT CAST(session_date AS DATE) AS date, ROUND(SUM(ad_revenue) / NULLIF(COUNT(*), 0), 4) AS value FROM sessions GROUP BY 1 ORDER BY 1",
+      "table": "sessions",
+      "column": "ad_revenue",
+      "timeColumn": "session_date",
+      "formula": "SUM(ad_revenue) / COUNT(player_days)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "platform",
+        "country"
+      ],
+      "relationships": []
+    },
+    {
+      "id": "m-arpi",
+      "name": "ARPI (Settled Revenue per Install)",
+      "description": "Lifetime settled ad revenue divided by total installs: blended revenue per acquired player to date.",
+      "type": "indicator",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "average",
+      "valueSql": "SELECT ROUND(SUM(settled_revenue) / (SELECT COUNT(*) FROM installs), 4) AS value FROM ad_impression_events",
+      "timeSeriesSql": "SELECT CAST(ts AS DATE) AS date, ROUND(SUM(settled_revenue), 4) AS value FROM ad_impression_events GROUP BY 1 ORDER BY 1",
+      "table": "ad_impression_events",
+      "column": "settled_revenue",
+      "timeColumn": "ts",
+      "formula": "SUM(settled_revenue) / COUNT(installs)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "country",
+        "platform"
+      ],
+      "relationships": []
+    },
+    {
+      "id": "m-ua-spend",
+      "name": "UA Spend",
+      "description": "Total user-acquisition spend across all paid channels.",
+      "type": "kpi",
+      "category": "Acquisition",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT ROUND(SUM(cost), 2) AS value FROM campaign",
+      "timeSeriesSql": "SELECT cohort_date AS date, ROUND(SUM(cost), 2) AS value FROM campaign GROUP BY 1 ORDER BY 1",
+      "table": "campaign",
+      "column": "cost",
+      "timeColumn": "cohort_date",
+      "formula": "SUM(cost)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "country",
+        "os"
+      ],
+      "relationships": []
+    },
+    {
+      "id": "m-cpi",
+      "name": "Blended CPI",
+      "description": "Blended cost per install across paid channels (total spend / paid installs).",
+      "type": "indicator",
+      "category": "Acquisition",
+      "valueFormat": "currency",
+      "aggregation": "average",
+      "valueSql": "SELECT ROUND(SUM(cost) / NULLIF(SUM(installs), 0), 2) AS value FROM campaign",
+      "timeSeriesSql": "SELECT cohort_date AS date, ROUND(SUM(cost) / NULLIF(SUM(installs), 0), 2) AS value FROM campaign GROUP BY 1 ORDER BY 1",
+      "table": "campaign",
+      "column": "cpi",
+      "timeColumn": "cohort_date",
+      "formula": "SUM(cost) / SUM(installs)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "country",
+        "os"
+      ],
+      "relationships": []
+    },
+    {
+      "id": "m-d7-retention",
+      "name": "D7 Retention",
+      "description": "% of installed players still active around day 7: the core early-stickiness benchmark.",
+      "type": "indicator",
+      "category": "Retention",
+      "valueFormat": "percent",
+      "aggregation": "average",
+      "valueSql": "SELECT ROUND(SUM(d7_active) * 1.0 / NULLIF(SUM(cohort_size), 0) * 100, 2) AS value FROM cohort_retention_actuals",
+      "timeSeriesSql": "SELECT (install_month || '-01')::DATE AS date, ROUND(SUM(d7_active) * 1.0 / NULLIF(SUM(cohort_size), 0) * 100, 2) AS value FROM cohort_retention_actuals GROUP BY 1 ORDER BY 1",
+      "table": "cohort_retention_actuals",
+      "column": "d7_retention",
+      "timeColumn": "install_month",
+      "formula": "SUM(d7_active) / SUM(cohort_size)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "channel",
+        "country",
+        "platform"
+      ],
+      "relationships": [
+        { "metricId": "m-d30-retention", "metricName": "D30 Retention", "direction": "drives", "type": "leading" }
+      ]
+    },
+    {
+      "id": "m-d30-retention",
+      "name": "D30 Retention",
+      "description": "% of installed players still active around day 30: the LTV-relevant retention point. Has degraded across cohorts.",
+      "type": "indicator",
+      "category": "Retention",
+      "valueFormat": "percent",
+      "aggregation": "average",
+      "valueSql": "SELECT ROUND(SUM(d30_active) * 1.0 / NULLIF(SUM(cohort_size), 0) * 100, 2) AS value FROM cohort_retention_actuals",
+      "timeSeriesSql": "SELECT (install_month || '-01')::DATE AS date, ROUND(SUM(d30_active) * 1.0 / NULLIF(SUM(cohort_size), 0) * 100, 2) AS value FROM cohort_retention_actuals GROUP BY 1 ORDER BY 1",
+      "table": "cohort_retention_actuals",
+      "column": "d30_retention",
+      "timeColumn": "install_month",
+      "formula": "SUM(d30_active) / SUM(cohort_size)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "channel",
+        "country",
+        "platform"
+      ],
+      "relationships": []
+    },
+    {
+      "id": "m-roas-d90",
+      "name": "Blended D90 ROAS",
+      "description": "Projected day-90 return on ad spend, blended across paid channels (D90 LTV revenue / UA spend). >1.0 = profitable at the 90-day horizon.",
+      "type": "kpi",
+      "category": "Acquisition",
+      "valueFormat": "number",
+      "aggregation": "average",
+      "valueSql": "SELECT ROUND(SUM(d90_ltv * installs) / NULLIF(SUM(ua_spend), 0), 3) AS value FROM payback_analysis",
+      "timeSeriesSql": "SELECT (install_month || '-01')::DATE AS date, ROUND(SUM(d90_ltv * installs) / NULLIF(SUM(ua_spend), 0), 3) AS value FROM payback_analysis GROUP BY 1 ORDER BY 1",
+      "table": "payback_analysis",
+      "column": "payback_ratio_d90",
+      "timeColumn": "install_month",
+      "formula": "SUM(d90_ltv * installs) / SUM(ua_spend)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "channel",
+        "country"
+      ],
+      "relationships": []
+    },
+    {
+      "id": "m-high-engagement-rate",
+      "name": "High-Engagement Install Rate",
+      "description": "% of installs that reached high engagement (5+ games in first 7 days): the quality signal for an install cohort.",
+      "type": "indicator",
+      "category": "Acquisition",
+      "valueFormat": "percent",
+      "aggregation": "average",
+      "valueSql": "SELECT ROUND(COUNT(*) FILTER (WHERE engagement_tier = 'high') * 100.0 / COUNT(*), 2) AS value FROM installs",
+      "timeSeriesSql": "SELECT install_date AS date, ROUND(COUNT(*) FILTER (WHERE engagement_tier = 'high') * 100.0 / COUNT(*), 2) AS value FROM installs GROUP BY 1 ORDER BY 1",
+      "table": "installs",
+      "column": "engagement_tier",
+      "timeColumn": "install_date",
+      "formula": "COUNT(engagement_tier='high') / COUNT(*)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "platform",
+        "country"
+      ],
+      "relationships": []
+    },
+    {
+      "id": "m-fraud-install-rate",
+      "name": "Fraud Install Rate",
+      "description": "% of installs flagged for impression-stuffing fraud: invalid traffic that reports revenue but never settles.",
+      "type": "diagnostic",
+      "category": "Acquisition",
+      "valueFormat": "percent",
+      "aggregation": "average",
+      "valueSql": "SELECT ROUND(AVG(CASE WHEN is_fraud THEN 1.0 ELSE 0.0 END) * 100, 2) AS value FROM installs",
+      "timeSeriesSql": "SELECT install_date AS date, ROUND(AVG(CASE WHEN is_fraud THEN 1.0 ELSE 0.0 END) * 100, 2) AS value FROM installs GROUP BY 1 ORDER BY 1",
+      "table": "installs",
+      "column": "is_fraud",
+      "timeColumn": "install_date",
+      "formula": "AVG(is_fraud)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "country",
+        "platform"
+      ],
+      "relationships": []
+    }
+  ]
+}

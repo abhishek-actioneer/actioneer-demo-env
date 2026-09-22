@@ -1,0 +1,327 @@
+{
+  "rootMetricId": "m-total-invested",
+  "metrics": [
+    {
+      "id": "m-total-invested",
+      "name": "Total Invested AUM",
+      "description": "Total invested corpus across FundsIndia platform funds.",
+      "type": "kpi",
+      "category": "Platform",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT COALESCE(SUM(total_invested), 0) AS value FROM fund_platform_stats",
+      "timeSeriesSql": "SELECT CAST(month AS VARCHAR) AS date, COALESCE(SUM(CASE WHEN txn_type = 'redemption' THEN -total_amount ELSE total_amount END), 0) AS value FROM monthly_txn_summary GROUP BY 1 ORDER BY 1",
+      "table": "fund_platform_stats",
+      "column": "total_invested",
+      "timeColumn": "month",
+      "formula": "SUM(total_invested)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "amc_name",
+        "category",
+        "is_fi_select"
+      ],
+      "relationships": []
+    },
+    {
+      "id": "m-net-inflow",
+      "name": "Net Monthly Inflow",
+      "description": "Successful purchases minus redemptions by month.",
+      "type": "kpi",
+      "category": "Platform",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT COALESCE(SUM(CASE WHEN txn_type = 'redemption' THEN -total_amount ELSE total_amount END), 0) AS value FROM monthly_txn_summary",
+      "timeSeriesSql": "SELECT CAST(month AS VARCHAR) AS date, COALESCE(SUM(CASE WHEN txn_type = 'redemption' THEN -total_amount ELSE total_amount END), 0) AS value FROM monthly_txn_summary GROUP BY 1 ORDER BY 1",
+      "table": "monthly_txn_summary",
+      "column": "total_amount",
+      "timeColumn": "month",
+      "formula": "SUM(purchases) - SUM(redemptions)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "txn_type"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-invested",
+          "metricName": "Total Invested AUM",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-active-sips",
+      "name": "Active SIPs",
+      "description": "Current active systematic investment plans.",
+      "type": "kpi",
+      "category": "SIP Book",
+      "valueFormat": "integer",
+      "aggregation": "sum",
+      "valueSql": "SELECT COALESCE(SUM(active_sip_count), 0) AS value FROM fund_platform_stats",
+      "timeSeriesSql": "SELECT CAST(month AS VARCHAR) AS date, COALESCE(SUM(new_sips - cancelled_sips) OVER (ORDER BY month), 0) AS value FROM monthly_platform_kpis ORDER BY 1",
+      "table": "fund_platform_stats",
+      "column": "active_sip_count",
+      "timeColumn": "month",
+      "formula": "SUM(active_sip_count)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "amc_name",
+        "category",
+        "is_fi_select"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-invested",
+          "metricName": "Total Invested AUM",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-new-sips",
+      "name": "New SIPs",
+      "description": "New SIPs created during the dataset period.",
+      "type": "indicator",
+      "category": "SIP Book",
+      "valueFormat": "integer",
+      "aggregation": "sum",
+      "valueSql": "SELECT COALESCE(SUM(new_sips), 0) AS value FROM monthly_platform_kpis",
+      "timeSeriesSql": "SELECT CAST(month AS VARCHAR) AS date, new_sips AS value FROM monthly_platform_kpis ORDER BY 1",
+      "table": "monthly_platform_kpis",
+      "column": "new_sips",
+      "timeColumn": "month",
+      "formula": "SUM(new_sips)",
+      "timeGrain": "monthly",
+      "dimensions": [],
+      "relationships": [
+        {
+          "metricId": "m-active-sips",
+          "metricName": "Active SIPs",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-sip-cancel-rate",
+      "name": "SIP Cancellation Rate",
+      "description": "Cancelled SIPs as a percentage of newly created SIPs.",
+      "type": "diagnostic",
+      "category": "SIP Book",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT COALESCE(SUM(cancelled_sips) * 100.0 / NULLIF(SUM(new_sips), 0), 0) AS value FROM monthly_platform_kpis",
+      "timeSeriesSql": "SELECT CAST(month AS VARCHAR) AS date, COALESCE(cancelled_sips * 100.0 / NULLIF(new_sips, 0), 0) AS value FROM monthly_platform_kpis ORDER BY 1",
+      "table": "monthly_platform_kpis",
+      "column": "cancelled_sips",
+      "timeColumn": "month",
+      "formula": "cancelled_sips / new_sips",
+      "timeGrain": "monthly",
+      "dimensions": [],
+      "relationships": [
+        {
+          "metricId": "m-active-sips",
+          "metricName": "Active SIPs",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-est-monthly-commission",
+      "name": "Estimated Monthly Commission",
+      "description": "Estimated monthly trailing commission across AMCs.",
+      "type": "kpi",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT COALESCE(SUM(est_monthly_commission), 0) AS value FROM amc_performance",
+      "timeSeriesSql": "SELECT CAST(month AS VARCHAR) AS date, COALESCE(SUM(total_amount) * 0.008 / 12, 0) AS value FROM monthly_txn_summary WHERE txn_type <> 'redemption' GROUP BY 1 ORDER BY 1",
+      "table": "amc_performance",
+      "column": "est_monthly_commission",
+      "timeColumn": "month",
+      "formula": "SUM(total_invested * trailing_commission_pct / 100 / 12)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "amc_name"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-invested",
+          "metricName": "Total Invested AUM",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-activation-rate",
+      "name": "First Investment Rate",
+      "description": "Share of signups who completed their first investment.",
+      "type": "kpi",
+      "category": "Activation",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT COALESCE(SUM(first_invested) * 100.0 / NULLIF(SUM(signups), 0), 0) AS value FROM investor_funnel",
+      "timeSeriesSql": "SELECT CAST(cohort_month AS VARCHAR) AS date, COALESCE(SUM(first_invested) * 100.0 / NULLIF(SUM(signups), 0), 0) AS value FROM investor_funnel GROUP BY 1 ORDER BY 1",
+      "table": "investor_funnel",
+      "column": "first_invested",
+      "timeColumn": "cohort_month",
+      "formula": "first_invested / signups",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "acquisition_channel",
+        "city_tier"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-new-sips",
+          "metricName": "New SIPs",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-kyc-completion-rate",
+      "name": "KYC Completion Rate",
+      "description": "Share of signups whose KYC status is verified.",
+      "type": "indicator",
+      "category": "Activation",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT COALESCE(COUNT(*) FILTER (WHERE kyc_status = 'verified') * 100.0 / NULLIF(COUNT(*), 0), 0) AS value FROM raw_investors WHERE signup_date >= DATE '2024-06-01'",
+      "timeSeriesSql": "SELECT CAST(strftime(signup_date::DATE, '%Y-%m') || '-01' AS VARCHAR) AS date, COALESCE(COUNT(*) FILTER (WHERE kyc_status = 'verified') * 100.0 / NULLIF(COUNT(*), 0), 0) AS value FROM raw_investors WHERE signup_date >= DATE '2024-06-01' GROUP BY 1 ORDER BY 1",
+      "table": "raw_investors",
+      "column": "kyc_status",
+      "timeColumn": "signup_date",
+      "formula": "verified KYC signups / signups",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "acquisition_channel",
+        "city_tier"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-activation-rate",
+          "metricName": "First Investment Rate",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-fi-select-share",
+      "name": "FI Select AUM Share",
+      "description": "Share of invested AUM in curated FI Select funds.",
+      "type": "indicator",
+      "category": "Fund Quality",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT COALESCE(SUM(CASE WHEN is_fi_select THEN total_invested ELSE 0 END) * 100.0 / NULLIF(SUM(total_invested), 0), 0) AS value FROM fund_platform_stats",
+      "timeSeriesSql": "SELECT CAST(txn_date AS VARCHAR) AS date, COALESCE(SUM(CASE WHEN is_fi_select THEN amount_inr ELSE 0 END) * 100.0 / NULLIF(SUM(amount_inr), 0), 0) AS value FROM transactions_full WHERE status = 'success' AND txn_type <> 'redemption' GROUP BY 1 ORDER BY 1",
+      "table": "fund_platform_stats",
+      "column": "is_fi_select",
+      "timeColumn": "txn_date",
+      "formula": "FI Select invested / total invested",
+      "timeGrain": "daily",
+      "dimensions": [
+        "amc_name",
+        "category"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-active-sips",
+          "metricName": "Active SIPs",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-campaign-conversion-rate",
+      "name": "Campaign Conversion Rate",
+      "description": "Share of delivered CRM messages that converted.",
+      "type": "diagnostic",
+      "category": "CRM",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT COALESCE(SUM(converted) * 100.0 / NULLIF(SUM(delivered), 0), 0) AS value FROM campaign_performance",
+      "timeSeriesSql": "SELECT CAST(month AS VARCHAR) AS date, COALESCE(SUM(converted) * 100.0 / NULLIF(SUM(delivered), 0), 0) AS value FROM campaign_performance GROUP BY 1 ORDER BY 1",
+      "table": "campaign_performance",
+      "column": "converted",
+      "timeColumn": "month",
+      "formula": "converted / delivered",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "campaign_type",
+        "channel"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-activation-rate",
+          "metricName": "First Investment Rate",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-b30-active-sip-book",
+      "name": "B30 Active SIP Book",
+      "description": "Monthly active SIP book from B30 cities.",
+      "type": "indicator",
+      "category": "Geography",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT COALESCE(SUM(active_sip_book_inr), 0) AS value FROM city_tier_kpis WHERE city_tier = 'b30'",
+      "timeSeriesSql": "SELECT CAST(month AS VARCHAR) AS date, COALESCE(SUM(active_sip_book_inr), 0) AS value FROM city_tier_kpis WHERE city_tier = 'b30' GROUP BY 1 ORDER BY 1",
+      "table": "city_tier_kpis",
+      "column": "active_sip_book_inr",
+      "timeColumn": "month",
+      "formula": "SUM(active_sip_book_inr) WHERE city_tier = b30",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "city_tier"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-active-sips",
+          "metricName": "Active SIPs",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-goal-on-track-rate",
+      "name": "Goal On-Track Rate",
+      "description": "Share of goal plans currently on track.",
+      "type": "diagnostic",
+      "category": "Goals",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT COALESCE(SUM(on_track) * 100.0 / NULLIF(SUM(total_goals), 0), 0) AS value FROM goal_achievement",
+      "timeSeriesSql": "SELECT CAST(strftime(created_date::DATE, '%Y-%m') || '-01' AS VARCHAR) AS date, COALESCE(COUNT(*) FILTER (WHERE status = 'on_track') * 100.0 / NULLIF(COUNT(*), 0), 0) AS value FROM raw_goals GROUP BY 1 ORDER BY 1",
+      "table": "raw_goals",
+      "column": "status",
+      "timeColumn": "created_date",
+      "formula": "on_track / total_goals",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "goal_type",
+        "created_by"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-active-sips",
+          "metricName": "Active SIPs",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    }
+  ]
+}

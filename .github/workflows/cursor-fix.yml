@@ -1,0 +1,102 @@
+name: Cursor agent fix
+
+on:
+  workflow_dispatch:
+    inputs:
+      task:
+        description: "Bug description or task. Include repro steps and file paths if known."
+        required: true
+        type: string
+      base_ref:
+        description: "Branch to start from (also the PR base)"
+        required: false
+        default: "feat/clerk-auth-merged"
+        type: string
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - id: agent
+        name: Run Cursor agent
+        env:
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          TASK: ${{ inputs.task }}
+          BASE_REF: ${{ inputs.base_ref }}
+          REPO_URL: ${{ github.server_url }}/${{ github.repository }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/cursor-fix.mjs
+
+      - name: Retarget PR base to ${{ inputs.base_ref }}
+        if: steps.agent.outputs.pr_url != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ steps.agent.outputs.pr_url }}
+          BASE_REF: ${{ inputs.base_ref }}
+        run: |
+          # The Cursor SDK opens PRs against the repo default branch (main).
+          # Retarget to the requested base so all agent PRs land on feat/clerk-auth-merged.
+          CURRENT_BASE=$(gh pr view "$PR_URL" --json baseRefName --jq .baseRefName)
+          if [ "$CURRENT_BASE" != "$BASE_REF" ]; then
+            echo "Retargeting PR base: $CURRENT_BASE -> $BASE_REF"
+            gh pr edit "$PR_URL" --base "$BASE_REF"
+          else
+            echo "PR already targets $BASE_REF"
+          fi
+
+      - name: Notify Slack
+        if: always() && env.SLACK_WEBHOOK_URL != ''
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          STATUS: ${{ job.status }}
+          AGENT_STATUS: ${{ steps.agent.outputs.status }}
+          PR_URL: ${{ steps.agent.outputs.pr_url }}
+          BRANCH: ${{ steps.agent.outputs.branch }}
+          TASK: ${{ inputs.task }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          if [ "$STATUS" = "success" ] && [ -n "$PR_URL" ]; then
+            ICON=":white_check_mark:"
+            HEADLINE="Cursor agent finished — PR ready"
+            DETAIL="<$PR_URL|Open PR> on branch \`$BRANCH\`"
+          elif [ "$STATUS" = "success" ]; then
+            ICON=":warning:"
+            HEADLINE="Cursor agent finished — no PR opened"
+            DETAIL="Agent reported status \`$AGENT_STATUS\`. <$RUN_URL|View run logs>"
+          else
+            ICON=":x:"
+            HEADLINE="Cursor agent failed"
+            DETAIL="<$RUN_URL|View run logs>"
+          fi
+
+          jq -n --arg text "$ICON *$HEADLINE*" \
+                --arg task "$TASK" \
+                --arg detail "$DETAIL" \
+                '{
+                  text: $text,
+                  blocks: [
+                    {type: "section", text: {type: "mrkdwn", text: $text}},
+                    {type: "section", text: {type: "mrkdwn", text: ("> " + $task)}},
+                    {type: "section", text: {type: "mrkdwn", text: $detail}}
+                  ]
+                }' \
+            | curl -sS -X POST -H 'Content-Type: application/json' \
+                --data @- "$SLACK_WEBHOOK_URL"

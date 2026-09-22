@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Style D — Light Emerald</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg:        #F6F8F7;
+    --bg-card:   #FFFFFF;
+    --text:      #111816;
+    --muted:     #6B7A74;
+    --emerald:   #059669;
+    --emerald-light: rgba(5,150,105,0.1);
+    --border:    rgba(17,24,22,0.08);
+  }
+
+  html, body {
+    width: 100%; height: 100%;
+    background: var(--bg);
+    overflow: hidden;
+    font-family: 'Funnel Sans', sans-serif;
+  }
+
+  .slide {
+    width: 100vw; height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(2.5rem, 7vw, 7rem);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Top rule */
+  .top-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--emerald);
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: grow 0.7s 0.1s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+
+  /* Wordmark top-left */
+  .wordmark {
+    position: absolute;
+    top: clamp(1.5rem, 3vw, 3rem);
+    left: clamp(2.5rem, 7vw, 7rem);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--emerald);
+    opacity: 0;
+    animation: fadein 0.5s 0.4s forwards;
+  }
+
+  /* Slide number top-right */
+  .slide-meta {
+    position: absolute;
+    top: clamp(1.5rem, 3vw, 3rem);
+    right: clamp(2.5rem, 7vw, 7rem);
+    font-size: 0.75rem;
+    color: var(--muted);
+    opacity: 0;
+    animation: fadein 0.5s 0.4s forwards;
+  }
+
+  /* Eyebrow pill */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--emerald-light);
+    color: var(--emerald);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.35em 0.9em;
+    border-radius: 100px;
+    margin-bottom: clamp(1.5rem, 3vw, 3rem);
+    width: fit-content;
+    opacity: 0;
+    animation: slideup 0.6s 0.5s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+
+  .eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--emerald);
+  }
+
+  /* Main headline */
+  h1 {
+    font-size: clamp(3rem, 8.5vw, 9rem);
+    font-weight: 800;
+    color: var(--text);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    opacity: 0;
+    animation: slideup 0.9s 0.65s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+
+  h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--emerald);
+  }
+
+  /* Body text */
+  .body {
+    margin-top: clamp(2rem, 3.5vw, 3.5rem);
+    font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+    font-weight: 400;
+    color: var(--muted);
+    max-width: 520px;
+    line-height: 1.65;
+    opacity: 0;
+    animation: slideup 0.8s 0.85s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+
+  /* Bottom label */
+  .corner {
+    position: absolute;
+    bottom: clamp(1.5rem, 3vw, 3rem);
+    right: clamp(2.5rem, 7vw, 7rem);
+    font-size: 0.7rem;
+    color: var(--muted);
+    opacity: 0;
+    animation: fadein 0.5s 1.2s forwards;
+  }
+
+  @keyframes fadein { to { opacity: 1; } }
+  @keyframes grow   { to { transform: scaleX(1); } }
+  @keyframes slideup {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+  <div class="slide">
+    <div class="top-bar"></div>
+    <div class="wordmark">Sentinel</div>
+    <div class="slide-meta">Demo Fair · 2026</div>
+
+    <div class="eyebrow">What we believed</div>
+
+    <h1>We thought<br>people wanted<br><em>Agents</em><br>doing the work.</h1>
+
+    <p class="body">Full automation. Background Agents. Zero human in the loop. We built for that — and then learned something uncomfortable.</p>
+
+    <div class="corner">Style D — Light Emerald · Funnel Sans</div>
+  </div>
+</body>
+</html>

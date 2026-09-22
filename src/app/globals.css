@@ -1,0 +1,751 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@source not "../../docs/**";
+@source not "../../.claude/**";
+@source not "../../.superpowers/**";
+
+@custom-variant dark (&:is(.dark *));
+
+::selection {
+  background: rgb(239 177 74 / 0.28);
+  color: #171714;
+}
+
+button,
+a,
+[role="button"],
+summary {
+  cursor: pointer;
+}
+
+/* Hide border-line above and below a hovered prompt item */
+.prompt-item:hover > .border-line,
+.prompt-item:hover + .prompt-item > .border-line {
+  opacity: 0;
+}
+
+/* Override renderSimpleMarkdown's hardcoded inline font sizes in document view analysis cards */
+.analysis-body > div {
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  color: var(--card-foreground) !important;
+  margin-bottom: 6px !important;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-chart-label: var(--chart-label);
+  --color-chart-ring-background: var(--chart-ring-background);
+  --color-chart-marker-foreground: var(--chart-marker-foreground);
+  --color-chart-marker-border: var(--chart-marker-border);
+  --color-chart-marker-background: var(--chart-marker-background);
+  --color-chart-tooltip-muted: var(--chart-tooltip-muted);
+  --color-chart-tooltip-foreground: var(--chart-tooltip-foreground);
+  --color-chart-tooltip-background: var(--chart-tooltip-background);
+  --color-chart-brush-border: var(--chart-brush-border);
+  --color-chart-grid: var(--chart-grid);
+  --color-chart-crosshair: var(--chart-crosshair);
+  --color-chart-line-secondary: var(--chart-line-secondary);
+  --color-chart-line-primary: var(--chart-line-primary);
+  --color-chart-foreground-muted: var(--chart-foreground-muted);
+  --color-chart-foreground: var(--chart-foreground);
+  --color-chart-background: var(--chart-background);
+}
+
+:root {
+  --radius: 0.0625rem;
+  --background: #f6f6f1;
+  --foreground: #171714;
+  --card: #ffffff;
+  --card-foreground: #171714;
+  --popover: #ffffff;
+  --popover-foreground: #171714;
+  --primary: #191916;
+  --primary-foreground: #ffffff;
+  --secondary: #f2f2ee;
+  --secondary-foreground: #292925;
+  --muted: #f1f1ed;
+  --muted-foreground: #707069;
+  --accent: #ecece7;
+  --accent-foreground: #23231f;
+  --destructive: oklch(0.577 0.245 27.325);
+  /* Delta indicators: the one explicitly-requested colored signal (+ up = green, − down = red) */
+  --delta-up: oklch(0.55 0.13 150);
+  --delta-down: oklch(0.55 0.20 27);
+  --border: #deded8;
+  --input: #cecec7;
+  --ring: #77776f;
+  --brand-amber: #f1bd51;
+  --brand-amber-border: #caa14d;
+  --brand-amber-hover: #e8b447;
+  --brand-amber-foreground: #21190d;
+  --status-green: #2f8a55;
+  --status-green-soft: #e8f3ec;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: #f6f6f1;
+  --sidebar-foreground: #23231f;
+  --sidebar-primary: #191916;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e8e8e3;
+  --sidebar-accent-foreground: #23231f;
+  --sidebar-border: #d9d9d3;
+  --sidebar-ring: #77776f;
+
+  /* ── Connector UI tokens ── */
+  --connector-surface:        var(--card);
+  --connector-surface-hover:  var(--accent);
+  --connector-border:         var(--border);
+  --connector-tile-border:    var(--border);
+  --connector-icon-bg:        var(--muted);
+  --schema-canvas-bg:         #f9f3ea;
+  --schema-canvas-dot:        #d8cec4;
+  --schema-card-bg:           var(--card);
+  --schema-card-header-bg:    var(--muted);
+  --schema-card-gradient:     var(--card);
+  --badge-blue-bg:            #ddeaf5;
+  --badge-blue-text:          #2a4a6b;
+  --badge-purple-bg:          #ede0fa;
+  --badge-purple-text:        #6200b3;
+  --badge-amber-bg:           #fef0c2;
+  --badge-amber-text:         #92380a;
+  --badge-red-bg:             #fdd9d9;
+  --badge-red-text:           #cc2030;
+  --connector-link:           #0069a8;
+  --chart-background: var(--background);
+  --chart-foreground: var(--foreground);
+  --chart-foreground-muted: var(--muted-foreground);
+  --chart-line-primary: var(--foreground);
+  --chart-line-secondary: var(--muted-foreground);
+  --chart-crosshair: var(--border);
+  --chart-grid: var(--border);
+  --chart-brush-border: var(--chart-grid);
+  --chart-tooltip-background: var(--foreground);
+  --chart-tooltip-foreground: var(--background);
+  --chart-tooltip-muted: var(--muted);
+  --chart-marker-background: var(--muted);
+  --chart-marker-border: var(--border);
+  --chart-marker-foreground: var(--foreground);
+  --chart-ring-background: var(--muted);
+  --chart-label: var(--muted-foreground);
+}
+
+.dark {
+  --background: oklch(0.175 0.002 75);
+  --foreground: oklch(0.87 0.015 65);
+  --card: oklch(0.195 0.002 75);
+  --card-foreground: oklch(0.87 0.015 65);
+  --popover: oklch(0.195 0.002 75);
+  --popover-foreground: oklch(0.87 0.015 65);
+  --primary: oklch(0.87 0.015 65);
+  --primary-foreground: oklch(0.175 0.002 75);
+  --secondary: oklch(0.22 0.002 75);
+  --secondary-foreground: oklch(0.87 0.015 65);
+  --muted: oklch(0.22 0.002 75);
+  --muted-foreground: oklch(0.52 0.008 65);
+  --accent: oklch(0.22 0.002 75);
+  --accent-foreground: oklch(0.87 0.015 65);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(0.265 0.002 75);
+  --input: oklch(0.28 0.002 75);
+  --ring: oklch(0.45 0.002 75);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: #181818;
+  --sidebar-foreground: oklch(0.87 0.015 65);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.87 0.015 65);
+  --sidebar-accent: oklch(0.22 0.002 75);
+  --sidebar-accent-foreground: oklch(0.87 0.015 65);
+  --sidebar-border: oklch(0.265 0.002 75);
+  --sidebar-ring: oklch(0.45 0.002 75);
+
+  /* ── Connector UI tokens (dark) ── */
+  --schema-canvas-bg:         #0e0e0d;
+  --schema-canvas-dot:        #201e1e;
+  --badge-blue-bg:            #0f1e2e;
+  --badge-blue-text:          #7ab3d4;
+  --badge-purple-bg:          #1a0e2e;
+  --badge-purple-text:        #b87de8;
+  --badge-amber-bg:           #241704;
+  --badge-amber-text:         #d9a558;
+  --badge-red-bg:             #2a0a0e;
+  --badge-red-text:           #e87a80;
+  --connector-link:           #5aaee0;
+  --chart-background: var(--background);
+  --chart-foreground: var(--foreground);
+  --chart-foreground-muted: var(--muted-foreground);
+  --chart-line-primary: var(--foreground);
+  --chart-line-secondary: var(--muted-foreground);
+  --chart-crosshair: var(--border);
+  --chart-grid: var(--border);
+  --chart-brush-border: var(--chart-grid);
+  --chart-tooltip-background: var(--foreground);
+  --chart-tooltip-foreground: var(--background);
+  --chart-tooltip-muted: var(--muted);
+  --chart-marker-background: var(--muted);
+  --chart-marker-border: var(--border);
+  --chart-marker-foreground: var(--foreground);
+  --chart-ring-background: var(--muted);
+  --chart-label: var(--muted-foreground);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  /* Render the platform at ~90% scale by shrinking the rem base. Tailwind v4
+     sizes spacing and text in rem, so this scales the whole UI uniformly while
+     keeping layout math real. Do NOT use `zoom` for this: zoom double-applies
+     to every portaled popper (dropdowns/selects/popovers position via
+     floating-ui in both Radix and Base UI), shifting them up-left by 10% of
+     their screen position. Arbitrary px values (text-[13px], w-[340px]) do not
+     scale with this — size those against the 90% look directly. */
+  html {
+    font-size: 90%;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    letter-spacing: -0.008em;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Chat sidebar action fade — gradient from transparent to solid sidebar background */
+.chat-actions-fade {
+  background: linear-gradient(to right, transparent 0%, var(--sidebar) 40%, var(--sidebar) 100%);
+}
+
+/* Dark mode: subtle top highlight on cards (no backdrop-blur — solid like Notion) */
+.dark .bg-card,
+.dark .bg-popover {
+  box-shadow: inset 0 0.5px 0 oklch(1 0 0 / 4%);
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Panel slide-in animation */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.2s ease-out;
+}
+
+/* Banner slide down from top */
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.3s ease-out;
+}
+
+/* Subagent card fade-in */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.25s ease-out both;
+}
+
+/* Table select card — skeleton entrance */
+@keyframes table-skeleton-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Table select card — row entrance (staggered) */
+@keyframes table-row-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Progress completion glow */
+@keyframes progress-complete {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.animate-progress-complete {
+  animation: progress-complete 400ms ease-out;
+}
+
+/* Check icon pop-in */
+@keyframes check-pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-check-pop {
+  animation: check-pop 300ms ease-out;
+}
+
+/* Selection popup fade-in — opacity only, no transform override */
+@keyframes selection-popup-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-selection-popup-in {
+  animation: selection-popup-in 0.15s ease-out both;
+}
+
+/* Metric tree animated edge dashes */
+.react-flow__edge path.react-flow__edge-path[style*="dash"] {
+  animation: edge-flow 5s linear infinite;
+}
+
+@keyframes edge-flow {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+/* Canvas shape refresh spinner (inline styles can't define keyframes) */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Canvas insight accent pulse (critical severity) */
+@keyframes accent-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+@keyframes shimmer-sweep {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+.animate-shimmer {
+  animation: shimmer 2.5s ease-in-out infinite;
+}
+
+/* Skeleton node pulse — monochrome */
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-skeleton-pulse {
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+/* Skeleton fill transition — brief scale pop */
+@keyframes skeleton-fill {
+  0% { opacity: 0.7; transform: scale(0.98); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.animate-skeleton-fill {
+  animation: skeleton-fill 0.3s ease-out;
+}
+
+/* Canvas severity color tokens (used by tldraw shapes via inline styles) */
+:root {
+  --severity-critical: #E5484D;
+  --severity-warning: #F76B15;
+  --severity-info: #3E63DD;
+  --severity-critical-bg: #fee2e2;
+  --severity-warning-bg: #fef3c7;
+  --severity-info-bg: #dbeafe;
+  --severity-critical-text: #991b1b;
+  --severity-warning-text: #92400e;
+  --severity-info-text: #1e40af;
+  --canvas-card-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.dark {
+  --severity-critical-bg: oklch(0.22 0.08 15);
+  --severity-warning-bg: oklch(0.22 0.07 50);
+  --severity-info-bg: oklch(0.22 0.08 250);
+  --severity-critical-text: oklch(0.75 0.15 15);
+  --severity-warning-text: oklch(0.75 0.12 50);
+  --severity-info-text: oklch(0.75 0.10 250);
+  --canvas-card-shadow: 0 1px 3px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.05);
+}
+
+/* Voxel orb pixel shimmer */
+@keyframes voxel-shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.15; }
+}
+
+.voxel-pixel-animate {
+  animation: voxel-shimmer 0.5s ease-in-out infinite;
+}
+
+/* Voice identity voxel shimmer */
+@keyframes voice-voxel-shimmer {
+  0%, 100% { opacity: 1; transform: translateY(0); }
+  50% { opacity: 0.22; transform: translateY(-0.5px); }
+}
+
+.voice-voxel-pixel-animate {
+  animation: voice-voxel-shimmer 0.64s cubic-bezier(0.23, 1, 0.32, 1) infinite;
+}
+
+/* Light mode scrollbar — subtle thumb, invisible track */
+* {
+  scrollbar-color: oklch(0.75 0 0) transparent;
+}
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: oklch(0.75 0 0);
+  border-radius: 3px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.65 0 0);
+}
+
+/* Dark mode scrollbar — darker thumb, invisible track */
+.dark * {
+  scrollbar-color: oklch(0.35 0 0) transparent;
+}
+.dark *::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.dark *::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dark *::-webkit-scrollbar-thumb {
+  background: oklch(0.35 0 0);
+  border-radius: 3px;
+}
+.dark *::-webkit-scrollbar-thumb:hover {
+  background: oklch(0.45 0 0);
+}
+
+/* Canvas card port dots — visible on card hover */
+.canvas-card-port-host:hover .canvas-port,
+.canvas-card-port-host.connect-active .canvas-port {
+  opacity: 1;
+}
+
+/* ── tldraw canvas overrides ── */
+
+/* Override tldraw background to match playbook canvas: subtle muted tint */
+.actioneer-canvas .tl-canvas {
+  background: color-mix(in srgb, var(--background) 85%, var(--muted)) !important;
+}
+
+/* Hide tldraw license watermark (demo/prototype only) */
+.actioneer-canvas [class*="watermark"] {
+  display: none !important;
+}
+
+/* Make tldraw selection match playbook style (monochrome, not blue) */
+.actioneer-canvas .tl-selection__fg {
+  stroke: var(--foreground) !important;
+}
+
+/* Darken arrow strokes slightly for better visibility */
+.actioneer-canvas .tl-arrow [stroke] {
+  stroke: var(--muted-foreground) !important;
+}
+.actioneer-canvas .tl-arrow [fill] {
+  fill: var(--muted-foreground) !important;
+}
+
+/* Minimap heading flash — brief highlight then fade back */
+@keyframes heading-flash {
+  0%, 40% { background-color: oklch(0.55 0.1 155 / 0.3); }
+  100% { background-color: transparent; }
+}
+@keyframes heading-flash-dark {
+  0%, 40% { background-color: oklch(0.65 0.12 155 / 0.25); }
+  100% { background-color: transparent; }
+}
+.minimap-heading-flash {
+  animation: heading-flash 800ms ease-out forwards;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin: -2px -6px;
+}
+.dark .minimap-heading-flash {
+  animation: heading-flash-dark 800ms ease-out forwards;
+}
+
+/* Document board view: force pointer events on all chart/card descendants */
+.doc-card-interactive,
+.doc-card-interactive * {
+  pointer-events: auto !important;
+}
+
+/* Board card colSpan responsive clamping — prevent span overflow at smaller grids */
+@media (max-width: 640px) {
+  [data-col-span] {
+    grid-column: span 1 !important;
+  }
+}
+@media (min-width: 640px) and (max-width: 1024px) {
+  [data-col-span="3"] {
+    grid-column: span 2 !important;
+  }
+}
+
+/* ── Liquid metallic FAB border ── */
+@property --fab-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.fab-metallic {
+  --fab-bw: 1.5px;
+  --fab-bg-from: var(--card);
+  --fab-bg-to: var(--secondary);
+  --ml: oklch(0.90 0.025 65);
+  --mm: oklch(0.80 0.024 62);
+  --md: oklch(0.85 0.025 63);
+  --fab-ring: var(--border);
+  --fab-shadow: oklch(0.30 0.02 60 / 0.10);
+  --fab-glow-a: var(--border);
+  --fab-glow-b: var(--muted);
+  --fab-glow-c: var(--muted);
+
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(180deg, var(--fab-bg-from) 0%, var(--fab-bg-to) 100%) padding-box,
+    conic-gradient(from var(--fab-angle), var(--md), var(--ml), var(--mm), var(--md), var(--mm), var(--ml), var(--md)) border-box !important;
+  border: var(--fab-bw) solid transparent !important;
+  box-shadow: 0 0 0 1px var(--fab-ring);
+  animation: fab-spin 14s linear infinite;
+  transition: box-shadow 0.25s ease, transform 0.15s ease;
+}
+
+.fab-metallic::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  z-index: -1;
+  border-radius: inherit;
+  background: conic-gradient(from var(--fab-angle), var(--fab-glow-a), var(--fab-glow-b), var(--fab-glow-a), var(--fab-glow-c), var(--fab-glow-a));
+  filter: blur(4px);
+  animation: fab-spin 14s linear infinite reverse;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.fab-metallic:hover::before {
+  opacity: 1;
+}
+
+/* Dark mode */
+.dark .fab-metallic {
+  --fab-bg-from: oklch(0.22 0.003 75);
+  --fab-bg-to: oklch(0.18 0.002 75);
+  --ml: oklch(0.82 0.005 75);
+  --mm: oklch(0.45 0.005 75);
+  --md: oklch(0.20 0.003 75);
+  --fab-ring: oklch(0.30 0.003 75);
+  --fab-shadow: oklch(0 0 0 / 0.4);
+  --fab-glow-a: oklch(0.50 0.005 75 / 0.0);
+  --fab-glow-b: oklch(0.75 0.005 75 / 0.25);
+  --fab-glow-c: oklch(0.75 0.005 75 / 0.15);
+}
+
+@keyframes fab-spin {
+  from { --fab-angle: 0deg; }
+  to { --fab-angle: 360deg; }
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Clerk dev-mode branding strip ──
+   Hides "Secured by Clerk" + "Development mode" in local dev.
+   Clerk removes these automatically on production instances.
+   Controlled by NEXT_PUBLIC_CLERK_STRIP_DEV=1 in .env.local  */
+/* ── Connector design tokens ── */
+/* Aliases of system tokens — dark mode handled automatically */
+:root {
+  --connector-surface:        var(--card);
+  --connector-surface-hover:  var(--accent);
+  --connector-border:         var(--border);
+  --connector-tile-border:    var(--border);
+  --connector-icon-bg:        var(--muted);
+
+  --schema-canvas-bg:         #f9f3ea;
+  --schema-canvas-dot:        #d8cec4;
+
+  --schema-card-bg:           var(--card);
+  --schema-card-header-bg:    var(--muted);
+  --schema-card-gradient:     var(--card);
+
+  --badge-blue-bg:            #ddeaf5;
+  --badge-blue-text:          #2a4a6b;
+  --badge-purple-bg:          #ede0fa;
+  --badge-purple-text:        #6200b3;
+  --badge-amber-bg:           #fef0c2;
+  --badge-amber-text:         #92380a;
+  --badge-red-bg:             #fdd9d9;
+  --badge-red-text:           #cc2030;
+
+  --connector-link:           #0069a8;
+}
+
+/* Dark mode overrides for tokens that can't alias system tokens */
+.dark {
+  --schema-canvas-bg:         #0e0e0d;
+  --schema-canvas-dot:        #201e1e;
+
+  --badge-blue-bg:            #0f1e2e;
+  --badge-blue-text:          #7ab3d4;
+  --badge-purple-bg:          #1a0e2e;
+  --badge-purple-text:        #b87de8;
+  --badge-amber-bg:           #241704;
+  --badge-amber-text:         #d9a558;
+  --badge-red-bg:             #2a0a0e;
+  --badge-red-text:           #e87a80;
+
+  --connector-link:           #5aaee0;
+}
+
+/* Sidebar "Walkthrough" entry: a light cream gradient sweeps across the row to
+   draw the eye and signal there is a guided demo to take. The text stays normal. */
+.nav-shiny-row {
+  background-image: linear-gradient(
+    100deg,
+    transparent 18%,
+    rgba(193, 154, 107, 0.22) 50%,
+    transparent 82%
+  );
+  background-size: 220% 100%;
+  background-repeat: no-repeat;
+  animation: nav-row-shimmer 3.2s linear infinite;
+}
+.nav-shiny-row:hover {
+  background-color: var(--muted);
+}
+@keyframes nav-row-shimmer {
+  0% { background-position: 130% 0; }
+  100% { background-position: -130% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-shiny-row { animation: none; }
+}
+
+/* Production guard: the Next.js dev/error badge must never be visible in deployed builds. */
+html[data-hide-nextjs-devtools="true"] nextjs-portal,
+html[data-hide-nextjs-devtools="true"] [data-nextjs-dev-overlay="true"],
+html[data-hide-nextjs-devtools="true"] [data-nextjs-dev-tools-button],
+html[data-hide-nextjs-devtools="true"] [data-nextjs-toast],
+html[data-hide-nextjs-devtools="true"] .nextjs-toast,
+html[data-hide-nextjs-devtools="true"] .nextjs-toast-errors-parent,
+html[data-hide-nextjs-devtools="true"] [data-nextjs-dialog-overlay],
+html[data-hide-nextjs-devtools="true"] [data-nextjs-dialog],
+html[data-hide-nextjs-devtools="true"] [data-nextjs-devtools-panel-overlay] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}

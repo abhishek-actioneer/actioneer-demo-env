@@ -1,0 +1,1292 @@
+[
+  {
+    "city_id": "C001",
+    "city": "Bengaluru",
+    "state": "Karnataka",
+    "tier": "metro"
+  },
+  {
+    "city_id": "C002",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "tier": "metro"
+  },
+  {
+    "city_id": "C003",
+    "city": "Delhi",
+    "state": "Delhi",
+    "tier": "metro"
+  },
+  {
+    "city_id": "C004",
+    "city": "Gurgaon",
+    "state": "Haryana",
+    "tier": "metro"
+  },
+  {
+    "city_id": "C005",
+    "city": "Hyderabad",
+    "state": "Telangana",
+    "tier": "metro"
+  },
+  {
+    "city_id": "C006",
+    "city": "Kolkata",
+    "state": "West Bengal",
+    "tier": "metro"
+  },
+  {
+    "city_id": "C007",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "tier": "metro"
+  },
+  {
+    "city_id": "C008",
+    "city": "Noida",
+    "state": "Uttar Pradesh",
+    "tier": "metro"
+  },
+  {
+    "city_id": "C009",
+    "city": "Pune",
+    "state": "Maharashtra",
+    "tier": "metro"
+  },
+  {
+    "city_id": "C010",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C011",
+    "city": "Amritsar",
+    "state": "Punjab",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C012",
+    "city": "Bhopal",
+    "state": "Madhya Pradesh",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C013",
+    "city": "Bhubaneswar",
+    "state": "Odisha",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C014",
+    "city": "Chandigarh",
+    "state": "Punjab",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C015",
+    "city": "Faridabad",
+    "state": "Haryana",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C016",
+    "city": "Ghaziabad",
+    "state": "Uttar Pradesh",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C017",
+    "city": "Guwahati",
+    "state": "Assam",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C018",
+    "city": "Howrah",
+    "state": "West Bengal",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C019",
+    "city": "Indore",
+    "state": "Madhya Pradesh",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C020",
+    "city": "Jabalpur",
+    "state": "Madhya Pradesh",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C021",
+    "city": "Jaipur",
+    "state": "Rajasthan",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C022",
+    "city": "Jalandhar",
+    "state": "Punjab",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C023",
+    "city": "Jamshedpur",
+    "state": "Jharkhand",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C024",
+    "city": "Jodhpur",
+    "state": "Rajasthan",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C025",
+    "city": "Kanpur",
+    "state": "Uttar Pradesh",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C026",
+    "city": "Kochi",
+    "state": "Kerala",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C027",
+    "city": "Kota",
+    "state": "Rajasthan",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C028",
+    "city": "Lucknow",
+    "state": "Uttar Pradesh",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C029",
+    "city": "Ludhiana",
+    "state": "Punjab",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C030",
+    "city": "Meerut",
+    "state": "Uttar Pradesh",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C031",
+    "city": "Mohali",
+    "state": "Punjab",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C032",
+    "city": "Mysuru",
+    "state": "Karnataka",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C033",
+    "city": "Nagpur",
+    "state": "Maharashtra",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C034",
+    "city": "Nashik",
+    "state": "Maharashtra",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C035",
+    "city": "Patna",
+    "state": "Bihar",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C036",
+    "city": "Panchkula",
+    "state": "Haryana",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C037",
+    "city": "Raipur",
+    "state": "Chhattisgarh",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C038",
+    "city": "Rajkot",
+    "state": "Gujarat",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C039",
+    "city": "Ranchi",
+    "state": "Jharkhand",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C040",
+    "city": "Surat",
+    "state": "Gujarat",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C041",
+    "city": "Udaipur",
+    "state": "Rajasthan",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C042",
+    "city": "Vadodara",
+    "state": "Gujarat",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C043",
+    "city": "Varanasi",
+    "state": "Uttar Pradesh",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C044",
+    "city": "Vijayawada",
+    "state": "Andhra Pradesh",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C045",
+    "city": "Visakhapatnam",
+    "state": "Andhra Pradesh",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C046",
+    "city": "Agra",
+    "state": "Uttar Pradesh",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C047",
+    "city": "Allahabad",
+    "state": "Uttar Pradesh",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C048",
+    "city": "Greater Noida",
+    "state": "Uttar Pradesh",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C049",
+    "city": "Gwalior",
+    "state": "Madhya Pradesh",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C050",
+    "city": "Haridwar Rishikesh",
+    "state": "Uttarakhand",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C051",
+    "city": "Kolhapur",
+    "state": "Maharashtra",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C052",
+    "city": "Dehradun Vikasnagar",
+    "state": "Uttarakhand",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C053",
+    "city": "Guntur",
+    "state": "Andhra Pradesh",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C054",
+    "city": "Kakinada",
+    "state": "Andhra Pradesh",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C055",
+    "city": "Karimnagar",
+    "state": "Telangana",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C056",
+    "city": "Warangal",
+    "state": "Telangana",
+    "tier": "tier1"
+  },
+  {
+    "city_id": "C057",
+    "city": "Ahilyanagar",
+    "state": "Maharashtra",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C058",
+    "city": "Ahmednagar",
+    "state": "Maharashtra",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C059",
+    "city": "Ahmadnagar",
+    "state": "Maharashtra",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C060",
+    "city": "Ajmer",
+    "state": "Rajasthan",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C061",
+    "city": "Akola",
+    "state": "Maharashtra",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C062",
+    "city": "Aligarh",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C063",
+    "city": "Almora",
+    "state": "Uttarakhand",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C064",
+    "city": "Alwar",
+    "state": "Rajasthan",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C065",
+    "city": "Ambala",
+    "state": "Haryana",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C066",
+    "city": "Ambedkar Nagar",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C067",
+    "city": "Amravati",
+    "state": "Maharashtra",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C068",
+    "city": "Amroha",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C069",
+    "city": "Anand",
+    "state": "Gujarat",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C070",
+    "city": "Ayodhya",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C071",
+    "city": "Azamgarh",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C072",
+    "city": "Baghpat",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C073",
+    "city": "Bahadurgarh",
+    "state": "Haryana",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C074",
+    "city": "Bahraich",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C075",
+    "city": "Banda",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C076",
+    "city": "Barabanki",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C077",
+    "city": "Baraut",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C078",
+    "city": "Bardhaman",
+    "state": "West Bengal",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C079",
+    "city": "Bareilly",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C080",
+    "city": "Batala",
+    "state": "Punjab",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C081",
+    "city": "Begusarai",
+    "state": "Bihar",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C082",
+    "city": "Belgaum",
+    "state": "Karnataka",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C083",
+    "city": "Bharatpur",
+    "state": "Rajasthan",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C084",
+    "city": "Bhatinda",
+    "state": "Punjab",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C085",
+    "city": "Bhilai Durg",
+    "state": "Chhattisgarh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C086",
+    "city": "Bhilwara",
+    "state": "Rajasthan",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C087",
+    "city": "Bhiwadi",
+    "state": "Rajasthan",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C088",
+    "city": "Bhiwani",
+    "state": "Haryana",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C089",
+    "city": "Bijnor",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C090",
+    "city": "Bikaner",
+    "state": "Rajasthan",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C091",
+    "city": "Bilaspur",
+    "state": "Chhattisgarh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C092",
+    "city": "Bokaro",
+    "state": "Jharkhand",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C093",
+    "city": "Budhana",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C094",
+    "city": "Bulandshahar",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C095",
+    "city": "Buldhana",
+    "state": "Maharashtra",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C096",
+    "city": "Chhatrapati Sambhajinagar Aurangabad",
+    "state": "Maharashtra",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C097",
+    "city": "Chhindwara",
+    "state": "Madhya Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C098",
+    "city": "Chomu",
+    "state": "Rajasthan",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C099",
+    "city": "Darbhanga",
+    "state": "Bihar",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C100",
+    "city": "Deoband",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C101",
+    "city": "Deoghar",
+    "state": "Jharkhand",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C102",
+    "city": "Deulpur",
+    "state": "West Bengal",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C103",
+    "city": "Dhampur",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C104",
+    "city": "Dhanbad",
+    "state": "Jharkhand",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C105",
+    "city": "Durgapur",
+    "state": "West Bengal",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C106",
+    "city": "Etah",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C107",
+    "city": "Etawah",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C108",
+    "city": "Faizabad",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C109",
+    "city": "Farrukhabad",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C110",
+    "city": "Firozabad",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C111",
+    "city": "Gadarpur",
+    "state": "Uttarakhand",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C112",
+    "city": "Gandhinagar",
+    "state": "Gujarat",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C113",
+    "city": "Ganganagar",
+    "state": "Rajasthan",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C114",
+    "city": "Gaya",
+    "state": "Bihar",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C115",
+    "city": "Ghazipur",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C116",
+    "city": "Gonda",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C117",
+    "city": "Gorakhpur",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C118",
+    "city": "Greater Noida Pc",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C119",
+    "city": "Guna",
+    "state": "Madhya Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C120",
+    "city": "Hajipur",
+    "state": "Bihar",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C121",
+    "city": "Haldwani",
+    "state": "Uttarakhand",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C122",
+    "city": "Hapur",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C123",
+    "city": "Hardoi",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C124",
+    "city": "Hathras",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C125",
+    "city": "Hazaribagh",
+    "state": "Jharkhand",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C126",
+    "city": "Hisar",
+    "state": "Haryana",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C127",
+    "city": "Hoshiarpur",
+    "state": "Punjab",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C128",
+    "city": "Jalalabad",
+    "state": "Punjab",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C129",
+    "city": "Jalaun",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C130",
+    "city": "Jalgaon",
+    "state": "Maharashtra",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C131",
+    "city": "Jalna",
+    "state": "Maharashtra",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C132",
+    "city": "Jamnagar",
+    "state": "Gujarat",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C133",
+    "city": "Jaunpur",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C134",
+    "city": "Jhansi",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C135",
+    "city": "Jhunjhunu",
+    "state": "Rajasthan",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C136",
+    "city": "Jind",
+    "state": "Haryana",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C137",
+    "city": "Kaithal",
+    "state": "Haryana",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C138",
+    "city": "Karnal",
+    "state": "Haryana",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C139",
+    "city": "Kasganj",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C140",
+    "city": "Kashipur",
+    "state": "Uttarakhand",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C141",
+    "city": "Katihar",
+    "state": "Bihar",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C142",
+    "city": "Katni",
+    "state": "Madhya Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C143",
+    "city": "Khatauli",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C144",
+    "city": "Khekra",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C145",
+    "city": "Khurja",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C146",
+    "city": "Kolar",
+    "state": "Karnataka",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C147",
+    "city": "Kuchaman",
+    "state": "Rajasthan",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C148",
+    "city": "Kurukshetra",
+    "state": "Haryana",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C149",
+    "city": "Lakhimpur",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C150",
+    "city": "Latehar",
+    "state": "Jharkhand",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C151",
+    "city": "Latur",
+    "state": "Maharashtra",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C152",
+    "city": "Mainpuri",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C153",
+    "city": "Malerkotla",
+    "state": "Punjab",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C154",
+    "city": "Mathura",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C155",
+    "city": "Mehsana",
+    "state": "Gujarat",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C156",
+    "city": "Mirzapur",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C157",
+    "city": "Modinagar",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C158",
+    "city": "Moga",
+    "state": "Punjab",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C159",
+    "city": "Moradabad",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C160",
+    "city": "Motihari",
+    "state": "Bihar",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C161",
+    "city": "Muktsar",
+    "state": "Punjab",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C162",
+    "city": "Munger",
+    "state": "Bihar",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C163",
+    "city": "Muzaffarnagar",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C164",
+    "city": "Muzaffarpur",
+    "state": "Bihar",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C165",
+    "city": "Nagina",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C166",
+    "city": "Nalanda",
+    "state": "Bihar",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C167",
+    "city": "Nanded",
+    "state": "Maharashtra",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C168",
+    "city": "Narsinghpur",
+    "state": "Madhya Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C169",
+    "city": "Palanpur",
+    "state": "Gujarat",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C170",
+    "city": "Palghar",
+    "state": "Maharashtra",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C171",
+    "city": "Palwal",
+    "state": "Haryana",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C172",
+    "city": "Panipat",
+    "state": "Haryana",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C173",
+    "city": "Paschim Medinipur",
+    "state": "West Bengal",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C174",
+    "city": "Patiala",
+    "state": "Punjab",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C175",
+    "city": "Pratapgarh",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C176",
+    "city": "Puri",
+    "state": "Odisha",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C177",
+    "city": "Raebareli",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C178",
+    "city": "Ramgarh",
+    "state": "Jharkhand",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C179",
+    "city": "Rampur",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C180",
+    "city": "Ratlam",
+    "state": "Madhya Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C181",
+    "city": "Rewa",
+    "state": "Madhya Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C182",
+    "city": "Rewari",
+    "state": "Haryana",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C183",
+    "city": "Rohtak",
+    "state": "Haryana",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C184",
+    "city": "Roorkee",
+    "state": "Uttarakhand",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C185",
+    "city": "Rudrapur Udham Singh Nagar",
+    "state": "Uttarakhand",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C186",
+    "city": "Sagar",
+    "state": "Madhya Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C187",
+    "city": "Saharanpur",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C188",
+    "city": "Samastipur",
+    "state": "Bihar",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C189",
+    "city": "Sambhal",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C190",
+    "city": "Sangli",
+    "state": "Maharashtra",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C191",
+    "city": "Sarjapura",
+    "state": "Karnataka",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C192",
+    "city": "Sasaram",
+    "state": "Bihar",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C193",
+    "city": "Satara",
+    "state": "Maharashtra",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C194",
+    "city": "Satna",
+    "state": "Madhya Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C195",
+    "city": "Shahabad",
+    "state": "Haryana",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C196",
+    "city": "Shahjahanpur",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C197",
+    "city": "Shamli",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C198",
+    "city": "Sikar",
+    "state": "Rajasthan",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C199",
+    "city": "Sirsa",
+    "state": "Haryana",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C200",
+    "city": "Sitamarhi",
+    "state": "Bihar",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C201",
+    "city": "Sitapur",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C202",
+    "city": "Sohna",
+    "state": "Haryana",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C203",
+    "city": "Sonipat",
+    "state": "Haryana",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C204",
+    "city": "Srinagar",
+    "state": "Jammu & Kashmir",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C205",
+    "city": "Sultanpur",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C206",
+    "city": "Tarn Taran",
+    "state": "Punjab",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C207",
+    "city": "Thanabhawan",
+    "state": "Uttar Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C208",
+    "city": "Tonk",
+    "state": "Rajasthan",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C209",
+    "city": "Tumkur",
+    "state": "Karnataka",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C210",
+    "city": "Ujjain",
+    "state": "Madhya Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C211",
+    "city": "Una",
+    "state": "Himachal Pradesh",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C212",
+    "city": "Vasco",
+    "state": "Goa",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C213",
+    "city": "Wardha",
+    "state": "Maharashtra",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C214",
+    "city": "Yavatmal",
+    "state": "Maharashtra",
+    "tier": "tier2"
+  },
+  {
+    "city_id": "C215",
+    "city": "Yamuna Nagar",
+    "state": "Haryana",
+    "tier": "tier2"
+  }
+]

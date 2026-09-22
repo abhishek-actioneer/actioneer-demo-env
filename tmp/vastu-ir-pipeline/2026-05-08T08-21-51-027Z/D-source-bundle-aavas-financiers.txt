@@ -1,0 +1,1861 @@
+=== NUMBERS (3 extracts, 14522 chars) ===
+--- https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf
+**Statement of financial results for the quarter and year ended March 31,2025**
+**(INR in lakh)**
+**Particulars**
+**Quarter ended**
+**Year ended**
+**31.03.2025**
+**31.12.2024**
+**31.03.2024**
+**31.03.2025**
+**31.03.2024**
+**(Audited)**
+**Refer Note 5**
+**(Unaudited)**
+**(Audited)**
+**Refer Note 5**
+**(Audited)**
+**(Audited)**
+**1 Revenue from operations**
+Interest income
+53,526.20
+51,205.52
+45,861.80
+2,01,767.67
+1,73,465.04
+Fees and commission income
+3,097.71
+2,618.23
+2,849.08
+10,753.74
+8,671.68
+Gain on derecognition of financial instruments under
+amortised cost category
+6,516.42
+5,319.59
+5,511.94
+20,743.56
+17,954.91
+Net gain on fair value changes
+480.97
+530.83
+379.17
+2,185.55
+1,658.19
+**Total revenue from operations**
+**63,621.30**
+**59,674.17**
+**54,601.99**
+**2,35,450.52**
+**2,01,749.82**
+**II**
+Other income
+127.50
+117.56
+78.22
+390.98
+279.82
+**III Total income (l+ll)**
+**63,748.80**
+**59,791.73**
+**54,680.21**
+**2,35,841.50**
+**2,02,029.64**
+**IV Expenses**
+Finance costs
+26,473.75
+
+...
+
+**Statement of financial results for the quarter and year ended March 31,2025**
+**Statement of Cash Flows**
+**(INR in Lakh)**
+**Year ended**
+**Particulars**
+**31.03.2025**
+**31.03.2024**
+**(Audited)**
+**(Audited)**
+**Cash flow from operating activities:**
+**Net profit before tax as per statement of profit and loss**
+**73,258.91**
+**62,444.98**
+**Adjustments for**
+Depreciation and amortisation of property, plant and equipment and right of use assets
+3,645.15
+3,265.98
+Interest on lease liabilities
+503.64
+627.86
+Net gain on derecognition on assigned loans
+(5,851.95)
+(5,191.91)
+Loss/(Gain) on voluntary liquidation of Investment in Subsidiary company
+(5.18)
+59.50
+Loss/(Gain) on sale of Property, plant and equipment
+(47.71)
+(30.80)
+Provision for expected credit loss (ECL)
+2,717.61
+2,387.87
+Provision for employee benefits
+145.79
+191.67
+Net gain on fair value changes
+(2,315.04)
+(1,658.19)
+Derivative mark to market gain
+129.49
+Share based payments
+1,274.96
+860.46
+
+...
+
+April 24, 2025 and subject to audit by the joint statutory auditors of the Company who have expressed an unqualified opinion . The financial results for the
+quarter and year ended March 31, 2024 were audited by Walker Chandiok & Co LLP, Chartered Accountants.
+5 The figures for the last quarter are balancing figures between audited figures in respect of full financial year and the unaudited published year to date
+figures upto the third quarter of the financial year.
+6 During the year ended March 31, 2025, the Company has allotted 3,250 and 1,200 equity shares to eligible employees under Employee stock Option Plan at
+a price of INR 328.00 and 1,580.20 per equity share at premium of INR 318.00 and 1,570.20 per equity share respectively. The Company has also allotted
+9,510 equity shares to eligible employees under Performance stock Option Plan at a price of INR 10.00 per equity share.
+7 Aavas Finserv Limited, erstwhile wholly owned subsidiary ("subsidiary") of the Company which was under voluntary liquidation, has received dissolution
+order from NCLT dated January 28, 2025. Aavas Financiers Limited don't have any subsidiary/associate/joint venture company(ies), as on March 31, 2025.
+8 Disclosures pursuant to RBI Notification-RBI/DOR/2021-22/86 DOR.STR.REC.51/21.04.048/2021-22 dated September 24, 2021
+(a) Details of transfer through assignment in respect of loans not in default during the quarter and year ended March 31, 2025.
+**Particulars**
+**Quarter ended**
+**March 31, 2025**
+**Year ended**
+**March 31, 2025**
+Entity
+NBFC (Housing Finance Company)
+NBFC (Housing Finance Company)
+Count of loan accounts assigned
+4,994 loans
+17,783 loans
+Amount of loan accounts assigned
+INR 50,397 lakh
+INR 1,69,178 lakh
+Weighted average maturity
+137 months
+131 months
+Weighted average holding period
+9 months
+9 months
+Retention of beneficial economic interest (MRR)
+10%
+10%
+Tangible security coverage
+100%
+100%
+Rating wise distribution of rated loans
+Unrated
+Unrated
+(b) Details of transfer through Co-lending in resepct of loans not in default during the quarter and year ended March 31, 2025.
+Particulars
+**Quarter ended**
+**March 31,2025**
+**Year ended**
+**March 31,2025**
+Entity
+NBFC (Housing Finance Company)
+NBFC (Housing Finance Comoanvl
+Count of loan accounts assigned
+283 loans
+840 loans
+Amount of loan accounts assigned
+INR 4,119 lakh
+INR 12,602 lakh
+Weighted average maturity
+195 months
+182 months
+Weighted average holding period
+2 months
+2 months
+Retention of beneficial economic interest (MRR)
+20%
+20%
+Tangible security coverage
+100%
+100%
+Rating wise distribution of rated loans
+Unrated
+Unrated
+(c) The Company has not transferred or acquired, any stressed loans during the quarter and year ended March 31, 2025.
+(d) The Company has not acquired, any loans not in default during the quarter and year ended March 31, 2025.
+
+...
+
+72.54
+-Diluted
+19.26
+71.97
+e)
+Total Debts to Total Assets
+0.74
+0.74
+h)
+Net Profit Margin(%)
+24.11%
+24.34%
+0
+Sector specific equivalent ratios, as applicable
+0
+Gross Non-Performing Assets (GNPA)
+1.08%
+1.08%
+if)
+Net Non-Performing Assets (NNPA)
+0.73%
+0.73%
+Hi)
+Provision coverage ratio
+60.87%
+60.87%
+iv)
+Capital Risk Adequacy Ratio (CRAR)
+44.50%
+44.50%
+v)
+Liquidity Coverage Ratio (Calculated as per RBI guidelines)
+124.55%
+128.12%
+**Note: 1.** Debt service coverage ratio. Interest service coverage ratio. Current Ratio, Long term debt to working capital, Bad debts to
+account receivable ratio, Current liability ratio, Debtors Turnover, Inventory Turnover, Operating Margin(%) are not applicable, being a
+Housing Finance Company (HFC)
+**Note: 2.** Debt Equity Ratio = (Debt securities+Borrowings+Subordinated liabilities+ Interest accrued on total debt)/Networth
+Total Debts to Total Assets= (Debt securities+Borrowings+Subordinated liabilitiest Interest accrued on total debt)/Total assets
+
+...
+
+**Note:**
+**1. The enclosed figures are based on IND AS Results for the period ended Mar 2025**
+**2. Loan(Advances) amount disclosed In column C & D as secured represent principal outstanding and Includes accrued Interest, If any**
+*** Loan(Advances) by Its existing nature Is not tradable Instrument and hence are valued as per carrying value/book value.**
+**# Listed NCD's are valued at cost method not at market value, hence are valued as per carring value/book value.**
+A gvqs
+FINANCIERS ITU
+S A P N E A AP KE . S A A T H H A M A A R A
+**Annexure-2**
+**Date: April 24, 2025**
+**To,**
+**To,**
+**The National Stock Exchange of India Limited**
+**BSE Limited**
+**Exchange Plaza, C -l, Block G,**
+**Phiroze Jeejeebhoy Towers,**
+**Bandra Kurla Complex,**
+**Dalai Street,**
+**Mumbai - 400051**
+**Mumbai - 400001**
+**Scrip Symbol: AAVAS**
+**Scrip Code: 541988**
+Dear Sir/Madam,
+**Subject: Declaration pursuant to Regulation 33(31(dJ and 52(3J(a) of the SEBI**
+
+--- https://www.aavas.in/uploads/pdf/outcome-46562990.pdf
+**Statement of financial results for the quarter and half year ended September 30, 2025**
+**(INR in lakh)**
+**Particulars**
+**Quarter ended**
+**Half Year ended**
+**Year ended**
+**30.09.2025**
+**30.06.2025**
+**30.09.2024**
+**30.09.2025**
+**30.09.2024**
+**31.03.2025**
+**(Unaudited)**
+**(Unaudited)**
+**(Unaudited)**
+**(Unaudited)**
+**(Unaudited)**
+**(Audited)**
+**1 Revenue from operations**
+Interest income
+56,362.44
+54,894.10
+49,061.32
+1,11,256.54
+97,035.95
+2,01,767.67
+Fees and commission income
+2,755.75
+2,324.71
+2,424.78
+5,080.46
+5,037.80
+10,753.74
+Gain on derecognition of financial instruments under
+amortised cost category
+7,011.17
+4,749.09
+5,854.26
+11,760.26
+8,907.55
+20,743.56
+Net gain on fair value changes
+572.49
+788.21
+575.86
+1,360.70
+1,173.75
+2,185.55
+**Total revenue from operations**
+**66,701.85**
+**62,756.11**
+**57,916,22**
+**1,29,457.96**
+**1,12,155.05**
+**2,35,450.52**
+**II**
+Other income
+43.28
+37.38
+129.24
+80.66
+145.91
+390.98
+**III Total income (l+ll)**
+**66,745.13**
+
+...
+
+Amount of loan accounts assigned
+INR 47,549 Lakh
+INR 85,220 Lakh
+Weighted average maturity
+129 months
+133 months
+Weighted average holding period
+7 month
+9 month
+Retention of beneficial economic interest (MRR)
+10%
+10%
+Tangible security coverage
+100%
+100%
+Rating wise distribution of rated loans
+Unrated
+Unrated
+(b) Details of transfer through Co-lending in resepct of loans not in default during the quarter and half year ended September 30, 2025
+**Particulars**
+**Quarter ended**
+**September 30, 2025**
+**Half year ended**
+**September 30, 2025**
+Entity
+-
+NBFC (Housing Finance Company)
+Count of loan accounts assigned
+-
+1,463 Loans
+Amount of loan accounts assigned
+-
+INR 24,995 lakh
+Weighted average maturity
+-
+215 months
+Weighted average holding period
+-
+8 month
+Retention of beneficial economic interest (MRR)
+-
+20%
+Tangible security coverage
+-
+100%
+Rating wise distribution of rated loans
+-
+Unrated
+
+...
+
+Sector specific equivalent ratios, as applicable
+i)
+Gross Non-Performing Assets (GNPA)
+1.24%
+1.24%
+N)
+Net Non-Performing Assets (NNPA)
+0.85%
+0.85%
+iii)
+Provision coverage ratio
+58.27%
+58.27%
+iv)
+Capital Risk Adequacy Ratio (CRAR)
+46.42%
+46.42%
+v)
+Liquidity Coverage Ratio (Calculated as per RBI guidelines)
+142.90%
+135.59%
+**Note: 1.** Debt service coverage ratio, Interest service coverage ratio, Current Ratio, Long term debt to working capital, Bad debts to
+account receivable ratio, Current liability ratio, Debtors Turnover, Inventory Turnover, Operating Margin(%) are not applicable, being a
+Housing Finance Company (HFC)
+**Note: 2.** Debt Equity Ratio = (Debt securities+Borrowings+Subordinated liabilities-!- Interest accrued on total debt)/Networth
+Total Debts to Total Assets= (Debt securities+Borrowings+Subordinated liabilities-!- Interest accrued on total debt)/Total assets
+Provision Coverage Ratio (PCR)(%) = Total impairment loss allowance / Gross Stage III Loans.
+
+--- https://www.aavas.in/uploads/pdf/financials-85794283.pdf
+**AAVAS FINANCIERS LIMITED**
+**(CIN:L65922RJ2011PLC034297)**
+**Statement of financial results for the quarter ended June 30, 2025**
+**(INR in lakh)**
+**Particulars**
+**Quarter ended**
+**Year ended**
+**30.06.2025**
+**31.03.2025**
+**30.06.2024**
+**31.03.2025**
+**(Unaudited)**
+**(Audited)**
+**Refer Note 3**
+**(Unaudited)**
+**(Audited)**
+**1 Revenue from operations**
+Interest income
+54,894.10
+53,526.20
+47,974.63
+2,01,767.67
+Fees and commission income
+2,324.71
+3,097.71
+2,613.02
+10,753.74
+Gain on derecognition of financial instruments under
+amortised cost category
+4,749.09
+6,516.42
+3,053.29
+20,743.56
+Net gain on fair value changes
+788.21
+480.97
+597.89
+2,185.55
+**Total revenue from operations**
+**62,756.11**
+**63,621.30**
+**54,238.83**
+**2,35,450.52**
+**II**
+Other income
+37.38
+127.50
+16.67
+390.98
+**III Total income (l+ll)**
+**62,793.49**
+**63,748.80**
+**54,255.50**
+**2,35,841.50**
+**IV Expenses**
+Finance costs
+27,134.93
+26,473.75
+23,517.36
+1,00,746.84
+Fees and commission expense
+224.92
+258.40
+
+...
+
+Option Plan at a price of INR 1,580.20 per equity share at premium of INR 1,570.20 per equity share. The Company has also allotted
+1,020 equity shares to eligible employees under Performance stock Option Plan at a price of INR 10.00 per equity share.
+6 Disclosures pursuant to RBI Notification-RBI/DOR/2021-22/86 DOR.STR.REC.51/21.04.048/2021-22 dated September 24, 2021
+(a) Details of transfer through assignment in respect of loans not in default during the quarter ended June 30, 2025.
+**Particulars**
+**Quarter ended**
+**June 30, 2025**
+Entity
+NBFC (Housing Finance Company)
+Count of loan accounts assigned
+3,500 Loans
+Amount of loan accounts assigned
+INR 37,671 lakh
+Weighted average maturity
+138 months
+Weighted average holding period
+11 Months
+Retention of beneficial economic interest (MRR)
+10%
+Tangible security coverage
+100%
+Rating wise distribution of rated loans
+Unrated
+**AAVAS FINANCIERS LIMITED**
+**(CIN:L65922RJ2011PLC034297)**
+**Statement of financial results for the quarter ended June 30, 2025**
+(b) Details of transfer through Co-lending in respect of loans not in default during the quarter ended June 30, 2025.
+**Particulars**
+**Quarter ended**
+**June 30, 2025**
+Entity
+NBFC (Housing Finance Company)
+Count of loan accounts assigned
+1,463 Loans
+Amount of loan accounts assigned
+INR 24,995 lakh
+Weighted average maturity
+215 months
+Weighted average holding period
+8 Months
+Retention of beneficial economic interest (MRR)
+20%
+Tangible security coverage
+100%
+Rating wise distribution of rated loans
+Unrated
+(c) The Company has not transferred or acquired, any stressed loans during the quarter ended June 30, 2025.
+(d) The Company has not acquired, any loans not in default during the quarter ended June 30, 2025.
+7 Disclosure in compliance with Regulation 52(4) of the SEBI (Listing Obligation and Disclosure Requirements) Regulation, 2015 for the
+quarter ended June 30, 2025 is attached as Annexure A.
+
+...
+
+**(CIN: L65922RJ2011PLC034297)**
+**Annexure A**
+**Disclosures in compliance with regulation 52(4) of the Securities and Exchange Board of India (listing**
+**Obligations and Disclosure Requirements) Regulations, 2015 for the quarter ended June 30,2025**
+**Particulars**
+**For the quarter ended June**
+**30, 2025**
+a)
+Debt Equity Ratio
+3.17
+b)
+Outstanding redeemable preference shares (quantity and value)
+NA
+c)
+Capital redemption reserve/Debenture redemption reserve
+NA
+d)
+Net worth (lakh)
+4,50,980.69
+e)
+Net profit aftertax (lakh)
+13,923.34
+f)
+Earnings per share (INR) (EPS for the quarters are not annualised)
+-Basic
+17.59
+-Diluted
+17.45
+g)
+Total Debts to Total Assets
+0.74
+**h)**
+Net Profit Margin(%)
+22.17%
+i)
+Sector specific equivalent ratios, as applicable
+i)
+Gross Non-Performing Assets (GNPA)
+1.22%
+ii)
+Net Non-Performing Assets (NNPA)
+0.84%
+iii)
+Provision coverage ratio
+57.46%
+iv)
+Capital Risk Adequacy Ratio (CRAR)
+43.20%
+v)
+Liquidity Coverage Ratio (Calculated as per RBI guidelines)
+
+...
+
+1. The enclosed figures are based on IND AS Results for the period ended June 2025
+2. Loan(Advances) amount disclosed in column C & D as secured represent principal outstanding and includes accrued interest, if any
+* Loan(Advances) by its existing nature is not tradable instrument and hence are valued as per carrying value/book value.
+# Listed NCD's are valued at cost method not at market value, hence are valued as per carring value/book value.
+••Excludes interest Accrued
+**Annexure-2**
+**Date: August 12, 2025**
+**To,**
+**The National Stock Exchange of India Limited**
+**Exchange Plaza, C-1, Block G,**
+**Bandra Kurla Complex,**
+**Mumbai** **–** **400051**
+**Scrip Symbol: AAVAS**
+**To,**
+**BSE Limited**
+**Phiroze Jeejeebhoy Towers,**
+**Dalal Street,**
+**Mumbai** **–** **400001**
+**Scrip Code: 541988**
+Dear Sir/Madam,
+**Sub: Declaration in respect of Regulation 52(7) and 52(7A) of Securities and Exchange Board**
+
+
+=== STRATEGY (3 extracts, 19452 chars) ===
+--- https://www.aavas.in/uploads/pdf/outcome-46562990.pdf
+**Net profit before tax as per statement of profit and loss**
+**39,035.67**
+**35,096.88**
+**73,258.91**
+**Adjustments for**
+Depreciation and amortisation of property, plant and equipment and right of use assets
+2,005.62
+1,743.88
+3,645.15
+Interest on lease liabilities
+251.33
+253.92
+503.64
+Net gain on derecognition on assigned loans
+(3,403.13)
+(1,793.50)
+(5,851.95)
+Loss/(Gain) on voluntary liquidation of Investment in Subsidiary company
+-
+-
+(5.18)
+Loss/(Gain) on sale of Property, plant and equipment
+(22.35)
+(19.14)
+(47.71)
+Provision for expected credit loss (ECL)
+1,921.99
+1,341.15
+2,717.61
+Provision for employee benefits
+(17.01)
+(57.66)
+145.79
+Net gain on fair value changes
+(1,230.98)
+(1,173.75)
+(2,315.04)
+Derivative mark to market gain
+(129.71)
+-
+129.49
+Share based payments
+1,430,80
+85.76
+1,274.96
+**Operating profit before working capital changes**
+**39,842.23**
+**35,477.54**
+**73,455.67**
+**Changes in working capital**
+(Increase) in loans
+(45,279.73)
+(72,223.02)
+(2,25,280.01)
+
+...
+
+2025 and subject to limited review by the joint statutory auditors of the Company.
+5 During the half year ended September 30, 2025, the Company has allotted 4,820 and 1,461 equity shares to eligible employees under Employee stock Option Plan at a price
+of INR 1,580.20 and 215.25 per equity share at premium of INR 1,570.20 and 205.25 per equity share respectively. The Company has also allotted 1,407 equity shares to
+eligible employees under Performance stock Option Plan at a price of INR 10.00 per equity share.
+6 Disclosures pursuant to RBI Notification-RBI/DOR/2021-22/86 DOR.STR,REC.51/21.04.04S/2021-22 dated September 24, 2021
+(a) Details of transfer through assignment in respect of loans not in default during the quarter and half year ended September 30, 2025
+**Particulars**
+**Quarter ended**
+**September 30, 2025**
+**Half year ended**
+**September 30, 2025**
+Entity
+NBFC (Housing Finance Company)
+NBFC (Housing Finance Company)
+Count of loan accounts assigned
+4416 Loans
+7916 Loans
+Amount of loan accounts assigned
+INR 47,549 Lakh
+INR 85,220 Lakh
+Weighted average maturity
+129 months
+133 months
+Weighted average holding period
+7 month
+9 month
+Retention of beneficial economic interest (MRR)
+10%
+10%
+Tangible security coverage
+100%
+100%
+Rating wise distribution of rated loans
+Unrated
+Unrated
+(b) Details of transfer through Co-lending in resepct of loans not in default during the quarter and half year ended September 30, 2025
+**Particulars**
+**Quarter ended**
+**September 30, 2025**
+**Half year ended**
+**September 30, 2025**
+Entity
+-
+NBFC (Housing Finance Company)
+Count of loan accounts assigned
+-
+1,463 Loans
+Amount of loan accounts assigned
+-
+INR 24,995 lakh
+Weighted average maturity
+-
+215 months
+Weighted average holding period
+-
+8 month
+Retention of beneficial economic interest (MRR)
+-
+20%
+Tangible security coverage
+-
+100%
+Rating wise distribution of rated loans
+-
+Unrated
+
+...
+
+Sachinderpalsingh Jitendrasingh Bhinder
+Date: November 11, 2025
+_w_
+(Managing Director & CEO)
+DIN-08697657
+**AAVAS FINANCIERS LIMITED**
+**(CIN:L65922RJ2011PLC034297)**
+**Annexure A**
+**Disclosures in compliance with regulation 52(4) of the Securities and Exchange Board of India (listing Obligations and Disclosure**
+**Requirements) Regulations, 2015 for the quarter and half year ended September 30, 2025**
+**Particulars**
+**For the quarter ended**
+**September 30, 2025**
+**For the half year ended**
+**September 30, 2025**
+a)
+Debt Equity Ratio
+3.06
+3.06
+b)
+Outstanding redeemable preference shares (quantity and value)
+NA
+NA
+c)
+Capital redemption reserve/Debenture redemption reserve
+NA
+NA
+d)
+Net worth (lakh)
+4,67,987.00
+4,67,987.00
+e)
+Net profit after tax (lakh)
+16,393.43
+30,316.77
+f)
+Earnings per share (INR) (EPS for the quarters and half year are not
+annualised)
+-Basic
+20.71
+38.30
+-Diluted
+20.55
+38.01
+g)
+Total Debts to Total Assets
+0.74
+0.74
+h)
+Net Profit Margin(%)
+24.56%
+23.40%
+i)
+Sector specific equivalent ratios, as applicable
+i)
+Gross Non-Performing Assets (GNPA)
+1.24%
+1.24%
+N)
+Net Non-Performing Assets (NNPA)
+0.85%
+0.85%
+iii)
+Provision coverage ratio
+58.27%
+58.27%
+iv)
+Capital Risk Adequacy Ratio (CRAR)
+46.42%
+46.42%
+v)
+Liquidity Coverage Ratio (Calculated as per RBI guidelines)
+142.90%
+135.59%
+**Note: 1.** Debt service coverage ratio, Interest service coverage ratio, Current Ratio, Long term debt to working capital, Bad debts to
+account receivable ratio, Current liability ratio, Debtors Turnover, Inventory Turnover, Operating Margin(%) are not applicable, being a
+Housing Finance Company (HFC)
+**Note: 2.** Debt Equity Ratio = (Debt securities+Borrowings+Subordinated liabilities-!- Interest accrued on total debt)/Networth
+Total Debts to Total Assets= (Debt securities+Borrowings+Subordinated liabilities-!- Interest accrued on total debt)/Total assets
+Provision Coverage Ratio (PCR)(%) = Total impairment loss allowance / Gross Stage III Loans.
+
+--- https://www.aavas.in/uploads/pdf/financials-85794283.pdf
+Option Plan at a price of INR 1,580.20 per equity share at premium of INR 1,570.20 per equity share. The Company has also allotted
+1,020 equity shares to eligible employees under Performance stock Option Plan at a price of INR 10.00 per equity share.
+6 Disclosures pursuant to RBI Notification-RBI/DOR/2021-22/86 DOR.STR.REC.51/21.04.048/2021-22 dated September 24, 2021
+(a) Details of transfer through assignment in respect of loans not in default during the quarter ended June 30, 2025.
+**Particulars**
+**Quarter ended**
+**June 30, 2025**
+Entity
+NBFC (Housing Finance Company)
+Count of loan accounts assigned
+3,500 Loans
+Amount of loan accounts assigned
+INR 37,671 lakh
+Weighted average maturity
+138 months
+Weighted average holding period
+11 Months
+Retention of beneficial economic interest (MRR)
+10%
+Tangible security coverage
+100%
+Rating wise distribution of rated loans
+Unrated
+**AAVAS FINANCIERS LIMITED**
+**(CIN:L65922RJ2011PLC034297)**
+**Statement of financial results for the quarter ended June 30, 2025**
+(b) Details of transfer through Co-lending in respect of loans not in default during the quarter ended June 30, 2025.
+**Particulars**
+**Quarter ended**
+**June 30, 2025**
+Entity
+NBFC (Housing Finance Company)
+Count of loan accounts assigned
+1,463 Loans
+Amount of loan accounts assigned
+INR 24,995 lakh
+Weighted average maturity
+215 months
+Weighted average holding period
+8 Months
+Retention of beneficial economic interest (MRR)
+20%
+Tangible security coverage
+100%
+Rating wise distribution of rated loans
+Unrated
+(c) The Company has not transferred or acquired, any stressed loans during the quarter ended June 30, 2025.
+(d) The Company has not acquired, any loans not in default during the quarter ended June 30, 2025.
+7 Disclosure in compliance with Regulation 52(4) of the SEBI (Listing Obligation and Disclosure Requirements) Regulation, 2015 for the
+quarter ended June 30, 2025 is attached as Annexure A.
+8 The Company has maintained at-least 100% security cover on its secured listed non-convertible debentures (NCDs) as on June 30, 2025
+(by creating exclusive charge on hypothecation of specific and identified book debts/receivables). The proceeds of the NCDs, utilised till
+the end of the reporting period, were used for the objects that were stated in the respective offer documents.
+9 The Company is engaged primarily in the business of housing finance within india and there are no separate reportable segments as per
+Ind AS 108 dealing with Operating Segments.
+10 Figures for the previous year/periods have been regrouped and/or reclassified wherever considered necessary. The impact, if any, are
+not material to financial results.
+**Place: Mumbai**
+**Date: August 12, 2025**
+**For and on behalf of the Board of Directors**
+**AAVAS FINANCIERS LIMITED**
+**Sachinderpalsingh Jitendrasingh Bhinder**
+**(Managing Director & CEO)**
+**DIN-08697657**
+%
+**AAVAS FINANCIERS LIMITED**
+
+...
+
+128.28%
+**Note: 1.** Debt service coverage ratio, Interest service coverage ratio, Current Ratio, Long term debt to
+working capital, Bad debts to account receivable ratio, Current liability ratio, Debtors Turnover, Inventory
+Turnover, Operating Margin(%) are not applicable, being a Housing Finance Company (HFC)
+**Note: 2.** Debt Equity Ratio = (Debt securities+Borrowings+Subordinated liabilities-*- Interest accrued on total
+debt)/Networth
+Total Debts to Total Assets= (Debt securities+Borrowings+Subordinated liabilities+ Interest accrued on total
+debt)/Total assets
+Provision Coverage Ratio (PCR)(%) = Total impairment loss allowance / Gross Stage III Loans.
+**Annexure-1**
+**Date: August 12, 2025**
+**To,**
+**The National Stock Exchange of India Limited**
+**Exchange Plaza, C-1, Block G,**
+**Bandra Kurla Complex,**
+**Mumbai** **–** **400051**
+**Scrip Symbol: AAVAS**
+**To,**
+**BSE Limited**
+**Phiroze Jeejeebhoy Towers,**
+**Dalal Street,**
+**Mumbai** **–** **400001**
+**Scrip Code: 541988**
+
+...
+
+**(ACS:60350)**
+**_Enclosed: a/a_**
+SAURABH
+SHARMA
+Digitally signed by
+SAURABH SHARMA
+Date: 2025.08.12
+16:13:31 +05'30'
+**A.** **Statement of utilization of issue proceeds:**
+**Name of**
+**the Issuer**
+**ISIN**
+**Mode of Fund**
+**Raising (Public**
+**issues/ Private**
+**placement)**
+**Type of**
+**instrument**
+**Date of**
+**raising**
+**funds**
+**Amount**
+**Raised**
+**(INR in**
+**crore)**
+**Funds**
+**utilized**
+**(INR in**
+**crore)**
+**Any**
+**deviation**
+**(Yes/ No)**
+**If 8 is Yes, then**
+**specify the**
+**purpose of for**
+**which the funds**
+**were utilized**
+**Remarks,**
+**if any**
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+AAVAS
+FINANCIERS
+LIMITED
+INE216P07241 Private placement
+NCDs
+October
+29, 2024
+630
+292.46
+No
+NA
+NA
+AAVAS
+FINANCIERS
+LIMITED
+INE216P07274
+Private placement
+NCDs
+April 28,
+2025
+100
+100
+No
+NA
+NA
+AAVAS
+FINANCIERS
+LIMITED
+INE216P07282 Private placement
+NCDs
+April 28,
+2025
+100
+21.10
+No
+NA
+NA
+AAVAS
+FINANCIERS
+LIMITED
+INE216P07290 Private placement
+NCDs
+June 26,
+2025
+200
+NIL
+No
+NA
+NA
+**B.**
+**Statement of Deviation / Variation in use of issue proceeds:**
+**Thanks & Regards,**
+**For Aavas Financiers Limited**
+**SAURABH SHARMA**
+**COMPANY SECRETARY AND COMPLIANCE OFFICER**
+**(ACS-60350)**
+**Particulars**
+**Remarks**
+Name of listed entity
+Aavas Financiers Limited
+Mode of fund raising
+Private Placement
+Type of instrument
+Non-Convertible Debentures (NCDs)
+Date of raising funds
+October 29, 2024
+April 28, 2025
+June 26, 2025
+Amount raised
+Rs. 630 Crore
+Rs. 200 Crore
+Rs. 200 Crore
+Report filed for quarter ended
+June 30, 2025
+Is there a deviation/ variation in use of funds raised?
+No
+Whether any approval is required to vary the objects
+of the issue stated in the prospectus/ offer document?
+No
+If yes, details of the approval so required?
+NA
+Date of approval
+NA
+Explanation for the deviation/ variation
+NA
+Comments of the audit committee after review
+NA
+Comments of the auditors, if any
+NA
+Objects for which funds have been raised and where there has been a deviation/ variation, in the following table:
+**Original**
+**object**
+**Modified**
+**object,**
+**if**
+**any**
+**Original**
+**allocation**
+**Modified**
+**allocation, if**
+**any**
+**Funds**
+**utilised**
+**Amount**
+**of**
+**deviation/**
+**variation**
+**for**
+**the**
+**quarter**
+**according**
+**to**
+**applicable**
+**object (in Rs. crore and in %)**
+**Remarks, if**
+**any**
+NA
+Deviation could mean:
+a. Deviation in the objects or purposes for which the funds have been raised.
+b. Deviation in the amount of funds actually utilized as against what was originally disclosed.
+SAURABH
+SHARMA
+Digitally signed by
+SAURABH SHARMA
+Date: 2025.08.12
+16:13:44 +05'30'
+**Ref. No. AAVAS/SEC/2025-26/412**
+**Date: July 08, 2025**
+**To,**
+**The National Stock Exchange of India Limited**
+**Exchange Plaza, C-1, Block G,**
+**Bandra Kurla Complex,**
+**Mumbai** **–** **400051**
+**Scrip Symbol: AAVAS**
+**To,**
+**BSE Limited**
+
+--- https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf
+**Statement of financial results for the quarter and year ended March 31,2025**
+**Statement of Cash Flows**
+**(INR in Lakh)**
+**Year ended**
+**Particulars**
+**31.03.2025**
+**31.03.2024**
+**(Audited)**
+**(Audited)**
+**Cash flow from operating activities:**
+**Net profit before tax as per statement of profit and loss**
+**73,258.91**
+**62,444.98**
+**Adjustments for**
+Depreciation and amortisation of property, plant and equipment and right of use assets
+3,645.15
+3,265.98
+Interest on lease liabilities
+503.64
+627.86
+Net gain on derecognition on assigned loans
+(5,851.95)
+(5,191.91)
+Loss/(Gain) on voluntary liquidation of Investment in Subsidiary company
+(5.18)
+59.50
+Loss/(Gain) on sale of Property, plant and equipment
+(47.71)
+(30.80)
+Provision for expected credit loss (ECL)
+2,717.61
+2,387.87
+Provision for employee benefits
+145.79
+191.67
+Net gain on fair value changes
+(2,315.04)
+(1,658.19)
+Derivative mark to market gain
+129.49
+Share based payments
+1,274.96
+860.46
+**Operating profit before working capital changes**
+**73,455.67**
+**62,957.42**
+**Changes in working capital**
+(Increase) in loans
+(2,25,280.01)
+(2,54,636.13)
+(Increase) / Decrease in financial and other assets
+131.59
+(2,192.21)
+lncrease/(Decrease) in financial and other liabilities
+(1,110.95)
+6,875.54
+**Total of changes in working capital**
+**(2,26,259.37)**
+**(2,49,952.80)**
+Direct taxes paid
+(13,208.92)
+(13,055.77)
+**Net cash flow used in operating activities (A)**
+**(1,66,012.62)**
+**(2,00,051.15)**
+**Cash flow from investing activities:**
+**lnflow/(outflow) on account o f:**
+Proceeds from voluntary liquidation of Investment in Subsidiary company
+5.18
+1,176.34
+Net gain on purchase/sale of Mutual Fund
+2,315.04
+1,658.19
+Purchase of government securities
+(2,305.42)
+(7,143.42)
+Investment in Treasury Bill
+(2,480.79)
+-
+(Investment)/ Redemption of fixed deposits
+22,894.48
+(57,230.54)
+Purchase of property, plant and equipment (including capital work-in-progress)/ intangible assets
+(3,007.06)
+(3,274.41)
+Sale of property, plant and equipment
+201.11
+164.33
+**Net cash flow from/(used) in investing activities (B)**
+**17,622.54**
+**(64,649.51)**
+**Cash flow from financing activities:**
+Issue of equity shares (including share premium)
+30.57
+225.20
+Share / debenture issue expenses
+(684.99)
+(4.99)
+Proceeds from borrowings
+4,57,778.28
+4,50,973.46
+Repayment of borrowings
+(3,07,351.99)
+(2,00,026.76)
+Repayment of lease liabilities (Including Interest)
+(2,306.29)
+(2,077.33)
+**Net cash flow from financing activities (C)**
+**1,47,465.58**
+**2,49,089.58**
+**Net increase/fdecrease) in cash and cash equivalents (A+B+C)**
+**(924.50)**
+**(15,611.08)**
+Cash and cash equivalents as at the beginning of the year
+2,055.80
+17.666.88
+**Cash and cash equivalents at the end of the period**
+**1,131.30**
+**2,055.80**
+**Components of cash and cash equivalents**
+Cash on hand
+296.44
+336.11
+Balance in franking machine
+0.95
+0.95
+Balance with banks
+In current accounts
+2.44
+15.81
+In cash credit
+
+...
+
+Tangible security coverage
+100%
+100%
+Rating wise distribution of rated loans
+Unrated
+Unrated
+(b) Details of transfer through Co-lending in resepct of loans not in default during the quarter and year ended March 31, 2025.
+Particulars
+**Quarter ended**
+**March 31,2025**
+**Year ended**
+**March 31,2025**
+Entity
+NBFC (Housing Finance Company)
+NBFC (Housing Finance Comoanvl
+Count of loan accounts assigned
+283 loans
+840 loans
+Amount of loan accounts assigned
+INR 4,119 lakh
+INR 12,602 lakh
+Weighted average maturity
+195 months
+182 months
+Weighted average holding period
+2 months
+2 months
+Retention of beneficial economic interest (MRR)
+20%
+20%
+Tangible security coverage
+100%
+100%
+Rating wise distribution of rated loans
+Unrated
+Unrated
+(c) The Company has not transferred or acquired, any stressed loans during the quarter and year ended March 31, 2025.
+(d) The Company has not acquired, any loans not in default during the quarter and year ended March 31, 2025.
+9 Disclosure pursuant to RBI Notification -RBI/2021-22/31/DOR.STR.REC.11/21.04.048/2021-22 dated May 05, 2021
+**(INR In lakh)**
+**Type of Borrower**
+**Exposure to**
+**accounts classified**
+**as standard**
+**consequent to**
+**im plementation of**
+**resolution plan -**
+**position as at**
+**September 30, 2024**
+**(A)**
+**of (A) aggregate**
+**debt that slipped**
+**into NPA during the**
+**half year ended**
+**March 31, 2025**
+**Of (A) amount**
+**written off during**
+**the half year ended**
+**March 31, 2025**
+**O f (A) am ount paid**
+**by the borrower**
+**during the half year**
+**ended March 31,**
+**2025***
+**Exposure to**
+**accounts classified**
+**as standard**
+**consequent to**
+**implementation of**
+**resolution plan -**
+**position as at half**
+**year ended March**
+**31, 2025**
+Personal Loan
+6,369.26
+147.57
+7.14
+250.17
+5,964.38
+Corporate Loan
+-
+-
+-
+-
+-
+Of which MSMEs
+**-**
+**-**
+-
+-
+Others
+-
+-
+-
+-
+-
+Total
+**6,369.26**
+**147.57**
+**7.14**
+**250.17**
+**5,964.38**
+
+...
+
+**Circular**
+**No.**
+**SEBI/HO/CFD/PoD2/CIR/P/0155**
+**dated**
+**November 11, 2024 are as follows:**
+Reason for Change viz. Appointment,
+Appointment
+of
+M/s
+ChanUrasekaran
+Associates, Practicing Company Secretaries,
+as Secretarial Auditor of the company.
+re appoint^ ment,
+r e si g n at i o n, r e i m o vai, u ^^at^h
+o r o th e r
+Date
+of
+Appointment/re-
+The BoarU at its meeting held on April 24,
+2025, approved the appointment of M/s
+ChanUrasekaran
+Associates,
+Practicing
+Company Secretaries as Secretarial Auditors
+for five consecutive years commencing from FY
+2025-26 till FY 2029-30, subject to approval of
+the shareholders.
+& term
+of
+appointment/re appointment
+Brief Profile (in case of appointment);
+With a
+rich
+legacy spanning over three
+decades, Chandrasekaran Associates is a firm
+of company secretaries ("CACS") that delivers
+expertise and
+knowledge through diverse
+services and thus simplifies the complexities of
+corporate legal regulations & compliances for
+
+...
+
+**r a is in g**
+**fu n d s**
+**A m o u n t**
+**R a is e d**
+**( I N R in**
+**c r o r e )**
+**F u n d s**
+**u tiliz e d**
+**( I N R in**
+**c r o r e )**
+**A n y**
+**d e v ia t io n**
+**( Y e s / N o )**
+**If 8 is Y e s , t h e n**
+**s p e c if y**
+**th e**
+**p u r p o s e**
+**o f**
+**for**
+**w h ic h th e fu n d s**
+**w e r e u tiliz e d**
+**R e m a rk s ,**
+**if a n y**
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+AAVAS
+FINANCIERS
+LIMITED
+INE216P07241 Private placem ent
+NCDs
+October
+29, 2024
+630
+287.42
+No
+NA
+NA
+INE216P07258 Private placem ent
+NCDs
+January
+15, 2025
+100
+100
+No
+NA
+NA
+INE216P07266 Private placem ent
+NCDs
+January
+15, 2025
+100
+100
+No
+NA
+NA
+**B.**
+**Statement of Deviation / Variation in use of issue proceeds:**
+**Particulars**
+**Remarks**
+Name of listed entity
+Aavas Financiers Limited
+Mode of fund raising
+Private Placement
+Type of instrument
+Non-Convertible Debentures (NCDs)
+Date of raising funds
+October 29, 2024
+January 15, 2025
+Amount raised
+Rs. 630 Crore
+Rs. 200 Crore
+Report filed for quarter ended
+March 31, 2025
+Is there a deviation/ variation in use of funds raised?
+No
+Whether any approval is required to vary the objects
+of the issue stated in the prospectus/ offer document?
+No
+If yes, details of the approval so required?
+NA
+Date of approval
+NA
+Explanation for the deviation/ variation
+NA
+Comments of the audit committee after review
+NA
+Comments of the auditors, if any
+NA
+Objects for which funds have been raised and where there has been a deviation/ variation, in the following table:
+**Original**
+**object**
+**Modified**
+**object,**
+**if**
+**any**
+**Original**
+**allocation**
+**Modified**
+**allocation, if**
+**any**
+**Funds**
+**utilised**
+**Amount**
+**of**
+**deviation/**
+**variation for the quarter**
+**according**
+**to**
+**applicable**
+**object (in Rs. crore and in**
+**%)**
+**Remarks,**
+**if**
+**any**
+NA
+Deviation could mean:
+a. Deviation in the objects or purposes for which the funds have been raised.
+
+
+=== PERFORMANCE (3 extracts, 5909 chars) ===
+--- https://www.aavas.in/uploads/pdf/financials-85794283.pdf
+8 The Company has maintained at-least 100% security cover on its secured listed non-convertible debentures (NCDs) as on June 30, 2025
+(by creating exclusive charge on hypothecation of specific and identified book debts/receivables). The proceeds of the NCDs, utilised till
+the end of the reporting period, were used for the objects that were stated in the respective offer documents.
+9 The Company is engaged primarily in the business of housing finance within india and there are no separate reportable segments as per
+Ind AS 108 dealing with Operating Segments.
+10 Figures for the previous year/periods have been regrouped and/or reclassified wherever considered necessary. The impact, if any, are
+not material to financial results.
+**Place: Mumbai**
+**Date: August 12, 2025**
+**For and on behalf of the Board of Directors**
+**AAVAS FINANCIERS LIMITED**
+**Sachinderpalsingh Jitendrasingh Bhinder**
+**(Managing Director & CEO)**
+**DIN-08697657**
+%
+**AAVAS FINANCIERS LIMITED**
+
+--- https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf
+We conducted our audit in accordance with the Standards on Auditing (SAs') specified under section 143(10)
+of the Act. Our responsibilities under those SAs are further described in the Auditors’ Responsibilities for the
+Audit of the Financial Results section of our report. We are independent of the Company in accordance with
+the Code of Ethics issued by the Institute of Chartered Accountants of India together with the ethical
+requirements that are relevant to our audit of the Financial Statements under the provisions of the Act and
+the Rules thereunder, and we have fulfilled our other ethical responsibilities in accordance with these
+requirements and the Code of Ethics. We believe that the audit evidence obtained by us is sufficient and
+appropriate to provide a basis for our opinion.
+**Management and Board of Directors Responsibility for the Financial Results**
+4.
+This Statement, which is the responsibility of the Company’s Management and approved by the Board of
+
+...
+
+* Amount paid by the borrower during the half year is net of additions.
+**AAVAS FINANCIERS LIMITED**
+**(CIN: L65922RJ2011PLC034297)**
+**Statement of financial results for the quarter and year ended March 31,2025**
+10 Disclosure in compliance with Regulation 52(4) of the SEBI (Listing Obligation and Disclosure Requirements) Regulation, 2015 for the quarter and year ended
+March 31, 2025 is attached as Annexure A.
+11 The Company has maintained at-least 100% security cover on its secured listed non-convertible debentures (NCDs) as on March 31, 2025 (by creating
+exclusive charge on hypothecation of specific and identified book debts/receivables). The proceeds of the NCDs, utilised till the end of the reporting period,
+were used for the objects that were stated in the respective offer documents.
+12 The Company is engaged primarily in the business of housing finance within india and there are no separate reportable segments as per Ind AS 108 dealing
+with Operating Segments.
+
+...
+
+72.54
+-Diluted
+19.26
+71.97
+e)
+Total Debts to Total Assets
+0.74
+0.74
+h)
+Net Profit Margin(%)
+24.11%
+24.34%
+0
+Sector specific equivalent ratios, as applicable
+0
+Gross Non-Performing Assets (GNPA)
+1.08%
+1.08%
+if)
+Net Non-Performing Assets (NNPA)
+0.73%
+0.73%
+Hi)
+Provision coverage ratio
+60.87%
+60.87%
+iv)
+Capital Risk Adequacy Ratio (CRAR)
+44.50%
+44.50%
+v)
+Liquidity Coverage Ratio (Calculated as per RBI guidelines)
+124.55%
+128.12%
+**Note: 1.** Debt service coverage ratio. Interest service coverage ratio. Current Ratio, Long term debt to working capital, Bad debts to
+account receivable ratio, Current liability ratio, Debtors Turnover, Inventory Turnover, Operating Margin(%) are not applicable, being a
+Housing Finance Company (HFC)
+**Note: 2.** Debt Equity Ratio = (Debt securities+Borrowings+Subordinated liabilities+ Interest accrued on total debt)/Networth
+Total Debts to Total Assets= (Debt securities+Borrowings+Subordinated liabilitiest Interest accrued on total debt)/Total assets
+
+--- https://www.aavas.in/uploads/pdf/outcome-46562990.pdf
+9 The Company has maintained at-least 100% security cover on its secured listed non-convertible debentures (NCDs) as on September 30, 2025 (by creating exclusive charge on
+hypothecation of specific and identified book debts/receivables). The proceeds of the NCDs, utilised till the end of the reporting period, were used for the objects that were
+stated in the respective offer documents,
+10 The Company is engaged primarily in the business of housing finance within india and there are no separate reportable segments as per Ind AS 108 dealing with Operating
+Segments.
+11 Figures for the previous year/periods have been regrouped and/or reclassified wherever considered necessary. The impact, if any, are not material to financial results.
+**AAVAS FINANCIERS LIMITED**
+**(CIN: L65922RJ2011PLC034297)**
+**Statement of financial results for the quarter and half year ended September 30, 2025**
+For and on behalf of the Board of Directors
+_^_
+AAVAS FINANCIERS LIMITED
+_&_
+Place: Mumbai
+
+...
+
+Sector specific equivalent ratios, as applicable
+i)
+Gross Non-Performing Assets (GNPA)
+1.24%
+1.24%
+N)
+Net Non-Performing Assets (NNPA)
+0.85%
+0.85%
+iii)
+Provision coverage ratio
+58.27%
+58.27%
+iv)
+Capital Risk Adequacy Ratio (CRAR)
+46.42%
+46.42%
+v)
+Liquidity Coverage Ratio (Calculated as per RBI guidelines)
+142.90%
+135.59%
+**Note: 1.** Debt service coverage ratio, Interest service coverage ratio, Current Ratio, Long term debt to working capital, Bad debts to
+account receivable ratio, Current liability ratio, Debtors Turnover, Inventory Turnover, Operating Margin(%) are not applicable, being a
+Housing Finance Company (HFC)
+**Note: 2.** Debt Equity Ratio = (Debt securities+Borrowings+Subordinated liabilities-!- Interest accrued on total debt)/Networth
+Total Debts to Total Assets= (Debt securities+Borrowings+Subordinated liabilities-!- Interest accrued on total debt)/Total assets
+Provision Coverage Ratio (PCR)(%) = Total impairment loss allowance / Gross Stage III Loans.
+
+
+=== RISK_OUTLOOK (3 extracts, 5820 chars) ===
+--- https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf
+72.54
+-Diluted
+19.26
+71.97
+e)
+Total Debts to Total Assets
+0.74
+0.74
+h)
+Net Profit Margin(%)
+24.11%
+24.34%
+0
+Sector specific equivalent ratios, as applicable
+0
+Gross Non-Performing Assets (GNPA)
+1.08%
+1.08%
+if)
+Net Non-Performing Assets (NNPA)
+0.73%
+0.73%
+Hi)
+Provision coverage ratio
+60.87%
+60.87%
+iv)
+Capital Risk Adequacy Ratio (CRAR)
+44.50%
+44.50%
+v)
+Liquidity Coverage Ratio (Calculated as per RBI guidelines)
+124.55%
+128.12%
+**Note: 1.** Debt service coverage ratio. Interest service coverage ratio. Current Ratio, Long term debt to working capital, Bad debts to
+account receivable ratio, Current liability ratio, Debtors Turnover, Inventory Turnover, Operating Margin(%) are not applicable, being a
+Housing Finance Company (HFC)
+**Note: 2.** Debt Equity Ratio = (Debt securities+Borrowings+Subordinated liabilities+ Interest accrued on total debt)/Networth
+Total Debts to Total Assets= (Debt securities+Borrowings+Subordinated liabilitiest Interest accrued on total debt)/Total assets
+
+--- https://www.aavas.in/uploads/pdf/financials-85794283.pdf
+Option Plan at a price of INR 1,580.20 per equity share at premium of INR 1,570.20 per equity share. The Company has also allotted
+1,020 equity shares to eligible employees under Performance stock Option Plan at a price of INR 10.00 per equity share.
+6 Disclosures pursuant to RBI Notification-RBI/DOR/2021-22/86 DOR.STR.REC.51/21.04.048/2021-22 dated September 24, 2021
+(a) Details of transfer through assignment in respect of loans not in default during the quarter ended June 30, 2025.
+**Particulars**
+**Quarter ended**
+**June 30, 2025**
+Entity
+NBFC (Housing Finance Company)
+Count of loan accounts assigned
+3,500 Loans
+Amount of loan accounts assigned
+INR 37,671 lakh
+Weighted average maturity
+138 months
+Weighted average holding period
+11 Months
+Retention of beneficial economic interest (MRR)
+10%
+Tangible security coverage
+100%
+Rating wise distribution of rated loans
+Unrated
+**AAVAS FINANCIERS LIMITED**
+**(CIN:L65922RJ2011PLC034297)**
+
+...
+
+**(CIN: L65922RJ2011PLC034297)**
+**Annexure A**
+**Disclosures in compliance with regulation 52(4) of the Securities and Exchange Board of India (listing**
+**Obligations and Disclosure Requirements) Regulations, 2015 for the quarter ended June 30,2025**
+**Particulars**
+**For the quarter ended June**
+**30, 2025**
+a)
+Debt Equity Ratio
+3.17
+b)
+Outstanding redeemable preference shares (quantity and value)
+NA
+c)
+Capital redemption reserve/Debenture redemption reserve
+NA
+d)
+Net worth (lakh)
+4,50,980.69
+e)
+Net profit aftertax (lakh)
+13,923.34
+f)
+Earnings per share (INR) (EPS for the quarters are not annualised)
+-Basic
+17.59
+-Diluted
+17.45
+g)
+Total Debts to Total Assets
+0.74
+**h)**
+Net Profit Margin(%)
+22.17%
+i)
+Sector specific equivalent ratios, as applicable
+i)
+Gross Non-Performing Assets (GNPA)
+1.22%
+ii)
+Net Non-Performing Assets (NNPA)
+0.84%
+iii)
+Provision coverage ratio
+57.46%
+iv)
+Capital Risk Adequacy Ratio (CRAR)
+43.20%
+v)
+Liquidity Coverage Ratio (Calculated as per RBI guidelines)
+128.28%
+**Note: 1.** Debt service coverage ratio, Interest service coverage ratio, Current Ratio, Long term debt to
+working capital, Bad debts to account receivable ratio, Current liability ratio, Debtors Turnover, Inventory
+Turnover, Operating Margin(%) are not applicable, being a Housing Finance Company (HFC)
+**Note: 2.** Debt Equity Ratio = (Debt securities+Borrowings+Subordinated liabilities-*- Interest accrued on total
+debt)/Networth
+Total Debts to Total Assets= (Debt securities+Borrowings+Subordinated liabilities+ Interest accrued on total
+debt)/Total assets
+Provision Coverage Ratio (PCR)(%) = Total impairment loss allowance / Gross Stage III Loans.
+**Annexure-1**
+**Date: August 12, 2025**
+**To,**
+**The National Stock Exchange of India Limited**
+**Exchange Plaza, C-1, Block G,**
+**Bandra Kurla Complex,**
+**Mumbai** **–** **400051**
+**Scrip Symbol: AAVAS**
+**To,**
+**BSE Limited**
+**Phiroze Jeejeebhoy Towers,**
+**Dalal Street,**
+**Mumbai** **–** **400001**
+**Scrip Code: 541988**
+
+--- https://www.aavas.in/uploads/pdf/outcome-46562990.pdf
+Amount of loan accounts assigned
+INR 47,549 Lakh
+INR 85,220 Lakh
+Weighted average maturity
+129 months
+133 months
+Weighted average holding period
+7 month
+9 month
+Retention of beneficial economic interest (MRR)
+10%
+10%
+Tangible security coverage
+100%
+100%
+Rating wise distribution of rated loans
+Unrated
+Unrated
+(b) Details of transfer through Co-lending in resepct of loans not in default during the quarter and half year ended September 30, 2025
+**Particulars**
+**Quarter ended**
+**September 30, 2025**
+**Half year ended**
+**September 30, 2025**
+Entity
+-
+NBFC (Housing Finance Company)
+Count of loan accounts assigned
+-
+1,463 Loans
+Amount of loan accounts assigned
+-
+INR 24,995 lakh
+Weighted average maturity
+-
+215 months
+Weighted average holding period
+-
+8 month
+Retention of beneficial economic interest (MRR)
+-
+20%
+Tangible security coverage
+-
+100%
+Rating wise distribution of rated loans
+-
+Unrated
+
+...
+
+Sector specific equivalent ratios, as applicable
+i)
+Gross Non-Performing Assets (GNPA)
+1.24%
+1.24%
+N)
+Net Non-Performing Assets (NNPA)
+0.85%
+0.85%
+iii)
+Provision coverage ratio
+58.27%
+58.27%
+iv)
+Capital Risk Adequacy Ratio (CRAR)
+46.42%
+46.42%
+v)
+Liquidity Coverage Ratio (Calculated as per RBI guidelines)
+142.90%
+135.59%
+**Note: 1.** Debt service coverage ratio, Interest service coverage ratio, Current Ratio, Long term debt to working capital, Bad debts to
+account receivable ratio, Current liability ratio, Debtors Turnover, Inventory Turnover, Operating Margin(%) are not applicable, being a
+Housing Finance Company (HFC)
+**Note: 2.** Debt Equity Ratio = (Debt securities+Borrowings+Subordinated liabilities-!- Interest accrued on total debt)/Networth
+Total Debts to Total Assets= (Debt securities+Borrowings+Subordinated liabilities-!- Interest accrued on total debt)/Total assets
+Provision Coverage Ratio (PCR)(%) = Total impairment loss allowance / Gross Stage III Loans.

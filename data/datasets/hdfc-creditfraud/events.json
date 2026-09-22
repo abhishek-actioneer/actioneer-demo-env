@@ -1,0 +1,1488 @@
+[
+  {
+    "id": "transaction_attempted",
+    "displayName": "Transaction Attempted",
+    "category": "Card Payments",
+    "table": "transactions",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "txn_type",
+        "displayName": "Transaction Type",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "channel",
+        "displayName": "Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "response",
+        "displayName": "Response",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_country",
+        "displayName": "Transaction Country",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "currency",
+        "displayName": "Currency",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "auth_method",
+        "displayName": "Authentication Method",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "token_used_flag",
+        "displayName": "Token Used",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "is_fraud_flag",
+        "displayName": "Confirmed Fraud",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "purchase_attempted",
+    "displayName": "Purchase Attempted",
+    "category": "Card Payments",
+    "table": "transactions",
+    "filterColumn": "txn_type",
+    "filterValue": "PURCHASE",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "response",
+        "displayName": "Response",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_country",
+        "displayName": "Transaction Country",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "currency",
+        "displayName": "Currency",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "mcc",
+        "displayName": "MCC",
+        "type": "string",
+        "cardinalityHint": "medium"
+      },
+      {
+        "column": "auth_method",
+        "displayName": "Authentication Method",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "pos_entry_mode",
+        "displayName": "POS Entry Mode",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "token_used_flag",
+        "displayName": "Token Used",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "purchase_approved",
+    "displayName": "Purchase Approved",
+    "category": "Card Payments",
+    "table": "transactions",
+    "filterSQL": "txn_type = 'PURCHASE' AND response = 'APPROVED'",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_country",
+        "displayName": "Transaction Country",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "currency",
+        "displayName": "Currency",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "mcc",
+        "displayName": "MCC",
+        "type": "string",
+        "cardinalityHint": "medium"
+      },
+      {
+        "column": "auth_method",
+        "displayName": "Authentication Method",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "token_used_flag",
+        "displayName": "Token Used",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "purchase_declined",
+    "displayName": "Purchase Declined",
+    "category": "Card Payments",
+    "table": "transactions",
+    "filterSQL": "txn_type = 'PURCHASE' AND response = 'DECLINED'",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "decline_reason",
+        "displayName": "Decline Reason",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_country",
+        "displayName": "Transaction Country",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "currency",
+        "displayName": "Currency",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "auth_method",
+        "displayName": "Authentication Method",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "transaction_held_for_confirmation",
+    "displayName": "Transaction Held for Confirmation",
+    "category": "Fraud Monitoring",
+    "table": "transactions",
+    "filterColumn": "response",
+    "filterValue": "HELD_FOR_CONFIRMATION",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "txn_type",
+        "displayName": "Transaction Type",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "channel",
+        "displayName": "Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_country",
+        "displayName": "Transaction Country",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "currency",
+        "displayName": "Currency",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "auth_method",
+        "displayName": "Authentication Method",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "international_purchase_attempted",
+    "displayName": "International Purchase Attempted",
+    "category": "Cross-Border Payments",
+    "table": "transactions",
+    "filterSQL": "txn_type = 'PURCHASE' AND txn_country <> 'IN'",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_country",
+        "displayName": "Transaction Country",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "currency",
+        "displayName": "Currency",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "response",
+        "displayName": "Response",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "auth_method",
+        "displayName": "Authentication Method",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "ecommerce_purchase_attempted",
+    "displayName": "E-commerce Purchase Attempted",
+    "category": "Digital Commerce",
+    "table": "transactions",
+    "filterColumn": "channel",
+    "filterValue": "ECOM",
+    "filterSQL": "channel = 'ECOM' AND txn_type = 'PURCHASE'",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "response",
+        "displayName": "Response",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_country",
+        "displayName": "Transaction Country",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "currency",
+        "displayName": "Currency",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "auth_method",
+        "displayName": "Authentication Method",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "token_used_flag",
+        "displayName": "Token Used",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "upi_purchase_attempted",
+    "displayName": "UPI Purchase Attempted",
+    "category": "Digital Commerce",
+    "table": "transactions",
+    "filterColumn": "channel",
+    "filterValue": "UPI",
+    "filterSQL": "channel = 'UPI' AND txn_type = 'PURCHASE'",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "response",
+        "displayName": "Response",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_country",
+        "displayName": "Transaction Country",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "currency",
+        "displayName": "Currency",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "token_used_flag",
+        "displayName": "Token Used",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "contactless_purchase_attempted",
+    "displayName": "Contactless Purchase Attempted",
+    "category": "Card Payments",
+    "table": "transactions",
+    "filterColumn": "channel",
+    "filterValue": "CONTACTLESS",
+    "filterSQL": "channel = 'CONTACTLESS' AND txn_type = 'PURCHASE'",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "response",
+        "displayName": "Response",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_country",
+        "displayName": "Transaction Country",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "auth_method",
+        "displayName": "Authentication Method",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "pos_entry_mode",
+        "displayName": "POS Entry Mode",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "tokenized_transaction_used",
+    "displayName": "Tokenized Transaction Used",
+    "category": "Digital Commerce",
+    "table": "transactions",
+    "filterColumn": "token_used_flag",
+    "filterValue": "true",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "txn_type",
+        "displayName": "Transaction Type",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "channel",
+        "displayName": "Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "response",
+        "displayName": "Response",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_country",
+        "displayName": "Transaction Country",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "auth_method",
+        "displayName": "Authentication Method",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "confirmed_fraud_transaction",
+    "displayName": "Confirmed Fraud Transaction",
+    "category": "Fraud Loss",
+    "table": "transactions",
+    "filterColumn": "is_fraud_flag",
+    "filterValue": "true",
+    "countColumn": "txn_id",
+    "valueColumn": "amount_inr",
+    "properties": [
+      {
+        "column": "txn_type",
+        "displayName": "Transaction Type",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "channel",
+        "displayName": "Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "response",
+        "displayName": "Response",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "txn_country",
+        "displayName": "Transaction Country",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "currency",
+        "displayName": "Currency",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "auth_method",
+        "displayName": "Authentication Method",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "fraud_alert_generated",
+    "displayName": "Fraud Alert Generated",
+    "category": "Fraud Monitoring",
+    "table": "fraud_alerts",
+    "countColumn": "alert_id",
+    "valueColumn": "risk_score",
+    "dateColumn": "risk_scored_ts",
+    "properties": [
+      {
+        "column": "severity",
+        "displayName": "Severity",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "alert_channel",
+        "displayName": "Alert Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "delivery_status",
+        "displayName": "Delivery Status",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "customer_response",
+        "displayName": "Customer Response",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "analyst_decision",
+        "displayName": "Analyst Decision",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "shift",
+        "displayName": "Shift",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "disposition",
+        "displayName": "Disposition",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "critical_fraud_alert_generated",
+    "displayName": "Critical Fraud Alert Generated",
+    "category": "Fraud Monitoring",
+    "table": "fraud_alerts",
+    "filterColumn": "severity",
+    "filterValue": "CRITICAL",
+    "countColumn": "alert_id",
+    "valueColumn": "risk_score",
+    "dateColumn": "risk_scored_ts",
+    "properties": [
+      {
+        "column": "alert_channel",
+        "displayName": "Alert Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "delivery_status",
+        "displayName": "Delivery Status",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "customer_response",
+        "displayName": "Customer Response",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "shift",
+        "displayName": "Shift",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "disposition",
+        "displayName": "Disposition",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "fraud_alert_delivered",
+    "displayName": "Fraud Alert Delivered",
+    "category": "Customer Verification",
+    "table": "fraud_alerts",
+    "filterColumn": "delivery_status",
+    "filterValue": "DELIVERED",
+    "countColumn": "alert_id",
+    "valueColumn": "risk_score",
+    "dateColumn": "alert_delivered_ts",
+    "properties": [
+      {
+        "column": "severity",
+        "displayName": "Severity",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "alert_channel",
+        "displayName": "Alert Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "customer_response",
+        "displayName": "Customer Response",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "shift",
+        "displayName": "Shift",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "disposition",
+        "displayName": "Disposition",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "fraud_reported_by_customer",
+    "displayName": "Fraud Reported by Customer",
+    "category": "Customer Verification",
+    "table": "fraud_alerts",
+    "filterColumn": "customer_response",
+    "filterValue": "REPORTED_FRAUD",
+    "countColumn": "alert_id",
+    "valueColumn": "response_latency_s",
+    "dateColumn": "customer_response_ts",
+    "properties": [
+      {
+        "column": "severity",
+        "displayName": "Severity",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "alert_channel",
+        "displayName": "Alert Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "delivery_status",
+        "displayName": "Delivery Status",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "shift",
+        "displayName": "Shift",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "disposition",
+        "displayName": "Disposition",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "transaction_confirmed_genuine_by_customer",
+    "displayName": "Transaction Confirmed Genuine by Customer",
+    "category": "Customer Verification",
+    "table": "fraud_alerts",
+    "filterColumn": "customer_response",
+    "filterValue": "CONFIRMED_GENUINE",
+    "countColumn": "alert_id",
+    "valueColumn": "response_latency_s",
+    "dateColumn": "customer_response_ts",
+    "properties": [
+      {
+        "column": "severity",
+        "displayName": "Severity",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "alert_channel",
+        "displayName": "Alert Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "delivery_status",
+        "displayName": "Delivery Status",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "shift",
+        "displayName": "Shift",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "disposition",
+        "displayName": "Disposition",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "alert_escalated_to_analyst",
+    "displayName": "Alert Escalated to Analyst",
+    "category": "Fraud Operations",
+    "table": "fraud_alerts",
+    "filterSQL": "queue_entered_ts IS NOT NULL",
+    "countColumn": "alert_id",
+    "valueColumn": "handle_time_s",
+    "dateColumn": "queue_entered_ts",
+    "properties": [
+      {
+        "column": "severity",
+        "displayName": "Severity",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "alert_channel",
+        "displayName": "Alert Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "shift",
+        "displayName": "Shift",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "sla_target_min",
+        "displayName": "SLA Target Minutes",
+        "type": "number",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "analyst_decision",
+        "displayName": "Analyst Decision",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "disposition",
+        "displayName": "Disposition",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "analyst_confirmed_fraud",
+    "displayName": "Analyst Confirmed Fraud",
+    "category": "Fraud Operations",
+    "table": "fraud_alerts",
+    "filterColumn": "analyst_decision",
+    "filterValue": "CONFIRM_FRAUD",
+    "countColumn": "alert_id",
+    "valueColumn": "handle_time_s",
+    "dateColumn": "analyst_decision_ts",
+    "properties": [
+      {
+        "column": "severity",
+        "displayName": "Severity",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "alert_channel",
+        "displayName": "Alert Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "shift",
+        "displayName": "Shift",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "sla_target_min",
+        "displayName": "SLA Target Minutes",
+        "type": "number",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "disposition",
+        "displayName": "Disposition",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "sla_breached_alert",
+    "displayName": "SLA Breached Alert",
+    "category": "Fraud Operations",
+    "table": "fraud_alerts",
+    "filterColumn": "sla_breached_flag",
+    "filterValue": "true",
+    "countColumn": "alert_id",
+    "valueColumn": "handle_time_s",
+    "dateColumn": "analyst_decision_ts",
+    "properties": [
+      {
+        "column": "severity",
+        "displayName": "Severity",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "alert_channel",
+        "displayName": "Alert Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "shift",
+        "displayName": "Shift",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "sla_target_min",
+        "displayName": "SLA Target Minutes",
+        "type": "number",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "analyst_decision",
+        "displayName": "Analyst Decision",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "disposition",
+        "displayName": "Disposition",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "true_positive_alert",
+    "displayName": "True Positive Alert",
+    "category": "Fraud Accuracy",
+    "table": "fraud_alerts",
+    "filterColumn": "disposition",
+    "filterValue": "TRUE_POSITIVE",
+    "countColumn": "alert_id",
+    "valueColumn": "risk_score",
+    "dateColumn": "analyst_decision_ts",
+    "properties": [
+      {
+        "column": "severity",
+        "displayName": "Severity",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "alert_channel",
+        "displayName": "Alert Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "customer_response",
+        "displayName": "Customer Response",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "shift",
+        "displayName": "Shift",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "analyst_decision",
+        "displayName": "Analyst Decision",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "false_positive_alert",
+    "displayName": "False Positive Alert",
+    "category": "Fraud Accuracy",
+    "table": "fraud_alerts",
+    "filterColumn": "disposition",
+    "filterValue": "FALSE_POSITIVE",
+    "countColumn": "alert_id",
+    "valueColumn": "risk_score",
+    "dateColumn": "analyst_decision_ts",
+    "properties": [
+      {
+        "column": "severity",
+        "displayName": "Severity",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "alert_channel",
+        "displayName": "Alert Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "customer_response",
+        "displayName": "Customer Response",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "shift",
+        "displayName": "Shift",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "analyst_decision",
+        "displayName": "Analyst Decision",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "blocking_action_taken",
+    "displayName": "Blocking Action Taken",
+    "category": "Fraud Controls",
+    "table": "blocking_actions",
+    "countColumn": "action_id",
+    "valueColumn": "amount_prevented_inr",
+    "dateColumn": "action_ts",
+    "properties": [
+      {
+        "column": "action_type",
+        "displayName": "Action Type",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "initiated_by",
+        "displayName": "Initiated By",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "card_hotlisted",
+    "displayName": "Card Hotlisted",
+    "category": "Fraud Controls",
+    "table": "blocking_actions",
+    "filterColumn": "action_type",
+    "filterValue": "CARD_HOTLISTED",
+    "countColumn": "action_id",
+    "valueColumn": "amount_at_risk_inr",
+    "dateColumn": "action_ts",
+    "properties": [
+      {
+        "column": "initiated_by",
+        "displayName": "Initiated By",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "transaction_declined_inflight",
+    "displayName": "Transaction Declined In-Flight",
+    "category": "Fraud Controls",
+    "table": "blocking_actions",
+    "filterColumn": "action_type",
+    "filterValue": "TXN_DECLINED_INFLIGHT",
+    "countColumn": "action_id",
+    "valueColumn": "amount_prevented_inr",
+    "dateColumn": "action_ts",
+    "properties": [
+      {
+        "column": "initiated_by",
+        "displayName": "Initiated By",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "transaction_held_by_control",
+    "displayName": "Transaction Held by Control",
+    "category": "Fraud Controls",
+    "table": "blocking_actions",
+    "filterColumn": "action_type",
+    "filterValue": "TXN_HELD",
+    "countColumn": "action_id",
+    "valueColumn": "amount_at_risk_inr",
+    "dateColumn": "action_ts",
+    "properties": [
+      {
+        "column": "initiated_by",
+        "displayName": "Initiated By",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "card_reissued_after_risk",
+    "displayName": "Card Reissued After Risk",
+    "category": "Fraud Controls",
+    "table": "blocking_actions",
+    "filterColumn": "action_type",
+    "filterValue": "CARD_REISSUED",
+    "countColumn": "action_id",
+    "valueColumn": "amount_lost_inr",
+    "dateColumn": "action_ts",
+    "properties": [
+      {
+        "column": "initiated_by",
+        "displayName": "Initiated By",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "fraud_episode_confirmed",
+    "displayName": "Fraud Episode Confirmed",
+    "category": "Fraud Loss",
+    "table": "fraud_episodes",
+    "countColumn": "episode_id",
+    "valueColumn": "amount_lost_inr",
+    "dateColumn": "detected_ts",
+    "properties": [
+      {
+        "column": "typology",
+        "displayName": "Fraud Typology",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "detection_source",
+        "displayName": "Detection Source",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "cards_involved_count",
+        "displayName": "Cards Involved",
+        "type": "number",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "real_time_detected_fraud_episode",
+    "displayName": "Real-Time Detected Fraud Episode",
+    "category": "Fraud Monitoring",
+    "table": "fraud_episodes",
+    "filterColumn": "detection_source",
+    "filterValue": "SYSTEM_REALTIME",
+    "countColumn": "episode_id",
+    "valueColumn": "amount_prevented_inr",
+    "dateColumn": "detected_ts",
+    "properties": [
+      {
+        "column": "typology",
+        "displayName": "Fraud Typology",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "cards_involved_count",
+        "displayName": "Cards Involved",
+        "type": "number",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "customer_reported_fraud_episode",
+    "displayName": "Customer Reported Fraud Episode",
+    "category": "Customer Verification",
+    "table": "fraud_episodes",
+    "filterColumn": "detection_source",
+    "filterValue": "CUSTOMER_REPORTED",
+    "countColumn": "episode_id",
+    "valueColumn": "amount_lost_inr",
+    "dateColumn": "detected_ts",
+    "properties": [
+      {
+        "column": "typology",
+        "displayName": "Fraud Typology",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "cards_involved_count",
+        "displayName": "Cards Involved",
+        "type": "number",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "fraud_case_opened",
+    "displayName": "Fraud Case Opened",
+    "category": "Case Management",
+    "table": "case_resolutions",
+    "countColumn": "case_id",
+    "valueColumn": "resolution_days",
+    "dateColumn": "case_opened_ts",
+    "properties": [
+      {
+        "column": "reporting_delay_bucket",
+        "displayName": "Reporting Delay Bucket",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "liability_outcome",
+        "displayName": "Liability Outcome",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "chargeback_raised_flag",
+        "displayName": "Chargeback Raised",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "chargeback_status",
+        "displayName": "Chargeback Status",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "final_status",
+        "displayName": "Final Status",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "cybercrime_1930_referred_flag",
+        "displayName": "1930 Referred",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "chargeback_raised",
+    "displayName": "Chargeback Raised",
+    "category": "Case Management",
+    "table": "case_resolutions",
+    "filterColumn": "chargeback_raised_flag",
+    "filterValue": "true",
+    "countColumn": "case_id",
+    "valueColumn": "amount_recovered_inr",
+    "dateColumn": "case_opened_ts",
+    "properties": [
+      {
+        "column": "chargeback_reason_code",
+        "displayName": "Chargeback Reason Code",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "chargeback_status",
+        "displayName": "Chargeback Status",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "liability_outcome",
+        "displayName": "Liability Outcome",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "final_status",
+        "displayName": "Final Status",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "provisional_credit_issued",
+    "displayName": "Provisional Credit Issued",
+    "category": "Case Management",
+    "table": "case_resolutions",
+    "filterSQL": "provisional_credit_ts IS NOT NULL",
+    "countColumn": "case_id",
+    "valueColumn": "amount_recovered_inr",
+    "dateColumn": "provisional_credit_ts",
+    "properties": [
+      {
+        "column": "reporting_delay_bucket",
+        "displayName": "Reporting Delay Bucket",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "liability_outcome",
+        "displayName": "Liability Outcome",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "chargeback_status",
+        "displayName": "Chargeback Status",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "final_status",
+        "displayName": "Final Status",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "customer_favour_case_resolved",
+    "displayName": "Customer-Favour Case Resolved",
+    "category": "Case Management",
+    "table": "case_resolutions",
+    "filterColumn": "final_status",
+    "filterValue": "RESOLVED_CUSTOMER_FAVOUR",
+    "countColumn": "case_id",
+    "valueColumn": "amount_recovered_inr",
+    "dateColumn": "case_opened_ts",
+    "properties": [
+      {
+        "column": "reporting_delay_bucket",
+        "displayName": "Reporting Delay Bucket",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "liability_outcome",
+        "displayName": "Liability Outcome",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "chargeback_status",
+        "displayName": "Chargeback Status",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "customer_service_ticket_opened",
+    "displayName": "Customer Service Ticket Opened",
+    "category": "Customer Support",
+    "table": "service_interactions",
+    "countColumn": "ticket_id",
+    "valueColumn": "resolution_days",
+    "dateColumn": "opened_ts",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Service Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "category",
+        "displayName": "Ticket Category",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "csat_1_5",
+        "displayName": "CSAT",
+        "type": "number",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "alert_fatigue_complaint_opened",
+    "displayName": "Alert Fatigue Complaint Opened",
+    "category": "Customer Support",
+    "table": "service_interactions",
+    "filterColumn": "category",
+    "filterValue": "ALERT_FATIGUE_COMPLAINT",
+    "countColumn": "ticket_id",
+    "valueColumn": "resolution_days",
+    "dateColumn": "opened_ts",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Service Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "csat_1_5",
+        "displayName": "CSAT",
+        "type": "number",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "false_decline_complaint_opened",
+    "displayName": "False Decline Complaint Opened",
+    "category": "Customer Support",
+    "table": "service_interactions",
+    "filterColumn": "category",
+    "filterValue": "FALSE_DECLINE_COMPLAINT",
+    "countColumn": "ticket_id",
+    "valueColumn": "resolution_days",
+    "dateColumn": "opened_ts",
+    "properties": [
+      {
+        "column": "channel",
+        "displayName": "Service Channel",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "csat_1_5",
+        "displayName": "CSAT",
+        "type": "number",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "card_issued",
+    "displayName": "Card Issued",
+    "category": "Card Lifecycle",
+    "table": "card_lifecycle_events",
+    "filterColumn": "event_type",
+    "filterValue": "ISSUED",
+    "countColumn": "event_id",
+    "dateColumn": "event_ts",
+    "properties": [
+      {
+        "column": "reason",
+        "displayName": "Reason",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "initiated_by",
+        "displayName": "Initiated By",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "card_activated",
+    "displayName": "Card Activated",
+    "category": "Card Lifecycle",
+    "table": "card_lifecycle_events",
+    "filterColumn": "event_type",
+    "filterValue": "ACTIVATED",
+    "countColumn": "event_id",
+    "dateColumn": "event_ts",
+    "properties": [
+      {
+        "column": "reason",
+        "displayName": "Reason",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "initiated_by",
+        "displayName": "Initiated By",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "card_hotlisted_lifecycle",
+    "displayName": "Card Hotlisted in Lifecycle",
+    "category": "Card Lifecycle",
+    "table": "card_lifecycle_events",
+    "filterColumn": "event_type",
+    "filterValue": "HOTLISTED",
+    "countColumn": "event_id",
+    "dateColumn": "event_ts",
+    "properties": [
+      {
+        "column": "reason",
+        "displayName": "Reason",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "initiated_by",
+        "displayName": "Initiated By",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "fraud_reissue_processed",
+    "displayName": "Fraud Reissue Processed",
+    "category": "Card Lifecycle",
+    "table": "card_lifecycle_events",
+    "filterSQL": "event_type = 'REISSUED' AND reason = 'FRAUD_REISSUE'",
+    "countColumn": "event_id",
+    "dateColumn": "event_ts",
+    "properties": [
+      {
+        "column": "initiated_by",
+        "displayName": "Initiated By",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "statement_generated",
+    "displayName": "Statement Generated",
+    "category": "Credit Portfolio",
+    "table": "statements",
+    "countColumn": "statement_id",
+    "valueColumn": "total_spend_inr",
+    "dateColumn": "cycle_end",
+    "properties": [
+      {
+        "column": "revolve_flag",
+        "displayName": "Revolved Balance",
+        "type": "string",
+        "cardinalityHint": "low"
+      },
+      {
+        "column": "dpd_bucket",
+        "displayName": "DPD Bucket",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  },
+  {
+    "id": "balance_revolved",
+    "displayName": "Balance Revolved",
+    "category": "Credit Portfolio",
+    "table": "statements",
+    "filterColumn": "revolve_flag",
+    "filterValue": "true",
+    "countColumn": "statement_id",
+    "valueColumn": "closing_balance_inr",
+    "dateColumn": "cycle_end",
+    "properties": [
+      {
+        "column": "dpd_bucket",
+        "displayName": "DPD Bucket",
+        "type": "string",
+        "cardinalityHint": "low"
+      }
+    ]
+  }
+]

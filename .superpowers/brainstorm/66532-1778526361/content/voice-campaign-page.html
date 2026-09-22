@@ -1,0 +1,42 @@
+<h2>Voice Campaign — Page Layout Options</h2>
+<p class="subtitle">Where does this live and how is it structured?</p>
+
+<div class="options">
+
+  <div class="option" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Under /campaigns (channel tab)</h3>
+      <p>Campaigns page gets two tabs: Email | Voice. Voice tab has a "New Voice Campaign" button → opens a full creation page. Sits alongside existing email campaign list.</p>
+      <div class="pros-cons" style="margin-top:10px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Reuses existing campaigns nav</li><li>All outreach in one place</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Email campaigns are segment-specific today</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>From segment detail page</h3>
+      <p>On any segment's detail page, a "Launch Voice Campaign" button opens a full-page flow (or modal). The segment is pre-selected — user only defines the offer + numbers + launches.</p>
+      <div class="pros-cons" style="margin-top:10px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Natural fit — segment first, action second</li><li>Segment context auto-injected into script</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Campaign list lives under segment (siloed)</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="option" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Standalone /voice-campaigns page</h3>
+      <p>New sidebar nav item. Top-level page: list of voice campaigns + "New Campaign" button. Creation flow has a segment picker as step 1.</p>
+      <div class="pros-cons" style="margin-top:10px;">
+        <div class="pros"><h4>Pros</h4><ul><li>Full campaign list + history visible</li><li>Can create without starting from segment</li></ul></div>
+        <div class="cons"><h4>Cons</h4><ul><li>Adds a nav item</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+</div>

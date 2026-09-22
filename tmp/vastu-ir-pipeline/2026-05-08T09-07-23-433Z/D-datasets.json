@@ -1,0 +1,2612 @@
+[
+  {
+    "company": "Vastu Housing Finance",
+    "financials": [
+      {
+        "period": "FY25",
+        "aum_inr_cr": 11423,
+        "disbursements_inr_cr": 5073,
+        "net_worth_inr_cr": 3754,
+        "nii_inr_cr": 797,
+        "pat_inr_cr": 324,
+        "roa_pct": 3.2,
+        "gnpa_pct": 1.31,
+        "nnpa_pct": 1.06,
+        "pcr_pct": 25,
+        "credit_cost_pct": 0.43,
+        "branches": 226,
+        "customers": 144118,
+        "avg_ticket_size_inr_lakh": 13.2,
+        "citations": {
+          "aum_inr_cr": {
+            "quote": "AUM ... FY25 ... 11,423",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "disbursements_inr_cr": {
+            "quote": "Disbursement ... FY25 ... 5,073",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "net_worth_inr_cr": {
+            "quote": "Net Worth ... FY25 ... 3,754",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "nii_inr_cr": {
+            "quote": "Net Interest Income ... FY25 ... 797",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "pat_inr_cr": {
+            "quote": "PAT ... FY25 ... 324",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "roa_pct": {
+            "quote": "ROA ... FY25 ... 3.2",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "gnpa_pct": {
+            "quote": "Gross Stage 3 assets stood at 1.31% of AUM as on March 31, 2025",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "nnpa_pct": {
+            "quote": "The net Stage 3 assets stood at 1.06% as on March 31, 2025",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "pcr_pct": {
+            "quote": "Provision Coverage Ratio on Stage 3 assets was at 25%",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "credit_cost_pct": {
+            "quote": "Credit Cost ... FY25 ... 0.43",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "branches": {
+            "quote": "Branches ... FY25 ... 226",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "customers": {
+            "quote": "Active Loans ... FY25 ... 1,44,118",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "avg_ticket_size_inr_lakh": {
+            "quote": "average ticket size of around ₹ 13.20 Lakh at Gross Level.",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          }
+        }
+      },
+      {
+        "period": "FY24",
+        "aum_inr_cr": 9137,
+        "disbursements_inr_cr": 4951,
+        "net_worth_inr_cr": 3398,
+        "nii_inr_cr": 619,
+        "pat_inr_cr": 361,
+        "roa_pct": 4.6,
+        "roe_pct": 12.4,
+        "gnpa_pct": 0.89,
+        "nnpa_pct": 0.7,
+        "credit_cost_pct": 0.37,
+        "branches": 206,
+        "customers": 108104,
+        "avg_ticket_size_inr_lakh": 15,
+        "citations": {
+          "aum_inr_cr": {
+            "quote": "AUM ... FY24 ... 9,137",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "disbursements_inr_cr": {
+            "quote": "Disbursement ... FY24 ... 4,951",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "net_worth_inr_cr": {
+            "quote": "Net Worth ... FY24 ... 3,398",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "nii_inr_cr": {
+            "quote": "Net Interest Income ... FY24 ... 619",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "pat_inr_cr": {
+            "quote": "PAT ... FY24 ... 361",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "roa_pct": {
+            "quote": "ROA ... FY24 ... 4.6",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "roe_pct": {
+            "quote": "ROE ... FY24 ... 12.4%",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f"
+          },
+          "gnpa_pct": {
+            "quote": "Gross Stage 3 assets ... 0.89% as on March 31, 2024",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "nnpa_pct": {
+            "quote": "Net Stage 3 assets stood at ... 0.70%",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "credit_cost_pct": {
+            "quote": "Credit Cost ... FY24 ... 0.37",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "branches": {
+            "quote": "Branches ... FY24 ... 206",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "customers": {
+            "quote": "Active Loans ... FY24 ... 1,08,104",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "avg_ticket_size_inr_lakh": {
+            "quote": "average loan size of ... ₹15 lakh in the previous year",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          }
+        }
+      },
+      {
+        "period": "FY23",
+        "aum_inr_cr": 6097,
+        "disbursements_inr_cr": 3616,
+        "net_worth_inr_cr": 2408,
+        "nii_inr_cr": 447,
+        "pat_inr_cr": 285,
+        "roa_pct": 5.4,
+        "roe_pct": 12.6,
+        "gnpa_pct": 0.88,
+        "credit_cost_pct": 0.34,
+        "branches": 179,
+        "customers": 67800,
+        "citations": {
+          "aum_inr_cr": {
+            "quote": "AUM ... FY23 ... 6,097",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "disbursements_inr_cr": {
+            "quote": "Disbursement ... FY23 ... 3,616",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "net_worth_inr_cr": {
+            "quote": "Net Worth ... FY23 ... 2,408",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "nii_inr_cr": {
+            "quote": "Net Interest Income ... FY23 ... 447",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "pat_inr_cr": {
+            "quote": "PAT ... FY23 ... 285",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "roa_pct": {
+            "quote": "ROA ... FY23 ... 5.4",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          }
+        }
+      }
+    ],
+    "strategic_moves": [
+      {
+        "date": "2025-04",
+        "type": "capital_raise",
+        "description": "The parent company infused ₹115 crore of fresh equity into its subsidiary, Vastu Finserve.",
+        "detail": "The infusion was executed during the 2024-25 fiscal year to support the subsidiary's expansion and maintain capital adequacy requirements.",
+        "citation": {
+          "quote": "The parent infused ₹115 crore of fresh equity during the year to support expansion and capital adequacy.",
+          "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+        }
+      },
+      {
+        "date": "2025-03",
+        "type": "capital_raise",
+        "description": "Vastu Housing Finance raised ₹466 crore via Direct Assignment transactions from four lenders.",
+        "detail": "The fundraise included two new lending relationships, one public sector bank, and a large housing finance company (HFC).",
+        "citation": {
+          "quote": "During FY25, the Company raised ₹466 crore via Direct Assignment transactions from four different lenders (out of which two were new relationships)",
+          "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+        }
+      },
+      {
+        "date": "2025-03",
+        "type": "capital_raise",
+        "description": "The company signed a $70 million loan agreement with the Asian Development Bank (ADB).",
+        "detail": "This facility was secured during the 2024-25 fiscal year to scale inclusive and impact-led growth in the housing sector.",
+        "citation": {
+          "quote": "inked a $70 million loan agreement with the Asian Development Bank (ADB). These facilities further strengthen our ability to scale inclusive, impact-led growth.",
+          "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+        }
+      },
+      {
+        "date": "2025-03",
+        "type": "capital_raise",
+        "description": "Vastu Housing Finance secured $50 million in External Commercial Borrowings from the U.S. DFC.",
+        "detail": "The funding from the U.S. International Development Finance Corporation (DFC) aims to expand access to affordable housing finance.",
+        "citation": {
+          "quote": "securing $50 million in external commercial borrowings (ECB) from the U.S. International Development Finance Corporation (DFC)",
+          "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+        }
+      },
+      {
+        "date": "2025-03",
+        "type": "expansion",
+        "description": "The company expanded its geographic presence into the states of Bihar and Odisha.",
+        "detail": "This move is part of the company's responsible growth strategy to diversify its de-risked presence across 15 states and UTs.",
+        "citation": {
+          "quote": "As we enter Bihar and Odisha, we continue to grow responsibly across India.",
+          "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+        }
+      },
+      {
+        "date": "2025-03",
+        "type": "expansion",
+        "description": "Vastu Housing Finance increased its branch network to 226 branches across India.",
+        "detail": "The company expanded from 206 branches in FY24 to 226 in FY25, maintaining a footprint where no state contributes over 15% of AUM.",
+        "citation": {
+          "quote": "Our footprint spans 226 branches across 15 states and UTs, with no single state contributing more than 15% of the total AUM",
+          "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+        }
+      }
+    ],
+    "performance": {
+      "growth_drivers": [
+        {
+          "description": "Deployment of proprietary PULSE 2.0 platform to automate underwriting and streamline customer journeys for underserved semi-urban and rural populations.",
+          "citation": {
+            "quote": "the rollout of PULSE 2.0—our newly developed, fully in-house loan origination and management system. This platform is designed to streamline customer journeys",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          }
+        },
+        {
+          "description": "Expansion into semi-urban and rural markets targeting the self-employed segment through technology-backed underwriting and risk management.",
+          "citation": {
+            "quote": "Large self-employed segment that can be harnessed through the usage of technology and data science backed robust underwriting and risk management processes",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f"
+          }
+        }
+      ],
+      "segment_commentary": [
+        {
+          "segment": "Housing and allied loans",
+          "description": "Focuses on small-ticket housing loans for customers lacking formal income proofs, leveraging a PAN-India presence with no single state exceeding 15% of AUM.",
+          "citation": {
+            "quote": "Vastu HFC has lent to more than 50,000... credit-worthy customers in the country, most of whom lack formal documented income proofs, using innovative and rigorous underwriting methods.",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f"
+          }
+        },
+        {
+          "segment": "Vehicle and allied loans",
+          "description": "Operated through subsidiary Vastu Finserve, this segment targets emerging customer needs in used vehicle financing and maintains a monthly disbursement exit run rate of ~₹75 crore.",
+          "citation": {
+            "quote": "Vastu Finserve India Private Limited was established in September 2019 to address the diverse credit needs... particularly in the used vehicle financing space.",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          }
+        }
+      ],
+      "guidance": [
+        {
+          "description": "Strategic focus for FY26 centers on process simplification and productivity enhancement through the rollout of PULSE 2.0 to drive sustainable business growth.",
+          "citation": {
+            "quote": "In FY26, the Company will maintain its strategic focus on process simplification and productivity enhancement to drive sustainable business growth.",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          }
+        }
+      ],
+      "cohort_or_customer_notes": [
+        {
+          "description": "The customer base exhibits strong gender-based inclusion, with 99% of loans featuring women as primary or co-borrowers.",
+          "citation": {
+            "quote": "99% Women Borrowers: We proudly share that 99% of our loans have women, primary or co-borrowers.",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f"
+          }
+        },
+        {
+          "description": "Portfolio consists of 81% self-employed borrowers with a median CIBIL score of 742 and a median loan-to-value ratio of 45%.",
+          "citation": {
+            "quote": "81% Self-employed... 742 Median CIBIL Score... 45% Median Loan-to-Value Ratio",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f"
+          }
+        }
+      ]
+    },
+    "risk_outlook": {
+      "risk_factors": [
+        {
+          "description": "The company faces interest rate risk due to its exposure to variable interest rates on both financial assets and liabilities.",
+          "citation": {
+            "quote": "Interest rate risk is a concern for the Company since it has assets and liabilities that are depending on variable interest rates.",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          }
+        },
+        {
+          "description": "Geopolitical tensions, including potential regional escalations, pose a threat to sovereign risk premia and the timeline for funding cost relief.",
+          "citation": {
+            "quote": "geopolitical flashpoints, such as a potential India–Pakistan escalation, may elevate sovereign risk premia and delay funding cost relief.",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          }
+        },
+        {
+          "description": "Intense competition from traditional banks is threatening growth in specific housing finance segments.",
+          "citation": {
+            "quote": "rising competition from banks may exert downward pressure on HFC growth in select segments.",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          }
+        }
+      ],
+      "asset_quality_concerns": [
+        {
+          "description": "Geographical and segment-specific stresses have led to a broader market rise in delinquencies.",
+          "citation": {
+            "quote": "The broader market also witnessed a rise in delinquencies, with several geographies and customer segments coming under stress.",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          }
+        },
+        {
+          "description": "Non-housing loan segments exhibit significantly higher NPA percentages compared to individual housing loans.",
+          "citation": {
+            "quote": "Sector Wise NPA... Housing loans: Individuals 0.61%... Non - housing loans: Individuals 1.59%",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f"
+          }
+        }
+      ],
+      "headwinds": [
+        {
+          "description": "Tightened banking system liquidity is putting pressure on the sector's operational landscape.",
+          "citation": {
+            "quote": "Liquidity from the banking system tightened, putting pressure across the sector.",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          }
+        },
+        {
+          "description": "A delay in interest rate cuts by the RBI implies a continued high cost of borrowing for the sector through FY25.",
+          "citation": {
+            "quote": "This implies the elevated cost of borrowing for the sector for most of the fiscal.",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f"
+          }
+        },
+        {
+          "description": "Urban property price inflation and increased regulatory scrutiny following stress events in smaller HFCs are damping growth prospects.",
+          "citation": {
+            "quote": "urban property price inflation, regulatory scrutiny post isolated small-HFC stress events... may exert downward pressure on HFC growth",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          }
+        }
+      ],
+      "outlook": [
+        {
+          "description": "Vastu is projected to deliver mid-teens disbursement growth and repair margins throughout FY2025-26 while keeping GNPA below 2.3%.",
+          "citation": {
+            "quote": "sector is expected to deliver mid-teens growth in disbursements, maintain GNPA below 2.3% and progressively repair margins",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          }
+        },
+        {
+          "description": "The operating environment for FY25 focuses on disciplined growth and digital enablement, offering a clear path for well-governed HFCs.",
+          "citation": {
+            "quote": "In summary, the operating environment for Housing Finance Companies in FY25 remains constructively balanced, with a focus on disciplined growth, prudent regulation, and digital enablement.",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          }
+        }
+      ]
+    },
+    "asset_mix": [
+      {
+        "period": "FY25",
+        "home_loan_pct": 64,
+        "lap_pct": null,
+        "msme_pct": null,
+        "construction_pct": null,
+        "other_pct": 36,
+        "citations": {
+          "home_loan_pct": {
+            "quote": "Housing loans outpaced non-housing growth at 24% YoY, now comprising 64% of AUM (vs. 63% in FY24).",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          }
+        }
+      },
+      {
+        "period": "FY24",
+        "home_loan_pct": 63,
+        "lap_pct": null,
+        "msme_pct": null,
+        "construction_pct": null,
+        "other_pct": 37,
+        "citations": {
+          "home_loan_pct": {
+            "quote": "Housing loans grew faster (49% YoY) than non-housing loans (27% YoY), contributing 63% of AUM",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f"
+          }
+        }
+      }
+    ],
+    "customer_mix": [
+      {
+        "period": "FY25",
+        "self_employed_pct": 80,
+        "salaried_pct": null,
+        "formal_income_pct": null,
+        "informal_income_pct": null,
+        "rural_pct": null,
+        "semi_urban_pct": null,
+        "urban_pct": null,
+        "citations": {
+          "self_employed_pct": {
+            "quote": "More than 80% of AUM is contributed by self-employed borrowers",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          }
+        }
+      },
+      {
+        "period": "FY24",
+        "self_employed_pct": 81,
+        "salaried_pct": 19,
+        "formal_income_pct": null,
+        "informal_income_pct": null,
+        "rural_pct": 35,
+        "semi_urban_pct": null,
+        "urban_pct": null,
+        "citations": {
+          "self_employed_pct": {
+            "quote": "focusing on self-employed individuals who make up 81% of our loan book.",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f"
+          },
+          "salaried_pct": {
+            "quote": "with 19% being salaried and 81% self-employed individuals",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f"
+          },
+          "rural_pct": {
+            "quote": "Rural financing contributes 35% AUM",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f"
+          }
+        }
+      }
+    ],
+    "geographic_mix": [
+      {
+        "period": "FY25",
+        "top_states": [],
+        "states_total": 15,
+        "citation": {
+          "quote": "Vastu operates in 15 states, maintaining a well-diversified portfolio with no single state accounting for more than 15%",
+          "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+        }
+      },
+      {
+        "period": "FY24",
+        "top_states": [],
+        "states_total": 14,
+        "citation": {
+          "quote": "The Company has a diversified presence in India, spread across 14 states",
+          "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f"
+        }
+      }
+    ],
+    "funding_mix": [
+      {
+        "period": "FY25",
+        "bank_borrowings_pct": 60,
+        "ncds_pct": 1,
+        "nhb_refinance_pct": 31,
+        "securitization_pct": null,
+        "ecb_pct": 8,
+        "other_pct": null,
+        "weighted_avg_cost_pct": null,
+        "citations": {
+          "bank_borrowings_pct": {
+            "quote": "total borrowings of ₹5,319 crore consisting of 50% bank term loans, 10% FI term loans",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "ncds_pct": {
+            "quote": "1% NCDs",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "nhb_refinance_pct": {
+            "quote": "31% NHB refinance.",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          },
+          "ecb_pct": {
+            "quote": "8% ECB’s",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4"
+          }
+        }
+      },
+      {
+        "period": "FY24",
+        "bank_borrowings_pct": 71,
+        "ncds_pct": 2,
+        "nhb_refinance_pct": 27,
+        "securitization_pct": null,
+        "ecb_pct": null,
+        "other_pct": null,
+        "weighted_avg_cost_pct": null,
+        "citations": {
+          "bank_borrowings_pct": {
+            "quote": "total borrowings of ₹3,880 crore consisting of 68% bank term loans, 3% FI term loans",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f"
+          },
+          "ncds_pct": {
+            "quote": "2% NCDs",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f"
+          },
+          "nhb_refinance_pct": {
+            "quote": "and 27% NHB refinance.",
+            "sourceUrl": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f"
+          }
+        }
+      }
+    ],
+    "source_urls": [
+      "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4",
+      "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f"
+    ]
+  },
+  {
+    "company": "Aavas Financiers",
+    "financials": [],
+    "strategic_moves": [
+      {
+        "date": "2025-06",
+        "type": "expansion",
+        "description": "Aavas Financiers transferred a pool of 3,500 housing loan accounts via assignment to a Housing Finance Company.",
+        "detail": "During the quarter ended June 30, 2025, the company assigned loans worth INR 37,671 lakh with a 10% retention of beneficial interest.",
+        "citation": {
+          "quote": "Details of transfer through assignment in respect of loans not in default during the quarter ended June 30, 2025. ... Count of loan accounts assigned 3,500 Loans Amount ... INR 37,671 lakh",
+          "sourceUrl": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf"
+        }
+      },
+      {
+        "date": "2025-06",
+        "type": "expansion",
+        "description": "The company assigned 1,463 loan accounts through co-lending arrangements during the quarter ended June 30, 2025.",
+        "detail": "The assigned loans amounted to INR 24,995 lakh with a 20% retention of beneficial economic interest and 100% tangible security coverage.",
+        "citation": {
+          "quote": "Details of transfer through Co-lending in respect of loans not in default during the quarter ended June 30, 2025. ... Count of loan accounts assigned 1,463 Loans Amount ... INR 24,995 lakh",
+          "sourceUrl": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf"
+        }
+      },
+      {
+        "date": "2025-06",
+        "type": "capital_raise",
+        "description": "Aavas Financiers raised INR 200 crore through the private placement of non-convertible debentures.",
+        "detail": "The fund raising was conducted on June 26, 2025, under ISIN INE216P07290.",
+        "citation": {
+          "quote": "AAVAS FINANCIERS LIMITED INE216P07290 Private placement NCDs June 26, 2025 200",
+          "sourceUrl": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf"
+        }
+      },
+      {
+        "date": "2025-04",
+        "type": "capital_raise",
+        "description": "The company raised INR 200 crore via two private placements of non-convertible debentures on April 28, 2025.",
+        "detail": "The company issued NCDs in two tranches of INR 100 crore each under ISINs INE216P07274 and INE216P07282.",
+        "citation": {
+          "quote": "Date of raising funds ... April 28, 2025 ... Amount raised ... Rs. 200 Crore",
+          "sourceUrl": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf"
+        }
+      },
+      {
+        "date": "2025-04",
+        "type": "leadership",
+        "description": "The Board approved the appointment of M/s Chandrasekaran Associates as Secretarial Auditor for a five-year term.",
+        "detail": "The appointment covers the period from FY 2025-26 through FY 2029-30, subject to shareholder approval.",
+        "citation": {
+          "quote": "approved the appointment of M/s ChanUrasekaran Associates, Practicing Company Secretaries as Secretarial Auditors for five consecutive years commencing from FY 2025-26 till FY 2029-30",
+          "sourceUrl": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf"
+        }
+      },
+      {
+        "date": "2025-03",
+        "type": "expansion",
+        "description": "Aavas Financiers transferred 283 loan accounts worth INR 4,119 lakh through co-lending during the fourth quarter.",
+        "detail": "The transaction, completed for the quarter ended March 31, 2025, included a 20% retention of beneficial interest.",
+        "citation": {
+          "quote": "Details of transfer through Co-lending in resepct of loans not in default during the quarter and year ended March 31, 2025. ... Quarter ended March 31,2025 ... 283 loans ... INR 4,119 lakh",
+          "sourceUrl": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf"
+        }
+      },
+      {
+        "date": "2025-01",
+        "type": "capital_raise",
+        "description": "The company raised INR 200 crore through two private placements of non-convertible debentures on January 15, 2025.",
+        "detail": "The capital was raised in two separate INR 100 crore tranches under ISINs INE216P07258 and INE216P07266.",
+        "citation": {
+          "quote": "AAVAS FINANCIERS LIMITED ... INE216P07258 Private placem ent NCDs January 15, 2025 100 ... INE216P07266 Private placem ent NCDs January 15, 2025 100",
+          "sourceUrl": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf"
+        }
+      }
+    ],
+    "performance": {
+      "growth_drivers": [
+        {
+          "description": "Maintained strong profitability with a Net Profit Margin of 24.34% for the fiscal year ending March 31, 2025.",
+          "citation": {
+            "quote": "Net Profit Margin(%) 24.34%",
+            "sourceUrl": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf"
+          }
+        },
+        {
+          "description": "High capital solvency with a Capital Risk Adequacy Ratio (CRAR) of 44.50% providing a strong foundation for book growth.",
+          "citation": {
+            "quote": "Capital Risk Adequacy Ratio (CRAR) 44.50%",
+            "sourceUrl": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf"
+          }
+        },
+        {
+          "description": "Stable asset quality demonstrated by a Gross Non-Performing Assets (GNPA) ratio of 1.08% and Net NPA of 0.73%.",
+          "citation": {
+            "quote": "Gross Non-Performing Assets (GNPA) 1.08% ... Net Non-Performing Assets (NNPA) 0.73%",
+            "sourceUrl": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf"
+          }
+        },
+        {
+          "description": "Robust liquidity position with a Liquidity Coverage Ratio of 128.12% as of March 31, 2025.",
+          "citation": {
+            "quote": "Liquidity Coverage Ratio (Calculated as per RBI guidelines) 124.55% 128.12%",
+            "sourceUrl": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf"
+          }
+        }
+      ],
+      "segment_commentary": [
+        {
+          "segment": "Housing Finance",
+          "description": "The company operates exclusively within the housing finance sector in India, with no other reportable segments identified.",
+          "citation": {
+            "quote": "The Company is engaged primarily in the business of housing finance within india and there are no separate reportable segments as per Ind AS 108",
+            "sourceUrl": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf"
+          }
+        }
+      ],
+      "guidance": [],
+      "cohort_or_customer_notes": [
+        {
+          "description": "Maintained 100% security cover on secured listed non-convertible debentures (NCDs) via hypothecation of specific book debts.",
+          "citation": {
+            "quote": "The Company has maintained at-least 100% security cover on its secured listed non-convertible debentures (NCDs) as on March 31, 2025",
+            "sourceUrl": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf"
+          }
+        }
+      ]
+    },
+    "risk_outlook": {
+      "risk_factors": [
+        {
+          "description": "Gross Non-Performing Assets (GNPA) have shown a consistent upward trend, rising from 0.94% in March 2024 to 1.22% by June 2025.",
+          "citation": {
+            "quote": "Gross Non-Performing Assets (GNPA) 1.22%",
+            "sourceUrl": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf"
+          }
+        },
+        {
+          "description": "The Provision Coverage Ratio (PCR) has decreased significantly over consecutive quarters, falling from 64.33% to 57.46%, reducing the buffer against potential loan defaults.",
+          "citation": {
+            "quote": "Provision coverage ratio 57.46%",
+            "sourceUrl": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf"
+          }
+        }
+      ],
+      "asset_quality_concerns": [
+        {
+          "description": "Net Non-Performing Assets (NNPA) have deteriorated, increasing to 0.84% in June 2025 compared to 0.67% in March 2024.",
+          "citation": {
+            "quote": "Net Non-Performing Assets (NNPA) 0.84%",
+            "sourceUrl": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf"
+          }
+        },
+        {
+          "description": "Residual exposure remains in personal loan accounts restructured under standard resolution plans, totaling over INR 7,341 lakh.",
+          "citation": {
+            "quote": "Exposure to accounts classified as standard consequent to implementation of resolution plan... 7,341.48",
+            "sourceUrl": "https://www.aavas.in/uploads/pdf/finaloutcome25042024-1252982600.pdf"
+          }
+        }
+      ],
+      "headwinds": [
+        {
+          "description": "Net Profit Margins have experienced compression, dropping from 24.34% in March 2025 to 22.17% in June 2025.",
+          "citation": {
+            "quote": "Net Profit Margin(%) 22.17%",
+            "sourceUrl": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf"
+          }
+        },
+        {
+          "description": "High leverage is maintained with a Debt-to-Equity ratio of 3.17 as of June 2025.",
+          "citation": {
+            "quote": "Debt Equity Ratio 3.17",
+            "sourceUrl": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf"
+          }
+        }
+      ],
+      "outlook": [
+        {
+          "description": "The company maintains a very strong capital position with a Capital Risk Adequacy Ratio (CRAR) of 43.20%, providing a significant cushion for growth.",
+          "citation": {
+            "quote": "Capital Risk Adequacy Ratio (CRAR) 43.20%",
+            "sourceUrl": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf"
+          }
+        },
+        {
+          "description": "Liquidity remains robust with a Liquidity Coverage Ratio of 128.28%, well above regulatory requirements.",
+          "citation": {
+            "quote": "Liquidity Coverage Ratio (Calculated as per RBI guidelines) 128.28%",
+            "sourceUrl": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf"
+          }
+        },
+        {
+          "description": "The company is actively utilizing loan assignments to manage liquidity, transferring 3,500 loan accounts worth INR 37,671 lakh in a single quarter.",
+          "citation": {
+            "quote": "Amount of loan accounts assigned INR 37,671 lakh... 3,500 Loans",
+            "sourceUrl": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf"
+          }
+        }
+      ]
+    },
+    "asset_mix": [],
+    "customer_mix": [],
+    "geographic_mix": [],
+    "funding_mix": [],
+    "source_urls": [
+      "https://www.aavas.in/uploads/pdf/finaloutcome25042024-1252982600.pdf",
+      "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf",
+      "https://www.aavas.in/uploads/pdf/financials-85794283.pdf"
+    ]
+  },
+  {
+    "company": "Aptus Value Housing Finance",
+    "financials": [
+      {
+        "period": "FY25",
+        "aum_inr_cr": 10865,
+        "disbursements_inr_cr": 3604,
+        "net_worth_inr_cr": 4317,
+        "total_income_inr_cr": 1798,
+        "pat_inr_cr": 751,
+        "nim_pct": 12.96,
+        "roa_pct": 7.73,
+        "roe_pct": 18.76,
+        "gnpa_pct": 1.19,
+        "nnpa_pct": 0.89,
+        "pcr_pct": 25.19,
+        "credit_cost_pct": 0.29,
+        "crar_pct": 71,
+        "branches": 300,
+        "employees": 3351,
+        "customers": 162000,
+        "avg_ticket_size_inr_lakh": 9.2,
+        "citations": {
+          "aum_inr_cr": {
+            "quote": "The consolidated AUM stood at ₹10,865 crore as of March 31, 2025, marking a 25% YoY increase",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "disbursements_inr_cr": {
+            "quote": "Loan Disbursements ( ` crore) 3,604 vs 3,127",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "net_worth_inr_cr": {
+            "quote": "Net Worth ( ` crore) 4,317 vs 3,768",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "total_income_inr_cr": {
+            "quote": "Total Income ( ` crore) 1,798 vs 1,409",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "pat_inr_cr": {
+            "quote": "Net profit grew by 23% to ₹751 crore from ₹612 crore in FY24.",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "nim_pct": {
+            "quote": "Net Interest Margin (NIM) stood at 12.96% for FY25",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "roa_pct": {
+            "quote": "Return on Assets (ROA) stood at 7.73%",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "roe_pct": {
+            "quote": "The Return on Equity (ROE) improved to 18.76% in FY25",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "gnpa_pct": {
+            "quote": "Gross NPAs increased slightly to 1.19% from 1.07%",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "nnpa_pct": {
+            "quote": "net NPAs rose to 0.89% from 0.80%",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "pcr_pct": {
+            "quote": "Provision Coverage Ratio (PCR) 25.19%",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "credit_cost_pct": {
+            "quote": "steady credit cost of 0.29%",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "crar_pct": {
+            "quote": "The capital adequacy ratio stood at a robust 71% as of March 31, 2025",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "branches": {
+            "quote": "Aptus closed FY25 with a network of 300 branches",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "employees": {
+            "quote": "3,351 Employees",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "customers": {
+            "quote": "1.62 lakhs Customers",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "avg_ticket_size_inr_lakh": {
+            "quote": "Average ticket sizes ranged from ₹9.2 lakh for home loans",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          }
+        }
+      },
+      {
+        "period": "FY24",
+        "aum_inr_cr": 8722,
+        "disbursements_inr_cr": 3127,
+        "net_worth_inr_cr": 3768,
+        "total_income_inr_cr": 1417,
+        "nii_inr_cr": 1029,
+        "pat_inr_cr": 612,
+        "nim_pct": 13.45,
+        "roa_pct": 8,
+        "roe_pct": 17.25,
+        "gnpa_pct": 1.07,
+        "nnpa_pct": 0.8,
+        "pcr_pct": 26.93,
+        "branches": 262,
+        "employees": 2918,
+        "customers": 133499,
+        "citations": {
+          "aum_inr_cr": {
+            "quote": "We achieved a 29% year-on-year growth in Assets Under Management (AUM), reaching `8,722 crores",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "disbursements_inr_cr": {
+            "quote": "In FY24, total disbursements were `3,127 crores, up from `2,395 crores in FY23",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "net_worth_inr_cr": {
+            "quote": "Net Worth: Increased to `3,768 crores from `3,339 crores in FY23.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "total_income_inr_cr": {
+            "quote": "Total Income: FY24 total income was `1,417 crores, up from `1,134 crores in FY23.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "nii_inr_cr": {
+            "quote": "Net Interest Margin (` Crores) FY24 1,029",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "pat_inr_cr": {
+            "quote": "Profit After Tax (PAT): FY24 PAT was `612 crores, up from `503 crores in FY23.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "nim_pct": {
+            "quote": "Net Interest Margin (NIM): NIM for FY24 was 13.45%.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "roa_pct": {
+            "quote": "Return on Assets (ROA): ROA for FY24 was 8.00%.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "roe_pct": {
+            "quote": "Return on Equity (ROE): Improved to 17.25% in FY24",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "gnpa_pct": {
+            "quote": "Asset Quality: GNPA improved to 1.07% from 1.15%",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "nnpa_pct": {
+            "quote": "and NNPA to 0.80% from 0.86%.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "pcr_pct": {
+            "quote": "Provision Coverage Ratio (PCR) 26.93%",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "branches": {
+            "quote": "262 branches.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "employees": {
+            "quote": "3,351 Employees YoY +433",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "customers": {
+            "quote": "Number of Customers FY24 1,33,499",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          }
+        }
+      },
+      {
+        "period": "FY23",
+        "aum_inr_cr": 6738,
+        "disbursements_inr_cr": 2395,
+        "net_worth_inr_cr": 3339,
+        "total_income_inr_cr": 1134,
+        "nii_inr_cr": 859,
+        "pat_inr_cr": 503,
+        "nim_pct": 12.38,
+        "roa_pct": 7.97,
+        "roe_pct": 16.34,
+        "gnpa_pct": 1.15,
+        "nnpa_pct": 0.86,
+        "customers": 107146,
+        "citations": {
+          "aum_inr_cr": {
+            "quote": "AUM... reaching `8,722 crores, up from `6,738 crores in FY23.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "disbursements_inr_cr": {
+            "quote": "disbursements saw an impressive increase of 31%, amounting to `3,127 crores compared to `2,395 crores in the previous year.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "net_worth_inr_cr": {
+            "quote": "Net Worth: Increased to `3,768 crores from `3,339 crores in FY23.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "total_income_inr_cr": {
+            "quote": "FY24 total income was `1,417 crores, up from `1,134 crores in FY23.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "nii_inr_cr": {
+            "quote": "Net Interest Margin (` Crores) FY23 859",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "pat_inr_cr": {
+            "quote": "FY24 PAT was `612 crores, up from `503 crores in FY23.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "nim_pct": {
+            "quote": "NIM to Assets FY23 12.38",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "roa_pct": {
+            "quote": "ROA (PAT) (%) FY23 7.97",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "roe_pct": {
+            "quote": "Improved to 17.25% in FY24 from 16.34% in FY23.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "gnpa_pct": {
+            "quote": "GNPA improved to 1.07% from 1.15%",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "nnpa_pct": {
+            "quote": "and NNPA to 0.80% from 0.86%.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "customers": {
+            "quote": "Number of Customers FY23 1,07,146",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          }
+        }
+      },
+      {
+        "period": "FY22",
+        "aum_inr_cr": 5180,
+        "disbursements_inr_cr": 1641,
+        "total_income_inr_cr": 840,
+        "nii_inr_cr": 632,
+        "pat_inr_cr": 370,
+        "nim_pct": 13.66,
+        "roa_pct": 7.78,
+        "roe_pct": 14.47,
+        "gnpa_pct": 1.19,
+        "nnpa_pct": 0.91,
+        "customers": 83565,
+        "citations": {
+          "aum_inr_cr": {
+            "quote": "AUM (` Crores) FY22 5,180",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "disbursements_inr_cr": {
+            "quote": "Disbursements (` Crores) FY22 1,641",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "total_income_inr_cr": {
+            "quote": "Total Income (` Crores) FY22 840",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "nii_inr_cr": {
+            "quote": "Net Interest Margin (` Crores) FY22 632",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "pat_inr_cr": {
+            "quote": "Profit After Tax (` Crores) FY22 370",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "nim_pct": {
+            "quote": "NIM to Assets (%) FY22 13.66",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "roa_pct": {
+            "quote": "ROA (PAT) (%) FY22 7.78",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "roe_pct": {
+            "quote": "ROE (%) FY22 14.47",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "gnpa_pct": {
+            "quote": "GNPA (%) FY22 1.19",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "nnpa_pct": {
+            "quote": "NNPA (%) FY22 0.91",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "customers": {
+            "quote": "Number of Customers FY22 83,565",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          }
+        }
+      },
+      {
+        "period": "FY21",
+        "aum_inr_cr": 4068,
+        "disbursements_inr_cr": 1298,
+        "total_income_inr_cr": 655,
+        "nii_inr_cr": 449,
+        "pat_inr_cr": 267,
+        "nim_pct": 13.88,
+        "roa_pct": 7.97,
+        "roe_pct": 14.45,
+        "gnpa_pct": 1.13,
+        "nnpa_pct": 0.81,
+        "customers": 58069,
+        "citations": {
+          "aum_inr_cr": {
+            "quote": "AUM (` Crores) FY21 4,068",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "disbursements_inr_cr": {
+            "quote": "Disbursements (` Crores) FY21 1,298",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "total_income_inr_cr": {
+            "quote": "Total Income (` Crores) FY21 655",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "nii_inr_cr": {
+            "quote": "Net Interest Margin (` Crores) FY21 449",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "pat_inr_cr": {
+            "quote": "Profit After Tax (` Crores) FY21 267",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "nim_pct": {
+            "quote": "NIM to Assets (%) FY21 13.88",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "roa_pct": {
+            "quote": "ROA (PAT) (%) FY21 7.97",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "roe_pct": {
+            "quote": "ROE (%) FY21 14.45",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "gnpa_pct": {
+            "quote": "GNPA (%) FY21 1.13",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "nnpa_pct": {
+            "quote": "NNPA (%) FY21 0.81",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "customers": {
+            "quote": "Number of Customers FY21 58,069",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          }
+        }
+      },
+      {
+        "period": "FY20",
+        "aum_inr_cr": 3183,
+        "disbursements_inr_cr": 1280,
+        "total_income_inr_cr": 523,
+        "nii_inr_cr": 339,
+        "pat_inr_cr": 211,
+        "nim_pct": 12.48,
+        "roe_pct": 17.53,
+        "gnpa_pct": 0.7,
+        "nnpa_pct": 0.54,
+        "customers": 43987,
+        "citations": {
+          "aum_inr_cr": {
+            "quote": "AUM (` Crores) FY20 3,183",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "disbursements_inr_cr": {
+            "quote": "Disbursements (` Crores) FY20 1,280",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "total_income_inr_cr": {
+            "quote": "Total Income (` Crores) FY20 523",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "nii_inr_cr": {
+            "quote": "Net Interest Margin (` Crores) FY20 339",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "pat_inr_cr": {
+            "quote": "Profit After Tax (` Crores) FY20 211",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "nim_pct": {
+            "quote": "NIM to Assets (%) FY20 12.48",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "roe_pct": {
+            "quote": "ROE (%) FY20 17.53",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "gnpa_pct": {
+            "quote": "GNPA (%) FY20 0.70",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "nnpa_pct": {
+            "quote": "NNPA (%) FY20 0.54",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "customers": {
+            "quote": "Number of Customers FY20 43,987",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          }
+        }
+      }
+    ],
+    "strategic_moves": [
+      {
+        "date": "2025-03",
+        "type": "capital_raise",
+        "description": "Proposed an increase in borrowing limits beyond Rs. 9,000 crores to facilitate continued business expansion.",
+        "detail": "The board sought to enhance the limit to support growth through term loans, non-convertible debentures, and securitisation transactions.",
+        "citation": {
+          "quote": "it is proposed to enhance the borrowing limit. The Company may, from time to time, be required to raise funds through various means of borrowing",
+          "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+        }
+      },
+      {
+        "date": "2025",
+        "type": "regulatory",
+        "description": "Obtained ISO/IEC 27001:2022 certification for the company's Information Security Management System.",
+        "detail": "The certification validates the company's framework and policy for managing cyber security and data privacy risks.",
+        "citation": {
+          "quote": "The Company is ISO/ IEC 27001:2022 certified for Information Security Management System.",
+          "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+        }
+      },
+      {
+        "date": "2025",
+        "type": "other",
+        "description": "Deployed ML-based predictive models and Power BI tools to strengthen credit risk monitoring.",
+        "detail": "These analytical tools support a tech-enabled underwriting model that assesses over 100 data points to improve credit evaluation and efficiency.",
+        "citation": {
+          "quote": "Aptus also implemented business intelligence tools (Power BI) and ML-based predictive models to monitor risk and enhance credit evaluation.",
+          "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+        }
+      }
+    ],
+    "performance": {
+      "growth_drivers": [
+        {
+          "description": "Strategic focus on low- and middle-income segments in Tier-3 and Tier-4 cities allows Aptus to tap into large, underserved markets where traditional competition is limited.",
+          "citation": {
+            "quote": "Our strategic focus on serving the low- and middle-income segments in Tier-3 and Tier-4 cities has allowed us to tap into a large, underserved market.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          }
+        },
+        {
+          "description": "Digital transformation is expanding reach, with 18% of business in Q4 FY24 originating from digital channels including customer referral and construction ecosystem apps.",
+          "citation": {
+            "quote": "About 18% of our business in Q4 FY24 came from digital channels, including our customer referral app, construction ecosystem app, and social media platforms.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          }
+        }
+      ],
+      "segment_commentary": [
+        {
+          "segment": "Home Loans",
+          "description": "Home loan AUM is projected to grow by 24% in the next fiscal year, aided by revamped interest subsidy schemes and potential easing of interest rates.",
+          "citation": {
+            "quote": "revamped interest subsidy scheme... are expected to... drive home loan AUM growth to ~24% in the next fiscal.",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          }
+        },
+        {
+          "segment": "Loans Against Property (LAP)",
+          "description": "LAP growth is expected to moderate to 22-23% due to regulatory constraints such as Principal Business Criteria (PBC) compliance and monthly reporting norms.",
+          "citation": {
+            "quote": "the loans against property (LAP) segment... is now expected to experience moderated expansion due to regulatory constraints, including compliance with principal business criteria (PBC).",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          }
+        }
+      ],
+      "guidance": [
+        {
+          "description": "The company expects assets under management (AUM) growth of 22–23% for the current and subsequent fiscal years, a recalibration from previous 31% growth rates.",
+          "citation": {
+            "quote": "Aptus projects growth in assets under management (AUM) of 22–23% in the current and subsequent fiscal years, compared to the ~31% growth recorded in the previous fiscal year.",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          }
+        },
+        {
+          "description": "Return on Managed Assets (RoMA) is projected to remain healthy at approximately 2.4% by fiscal 2026 despite potential yield compression.",
+          "citation": {
+            "quote": "CRISIL estimates that return on managed assets (RoMA) will remain healthy at around 2.4% by fiscal 2026.",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          }
+        }
+      ],
+      "cohort_or_customer_notes": [
+        {
+          "description": "Targeting self-employed and first-time homeowners in the informal economy who lack formal income documentation and are typically excluded by mainstream banks.",
+          "citation": {
+            "quote": "Aptus concentrates on self-employed individuals and first-time homeowners who typically do not have formal income documentation.",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          }
+        },
+        {
+          "description": "Maintained high credit quality with the Gross Non-Performing Assets (GNPA) ratio improving to 1.07% in FY24 from 1.15% in FY23.",
+          "citation": {
+            "quote": "Our Gross Non-Performing Assets (GNPA) ratio improved to 1.07% in FY24, down from 1.15% in FY23.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          }
+        }
+      ]
+    },
+    "risk_outlook": {
+      "risk_factors": [
+        {
+          "description": "Climate-related events could impact property valuations and collateral recoverability in specific geographical portfolios.",
+          "citation": {
+            "quote": "Climate-related events may affect property valuations, insurance costs, or collateral recoverability, potentially leading to stress in specific geographies or portfolios.",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          }
+        },
+        {
+          "description": "Fluctuations in interest rates significantly affect borrowing costs and housing loan demand from sensitive customer segments.",
+          "citation": {
+            "quote": "Fluctuations in interest rates can affect borrowing costs for HFCs and their customers. Higher interest rates could reduce affordability and dampen demand for housing loans.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          }
+        },
+        {
+          "description": "The target borrower segment often lacks formal income documentation, making them highly vulnerable to economic shocks.",
+          "citation": {
+            "quote": "Borrowers in the affordable housing segment often lack formal income documentation and their financial vulnerability increases the probability of delinquency.",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          }
+        }
+      ],
+      "asset_quality_concerns": [
+        {
+          "description": "Macroeconomic instability such as inflation spikes can lead to elevated NPAs and increased provisioning requirements.",
+          "citation": {
+            "quote": "financial vulnerability increases the probability of delinquency, especially during times of economic shocks (e.g., inflation spikes... This could lead to elevated levels of Non-Performing Assets.",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          }
+        }
+      ],
+      "headwinds": [
+        {
+          "description": "Regulatory constraints, specifically Principal Business Criteria (PBC) compliance, are moderating expansion in the LAP segment.",
+          "citation": {
+            "quote": "LAP segment—previously a key growth engine—is now expected to experience moderated expansion due to regulatory constraints, including compliance with principal business criteria (PBC).",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          }
+        },
+        {
+          "description": "Intense competition from banks and fintech entrants in affordable housing is creating pricing pressures and yield compression.",
+          "citation": {
+            "quote": "Intense competition among HFCs, banks, and new fintech entrants in the housing finance sector could lead to pricing pressures and reduced margins.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          }
+        }
+      ],
+      "outlook": [
+        {
+          "description": "Management is recalibrating AUM growth expectations to 22–23% for the current and subsequent fiscal years.",
+          "citation": {
+            "quote": "management (AUM) of 22–23% in the current and subsequent fiscal years, compared to the ~31% growth recorded in the previous fiscal year. This recalibration reflects evolving market conditions.",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          }
+        },
+        {
+          "description": "Home loan AUM is projected to grow ~24% next fiscal, supported by government interest subsidy schemes.",
+          "citation": {
+            "quote": "supportive macro and policy measures are expected to improve borrower affordability and drive home loan AUM growth to ~24% in the next fiscal.",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          }
+        },
+        {
+          "description": "The company aims to continue expanding its geographic footprint, having recently entered the Maharashtra market.",
+          "citation": {
+            "quote": "During FY24, we expanded our geographic footprint by opening 31 new branches, including our first branch in Maharashtra. This expansion is part of our strategy to increase our presence.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          }
+        }
+      ]
+    },
+    "asset_mix": [
+      {
+        "period": "FY25",
+        "home_loan_pct": null,
+        "lap_pct": null,
+        "msme_pct": 20,
+        "construction_pct": null,
+        "other_pct": null,
+        "citations": {
+          "msme_pct": {
+            "quote": "Small Business Loans, which constitute 100% of the NBFC portfolio and 20% of the consolidated AUM.",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          }
+        }
+      },
+      {
+        "period": "FY24",
+        "home_loan_pct": 60,
+        "lap_pct": null,
+        "msme_pct": 20,
+        "construction_pct": null,
+        "other_pct": 20,
+        "citations": {
+          "home_loan_pct": {
+            "quote": "60% Home Loans",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "msme_pct": {
+            "quote": "20% Small Business Loans",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "other_pct": {
+            "quote": "16% Quasi Home Loans... 2% Top-up loans... 2% Insurance support",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          }
+        }
+      }
+    ],
+    "customer_mix": [
+      {
+        "period": "FY24",
+        "self_employed_pct": 74,
+        "salaried_pct": null,
+        "formal_income_pct": null,
+        "informal_income_pct": null,
+        "rural_pct": 78,
+        "semi_urban_pct": null,
+        "urban_pct": null,
+        "citations": {
+          "self_employed_pct": {
+            "quote": "74% of the company’s borrowers are self-employed, reflecting on Aptus’ mission.",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "rural_pct": {
+            "quote": "78% Rural Focus... With 78% of its operations concentrated in rural areas",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          }
+        }
+      }
+    ],
+    "geographic_mix": [
+      {
+        "period": "FY25",
+        "top_states": null,
+        "states_total": 7,
+        "citation": {
+          "quote": "strong network of 300 branches across 6 Indian states and 1 union territory as at the end of March 31, 2025",
+          "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+        }
+      },
+      {
+        "period": "FY24",
+        "top_states": null,
+        "states_total": null,
+        "citation": {
+          "quote": "262 [branches] FY24",
+          "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+        }
+      }
+    ],
+    "funding_mix": [
+      {
+        "period": "FY25",
+        "bank_borrowings_pct": 52,
+        "ncds_pct": 19,
+        "nhb_refinance_pct": 15,
+        "securitization_pct": 14,
+        "ecb_pct": null,
+        "other_pct": null,
+        "weighted_avg_cost_pct": null,
+        "citations": {
+          "bank_borrowings_pct": {
+            "quote": "52% sourced from banks",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "ncds_pct": {
+            "quote": "19% from Non-Convertible Debentures (NCDs)",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "nhb_refinance_pct": {
+            "quote": "15% from the National Housing Bank (NHB)",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          },
+          "securitization_pct": {
+            "quote": "14% through securitization",
+            "sourceUrl": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+          }
+        }
+      },
+      {
+        "period": "FY24",
+        "bank_borrowings_pct": 63,
+        "ncds_pct": 5,
+        "nhb_refinance_pct": 24,
+        "securitization_pct": null,
+        "ecb_pct": null,
+        "other_pct": 8,
+        "weighted_avg_cost_pct": null,
+        "citations": {
+          "bank_borrowings_pct": {
+            "quote": "63% from banks",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "nhb_refinance_pct": {
+            "quote": "24% from the National Housing Bank (NHB)",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "ncds_pct": {
+            "quote": "5% in the form of Non-Convertible Debentures (NCDs)",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          },
+          "other_pct": {
+            "quote": "8% from other sources, including securitisation",
+            "sourceUrl": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf"
+          }
+        }
+      }
+    ],
+    "source_urls": [
+      "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf",
+      "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf"
+    ]
+  },
+  {
+    "company": "Home First Finance",
+    "financials": [
+      {
+        "period": "FY26",
+        "aum_inr_cr": 15877.7,
+        "disbursements_inr_cr": 5423.6,
+        "pat_inr_cr": 540.4,
+        "roa_pct": 3.9,
+        "roe_pct": 15.7,
+        "gnpa_pct": 1.8,
+        "crar_pct": 32.8,
+        "branches": 171,
+        "employees": 1855,
+        "avg_ticket_size_inr_lakh": 12,
+        "citations": {
+          "aum_inr_cr": {
+            "quote": "Assets Under Management (Mar’26) ₹ 1,58,777 Mn",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          },
+          "disbursements_inr_cr": {
+            "quote": "Disbursement FY26 ₹ 54,236 Mn",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          },
+          "pat_inr_cr": {
+            "quote": "Profit After Tax (PAT) stood at ₹ 5,404 Mn, 41.4% YoY",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          },
+          "roa_pct": {
+            "quote": "Return On Assets (ROA) 3.9%",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          },
+          "roe_pct": {
+            "quote": "Return On Equity (ROE) (2) 15.7%",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          },
+          "gnpa_pct": {
+            "quote": "Gross Stage 3 / POS (GNPA) 1.8%",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          },
+          "crar_pct": {
+            "quote": "CRAR (%) 32.8%",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          },
+          "branches": {
+            "quote": "taking the total to 171 branches and 373 touchpoints",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          },
+          "employees": {
+            "quote": "taking total headcount to 1,855",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          },
+          "avg_ticket_size_inr_lakh": {
+            "quote": "average ticket size of Rs 1.20 Mn",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          }
+        }
+      },
+      {
+        "period": "Q4 FY26",
+        "aum_inr_cr": 15877.7,
+        "disbursements_inr_cr": 1572,
+        "pat_inr_cr": 149,
+        "roa_pct": 4.1,
+        "gnpa_pct": 1.8,
+        "citations": {
+          "disbursements_inr_cr": {
+            "quote": "disbursement grew by 23.5% YoY and 19.3% QoQ, to an all time high of ₹ 1,572 Crore",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          },
+          "pat_inr_cr": {
+            "quote": "Q4 Profit after Tax grew by 42.7% YoY and 6.6% QoQ to ₹ 149 Crore",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          },
+          "roa_pct": {
+            "quote": "RoA stood at 4.1%",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          },
+          "gnpa_pct": {
+            "quote": "GNPA at 1.8% (improved by 20bps QoQ)",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          }
+        }
+      },
+      {
+        "period": "FY25",
+        "aum_inr_cr": 12712.72,
+        "disbursements_inr_cr": 4802.94,
+        "net_worth_inr_cr": 2521.28,
+        "total_income_inr_cr": 1445.69,
+        "nii_inr_cr": 566.79,
+        "pat_inr_cr": 382.07,
+        "roa_pct": 3.5,
+        "roe_pct": 16.5,
+        "gnpa_pct": 1.7,
+        "nnpa_pct": 1.3,
+        "credit_cost_pct": 0.3,
+        "crar_pct": 32.8,
+        "citations": {
+          "aum_inr_cr": {
+            "quote": "The AUM as at Mar’25 amounted to ` 12,712.72 Crores",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          },
+          "disbursements_inr_cr": {
+            "quote": "FY25 ... Disbursement 4,802.94",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          },
+          "net_worth_inr_cr": {
+            "quote": "The Net Worth of the Company as on March 31, 2025 was ` 2,521.28 Crores",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          },
+          "total_income_inr_cr": {
+            "quote": "FY25 ... Total Income 1,445.69",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          },
+          "nii_inr_cr": {
+            "quote": "The Net Interest Income reported for the year was ` 566.79 Crores",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          },
+          "pat_inr_cr": {
+            "quote": "The profit after tax for FY25 increased by 25% to ` 382.07 Crores",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          },
+          "roa_pct": {
+            "quote": "best-in-class return on assets (RoA) of 3.5% (FY24: 3.8%)",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          },
+          "roe_pct": {
+            "quote": "Your Company has delivered an ROE of 16.5% in FY25",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          },
+          "gnpa_pct": {
+            "quote": "The Gross Non-Performing Assets (GNPA) as on Mar’25 was 1.7 %",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          },
+          "nnpa_pct": {
+            "quote": "corresponding Net Non-performing Assets (NNPA) was 1.3%",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          },
+          "credit_cost_pct": {
+            "quote": "Credit cost for FY25 was at 30bps",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          },
+          "crar_pct": {
+            "quote": "Strong Capital Adequacy ratio of 32.8 % as of Mar’25.",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          }
+        }
+      },
+      {
+        "period": "FY24",
+        "aum_inr_cr": 9698,
+        "disbursements_inr_cr": 3962.83,
+        "net_worth_inr_cr": 2121,
+        "total_income_inr_cr": 1154.34,
+        "nii_inr_cr": 471,
+        "pat_inr_cr": 305.72,
+        "nim_pct": 5.8,
+        "roa_pct": 3.8,
+        "roe_pct": 15.5,
+        "gnpa_pct": 1.7,
+        "nnpa_pct": 1.2,
+        "pcr_pct": 50.9,
+        "credit_cost_pct": 0.3,
+        "crar_pct": 44.1,
+        "branches": 123,
+        "citations": {
+          "aum_inr_cr": {
+            "quote": "AUM (in ` Crs) FY24 9,698",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          },
+          "disbursements_inr_cr": {
+            "quote": "FY24 ... Disbursement 3,962.83",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          },
+          "net_worth_inr_cr": {
+            "quote": "Networth `2,121 Crs",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          },
+          "total_income_inr_cr": {
+            "quote": "Total Income FY24 1,154.34",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          },
+          "pat_inr_cr": {
+            "quote": "Profit After Tax FY24 305.72",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          },
+          "nim_pct": {
+            "quote": "NIM FY24 5.8%",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          },
+          "roa_pct": {
+            "quote": "RoA FY24 3.8%",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          },
+          "roe_pct": {
+            "quote": "RoE FY24 15.5%",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          },
+          "gnpa_pct": {
+            "quote": "Our GNPA % at 1.7% in Mar'24",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          },
+          "nnpa_pct": {
+            "quote": "NNPA FY24 1.2%",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          },
+          "pcr_pct": {
+            "quote": "Our Stage-3 Provision Coverage Ratio stands at 50.9%",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          },
+          "credit_cost_pct": {
+            "quote": "Credit cost for FY25 was at 30bps in-line with 30bps for FY24.",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          },
+          "crar_pct": {
+            "quote": "CRAR FY24 44.1%",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          },
+          "branches": {
+            "quote": "AUM/Branch FY24 ... 123",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          }
+        }
+      },
+      {
+        "period": "FY23",
+        "aum_inr_cr": 7198,
+        "disbursements_inr_cr": 3012.91,
+        "pat_inr_cr": 228.29,
+        "nim_pct": 6.4,
+        "roa_pct": 3.9,
+        "roe_pct": 13.5,
+        "gnpa_pct": 1.6,
+        "nnpa_pct": 1.1,
+        "pcr_pct": 59.5,
+        "crar_pct": 49.4,
+        "citations": {
+          "aum_inr_cr": {
+            "quote": "AUM (in ` Crs) FY23 7,198",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          },
+          "disbursements_inr_cr": {
+            "quote": "FY23 ... Disbursement 3,012.91",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          },
+          "pat_inr_cr": {
+            "quote": "Profit After Tax FY23 228.29",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          },
+          "nim_pct": {
+            "quote": "NIM FY23 6.4%",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          },
+          "roa_pct": {
+            "quote": "RoA FY23 3.9%",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          },
+          "roe_pct": {
+            "quote": "RoE FY23 13.5%",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          },
+          "gnpa_pct": {
+            "quote": "GNPA FY23 1.6%",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          },
+          "nnpa_pct": {
+            "quote": "NNPA FY23 1.1%",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          },
+          "pcr_pct": {
+            "quote": "Our Stage-3 Provision Coverage Ratio stands at ... 59.5% ... as on Mar'23",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          },
+          "crar_pct": {
+            "quote": "CRAR FY23 49.4%",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          }
+        }
+      }
+    ],
+    "strategic_moves": [
+      {
+        "date": "2026-03",
+        "type": "expansion",
+        "description": "HomeFirst expanded its footprint by commencing operations in six new physical branches during Q4 FY2026.",
+        "detail": "As of March 2026, the company's network reached 171 physical branches and 373 total touchpoints across 144 districts and 13 states/UTs.",
+        "citation": {
+          "quote": "Business commenced in 6 new physical branches... Branches 171 Districts 144 Touchpoints 373",
+          "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+        }
+      },
+      {
+        "date": "2025-05",
+        "type": "credit_rating",
+        "description": "ICRA Limited upgraded HomeFirst's long-term credit rating to 'AA Stable' from 'AA- Stable' in May 2025.",
+        "detail": "The upgrade reflected the company's strong financial management and stable asset quality, with GNPA holding steady at 1.7%.",
+        "citation": {
+          "quote": "In May'25, ICRA Limited upgraded our long-term ratings to \"AA Stable\" from \"AA- Stable\".",
+          "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+        }
+      },
+      {
+        "date": "2025-04",
+        "type": "capital_raise",
+        "description": "HomeFirst raised ₹1,250 crore in fresh equity capital through a maiden Qualified Institutional Placement (QIP) in April 2025.",
+        "detail": "The proceeds from the fundraise were intended to augment capital adequacy and strengthen the company's long-term growth capacity.",
+        "citation": {
+          "quote": "In April, we successfully raised ` 1,250 crore via a Qualified Institutional Placement (QIP), further fortifying an already strong balance sheet",
+          "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+        }
+      },
+      {
+        "date": "2025",
+        "type": "product_launch",
+        "description": "HomeFirst implemented an in-house Treasury Management System to automate liquidity risk and enhance regulatory compliance.",
+        "detail": "The centralized record-keeping platform provides real-time visibility into asset and liability positions and enables advanced cash flow forecasting.",
+        "citation": {
+          "quote": "HomeFirst has developed an In-house Treasury Management System to improve liquidity risk management, automate manual processes, and enhance regulatory compliance",
+          "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+        }
+      }
+    ],
+    "performance": {
+      "growth_drivers": [
+        {
+          "description": "Assets Under Management (AUM) grew 24.9% YoY to ₹15,878 crore in Q4 FY26, driven by record disbursements and sustained business momentum.",
+          "citation": {
+            "quote": "Our Assets Under Management (AUM) grew to ₹ 15,878 crore, registering a robust 24.9% YoY and 6.4% QoQ growth.",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          }
+        },
+        {
+          "description": "Aggressive distribution expansion through the addition of 16 branches and 12 touchpoints in FY26, totaling 171 branches and 373 touchpoints.",
+          "citation": {
+            "quote": "During FY26, we expanded our network by adding 16 branches and 12 touchpoints, taking the total to 171 branches and 373 touchpoints.",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          }
+        },
+        {
+          "description": "Strategic partnership with IFC for 'Green Homes' focuses on energy-efficient housing, with 450 homes certified as of March 2026.",
+          "citation": {
+            "quote": "Under our Green Homes initiative, we certified 140 additional homes during the quarter, taking the cumulative count to 450 as of March 2026.",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          }
+        },
+        {
+          "description": "Growth is supported by a large market opportunity in affordable housing, specifically targeting ticket sizes between ₹5-25 Lakhs.",
+          "citation": {
+            "quote": "there is demand of 2mn+ units in a year for housing finance & ticket size between ` 5-25 Lakhs.",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          }
+        }
+      ],
+      "segment_commentary": [
+        {
+          "segment": "Housing Loans",
+          "description": "Core housing loans remain the primary product focus, accounting for 83% of the total AUM as of March 2026.",
+          "citation": {
+            "quote": "AUM by Product... Housing Loan 83%",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          }
+        },
+        {
+          "segment": "Loan Against Property (LAP)",
+          "description": "LAP constitutes 16% of the portfolio, providing diversification while maintaining a focus on secured lending products.",
+          "citation": {
+            "quote": "AUM by Product... LAP 16%",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          }
+        },
+        {
+          "segment": "Salaried Customers",
+          "description": "A high ratio of salaried customers (67.9% of AUM) provides stability, though the firm maintains expertise in underwriting informal self-employed segments.",
+          "citation": {
+            "quote": "Salaried customers account for 67.9% of our AUM and self-employed customers account for 32.1% of AUM, as of Mar'25.",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          }
+        }
+      ],
+      "guidance": [
+        {
+          "description": "Management intends to maintain disciplined credit risk with a credit cost guidance of 30 to 40 basis points as the company scales.",
+          "citation": {
+            "quote": "We continue to maintain disciplined risk management with credit cost guidance of 30 – 40bps even as we scale.",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          }
+        },
+        {
+          "description": "Future growth strategy focuses on gaining market share in existing branches and geographic expansion into new states.",
+          "citation": {
+            "quote": "Going ahead, growth would be fuelled by (a) increasing market share in existing markets/ branches, and (b) expanding coverage through new branches.",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          }
+        }
+      ],
+      "cohort_or_customer_notes": [
+        {
+          "description": "Maintained a strong credit profile with customers averaging a CIBIL score of 748, focusing on credit-tested borrowers.",
+          "citation": {
+            "quote": "AUM by Credit history AVG:748. Both credit tested customers.",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          }
+        },
+        {
+          "description": "Asset quality showed structural improvement in Q4 FY26, with GNPA reducing to 1.8% and 30+ DPD improving to 3.2%.",
+          "citation": {
+            "quote": "30+ DPD at 3.2% (improved by 50bps QoQ), GNPA at 1.8% (improved by 20bps QoQ)",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          }
+        },
+        {
+          "description": "Specialized underwriting approach for informal segments includes home and workplace visits to accurately assess customer income.",
+          "citation": {
+            "quote": "our managers' conduct home and workplace visits to ensure minimal disruption to a customer's daily routine.",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          }
+        }
+      ]
+    },
+    "risk_outlook": {
+      "risk_factors": [
+        {
+          "description": "HomeFirst faces significant competitive pressure within the housing finance sector from various market players.",
+          "citation": {
+            "quote": "Competitive intensity from time to time.",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          }
+        },
+        {
+          "description": "The company has lower brand awareness and visibility compared to established banking institutions.",
+          "citation": {
+            "quote": "Limited brand recognition compared to banks.",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          }
+        },
+        {
+          "description": "The business is susceptible to broader economic downturns and natural disasters that could impair portfolio quality.",
+          "citation": {
+            "quote": "Economic downturns and natural disasters affecting portfolio quality.",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          }
+        }
+      ],
+      "asset_quality_concerns": [
+        {
+          "description": "While improving, the company reported a Gross Non-Performing Asset (GNPA) ratio of 1.8% as of March 2026.",
+          "citation": {
+            "quote": "GNPA at 1.8% (improved by 20bps QoQ), and credit cost steady at 40bps.",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          }
+        },
+        {
+          "description": "Derivative financial instruments pose a risk of potential future margin calls due to market fluctuations.",
+          "citation": {
+            "quote": "there could be potential future margin calls based on the MTM movements of derivative financial instruments.",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          }
+        },
+        {
+          "description": "Specific non-housing loan segments have shown higher NPA levels compared to standard housing loans.",
+          "citation": {
+            "quote": "Sector wise percentage of NPAs... Non housing loans: Individuals 1.32%",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          }
+        }
+      ],
+      "headwinds": [
+        {
+          "description": "Fluctuations in interest rates and volatile market conditions pose continuous challenges to the business model.",
+          "citation": {
+            "quote": "Sensitive to changing interest rates and market conditions",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          }
+        },
+        {
+          "description": "Uncertainty in global trade dynamics is expected to require close monitoring throughout FY26.",
+          "citation": {
+            "quote": "evolving global trade dynamics will need to be closely monitored during Fy26.",
+            "sourceUrl": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+          }
+        }
+      ],
+      "outlook": [
+        {
+          "description": "The company is targeting approximately 25% year-on-year growth in Assets Under Management (AUM) for FY27.",
+          "citation": {
+            "quote": "As we move into FY27, we are well positioned to deliver ~25% YoY AUM growth",
+            "sourceUrl": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf"
+          }
+        },
+        {
+          "description": "HomeFirst plans to expand its physical reach to 500 touchpoints over the next three years.",
+          "citation": {
+            "quote": "Our current strategy is to increase our presence to 500 touchpoints in the next 3 years while expanding ~20 branches annually.",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          }
+        },
+        {
+          "description": "The company aims to leverage India's projected 6.5% CAGR GDP growth to drive housing ecosystem expansion.",
+          "citation": {
+            "quote": "India... is projected to fare much better than peers... It is estimated to grow at ~6.5% CAGR till 2029.",
+            "sourceUrl": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf"
+          }
+        }
+      ]
+    },
+    "asset_mix": [],
+    "customer_mix": [],
+    "geographic_mix": [],
+    "funding_mix": [],
+    "source_urls": [
+      "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf",
+      "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf",
+      "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf"
+    ]
+  },
+  {
+    "company": "India Shelter Finance",
+    "financials": [
+      {
+        "period": "FY26",
+        "aum_inr_cr": 11044,
+        "disbursements_inr_cr": 3834,
+        "net_worth_inr_cr": 3198.12,
+        "total_income_inr_cr": 1530.19,
+        "nii_inr_cr": 785.76,
+        "pat_inr_cr": 503.15,
+        "roa_pct": 5.8,
+        "roe_pct": 17,
+        "gnpa_pct": 1.25,
+        "nnpa_pct": 0.93,
+        "pcr_pct": 52,
+        "credit_cost_pct": 0.4,
+        "crar_pct": 55.8,
+        "branches": 307,
+        "employees": 4800,
+        "customers": 138371,
+        "avg_ticket_size_inr_lakh": 10,
+        "citations": {
+          "aum_inr_cr": {
+            "quote": "Gross AUM 11,044 Rs. Crore",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "disbursements_inr_cr": {
+            "quote": "Disbursements 3,834",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "net_worth_inr_cr": {
+            "quote": "Net Worth 3,19,812.46 lakhs",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+          },
+          "total_income_inr_cr": {
+            "quote": "Total income(1+2) ... 31 March 2026 [Audited] ... 153,018.68",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+          },
+          "nii_inr_cr": {
+            "quote": "interest income 1,23,056.27 ... Finance costs 44,480.24",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+          },
+          "pat_inr_cr": {
+            "quote": "Profit After Tax 50,314.68 lakhs",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+          },
+          "roa_pct": {
+            "quote": "ROA (PAT to Average Total Assets) ... FY26 5.8%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "roe_pct": {
+            "quote": "ROE (PAT to Average Net Worth) ... FY26 17.0%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "gnpa_pct": {
+            "quote": "Gross NPA ratio 1.25%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+          },
+          "nnpa_pct": {
+            "quote": "Net NPA ratio 0.93%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+          },
+          "pcr_pct": {
+            "quote": "PCR (%) ... FY26 52%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "credit_cost_pct": {
+            "quote": "Credit cost to Average Total Assets ... FY26 0.4%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "crar_pct": {
+            "quote": "CRAR (%) ... FY26 55.8%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "branches": {
+            "quote": "Branches ... FY26 307",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "employees": {
+            "quote": "Employees ... FY26 4,800",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "customers": {
+            "quote": "Active Live Accounts ... FY26 138,371",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "avg_ticket_size_inr_lakh": {
+            "quote": "Average Ticket Size Rs. Lakhs 10",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          }
+        }
+      },
+      {
+        "period": "Q4 FY26",
+        "aum_inr_cr": 11044,
+        "disbursements_inr_cr": 1040,
+        "pat_inr_cr": 137.59,
+        "roa_pct": 5.9,
+        "roe_pct": 17.6,
+        "gnpa_pct": 1.25,
+        "nnpa_pct": 0.93,
+        "credit_cost_pct": 0.3,
+        "citations": {
+          "aum_inr_cr": {
+            "quote": "Gross AUM 11,044 Rs. Crore",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "disbursements_inr_cr": {
+            "quote": "Disbursement 1,040 Rs. Crore",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "pat_inr_cr": {
+            "quote": "Profit for the period (5-6) ... 31 March 2026 [Audited] 13,758.78",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+          },
+          "roa_pct": {
+            "quote": "ROA (PAT to Average Total Assets) Q4FY26 5.9%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "roe_pct": {
+            "quote": "ROE (PAT to Average Net Worth) Q4FY26 17.6%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "gnpa_pct": {
+            "quote": "Gross NPA ratio 1.25%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+          },
+          "nnpa_pct": {
+            "quote": "Net NPA ratio 0.93%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+          },
+          "credit_cost_pct": {
+            "quote": "Credit cost to Average Total Assets Q4FY26 0.3%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          }
+        }
+      },
+      {
+        "period": "Q3 FY26",
+        "pat_inr_cr": 124.07,
+        "roa_pct": 5.8,
+        "roe_pct": 17,
+        "gnpa_pct": 1.5,
+        "citations": {
+          "pat_inr_cr": {
+            "quote": "Profit for the period (5-6) ... 31 December 2025 [Unaudited] 12,406.59",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+          },
+          "roa_pct": {
+            "quote": "ROA (PAT to Average Total Assets) ... Q3FY26 5.8%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "roe_pct": {
+            "quote": "ROE (PAT to Average Net Worth) ... Q3FY26 17.0%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "gnpa_pct": {
+            "quote": "Stage 3/ GNPA (%) ... Q3FY26 1.5%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          }
+        }
+      },
+      {
+        "period": "FY25",
+        "aum_inr_cr": 8535,
+        "disbursements_inr_cr": 3355,
+        "net_worth_inr_cr": 2709,
+        "total_income_inr_cr": 1174.8,
+        "nii_inr_cr": 587.41,
+        "pat_inr_cr": 377.87,
+        "roa_pct": 5.6,
+        "roe_pct": 15.1,
+        "gnpa_pct": 1,
+        "crar_pct": 61,
+        "branches": 266,
+        "employees": 3818,
+        "customers": 109277,
+        "citations": {
+          "aum_inr_cr": {
+            "quote": "Gross AUM ... FY25 8,535",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "disbursements_inr_cr": {
+            "quote": "Disbursements ... FY25 3,355",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "net_worth_inr_cr": {
+            "quote": "Networth ... FY25 2,709",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "total_income_inr_cr": {
+            "quote": "Total income(1+2) ... 31 March 2025 [Audited] 1,17,479.86",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+          },
+          "nii_inr_cr": {
+            "quote": "interest income ... 31 March 2025 94,228.57 ... Finance costs ... 31 March 2025 35,487.55",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+          },
+          "pat_inr_cr": {
+            "quote": "Profit for the period (5-6) ... 31 March 2025 [Audited] 37,787.34",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+          },
+          "roa_pct": {
+            "quote": "ROA ... FY25 5.6%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "roe_pct": {
+            "quote": "ROE ... FY25 15.1%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "gnpa_pct": {
+            "quote": "GNPA ... FY25 1.0%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "crar_pct": {
+            "quote": "CRAR ... FY25 61%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "branches": {
+            "quote": "Branches ... FY25 266",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "employees": {
+            "quote": "Employees ... FY25 3,818",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "customers": {
+            "quote": "Active Live Accounts ... FY25 109,277",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          }
+        }
+      },
+      {
+        "period": "FY24",
+        "aum_inr_cr": 6227,
+        "disbursements_inr_cr": 2646,
+        "net_worth_inr_cr": 2299,
+        "pat_inr_cr": 248,
+        "roa_pct": 4.9,
+        "roe_pct": 14,
+        "gnpa_pct": 1,
+        "crar_pct": 71,
+        "branches": 223,
+        "employees": 3323,
+        "customers": 80791,
+        "citations": {
+          "aum_inr_cr": {
+            "quote": "Gross AUM ... FY24 6,227",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "disbursements_inr_cr": {
+            "quote": "Disbursements ... FY24 2,646",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "net_worth_inr_cr": {
+            "quote": "Networth ... FY24 2,299",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "pat_inr_cr": {
+            "quote": "Profit after Tax ... FY24 248",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "roa_pct": {
+            "quote": "RoA ... FY24 4.9%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "roe_pct": {
+            "quote": "RoE ... FY24 14.0%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "gnpa_pct": {
+            "quote": "GNPA ... FY24 1.0%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "crar_pct": {
+            "quote": "CRAR ... FY24 71%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "branches": {
+            "quote": "Branches ... FY24 223",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "employees": {
+            "quote": "Employees ... FY24 3,323",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "customers": {
+            "quote": "Active Live Accounts ... FY24 80,791",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          }
+        }
+      }
+    ],
+    "strategic_moves": [
+      {
+        "date": "2026-03",
+        "type": "expansion",
+        "description": "India Shelter Finance expanded its branch network by adding 41 new branches during the fiscal year ending March 2026.",
+        "detail": "The total branch count reached 307 across 15 states, focusing primarily on growth in Tier II and Tier III cities.",
+        "citation": {
+          "quote": "Branches 307 ... +41 Branches YoY",
+          "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+        }
+      },
+      {
+        "date": "2026-03",
+        "type": "capital_raise",
+        "description": "The company transferred loan accounts worth ₹1,02,165.90 lakhs through assignment during the fiscal year ended March 31, 2026.",
+        "detail": "A total of 13,623 loan accounts were assigned with a weighted average residual tenure of 9.79 years.",
+        "citation": {
+          "quote": "Amount of loan account assigned 1,02,165.90 lakhs ... Year ended 31st March 2026",
+          "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+        }
+      },
+      {
+        "date": "2026-03",
+        "type": "expansion",
+        "description": "India Shelter Finance transferred loans totaling ₹23,948.80 lakhs through co-lending arrangements in FY26.",
+        "detail": "The transaction involved 2,178 loan accounts with a 20% retention of beneficial economic interest by the company.",
+        "citation": {
+          "quote": "Amount of loan account assigned 23,948.80 lakhs ... Details of loans not in default transferred through Co-Lending during the year ended 31 March 2026.",
+          "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+        }
+      },
+      {
+        "date": "2026-03",
+        "type": "credit_rating",
+        "description": "India Shelter Finance maintained credit ratings of AA- from CARE, ICRA, and India Ratings as of March 2026.",
+        "detail": "The credit rating snapshot for FY26 confirmed stable ratings from all three major agencies.",
+        "citation": {
+          "quote": "Credit Rating 4 AA- ... 5 – CARE Rating, ICRA, IND RA",
+          "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+        }
+      },
+      {
+        "date": "2025",
+        "type": "regulatory",
+        "description": "The company disclosed its first Business Responsibility & Sustainability Report (BRSR) for the 2024-25 fiscal year.",
+        "detail": "The report included the company's maiden disclosures for Scope 1, Scope 2, and Scope 3 emissions.",
+        "citation": {
+          "quote": "Business Responsibility & Sustainability Report (BRSR) disclosed for FY 24-25 with Maiden Scope 1, Scope 2 and Scope 3 emission disclosure",
+          "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+        }
+      }
+    ],
+    "performance": {
+      "growth_drivers": [
+        {
+          "description": "Gross Assets Under Management (AUM) grew 29% YoY to ₹11,044 Crores in FY26, continuing a 39% CAGR since FY20.",
+          "citation": {
+            "quote": "Gross AUM (Rs. Crores) 39% CAGR (FY20-FY26)... Q4FY26 11,044",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          }
+        },
+        {
+          "description": "Significant increase in digital efficiency with Account Aggregator (AA) penetration reaching 94% in Q4FY26, up from 79% in Q4FY25.",
+          "citation": {
+            "quote": "% of Account Aggregator (AA) penetration Q4FY25 79% Q4FY26 94%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          }
+        },
+        {
+          "description": "Expansion of phygital distribution network to 307 branches across 15 states, focusing on Tier II and Tier III geographies.",
+          "citation": {
+            "quote": "India Shelter has strong distribution moat with its Pan-India network in 15 states via 307 branches",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          }
+        }
+      ],
+      "segment_commentary": [
+        {
+          "segment": "Housing Finance",
+          "description": "The company operates as a single segment focused on housing finance in India, with Home Loans comprising 67% of the total book.",
+          "citation": {
+            "quote": "The Company is primarily engaged in the business of housing finance within India and there is no separately reportable business or geographical segments... On Book HL 67%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+          }
+        }
+      ],
+      "guidance": [
+        {
+          "description": "Management aims to deepen penetration in existing and adjacent markets while improving branch productivity and scaling co-lending opportunities.",
+          "citation": {
+            "quote": "Deepen penetration in existing markets... Improve branch productivity... Scale co-lending opportunities",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          }
+        },
+        {
+          "description": "Future growth will leverage technology for scalability, including internal data models to identify default risk and enhancing brand visibility in Tier II/III cities.",
+          "citation": {
+            "quote": "Leverage Technology for Scalability and Productivity... Internal data models to identify default risk",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          }
+        }
+      ],
+      "cohort_or_customer_notes": [
+        {
+          "description": "Customer base is highly granular with an average ticket size of ₹10 Lakhs, predominantly serving first-time mortgage borrowers (72%).",
+          "citation": {
+            "quote": "ATS ~ Rs. 10 Lacs... 72% First Time Mortgage Borrowers",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          }
+        },
+        {
+          "description": "High concentration of women applicants (99%) and self-employed individuals (76%) within the low and middle-income segments.",
+          "citation": {
+            "quote": "99% Women Applicant... 76% Self-Employed... 81% LIG + MIG",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          }
+        }
+      ]
+    },
+    "risk_outlook": {
+      "risk_factors": [
+        {
+          "description": "Fluctuations in interest rates and fiscal costs prevailing in the economy may negatively impact business profitability.",
+          "citation": {
+            "quote": "risks and uncertainties regarding fluctuations in earnings... interest and other fiscal costs generally prevailing in the economy.",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          }
+        }
+      ],
+      "asset_quality_concerns": [
+        {
+          "description": "Impairment charges on financial instruments increased significantly by approximately 52% year-on-year, reaching 4,031.98 lakhs in FY26.",
+          "citation": {
+            "quote": "Impairment on financial instruments: 4,031.98 [vs] 2,643.02",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+          }
+        },
+        {
+          "description": "Provision coverage on Stage 3 (non-performing) assets is relatively low at 25.41%.",
+          "citation": {
+            "quote": "Provision Coverage ratio on Stage 3 assets 25.41%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+          }
+        },
+        {
+          "description": "Standard restructured exposure for personal and housing loans remains at 1,000.30 lakhs under COVID-19 resolution frameworks.",
+          "citation": {
+            "quote": "Total [Personal Loan] Position as at the end of this half-year: 1,000.30",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+          }
+        }
+      ],
+      "headwinds": [
+        {
+          "description": "Intense competition from both domestic and international financial entities poses a threat to market share and growth management.",
+          "citation": {
+            "quote": "risks and uncertainties relating to... our ability to manage growth, competition (both domestic and international)",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          }
+        }
+      ],
+      "outlook": [
+        {
+          "description": "The company maintains a high net profit margin exceeding 32% despite increased impairments.",
+          "citation": {
+            "quote": "Net Profit Margin (%) 32.92%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+          }
+        },
+        {
+          "description": "Active utilization of assignment and co-lending models to manage capital and liquidity.",
+          "citation": {
+            "quote": "Amount of loan account assigned 1,02,165.90 lakhs... Details of loans not in default transferred through Co-Lending",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf"
+          }
+        }
+      ]
+    },
+    "asset_mix": [
+      {
+        "period": "FY26",
+        "home_loan_pct": 56,
+        "lap_pct": 44,
+        "msme_pct": null,
+        "construction_pct": null,
+        "other_pct": null,
+        "citations": {
+          "home_loan_pct": {
+            "quote": "Home Loans 56%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "lap_pct": {
+            "quote": "Loan against Property 44%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          }
+        }
+      },
+      {
+        "period": "FY25",
+        "home_loan_pct": 57,
+        "lap_pct": 43,
+        "msme_pct": null,
+        "construction_pct": null,
+        "other_pct": null,
+        "citations": {
+          "home_loan_pct": {
+            "quote": "Home Loans 57%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "lap_pct": {
+            "quote": "Loan against Property 43%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          }
+        }
+      }
+    ],
+    "customer_mix": [
+      {
+        "period": "FY26",
+        "self_employed_pct": 76,
+        "salaried_pct": 24,
+        "formal_income_pct": null,
+        "informal_income_pct": null,
+        "rural_pct": null,
+        "semi_urban_pct": null,
+        "urban_pct": null,
+        "citations": {
+          "self_employed_pct": {
+            "quote": "Self Employed 76%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "salaried_pct": {
+            "quote": "Salaried 24%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          }
+        }
+      },
+      {
+        "period": "FY25",
+        "self_employed_pct": 75,
+        "salaried_pct": 25,
+        "formal_income_pct": null,
+        "informal_income_pct": null,
+        "rural_pct": null,
+        "semi_urban_pct": null,
+        "urban_pct": null,
+        "citations": {
+          "self_employed_pct": {
+            "quote": "Self Employed 75%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          },
+          "salaried_pct": {
+            "quote": "Salaried 25%",
+            "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+          }
+        }
+      }
+    ],
+    "geographic_mix": [
+      {
+        "period": "FY26",
+        "top_states": [
+          {
+            "state": "Rajasthan",
+            "aum_share_pct": 31,
+            "branches": 80,
+            "citation": {
+              "quote": "Rajasthan 80 branches 31%",
+              "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+            }
+          },
+          {
+            "state": "Maharashtra",
+            "aum_share_pct": 16,
+            "branches": 40,
+            "citation": {
+              "quote": "Maharashtra 40 branches 16%",
+              "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+            }
+          },
+          {
+            "state": "Madhya Pradesh",
+            "aum_share_pct": 10,
+            "branches": 32,
+            "citation": {
+              "quote": "Madhya Pradesh 32 branches 10%",
+              "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+            }
+          },
+          {
+            "state": "Uttar Pradesh",
+            "aum_share_pct": 7,
+            "branches": 26,
+            "citation": {
+              "quote": "Uttar Pradesh 26 branches 7%",
+              "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+            }
+          },
+          {
+            "state": "Tamil Nadu",
+            "aum_share_pct": 7,
+            "branches": 25,
+            "citation": {
+              "quote": "Tamil Nadu 25 branches 7%",
+              "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+            }
+          }
+        ],
+        "states_total": 15,
+        "citation": {
+          "quote": "India Shelter has strong distribution moat with its Pan-India network in 15 states",
+          "sourceUrl": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+        }
+      }
+    ],
+    "funding_mix": [],
+    "source_urls": [
+      "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf",
+      "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf"
+    ]
+  }
+]

@@ -1,0 +1,85 @@
+{
+  "source": "header",
+  "homepageUrl": "https://aptusindia.com",
+  "irIndexUrl": "https://aptusindia.com/annual-reports",
+  "documents": [
+    {
+      "url": "https://aptusindia.s3.amazonaws.com/AVHFIL+Procedure+for+release+of+property+documents.pdf",
+      "title": "Operational Guideline for Handover of Collateral Documents in the case of Demise of Borrower",
+      "type": "other"
+    },
+    {
+      "url": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+-+Consumer+Education+Literature+Website+Disclosure.pdf",
+      "title": "Customer Education Literature on SMA/NPA",
+      "type": "other"
+    },
+    {
+      "url": "https://aptusindia.s3.us-east-1.amazonaws.com/Approach_to_Gradation_of_Risks.pdf",
+      "title": "Gradation of Risk",
+      "type": "other"
+    },
+    {
+      "url": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf",
+      "title": "Annual Report 2024-2025",
+      "period": "2024-2025",
+      "type": "annual_report"
+    },
+    {
+      "url": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf",
+      "title": "Annual Report 2023-2024",
+      "period": "FY24",
+      "type": "annual_report"
+    },
+    {
+      "url": "https://aptusindia.s3.amazonaws.com/Aptus_AR_2022-23.pdf",
+      "title": "Annual Report 2022-2023",
+      "period": "2022-2023",
+      "type": "annual_report"
+    },
+    {
+      "url": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus+Value+Housing+Finance+India+Limited_Annual+Report+FY+2021-22.pdf",
+      "title": "Annual Report 2021-2022",
+      "period": "2021-2022",
+      "type": "annual_report"
+    },
+    {
+      "url": "https://aptusindia.com/wp-content/uploads/2022/02/Annual-Report_Aptus_2020-21.pdf",
+      "title": "Annual Report 2020-2021",
+      "period": "2020-2021",
+      "type": "annual_report"
+    },
+    {
+      "url": "https://aptusindia.com/wp-content/uploads/2022/02/Annual_Report_2019-20.pdf",
+      "title": "Annual Report 2019-2020",
+      "period": "2019-2020",
+      "type": "annual_report"
+    },
+    {
+      "url": "https://aptusindia.com/wp-content/uploads/2022/02/Aptus_Limited_AR19.pdf",
+      "title": "Annual Report 2018-2019",
+      "period": "2018-2019",
+      "type": "annual_report"
+    },
+    {
+      "url": "https://www.aptusindia.com/wp-content/uploads/2023/02/Aptus-HFC-Fair-Pratices-Code.pdf",
+      "title": "Fair Practice\n\t\t\tCode",
+      "type": "other"
+    },
+    {
+      "url": "https://aptusindia.s3.amazonaws.com/Aptus-HFC-KYC-AML-Policy_Amended.pdf",
+      "title": "KYC\n\t\t\tPolicy",
+      "type": "other"
+    },
+    {
+      "url": "https://aptusindia.s3.us-east-1.amazonaws.com/Assets+possessed+website+Dec+24.pdf",
+      "title": "List\n\t\t\tof assets possessed",
+      "type": "other"
+    },
+    {
+      "url": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_Terms+_Conditions.pdf",
+      "title": "Terms and\n\t\t\tCondition",
+      "type": "other"
+    }
+  ],
+  "warnings": []
+}

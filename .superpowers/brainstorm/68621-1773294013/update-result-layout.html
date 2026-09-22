@@ -1,0 +1,103 @@
+<h2>After "Update deck with comments" — what gets added?</h2>
+<p class="subtitle">AI processes all human comments and adds new content around the charts. Which shape fits?</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9fa;padding:12px 16px;">
+      <!-- Slide cluster: hub + satellites column -->
+      <div style="display:flex;gap:8px;align-items:flex-start;overflow:hidden;">
+        <!-- Hub card -->
+        <div style="border:1px solid #e2e8f0;border-radius:6px;background:white;padding:8px;width:90px;flex-shrink:0;">
+          <div style="font-size:8px;font-weight:600;color:#6b7280;margin-bottom:3px;">CHART</div>
+          <div style="background:#e5e7eb;border-radius:3px;height:40px;margin-bottom:4px;"></div>
+          <div style="font-size:8px;color:#374151;">Revenue by day</div>
+        </div>
+        <!-- Satellites -->
+        <div style="display:flex;flex-direction:column;gap:4px;min-width:0;">
+          <div style="border:1px solid #e2e8f0;border-radius:5px;background:white;padding:5px 7px;width:110px;">
+            <div style="font-size:7px;font-weight:700;color:#6b7280;letter-spacing:.05em;margin-bottom:2px;">ANALYSIS</div>
+            <div style="font-size:8px;color:#374151;">Revenue grew 12% MoM…</div>
+          </div>
+          <div style="border:1px solid #e2e8f0;border-radius:5px;background:white;padding:5px 7px;width:110px;">
+            <div style="font-size:7px;font-weight:700;color:#6b7280;letter-spacing:.05em;margin-bottom:2px;">CHALLENGE</div>
+            <div style="font-size:8px;color:#374151;">Is this trend or noise?</div>
+          </div>
+          <!-- NEW card -->
+          <div style="border:1.5px solid #3E63DD;border-radius:5px;background:#eff6ff;padding:5px 7px;width:110px;position:relative;">
+            <div style="position:absolute;top:-6px;left:6px;background:#3E63DD;color:white;font-size:6px;font-weight:700;border-radius:3px;padding:1px 4px;">NEW</div>
+            <div style="font-size:7px;font-weight:700;color:#3E63DD;letter-spacing:.05em;margin-bottom:2px;">NOTES</div>
+            <div style="font-size:8px;color:#374151;">AI response to your 2 comments. The spike you noted on Tue aligns with…</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Notes card per slide</h3>
+      <p>One new "Notes" satellite card per commented slide. Contains the AI's synthesized response to all comments on that slide. Sits alongside challenge and analysis cards.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9fa;padding:12px 16px;">
+      <div style="display:flex;gap:8px;align-items:flex-start;">
+        <!-- Hub -->
+        <div style="border:1px solid #e2e8f0;border-radius:6px;background:white;padding:8px;width:90px;flex-shrink:0;">
+          <div style="font-size:8px;font-weight:600;color:#6b7280;margin-bottom:3px;">CHART</div>
+          <div style="background:#e5e7eb;border-radius:3px;height:40px;margin-bottom:4px;"></div>
+          <div style="font-size:8px;color:#374151;">Revenue by day</div>
+        </div>
+        <!-- Satellites -->
+        <div style="display:flex;flex-direction:column;gap:4px;">
+          <div style="border:1px solid #e2e8f0;border-radius:5px;background:white;padding:5px 7px;width:110px;">
+            <div style="font-size:7px;font-weight:700;color:#6b7280;margin-bottom:2px;">ANALYSIS</div>
+            <div style="font-size:8px;color:#374151;">Revenue grew 12% MoM…</div>
+          </div>
+          <!-- Extended analysis with comment response woven in -->
+          <div style="border:1.5px solid #3E63DD;border-radius:5px;background:white;padding:5px 7px;width:110px;position:relative;">
+            <div style="position:absolute;top:-6px;left:6px;background:#3E63DD;color:white;font-size:6px;font-weight:700;border-radius:3px;padding:1px 4px;">NEW</div>
+            <div style="font-size:7px;font-weight:700;color:#3E63DD;margin-bottom:2px;">COMMENT REPLY</div>
+            <div style="background:#f3f4f6;border-radius:3px;padding:3px;margin-bottom:3px;font-size:7px;color:#6b7280;">You: "What about the Tuesday dip?"</div>
+            <div style="font-size:8px;color:#374151;">The dip coincides with a delivery delay in the Northeast region…</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Per-comment reply cards</h3>
+      <p>One card per individual comment. Shows the original comment as a quote, then the AI's response below it. More granular — each comment gets its own dedicated card.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#f8f9fa;padding:12px 16px;">
+      <!-- A larger summary card spanning below all slides -->
+      <div style="display:flex;gap:8px;align-items:flex-start;">
+        <div style="border:1px solid #e2e8f0;border-radius:6px;background:white;padding:8px;width:90px;flex-shrink:0;">
+          <div style="font-size:8px;font-weight:600;color:#6b7280;margin-bottom:3px;">CHART</div>
+          <div style="background:#e5e7eb;border-radius:3px;height:40px;margin-bottom:4px;"></div>
+          <div style="font-size:8px;color:#374151;">Revenue by day</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:4px;">
+          <div style="border:1px solid #e2e8f0;border-radius:5px;background:white;padding:5px 7px;width:110px;">
+            <div style="font-size:7px;font-weight:700;color:#6b7280;margin-bottom:2px;">ANALYSIS</div>
+            <div style="font-size:8px;color:#374151;">Revenue grew 12% MoM…</div>
+          </div>
+        </div>
+      </div>
+      <!-- Deck-level summary card -->
+      <div style="margin-top:8px;border:1.5px solid #3E63DD;border-radius:6px;background:#eff6ff;padding:8px;position:relative;">
+        <div style="position:absolute;top:-7px;left:8px;background:#3E63DD;color:white;font-size:6px;font-weight:700;border-radius:3px;padding:1px 4px;">NEW</div>
+        <div style="font-size:8px;font-weight:700;color:#3E63DD;margin-bottom:4px;">REVIEW SUMMARY — All Comments</div>
+        <div style="font-size:8px;color:#374151;">Across 3 slides, your team flagged 5 points. Key themes: (1) Tue spike — delivery delay (2) Mobile gap still unexplained (3) Cohort drop warrants follow-up…</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Deck-level summary card</h3>
+      <p>One big card at the bottom of the deck that synthesizes ALL comments across all slides into a single cross-deck review. Good for exec summaries.</p>
+    </div>
+  </div>
+
+</div>
+
+<p class="subtitle" style="margin-top:16px;">Check <strong>http://localhost:54711</strong> to select. Or tell me in terminal.</p>

@@ -1,0 +1,133 @@
+{
+  "headline": "229 of 450 customers started KYC but got stuck mid-steps",
+  "executiveReadout": "The clearest observed pattern is not blanket refusal: 229 calls were with customers who had already entered the KYC flow and described specific blockers such as upload stops, OTP confusion, selfie/camera issues, mismatch questions, or weak-network failures. Separately, 109 calls were unreachable or wrong-number outcomes, which points to contact-data and retry-timing issues rather than KYC-step diagnosis. Another 106 calls were short refusals or callback requests, indicating the dialer should distinguish stop-contact requests from reschedulable cases. The immediate operational opportunity is to stop wasting volume on wrong numbers and explicit refusals, while making recovery outreach more step-specific for customers who already attempted KYC.",
+  "topInsights": [
+    {
+      "title": "Started KYC, then stopped at a specific step",
+      "readout": "229 calls fell into clusters where customers described an exact failure point after starting KYC: stopped mid-process (70), unclear flow/timing (60), selfie/camera block (46), name/address mismatch (40), and weak-network upload failure (13).",
+      "whyItMatters": "This is the largest lane in the campaign, so generic reminder calling is likely missing what customers actually reported on the call.",
+      "suggestedChange": "Send follow-up that resumes from the failed step and names the likely blocker category: upload, OTP, selfie/camera, mismatch, or network retry.",
+      "evidenceQuotes": [
+        "\"last mein kuch document upload pe atak gaya tha\"",
+        "\"mujhe samajh nahi aaya ki Aadhaar wala OTP kis number pe jayega\"",
+        "\"Selfie pe hi atak raha tha, camera permission shayad off tha\"",
+        "\"Current address aur Aadhaar address same nahi tha.\""
+      ],
+      "confidence": 0.95
+    },
+    {
+      "title": "Unreachable and wrong-number calls consumed 109 of 450 attempts",
+      "readout": "79 calls had no customer connected and 30 reached the wrong number, totaling 24.2% of all analyzed calls.",
+      "whyItMatters": "These calls do not reveal KYC-step issues and repeated retries to the same number risk wasting volume and repeating mistakes.",
+      "suggestedChange": "Suppress wrong numbers immediately for that customer identity, and move unreachable cases to alternate retry windows and non-voice nudges instead of repeated same-slot calling.",
+      "evidenceQuotes": [
+        "\"Nahi, wrong number hai. Yahan Neha nahi hain.\"",
+        "\"Yahan koi Pooja nahi hai.\"",
+        "\"mujhe aise calls aate rehte hain\""
+      ],
+      "confidence": 0.99
+    },
+    {
+      "title": "Explicit stop-calling requests are concentrated and easy to isolate",
+      "readout": "54 calls were direct refusals, with 53 negative outcomes, and the language was short and unambiguous.",
+      "whyItMatters": "These are poor candidates for continued live outreach and should not be mixed with callback-later or troubleshooting cases.",
+      "suggestedChange": "Apply strong suppression after explicit refusal and remove these numbers from repeated KYC call cycles where policy allows.",
+      "evidenceQuotes": [
+        "\"mujhe abhi interest nahi hai\"",
+        "\"Calls mat kariye baar baar.\"",
+        "\"Please don't explain anything.\""
+      ],
+      "confidence": 0.98
+    },
+    {
+      "title": "Callback requests are common but currently mixed with refusals",
+      "readout": "52 calls were primarily scheduling requests such as after 6 PM, after 7 PM, in 20 minutes, or tomorrow morning.",
+      "whyItMatters": "These customers did not provide a KYC diagnosis on that call; random redials will miss the requested window and create avoidable repeat contacts.",
+      "suggestedChange": "Capture requested callback slots in the dialer and route the follow-up to a short script that starts from the pending KYC step.",
+      "evidenceQuotes": [
+        "\"6 baje ke baad call kar lena\"",
+        "\"20 minute baad kar lena\"",
+        "\"main meeting mein hoon abhi\""
+      ],
+      "confidence": 0.94
+    },
+    {
+      "title": "Selfie, camera, and image-capture problems account for 46 calls",
+      "readout": "46 calls specifically mentioned selfie, camera permission, blank screen, or blurred photo issues; these calls were long on average at 195 seconds.",
+      "whyItMatters": "These are concrete product or instruction failures, and long calls suggest agents are spending time troubleshooting steps that could be handled earlier in-app or by message.",
+      "suggestedChange": "Add pre-step camera checks, permission prompts, blur guidance, and resume directly at the selfie/photo step after failure.",
+      "evidenceQuotes": [
+        "\"Camera permission ka kuch issue aa raha tha.\"",
+        "\"Camera permission diya tha but kuch blank aa raha tha.\"",
+        "\"PAN ka photo blur bol raha tha.\""
+      ],
+      "confidence": 0.92
+    },
+    {
+      "title": "Mismatch confusion is a distinct blocker, not general hesitation",
+      "readout": "40 calls centered on name or address mismatch questions, often involving PAN name differences or Aadhaar current-versus-old address.",
+      "whyItMatters": "These customers were asking what to submit, not whether to continue, so generic reminders are unlikely to resolve the issue.",
+      "suggestedChange": "Show field-level mismatch guidance before submission, with examples for initials, middle names, and address-proof handling.",
+      "evidenceQuotes": [
+        "\"Name mismatch aa raha tha PAN pe.\"",
+        "\"Aadhaar mein purana address hai aur current alag hai.\"",
+        "\"mujhe complete karna tha but name mismatch jaisa kuch aa raha tha.\""
+      ],
+      "confidence": 0.9
+    },
+    {
+      "title": "OTP, process length, and step-order confusion appear before hard failures",
+      "readout": "Across the 60 unclear-flow calls and many of the 70 stopped-mid-process calls, customers asked where OTP would arrive, what video KYC meant, how long it would take, and why different channels showed different instructions.",
+      "whyItMatters": "Some drop-off may occur before submission because customers start without knowing requirements, time needed, or where the next step lives.",
+      "suggestedChange": "Test a pre-start checklist covering estimated time, required documents, OTP destination, and whether the next step happens in app, by link, or by video.",
+      "evidenceQuotes": [
+        "\"Video KYC jaisa kuch open hua tha\"",
+        "\"mujhe samajh nahi aaya ki Aadhaar wala OTP kis number pe jayega\"",
+        "\"mujhe email pe kuch aaya tha aur app pe kuch aur dikh raha tha.\""
+      ],
+      "confidence": 0.88
+    }
+  ],
+  "workflowChanges": [
+    {
+      "title": "Suppress wrong numbers at the identity-number pair",
+      "targetMoment": "Immediately after a wrong-number disposition",
+      "change": "Block further KYC calls to that number for the named customer and trigger phone-mapping review on source records.",
+      "measurement": "Track repeat wrong-number rate, suppressed-volume share, and any later successful contact via corrected number."
+    },
+    {
+      "title": "Split callback requests from refusal outcomes in the dialer",
+      "targetMoment": "During call wrap-up",
+      "change": "Require agents to tag either explicit refusal or customer-requested callback window, with selectable time slots for callback-later cases.",
+      "measurement": "Compare contact success and repeat-call count for scheduled callbacks versus unscheduled retries."
+    },
+    {
+      "title": "Send step-specific recovery messages after partial KYC",
+      "targetMoment": "Within hours after a call where the customer described a failed KYC step",
+      "change": "Message the exact pending step and tailored help: upload, OTP, selfie/camera, mismatch, or network retry, with a direct resume path.",
+      "measurement": "Track resume starts, step completion from the same failed step, and abandonment after recovery outreach."
+    },
+    {
+      "title": "Add pre-start checklist before upload and video steps",
+      "targetMoment": "Before the customer enters KYC or resumes after a reminder",
+      "change": "Show estimated completion time, required documents, OTP destination, device requirement for camera steps, and when video KYC appears.",
+      "measurement": "Monitor drop-off before first submission step, help-content views, and completion rate by checklist exposure."
+    },
+    {
+      "title": "Add camera and network readiness checks",
+      "targetMoment": "Right before selfie/photo/video capture and upload-heavy steps",
+      "change": "Prompt for camera permission, basic image-quality check, and network guidance such as switching to Wi‑Fi if available; preserve progress on failure.",
+      "measurement": "Track failure rate at selfie/upload steps, retry success after readiness prompts, and repeat calls mentioning camera or network issues."
+    }
+  ],
+  "openQuestions": [
+    "Which exact KYC screen or API step failed most often for the 70 stopped-mid-process calls? Current clustering shows symptoms, not product event logs.",
+    "How often did customers who asked for a callback actually get called within the requested time window?",
+    "For unreachable calls, what retry times, carrier patterns, or geography explain no-answer versus failed-connect outcomes?",
+    "How often did customers receive inconsistent instructions across app, email, SMS, and agent script, especially around OTP and video KYC?",
+    "For mismatch cases, which document combinations and field mismatches are most common: initials, middle name, old address, or transliteration differences?",
+    "What share of selfie/camera failures came from permission denial versus app blank-screen bugs versus image-quality rejection?",
+    "Can resume links deep-link to the exact failed step today, or does the customer restart the full flow?",
+    "What downstream completion happened after these calls by cluster? The current readout shows call outcomes, not confirmed KYC completion by blocker type."
+  ]
+}

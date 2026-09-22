@@ -1,0 +1,4186 @@
+{
+  "runId": "kyc-450-2026-06-09",
+  "model": "text-embedding-3-small",
+  "dimensions": 256,
+  "projection": {
+    "method": "umap",
+    "nNeighbors": 15,
+    "minDist": 0.25,
+    "seed": 42
+  },
+  "generatedAt": "2026-06-10T07:07:28.359Z",
+  "count": 450,
+  "zones": [
+    {
+      "id": "cluster_01-z1",
+      "clusterId": "cluster_01",
+      "title": "Dropped call, network issue silence",
+      "count": 13,
+      "silhouette": 0.201
+    },
+    {
+      "id": "cluster_01-z2",
+      "clusterId": "cluster_01",
+      "title": "No response, pure silence",
+      "count": 19,
+      "silhouette": 0.201
+    },
+    {
+      "id": "cluster_01-z3",
+      "clusterId": "cluster_01",
+      "title": "Transcript mein customer speech nahi",
+      "count": 47,
+      "silhouette": 0.201
+    },
+    {
+      "id": "cluster_02",
+      "clusterId": "cluster_02",
+      "title": "Try kiya tha, beech mein atak gaya — baad mein karunga",
+      "count": 70,
+      "silhouette": 0
+    },
+    {
+      "id": "cluster_03",
+      "clusterId": "cluster_03",
+      "title": "Karna hai, but step samajh nahi aaya / right time nahi tha",
+      "count": 60,
+      "silhouette": 0
+    },
+    {
+      "id": "cluster_04-z1",
+      "clusterId": "cluster_04",
+      "title": "KYC nahi chahiye, calls band करो",
+      "count": 25,
+      "silhouette": 0.128
+    },
+    {
+      "id": "cluster_04-z2",
+      "clusterId": "cluster_04",
+      "title": "Interested nahi, abhi call mat करो",
+      "count": 29,
+      "silhouette": 0.128
+    },
+    {
+      "id": "cluster_05-z1",
+      "clusterId": "cluster_05",
+      "title": "Meeting mein hoon, evening callback",
+      "count": 33,
+      "silhouette": 0.164
+    },
+    {
+      "id": "cluster_05-z2",
+      "clusterId": "cluster_05",
+      "title": "Driving/travel mein hoon, later call",
+      "count": 19,
+      "silhouette": 0.164
+    },
+    {
+      "id": "cluster_06",
+      "clusterId": "cluster_06",
+      "title": "Selfie / camera permission pe atak gaya",
+      "count": 46,
+      "silhouette": 0
+    },
+    {
+      "id": "cluster_07-z1",
+      "clusterId": "cluster_07",
+      "title": "Name mismatch ya address confusion",
+      "count": 27,
+      "silhouette": 0.142
+    },
+    {
+      "id": "cluster_07-z2",
+      "clusterId": "cluster_07",
+      "title": "Address proof ka doubt",
+      "count": 13,
+      "silhouette": 0.142
+    },
+    {
+      "id": "cluster_08-z1",
+      "clusterId": "cluster_08",
+      "title": "Wrong number, repeated calls objection",
+      "count": 14,
+      "silhouette": 0.101
+    },
+    {
+      "id": "cluster_08-z2",
+      "clusterId": "cluster_08",
+      "title": "Bas wrong number reached",
+      "count": 6,
+      "silhouette": 0.101
+    },
+    {
+      "id": "cluster_08-z3",
+      "clusterId": "cluster_08",
+      "title": "Wrong number, number remove karo",
+      "count": 10,
+      "silhouette": 0.101
+    },
+    {
+      "id": "cluster_09",
+      "clusterId": "cluster_09",
+      "title": "Upload/network error se flow ruk gaya",
+      "count": 13,
+      "silhouette": 0
+    },
+    {
+      "id": "cluster_10",
+      "clusterId": "cluster_10",
+      "title": "Device/OTP access issue ya mood off",
+      "count": 6,
+      "silhouette": 0
+    }
+  ],
+  "points": [
+    {
+      "callId": "kyc-450-2026-06-09_call_0001",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2731,
+      "y": 0.4015,
+      "laneX": 0.4062,
+      "laneY": 0.4147
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0002",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.9021,
+      "y": 0.8697,
+      "laneX": 0.6688,
+      "laneY": 0.9496
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0003",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z3",
+      "x": 0.9819,
+      "y": 0.0009,
+      "laneX": 0,
+      "laneY": 0.4501
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0004",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.13,
+      "y": 0.8101,
+      "laneX": 0,
+      "laneY": 0.2128
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0005",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3436,
+      "y": 0.7732,
+      "laneX": 0.9317,
+      "laneY": 0.6101
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0006",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3009,
+      "y": 0.4338,
+      "laneX": 0.4175,
+      "laneY": 0.7915
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0007",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z1",
+      "x": 0.8606,
+      "y": 0.8649,
+      "laneX": 0.8045,
+      "laneY": 0.7898
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0008",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3109,
+      "y": 0.3887,
+      "laneX": 0.5817,
+      "laneY": 0.508
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0009",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3738,
+      "y": 0.7059,
+      "laneX": 0.7675,
+      "laneY": 0.0748
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0010",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.2125,
+      "y": 0.3045,
+      "laneX": 0.7917,
+      "laneY": 0.4189
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0011",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2912,
+      "y": 0.383,
+      "laneX": 0.5511,
+      "laneY": 0.3942
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0012",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2439,
+      "y": 0.4876,
+      "laneX": 0.2646,
+      "laneY": 0
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0013",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2864,
+      "y": 0.5267,
+      "laneX": 0.6301,
+      "laneY": 0.9263
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0014",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z2",
+      "x": 0.2285,
+      "y": 0.807,
+      "laneX": 0.2204,
+      "laneY": 0.9451
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0015",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z2",
+      "x": 0.1723,
+      "y": 0.3413,
+      "laneX": 0.0268,
+      "laneY": 0.8849
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0016",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2777,
+      "y": 0.399,
+      "laneX": 0.4133,
+      "laneY": 0.4275
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0017",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.9215,
+      "y": 0.8674,
+      "laneX": 0.5636,
+      "laneY": 0.8847
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0018",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z1",
+      "x": 0.9963,
+      "y": 0.014,
+      "laneX": 0.2415,
+      "laneY": 0.7136
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0019",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1319,
+      "y": 0.8069,
+      "laneX": 0.0287,
+      "laneY": 0.1826
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0020",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3411,
+      "y": 0.6955,
+      "laneX": 0.7493,
+      "laneY": 0.4313
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0021",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.93,
+      "y": 0.8751,
+      "laneX": 0.5804,
+      "laneY": 0.9478
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0022",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2215,
+      "y": 0.4587,
+      "laneX": 0.1949,
+      "laneY": 0.1087
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0023",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.1971,
+      "y": 0.3413,
+      "laneX": 0.1101,
+      "laneY": 0.7715
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0024",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.365,
+      "y": 0.6925,
+      "laneX": 0.7632,
+      "laneY": 0.1133
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0025",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.1858,
+      "y": 0.2702,
+      "laneX": 0.9486,
+      "laneY": 0.3291
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0026",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.9256,
+      "y": 0.8713,
+      "laneX": 0.5739,
+      "laneY": 0.9151
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0027",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3275,
+      "y": 0.4107,
+      "laneX": 0.268,
+      "laneY": 0.9236
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0028",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2604,
+      "y": 0.4312,
+      "laneX": 0.4115,
+      "laneY": 0.288
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0029",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2966,
+      "y": 0.3442,
+      "laneX": 0.6688,
+      "laneY": 0.3041
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0030",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.2525,
+      "y": 0.7907,
+      "laneX": 0.2598,
+      "laneY": 0.7722
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0031",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z2",
+      "x": 0.2475,
+      "y": 0.3736,
+      "laneX": 0.309,
+      "laneY": 0.8195
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0032",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z1",
+      "x": 0.8731,
+      "y": 0.872,
+      "laneX": 0.7859,
+      "laneY": 0.9115
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0033",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z3",
+      "x": 0.9681,
+      "y": 0.001,
+      "laneX": 0.1383,
+      "laneY": 0.0516
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0034",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1418,
+      "y": 0.8204,
+      "laneX": 0.0459,
+      "laneY": 0.182
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0035",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3683,
+      "y": 0.7018,
+      "laneX": 0.8038,
+      "laneY": 0.1754
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0036",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2335,
+      "y": 0.4386,
+      "laneX": 0.2102,
+      "laneY": 0.2789
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0037",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8839,
+      "y": 0.8551,
+      "laneX": 0.7869,
+      "laneY": 0.6562
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0038",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2195,
+      "y": 0.3847,
+      "laneX": 0.1484,
+      "laneY": 0.5344
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0039",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3695,
+      "y": 0.6951,
+      "laneX": 0.7486,
+      "laneY": 0.2187
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0040",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2382,
+      "y": 0.3958,
+      "laneX": 0.2774,
+      "laneY": 0.4459
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0041",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3321,
+      "y": 0.6653,
+      "laneX": 0.587,
+      "laneY": 0.6429
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0042",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.3433,
+      "y": 0.4597,
+      "laneX": 0.3869,
+      "laneY": 0.9855
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0043",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.3009,
+      "y": 0.3514,
+      "laneX": 0.6596,
+      "laneY": 0.3476
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0044",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z2",
+      "x": 0.2246,
+      "y": 0.8114,
+      "laneX": 0.2068,
+      "laneY": 0.9654
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0045",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.1846,
+      "y": 0.2585,
+      "laneX": 0.9599,
+      "laneY": 0.433
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0046",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2444,
+      "y": 0.3961,
+      "laneX": 0.3531,
+      "laneY": 0.4781
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0047",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z1",
+      "x": 0.888,
+      "y": 0.8854,
+      "laneX": 0.71,
+      "laneY": 0.8543
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0048",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z3",
+      "x": 0.9707,
+      "y": 0.0032,
+      "laneX": 0.1939,
+      "laneY": 0.2633
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0049",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1336,
+      "y": 0.8172,
+      "laneX": 0.031,
+      "laneY": 0.2066
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0050",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3752,
+      "y": 0.7163,
+      "laneX": 0.8258,
+      "laneY": 0.0488
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0051",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z2",
+      "x": 0.1822,
+      "y": 0.3185,
+      "laneX": 0.0704,
+      "laneY": 0.8668
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0052",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8964,
+      "y": 0.8885,
+      "laneX": 0.6805,
+      "laneY": 0.8403
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0053",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3085,
+      "y": 0.3981,
+      "laneX": 0.5856,
+      "laneY": 0.4825
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0054",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3484,
+      "y": 0.6957,
+      "laneX": 0.7485,
+      "laneY": 0.3578
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0055",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2263,
+      "y": 0.4683,
+      "laneX": 0.2139,
+      "laneY": 0.0715
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0056",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2883,
+      "y": 0.3509,
+      "laneX": 0.6386,
+      "laneY": 0.309
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0057",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z2",
+      "x": 0.2122,
+      "y": 0.8075,
+      "laneX": 0.1521,
+      "laneY": 0.8389
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0058",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.3432,
+      "y": 0.4534,
+      "laneX": 0.4012,
+      "laneY": 0.9806
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0059",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3591,
+      "y": 0.7035,
+      "laneX": 0.7969,
+      "laneY": 0.0321
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0060",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.194,
+      "y": 0.2594,
+      "laneX": 0.975,
+      "laneY": 0.4391
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0061",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2538,
+      "y": 0.3809,
+      "laneX": 0.3733,
+      "laneY": 0.5492
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0062",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8989,
+      "y": 0.7925,
+      "laneX": 0.8975,
+      "laneY": 0.0737
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0063",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z1",
+      "x": 0.9786,
+      "y": 0.0366,
+      "laneX": 0.878,
+      "laneY": 0.2074
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0064",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1539,
+      "y": 0.8119,
+      "laneX": 0.0394,
+      "laneY": 0.4214
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0065",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3602,
+      "y": 0.7156,
+      "laneX": 0.8494,
+      "laneY": 0.2277
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0066",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8323,
+      "y": 0.8367,
+      "laneX": 0.8829,
+      "laneY": 0.5791
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0067",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2447,
+      "y": 0.4238,
+      "laneX": 0.3158,
+      "laneY": 0.3359
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0068",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2439,
+      "y": 0.4741,
+      "laneX": 0.3241,
+      "laneY": 0.1158
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0069",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1759,
+      "y": 0.7784,
+      "laneX": 0.7749,
+      "laneY": 0.7143
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0070",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.1854,
+      "y": 0.2757,
+      "laneX": 0.9165,
+      "laneY": 0.3951
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0071",
+      "clusterId": "cluster_10",
+      "zoneId": "cluster_10",
+      "x": 0.2213,
+      "y": 0.4839,
+      "laneX": 0.0266,
+      "laneY": 0.5952
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0072",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2076,
+      "y": 0.3627,
+      "laneX": 0.2601,
+      "laneY": 0.7238
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0073",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z2",
+      "x": 0.211,
+      "y": 0.7966,
+      "laneX": 0.2066,
+      "laneY": 0.6707
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0074",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2852,
+      "y": 0.5183,
+      "laneX": 0.6155,
+      "laneY": 0.8169
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0075",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2585,
+      "y": 0.4109,
+      "laneX": 0.3705,
+      "laneY": 0.2941
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0076",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.1945,
+      "y": 0.4541,
+      "laneX": 0.0939,
+      "laneY": 0.2266
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0077",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8983,
+      "y": 0.7888,
+      "laneX": 0.8947,
+      "laneY": 0.0981
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0078",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z1",
+      "x": 0.9775,
+      "y": 0.0343,
+      "laneX": 0.7701,
+      "laneY": 0.4949
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0079",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1586,
+      "y": 0.8017,
+      "laneX": 0.0827,
+      "laneY": 0.4563
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0080",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3388,
+      "y": 0.7698,
+      "laneX": 0.9454,
+      "laneY": 0.7163
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0081",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.326,
+      "y": 0.4248,
+      "laneX": 0.3147,
+      "laneY": 0.9107
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0082",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8292,
+      "y": 0.8333,
+      "laneX": 0.8874,
+      "laneY": 0.6091
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0083",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2735,
+      "y": 0.43,
+      "laneX": 0.4418,
+      "laneY": 0.2634
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0084",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3279,
+      "y": 0.7415,
+      "laneX": 0.8554,
+      "laneY": 0.6217
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0085",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.1933,
+      "y": 0.272,
+      "laneX": 0.9577,
+      "laneY": 0.4757
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0086",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3001,
+      "y": 0.522,
+      "laneX": 0.6502,
+      "laneY": 0.8261
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0087",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z2",
+      "x": 0.1892,
+      "y": 0.8166,
+      "laneX": 0.122,
+      "laneY": 0.6479
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0088",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2015,
+      "y": 0.4128,
+      "laneX": 0.1365,
+      "laneY": 0.4741
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0089",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8948,
+      "y": 0.7921,
+      "laneX": 0.9002,
+      "laneY": 0.1249
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0090",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.232,
+      "y": 0.4964,
+      "laneX": 0.2839,
+      "laneY": 0.1697
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0091",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2214,
+      "y": 0.4019,
+      "laneX": 0.2446,
+      "laneY": 0.4518
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0092",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z2",
+      "x": 0.8808,
+      "y": 0.9015,
+      "laneX": 0.7188,
+      "laneY": 0.7579
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0093",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z2",
+      "x": 0.9887,
+      "y": 0.0299,
+      "laneX": 0.5486,
+      "laneY": 0.8267
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0094",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1569,
+      "y": 0.7944,
+      "laneX": 0.0911,
+      "laneY": 0.223
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0095",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3578,
+      "y": 0.7753,
+      "laneX": 1,
+      "laneY": 0.6319
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0096",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3105,
+      "y": 0.4478,
+      "laneX": 0.4621,
+      "laneY": 0.8161
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0097",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z2",
+      "x": 0.8931,
+      "y": 0.913,
+      "laneX": 0.6584,
+      "laneY": 0.7452
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0098",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2863,
+      "y": 0.524,
+      "laneX": 0.6227,
+      "laneY": 0.8936
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0099",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.3173,
+      "y": 0.731,
+      "laneX": 0.536,
+      "laneY": 0.6247
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0100",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.1892,
+      "y": 0.2697,
+      "laneX": 0.9943,
+      "laneY": 0.4299
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0101",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z2",
+      "x": 0.2155,
+      "y": 0.8226,
+      "laneX": 0.1806,
+      "laneY": 0.8961
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0102",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2861,
+      "y": 0.3518,
+      "laneX": 0.6349,
+      "laneY": 0.2751
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0103",
+      "clusterId": "cluster_09",
+      "zoneId": "cluster_09",
+      "x": 0.2305,
+      "y": 0.4362,
+      "laneX": 0.2474,
+      "laneY": 0.2618
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0104",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.1982,
+      "y": 0.3756,
+      "laneX": 0.2269,
+      "laneY": 0.7717
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0105",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2989,
+      "y": 0.3639,
+      "laneX": 0.6164,
+      "laneY": 0.3605
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0106",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2031,
+      "y": 0.4786,
+      "laneX": 0.1738,
+      "laneY": 0.1794
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0107",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z2",
+      "x": 0.905,
+      "y": 0.9193,
+      "laneX": 0.6007,
+      "laneY": 0.6919
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0108",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z2",
+      "x": 0.9946,
+      "y": 0.0218,
+      "laneX": 0.6793,
+      "laneY": 0.9208
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0109",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1421,
+      "y": 0.7931,
+      "laneX": 0.0765,
+      "laneY": 0.2696
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0110",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z2",
+      "x": 0.8999,
+      "y": 0.9217,
+      "laneX": 0.6134,
+      "laneY": 0.6532
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0111",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3301,
+      "y": 0.7691,
+      "laneX": 0.9144,
+      "laneY": 0.7874
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0112",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2318,
+      "y": 0.3828,
+      "laneX": 0.2448,
+      "laneY": 0.5241
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0113",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.296,
+      "y": 0.3562,
+      "laneX": 0.6359,
+      "laneY": 0.3439
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0114",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3164,
+      "y": 0.728,
+      "laneX": 0.8265,
+      "laneY": 0.6475
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0115",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.1931,
+      "y": 0.2616,
+      "laneX": 0.9885,
+      "laneY": 0.3699
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0116",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z2",
+      "x": 0.9,
+      "y": 0.9217,
+      "laneX": 0.6042,
+      "laneY": 0.662
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0117",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.3447,
+      "y": 0.4561,
+      "laneX": 0.4525,
+      "laneY": 0.9934
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0118",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z2",
+      "x": 0.2168,
+      "y": 0.82,
+      "laneX": 0.1639,
+      "laneY": 1
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0119",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.276,
+      "y": 0.4276,
+      "laneX": 0.4391,
+      "laneY": 0.288
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0120",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.1949,
+      "y": 0.3384,
+      "laneX": 0.1178,
+      "laneY": 0.744
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0121",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2056,
+      "y": 0.4818,
+      "laneX": 0.2108,
+      "laneY": 0.15
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0122",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z2",
+      "x": 0.8618,
+      "y": 0.8033,
+      "laneX": 0.9166,
+      "laneY": 0.3547
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0123",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z2",
+      "x": 0.9977,
+      "y": 0.0225,
+      "laneX": 0.4225,
+      "laneY": 0.8675
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0124",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1411,
+      "y": 0.8201,
+      "laneX": 0.0148,
+      "laneY": 0.2121
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0125",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3299,
+      "y": 0.6873,
+      "laneX": 0.7618,
+      "laneY": 0.4541
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0126",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z2",
+      "x": 0.8464,
+      "y": 0.8233,
+      "laneX": 0.8964,
+      "laneY": 0.4384
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0127",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z2",
+      "x": 0.1644,
+      "y": 0.3356,
+      "laneX": 0.0087,
+      "laneY": 0.862
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0128",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.3408,
+      "y": 0.4602,
+      "laneX": 0.4276,
+      "laneY": 1
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0129",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2521,
+      "y": 0.4389,
+      "laneX": 0.3591,
+      "laneY": 0.2652
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0130",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3247,
+      "y": 0.6944,
+      "laneX": 0.6208,
+      "laneY": 0.604
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0131",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.1983,
+      "y": 0.27,
+      "laneX": 0.9379,
+      "laneY": 0.4034
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0132",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z2",
+      "x": 0.1958,
+      "y": 0.8055,
+      "laneX": 0.1497,
+      "laneY": 0.6537
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0133",
+      "clusterId": "cluster_09",
+      "zoneId": "cluster_09",
+      "x": 0.225,
+      "y": 0.3896,
+      "laneX": 0.1573,
+      "laneY": 0.4896
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0134",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z2",
+      "x": 0.8652,
+      "y": 0.7997,
+      "laneX": 0.9034,
+      "laneY": 0.3432
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0135",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2553,
+      "y": 0.4978,
+      "laneX": 0.5674,
+      "laneY": 0.7162
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0136",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2473,
+      "y": 0.4013,
+      "laneX": 0.3303,
+      "laneY": 0.507
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0137",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z2",
+      "x": 0.862,
+      "y": 0.8012,
+      "laneX": 0.904,
+      "laneY": 0.3177
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0138",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z3",
+      "x": 0.9676,
+      "y": 0.0078,
+      "laneX": 0.3642,
+      "laneY": 0.2778
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0139",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1345,
+      "y": 0.8057,
+      "laneX": 0.0384,
+      "laneY": 0.2696
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0140",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.3201,
+      "y": 0.67,
+      "laneX": 0.5118,
+      "laneY": 0.5887
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0141",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z2",
+      "x": 0.8467,
+      "y": 0.8255,
+      "laneX": 0.8966,
+      "laneY": 0.4692
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0142",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z2",
+      "x": 0.1684,
+      "y": 0.3434,
+      "laneX": 0.0068,
+      "laneY": 0.8441
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0143",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3068,
+      "y": 0.3986,
+      "laneX": 0.5234,
+      "laneY": 0.4162
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0144",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3632,
+      "y": 0.6878,
+      "laneX": 0.7515,
+      "laneY": 0.0721
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0145",
+      "clusterId": "cluster_09",
+      "zoneId": "cluster_09",
+      "x": 0.1946,
+      "y": 0.4644,
+      "laneX": 0.1286,
+      "laneY": 0.2045
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0146",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2891,
+      "y": 0.5143,
+      "laneX": 0.599,
+      "laneY": 0.826
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0147",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z2",
+      "x": 0.2224,
+      "y": 0.8052,
+      "laneX": 0.1941,
+      "laneY": 0.9932
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0148",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3028,
+      "y": 0.4533,
+      "laneX": 0.5123,
+      "laneY": 0.7279
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0149",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z2",
+      "x": 0.8618,
+      "y": 0.8034,
+      "laneX": 0.92,
+      "laneY": 0.3069
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0150",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3036,
+      "y": 0.3867,
+      "laneX": 0.5168,
+      "laneY": 0.4745
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0151",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2762,
+      "y": 0.4157,
+      "laneX": 0.4028,
+      "laneY": 0.4421
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0152",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8921,
+      "y": 0.8828,
+      "laneX": 0.6684,
+      "laneY": 0.8853
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0153",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z1",
+      "x": 0.9834,
+      "y": 0.0243,
+      "laneX": 0.4758,
+      "laneY": 0.5633
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0154",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z2",
+      "x": 0.216,
+      "y": 0.8148,
+      "laneX": 0.1548,
+      "laneY": 0.8032
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0155",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3701,
+      "y": 0.7239,
+      "laneX": 0.7647,
+      "laneY": 0.1816
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0156",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2307,
+      "y": 0.4757,
+      "laneX": 0.2711,
+      "laneY": 0.0497
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0157",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z1",
+      "x": 0.8793,
+      "y": 0.8787,
+      "laneX": 0.731,
+      "laneY": 0.8856
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0158",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3208,
+      "y": 0.4144,
+      "laneX": 0.2805,
+      "laneY": 0.9001
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0159",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3391,
+      "y": 0.6822,
+      "laneX": 0.7828,
+      "laneY": 0.3357
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0160",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2018,
+      "y": 0.445,
+      "laneX": 0.1402,
+      "laneY": 0.1192
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0161",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2811,
+      "y": 0.344,
+      "laneX": 0.6626,
+      "laneY": 0.2746
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0162",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1629,
+      "y": 0.7876,
+      "laneX": 0.1125,
+      "laneY": 0.132
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0163",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.293,
+      "y": 0.5033,
+      "laneX": 0.5662,
+      "laneY": 0.923
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0164",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2739,
+      "y": 0.4949,
+      "laneX": 0.5769,
+      "laneY": 0.8326
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0165",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3404,
+      "y": 0.7528,
+      "laneX": 0.9195,
+      "laneY": 0.5208
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0166",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.225,
+      "y": 0.4245,
+      "laneX": 0.2514,
+      "laneY": 0.3498
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0167",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.92,
+      "y": 0.8502,
+      "laneX": 0.614,
+      "laneY": 0.965
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0168",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z1",
+      "x": 0.9731,
+      "y": 0.0282,
+      "laneX": 0.7564,
+      "laneY": 0.2857
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0169",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1559,
+      "y": 0.7926,
+      "laneX": 0.0801,
+      "laneY": 0.0874
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0170",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3482,
+      "y": 0.7707,
+      "laneX": 0.9749,
+      "laneY": 0.5292
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0171",
+      "clusterId": "cluster_09",
+      "zoneId": "cluster_09",
+      "x": 0.2095,
+      "y": 0.3809,
+      "laneX": 0.1069,
+      "laneY": 0.568
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0172",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.9195,
+      "y": 0.8475,
+      "laneX": 0.6262,
+      "laneY": 0.995
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0173",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.219,
+      "y": 0.4823,
+      "laneX": 0.2631,
+      "laneY": 0.1956
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0174",
+      "clusterId": "cluster_09",
+      "zoneId": "cluster_09",
+      "x": 0.2068,
+      "y": 0.4292,
+      "laneX": 0.1323,
+      "laneY": 0.3379
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0175",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3514,
+      "y": 0.741,
+      "laneX": 0.8876,
+      "laneY": 0.313
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0176",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.9204,
+      "y": 0.8473,
+      "laneX": 0.6086,
+      "laneY": 1
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0177",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.3071,
+      "y": 0.3575,
+      "laneX": 0.6366,
+      "laneY": 0.4012
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0178",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2513,
+      "y": 0.4117,
+      "laneX": 0.3082,
+      "laneY": 0.3508
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0179",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z2",
+      "x": 0.2185,
+      "y": 0.8124,
+      "laneX": 0.1868,
+      "laneY": 0.7585
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0180",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.265,
+      "y": 0.4582,
+      "laneX": 0.343,
+      "laneY": 0.6977
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0181",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2702,
+      "y": 0.3866,
+      "laneX": 0.4191,
+      "laneY": 0.4846
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0182",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8957,
+      "y": 0.7628,
+      "laneX": 0.987,
+      "laneY": 0.0044
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0183",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z2",
+      "x": 0.9933,
+      "y": 0.0131,
+      "laneX": 0.2597,
+      "laneY": 0.8476
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0184",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1642,
+      "y": 0.8065,
+      "laneX": 0.1268,
+      "laneY": 0.4161
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0185",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3546,
+      "y": 0.7817,
+      "laneX": 0.984,
+      "laneY": 0.714
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0186",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8343,
+      "y": 0.8448,
+      "laneX": 0.844,
+      "laneY": 0.5971
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0187",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3245,
+      "y": 0.4549,
+      "laneX": 0.4381,
+      "laneY": 0.8951
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0188",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2582,
+      "y": 0.4234,
+      "laneX": 0.4051,
+      "laneY": 0.3193
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0189",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.3198,
+      "y": 0.728,
+      "laneX": 0.5405,
+      "laneY": 0.6081
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0190",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8924,
+      "y": 0.7605,
+      "laneX": 1,
+      "laneY": 0.0577
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0191",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2217,
+      "y": 0.3509,
+      "laneX": 0.1527,
+      "laneY": 0.7099
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0192",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2329,
+      "y": 0.4671,
+      "laneX": 0.2509,
+      "laneY": 0.0102
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0193",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2735,
+      "y": 0.3642,
+      "laneX": 0.5853,
+      "laneY": 0.2765
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0194",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1809,
+      "y": 0.8065,
+      "laneX": 0.0875,
+      "laneY": 0.697
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0195",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.204,
+      "y": 0.284,
+      "laneX": 0.8648,
+      "laneY": 0.4169
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0196",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.263,
+      "y": 0.4075,
+      "laneX": 0.3434,
+      "laneY": 0.4134
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0197",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8941,
+      "y": 0.7648,
+      "laneX": 0.9726,
+      "laneY": 0.0514
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0198",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z2",
+      "x": 1,
+      "y": 0.0124,
+      "laneX": 0.3226,
+      "laneY": 0.9851
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0199",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1791,
+      "y": 0.7897,
+      "laneX": 0.1714,
+      "laneY": 0.3805
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0200",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3195,
+      "y": 0.7608,
+      "laneX": 0.8916,
+      "laneY": 0.8066
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0201",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8393,
+      "y": 0.8419,
+      "laneX": 0.8574,
+      "laneY": 0.5848
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0202",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2032,
+      "y": 0.4754,
+      "laneX": 0.2173,
+      "laneY": 0.2251
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0203",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2914,
+      "y": 0.3671,
+      "laneX": 0.585,
+      "laneY": 0.3498
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0204",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3402,
+      "y": 0.6869,
+      "laneX": 0.6368,
+      "laneY": 0.6589
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0205",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.192,
+      "y": 0.3402,
+      "laneX": 0.0933,
+      "laneY": 0.7375
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0206",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8955,
+      "y": 0.7637,
+      "laneX": 0.9835,
+      "laneY": 0.0543
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0207",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.2016,
+      "y": 0.2835,
+      "laneX": 0.8611,
+      "laneY": 0.4241
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0208",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.1867,
+      "y": 0.4561,
+      "laneX": 0.0768,
+      "laneY": 0.2467
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0209",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z2",
+      "x": 0.1985,
+      "y": 0.805,
+      "laneX": 0.1812,
+      "laneY": 0.6152
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0210",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3153,
+      "y": 0.3731,
+      "laneX": 0.6025,
+      "laneY": 0.4311
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0211",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.197,
+      "y": 0.4735,
+      "laneX": 0.1407,
+      "laneY": 0.1811
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0212",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.0028,
+      "y": 0.9969,
+      "laneX": 0.0038,
+      "laneY": 0.0305
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0213",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z2",
+      "x": 0.9931,
+      "y": 0.0256,
+      "laneX": 0.5576,
+      "laneY": 1
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0214",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z2",
+      "x": 0.2184,
+      "y": 0.8056,
+      "laneX": 0.1975,
+      "laneY": 0.7981
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0215",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2769,
+      "y": 0.4266,
+      "laneX": 0.4417,
+      "laneY": 0.2459
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0216",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0,
+      "y": 1,
+      "laneX": 0.0089,
+      "laneY": 0.0713
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0217",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3665,
+      "y": 0.7167,
+      "laneX": 0.8162,
+      "laneY": 0.2243
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0218",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2108,
+      "y": 0.3581,
+      "laneX": 0.1229,
+      "laneY": 0.6243
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0219",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2619,
+      "y": 0.4631,
+      "laneX": 0.3869,
+      "laneY": 0.6534
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0220",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2777,
+      "y": 0.5241,
+      "laneX": 0.6711,
+      "laneY": 0.8969
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0221",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3256,
+      "y": 0.7056,
+      "laneX": 0.7952,
+      "laneY": 0.6305
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0222",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.183,
+      "y": 0.4436,
+      "laneX": 0.0542,
+      "laneY": 0.2862
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0223",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.0023,
+      "y": 0.9974,
+      "laneX": 0.0013,
+      "laneY": 0.0108
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0224",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3343,
+      "y": 0.4488,
+      "laneX": 0.4123,
+      "laneY": 0.9248
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0225",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2355,
+      "y": 0.3378,
+      "laneX": 0.2377,
+      "laneY": 0.6356
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0226",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2106,
+      "y": 0.4651,
+      "laneX": 0.1625,
+      "laneY": 0.2142
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0227",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.0011,
+      "y": 0.9988,
+      "laneX": 0.0085,
+      "laneY": 0.068
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0228",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z3",
+      "x": 0.9748,
+      "y": 0.0133,
+      "laneX": 0.5442,
+      "laneY": 0.1045
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0229",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1402,
+      "y": 0.8052,
+      "laneX": 0.0715,
+      "laneY": 0.198
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0230",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.0005,
+      "y": 0.9994,
+      "laneX": 0.0053,
+      "laneY": 0.0428
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0231",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3477,
+      "y": 0.7798,
+      "laneX": 0.9559,
+      "laneY": 0.7636
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0232",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2392,
+      "y": 0.3502,
+      "laneX": 0.2716,
+      "laneY": 0.6036
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0233",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3117,
+      "y": 0.4324,
+      "laneX": 0.372,
+      "laneY": 0.8357
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0234",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.319,
+      "y": 0.7096,
+      "laneX": 0.7903,
+      "laneY": 0.5484
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0235",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2355,
+      "y": 0.3674,
+      "laneX": 0.2596,
+      "laneY": 0.5559
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0236",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.2044,
+      "y": 0.2949,
+      "laneX": 0.8166,
+      "laneY": 0.4012
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0237",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.0039,
+      "y": 0.9957,
+      "laneX": 0,
+      "laneY": 0
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0238",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2225,
+      "y": 0.4762,
+      "laneX": 0.2479,
+      "laneY": 0.0836
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0239",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3019,
+      "y": 0.3757,
+      "laneX": 0.5691,
+      "laneY": 0.3958
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0240",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z2",
+      "x": 0.2076,
+      "y": 0.8168,
+      "laneX": 0.1453,
+      "laneY": 0.9401
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0241",
+      "clusterId": "cluster_09",
+      "zoneId": "cluster_09",
+      "x": 0.2071,
+      "y": 0.4129,
+      "laneX": 0.1592,
+      "laneY": 0.4215
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0242",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.896,
+      "y": 0.7829,
+      "laneX": 0.9288,
+      "laneY": 0.1045
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0243",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z3",
+      "x": 0.9691,
+      "y": 0.0078,
+      "laneX": 0.3835,
+      "laneY": 0
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0244",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1494,
+      "y": 0.8082,
+      "laneX": 0.0865,
+      "laneY": 0.2994
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0245",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3409,
+      "y": 0.7549,
+      "laneX": 0.9023,
+      "laneY": 0.5311
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0246",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8378,
+      "y": 0.8396,
+      "laneX": 0.887,
+      "laneY": 0.64
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0247",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z2",
+      "x": 0.1763,
+      "y": 0.3518,
+      "laneX": 0.0219,
+      "laneY": 0.7651
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0248",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2865,
+      "y": 0.4111,
+      "laneX": 0.4813,
+      "laneY": 0.4213
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0249",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.299,
+      "y": 0.4136,
+      "laneX": 0.5208,
+      "laneY": 0.5197
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0250",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2863,
+      "y": 0.7571,
+      "laneX": 0.6431,
+      "laneY": 0.7233
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0251",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2516,
+      "y": 0.4312,
+      "laneX": 0.3667,
+      "laneY": 0.2733
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0252",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8942,
+      "y": 0.7829,
+      "laneX": 0.9191,
+      "laneY": 0.1116
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0253",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2021,
+      "y": 0.3987,
+      "laneX": 0.222,
+      "laneY": 0.4367
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0254",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z2",
+      "x": 0.1978,
+      "y": 0.8102,
+      "laneX": 0.1581,
+      "laneY": 0.6553
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0255",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.3321,
+      "y": 0.4639,
+      "laneX": 0.435,
+      "laneY": 0.9842
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0256",
+      "clusterId": "cluster_09",
+      "zoneId": "cluster_09",
+      "x": 0.1992,
+      "y": 0.4406,
+      "laneX": 0.1122,
+      "laneY": 0.2933
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0257",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.9011,
+      "y": 0.7955,
+      "laneX": 0.8988,
+      "laneY": 0.0379
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0258",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z1",
+      "x": 0.9716,
+      "y": 0.0292,
+      "laneX": 0.6376,
+      "laneY": 0.6106
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0259",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.155,
+      "y": 0.808,
+      "laneX": 0.1056,
+      "laneY": 0.4433
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0260",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3441,
+      "y": 0.7738,
+      "laneX": 0.9447,
+      "laneY": 0.6877
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0261",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3214,
+      "y": 0.4108,
+      "laneX": 0.291,
+      "laneY": 0.9088
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0262",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8364,
+      "y": 0.8439,
+      "laneX": 0.886,
+      "laneY": 0.6652
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0263",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2816,
+      "y": 0.3621,
+      "laneX": 0.5912,
+      "laneY": 0.2922
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0264",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3269,
+      "y": 0.6913,
+      "laneX": 0.5818,
+      "laneY": 0.5911
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0265",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z2",
+      "x": 0.1665,
+      "y": 0.3423,
+      "laneX": 0.0075,
+      "laneY": 0.8152
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0266",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.1966,
+      "y": 0.3758,
+      "laneX": 0.2317,
+      "laneY": 0.7467
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0267",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.1986,
+      "y": 0.2581,
+      "laneX": 1,
+      "laneY": 0.3791
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0268",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2048,
+      "y": 0.4442,
+      "laneX": 0.1844,
+      "laneY": 0.2298
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0269",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8929,
+      "y": 0.7774,
+      "laneX": 0.9254,
+      "laneY": 0.1458
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0270",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2987,
+      "y": 0.503,
+      "laneX": 0.5471,
+      "laneY": 0.869
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0271",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2238,
+      "y": 0.4689,
+      "laneX": 0.2457,
+      "laneY": 0.127
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0272",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.9334,
+      "y": 0.875,
+      "laneX": 0.5509,
+      "laneY": 0.9334
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0273",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z1",
+      "x": 0.9847,
+      "y": 0.0031,
+      "laneX": 0.3001,
+      "laneY": 0.4958
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0274",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1475,
+      "y": 0.8005,
+      "laneX": 0.0261,
+      "laneY": 0.3897
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0275",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3512,
+      "y": 0.7122,
+      "laneX": 0.8106,
+      "laneY": 0.3375
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0276",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z1",
+      "x": 0.8512,
+      "y": 0.8549,
+      "laneX": 0.8393,
+      "laneY": 0.7139
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0277",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z2",
+      "x": 0.1792,
+      "y": 0.3347,
+      "laneX": 0.0259,
+      "laneY": 0.8124
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0278",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.3391,
+      "y": 0.4525,
+      "laneX": 0.3892,
+      "laneY": 0.9561
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0279",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2919,
+      "y": 0.3879,
+      "laneX": 0.5189,
+      "laneY": 0.3866
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0280",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3213,
+      "y": 0.7035,
+      "laneX": 0.6332,
+      "laneY": 0.6121
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0281",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.1967,
+      "y": 0.2674,
+      "laneX": 0.9367,
+      "laneY": 0.3811
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0282",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.9321,
+      "y": 0.8752,
+      "laneX": 0.5434,
+      "laneY": 0.9393
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0283",
+      "clusterId": "cluster_09",
+      "zoneId": "cluster_09",
+      "x": 0.1942,
+      "y": 0.4339,
+      "laneX": 0.1072,
+      "laneY": 0.3545
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0284",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.29,
+      "y": 0.5232,
+      "laneX": 0.6462,
+      "laneY": 0.8269
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0285",
+      "clusterId": "cluster_10",
+      "zoneId": "cluster_10",
+      "x": 0.2576,
+      "y": 0.4643,
+      "laneX": 0.127,
+      "laneY": 0.8139
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0286",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2735,
+      "y": 0.3948,
+      "laneX": 0.4273,
+      "laneY": 0.6641
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0287",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z1",
+      "x": 0.8912,
+      "y": 0.8865,
+      "laneX": 0.7,
+      "laneY": 0.8993
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0288",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z3",
+      "x": 0.9665,
+      "y": 0.0051,
+      "laneX": 0.2667,
+      "laneY": 0.1429
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0289",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1573,
+      "y": 0.8151,
+      "laneX": 0.0823,
+      "laneY": 0.3904
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0290",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3407,
+      "y": 0.7682,
+      "laneX": 0.9537,
+      "laneY": 0.5528
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0291",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2444,
+      "y": 0.3565,
+      "laneX": 0.2867,
+      "laneY": 0.5614
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0292",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.9014,
+      "y": 0.8943,
+      "laneX": 0.6807,
+      "laneY": 0.8071
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0293",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2427,
+      "y": 0.4147,
+      "laneX": 0.3548,
+      "laneY": 0.3444
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0294",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.315,
+      "y": 0.744,
+      "laneX": 0.8528,
+      "laneY": 0.7994
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0295",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2778,
+      "y": 0.4408,
+      "laneX": 0.3858,
+      "laneY": 0.1819
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0296",
+      "clusterId": "cluster_09",
+      "zoneId": "cluster_09",
+      "x": 0.2096,
+      "y": 0.4327,
+      "laneX": 0.1515,
+      "laneY": 0.3242
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0297",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z2",
+      "x": 0.207,
+      "y": 0.8218,
+      "laneX": 0.1312,
+      "laneY": 0.9199
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0298",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.235,
+      "y": 0.3599,
+      "laneX": 0.2766,
+      "laneY": 0.6138
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0299",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.2025,
+      "y": 0.2795,
+      "laneX": 0.877,
+      "laneY": 0.3985
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0300",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3313,
+      "y": 0.7368,
+      "laneX": 0.8521,
+      "laneY": 0.5883
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0301",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2365,
+      "y": 0.4014,
+      "laneX": 0.2887,
+      "laneY": 0.472
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0302",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z1",
+      "x": 0.874,
+      "y": 0.8721,
+      "laneX": 0.7815,
+      "laneY": 0.8961
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0303",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z3",
+      "x": 0.9931,
+      "y": 0.0045,
+      "laneX": 0.0096,
+      "laneY": 0.7721
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0304",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1359,
+      "y": 0.8111,
+      "laneX": 0.011,
+      "laneY": 0.3114
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0305",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3415,
+      "y": 0.7007,
+      "laneX": 0.7833,
+      "laneY": 0.446
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0306",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2363,
+      "y": 0.4738,
+      "laneX": 0.3041,
+      "laneY": 0.1056
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0307",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z1",
+      "x": 0.8705,
+      "y": 0.8741,
+      "laneX": 0.7591,
+      "laneY": 0.9421
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0308",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.289,
+      "y": 0.4166,
+      "laneX": 0.4694,
+      "laneY": 0.3477
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0309",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3576,
+      "y": 0.7098,
+      "laneX": 0.8397,
+      "laneY": 0.2475
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0310",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.1997,
+      "y": 0.2708,
+      "laneX": 0.9375,
+      "laneY": 0.3873
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0311",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3133,
+      "y": 0.3914,
+      "laneX": 0.6167,
+      "laneY": 0.4647
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0312",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.1892,
+      "y": 0.4589,
+      "laneX": 0.0804,
+      "laneY": 0.2257
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0313",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1698,
+      "y": 0.8196,
+      "laneX": 0.0995,
+      "laneY": 0.533
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0314",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2754,
+      "y": 0.5053,
+      "laneX": 0.6381,
+      "laneY": 0.8849
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0315",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2524,
+      "y": 0.3582,
+      "laneX": 0.3273,
+      "laneY": 0.589
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0316",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2127,
+      "y": 0.4218,
+      "laneX": 0.2016,
+      "laneY": 0.3902
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0317",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z1",
+      "x": 0.8798,
+      "y": 0.8775,
+      "laneX": 0.7375,
+      "laneY": 0.9262
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0318",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z1",
+      "x": 0.9896,
+      "y": 0.0096,
+      "laneX": 0.0655,
+      "laneY": 0.6223
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0319",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.2637,
+      "y": 0.7784,
+      "laneX": 0.2509,
+      "laneY": 0.8727
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0320",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3357,
+      "y": 0.7367,
+      "laneX": 0.8572,
+      "laneY": 0.5305
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0321",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z1",
+      "x": 0.8693,
+      "y": 0.8717,
+      "laneX": 0.8075,
+      "laneY": 0.8662
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0322",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2049,
+      "y": 0.4789,
+      "laneX": 0.2112,
+      "laneY": 0.1735
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0323",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z2",
+      "x": 0.1756,
+      "y": 0.3344,
+      "laneX": 0.064,
+      "laneY": 0.8439
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0324",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3514,
+      "y": 0.7822,
+      "laneX": 0.9796,
+      "laneY": 0.7472
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0325",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2687,
+      "y": 0.442,
+      "laneX": 0.3656,
+      "laneY": 0.1595
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0326",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.1961,
+      "y": 0.3748,
+      "laneX": 0.2185,
+      "laneY": 0.7573
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0327",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1666,
+      "y": 0.783,
+      "laneX": 0.1304,
+      "laneY": 0.1978
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0328",
+      "clusterId": "cluster_10",
+      "zoneId": "cluster_10",
+      "x": 0.2007,
+      "y": 0.4764,
+      "laneX": 0.0409,
+      "laneY": 0.5501
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0329",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.3148,
+      "y": 0.4565,
+      "laneX": 0.427,
+      "laneY": 0.8656
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0330",
+      "clusterId": "cluster_10",
+      "zoneId": "cluster_10",
+      "x": 0.3295,
+      "y": 0.748,
+      "laneX": 0.8994,
+      "laneY": 0.6349
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0331",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2938,
+      "y": 0.4379,
+      "laneX": 0.3818,
+      "laneY": 0.7446
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0332",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8952,
+      "y": 0.7722,
+      "laneX": 0.9612,
+      "laneY": 0.1063
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0333",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z1",
+      "x": 0.9952,
+      "y": 0.0103,
+      "laneX": 0.1044,
+      "laneY": 0.8258
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0334",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1485,
+      "y": 0.805,
+      "laneX": 0.0557,
+      "laneY": 0.3683
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0335",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3426,
+      "y": 0.7584,
+      "laneX": 0.9062,
+      "laneY": 0.4209
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0336",
+      "clusterId": "cluster_09",
+      "zoneId": "cluster_09",
+      "x": 0.216,
+      "y": 0.4091,
+      "laneX": 0.1782,
+      "laneY": 0.4786
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0337",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8397,
+      "y": 0.844,
+      "laneX": 0.8506,
+      "laneY": 0.6432
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0338",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2967,
+      "y": 0.4082,
+      "laneX": 0.5205,
+      "laneY": 0.3523
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0339",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3775,
+      "y": 0.6961,
+      "laneX": 0.7977,
+      "laneY": 0
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0340",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z2",
+      "x": 0.1675,
+      "y": 0.3357,
+      "laneX": 0,
+      "laneY": 0.8341
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0341",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8971,
+      "y": 0.7704,
+      "laneX": 0.9757,
+      "laneY": 0.1223
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0342",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.1995,
+      "y": 0.3795,
+      "laneX": 0.2397,
+      "laneY": 0.791
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0343",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.1883,
+      "y": 0.2682,
+      "laneX": 0.9612,
+      "laneY": 0.3593
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0344",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2314,
+      "y": 0.7891,
+      "laneX": 0.6122,
+      "laneY": 0.5255
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0345",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2869,
+      "y": 0.5256,
+      "laneX": 0.6039,
+      "laneY": 0.8946
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0346",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2652,
+      "y": 0.3696,
+      "laneX": 0.4194,
+      "laneY": 0.545
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0347",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8915,
+      "y": 0.7675,
+      "laneX": 0.9715,
+      "laneY": 0.092
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0348",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z1",
+      "x": 0.9778,
+      "y": 0.0196,
+      "laneX": 0.9592,
+      "laneY": 0.6221
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0349",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1604,
+      "y": 0.7915,
+      "laneX": 0.1168,
+      "laneY": 0.2193
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0350",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3682,
+      "y": 0.7194,
+      "laneX": 0.8069,
+      "laneY": 0.2624
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0351",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.8454,
+      "y": 0.8491,
+      "laneX": 0.8548,
+      "laneY": 0.6413
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0352",
+      "clusterId": "cluster_09",
+      "zoneId": "cluster_09",
+      "x": 0.2294,
+      "y": 0.4196,
+      "laneX": 0.1946,
+      "laneY": 0.3468
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0353",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.252,
+      "y": 0.4109,
+      "laneX": 0.3832,
+      "laneY": 0.3564
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0354",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.3192,
+      "y": 0.6548,
+      "laneX": 0.5668,
+      "laneY": 0.6154
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0355",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2608,
+      "y": 0.381,
+      "laneX": 0.374,
+      "laneY": 0.6016
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0356",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.229,
+      "y": 0.4655,
+      "laneX": 0.2422,
+      "laneY": 0.1215
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0357",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2661,
+      "y": 0.3892,
+      "laneX": 0.3655,
+      "laneY": 0.6012
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0358",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3114,
+      "y": 0.7558,
+      "laneX": 0.8738,
+      "laneY": 0.7775
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0359",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.1936,
+      "y": 0.343,
+      "laneX": 0.1495,
+      "laneY": 0.7905
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0360",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.277,
+      "y": 0.3971,
+      "laneX": 0.4351,
+      "laneY": 0.5615
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0361",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2577,
+      "y": 0.3981,
+      "laneX": 0.345,
+      "laneY": 0.4308
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0362",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z2",
+      "x": 0.896,
+      "y": 0.9266,
+      "laneX": 0.6271,
+      "laneY": 0.6234
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0363",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z1",
+      "x": 0.9682,
+      "y": 0.035,
+      "laneX": 1,
+      "laneY": 0.4409
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0364",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1483,
+      "y": 0.7867,
+      "laneX": 0.0778,
+      "laneY": 0.0944
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0365",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3623,
+      "y": 0.7009,
+      "laneX": 0.7877,
+      "laneY": 0.2222
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0366",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2673,
+      "y": 0.4394,
+      "laneX": 0.371,
+      "laneY": 0.2093
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0367",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z2",
+      "x": 0.8967,
+      "y": 0.931,
+      "laneX": 0.5987,
+      "laneY": 0.6212
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0368",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3187,
+      "y": 0.3899,
+      "laneX": 0.61,
+      "laneY": 0.4843
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0369",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3624,
+      "y": 0.7122,
+      "laneX": 0.8142,
+      "laneY": 0.0994
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0370",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.1864,
+      "y": 0.3303,
+      "laneX": 0.102,
+      "laneY": 0.8436
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0371",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z2",
+      "x": 0.8973,
+      "y": 0.9303,
+      "laneX": 0.6202,
+      "laneY": 0.5972
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0372",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.3078,
+      "y": 0.3773,
+      "laneX": 0.5422,
+      "laneY": 0.4685
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0373",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z2",
+      "x": 0.2105,
+      "y": 0.8226,
+      "laneX": 0.1589,
+      "laneY": 0.9482
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0374",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2173,
+      "y": 0.4526,
+      "laneX": 0.1591,
+      "laneY": 0.0802
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0375",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2935,
+      "y": 0.3481,
+      "laneX": 0.6628,
+      "laneY": 0.2876
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0376",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2561,
+      "y": 0.4045,
+      "laneX": 0.3388,
+      "laneY": 0.3921
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0377",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z2",
+      "x": 0.8852,
+      "y": 0.9088,
+      "laneX": 0.6726,
+      "laneY": 0.6898
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0378",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z1",
+      "x": 0.9695,
+      "y": 0.0271,
+      "laneX": 0.792,
+      "laneY": 0.662
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0379",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.138,
+      "y": 0.8003,
+      "laneX": 0.049,
+      "laneY": 0.1057
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0380",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z2",
+      "x": 0.8929,
+      "y": 0.929,
+      "laneX": 0.6329,
+      "laneY": 0.648
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0381",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2055,
+      "y": 0.4649,
+      "laneX": 0.1565,
+      "laneY": 0.1091
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0382",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3517,
+      "y": 0.7687,
+      "laneX": 0.9834,
+      "laneY": 0.6232
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0383",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2124,
+      "y": 0.3447,
+      "laneX": 0.1363,
+      "laneY": 0.6936
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0384",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.3406,
+      "y": 0.4583,
+      "laneX": 0.4328,
+      "laneY": 0.9674
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0385",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.2111,
+      "y": 0.3003,
+      "laneX": 0.8131,
+      "laneY": 0.4412
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0386",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.364,
+      "y": 0.6994,
+      "laneX": 0.7821,
+      "laneY": 0.1471
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0387",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2856,
+      "y": 0.5148,
+      "laneX": 0.603,
+      "laneY": 0.8725
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0388",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z2",
+      "x": 0.8904,
+      "y": 0.9033,
+      "laneX": 0.6913,
+      "laneY": 0.7497
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0389",
+      "clusterId": "cluster_09",
+      "zoneId": "cluster_09",
+      "x": 0.2382,
+      "y": 0.4361,
+      "laneX": 0.2925,
+      "laneY": 0.2562
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0390",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2775,
+      "y": 0.4899,
+      "laneX": 0.566,
+      "laneY": 0.8073
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0391",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2557,
+      "y": 0.3786,
+      "laneX": 0.3628,
+      "laneY": 0.4922
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0392",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z2",
+      "x": 0.8967,
+      "y": 0.8993,
+      "laneX": 0.6603,
+      "laneY": 0.8176
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0393",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z1",
+      "x": 0.9752,
+      "y": 0.0267,
+      "laneX": 0.8581,
+      "laneY": 0.4122
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0394",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1741,
+      "y": 0.7962,
+      "laneX": 0.1466,
+      "laneY": 0.3881
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0395",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z2",
+      "x": 0.8935,
+      "y": 0.9079,
+      "laneX": 0.665,
+      "laneY": 0.75
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0396",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3476,
+      "y": 0.778,
+      "laneX": 0.9789,
+      "laneY": 0.6791
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0397",
+      "clusterId": "cluster_09",
+      "zoneId": "cluster_09",
+      "x": 0.2405,
+      "y": 0.4278,
+      "laneX": 0.3049,
+      "laneY": 0.2997
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0398",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.2109,
+      "y": 0.3581,
+      "laneX": 0.2902,
+      "laneY": 0.7585
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0399",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3379,
+      "y": 0.7007,
+      "laneX": 0.8014,
+      "laneY": 0.4095
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0400",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2328,
+      "y": 0.4836,
+      "laneX": 0.2895,
+      "laneY": 0.0569
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0401",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.1816,
+      "y": 0.2809,
+      "laneX": 0.9151,
+      "laneY": 0.3572
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0402",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z2",
+      "x": 0.2157,
+      "y": 0.8146,
+      "laneX": 0.1632,
+      "laneY": 0.8502
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0403",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.3015,
+      "y": 0.5095,
+      "laneX": 0.6279,
+      "laneY": 0.7981
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0404",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2229,
+      "y": 0.3949,
+      "laneX": 0.299,
+      "laneY": 0.6652
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0405",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2915,
+      "y": 0.378,
+      "laneX": 0.559,
+      "laneY": 0.3828
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0406",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.1977,
+      "y": 0.4695,
+      "laneX": 0.1525,
+      "laneY": 0.2137
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0407",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.9147,
+      "y": 0.8728,
+      "laneX": 0.5977,
+      "laneY": 0.8675
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0408",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z3",
+      "x": 0.9635,
+      "y": 0,
+      "laneX": 0.068,
+      "laneY": 0.1899
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0409",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1692,
+      "y": 0.7997,
+      "laneX": 0.145,
+      "laneY": 0.389
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0410",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3325,
+      "y": 0.7576,
+      "laneX": 0.9075,
+      "laneY": 0.7242
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0411",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z2",
+      "x": 0.1825,
+      "y": 0.3621,
+      "laneX": 0.0573,
+      "laneY": 0.662
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0412",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.918,
+      "y": 0.8693,
+      "laneX": 0.6072,
+      "laneY": 0.8777
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0413",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.3364,
+      "y": 0.4618,
+      "laneX": 0.435,
+      "laneY": 0.9963
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0414",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z2",
+      "x": 0.1734,
+      "y": 0.3318,
+      "laneX": 0.0504,
+      "laneY": 0.8268
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0415",
+      "clusterId": "cluster_10",
+      "zoneId": "cluster_10",
+      "x": 0.3146,
+      "y": 0.7249,
+      "laneX": 0.8273,
+      "laneY": 0.6911
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0416",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2967,
+      "y": 0.409,
+      "laneX": 0.4813,
+      "laneY": 0.3169
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0417",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.9166,
+      "y": 0.8702,
+      "laneX": 0.5881,
+      "laneY": 0.8719
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0418",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.1924,
+      "y": 0.2629,
+      "laneX": 0.9972,
+      "laneY": 0.3859
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0419",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.279,
+      "y": 0.507,
+      "laneX": 0.6026,
+      "laneY": 0.8457
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0420",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.1912,
+      "y": 0.4488,
+      "laneX": 0.0798,
+      "laneY": 0.2864
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0421",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2459,
+      "y": 0.3861,
+      "laneX": 0.3417,
+      "laneY": 0.5192
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0422",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z1",
+      "x": 0.8658,
+      "y": 0.8828,
+      "laneX": 0.7872,
+      "laneY": 0.8548
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0423",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z1",
+      "x": 0.9696,
+      "y": 0.0232,
+      "laneX": 0.6537,
+      "laneY": 0.3954
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0424",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1366,
+      "y": 0.8067,
+      "laneX": 0.0536,
+      "laneY": 0.2768
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0425",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3541,
+      "y": 0.7737,
+      "laneX": 0.983,
+      "laneY": 0.5451
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0426",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2365,
+      "y": 0.4573,
+      "laneX": 0.3066,
+      "laneY": 0.1401
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0427",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z1",
+      "x": 0.873,
+      "y": 0.8829,
+      "laneX": 0.7579,
+      "laneY": 0.8351
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0428",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.1708,
+      "y": 0.3472,
+      "laneX": 0.0411,
+      "laneY": 0.7654
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0429",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z1",
+      "x": 0.2016,
+      "y": 0.2726,
+      "laneX": 0.9503,
+      "laneY": 0.401
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0430",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.2857,
+      "y": 0.4295,
+      "laneX": 0.45,
+      "laneY": 0.6409
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0431",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z2",
+      "x": 0.3465,
+      "y": 0.778,
+      "laneX": 0.9609,
+      "laneY": 0.6026
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0432",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.3204,
+      "y": 0.4491,
+      "laneX": 0.4245,
+      "laneY": 0.8551
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0433",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z1",
+      "x": 0.8753,
+      "y": 0.8945,
+      "laneX": 0.7326,
+      "laneY": 0.7963
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0434",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.1965,
+      "y": 0.3782,
+      "laneX": 0.2405,
+      "laneY": 0.7413
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0435",
+      "clusterId": "cluster_03",
+      "zoneId": "cluster_03",
+      "x": 0.2963,
+      "y": 0.3863,
+      "laneX": 0.4885,
+      "laneY": 0.4889
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0436",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2118,
+      "y": 0.3929,
+      "laneX": 0.202,
+      "laneY": 0.5149
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0437",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.9072,
+      "y": 0.8778,
+      "laneX": 0.5974,
+      "laneY": 0.7693
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0438",
+      "clusterId": "cluster_08",
+      "zoneId": "cluster_08-z3",
+      "x": 0.9638,
+      "y": 0.0127,
+      "laneX": 0.4481,
+      "laneY": 0.1728
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0439",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z1",
+      "x": 0.1409,
+      "y": 0.7922,
+      "laneX": 0.029,
+      "laneY": 0.1016
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0440",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.9095,
+      "y": 0.8737,
+      "laneX": 0.593,
+      "laneY": 0.8079
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0441",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3652,
+      "y": 0.7146,
+      "laneX": 0.828,
+      "laneY": 0.1511
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0442",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2092,
+      "y": 0.454,
+      "laneX": 0.1453,
+      "laneY": 0.2723
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0443",
+      "clusterId": "cluster_10",
+      "zoneId": "cluster_10",
+      "x": 0.3342,
+      "y": 0.4533,
+      "laneX": 0.0124,
+      "laneY": 0.4777
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0444",
+      "clusterId": "cluster_07",
+      "zoneId": "cluster_07-z2",
+      "x": 0.1836,
+      "y": 0.3242,
+      "laneX": 0.1179,
+      "laneY": 0.8644
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0445",
+      "clusterId": "cluster_04",
+      "zoneId": "cluster_04-z1",
+      "x": 0.3663,
+      "y": 0.7082,
+      "laneX": 0.7777,
+      "laneY": 0.0601
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0446",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.3076,
+      "y": 0.4573,
+      "laneX": 0.4014,
+      "laneY": 0.8161
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0447",
+      "clusterId": "cluster_05",
+      "zoneId": "cluster_05-z2",
+      "x": 0.2273,
+      "y": 0.7999,
+      "laneX": 0.2071,
+      "laneY": 0.8629
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0448",
+      "clusterId": "cluster_06",
+      "zoneId": "cluster_06",
+      "x": 0.2157,
+      "y": 0.4599,
+      "laneX": 0.177,
+      "laneY": 0.0933
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0449",
+      "clusterId": "cluster_01",
+      "zoneId": "cluster_01-z3",
+      "x": 0.9067,
+      "y": 0.8668,
+      "laneX": 0.6092,
+      "laneY": 0.8128
+    },
+    {
+      "callId": "kyc-450-2026-06-09_call_0450",
+      "clusterId": "cluster_02",
+      "zoneId": "cluster_02",
+      "x": 0.1967,
+      "y": 0.414,
+      "laneX": 0.0807,
+      "laneY": 0.3908
+    }
+  ]
+}

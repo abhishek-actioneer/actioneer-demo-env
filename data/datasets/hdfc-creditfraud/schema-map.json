@@ -1,0 +1,2397 @@
+{
+  "columns": {
+    "txn_id": {
+      "description": "Unique identifier for an individual card transaction authorization or posting event.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "card_id": {
+      "description": "Unique identifier for a credit card; links card activity, alerts, statements, lifecycle events, and actions.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "CARD_3a1e9450aa",
+        "CARD_4fcd607cf6",
+        "CARD_561dd471a2",
+        "CARD_62f6183965",
+        "CARD_6b8fea57fa",
+        "CARD_8069232c2a",
+        "CARD_95745d773c",
+        "CARD_cd0c021de6",
+        "CARD_ce504d32d8",
+        "CARD_e360e1e573",
+        "CARD_e9749f942b",
+        "CARD_f2a4cd0ae1",
+        "CARD_facfe76ca0",
+        "CARD_fe70219c1d"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "txn_ts": {
+      "description": "Timestamp when the transaction occurred or was attempted, including time zone.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE; ensure timezone-aware filtering and aggregation.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "amount_inr": {
+      "description": "Transaction amount normalized into Indian rupees.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "currency": {
+      "description": "Original transaction currency code.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded as ISO-like currency values such as INR, USD, AED.",
+      "nullRate": 0,
+      "sampleValues": [
+        "AED",
+        "GBP",
+        "INR",
+        "SGD",
+        "THB",
+        "USD"
+      ],
+      "cardinalityHint": "low"
+    },
+    "fx_amount": {
+      "description": "Original foreign-currency amount before conversion to INR for cross-border transactions.",
+      "semanticType": "metric",
+      "sqlGotcha": "Mostly null; populated primarily for non-INR transactions.",
+      "nullRate": 0.9969544905577798,
+      "cardinalityHint": "high"
+    },
+    "merchant_id": {
+      "description": "Unique identifier for the merchant where the transaction was attempted or completed.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "mcc": {
+      "description": "Merchant Category Code classifying merchant business type.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Numeric code but semantically categorical; do not aggregate as a measure.",
+      "nullRate": 0,
+      "sampleValues": [
+        "4112",
+        "4511",
+        "4814",
+        "4900",
+        "5411",
+        "5541",
+        "5651",
+        "5732",
+        "5812",
+        "5814",
+        "5912",
+        "5921",
+        "5944",
+        "5968",
+        "5969",
+        "6012",
+        "6300",
+        "6513",
+        "6540",
+        "7011",
+        "7832",
+        "7995",
+        "8062",
+        "8220"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "channel": {
+      "description": "Interaction or transaction channel, such as e-commerce, POS, ATM, or support channel depending on table context.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Shared across tables with different business meanings; qualify with table name when joining.",
+      "nullRate": 0,
+      "sampleValues": [
+        "ECOM",
+        "MIXED",
+        "POS",
+        "UPI_QR"
+      ],
+      "cardinalityHint": "low"
+    },
+    "pos_entry_mode": {
+      "description": "Method used to capture the card at point of sale, such as chip, swipe, or tap.",
+      "semanticType": "dimension",
+      "sqlGotcha": "High null rate because not applicable to many channels such as e-commerce.",
+      "nullRate": 0.7328570176616731,
+      "sampleValues": [
+        "CHIP",
+        "SWIPE",
+        "TAP"
+      ],
+      "cardinalityHint": "low"
+    },
+    "auth_method": {
+      "description": "Authentication method used for the transaction, such as PIN, 3DS OTP, or tap without PIN.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded values; may vary by channel and card-present/card-not-present context.",
+      "nullRate": 0.007709448131702079,
+      "sampleValues": [
+        "OTP_3DS",
+        "PIN",
+        "TAP_NO_PIN"
+      ],
+      "cardinalityHint": "low"
+    },
+    "otp_attempts": {
+      "description": "Number of OTP entry attempts made during transaction authentication.",
+      "semanticType": "metric",
+      "sqlGotcha": "Stored as DOUBLE though conceptually integer-like.",
+      "nullRate": 0.3678905919012162,
+      "sampleValues": [
+        "1.0",
+        "2.0",
+        "3.0"
+      ],
+      "cardinalityHint": "low"
+    },
+    "token_used_flag": {
+      "description": "Indicates whether a tokenized credential was used instead of raw card details.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Boolean field; may be null where tokenization is not applicable.",
+      "nullRate": 0.3678905919012162,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "txn_city": {
+      "description": "City associated with the transaction location or merchant/acquirer location.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Free-text location values are not standardized; variants like 'Mumbai' vs 'MUMBAI MH IN' may need normalization.",
+      "nullRate": 0.004895216947821862,
+      "cardinalityHint": "medium"
+    },
+    "txn_country": {
+      "description": "Country code associated with the transaction location.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded as country abbreviations such as IN, AE, SG.",
+      "nullRate": 0,
+      "sampleValues": [
+        "AE",
+        "FR",
+        "GB",
+        "ID",
+        "IN",
+        "MY",
+        "SG",
+        "TH",
+        "US"
+      ],
+      "cardinalityHint": "low"
+    },
+    "device_id": {
+      "description": "Identifier for the customer device observed for the transaction, mainly in digital channels.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Null for many non-digital transactions; not a stable person identifier.",
+      "nullRate": 0.3678905919012162,
+      "cardinalityHint": "high"
+    },
+    "ip_address": {
+      "description": "IP address captured for the transaction, typically for online channels.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Stored as string; may require IP parsing/casting for network analysis.",
+      "nullRate": 0.3678905919012162,
+      "cardinalityHint": "high"
+    },
+    "txn_type": {
+      "description": "Business type of transaction such as purchase, refund, fee, reversal, autopay, or EMI conversion.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded values; useful to filter out non-spend events.",
+      "nullRate": 0,
+      "sampleValues": [
+        "AUTOPAY",
+        "EMI_CONVERSION",
+        "FEE",
+        "PURCHASE",
+        "REFUND",
+        "REVERSAL"
+      ],
+      "cardinalityHint": "low"
+    },
+    "response": {
+      "description": "Authorization or processing outcome for the transaction.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded values like APPROVED, DECLINED, HELD_FOR_CONFIRMATION.",
+      "nullRate": 0,
+      "sampleValues": [
+        "APPROVED",
+        "DECLINED",
+        "HELD_FOR_CONFIRMATION"
+      ],
+      "cardinalityHint": "low"
+    },
+    "decline_reason": {
+      "description": "Specific reason a transaction was declined when response is not approved.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Mostly null; populated mainly for declined transactions.",
+      "nullRate": 0.9659818721404595,
+      "sampleValues": [
+        "3DS_FAILED",
+        "EXPIRED_CARD",
+        "INCORRECT_CVV",
+        "INSUFFICIENT_LIMIT",
+        "ISSUER_DECLINE",
+        "SUSPECTED_FRAUD"
+      ],
+      "cardinalityHint": "low"
+    },
+    "is_fraud_flag": {
+      "description": "Flag indicating whether the transaction was ultimately labeled fraudulent.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Boolean target label; avoid treating as metric without explicit casting.",
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "fraud_episode_id": {
+      "description": "Identifier linking related fraudulent transactions or alerts into a single fraud episode.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Mostly null outside confirmed fraud-linked records; joins to fraud_episodes.episode_id despite different column name.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "original_txn_id": {
+      "description": "Reference to the original transaction for linked events such as refund, reversal, or EMI conversion.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Self-referential join back to transactions.txn_id; mostly null except linked transaction types.",
+      "nullRate": 0.9685798633384032,
+      "cardinalityHint": "high"
+    },
+    "statement_id": {
+      "description": "Unique identifier for an individual card billing statement cycle.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "cycle_start": {
+      "description": "Start date of the statement billing cycle.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "DATE field; month-based billing period anchor.",
+      "nullRate": 0,
+      "sampleValues": [
+        "2024-06-01",
+        "2024-07-01",
+        "2024-08-01",
+        "2024-09-01",
+        "2024-10-01",
+        "2024-11-01",
+        "2024-12-01",
+        "2025-01-01",
+        "2025-02-01",
+        "2025-03-01",
+        "2025-04-01",
+        "2025-05-01",
+        "2025-06-01",
+        "2025-07-01",
+        "2025-08-01",
+        "2025-09-01",
+        "2025-10-01",
+        "2025-11-01",
+        "2025-12-01",
+        "2026-01-01",
+        "2026-02-01",
+        "2026-03-01",
+        "2026-04-01",
+        "2026-05-01"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "cycle_end": {
+      "description": "End date of the statement billing cycle.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "DATE field.",
+      "nullRate": 0,
+      "sampleValues": [
+        "2024-06-30",
+        "2024-07-31",
+        "2024-08-31",
+        "2024-09-30",
+        "2024-10-31",
+        "2024-11-30",
+        "2024-12-31",
+        "2025-01-31",
+        "2025-02-28",
+        "2025-03-31",
+        "2025-04-30",
+        "2025-05-31",
+        "2025-06-30",
+        "2025-07-31",
+        "2025-08-31",
+        "2025-09-30",
+        "2025-10-31",
+        "2025-11-30",
+        "2025-12-31",
+        "2026-01-31",
+        "2026-02-28",
+        "2026-03-31",
+        "2026-04-30",
+        "2026-05-31"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "due_date": {
+      "description": "Payment due date for the statement.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "DATE field.",
+      "nullRate": 0,
+      "sampleValues": [
+        "2024-07-18",
+        "2024-08-18",
+        "2024-09-18",
+        "2024-10-18",
+        "2024-11-18",
+        "2024-12-18",
+        "2025-01-18",
+        "2025-02-18",
+        "2025-03-18",
+        "2025-04-18",
+        "2025-05-18",
+        "2025-06-18",
+        "2025-07-18",
+        "2025-08-18",
+        "2025-09-18",
+        "2025-10-18",
+        "2025-11-18",
+        "2025-12-18",
+        "2026-01-18",
+        "2026-02-18",
+        "2026-03-18",
+        "2026-04-18",
+        "2026-05-18",
+        "2026-06-18"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "total_spend_inr": {
+      "description": "Total billed spend in INR during the statement cycle.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "payments_received_inr": {
+      "description": "Total payments received against the statement or cycle balance in INR.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "min_due_inr": {
+      "description": "Minimum payment amount due for the statement cycle in INR.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "revolve_flag": {
+      "description": "Indicates whether the customer revolved balance instead of paying in full.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Boolean field.",
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "interest_charged_inr": {
+      "description": "Interest amount charged during the statement cycle in INR.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "fees_inr": {
+      "description": "Fees charged during the statement cycle in INR.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "0.0",
+        "1000.0",
+        "1180.0",
+        "1250.0",
+        "1300.0",
+        "1450.0",
+        "1500.0",
+        "1680.0",
+        "1750.0",
+        "1800.0",
+        "1930.0",
+        "1950.0",
+        "2130.0",
+        "2300.0",
+        "2480.0",
+        "2950.0",
+        "3450.0",
+        "3700.0",
+        "3900.0",
+        "4250.0",
+        "500.0",
+        "750.0",
+        "950.0"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "closing_balance_inr": {
+      "description": "Outstanding balance at statement close in INR.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "utilization_pct": {
+      "description": "Credit utilization percentage for the card at statement close.",
+      "semanticType": "metric",
+      "sqlGotcha": "Percentage stored as numeric, likely 0-100 scale rather than 0-1.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "dpd_bucket": {
+      "description": "Days-past-due delinquency bucket for the account after statement due cycle.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Bucketed categorical value such as CURRENT, 1-29, 30-59, 60-89, 90+.",
+      "nullRate": 0,
+      "sampleValues": [
+        "1-29",
+        "30-59",
+        "60-89",
+        "90+",
+        "CURRENT"
+      ],
+      "cardinalityHint": "low"
+    },
+    "alert_id": {
+      "description": "Unique identifier for a fraud alert generated on a transaction.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "customer_id": {
+      "description": "Unique identifier for a customer across cards, alerts, cases, and service interactions.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "CUST_74cef4d7ad",
+        "CUST_88666450f2",
+        "CUST_9b6cd2d99f",
+        "CUST_aabdf48826",
+        "CUST_aaed744501",
+        "CUST_ae491c0cfa",
+        "CUST_aff442bd32",
+        "CUST_baff16a0fb",
+        "CUST_c44c32e3ea",
+        "CUST_c7ec6d1367",
+        "CUST_c8f180285e",
+        "CUST_e2af3e40fd",
+        "CUST_e7717a51aa",
+        "CUST_ebafebfad8"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "risk_score": {
+      "description": "Fraud risk score assigned by the detection system to the alerted transaction.",
+      "semanticType": "metric",
+      "sqlGotcha": "Integer-like score but should be interpreted as a model/rules output, not currency.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "trigger_reasons": {
+      "description": "Encoded list of fraud rules, signals, or model reasons that triggered the alert.",
+      "semanticType": "text",
+      "sqlGotcha": "Multi-value field delimited by '|'; split for reason-level analysis.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "severity": {
+      "description": "Assigned alert severity level.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded ordinal values such as LOW, MEDIUM, HIGH, CRITICAL.",
+      "nullRate": 0,
+      "sampleValues": [
+        "CRITICAL",
+        "HIGH",
+        "LOW",
+        "MEDIUM"
+      ],
+      "cardinalityHint": "low"
+    },
+    "alert_channel": {
+      "description": "Outbound channel used to contact the customer about the fraud alert.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded values such as SMS, IVR_CALL, APP_PUSH, SMS+IVR.",
+      "nullRate": 0,
+      "sampleValues": [
+        "APP_PUSH",
+        "IVR_CALL",
+        "SMS",
+        "SMS+IVR"
+      ],
+      "cardinalityHint": "low"
+    },
+    "risk_scored_ts": {
+      "description": "Timestamp when the transaction was risk scored by the fraud system.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "alert_sent_ts": {
+      "description": "Timestamp when the fraud alert was sent to the customer.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "alert_delivered_ts": {
+      "description": "Timestamp when the alert was delivered or delivery was confirmed.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "delivery_status": {
+      "description": "Delivery outcome of the alert communication.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded values.",
+      "nullRate": 0,
+      "sampleValues": [
+        "DELIVERED",
+        "FAILED_RETRIED"
+      ],
+      "cardinalityHint": "low"
+    },
+    "customer_response": {
+      "description": "Customer's response to the fraud alert.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded values such as REPORTED_FRAUD, CONFIRMED_GENUINE, NO_RESPONSE.",
+      "nullRate": 0,
+      "sampleValues": [
+        "CONFIRMED_GENUINE",
+        "NO_RESPONSE",
+        "REPORTED_FRAUD"
+      ],
+      "cardinalityHint": "low"
+    },
+    "customer_response_ts": {
+      "description": "Timestamp when the customer responded to the alert.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE; null when no response.",
+      "nullRate": 0.3225492284749064,
+      "cardinalityHint": "high"
+    },
+    "response_latency_s": {
+      "description": "Elapsed time in seconds between alert delivery and customer response.",
+      "semanticType": "metric",
+      "sqlGotcha": "Null when no customer response exists.",
+      "nullRate": 0.3225492284749064,
+      "cardinalityHint": "high"
+    },
+    "auto_disposed_flag": {
+      "description": "Indicates whether the alert was automatically dispositioned without manual review.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Boolean field.",
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "queue_entered_ts": {
+      "description": "Timestamp when the alert entered analyst review queue.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE; null for auto-disposed alerts.",
+      "nullRate": 0.14870499436954074,
+      "cardinalityHint": "high"
+    },
+    "analyst_id": {
+      "description": "Identifier of the fraud analyst who handled the alert.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Null for auto-disposed alerts.",
+      "nullRate": 0.14870499436954074,
+      "sampleValues": [
+        "ANL_001",
+        "ANL_002",
+        "ANL_003",
+        "ANL_004",
+        "ANL_005",
+        "ANL_006",
+        "ANL_007",
+        "ANL_008",
+        "ANL_009",
+        "ANL_010",
+        "ANL_011",
+        "ANL_012",
+        "ANL_013",
+        "ANL_014",
+        "ANL_015",
+        "ANL_016",
+        "ANL_017",
+        "ANL_018",
+        "ANL_019",
+        "ANL_020",
+        "ANL_021",
+        "ANL_022",
+        "ANL_023",
+        "ANL_024",
+        "ANL_025"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "analyst_picked_ts": {
+      "description": "Timestamp when an analyst picked up the alert for review.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE; null for unqueued/auto-disposed alerts.",
+      "nullRate": 0.14870499436954074,
+      "cardinalityHint": "high"
+    },
+    "analyst_decision": {
+      "description": "Decision made by the fraud analyst after review.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Null for auto-disposed alerts; encoded values.",
+      "nullRate": 0.14870499436954074,
+      "sampleValues": [
+        "CLEAR_GENUINE",
+        "CONFIRM_FRAUD",
+        "ESCALATE"
+      ],
+      "cardinalityHint": "low"
+    },
+    "analyst_decision_ts": {
+      "description": "Timestamp when the analyst finalized the alert decision.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE; null for auto-disposed alerts.",
+      "nullRate": 0.14870499436954074,
+      "cardinalityHint": "high"
+    },
+    "handle_time_s": {
+      "description": "Analyst handling time in seconds for the alert.",
+      "semanticType": "metric",
+      "sqlGotcha": "Null for alerts without analyst handling.",
+      "nullRate": 0.14870499436954074,
+      "cardinalityHint": "high"
+    },
+    "shift": {
+      "description": "Operational shift during which the alert was processed.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Categorical values DAY, EVENING, NIGHT.",
+      "nullRate": 0,
+      "sampleValues": [
+        "DAY",
+        "EVENING",
+        "NIGHT"
+      ],
+      "cardinalityHint": "low"
+    },
+    "sla_target_min": {
+      "description": "Service-level target for handling the alert, in minutes.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "1440",
+        "240",
+        "30",
+        "5"
+      ],
+      "cardinalityHint": "low"
+    },
+    "sla_breached_flag": {
+      "description": "Indicates whether the operational SLA target was breached.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Boolean field.",
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "disposition": {
+      "description": "Final fraud outcome label for the alert, such as true positive, false positive, or unresolved.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded outcome values.",
+      "nullRate": 0,
+      "sampleValues": [
+        "FALSE_POSITIVE",
+        "TRUE_POSITIVE",
+        "UNRESOLVED"
+      ],
+      "cardinalityHint": "low"
+    },
+    "event_id": {
+      "description": "Unique identifier for a card lifecycle event.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "event_ts": {
+      "description": "Timestamp when a lifecycle or case event occurred, depending on table context.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "Shared across tables with different event semantics; qualify with table name when joining.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "event_type": {
+      "description": "Type of card lifecycle event such as issued, activated, hotlisted, reissued, or limit increased.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded values.",
+      "nullRate": 0,
+      "sampleValues": [
+        "ACTIVATED",
+        "HOTLISTED",
+        "ISSUED",
+        "LIMIT_INCREASED",
+        "REISSUED"
+      ],
+      "cardinalityHint": "low"
+    },
+    "old_value": {
+      "description": "Previous value before the lifecycle change, such as old card status or limit.",
+      "semanticType": "text",
+      "sqlGotcha": "Mostly null and context-dependent by event_type.",
+      "nullRate": 0.9327169274537696,
+      "cardinalityHint": "medium"
+    },
+    "new_value": {
+      "description": "New value after the lifecycle change, such as new status, product, or limit.",
+      "semanticType": "text",
+      "sqlGotcha": "Context-dependent by event_type; may represent different business entities.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "linked_card_id": {
+      "description": "Identifier of another card linked to the lifecycle event, typically predecessor or successor in reissue events.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Mostly null; useful for card reissue chains.",
+      "nullRate": 0.9815078236130867,
+      "cardinalityHint": "high"
+    },
+    "reason": {
+      "description": "Business reason for the lifecycle event.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded values.",
+      "nullRate": 0,
+      "sampleValues": [
+        "CONFIRMED_FRAUD",
+        "CUSTOMER_ACTIVATION",
+        "FRAUD_REISSUE",
+        "NEW_ISSUANCE",
+        "PERIODIC_REVIEW"
+      ],
+      "cardinalityHint": "low"
+    },
+    "initiated_by": {
+      "description": "Actor or channel that initiated the lifecycle or blocking action, depending on table context.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Shared across tables with different process semantics; qualify with table name when joining.",
+      "nullRate": 0,
+      "sampleValues": [
+        "CUSTOMER_APP",
+        "PHONEBANKING_AGENT",
+        "SYSTEM_AUTO"
+      ],
+      "cardinalityHint": "low"
+    },
+    "case_event_id": {
+      "description": "Unique identifier for a status transition or activity in a dispute/fraud case.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "case_id": {
+      "description": "Unique identifier for a fraud or dispute case.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "from_status": {
+      "description": "Previous case status before the event transition.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Null on initial case opening.",
+      "nullRate": 0.21898612446764665,
+      "sampleValues": [
+        "CHARGEBACK_RAISED",
+        "OPENED",
+        "PROVISIONAL_CREDIT_ISSUED",
+        "REPRESENTMENT_RECEIVED",
+        "RESOLVED",
+        "UNDER_INVESTIGATION"
+      ],
+      "cardinalityHint": "low"
+    },
+    "to_status": {
+      "description": "New case status after the event transition.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded workflow values.",
+      "nullRate": 0,
+      "sampleValues": [
+        "CHARGEBACK_RAISED",
+        "CLOSED",
+        "OPENED",
+        "PROVISIONAL_CREDIT_ISSUED",
+        "REPRESENTMENT_RECEIVED",
+        "RESOLVED",
+        "UNDER_INVESTIGATION"
+      ],
+      "cardinalityHint": "low"
+    },
+    "actor": {
+      "description": "Actor responsible for the case event, such as analyst, network, or system.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded values.",
+      "nullRate": 0,
+      "sampleValues": [
+        "ANALYST",
+        "NETWORK",
+        "SYSTEM"
+      ],
+      "cardinalityHint": "low"
+    },
+    "note_code": {
+      "description": "Standardized code describing the case event or resolution note.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Contains values with spaces/special text like 'DC 4752' and 'MC 4837'; treat as categorical string.",
+      "nullRate": 0,
+      "sampleValues": [
+        "CASE_CLOSED",
+        "CASE_OPENED",
+        "CB_LOST",
+        "CB_REPRESENTED",
+        "CB_WON",
+        "DC 4752",
+        "INVESTIGATION_STARTED",
+        "MC 4837",
+        "PENDING",
+        "RBI_PROVISIONAL_CREDIT",
+        "RESOLVED_BANK_FAVOUR",
+        "RESOLVED_CUSTOMER_FAVOUR",
+        "RP-FRD-01",
+        "VISA 10.4",
+        "WRITTEN_OFF"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "previous_card_id": {
+      "description": "Identifier of the previous card replaced by the current card.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Mostly null; supports reissue lineage.",
+      "nullRate": 0.9799753542821935,
+      "cardinalityHint": "high"
+    },
+    "masked_pan": {
+      "description": "Masked primary account number for the card.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Masked string, not fully unique across replacements; do not use as secure raw PAN.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "bin": {
+      "description": "Bank Identification Number / issuer BIN of the card.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Numeric but categorical; often used for network/product segmentation.",
+      "nullRate": 0,
+      "sampleValues": [
+        "360502",
+        "414767",
+        "416021",
+        "461700",
+        "465866",
+        "521307",
+        "552260",
+        "559134",
+        "652845",
+        "652850",
+        "652851"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "network": {
+      "description": "Card payment network such as Visa, Mastercard, RuPay, or Diners.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "DINERS",
+        "MASTERCARD",
+        "RUPAY",
+        "VISA"
+      ],
+      "cardinalityHint": "low"
+    },
+    "product": {
+      "description": "Card product or variant name.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Contains spaces and special characters in values only, not column name.",
+      "nullRate": 0,
+      "sampleValues": [
+        "BizFirst",
+        "Diners Club Privilege",
+        "IndianOil HDFC Bank",
+        "Infinia Metal",
+        "Millennia",
+        "MoneyBack+",
+        "Pixel Play",
+        "Regalia Gold",
+        "Swiggy HDFC Bank",
+        "Tata Neu Infinity",
+        "Tata Neu Plus"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "card_tier": {
+      "description": "Segment or tier of the card product.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "Business",
+        "Co-brand",
+        "Co-brand premium",
+        "Digital",
+        "Entry",
+        "Mass-premium",
+        "Premium",
+        "Super-premium"
+      ],
+      "cardinalityHint": "low"
+    },
+    "credit_limit_current": {
+      "description": "Current assigned credit limit on the card in INR.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "issue_date": {
+      "description": "Date when the card was issued.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "DATE field.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "expiry": {
+      "description": "Card expiry represented as year-month.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Stored as VARCHAR in YYYY-MM format; parse if date arithmetic is needed.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "intl_enabled_flag": {
+      "description": "Indicates whether international usage is enabled on the card.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Boolean field.",
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "contactless_enabled_flag": {
+      "description": "Indicates whether contactless functionality is enabled on the card.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Boolean field.",
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "upi_linked_flag": {
+      "description": "Indicates whether the card is linked for UPI usage.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Boolean field.",
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "status": {
+      "description": "Current status of the card or fraud episode depending on table context.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Shared across tables with different meanings; qualify with table name when joining.",
+      "nullRate": 0,
+      "sampleValues": [
+        "CONFIRMED"
+      ],
+      "cardinalityHint": "low"
+    },
+    "full_name": {
+      "description": "Synthetic customer full name.",
+      "semanticType": "text",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "gender": {
+      "description": "Customer gender.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded as F/M.",
+      "nullRate": 0,
+      "sampleValues": [
+        "F",
+        "M"
+      ],
+      "cardinalityHint": "low"
+    },
+    "dob": {
+      "description": "Customer date of birth.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "DATE field.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "age": {
+      "description": "Customer age in years as of the dataset reference period.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "medium"
+    },
+    "city": {
+      "description": "City associated with the customer residence or merchant location depending on table context.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Shared across tables with different entity meanings; qualify with table name when joining.",
+      "nullRate": 0,
+      "cardinalityHint": "medium"
+    },
+    "state": {
+      "description": "State associated with the customer or merchant.",
+      "semanticType": "dimension",
+      "sqlGotcha": "State abbreviations; shared across tables and may contain nulls in merchants.",
+      "nullRate": 0.050955414012738856,
+      "sampleValues": [
+        "AP",
+        "AS",
+        "BR",
+        "CG",
+        "CH",
+        "DL",
+        "GJ",
+        "KA",
+        "KL",
+        "MH",
+        "MP",
+        "OD",
+        "RJ",
+        "TN",
+        "TS",
+        "UP",
+        "WB"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "pincode": {
+      "description": "Customer postal PIN code.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Numeric-looking geographic code; treat as categorical, not arithmetic.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "segment": {
+      "description": "Customer banking relationship segment.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "Classic",
+        "Imperia",
+        "Preferred"
+      ],
+      "cardinalityHint": "low"
+    },
+    "occupation": {
+      "description": "Customer occupation category.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "Professional",
+        "Retired",
+        "Salaried",
+        "Self-employed"
+      ],
+      "cardinalityHint": "low"
+    },
+    "income_band": {
+      "description": "Customer income range bucket.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Bucketed string values such as 3-6L, 12-25L, 50L+.",
+      "nullRate": 0,
+      "sampleValues": [
+        "12-25L",
+        "25-50L",
+        "3-6L",
+        "50L+",
+        "6-12L"
+      ],
+      "cardinalityHint": "low"
+    },
+    "masked_mobile": {
+      "description": "Masked customer mobile number.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Masked string; not guaranteed unique due to masking.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "email": {
+      "description": "Customer email address.",
+      "semanticType": "identifier",
+      "sqlGotcha": "PII-like string; synthetic here, but in practice needs governance and case-insensitive handling.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "relationship_since": {
+      "description": "Date since the customer relationship with the bank began.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "DATE field.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "kyc_status": {
+      "description": "Know-your-customer verification status.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded values.",
+      "nullRate": 0,
+      "sampleValues": [
+        "RE_KYC_DUE",
+        "VERIFIED"
+      ],
+      "cardinalityHint": "low"
+    },
+    "home_branch_city": {
+      "description": "City of the customer's home branch.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "Ahmedabad",
+        "Bengaluru",
+        "Bhopal",
+        "Bhubaneswar",
+        "Chandigarh",
+        "Chennai",
+        "Coimbatore",
+        "Delhi NCR",
+        "Guwahati",
+        "Hyderabad",
+        "Indore",
+        "Jaipur",
+        "Kochi",
+        "Kolkata",
+        "Lucknow",
+        "Madurai",
+        "Mumbai",
+        "Nagpur",
+        "Patna",
+        "Pune",
+        "Raipur",
+        "Surat",
+        "Visakhapatnam"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "repeat_fraud_victim_flag": {
+      "description": "Indicates whether the customer has previously been a repeat fraud victim.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Boolean field.",
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "ticket_id": {
+      "description": "Unique identifier for a customer service interaction or support ticket.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "opened_ts": {
+      "description": "Timestamp when the service ticket was opened.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "category": {
+      "description": "Category of merchant or service interaction depending on table context.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Shared across tables with different semantics; qualify with table name when joining.",
+      "nullRate": 0,
+      "sampleValues": [
+        "bank_fee",
+        "dining",
+        "ecom",
+        "education",
+        "electronics",
+        "entertainment",
+        "fashion",
+        "food_delivery",
+        "fuel",
+        "gambling_adj",
+        "grocery",
+        "hospital",
+        "hotels",
+        "insurance",
+        "jewellery",
+        "liquor",
+        "ott",
+        "pharmacy",
+        "rail",
+        "rent",
+        "telecom",
+        "travel",
+        "utilities",
+        "wallet_load"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "linked_alert_id": {
+      "description": "Alert identifier associated with the service ticket, if any.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Mostly null; links to fraud_alerts.alert_id.",
+      "nullRate": 0.7868504772004242,
+      "cardinalityHint": "high"
+    },
+    "linked_txn_id": {
+      "description": "Transaction identifier associated with the service ticket, if any.",
+      "semanticType": "identifier",
+      "sqlGotcha": "May be null; links to transactions.txn_id.",
+      "nullRate": 0.432661717921527,
+      "cardinalityHint": "high"
+    },
+    "resolved_ts": {
+      "description": "Timestamp when the service ticket was resolved.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "resolution_days": {
+      "description": "Elapsed time in days to resolve a service ticket or fraud case depending on table context.",
+      "semanticType": "metric",
+      "sqlGotcha": "Shared across tables with different process meanings; qualify with table name when joining.",
+      "nullRate": 0.014429109159347553,
+      "cardinalityHint": "medium"
+    },
+    "csat_1_5": {
+      "description": "Customer satisfaction rating on a 1 to 5 scale for the service interaction.",
+      "semanticType": "metric",
+      "sqlGotcha": "Ordinal score; may be better treated as categorical in some analyses.",
+      "nullRate": 0,
+      "sampleValues": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "cardinalityHint": "low"
+    },
+    "merchant_name": {
+      "description": "Merchant display name.",
+      "semanticType": "text",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "mcc_description": {
+      "description": "Human-readable description of the merchant category code.",
+      "semanticType": "text",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "Airlines",
+        "Apparel and accessories",
+        "Betting / gaming (high risk)",
+        "Cinema (PVR INOX/BookMyShow)",
+        "Colleges and universities",
+        "Direct marketing / e-commerce",
+        "Electronics stores",
+        "Fast food / food delivery",
+        "Financial institution charges",
+        "Grocery stores / supermarkets",
+        "Hospitals",
+        "Hotels and resorts",
+        "Insurance premiums",
+        "Jewellery stores",
+        "Liquor stores",
+        "Passenger railways (IRCTC)",
+        "Pharmacies",
+        "Real estate / rent platforms",
+        "Restaurants",
+        "Service stations (fuel)",
+        "Subscription services (OTT)",
+        "Telecom / recharges",
+        "Utilities (electricity/gas/water)",
+        "Wallet / prepaid load"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "country": {
+      "description": "Merchant country code.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded as country abbreviations.",
+      "nullRate": 0,
+      "sampleValues": [
+        "AE",
+        "FR",
+        "GB",
+        "ID",
+        "IN",
+        "MY",
+        "SG",
+        "TH",
+        "US"
+      ],
+      "cardinalityHint": "low"
+    },
+    "risk_tier": {
+      "description": "Merchant risk tier assigned for fraud monitoring.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded values LOW, MEDIUM, HIGH.",
+      "nullRate": 0,
+      "sampleValues": [
+        "HIGH",
+        "LOW",
+        "MEDIUM"
+      ],
+      "cardinalityHint": "low"
+    },
+    "onboarded_since": {
+      "description": "Date when the merchant was onboarded.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "DATE field.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "case_opened_ts": {
+      "description": "Timestamp when the fraud/dispute case was opened.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "reporting_delay_bucket": {
+      "description": "Bucket indicating delay between fraud occurrence and customer reporting.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Bucketed categorical value.",
+      "nullRate": 0,
+      "sampleValues": [
+        "4_7_DAYS",
+        "BEYOND_7_DAYS",
+        "WITHIN_3_DAYS"
+      ],
+      "cardinalityHint": "low"
+    },
+    "liability_outcome": {
+      "description": "Final liability assignment outcome for the fraud/dispute case.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded values such as ZERO_LIABILITY, LIMITED_LIABILITY, CUSTOMER_LIABLE.",
+      "nullRate": 0,
+      "sampleValues": [
+        "CUSTOMER_LIABLE",
+        "LIMITED_LIABILITY",
+        "ZERO_LIABILITY"
+      ],
+      "cardinalityHint": "low"
+    },
+    "provisional_credit_ts": {
+      "description": "Timestamp when provisional credit was issued to the customer, if applicable.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE; often null.",
+      "nullRate": 0.6744040150564617,
+      "cardinalityHint": "high"
+    },
+    "chargeback_raised_flag": {
+      "description": "Indicates whether a chargeback was raised for the case.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Boolean field.",
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "chargeback_reason_code": {
+      "description": "Network or bank chargeback reason code used for the case.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Contains spaces and punctuation in values like 'VISA 10.4' and 'DC 4752'; treat as categorical string.",
+      "nullRate": 0.8619824341279799,
+      "sampleValues": [
+        "DC 4752",
+        "MC 4837",
+        "RP-FRD-01",
+        "VISA 10.4"
+      ],
+      "cardinalityHint": "low"
+    },
+    "chargeback_status": {
+      "description": "Current or final status of the chargeback process.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded values including NA, WON, LOST, REPRESENTED.",
+      "nullRate": 0,
+      "sampleValues": [
+        "LOST",
+        "NA",
+        "REPRESENTED",
+        "WON"
+      ],
+      "cardinalityHint": "low"
+    },
+    "cybercrime_1930_referred_flag": {
+      "description": "Indicates whether the case was referred to India's cybercrime 1930 reporting mechanism.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Boolean field.",
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "final_status": {
+      "description": "Final case resolution status.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded workflow outcome values.",
+      "nullRate": 0,
+      "sampleValues": [
+        "PENDING",
+        "RESOLVED_BANK_FAVOUR",
+        "RESOLVED_CUSTOMER_FAVOUR",
+        "WRITTEN_OFF"
+      ],
+      "cardinalityHint": "low"
+    },
+    "amount_recovered_inr": {
+      "description": "Amount recovered in INR through chargeback, recovery, or resolution activities.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "medium"
+    },
+    "action_id": {
+      "description": "Unique identifier for a fraud blocking or mitigation action.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "action_type": {
+      "description": "Type of prevention or control action taken in response to fraud risk.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded values.",
+      "nullRate": 0,
+      "sampleValues": [
+        "CARD_HOTLISTED",
+        "CARD_REISSUED",
+        "TXN_DECLINED_INFLIGHT",
+        "TXN_HELD",
+        "UNBLOCKED_AFTER_CONFIRMATION"
+      ],
+      "cardinalityHint": "low"
+    },
+    "action_ts": {
+      "description": "Timestamp when the blocking or mitigation action was executed.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "amount_at_risk_inr": {
+      "description": "Estimated INR amount exposed to loss at the time of action.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "amount_prevented_inr": {
+      "description": "INR amount successfully prevented from loss through action or summarized episode controls.",
+      "semanticType": "metric",
+      "sqlGotcha": "Shared across tables; table context determines whether action-level or episode-level summary.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "amount_lost_inr": {
+      "description": "INR amount ultimately lost despite action or within a fraud episode.",
+      "semanticType": "metric",
+      "sqlGotcha": "Shared across tables; table context determines granularity.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "episode_id": {
+      "description": "Unique identifier for a confirmed fraud episode.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0.2,
+      "sampleValues": [
+        "FEP_45c0a7555b",
+        "FEP_465edecf0c",
+        "FEP_46fd1648bd",
+        "FEP_479b4dc26e",
+        "FEP_4839853c1f",
+        "FEP_48d7bcb5d0",
+        "FEP_4975f42f81",
+        "FEP_4a142ba932",
+        "FEP_4ab26322e3",
+        "FEP_4b509a9c94",
+        "FEP_4beed21645",
+        "FEP_4c8d098ff6"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "typology": {
+      "description": "Fraud typology classifying the attack pattern or modus operandi.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded values such as CARD_TESTING, SKIMMING_CLONE, CNP_INTL.",
+      "nullRate": 0,
+      "sampleValues": [
+        "CARD_TESTING",
+        "CNP_INTL",
+        "LOST_STOLEN",
+        "MERCHANT_COLLUSION_FIRST_PARTY",
+        "MULE_CYCLING",
+        "OTP_SOCIAL_ENGINEERING_ATO",
+        "SKIMMING_CLONE",
+        "SUBSCRIPTION_DRAIN"
+      ],
+      "cardinalityHint": "low"
+    },
+    "detection_source": {
+      "description": "Primary source through which the fraud episode was detected.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded values.",
+      "nullRate": 0,
+      "sampleValues": [
+        "CUSTOMER_REPORTED",
+        "NETWORK_COMPROMISE_ALERT",
+        "SYSTEM_BATCH",
+        "SYSTEM_REALTIME"
+      ],
+      "cardinalityHint": "low"
+    },
+    "first_fraud_txn_ts": {
+      "description": "Timestamp of the first known fraudulent transaction in the episode.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "detected_ts": {
+      "description": "Timestamp when the fraud episode was detected or confirmed by monitoring processes.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "time_to_detect_s": {
+      "description": "Elapsed time in seconds between first fraud transaction and detection.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "txns_attempted": {
+      "description": "Total number of fraudulent transactions attempted in the episode.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "1",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "2",
+        "20",
+        "21",
+        "24",
+        "25",
+        "3",
+        "33",
+        "39",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "txns_before_block": {
+      "description": "Number of fraudulent transactions that occurred before blocking controls took effect.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "0",
+        "1",
+        "10",
+        "11",
+        "12",
+        "15",
+        "18",
+        "2",
+        "21",
+        "24",
+        "3",
+        "33",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "amount_attempted_inr": {
+      "description": "Total INR amount attempted by fraudsters in the episode.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "cards_involved_count": {
+      "description": "Number of cards involved in the fraud episode.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "1",
+        "23",
+        "3",
+        "4",
+        "5",
+        "8"
+      ],
+      "cardinalityHint": "low"
+    },
+    "common_point_of_purchase_merchant_id": {
+      "description": "Merchant identifier suspected as common point of purchase or compromise across affected cards.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Mostly null; links to merchants.merchant_id.",
+      "nullRate": 0.9947643979057592,
+      "sampleValues": [
+        "MRCH_50692b0cc7",
+        "MRCH_6d755a6446"
+      ],
+      "cardinalityHint": "low"
+    },
+    "table": {
+      "description": "Name of the table documented in the data dictionary.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Column name is a SQL reserved word in some engines; quote if needed.",
+      "nullRate": 0,
+      "sampleValues": [
+        "blocking_actions",
+        "calendar_events",
+        "card_lifecycle_events",
+        "cards",
+        "case_events",
+        "case_resolutions",
+        "customers",
+        "fraud_alerts",
+        "fraud_episodes",
+        "hero_case_index",
+        "merchants",
+        "service_interactions",
+        "statements",
+        "transactions"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "column": {
+      "description": "Name of the column documented in the data dictionary.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Column name is a SQL reserved word in some engines; quote if needed.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "dtype": {
+      "description": "Recorded data type for the documented column in the data dictionary.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Represents source metadata types, not necessarily warehouse-native SQL types.",
+      "nullRate": 0,
+      "sampleValues": [
+        "bool",
+        "datetime64[ns]",
+        "datetime64[us]",
+        "float64",
+        "int64",
+        "object",
+        "str"
+      ],
+      "cardinalityHint": "low"
+    },
+    "description": {
+      "description": "Human-readable description of a documented field in the data dictionary.",
+      "semanticType": "text",
+      "sqlGotcha": "Column name may collide with SQL functions or generic aliases; qualify when selecting.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "valid_values": {
+      "description": "Allowed or expected values for the documented field where applicable.",
+      "semanticType": "text",
+      "sqlGotcha": "Often pipe-delimited encoded lists; split if analyzing individual allowed values.",
+      "nullRate": 0.7142857142857143,
+      "cardinalityHint": "medium"
+    },
+    "joins_to": {
+      "description": "Reference target indicating how the documented field joins to another table/column.",
+      "semanticType": "text",
+      "sqlGotcha": "Contains fully qualified join targets as strings, not enforced foreign keys.",
+      "nullRate": 0.8677248677248677,
+      "sampleValues": [
+        "cards.card_id",
+        "case_resolutions.case_id",
+        "customers.customer_id",
+        "fraud_alerts.alert_id",
+        "fraud_episodes.episode_id",
+        "merchants.merchant_id",
+        "transactions.txn_id"
+      ],
+      "cardinalityHint": "low"
+    },
+    "event_name": {
+      "description": "Name of a calendar or seasonal event that may influence spending or fraud patterns.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "Christmas-NY 2024",
+        "Christmas-NY 2025",
+        "Dhanteras 2024",
+        "Dhanteras 2024 (day)",
+        "Dhanteras 2025",
+        "Dhanteras 2025 (day)",
+        "Diwali week 2024",
+        "Diwali week 2025",
+        "Flipkart BBD / Amazon GIF 2024",
+        "Flipkart BBD / Amazon GIF 2025",
+        "IPL 2025",
+        "IPL 2026",
+        "Monsoon 2024",
+        "Monsoon 2025",
+        "Month-end squeeze",
+        "Post-Diwali travel 2024",
+        "Post-Diwali travel 2025",
+        "Salary cycle",
+        "Summer travel 2024",
+        "Summer travel 2025",
+        "Summer travel 2026",
+        "Tax-saving window 2025",
+        "Tax-saving window 2026",
+        "Wedding season Jan-Feb 2025",
+        "Wedding season Jan-Feb 2026",
+        "Wedding season Nov-Dec 2024",
+        "Wedding season Nov-Dec 2025",
+        "Yes Bank surcharge change"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "start_date": {
+      "description": "Start date of the calendar event window.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "Stored as VARCHAR in YYYY-MM-DD format; parse to DATE for comparisons.",
+      "nullRate": 0,
+      "sampleValues": [
+        "2024-06-01",
+        "2024-06-15",
+        "2024-09-26",
+        "2024-10-25",
+        "2024-10-27",
+        "2024-10-29",
+        "2024-11-02",
+        "2024-11-15",
+        "2024-12-20",
+        "2025-01-01",
+        "2025-01-15",
+        "2025-03-22",
+        "2025-05-01",
+        "2025-06-15",
+        "2025-09-22",
+        "2025-10-13",
+        "2025-10-16",
+        "2025-10-18",
+        "2025-10-22",
+        "2025-11-15",
+        "2025-12-20",
+        "2026-01-01",
+        "2026-01-15",
+        "2026-03-25",
+        "2026-05-01",
+        "monthly 1st-5th",
+        "monthly 24th-30th"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "end_date": {
+      "description": "End date of the calendar event window.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "Stored as VARCHAR in YYYY-MM-DD format; parse to DATE for comparisons.",
+      "nullRate": 0,
+      "sampleValues": [
+        "2024-06-25",
+        "2024-09-15",
+        "2024-10-13",
+        "2024-10-29",
+        "2024-10-31",
+        "2024-11-01",
+        "2024-11-10",
+        "2024-12-15",
+        "2025-01-02",
+        "2025-02-28",
+        "2025-03-31",
+        "2025-06-03",
+        "2025-06-25",
+        "2025-09-15",
+        "2025-10-10",
+        "2025-10-18",
+        "2025-10-20",
+        "2025-10-21",
+        "2025-10-30",
+        "2025-12-15",
+        "2026-01-02",
+        "2026-01-15",
+        "2026-02-28",
+        "2026-03-31",
+        "2026-05-31",
+        "monthly 1st-5th",
+        "monthly 24th-30th"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "overall_multiplier": {
+      "description": "Overall expected spending or activity multiplier associated with the calendar event.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "0.85",
+        "1.0",
+        "1.08",
+        "1.1",
+        "1.12",
+        "1.15",
+        "1.2",
+        "1.25",
+        "1.3",
+        "1.35",
+        "1.55",
+        "1.8"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "category_effects": {
+      "description": "Encoded category-specific multipliers associated with the calendar event.",
+      "semanticType": "text",
+      "sqlGotcha": "Pipe-delimited key:value pairs such as 'ecom:3.0|electronics:2.4'; requires parsing.",
+      "nullRate": 0.10714285714285714,
+      "sampleValues": [
+        "ecom:3.0|electronics:2.4|fashion:2.0",
+        "fashion:1.8|electronics:1.6|dining:1.4|grocery:1.3|travel:0.6",
+        "food_delivery:1.15|fuel:0.9|dining:0.9",
+        "food_delivery:1.2|entertainment:1.15",
+        "insurance:1.6",
+        "jewellery:2.0|fashion:1.4|hotels:1.4|dining:1.25",
+        "jewellery:2.2|fashion:1.5|hotels:1.5|dining:1.3",
+        "jewellery:3.0",
+        "jewellery:6.0",
+        "travel:1.5",
+        "travel:1.6|dining:1.6|hotels:1.6|entertainment:1.4",
+        "travel:1.7|hotels:1.5"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "note": {
+      "description": "Narrative explanation of the calendar event's expected behavioral effects.",
+      "semanticType": "text",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "1% surcharge on utility/education/wallet-load above thresholds from this date",
+        "80C rush: insurance/FD-adjacent spends rise",
+        "Dhanteras day itself",
+        "Discretionary down for mass segment",
+        "E-com festival sale; EMI conversions spike",
+        "Festive gifting; travel dips during",
+        "Jewellery buying peaks",
+        "Jewellery buying peaks; high-value round-amount tickets",
+        "Match-evening food delivery spikes",
+        "Monsoon shift",
+        "Mumbai/Pune/Kolkata: delivery up, dine-out down",
+        "Salary-credit spend bump; autopay debits cluster 3rd-7th",
+        "School-holiday travel; intl exposure up",
+        "Travel rebounds after Diwali",
+        "Wedding muhurat window",
+        "Year-end holidays"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "hero_id": {
+      "description": "Unique identifier for a curated hero case scenario used for demonstrations or analysis.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "H1",
+        "H10",
+        "H11",
+        "H12",
+        "H13",
+        "H14",
+        "H15",
+        "H2",
+        "H3",
+        "H4",
+        "H5",
+        "H6",
+        "H7",
+        "H8",
+        "H9"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "title": {
+      "description": "Short title summarizing the hero fraud case or scenario.",
+      "semanticType": "text",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "BBD surge-hidden mule ring",
+        "Card-testing burst then jewellery hit",
+        "Dhanteras jeweller false positive",
+        "First-party refund abuse",
+        "Genuine traveler false-positive cluster",
+        "Geo-impossible: Mumbai POS to Dubai e-com in 22 min",
+        "Lost-wallet contactless spree",
+        "Merchant compromise wave",
+        "Night anomaly beats amount logic",
+        "OTP social-engineering account takeover",
+        "Repeat victim - the system learned",
+        "Rs.1 validation then Rs.47,500 wallet-load",
+        "Skimming cluster: one fuel pump, 8 cloned cards",
+        "Subscription drain on a dormant card",
+        "The false-positive save (HNI traveler)"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "key_txn_ids": {
+      "description": "Delimited list of important transaction identifiers associated with the hero case.",
+      "semanticType": "text",
+      "sqlGotcha": "Multi-value field delimited by '|'; requires splitting to join to transactions.",
+      "nullRate": 0,
+      "sampleValues": [
+        "TXN_2aec4dc473|TXN_2ea19a9e99",
+        "TXN_2f3fd2184a|TXN_2fde0991fb",
+        "TXN_307c410bac|TXN_311a78855d",
+        "TXN_31b8afff0e|TXN_3c3a5f13cf",
+        "TXN_49d3238905|TXN_5591419128",
+        "TXN_562f790ad9|TXN_56cdb0848a|TXN_576be7fe3b",
+        "TXN_580a1f77ec|TXN_58a856f19d",
+        "TXN_59468e6b4e",
+        "TXN_59e4c5e4ff|TXN_5c5da3cbc3",
+        "TXN_6012f0a5e9|TXN_63c83d800f",
+        "TXN_778f2cb62f|TXN_73d9dfdc09",
+        "TXN_782d642fe0|TXN_78cb9ba991|TXN_7969d32342|TXN_7a080a9cf3|TXN_7aa64216a4|TXN_7b44799055|TXN_7be2b10a06",
+        "TXN_92227e26ea",
+        "TXN_92c0b5a09b|TXN_b4bea0c5a2",
+        "TXN_b912251979"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "alert_ids": {
+      "description": "Delimited list of alert identifiers associated with the hero case.",
+      "semanticType": "text",
+      "sqlGotcha": "Multi-value field delimited by '|'; requires splitting to join to fraud_alerts.",
+      "nullRate": 0,
+      "sampleValues": [
+        "ALRT_02ea8f62c6|ALRT_f4155bfa2e|ALRT_ff354288a0",
+        "ALRT_0fa089f6c7",
+        "ALRT_249e8db8c0|ALRT_253cc53271|ALRT_25dafcac22|ALRT_26793425d3",
+        "ALRT_36b27a1d18",
+        "ALRT_3a67c6f73e|ALRT_dc76d6b626|ALRT_dd150e2fd7|ALRT_ddb345a988|ALRT_e3e1706a72|ALRT_e51ddf5dd4",
+        "ALRT_551d619bbb",
+        "ALRT_652f03f7b5",
+        "ALRT_7d497781ac|ALRT_7de7aefb5d|ALRT_7e85e6750e|ALRT_7fc2556870|ALRT_80608ce221|ALRT_80fec45bd2",
+        "ALRT_9de8aa7f8f|ALRT_9e86e1f940",
+        "ALRT_b8000daa5b|ALRT_c3be2bb27e|ALRT_b89e45240c|ALRT_b93c7c9dbd|ALRT_b9dab4176e|ALRT_ba78eb911f",
+        "ALRT_b9b86ae3ac|ALRT_ba56a25d5d",
+        "ALRT_c1089785c6",
+        "ALRT_c3423d6c8f|ALRT_c8d230b3c8|ALRT_dd37576399|ALRT_de73c656fb|ALRT_ecaac245e2",
+        "ALRT_d5e9ac7b86",
+        "ALRT_ec662fde5e|ALRT_f01b7cb884|ALRT_ed0467580f|ALRT_eda29ed1c0|ALRT_ee40d64b71|ALRT_eedf0dc522"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "case_ids": {
+      "description": "Delimited list of case identifiers associated with the hero case.",
+      "semanticType": "text",
+      "sqlGotcha": "Multi-value field delimited by '|'; requires splitting to join to case_resolutions/case_events.",
+      "nullRate": 0.2,
+      "sampleValues": [
+        "CASE_00879f60ce|CASE_043cec3af4|CASE_0125d6da7f|CASE_01c40e5430|CASE_026245cde1|CASE_03007d4792",
+        "CASE_170bfee536|CASE_0836cb7c9e|CASE_1356b20b10",
+        "CASE_23c1f97937",
+        "CASE_4ad3e99f88",
+        "CASE_4e893679ae|CASE_f098463896|CASE_f1367db247|CASE_f1d4b52bf8|CASE_f802dfece2|CASE_f93f4ee044",
+        "CASE_693ed11e2b",
+        "CASE_7950737a25",
+        "CASE_916ae7041c|CASE_92091e7dcd|CASE_92a755f77e|CASE_93e3c4eae0|CASE_9481fc6491|CASE_952033de42",
+        "CASE_b20a1a01ff|CASE_b2a8517bb0",
+        "CASE_cc217d2ccb|CASE_d7df9b34ee|CASE_ccbfb4a67c|CASE_cd5dec202d|CASE_cdfc2399de|CASE_ce9a5b138f",
+        "CASE_cdd9da661c|CASE_ce7811dfcd",
+        "CASE_d763aceeff|CASE_dcf3a03638|CASE_f158c6e609|CASE_f29535d96b|CASE_00cc31c852"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "window_start": {
+      "description": "Start date of the analysis window for the hero case.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "DATE field.",
+      "nullRate": 0,
+      "sampleValues": [
+        "2025-02-10",
+        "2025-04-03",
+        "2025-07-12",
+        "2025-07-22",
+        "2025-08-09",
+        "2025-09-02",
+        "2025-09-28",
+        "2025-10-18",
+        "2025-11-12",
+        "2025-12-08",
+        "2026-01-17",
+        "2026-02-09",
+        "2026-03-14",
+        "2026-04-14",
+        "2026-05-09"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "window_end": {
+      "description": "End date of the analysis window for the hero case.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "DATE field.",
+      "nullRate": 0,
+      "sampleValues": [
+        "2025-04-24",
+        "2025-04-25",
+        "2025-07-16",
+        "2025-07-22",
+        "2025-08-15",
+        "2025-09-28",
+        "2025-10-18",
+        "2025-11-12",
+        "2025-11-27",
+        "2025-12-08",
+        "2026-01-18",
+        "2026-02-09",
+        "2026-03-14",
+        "2026-04-14",
+        "2026-05-24"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "expected_outcome": {
+      "description": "Expected analytical conclusion or resolution outcome for the hero case.",
+      "semanticType": "text",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "11 small intl recurring debits over 3 weeks caught in batch review",
+        "2 txns lost pre-report; limited liability (4-7 day reporting)",
+        "23 cards that shopped one breached merchant show CNP fraud weeks later",
+        "5 cards, 20 max-value electronics txns, one drop pincode, one device",
+        "6 alerts on one honeymoon, all genuine, one fatigue complaint",
+        "AMOUNT_DEVIATION fires on a genuine Rs.4.8L Tanishq purchase",
+        "Cleared via app push in 90 seconds; zero friction",
+        "Common-point-of-purchase identified: HPCL pump, Hyderabad",
+        "Declined in-flight; customer confirmed fraud in 6 minutes",
+        "Held on behavioral z-score despite tiny amount",
+        "Refund-to-spend ratio 9 sigma above population; resolved in bank favour",
+        "Rs.89,400 prevented; card hotlisted 02:49 and reissued",
+        "VICTIM_HISTORY trigger auto-holds instantly; zero loss",
+        "Wallet-load held and declined; Rs.1 the only loss",
+        "Zero liability; provisional credit day 6; chargeback + 1930 referral"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "narrative": {
+      "description": "Detailed story-like description of the hero case sequence and context.",
+      "semanticType": "text",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "14 cards used one pump 9-11 Aug; 8 showed SWIPE clones in Delhi NCR within 72h. Entry-mode anomaly (SWIPE on chip cards).",
+        "19 purchases vs 14 near-full refunds in 60 days at two merchants.",
+        "40+ intl txns across Paris and Rome. Quantifies alert friction an agent would compress to a single contact.",
+        "A 100% daytime-domestic customer hits intl gaming MCC 7995 at 03:05 for Rs.2,300. Severity from behavior, not amount.",
+        "Classic laundering pattern: Rs.1 gateway validation at 21:17, Rs.47,500 wallet load 6 minutes later.",
+        "Death by papercuts: Rs.99-899 intl subscriptions on a card with no activity for months.",
+        "First-ever Singapore hotel Rs.2.1L at 23:40 preceded 6h earlier by a SIN flight purchase and BOM lounge swipe. Context clears it.",
+        "Five tap-no-PIN txns under Rs.5,000 in 40 minutes across Bengaluru, ending at a liquor store. Hotlisted via app on day 4.",
+        "Grocery POS in Mumbai 19:02, Dubai electronics Rs.1.2L 19:24. Implied speed ~5,200 km/h.",
+        "H3's customer re-targeted with a refund-processing vishing call. This time the hold is instant and nothing is lost.",
+        "Network compromise alert; common-point-of-purchase analysis links victims through their Sep-2025 purchase history.",
+        "Same trigger as H1's jewellery hit, opposite truth. Context (festival day, home city, chip+PIN) decides.",
+        "Six small e-com tests at 02:11-02:14 (5 declined 3DS), then an Rs.89,400 intl jewellery attempt held and auto-declined on no response.",
+        "Tax-season vishing. OTP passed on Rs.74,999 Croma e-com; second attempt held. Reported next morning via PhoneBanking.",
+        "Velocity hides inside the 3x BBD surge; shared device id and behavioral baselines catch it."
+      ],
+      "cardinalityHint": "unique"
+    }
+  },
+  "userIdField": "customer_id",
+  "dateField": "txn_ts",
+  "domain": "credit card fraud operations",
+  "domainPersona": "credit fraud operations analytics assistant",
+  "domainFocus": "Focus on transaction fraud detection performance, alert/analyst operations, customer impact, and recovery outcomes. Key questions include which behaviors and merchants drive fraud, how quickly fraud is detected and blocked, where false positives create friction or complaints, and how liability, chargebacks, and losses evolve across customers, cards, and fraud typologies.",
+  "currency": "INR",
+  "domainHints": "6. Use DuckDB-friendly qualified column references when joining because names like `channel`, `status`, `city`, `state`, `category`, `initiated_by`, `event_ts`, and `resolution_days` appear in multiple tables with different meanings; always write `transactions.channel`, `service_interactions.channel`, `cards.status`, `fraud_episodes.status`, etc.\n7. Quote reserved/generic metadata columns in `data_dictionary`: `\"table\"`, `\"column\"`, and sometimes `description` if aliasing; prefer `SELECT dd.\"table\", dd.\"column\" FROM data_dictionary dd`.\n8. Time fields are mixed types: `transactions.txn_ts` and many ops fields are `TIMESTAMP WITH TIME ZONE`, while statement/customer/card dates are `DATE`, and `calendar_events.start_date` / `calendar_events.end_date` are VARCHAR in `YYYY-MM-DD`; parse with `CAST(calendar_events.start_date AS DATE)` or `strptime(calendar_events.start_date, '%Y-%m-%d')` before comparison.\n9. Encoded values are business-critical: filter spend with `transactions.txn_type = 'PURCHASE'` when needed, remember `transactions.response` can be `APPROVED`, `DECLINED`, or `HELD_FOR_CONFIRMATION`, and `decline_reason` is mostly populated only for non-approved transactions.\n10. Treat code-like numerics as dimensions, not measures: `transactions.mcc`, `merchants.mcc`, `cards.bin`, `customers.pincode`, and `fraud_alerts.sla_target_min` should usually be grouped/filtered, not summed or averaged except where analytically intentional.\n11. Multi-value text fields require splitting before reason-level analysis: `fraud_alerts.trigger_reasons`, `hero_case_index.key_txn_ids`, `hero_case_index.alert_ids`, `hero_case_index.case_ids`, and `calendar_events.category_effects` are pipe-delimited; use `unnest(string_split(col, '|'))` in DuckDB. Also note `transactions.fraud_episode_id` joins to `fraud_episodes.episode_id` despite different names.",
+  "summaryTableHint": "Query the `transactions` table directly for transaction/fraud behavior, and join to alerts, cards, customers, merchants, cases, and actions for operational and outcome analysis; no pre-aggregated summary fact table exists.",
+  "agents": [
+    {
+      "id": "daily-metrics",
+      "queries": [
+        {
+          "description": "Daily transaction volume, approved amount, decline rate, and fraud rate trend",
+          "hint": "Use `date_trunc('day', transactions.txn_ts)` as txn_day; compute `COUNT(*)`, `SUM(amount_inr)`, `AVG(CASE WHEN response = 'DECLINED' THEN 1 ELSE 0 END)`, and `AVG(CASE WHEN is_fraud_flag THEN 1 ELSE 0 END)` grouped by day."
+        },
+        {
+          "description": "Weekly fraud alert operations trend by severity and disposition",
+          "hint": "Aggregate `fraud_alerts` by `date_trunc('week', alert_sent_ts)` and `severity`; include `COUNT(*)`, `AVG(risk_score)`, and conditional counts for `disposition = 'TRUE_POSITIVE'` and `sla_breached_flag = true`."
+        },
+        {
+          "description": "Monthly prevented vs lost fraud amount trend",
+          "hint": "Use `fraud_episodes` grouped by `date_trunc('month', detected_ts)` with `SUM(amount_attempted_inr)`, `SUM(amount_prevented_inr)`, `SUM(amount_lost_inr)`, and prevention ratio `SUM(amount_prevented_inr) / NULLIF(SUM(amount_attempted_inr),0)`."
+        },
+        {
+          "description": "Daily response outcome mix for transactions",
+          "hint": "Group `transactions` by `date_trunc('day', txn_ts)` and `response`; calculate `COUNT(*)` and `SUM(amount_inr)` to track mix shifts between `APPROVED`, `DECLINED`, and `HELD_FOR_CONFIRMATION`."
+        },
+        {
+          "description": "Moving-average trend for fraud losses",
+          "hint": "Build a daily series from `fraud_episodes.detected_ts`, sum `amount_lost_inr` by day, then apply `AVG(daily_loss) OVER (ORDER BY day ROWS BETWEEN 6 PRECEDING AND CURRENT ROW)` for a 7-day moving average."
+        },
+        {
+          "description": "Shift-wise operational workload trend",
+          "hint": "Aggregate `fraud_alerts` by `date_trunc('day', COALESCE(analyst_decision_ts, alert_sent_ts))` and `shift`; compute alert counts, `AVG(handle_time_s)`, and `AVG(CASE WHEN sla_breached_flag THEN 1 ELSE 0 END)`."
+        }
+      ]
+    },
+    {
+      "id": "user-segmentation",
+      "queries": [
+        {
+          "description": "Customer spending and fraud exposure segments",
+          "hint": "Join `customers` -> `cards` -> `transactions`; group by `customers.customer_id`, then derive total `PURCHASE` spend, txn count, fraud txn count, and assign spend tiers with `CASE` expressions."
+        },
+        {
+          "description": "Fraud risk by customer segment, income_band, and repeat_fraud_victim_flag",
+          "hint": "Join `customers`, `cards`, and `transactions`; group by `customers.segment`, `customers.income_band`, `customers.repeat_fraud_victim_flag`; compute fraud rate as `AVG(CASE WHEN transactions.is_fraud_flag THEN 1 ELSE 0 END)`."
+        },
+        {
+          "description": "RFM-style cardholder behavior analysis",
+          "hint": "At `customer_id` or `card_id` grain, compute recency using `max(transactions.txn_ts)`, frequency as `COUNT(*)`, monetary as `SUM(amount_inr)` for `txn_type = 'PURCHASE'`; bucket with `ntile(5)` window functions."
+        },
+        {
+          "description": "Inactive or dormant cardholder identification",
+          "hint": "Left join `cards` to `transactions`, group by `cards.card_id`, and flag cards where `MAX(transactions.txn_ts)` is old or null; include `cards.status`, `product`, and `card_tier`."
+        },
+        {
+          "description": "Statement revolve behavior by customer and card attributes",
+          "hint": "Join `statements` to `cards` and `customers`; group by `cards.product`, `cards.card_tier`, `customers.segment`, `customers.income_band`; compute `AVG(CASE WHEN revolve_flag THEN 1 ELSE 0 END)`, `AVG(utilization_pct)`, and average `interest_charged_inr`."
+        },
+        {
+          "description": "High-risk repeat fraud victim profile",
+          "hint": "Join `customers`, `cards`, `transactions`, and optionally `fraud_alerts`; compare customers where `repeat_fraud_victim_flag = true` vs false on fraud rate, alert count, response behavior, and chargeback outcomes."
+        }
+      ]
+    },
+    {
+      "id": "geographic",
+      "queries": [
+        {
+          "description": "Fraud rate and loss by transaction city and country",
+          "hint": "Group `transactions` by `txn_country` and `txn_city`; compute `COUNT(*)`, `SUM(amount_inr)`, and fraud rate via `AVG(CASE WHEN is_fraud_flag THEN 1 ELSE 0 END)`; normalize city text cautiously because `txn_city` is free text."
+        },
+        {
+          "description": "Customer residence geography vs fraud incidence",
+          "hint": "Join `customers` -> `cards` -> `transactions`; group by `customers.state`, `customers.city`, `customers.home_branch_city`; compute transaction count, fraud txn count, and average amount."
+        },
+        {
+          "description": "Merchant geography concentration of fraud",
+          "hint": "Join `transactions` to `merchants` on `merchant_id`; group by `merchants.country`, `merchants.state`, `merchants.city`, `merchants.risk_tier`; rank by fraudulent amount and fraud count."
+        },
+        {
+          "description": "Domestic vs international transaction and fraud comparison",
+          "hint": "Create a `CASE WHEN transactions.txn_country = 'IN' THEN 'DOMESTIC' ELSE 'INTERNATIONAL' END` flag; compare counts, approval rates, average amount, and fraud rates by flag and `channel`."
+        },
+        {
+          "description": "Geo-impossible or rapid cross-country activity candidates",
+          "hint": "Use window functions over `transactions` partitioned by `card_id` ordered by `txn_ts`; compare current and previous `txn_country`/`txn_city`, and calculate time gap with `datediff('minute', lag(txn_ts), txn_ts)` to find implausible jumps."
+        },
+        {
+          "description": "Branch city and customer city mismatch patterns for fraud victims",
+          "hint": "Join `customers`, `cards`, and fraudulent `transactions`; group by `customers.home_branch_city`, `customers.city`, and compare victim concentration where these differ."
+        }
+      ]
+    },
+    {
+      "id": "cohort-retention",
+      "queries": [
+        {
+          "description": "Card issuance cohort activity retention",
+          "hint": "Create monthly cohorts from `date_trunc('month', cards.issue_date)` and join to `transactions`; measure active cards per cohort by months since issue using `datediff('month', cards.issue_date, CAST(transactions.txn_ts AS DATE))`."
+        },
+        {
+          "description": "Repeat transaction behavior after first transaction",
+          "hint": "For each `card_id`, find first `txn_ts`, then count whether a second transaction occurs within 7, 30, and 90 days using self-joins or window functions."
+        },
+        {
+          "description": "Repeat fraud victim recurrence timing",
+          "hint": "For customers with fraudulent transactions, find first fraud date and subsequent fraud dates via `customers` -> `cards` -> `transactions`; compute time-to-next-fraud distributions."
+        },
+        {
+          "description": "Alert response retention by customer",
+          "hint": "Using `fraud_alerts`, analyze whether customers who responded once respond again; partition by `customer_id`, order by `alert_sent_ts`, and measure response presence and latency over successive alerts."
+        },
+        {
+          "description": "Post-reissue transaction resumption behavior",
+          "hint": "Join `card_lifecycle_events` where `event_type = 'REISSUED'` to old/new cards through `linked_card_id` or `cards.previous_card_id`; compare transaction activity before and after reissue."
+        },
+        {
+          "description": "Relationship-tenure cohorts and fraud incidence",
+          "hint": "Bucket `customers.relationship_since` into cohorts by year or quarter, join to cards and transactions, and compare fraud rates and average spend across tenure cohorts."
+        }
+      ]
+    },
+    {
+      "id": "data-quality",
+      "queries": [
+        {
+          "description": "NULL rates for all key fields",
+          "hint": "For each table, compute `COUNT(*) - COUNT(col)` and divide by `COUNT(*)`; prioritize nullable operational columns like `fx_amount`, `device_id`, `ip_address`, `decline_reason`, `fraud_episode_id`, `customer_response_ts`, and `analyst_id`."
+        },
+        {
+          "description": "Daily volume anomaly detection",
+          "hint": "Aggregate each major fact table by day using its event timestamp (`transactions.txn_ts`, `fraud_alerts.alert_sent_ts`, `blocking_actions.action_ts`); compare with 7-day moving average to detect sudden drops/spikes."
+        },
+        {
+          "description": "Duplicate record check",
+          "hint": "Compare `COUNT(*)` vs `COUNT(DISTINCT id)` for table keys like `txn_id`, `alert_id`, `statement_id`, `event_id`, `case_event_id`, `action_id`, `episode_id`, `customer_id`, `merchant_id`."
+        },
+        {
+          "description": "Value range validation",
+          "hint": "Check `MIN/MAX/AVG` for numeric columns like `amount_inr`, `fx_amount`, `otp_attempts`, `risk_score`, `response_latency_s`, `handle_time_s`, `utilization_pct`, `resolution_days`, `amount_lost_inr`; flag negatives or implausible highs."
+        },
+        {
+          "description": "Referential integrity across core joins",
+          "hint": "Left join child to parent and count misses: `transactions.card_id -> cards.card_id`, `transactions.merchant_id -> merchants.merchant_id`, `fraud_alerts.txn_id -> transactions.txn_id`, `case_resolutions.alert_id -> fraud_alerts.alert_id`, `transactions.fraud_episode_id -> fraud_episodes.episode_id`."
+        },
+        {
+          "description": "Encoded value conformance checks",
+          "hint": "Use `SELECT DISTINCT` or anti-join against expected sets for fields like `response`, `txn_type`, `severity`, `delivery_status`, `analyst_decision`, `liability_outcome`, `status`, and boolean-like flags."
+        },
+        {
+          "description": "Timestamp sequence consistency checks",
+          "hint": "Validate event ordering such as `risk_scored_ts <= alert_sent_ts <= alert_delivered_ts <= customer_response_ts`, `queue_entered_ts <= analyst_picked_ts <= analyst_decision_ts`, and `cycle_start <= cycle_end <= due_date`."
+        }
+      ]
+    }
+  ],
+  "multiAgentPrompt": "daily-metrics|1| \u2014 Daily transaction volume, approved amount, decline rate, and fraud rate trend\ndaily-metrics|2| \u2014 Weekly fraud alert operations trend by severity and disposition\ndaily-metrics|3| \u2014 Monthly prevented vs lost fraud amount trend\ndaily-metrics|4| \u2014 Daily response outcome mix for transactions\ndaily-metrics|5| \u2014 Moving-average trend for fraud losses\ndaily-metrics|6| \u2014 Shift-wise operational workload trend\nuser-segmentation|1| \u2014 Customer spending and fraud exposure segments\nuser-segmentation|2| \u2014 Fraud risk by customer segment, income_band, and repeat_fraud_victim_flag\nuser-segmentation|3| \u2014 RFM-style cardholder behavior analysis\nuser-segmentation|4| \u2014 Inactive or dormant cardholder identification\nuser-segmentation|5| \u2014 Statement revolve behavior by customer and card attributes\nuser-segmentation|6| \u2014 High-risk repeat fraud victim profile\ngeographic|1| \u2014 Fraud rate and loss by transaction city and country\ngeographic|2| \u2014 Customer residence geography vs fraud incidence\ngeographic|3| \u2014 Merchant geography concentration of fraud\ngeographic|4| \u2014 Domestic vs international transaction and fraud comparison\ngeographic|5| \u2014 Geo-impossible or rapid cross-country activity candidates\ngeographic|6| \u2014 Branch city and customer city mismatch patterns for fraud victims\ncohort-retention|1| \u2014 Card issuance cohort activity retention\ncohort-retention|2| \u2014 Repeat transaction behavior after first transaction\ncohort-retention|3| \u2014 Repeat fraud victim recurrence timing\ncohort-retention|4| \u2014 Alert response retention by customer\ncohort-retention|5| \u2014 Post-reissue transaction resumption behavior\ncohort-retention|6| \u2014 Relationship-tenure cohorts and fraud incidence\ndata-quality|1| \u2014 NULL rates for all key fields\ndata-quality|2| \u2014 Daily volume anomaly detection\ndata-quality|3| \u2014 Duplicate record check\ndata-quality|4| \u2014 Value range validation\ndata-quality|5| \u2014 Referential integrity across core joins\ndata-quality|6| \u2014 Encoded value conformance checks\ndata-quality|7| \u2014 Timestamp sequence consistency checks",
+  "queryDescriptions": {
+    "daily-metrics": [
+      "Daily transaction volume, approved amount, decline rate, and fraud rate trend",
+      "Weekly fraud alert operations trend by severity and disposition",
+      "Monthly prevented vs lost fraud amount trend",
+      "Daily response outcome mix for transactions",
+      "Moving-average trend for fraud losses",
+      "Shift-wise operational workload trend"
+    ],
+    "user-segmentation": [
+      "Customer spending and fraud exposure segments",
+      "Fraud risk by customer segment, income_band, and repeat_fraud_victim_flag",
+      "RFM-style cardholder behavior analysis",
+      "Inactive or dormant cardholder identification",
+      "Statement revolve behavior by customer and card attributes",
+      "High-risk repeat fraud victim profile"
+    ],
+    "geographic": [
+      "Fraud rate and loss by transaction city and country",
+      "Customer residence geography vs fraud incidence",
+      "Merchant geography concentration of fraud",
+      "Domestic vs international transaction and fraud comparison",
+      "Geo-impossible or rapid cross-country activity candidates",
+      "Branch city and customer city mismatch patterns for fraud victims"
+    ],
+    "cohort-retention": [
+      "Card issuance cohort activity retention",
+      "Repeat transaction behavior after first transaction",
+      "Repeat fraud victim recurrence timing",
+      "Alert response retention by customer",
+      "Post-reissue transaction resumption behavior",
+      "Relationship-tenure cohorts and fraud incidence"
+    ],
+    "data-quality": [
+      "NULL rates for all key fields",
+      "Daily volume anomaly detection",
+      "Duplicate record check",
+      "Value range validation",
+      "Referential integrity across core joins",
+      "Encoded value conformance checks",
+      "Timestamp sequence consistency checks"
+    ]
+  },
+  "annotatedSchemaContext": "DATABASE ENGINE: DuckDB\n\nPRIMARY TABLE: transactions (~1928413 rows)\n  - txn_id VARCHAR -- unique transaction authorization/posting identifier\n  - card_id VARCHAR -- card identifier; join to cards.card_id\n  - txn_ts TIMESTAMP WITH TIME ZONE -- transaction timestamp; timezone-aware filtering required\n  - amount_inr DOUBLE -- transaction amount normalized to INR\n  - currency VARCHAR -- original currency code (AED, GBP, INR, SGD, THB, USD)\n  - fx_amount DOUBLE -- original foreign amount; mostly null for INR transactions\n  - merchant_id VARCHAR -- merchant identifier; join to merchants.merchant_id\n  - mcc BIGINT -- merchant category code; categorical, not additive\n  - channel VARCHAR -- transaction channel (ATM_CASH_AD, CONTACTLESS, ECOM, INTL_ECOM, INTL_POS, POS, UPI)\n  - pos_entry_mode VARCHAR -- POS capture mode (CHIP, SWIPE, TAP); often null outside card-present\n  - auth_method VARCHAR -- authentication method (OTP_3DS, PIN, TAP_NO_PIN)\n  - otp_attempts DOUBLE -- OTP attempts; integer-like but stored as double (1.0, 2.0, 3.0)\n  - token_used_flag BOOLEAN -- whether tokenized credentials were used\n  - txn_city VARCHAR -- free-text transaction city/location\n  - txn_country VARCHAR -- country code (AE, FR, GB, ID, IN, MY, SG, TH, US)\n  - device_id VARCHAR -- device identifier for digital transactions; often null elsewhere\n  - ip_address VARCHAR -- IP address string for online transactions\n  - txn_type VARCHAR -- business transaction type (AUTOPAY, EMI_CONVERSION, FEE, PURCHASE, REFUND, REVERSAL)\n  - response VARCHAR -- processing outcome (APPROVED, DECLINED, HELD_FOR_CONFIRMATION)\n  - decline_reason VARCHAR -- decline reason when non-approved (3DS_FAILED, EXPIRED_CARD, INCORRECT_CVV, INSUFFICIENT_LIMIT, ISSUER_DECLINE, SUSPECTED_FRAUD)\n  - is_fraud_flag BOOLEAN -- confirmed fraud label\n  - fraud_episode_id VARCHAR -- fraud episode linkage; join to fraud_episodes.episode_id\n  - original_txn_id VARCHAR -- self-reference for refund/reversal/EMI-linked events; join to transactions.txn_id\n\nTABLE: statements (~137436 rows)\n  - statement_id VARCHAR -- statement cycle identifier\n  - card_id VARCHAR -- card identifier; join to cards.card_id\n  - cycle_start DATE -- billing cycle start date\n  - cycle_end DATE -- billing cycle end date\n  - due_date DATE -- statement due date\n  - total_spend_inr DOUBLE -- billed spend in cycle\n  - payments_received_inr DOUBLE -- payments received\n  - min_due_inr DOUBLE -- minimum due amount\n  - revolve_flag BOOLEAN -- whether balance revolved\n  - interest_charged_inr DOUBLE -- interest charged\n  - fees_inr DOUBLE -- fees charged\n  - closing_balance_inr DOUBLE -- closing balance\n  - utilization_pct DOUBLE -- utilization percentage, likely 0-100 scale\n  - dpd_bucket VARCHAR -- delinquency bucket (1-29, 30-59, 60-89, 90+, CURRENT)\n\nTABLE: fraud_alerts (~32857 rows)\n  - alert_id VARCHAR -- fraud alert identifier\n  - txn_id VARCHAR -- alerted transaction; join to transactions.txn_id\n  - card_id VARCHAR -- card identifier\n  - customer_id VARCHAR -- customer identifier\n  - fraud_episode_id VARCHAR -- episode identifier; join to fraud_episodes.episode_id\n  - risk_score BIGINT -- fraud system score\n  - trigger_reasons VARCHAR -- pipe-delimited triggered rules/reasons\n  - severity VARCHAR -- alert severity (CRITICAL, HIGH, LOW, MEDIUM)\n  - alert_channel VARCHAR -- outbound contact channel (APP_PUSH, IVR_CALL, SMS, SMS+IVR)\n  - risk_scored_ts TIMESTAMP WITH TIME ZONE -- score timestamp\n  - alert_sent_ts TIMESTAMP WITH TIME ZONE -- alert sent timestamp\n  - alert_delivered_ts TIMESTAMP WITH TIME ZONE -- alert delivery timestamp\n  - delivery_status VARCHAR -- communication result (DELIVERED, FAILED_RETRIED)\n  - customer_response VARCHAR -- customer reply (CONFIRMED_GENUINE, NO_RESPONSE, REPORTED_FRAUD)\n  - customer_response_ts TIMESTAMP WITH TIME ZONE -- response timestamp; null if none\n  - response_latency_s DOUBLE -- seconds from delivery to response\n  - auto_disposed_flag BOOLEAN -- auto disposition flag\n  - queue_entered_ts TIMESTAMP WITH TIME ZONE -- analyst queue entry timestamp\n  - analyst_id VARCHAR -- analyst handler id\n  - analyst_picked_ts TIMESTAMP WITH TIME ZONE -- analyst pickup timestamp\n  - analyst_decision VARCHAR -- analyst decision (CLEAR_GENUINE, CONFIRM_FRAUD, ESCALATE)\n  - analyst_decision_ts TIMESTAMP WITH TIME ZONE -- analyst decision timestamp\n  - handle_time_s DOUBLE -- handling time in seconds\n  - shift VARCHAR -- ops shift (DAY, EVENING, NIGHT)\n  - sla_target_min BIGINT -- SLA target in minutes (5, 30, 240, 1440)\n  - sla_breached_flag BOOLEAN -- SLA breach flag\n  - disposition VARCHAR -- final alert outcome (FALSE_POSITIVE, TRUE_POSITIVE, UNRESOLVED)\n\nTABLE: card_lifecycle_events (~14060 rows)\n  - event_id VARCHAR -- lifecycle event identifier\n  - card_id VARCHAR -- card identifier\n  - event_ts TIMESTAMP WITH TIME ZONE -- lifecycle event timestamp\n  - event_type VARCHAR -- event type (ACTIVATED, HOTLISTED, ISSUED, LIMIT_INCREASED, REISSUED)\n  - old_value VARCHAR -- previous value; context-dependent\n  - new_value VARCHAR -- new value; context-dependent\n  - linked_card_id VARCHAR -- predecessor/successor card in reissue chain\n  - reason VARCHAR -- business reason (CONFIRMED_FRAUD, CUSTOMER_ACTIVATION, FRAUD_REISSUE, NEW_ISSUANCE, PERIODIC_REVIEW)\n  - initiated_by VARCHAR -- initiator (CUSTOMER_APP, PHONEBANKING_AGENT, SYSTEM)\n\nTABLE: case_events (~7279 rows)\n  - case_event_id VARCHAR -- case event identifier\n  - case_id VARCHAR -- case identifier; join to case_resolutions.case_id\n  - event_ts TIMESTAMP WITH TIME ZONE -- case workflow timestamp\n  - from_status VARCHAR -- prior status (CHARGEBACK_RAISED, OPENED, PROVISIONAL_CREDIT_ISSUED, REPRESENTMENT_RECEIVED, RESOLVED, UNDER_INVESTIGATION)\n  - to_status VARCHAR -- new status (CHARGEBACK_RAISED, CLOSED, OPENED, PROVISIONAL_CREDIT_ISSUED, REPRESENTMENT_RECEIVED, RESOLVED, UNDER_INVESTIGATION)\n  - actor VARCHAR -- actor (ANALYST, NETWORK, SYSTEM)\n  - note_code VARCHAR -- categorical note/reason code; includes values like DC 4752, MC 4837, VISA 10.4\n\nTABLE: cards (~6492 rows)\n  - card_id VARCHAR -- card identifier\n  - customer_id VARCHAR -- customer identifier; join to customers.customer_id\n  - previous_card_id VARCHAR -- predecessor card id for reissue lineage\n  - masked_pan VARCHAR -- masked PAN; not guaranteed unique across replacements\n  - bin BIGINT -- issuer BIN; categorical\n  - network VARCHAR -- network (DINERS, MASTERCARD, RUPAY, VISA)\n  - product VARCHAR -- card product (BizFirst, Diners Club Privilege, IndianOil HDFC Bank, Infinia Metal, Millennia, MoneyBack+, Pixel Play, Regalia Gold, Swiggy HDFC Bank, Tata Neu Infinity, Tata Neu Plus)\n  - card_tier VARCHAR -- tier (Business, Co-brand, Co-brand premium, Digital, Entry, Mass-premium, Premium, Super-premium)\n  - credit_limit_current BIGINT -- current credit limit in INR\n  - issue_date DATE -- issue date\n  - expiry VARCHAR -- expiry in YYYY-MM text form\n  - intl_enabled_flag BOOLEAN -- international enabled flag\n  - contactless_enabled_flag BOOLEAN -- contactless enabled flag\n  - upi_linked_flag BOOLEAN -- UPI linked flag\n  - status VARCHAR -- current card status (ACTIVE, BLOCKED, DORMANT, REISSUED)\n\nTABLE: customers (~5000 rows)\n  - customer_id VARCHAR -- customer identifier\n  - full_name VARCHAR -- synthetic customer name\n  - gender VARCHAR -- gender (F, M)\n  - dob DATE -- date of birth\n  - age BIGINT -- age in years\n  - city VARCHAR -- residence city\n  - state VARCHAR -- residence state abbreviation\n  - pincode BIGINT -- postal PIN code; categorical\n  - segment VARCHAR -- bank segment (Classic, Imperia, Preferred)\n  - occupation VARCHAR -- occupation (Professional, Retired, Salaried, Self-employed)\n  - income_band VARCHAR -- income bucket (12-25L, 25-50L, 3-6L, 50L+, 6-12L)\n  - masked_mobile VARCHAR -- masked mobile; not guaranteed unique\n  - email VARCHAR -- customer email\n  - relationship_since DATE -- relationship start date\n  - kyc_status VARCHAR -- KYC state (RE_KYC_DUE, VERIFIED)\n  - home_branch_city VARCHAR -- home branch city\n  - repeat_fraud_victim_flag BOOLEAN -- prior repeated victimization flag\n\nTABLE: service_interactions (~2829 rows)\n  - ticket_id VARCHAR -- service ticket identifier\n  - customer_id VARCHAR -- customer identifier\n  - opened_ts TIMESTAMP WITH TIME ZONE -- ticket opened timestamp\n  - channel VARCHAR -- service channel (APP, BRANCH, EMAIL, PHONEBANKING, SOCIAL)\n  - category VARCHAR -- interaction category (ALERT_FATIGUE_COMPLAINT, DISPUTE_STATUS_QUERY, FALSE_DECLINE_COMPLAINT, OTHER)\n  - linked_alert_id VARCHAR -- related alert id; join to fraud_alerts.alert_id\n  - linked_txn_id VARCHAR -- related transaction id; join to transactions.txn_id\n  - resolved_ts TIMESTAMP WITH TIME ZONE -- resolution timestamp\n  - resolution_days DOUBLE -- days to resolve service interaction\n  - csat_1_5 BIGINT -- satisfaction score 1-5\n\nTABLE: merchants (~2512 rows)\n  - merchant_id VARCHAR -- merchant identifier\n  - merchant_name VARCHAR -- merchant display name\n  - mcc BIGINT -- merchant category code; categorical\n  - mcc_description VARCHAR -- MCC description\n  - category VARCHAR -- merchant category label\n  - city VARCHAR -- merchant city\n  - state VARCHAR -- merchant state\n  - country VARCHAR -- merchant country (AE, FR, GB, ID, IN, MY, SG, TH, US)\n  - channel VARCHAR -- merchant channel (ECOM, MIXED, POS, UPI_QR)\n  - risk_tier VARCHAR -- merchant risk tier (HIGH, LOW, MEDIUM)\n  - onboarded_since DATE -- onboarding date\n\nTABLE: case_resolutions (~1594 rows)\n  - case_id VARCHAR -- case identifier\n  - alert_id VARCHAR -- related alert id\n  - customer_id VARCHAR -- customer identifier\n  - fraud_episode_id VARCHAR -- related episode id\n  - case_opened_ts TIMESTAMP WITH TIME ZONE -- case opened timestamp\n  - reporting_delay_bucket VARCHAR -- reporting delay bucket (4_7_DAYS, BEYOND_7_DAYS, WITHIN_3_DAYS)\n  - liability_outcome VARCHAR -- liability outcome (CUSTOMER_LIABLE, LIMITED_LIABILITY, ZERO_LIABILITY)\n  - provisional_credit_ts TIMESTAMP WITH TIME ZONE -- provisional credit timestamp\n  - chargeback_raised_flag BOOLEAN -- whether chargeback was raised\n  - chargeback_reason_code VARCHAR -- reason code (DC 4752, MC 4837, RP-FRD-01, VISA 10.4)\n  - chargeback_status VARCHAR -- chargeback status (LOST, NA, REPRESENTED, WON)\n  - cybercrime_1930_referred_flag BOOLEAN -- 1930 referral flag\n  - resolution_days DOUBLE -- days to case resolution\n  - final_status VARCHAR -- final resolution status (PENDING, RESOLVED_BANK_FAVOUR, RESOLVED_CUSTOMER_FAVOUR, WRITTEN_OFF)\n  - amount_recovered_inr DOUBLE -- amount recovered\n\nTABLE: blocking_actions (~1388 rows)\n  - action_id VARCHAR -- blocking/mitigation action identifier\n  - alert_id VARCHAR -- related alert id\n  - card_id VARCHAR -- card identifier\n  - action_type VARCHAR -- action type (CARD_HOTLISTED, CARD_REISSUED, TXN_DECLINED_INFLIGHT, TXN_HELD, UNBLOCKED_AFTER_CONFIRMATION)\n  - action_ts TIMESTAMP WITH TIME ZONE -- action timestamp\n  - initiated_by VARCHAR -- initiator (CUSTOMER_APP, PHONEBANKING_AGENT, SYSTEM_AUTO)\n  - amount_at_risk_inr DOUBLE -- estimated amount at risk\n  - amount_prevented_inr DOUBLE -- amount prevented\n  - amount_lost_inr DOUBLE -- amount lost despite action\n\nTABLE: fraud_episodes (~382 rows)\n  - episode_id VARCHAR -- confirmed fraud episode id\n  - typology VARCHAR -- fraud typology (CARD_TESTING, CNP_INTL, LOST_STOLEN, MERCHANT_COLLUSION_FIRST_PARTY, MULE_CYCLING, OTP_SOCIAL_ENGINEERING_ATO, SKIMMING_CLONE, SUBSCRIPTION_DRAIN)\n  - detection_source VARCHAR -- detection source (CUSTOMER_REPORTED, NETWORK_COMPROMISE_ALERT, SYSTEM_BATCH, SYSTEM_REALTIME)\n  - first_fraud_txn_ts TIMESTAMP WITH TIME ZONE -- first known fraud txn timestamp\n  - detected_ts TIMESTAMP WITH TIME ZONE -- detection/confirmation timestamp\n  - time_to_detect_s DOUBLE -- seconds to detect from first fraud txn\n  - txns_attempted BIGINT -- attempted fraudulent txn count\n  - txns_before_block BIGINT -- fraudulent txn count before controls\n  - amount_attempted_inr DOUBLE -- attempted fraud amount\n  - amount_prevented_inr DOUBLE -- prevented amount\n  - amount_lost_inr DOUBLE -- realized loss\n  - cards_involved_count BIGINT -- affected card count\n  - common_point_of_purchase_merchant_id VARCHAR -- suspected compromise merchant id; join to merchants.merchant_id\n  - status VARCHAR -- episode status (CONFIRMED)\n\nTABLE: data_dictionary (~189 rows)\n  - \"table\" VARCHAR -- documented table name; reserved word, quote it\n  - \"column\" VARCHAR -- documented column name; reserved word, quote it\n  - dtype VARCHAR -- source metadata dtype (bool, datetime64[ns], datetime64[us], float64, int64, object, str)\n  - description VARCHAR -- field description\n  - valid_values VARCHAR -- allowed values, often pipe-delimited\n  - joins_to VARCHAR -- textual join target (cards.card_id, case_resolutions.case_id, customers.customer_id, fraud_alerts.alert_id, fraud_episodes.episode_id, merchants.merchant_id, transactions.txn_id)\n\nTABLE: calendar_events (~28 rows)\n  - event_name VARCHAR -- seasonal/calendar event name\n  - start_date VARCHAR -- start date in YYYY-MM-DD text; parse to DATE\n  - end_date VARCHAR -- end date in YYYY-MM-DD text; parse to DATE\n  - overall_multiplier DOUBLE -- expected overall activity multiplier\n  - category_effects VARCHAR -- pipe-delimited key:value multiplier list\n  - note VARCHAR -- narrative explanation of seasonal behavior\n\nTABLE: hero_case_index (~15 rows)\n  - hero_id VARCHAR -- curated hero case id (H1-H15)\n  - title VARCHAR -- short scenario title\n  - customer_id VARCHAR -- linked customer id\n  - card_id VARCHAR -- linked card id\n  - episode_id VARCHAR -- linked fraud episode id\n  - key_txn_ids VARCHAR -- pipe-delimited transaction ids\n  - alert_ids VARCHAR -- pipe-delimited alert ids\n  - case_ids VARCHAR -- pipe-delimited case ids\n  - window_start DATE -- analysis window start\n  - window_end DATE -- analysis window end\n  - expected_outcome VARCHAR -- expected analytical takeaway\n  - narrative VARCHAR -- story-like scenario description\n\nDATA CONTEXT:\n- This is a credit card fraud operations dataset spanning transactions, fraud alerts, customer/card master data, case handling, and blocking outcomes.\n- `transactions` is the atomic fact table for spend and fraud behavior; not every transaction has an alert, and not every alert becomes a confirmed fraud case.\n- Fraud labels exist at multiple grains: `transactions.is_fraud_flag`, `fraud_alerts.disposition`, and `fraud_episodes` confirmed-episode summaries.\n- Operational performance can be measured via alert queues, analyst handling, SLA breach flags, customer response latency, and blocking actions.\n- Business spend analysis should usually isolate `transactions.txn_type = 'PURCHASE'` and handle `REFUND`, `REVERSAL`, `FEE`, `AUTOPAY`, and `EMI_CONVERSION` separately.\n- International and digital fraud analysis is supported by `currency`, `txn_country`, `channel`, `device_id`, `ip_address`, `auth_method`, and `token_used_flag`.\n- Geographic fields are available at transaction, merchant, and customer levels, but text normalization may be needed for city-level work.\n- Several fields are multi-value encoded strings requiring `string_split`, especially for alert reasons and hero-case joins.\n- Time columns are timezone-aware in event tables, so day/week aggregations should preserve or explicitly normalize time zone semantics.\n\nENTITY METADATA:\n  Primary entity identifier: customer_id \u2014 use this column for SELECT DISTINCT, COUNT(DISTINCT), segment definitions, cohort analysis, and entity-level joins.\n  Primary date column: txn_ts \u2014 use this column for time-series analysis, DATE_TRUNC, trend charts, and period filtering. May be stored as VARCHAR \u2014 cast with ::TIMESTAMP or strptime() as needed.\nNOTE: customer_id has been denormalized onto transactions, statements, blocking_actions, card_lifecycle_events, and fraud_episodes \u2014 use it directly for customer-level grouping on those tables (no JOIN through cards needed).",
+  "suggestedPrompts": [
+    "What is the daily trend of approved transactions, declined transactions, and confirmed fraud transactions over time?",
+    "Which `channel`, `auth_method`, and `txn_country` combinations have the highest fraud rate and average `amount_inr`?",
+    "How do `fraud_alerts.severity`, `risk_score`, and `trigger_reasons` relate to final `disposition` and `sla_breached_flag`?",
+    "Which merchants or MCCs have the highest fraudulent `amount_inr`, and how does that compare across `merchants.risk_tier` and `country`?",
+    "How do statement `revolve_flag`, `utilization_pct`, and `dpd_bucket` vary by `cards.product`, `card_tier`, and `customers.segment`?",
+    "During `calendar_events` windows such as festival periods, how do transaction volume, decline rate, and fraud losses change versus non-event periods?"
+  ],
+  "welcomeSubtitle": "Ask about card fraud trends, alerts, customer risk, cases, and loss prevention."
+}

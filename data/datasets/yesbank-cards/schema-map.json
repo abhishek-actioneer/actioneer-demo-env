@@ -1,0 +1,2232 @@
+{
+  "columns": {
+    "txn_id": {
+      "description": "Unique identifier for each card transaction record.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "card_id": {
+      "description": "Unique identifier for a specific card instrument tied to a customer.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "CARD_1affb4c6b7",
+        "CARD_1cda5b33ca",
+        "CARD_470360ba90",
+        "CARD_4cdfc28add",
+        "CARD_708e2ec7a5",
+        "CARD_8c044a1995",
+        "CARD_a9d8d64017",
+        "CARD_b7a11a7228",
+        "CARD_c3c6141591",
+        "CARD_d0002063a3",
+        "CARD_d575a698aa",
+        "CARD_fdaef307b4"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "txn_ts": {
+      "description": "Timestamp when the transaction occurred or was authorized.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE; preserve timezone in filtering and truncation.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "amount_inr": {
+      "description": "Transaction amount expressed in Indian rupees.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "currency": {
+      "description": "Original transaction currency code.",
+      "semanticType": "dimension",
+      "sqlGotcha": "ISO-style currency codes; INR amounts may still be derived from FX transactions.",
+      "nullRate": 0,
+      "sampleValues": [
+        "AED",
+        "GBP",
+        "INR",
+        "SGD",
+        "THB",
+        "USD"
+      ],
+      "cardinalityHint": "low"
+    },
+    "fx_amount": {
+      "description": "Original transaction amount in foreign currency for international transactions.",
+      "semanticType": "metric",
+      "sqlGotcha": "Mostly null; populated primarily for non-INR transactions.",
+      "nullRate": 0.9972875593878036,
+      "cardinalityHint": "high"
+    },
+    "merchant_id": {
+      "description": "Unique identifier for the merchant accepting the transaction.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "mcc": {
+      "description": "Merchant Category Code indicating merchant business type.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Numeric business code; treat as categorical, not arithmetic.",
+      "nullRate": 0,
+      "sampleValues": [
+        "4112",
+        "4511",
+        "4814",
+        "4900",
+        "5411",
+        "5541",
+        "5651",
+        "5732",
+        "5812",
+        "5814",
+        "5912",
+        "5921",
+        "5944",
+        "5968",
+        "5969",
+        "6012",
+        "6300",
+        "6513",
+        "6540",
+        "7011",
+        "7832",
+        "7995",
+        "8062",
+        "8220"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "channel": {
+      "description": "Operational transaction or contact channel through which the event occurred.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Shared column name across tables with different domain meanings; qualify with table alias in joins.",
+      "nullRate": 0,
+      "sampleValues": [
+        "ECOM",
+        "MIXED",
+        "POS",
+        "UPI_QR"
+      ],
+      "cardinalityHint": "low"
+    },
+    "pos_entry_mode": {
+      "description": "Physical point-of-sale card entry mode such as chip, swipe, or tap.",
+      "semanticType": "dimension",
+      "sqlGotcha": "High null rate because not applicable to e-commerce and some non-POS channels.",
+      "nullRate": 0.7302242220133011,
+      "sampleValues": [
+        "CHIP",
+        "SWIPE",
+        "TAP"
+      ],
+      "cardinalityHint": "low"
+    },
+    "auth_method": {
+      "description": "Authentication method used to approve the transaction.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0.008344434836702495,
+      "sampleValues": [
+        "OTP_3DS",
+        "PIN",
+        "TAP_NO_PIN"
+      ],
+      "cardinalityHint": "low"
+    },
+    "otp_attempts": {
+      "description": "Number of OTP attempts made during transaction authentication.",
+      "semanticType": "metric",
+      "sqlGotcha": "Stored as DOUBLE though logically an integer count.",
+      "nullRate": 0.3893243604091665,
+      "sampleValues": [
+        "1.0",
+        "2.0",
+        "3.0"
+      ],
+      "cardinalityHint": "low"
+    },
+    "token_used_flag": {
+      "description": "Flag indicating whether network or device tokenization was used for the transaction.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Boolean field; may be null where tokenization is not relevant.",
+      "nullRate": 0.3893243604091665,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "txn_city": {
+      "description": "City where the transaction was initiated or attributed.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0.00491227654911278,
+      "cardinalityHint": "medium"
+    },
+    "txn_country": {
+      "description": "Country code where the transaction occurred or was attributed.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Country codes are encoded values; likely ISO alpha-2.",
+      "nullRate": 0,
+      "sampleValues": [
+        "AE",
+        "FR",
+        "GB",
+        "ID",
+        "IN",
+        "MY",
+        "SG",
+        "TH",
+        "US"
+      ],
+      "cardinalityHint": "low"
+    },
+    "device_id": {
+      "description": "Identifier for the customer device associated with a digital transaction.",
+      "semanticType": "identifier",
+      "sqlGotcha": "High null rate; primarily available for digital channels.",
+      "nullRate": 0.3893243604091665,
+      "cardinalityHint": "high"
+    },
+    "ip_address": {
+      "description": "IP address associated with a digital transaction session.",
+      "semanticType": "identifier",
+      "sqlGotcha": "String IP value; useful for device/network analysis, not a stable person identifier.",
+      "nullRate": 0.3893243604091665,
+      "cardinalityHint": "high"
+    },
+    "txn_type": {
+      "description": "Business type of transaction such as purchase, refund, fee, or reversal.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "AUTOPAY",
+        "EMI_CONVERSION",
+        "FEE",
+        "PURCHASE",
+        "REFUND",
+        "REVERSAL"
+      ],
+      "cardinalityHint": "low"
+    },
+    "response": {
+      "description": "Authorization outcome of the transaction.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "APPROVED",
+        "DECLINED"
+      ],
+      "cardinalityHint": "low"
+    },
+    "decline_reason": {
+      "description": "Reason code describing why a transaction was declined.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Mostly null because only declined transactions carry a reason.",
+      "nullRate": 0.9697659401191935,
+      "sampleValues": [
+        "3DS_FAILED",
+        "EXPIRED_CARD",
+        "INCORRECT_CVV",
+        "INSUFFICIENT_LIMIT",
+        "ISSUER_DECLINE"
+      ],
+      "cardinalityHint": "low"
+    },
+    "emi_converted_flag": {
+      "description": "Flag indicating whether the transaction was converted into EMI.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Boolean field; use with txn_type and tenure to validate EMI logic.",
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "emi_tenure_months": {
+      "description": "EMI repayment tenure in months for converted transactions.",
+      "semanticType": "metric",
+      "sqlGotcha": "Stored as DOUBLE though logically a discrete integer duration; mostly null.",
+      "nullRate": 0.9930417428854835,
+      "sampleValues": [
+        "12.0",
+        "18.0",
+        "24.0",
+        "3.0",
+        "6.0",
+        "9.0"
+      ],
+      "cardinalityHint": "low"
+    },
+    "is_intl_flag": {
+      "description": "Flag indicating whether the transaction is international.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "forex_markup_paid_inr": {
+      "description": "Forex markup amount paid in INR on international transactions.",
+      "semanticType": "metric",
+      "sqlGotcha": "Mostly null; relevant only for eligible international transactions.",
+      "nullRate": 0.9974613863700414,
+      "cardinalityHint": "high"
+    },
+    "surcharge_levied_inr": {
+      "description": "Surcharge amount levied in INR on the transaction.",
+      "semanticType": "metric",
+      "sqlGotcha": "Column type is VARCHAR despite monetary meaning; cast to numeric before aggregation.",
+      "nullRate": 0.9995902121354904,
+      "cardinalityHint": "high"
+    },
+    "original_txn_id": {
+      "description": "Reference to the original transaction for refunds, reversals, or related follow-on entries.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Self-referential foreign key to transactions.txn_id; mostly null.",
+      "nullRate": 0.968626078929285,
+      "cardinalityHint": "high"
+    },
+    "customer_id": {
+      "description": "Unique identifier for the customer.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "CUST_1e7f4c4256",
+        "CUST_29d68eaf33",
+        "CUST_4c87c3f894",
+        "CUST_5f640d2bef",
+        "CUST_77714a2ccd",
+        "CUST_7f2dacd1b6",
+        "CUST_9014e285cc",
+        "CUST_91ef88f2df",
+        "CUST_b62ef6203f",
+        "CUST_d182c83e6d",
+        "CUST_d4a1b9c072",
+        "CUST_dc3bd33199"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "statement_id": {
+      "description": "Unique identifier for a card billing statement cycle record.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "cycle_start": {
+      "description": "Start date of the billing cycle covered by the statement.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "DATE field; monthly cycle anchor for statement analysis.",
+      "nullRate": 0,
+      "sampleValues": [
+        "2024-06-01",
+        "2024-07-01",
+        "2024-08-01",
+        "2024-09-01",
+        "2024-10-01",
+        "2024-11-01",
+        "2024-12-01",
+        "2025-01-01",
+        "2025-02-01",
+        "2025-03-01",
+        "2025-04-01",
+        "2025-05-01",
+        "2025-06-01",
+        "2025-07-01",
+        "2025-08-01",
+        "2025-09-01",
+        "2025-10-01",
+        "2025-11-01",
+        "2025-12-01",
+        "2026-01-01",
+        "2026-02-01",
+        "2026-03-01",
+        "2026-04-01",
+        "2026-05-01"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "cycle_end": {
+      "description": "End date of the billing cycle covered by the statement.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "DATE field.",
+      "nullRate": 0,
+      "sampleValues": [
+        "2024-06-30",
+        "2024-07-31",
+        "2024-08-31",
+        "2024-09-30",
+        "2024-10-31",
+        "2024-11-30",
+        "2024-12-31",
+        "2025-01-31",
+        "2025-02-28",
+        "2025-03-31",
+        "2025-04-30",
+        "2025-05-31",
+        "2025-06-30",
+        "2025-07-31",
+        "2025-08-31",
+        "2025-09-30",
+        "2025-10-31",
+        "2025-11-30",
+        "2025-12-31",
+        "2026-01-31",
+        "2026-02-28",
+        "2026-03-31",
+        "2026-04-30",
+        "2026-05-31"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "due_date": {
+      "description": "Payment due date for the statement.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "DATE field; useful for delinquency and payment timing analysis.",
+      "nullRate": 0,
+      "sampleValues": [
+        "2024-07-18",
+        "2024-08-18",
+        "2024-09-18",
+        "2024-10-18",
+        "2024-11-18",
+        "2024-12-18",
+        "2025-01-18",
+        "2025-02-18",
+        "2025-03-18",
+        "2025-04-18",
+        "2025-05-18",
+        "2025-06-18",
+        "2025-07-18",
+        "2025-08-18",
+        "2025-09-18",
+        "2025-10-18",
+        "2025-11-18",
+        "2025-12-18",
+        "2026-01-18",
+        "2026-02-18",
+        "2026-03-18",
+        "2026-04-18",
+        "2026-05-18",
+        "2026-06-18"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "total_spend_inr": {
+      "description": "Total billed spend in INR for the statement cycle.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "payments_received_inr": {
+      "description": "Total payments received against the statement in INR.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "min_due_inr": {
+      "description": "Minimum payment due for the statement cycle in INR.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "revolve_flag": {
+      "description": "Flag indicating whether the customer revolved balance instead of paying in full.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "interest_charged_inr": {
+      "description": "Interest amount charged on the statement in INR.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "fees_inr": {
+      "description": "Fees charged on the statement in INR.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "0.0",
+        "1000.0",
+        "1180.0",
+        "1250.0",
+        "1300.0",
+        "1450.0",
+        "1500.0",
+        "1680.0",
+        "1750.0",
+        "1800.0",
+        "1930.0",
+        "1950.0",
+        "2000.0",
+        "2130.0",
+        "2180.0",
+        "2300.0",
+        "2480.0",
+        "2950.0",
+        "3450.0",
+        "3700.0",
+        "3900.0",
+        "3950.0",
+        "4250.0",
+        "500.0",
+        "5900.0",
+        "750.0",
+        "950.0"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "closing_balance_inr": {
+      "description": "Outstanding balance at statement close in INR.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "utilization_pct": {
+      "description": "Credit utilization percentage for the card at statement close.",
+      "semanticType": "metric",
+      "sqlGotcha": "Percentage likely stored as 0-100 scale, not 0-1.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "dpd_bucket": {
+      "description": "Days-past-due bucket representing delinquency status.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Bucketed text labels; sort with custom logic, not lexicographically.",
+      "nullRate": 0,
+      "sampleValues": [
+        "1-29",
+        "30-59",
+        "60-89",
+        "90+",
+        "CURRENT"
+      ],
+      "cardinalityHint": "low"
+    },
+    "campaign_id": {
+      "description": "Unique identifier for an outbound marketing campaign contact or campaign event record.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "offer_id": {
+      "description": "Identifier for the marketing offer presented to the customer.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "OFR_BIZ_RESTRUCT",
+        "OFR_EMI_FEST",
+        "OFR_EMI_NUDGE",
+        "OFR_FD_IDLE",
+        "OFR_FD_TAX",
+        "OFR_FOREX_RESERV",
+        "OFR_INS_HEALTH",
+        "OFR_INS_LIFE",
+        "OFR_LIMIT_ENH",
+        "OFR_LIMIT_FEST",
+        "OFR_MIGRATE_LEGACY",
+        "OFR_PL_PREAPPROVED",
+        "OFR_REW_3X",
+        "OFR_REW_5X",
+        "OFR_TRAVEL_RESERV",
+        "OFR_UPG_ELITE_BB",
+        "OFR_UPG_ELITE_POP",
+        "OFR_UPG_ELITE_SEL",
+        "OFR_UPG_MARQUEE",
+        "OFR_UPG_RESERV",
+        "OFR_UPG_SELECT",
+        "OFR_WINBACK_FEE",
+        "OFR_WINBACK_FEST",
+        "OFR_XSELL_KLICK",
+        "OFR_XSELL_POP"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "contact_cost_inr": {
+      "description": "Estimated cost in INR to execute the customer contact through a specific channel.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "0.02",
+        "0.05",
+        "0.12",
+        "1.5",
+        "180.0"
+      ],
+      "cardinalityHint": "low"
+    },
+    "created_ts": {
+      "description": "Timestamp when the campaign record was created.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "sent_ts": {
+      "description": "Timestamp when the campaign communication was sent.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "delivered_ts": {
+      "description": "Timestamp when the campaign communication was delivered.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE; may be null for undelivered contacts.",
+      "nullRate": 0.02622729066075488,
+      "cardinalityHint": "unique"
+    },
+    "opened_ts": {
+      "description": "Timestamp when the customer opened the campaign communication or service ticket was opened, depending on table context.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "Shared column name across tables with different meanings; qualify by table. TIMESTAMP WITH TIME ZONE.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "clicked_ts": {
+      "description": "Timestamp when the customer clicked the campaign communication.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE; mostly null.",
+      "nullRate": 0.9546846525259737,
+      "cardinalityHint": "high"
+    },
+    "outcome": {
+      "description": "Final observed engagement or conversion outcome of the campaign contact.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "CLICKED_NO_CONVERT",
+        "CONVERTED",
+        "IGNORED",
+        "OPTED_OUT"
+      ],
+      "cardinalityHint": "low"
+    },
+    "outcome_ts": {
+      "description": "Timestamp when the campaign outcome was recorded.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE; mostly null.",
+      "nullRate": 0.9523362203393014,
+      "cardinalityHint": "high"
+    },
+    "application_ts": {
+      "description": "Timestamp when the customer submitted an application tied to the offer.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE; mostly null.",
+      "nullRate": 0.9827343265635862,
+      "cardinalityHint": "high"
+    },
+    "approved_ts": {
+      "description": "Timestamp when the offer-related application was approved.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE; mostly null.",
+      "nullRate": 0.9827343265635862,
+      "cardinalityHint": "high"
+    },
+    "fulfilled_ts": {
+      "description": "Timestamp when the approved offer or product was fulfilled.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE; mostly null.",
+      "nullRate": 0.9827343265635862,
+      "cardinalityHint": "high"
+    },
+    "first_use_ts": {
+      "description": "Timestamp of first product usage after fulfillment or conversion.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE; mostly null.",
+      "nullRate": 0.996017059011404,
+      "cardinalityHint": "high"
+    },
+    "conversion_value_inr": {
+      "description": "Estimated or realized value in INR generated from a campaign conversion.",
+      "semanticType": "metric",
+      "sqlGotcha": "Mostly null because only converted cases carry value.",
+      "nullRate": 0.9827343265635862,
+      "cardinalityHint": "high"
+    },
+    "event_id": {
+      "description": "Unique identifier for a lifecycle or propensity event record.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Shared across event tables but not globally unique across all tables unless qualified.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "event_ts": {
+      "description": "Timestamp when the lifecycle or propensity event occurred.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "event_type": {
+      "description": "Type of lifecycle or propensity event that occurred.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Shared column across different event tables; values are table-specific.",
+      "nullRate": 0,
+      "sampleValues": [
+        "DORMANCY_ONSET",
+        "EMI_ELIGIBLE_BIGTICKET",
+        "FIRST_INTL_TXN",
+        "LIFE_EVENT_WEDDING_PATTERN",
+        "MILESTONE_SPEND",
+        "RENT_PAYMENT_ONSET",
+        "SALARY_JUMP_DETECTED",
+        "SPEND_TRAJECTORY_CROSS",
+        "TRAVEL_BOOKING_CLUSTER",
+        "UTILITY_SURCHARGE_HIT"
+      ],
+      "cardinalityHint": "low"
+    },
+    "old_value": {
+      "description": "Previous attribute value before a lifecycle change event.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Generic encoded field; interpretation depends on event_type.",
+      "nullRate": 0.8621107966033158,
+      "cardinalityHint": "high"
+    },
+    "new_value": {
+      "description": "New attribute value after a lifecycle change event.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Generic encoded field; interpretation depends on event_type.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "linked_card_id": {
+      "description": "Related card identifier used for upgrades, replacements, or linked lifecycle actions.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Foreign key to cards.card_id; mostly null.",
+      "nullRate": 0.9073190456934896,
+      "cardinalityHint": "high"
+    },
+    "reason": {
+      "description": "Business reason or trigger behind a lifecycle event.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded reason values.",
+      "nullRate": 0,
+      "sampleValues": [
+        "BT_TO_COMPETITOR",
+        "CAMPAIGN_FULFILLMENT",
+        "CUSTOMER_ACTIVATION",
+        "FEE",
+        "INACTIVITY",
+        "NEW_ISSUANCE",
+        "OFR_BIZ_RESTRUCT",
+        "OFR_FOREX_RESERV",
+        "OFR_LIMIT_ENH",
+        "OFR_MIGRATE_LEGACY",
+        "OFR_REW_3X",
+        "OFR_REW_5X",
+        "OFR_TRAVEL_RESERV",
+        "OFR_UPG_ELITE_BB",
+        "OFR_UPG_ELITE_POP",
+        "OFR_UPG_ELITE_SEL",
+        "OFR_UPG_MARQUEE",
+        "OFR_UPG_RESERV",
+        "OFR_UPG_SELECT",
+        "PERIODIC_REVIEW",
+        "SERVICE_ISSUE",
+        "UPGRADE_MIGRATION"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "initiated_by": {
+      "description": "Actor or system that initiated the lifecycle event.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "CUSTOMER_APP",
+        "CUSTOMER_NETBANKING",
+        "SYSTEM"
+      ],
+      "cardinalityHint": "low"
+    },
+    "supporting_txn_ids": {
+      "description": "One or more transaction identifiers supporting a propensity event trigger.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Pipe-delimited multi-value field; split before joining to transactions.",
+      "nullRate": 0.5722286597141754,
+      "cardinalityHint": "high"
+    },
+    "detail_json": {
+      "description": "JSON payload containing event-specific supporting attributes and thresholds.",
+      "semanticType": "text",
+      "sqlGotcha": "Stored as VARCHAR JSON; parse with JSON functions before extracting fields.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "holding_id": {
+      "description": "Unique identifier for a customer product holding record.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "product_type": {
+      "description": "Type of banking or financial product the customer holds.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "DEMAT",
+        "FD",
+        "INSURANCE_HEALTH",
+        "INSURANCE_LIFE",
+        "PERSONAL_LOAN",
+        "RD",
+        "SALARY_ACCT",
+        "SAVINGS"
+      ],
+      "cardinalityHint": "low"
+    },
+    "opened_date": {
+      "description": "Date when the product holding was opened.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "DATE field.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "value_band": {
+      "description": "Band representing the product balance, deposit, or value size.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Ordered band text; use custom sort order.",
+      "nullRate": 0,
+      "sampleValues": [
+        "1L-2L",
+        "2L-5L",
+        "50K-1L",
+        "5L-10L",
+        "<50K"
+      ],
+      "cardinalityHint": "low"
+    },
+    "status": {
+      "description": "Current status of the card or product holding, depending on table context.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Shared column name across tables with different valid values; qualify by table.",
+      "nullRate": 0,
+      "sampleValues": [
+        "ACTIVE",
+        "CLOSED",
+        "DORMANT"
+      ],
+      "cardinalityHint": "low"
+    },
+    "source_campaign_id": {
+      "description": "Campaign identifier credited with originating the product holding.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Foreign key to campaign_history.campaign_id; mostly null.",
+      "nullRate": 0.9673490998941052,
+      "cardinalityHint": "high"
+    },
+    "previous_card_id": {
+      "description": "Identifier of the prior card replaced or upgraded into the current card.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Self-referential foreign key to cards.card_id; mostly null.",
+      "nullRate": 0.9256664720762794,
+      "cardinalityHint": "high"
+    },
+    "masked_pan": {
+      "description": "Masked primary account number displayed for the card.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Masked token-like value; not guaranteed unique across all time despite high distinctness.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "network": {
+      "description": "Card payment network such as Visa, Mastercard, or RuPay.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "MASTERCARD",
+        "RUPAY",
+        "VISA"
+      ],
+      "cardinalityHint": "low"
+    },
+    "product": {
+      "description": "Card product name or variant.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Contains mixed casing and special character values like ELITE+.",
+      "nullRate": 0,
+      "sampleValues": [
+        "BankBazaar FinBooster",
+        "ELITE+",
+        "Klick",
+        "MARQUEE",
+        "POP-CLUB",
+        "RESERV",
+        "Select",
+        "YES ELITE",
+        "YES PREMIA"
+      ],
+      "cardinalityHint": "low"
+    },
+    "tier": {
+      "description": "Commercial or positioning tier of the card product.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "Co-brand-LTF",
+        "Digital",
+        "Entry-premium",
+        "Legacy",
+        "Mid-premium",
+        "Premium-travel",
+        "Super-premium",
+        "UPI-cashback"
+      ],
+      "cardinalityHint": "low"
+    },
+    "annual_fee": {
+      "description": "Annual fee charged for the card product.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "0",
+        "1180",
+        "11800",
+        "2360",
+        "5899",
+        "590"
+      ],
+      "cardinalityHint": "low"
+    },
+    "fee_waived_flag": {
+      "description": "Flag indicating whether the annual fee is waived.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "credit_limit_current": {
+      "description": "Current sanctioned credit limit for the card.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "issue_date": {
+      "description": "Date when the card was issued.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "DATE field.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "rewards_subscription_plan": {
+      "description": "Rewards multiplier or subscription plan attached to the card.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Values like 3X and 5X are encoded plan labels, not numeric multipliers for direct arithmetic.",
+      "nullRate": 0,
+      "sampleValues": [
+        "3X",
+        "5X",
+        "NONE"
+      ],
+      "cardinalityHint": "low"
+    },
+    "upi_linked_flag": {
+      "description": "Flag indicating whether the card is linked for UPI usage.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "legacy_migration_pending_flag": {
+      "description": "Flag indicating whether the card is pending migration from a legacy portfolio.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "closure_reason": {
+      "description": "Reason the card was closed, when applicable.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Mostly null because only closed cards have a closure reason.",
+      "nullRate": 0.8910293831484725,
+      "sampleValues": [
+        "BT_TO_COMPETITOR",
+        "FEE",
+        "INACTIVITY",
+        "SERVICE_ISSUE"
+      ],
+      "cardinalityHint": "low"
+    },
+    "full_name": {
+      "description": "Synthetic full name of the customer.",
+      "semanticType": "text",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "gender": {
+      "description": "Customer gender.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded as short categorical values.",
+      "nullRate": 0,
+      "sampleValues": [
+        "F",
+        "M"
+      ],
+      "cardinalityHint": "low"
+    },
+    "dob": {
+      "description": "Customer date of birth.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "DATE field.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "age": {
+      "description": "Customer age in years.",
+      "semanticType": "metric",
+      "sqlGotcha": "Snapshot-style derived field; may drift relative to current date.",
+      "nullRate": 0,
+      "cardinalityHint": "medium"
+    },
+    "city": {
+      "description": "City associated with the customer residence or merchant location, depending on table context.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Shared column across tables with different entity meaning; qualify in joins.",
+      "nullRate": 0,
+      "cardinalityHint": "medium"
+    },
+    "state": {
+      "description": "State associated with the customer residence or merchant location, depending on table context.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Shared column across tables with different entity meaning; encoded as abbreviations.",
+      "nullRate": 0.0399800099950025,
+      "sampleValues": [
+        "AP",
+        "AS",
+        "BR",
+        "CG",
+        "CH",
+        "DL",
+        "GJ",
+        "KA",
+        "KL",
+        "MH",
+        "MP",
+        "OD",
+        "RJ",
+        "TN",
+        "TS",
+        "UP",
+        "WB"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "pincode": {
+      "description": "Customer postal code.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Stored as BIGINT; treat as categorical text-like geography, not arithmetic.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "masked_mobile": {
+      "description": "Masked mobile number of the customer.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Masked contact field; not fully reliable as a join key.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "email": {
+      "description": "Customer email address.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Personally identifying contact-like field; may require lowercasing for comparisons.",
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "relationship_since": {
+      "description": "Date when the customer relationship with the bank began.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "DATE field.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "kyc_status": {
+      "description": "Know-your-customer verification status.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "RE_KYC_DUE",
+        "VERIFIED"
+      ],
+      "cardinalityHint": "low"
+    },
+    "home_branch_city": {
+      "description": "Home branch city servicing the customer relationship.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "Ahmedabad",
+        "Bengaluru",
+        "Bhopal",
+        "Bhubaneswar",
+        "Chandigarh",
+        "Chennai",
+        "Coimbatore",
+        "Delhi NCR",
+        "Guwahati",
+        "Hyderabad",
+        "Indore",
+        "Jaipur",
+        "Kochi",
+        "Kolkata",
+        "Lucknow",
+        "Madurai",
+        "Mumbai",
+        "Nagpur",
+        "Patna",
+        "Pune",
+        "Raipur",
+        "Surat",
+        "Visakhapatnam"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "salary_account_with_yes_flag": {
+      "description": "Flag indicating whether the customer holds a salary account with Credit Bank.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "cibil_band": {
+      "description": "Credit score band for the customer.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Ordered band text; use custom sort order.",
+      "nullRate": 0,
+      "sampleValues": [
+        "650-699",
+        "700-749",
+        "750-799",
+        "800+"
+      ],
+      "cardinalityHint": "low"
+    },
+    "employment_type": {
+      "description": "Customer employment segment.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "Professional",
+        "Retired",
+        "Salaried",
+        "Self-employed"
+      ],
+      "cardinalityHint": "low"
+    },
+    "monthly_income_band": {
+      "description": "Band representing the customer's monthly income.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Ordered band text; use custom sort order.",
+      "nullRate": 0,
+      "sampleValues": [
+        "1L-2L",
+        "25K-50K",
+        "2L-4L",
+        "4L+",
+        "50K-1L"
+      ],
+      "cardinalityHint": "low"
+    },
+    "tenure_months": {
+      "description": "Length of customer relationship in months.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "rm_assigned_flag": {
+      "description": "Flag indicating whether a relationship manager is assigned to the customer.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "email_opt_in_flag": {
+      "description": "Flag indicating whether the customer has opted in to email marketing.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "sms_opt_in_flag": {
+      "description": "Flag indicating whether the customer has opted in to SMS marketing.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "push_opt_in_flag": {
+      "description": "Flag indicating whether the customer has opted in to push notifications.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "dnd_flag": {
+      "description": "Flag indicating whether the customer is on do-not-disturb or contact suppression.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "false",
+        "true"
+      ],
+      "cardinalityHint": "low"
+    },
+    "ticket_id": {
+      "description": "Unique identifier for a customer service ticket.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "unique"
+    },
+    "category": {
+      "description": "Category of merchant or service ticket, depending on table context.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Shared column across tables with different semantics; qualify by table.",
+      "nullRate": 0,
+      "sampleValues": [
+        "bank_fee",
+        "dining",
+        "ecom",
+        "education",
+        "electronics",
+        "entertainment",
+        "fashion",
+        "food_delivery",
+        "fuel",
+        "gambling_adj",
+        "grocery",
+        "hospital",
+        "hotels",
+        "insurance",
+        "jewellery",
+        "liquor",
+        "ott",
+        "pharmacy",
+        "rail",
+        "rent",
+        "telecom",
+        "travel",
+        "utilities",
+        "wallet_load"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "resolved_ts": {
+      "description": "Timestamp when the service ticket was resolved.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "TIMESTAMP WITH TIME ZONE.",
+      "nullRate": 0.0004154549231408392,
+      "cardinalityHint": "unique"
+    },
+    "csat_1_5": {
+      "description": "Customer satisfaction rating on a 1 to 5 scale for the ticket.",
+      "semanticType": "metric",
+      "sqlGotcha": "Stored as DOUBLE though logically a discrete score.",
+      "nullRate": 0.0004154549231408392,
+      "sampleValues": [
+        "1.0",
+        "2.0",
+        "3.0",
+        "4.0",
+        "5.0"
+      ],
+      "cardinalityHint": "low"
+    },
+    "merchant_name": {
+      "description": "Display name of the merchant.",
+      "semanticType": "text",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "mcc_description": {
+      "description": "Human-readable description of the merchant category code.",
+      "semanticType": "text",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "Airlines",
+        "Apparel and accessories",
+        "Betting / gaming (high risk)",
+        "Cinema (PVR INOX/BookMyShow)",
+        "Colleges and universities",
+        "Direct marketing / e-commerce",
+        "Electronics stores",
+        "Fast food / food delivery",
+        "Financial institution charges",
+        "Grocery stores / supermarkets",
+        "Hospitals",
+        "Hotels and resorts",
+        "Insurance premiums",
+        "Jewellery stores",
+        "Liquor stores",
+        "Passenger railways (IRCTC)",
+        "Pharmacies",
+        "Real estate / rent platforms",
+        "Restaurants",
+        "Service stations (fuel)",
+        "Subscription services (OTT)",
+        "Telecom / recharges",
+        "Utilities (electricity/gas/water)",
+        "Wallet / prepaid load"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "country": {
+      "description": "Country code associated with the merchant location.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Encoded as short country code values.",
+      "nullRate": 0,
+      "sampleValues": [
+        "AE",
+        "FR",
+        "GB",
+        "ID",
+        "IN",
+        "MY",
+        "SG",
+        "TH",
+        "US"
+      ],
+      "cardinalityHint": "low"
+    },
+    "risk_tier": {
+      "description": "Risk classification assigned to the merchant.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "HIGH",
+        "LOW",
+        "MEDIUM"
+      ],
+      "cardinalityHint": "low"
+    },
+    "onboarded_since": {
+      "description": "Date when the merchant was onboarded to the bank or network ecosystem.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "DATE field.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "table": {
+      "description": "Name of the table documented in the data dictionary.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Column name is a SQL reserved word in some systems; may require quoting.",
+      "nullRate": 0,
+      "sampleValues": [
+        "calendar_events",
+        "campaign_history",
+        "card_lifecycle_events",
+        "cards",
+        "customers",
+        "hero_case_index",
+        "merchants",
+        "offers_catalog",
+        "product_holdings",
+        "propensity_events",
+        "service_tickets",
+        "statements",
+        "transactions"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "column": {
+      "description": "Name of the column documented in the data dictionary.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Column name is a SQL reserved word in some systems; may require quoting.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "dtype": {
+      "description": "Recorded data type for a documented column in the data dictionary.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "bool",
+        "datetime64[ns]",
+        "datetime64[us]",
+        "float64",
+        "int64",
+        "object",
+        "str"
+      ],
+      "cardinalityHint": "low"
+    },
+    "description": {
+      "description": "Textual explanation of a documented column in the data dictionary.",
+      "semanticType": "text",
+      "sqlGotcha": "Column name may collide with metadata keywords in some tools; qualify if needed.",
+      "nullRate": 0,
+      "cardinalityHint": "high"
+    },
+    "valid_values": {
+      "description": "Allowed or enumerated values for a documented column.",
+      "semanticType": "text",
+      "sqlGotcha": "May contain pipe-delimited encoded lists.",
+      "nullRate": 0.6890243902439024,
+      "cardinalityHint": "medium"
+    },
+    "joins_to": {
+      "description": "Suggested join target field for a documented column.",
+      "semanticType": "text",
+      "sqlGotcha": "Stored as table.column reference text, not an enforced foreign key.",
+      "nullRate": 0.8780487804878049,
+      "sampleValues": [
+        "campaign_history.campaign_id",
+        "cards.card_id",
+        "customers.customer_id",
+        "merchants.merchant_id",
+        "offers_catalog.offer_id",
+        "transactions.txn_id"
+      ],
+      "cardinalityHint": "low"
+    },
+    "event_name": {
+      "description": "Name of a calendar or seasonal event affecting business behavior.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "Christmas-NY 2024",
+        "Christmas-NY 2025",
+        "Dhanteras 2024",
+        "Dhanteras 2024 (day)",
+        "Dhanteras 2025",
+        "Dhanteras 2025 (day)",
+        "Diwali week 2024",
+        "Diwali week 2025",
+        "Flipkart BBD / Amazon GIF 2024",
+        "Flipkart BBD / Amazon GIF 2025",
+        "IPL 2025",
+        "IPL 2026",
+        "Monsoon 2024",
+        "Monsoon 2025",
+        "Month-end squeeze",
+        "Post-Diwali travel 2024",
+        "Post-Diwali travel 2025",
+        "Salary cycle",
+        "Summer travel 2024",
+        "Summer travel 2025",
+        "Summer travel 2026",
+        "Tax-saving window 2025",
+        "Tax-saving window 2026",
+        "Wedding season Jan-Feb 2025",
+        "Wedding season Jan-Feb 2026",
+        "Wedding season Nov-Dec 2024",
+        "Wedding season Nov-Dec 2025",
+        "Credit Bank surcharge change"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "start_date": {
+      "description": "Start date of a calendar event window.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "Stored as VARCHAR date string in YYYY-MM-DD format; parse to DATE before date arithmetic.",
+      "nullRate": 0,
+      "sampleValues": [
+        "2024-06-01",
+        "2024-06-15",
+        "2024-09-26",
+        "2024-10-25",
+        "2024-10-27",
+        "2024-10-29",
+        "2024-11-02",
+        "2024-11-15",
+        "2024-12-20",
+        "2025-01-01",
+        "2025-01-15",
+        "2025-03-22",
+        "2025-05-01",
+        "2025-06-15",
+        "2025-09-22",
+        "2025-10-13",
+        "2025-10-16",
+        "2025-10-18",
+        "2025-10-22",
+        "2025-11-15",
+        "2025-12-20",
+        "2026-01-01",
+        "2026-01-15",
+        "2026-03-25",
+        "2026-05-01",
+        "monthly 1st-5th",
+        "monthly 24th-30th"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "end_date": {
+      "description": "End date of a calendar event window.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "Stored as VARCHAR date string in YYYY-MM-DD format; parse to DATE before date arithmetic.",
+      "nullRate": 0,
+      "sampleValues": [
+        "2024-06-25",
+        "2024-09-15",
+        "2024-10-13",
+        "2024-10-29",
+        "2024-10-31",
+        "2024-11-01",
+        "2024-11-10",
+        "2024-12-15",
+        "2025-01-02",
+        "2025-02-28",
+        "2025-03-31",
+        "2025-06-03",
+        "2025-06-25",
+        "2025-09-15",
+        "2025-10-10",
+        "2025-10-18",
+        "2025-10-20",
+        "2025-10-21",
+        "2025-10-30",
+        "2025-12-15",
+        "2026-01-02",
+        "2026-01-15",
+        "2026-02-28",
+        "2026-03-31",
+        "2026-05-31",
+        "monthly 1st-5th",
+        "monthly 24th-30th"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "overall_multiplier": {
+      "description": "Overall demand or activity multiplier associated with the calendar event period.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "0.85",
+        "1.0",
+        "1.08",
+        "1.1",
+        "1.12",
+        "1.15",
+        "1.2",
+        "1.25",
+        "1.3",
+        "1.35",
+        "1.55",
+        "1.8"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "category_effects": {
+      "description": "Category-specific multiplier overrides for a calendar event.",
+      "semanticType": "text",
+      "sqlGotcha": "Pipe-delimited key:value pairs encoded in a VARCHAR; parse before analysis.",
+      "nullRate": 0.10714285714285714,
+      "sampleValues": [
+        "ecom:3.0|electronics:2.4|fashion:2.0",
+        "fashion:1.8|electronics:1.6|dining:1.4|grocery:1.3|travel:0.6",
+        "food_delivery:1.15|fuel:0.9|dining:0.9",
+        "food_delivery:1.2|entertainment:1.15",
+        "insurance:1.6",
+        "jewellery:2.0|fashion:1.4|hotels:1.4|dining:1.25",
+        "jewellery:2.2|fashion:1.5|hotels:1.5|dining:1.3",
+        "jewellery:3.0",
+        "jewellery:6.0",
+        "travel:1.5",
+        "travel:1.6|dining:1.6|hotels:1.6|entertainment:1.4",
+        "travel:1.7|hotels:1.5"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "note": {
+      "description": "Narrative note describing the expected business effect of the calendar event.",
+      "semanticType": "text",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "1% surcharge on utility/education/wallet-load above thresholds from this date",
+        "80C rush: insurance/FD-adjacent spends rise",
+        "Dhanteras day itself",
+        "Discretionary down for mass segment",
+        "E-com festival sale; EMI conversions spike",
+        "Festive gifting; travel dips during",
+        "Jewellery buying peaks",
+        "Jewellery buying peaks; high-value round-amount tickets",
+        "Match-evening food delivery spikes",
+        "Monsoon shift",
+        "Mumbai/Pune/Kolkata: delivery up, dine-out down",
+        "Salary-credit spend bump; autopay debits cluster 3rd-7th",
+        "School-holiday travel; intl exposure up",
+        "Travel rebounds after Diwali",
+        "Wedding muhurat window",
+        "Year-end holidays"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "offer_name": {
+      "description": "Human-readable name of the marketing offer.",
+      "semanticType": "text",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "Business spend restructure (surcharge relief)",
+        "ELITE+ to RESERV upgrade",
+        "Entry-card to Select upgrade",
+        "FD for idle balances",
+        "Fee-waiver winback",
+        "Festive EMI conversion blast",
+        "Festive limit top-up",
+        "Festive winback (bonus rewards)",
+        "FinBooster to ELITE+ upgrade",
+        "Health insurance attach",
+        "Klick UPI-credit cross-sell",
+        "Legacy PREMIA/ELITE migration to ELITE+ (LTF)",
+        "Life insurance attach",
+        "MARQUEE invitation",
+        "POP-CLUB cross-sell for online shoppers",
+        "POP-CLUB to ELITE+ upgrade",
+        "Pre-approved limit enhancement",
+        "Pre-approved personal loan",
+        "RESERV forex repositioning (1.75% vs 3.5%)",
+        "Real-time EMI conversion nudge",
+        "Rewards Subscription 3X",
+        "Rewards Subscription 5X",
+        "Select to ELITE+ upgrade",
+        "Tax-saver FD (Jan-Mar)",
+        "Travel-cluster RESERV pitch"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "offer_type": {
+      "description": "Business type of offer such as upgrade, EMI conversion, or cross-sell.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "CARD_UPGRADE",
+        "CROSS_SELL_CARD",
+        "EMI_CONVERSION",
+        "FD",
+        "FOREX_REPOSITIONING",
+        "INSURANCE_ATTACH",
+        "LIMIT_ENHANCEMENT",
+        "PERSONAL_LOAN_PREAPPROVED",
+        "REWARDS_SUBSCRIPTION_UPSELL",
+        "WINBACK"
+      ],
+      "cardinalityHint": "low"
+    },
+    "source_product": {
+      "description": "Existing product(s) from which the offer is targeted.",
+      "semanticType": "dimension",
+      "sqlGotcha": "May contain pipe-delimited multi-product values.",
+      "nullRate": 0.52,
+      "sampleValues": [
+        "BankBazaar FinBooster",
+        "ELITE+",
+        "ELITE+|Select",
+        "POP-CLUB",
+        "POP-CLUB|BankBazaar FinBooster",
+        "RESERV|ELITE+",
+        "Select",
+        "Select|ELITE+",
+        "YES PREMIA|YES ELITE"
+      ],
+      "cardinalityHint": "low"
+    },
+    "target_product": {
+      "description": "Product that the offer aims to sell, upgrade to, or activate.",
+      "semanticType": "dimension",
+      "sqlGotcha": null,
+      "nullRate": 0.52,
+      "sampleValues": [
+        "ELITE+",
+        "Klick",
+        "MARQUEE",
+        "POP-CLUB",
+        "RESERV",
+        "Select"
+      ],
+      "cardinalityHint": "low"
+    },
+    "eligibility_rule_text": {
+      "description": "Human-readable business rule describing who is eligible for the offer.",
+      "semanticType": "text",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "3-month avg spend >= Rs.30000; CIBIL >= 720; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "3-month avg spend >= Rs.35000; utilization >= 55%; CIBIL >= 730; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "CIBIL >= 750; salary account with Credit Bank; tenure >= 9 months; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "age <= 32; CIBIL >= 680; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "age >= 28; CIBIL >= 700; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "age >= 30; CIBIL >= 700; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "annual forex spend >= Rs.50000; holds product in ['ELITE+', 'Select']; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "dormant >= 150 days; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "dormant >= 90 days; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "holds product in ['BankBazaar FinBooster']; 3-month avg spend >= Rs.25000; CIBIL >= 730; tenure >= 9 months; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "holds product in ['ELITE+']; 3-month avg spend >= Rs.45000; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "holds product in ['ELITE+']; 3-month avg spend >= Rs.75000; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "holds product in ['ELITE+']; 3-month avg spend >= Rs.80000; CIBIL >= 750; tenure >= 12 months; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "holds product in ['POP-CLUB', 'BankBazaar FinBooster']; 3-month avg spend >= Rs.20000; CIBIL >= 700; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "holds product in ['POP-CLUB']; 3-month avg spend >= Rs.30000; CIBIL >= 720; tenure >= 9 months; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "holds product in ['RESERV', 'ELITE+']; 3-month avg spend >= Rs.150000; CIBIL >= 770; tenure >= 12 months; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "holds product in ['Select', 'ELITE+', 'MARQUEE', 'RESERV']; heavy UPI user; CIBIL >= 700; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "holds product in ['Select']; 3-month avg spend >= Rs.40000; CIBIL >= 720; tenure >= 6 months; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "holds product in ['YES PREMIA', 'YES ELITE']; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "recent travel booking cluster; holds product in ['ELITE+', 'Select']; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "salary account with Credit Bank; no existing FD; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "salary account with Credit Bank; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "transaction >= Rs.40000; MCC in [5732, 5944]; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "transaction >= Rs.40000; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff",
+        "utility-heavy spender; occupation = Self-employed; not DND; no DPD30+; 21-day contact cooldown; 180-day opt-out cooloff"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "eligibility_rule_json": {
+      "description": "Structured JSON definition of the offer eligibility logic.",
+      "semanticType": "text",
+      "sqlGotcha": "Stored as VARCHAR JSON; parse with JSON functions to extract thresholds and flags.",
+      "nullRate": 0,
+      "sampleValues": [
+        "{\"cibil_min\": 750, \"salary_account\": true, \"tenure_min_months\": 9, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"dormant_days_min\": 150, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"dormant_days_min\": 90, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"max_age\": 32, \"cibil_min\": 680, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"min_3mo_avg_spend_inr\": 30000, \"cibil_min\": 720, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"min_3mo_avg_spend_inr\": 35000, \"min_utilization_pct\": 55, \"cibil_min\": 730, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"min_age\": 28, \"cibil_min\": 700, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"min_age\": 30, \"cibil_min\": 700, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"min_forex_annual_inr\": 50000, \"product_in\": [\"ELITE+\", \"Select\"], \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"min_txn_inr\": 40000, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"min_txn_inr\": 40000, \"mcc_in\": [5732, 5944], \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"product_in\": [\"BankBazaar FinBooster\"], \"min_3mo_avg_spend_inr\": 25000, \"cibil_min\": 730, \"tenure_min_months\": 9, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"product_in\": [\"ELITE+\"], \"min_3mo_avg_spend_inr\": 45000, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"product_in\": [\"ELITE+\"], \"min_3mo_avg_spend_inr\": 75000, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"product_in\": [\"ELITE+\"], \"min_3mo_avg_spend_inr\": 80000, \"cibil_min\": 750, \"tenure_min_months\": 12, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"product_in\": [\"POP-CLUB\", \"BankBazaar FinBooster\"], \"min_3mo_avg_spend_inr\": 20000, \"cibil_min\": 700, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"product_in\": [\"POP-CLUB\"], \"min_3mo_avg_spend_inr\": 30000, \"cibil_min\": 720, \"tenure_min_months\": 9, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"product_in\": [\"RESERV\", \"ELITE+\"], \"min_3mo_avg_spend_inr\": 150000, \"cibil_min\": 770, \"tenure_min_months\": 12, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"product_in\": [\"Select\", \"ELITE+\", \"MARQUEE\", \"RESERV\"], \"upi_heavy\": false, \"cibil_min\": 700, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"product_in\": [\"Select\"], \"min_3mo_avg_spend_inr\": 40000, \"cibil_min\": 720, \"tenure_min_months\": 6, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"product_in\": [\"YES PREMIA\", \"YES ELITE\"], \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"salary_account\": true, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"salary_account\": true, \"no_fd_holding\": true, \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"travel_cluster\": true, \"product_in\": [\"ELITE+\", \"Select\"], \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}",
+        "{\"utility_heavy\": true, \"occupation\": \"Self-employed\", \"exclude_dpd_30_plus\": true, \"exclude_dnd\": true, \"exclude_optout_days\": 180}"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "expected_value_inr": {
+      "description": "Expected business value in INR from a successful offer conversion.",
+      "semanticType": "metric",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "12000",
+        "1500",
+        "1800",
+        "2200",
+        "22000",
+        "2500",
+        "25000",
+        "3000",
+        "3200",
+        "3500",
+        "3800",
+        "4000",
+        "4500",
+        "5200",
+        "5500",
+        "6000",
+        "6500",
+        "6800",
+        "7000",
+        "8000",
+        "9000"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "validity_window": {
+      "description": "Time window or season during which the offer is considered active or relevant.",
+      "semanticType": "dimension",
+      "sqlGotcha": "Free-form period label, not a machine-readable date range.",
+      "nullRate": 0,
+      "sampleValues": [
+        "FY25-FY26",
+        "Jan-Mar",
+        "Jan-Mar heavy",
+        "Sep-Nov",
+        "always-on",
+        "post-Jan-2026"
+      ],
+      "cardinalityHint": "low"
+    },
+    "hero_id": {
+      "description": "Unique identifier for a curated hero use case scenario.",
+      "semanticType": "identifier",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "Y1",
+        "Y10",
+        "Y11",
+        "Y12",
+        "Y2",
+        "Y3",
+        "Y4",
+        "Y5",
+        "Y6",
+        "Y7",
+        "Y8",
+        "Y9"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "title": {
+      "description": "Title of the curated hero case.",
+      "semanticType": "text",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "Appraisal-season MARQUEE pitch (open loop)",
+        "Diwali-timed upgrade on a spend trajectory",
+        "Dormancy win-back",
+        "Forex repositioning with a quantified saving",
+        "Klick cross-sell captures UPI spend",
+        "Legacy PREMIA migration",
+        "Real-time EMI nudge inside BBD",
+        "Rent + salary -> pre-approved personal loan",
+        "Rewards-subscription upsell with computed ROI",
+        "Surcharge-hit utility loader retained",
+        "Tax-window FD cross-sell into whitespace",
+        "The suppression anti-case"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "campaign_ids": {
+      "description": "One or more campaign identifiers associated with the hero case.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Pipe-delimited multi-value field; split before joining to campaign_history.",
+      "nullRate": 0.08333333333333333,
+      "sampleValues": [
+        "CMP_3661a136c5",
+        "CMP_36ffd8b076",
+        "CMP_379e102a27",
+        "CMP_383c47a3d8",
+        "CMP_38da7f1d89",
+        "CMP_3978b6973a",
+        "CMP_3a16ee10eb|CMP_3ab5258a9c",
+        "CMP_7874eca3b1",
+        "CMP_7913241d62",
+        "CMP_7aedca8a75",
+        "CMP_e699c87485"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "key_txn_ids": {
+      "description": "One or more highlighted transaction identifiers relevant to the hero case.",
+      "semanticType": "identifier",
+      "sqlGotcha": "Pipe-delimited multi-value field; split before joining to transactions.",
+      "nullRate": 0.5833333333333334,
+      "sampleValues": [
+        "TXN_21eae5e21f",
+        "TXN_30c0194ab7",
+        "TXN_315e50c468",
+        "TXN_699c090653",
+        "TXN_737f80a163"
+      ],
+      "cardinalityHint": "low"
+    },
+    "window_start": {
+      "description": "Start date of the hero case analysis window.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "DATE field.",
+      "nullRate": 0,
+      "sampleValues": [
+        "2024-11-01",
+        "2025-07-01",
+        "2025-08-01",
+        "2025-09-21",
+        "2025-11-08",
+        "2025-12-20",
+        "2026-01-01",
+        "2026-01-12",
+        "2026-01-15",
+        "2026-02-01",
+        "2026-04-01"
+      ],
+      "cardinalityHint": "medium"
+    },
+    "window_end": {
+      "description": "End date of the hero case analysis window.",
+      "semanticType": "timestamp",
+      "sqlGotcha": "DATE field.",
+      "nullRate": 0,
+      "sampleValues": [
+        "2025-09-21",
+        "2025-11-30",
+        "2025-12-31",
+        "2026-01-31",
+        "2026-03-31",
+        "2026-05-31"
+      ],
+      "cardinalityHint": "low"
+    },
+    "expected_outcome": {
+      "description": "Expected business outcome or storyline associated with the hero case.",
+      "semanticType": "text",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "5X plan ROI 3.4x its Rs.2,500 fee on this customer's travel/dining/fashion mix; converted",
+        "Dormant since Nov 2024; festive winback Sep 2025; ~Rs.18K/month run-rate within 30 days",
+        "High propensity BUT opted out twice + open ticket: agent suppresses and schedules post-resolution re-contact",
+        "High-engagement, fee-sensitive legacy holder retained via ELITE+ LTF migration",
+        "Klick card issued; UPI-on-credit captures spend previously lost to the savings account",
+        "RENT_PAYMENT_ONSET (Rs.38K/month, MCC 6513) + salary credits + CIBIL 780 -> Rs.6L PL via RM call",
+        "Rs.1.42L Croma purchase; EMI push within 4 minutes; converted to 12-month EMI",
+        "Rs.3.1L forex at 3.5% = Rs.10,850 markup in the data; RESERV (1.75%) saves Rs.5,425/yr; converted",
+        "Rs.800/month surcharge appears after 15 Jan 2026; complaint ticket; restructure offer converts; customer retained",
+        "SPEND_TRAJECTORY_CROSS fires; ELITE+ offer 1 Oct converts; post-upgrade spend +32%",
+        "Salary jump + first business-class fare; clicked but not converted; RM follow-up sequenced",
+        "Salary-account customer with zero FD holdings converts in the Jan-Mar tax window"
+      ],
+      "cardinalityHint": "unique"
+    },
+    "narrative": {
+      "description": "Narrative explanation of the hero case and why it matters.",
+      "semanticType": "text",
+      "sqlGotcha": null,
+      "nullRate": 0,
+      "sampleValues": [
+        "A live open loop for the demo: the agent picks up the clicked-no-convert and sequences the RM call.",
+        "Business owner loading ~Rs.80K/month of utilities. The surcharge_levied_inr column makes the pain measurable.",
+        "DORMANCY_ONSET fires in early 2025; the September winback reactivates the card ahead of the festive season.",
+        "Judgment, not spam. There are no contacts after the second opt-out, and the open ticket gates any new offer.",
+        "One of ~400 legacy YES PREMIA/ELITE holders pending migration; the live pipeline the agent can work.",
+        "Salary-account customer doing ~Rs.22K/month UPI from savings with low card utilization; Klick converts it to card spend.",
+        "Spend ramps Rs.38K->56K->71K/month Jul-Sep 2025; the offer lands pre-BBD/Diwali and the new card carries the festive spend.",
+        "The nudge lands while the customer is still in the checkout glow. Conversion happens the same evening.",
+        "The pitch is computed from the customer's own rows: forex markup paid is a column, not a claim.",
+        "The plan pays for itself in the customer's own category mix; the agent can compute it from raw transactions.",
+        "The rent rows are in transactions.csv; the loan lands in product_holdings with source_campaign_id set.",
+        "The whitespace map: ~40% of cardholders hold only the card."
+      ],
+      "cardinalityHint": "unique"
+    }
+  },
+  "userIdField": "customer_id",
+  "dateField": "txn_ts",
+  "domain": "credit cards growth analytics",
+  "domainPersona": "bank cards portfolio and growth analytics assistant",
+  "domainFocus": "Focus on cardholder growth, spend behavior, and portfolio monetization across transactions, statements, campaigns, and lifecycle events. Key questions include customer segmentation and cohorts, upgrade/cross-sell conversion, EMI and forex monetization, delinquency/utilization trends, and campaign effectiveness by channel, product, and timing. Also analyze retention signals such as dormancy, service issues, fee sensitivity, and card lifecycle transitions.",
+  "currency": "INR",
+  "domainHints": "6. Qualify shared column names with table aliases in joins: `channel`, `status`, `city`, `state`, `category`, `opened_ts`, and `event_type` appear in multiple tables with different meanings.\n7. Preserve time zone semantics on all `TIMESTAMP WITH TIME ZONE` fields (`transactions.txn_ts`, campaign timestamps, event timestamps, ticket timestamps); use `date_trunc(...)` directly on the timestamp and avoid casting away timezone unless explicitly needed.\n8. Parse string dates only where required: `calendar_events.start_date` and `calendar_events.end_date` are VARCHAR in `YYYY-MM-DD` format, so use `CAST(start_date AS DATE)` / `CAST(end_date AS DATE)` before date arithmetic.\n9. Treat encoded text and numeric-like categories as dimensions, not measures: `mcc`, `pincode`, `dpd_bucket`, `cibil_band`, `monthly_income_band`, `value_band`, and `rewards_subscription_plan` need grouping or custom sort order rather than arithmetic.\n10. Cast mis-typed numeric columns before aggregation: `transactions.surcharge_levied_inr` is VARCHAR and should be cast with `CAST(surcharge_levied_inr AS DOUBLE)`; `otp_attempts` and `emi_tenure_months` are DOUBLE but logically discrete counts.\n11. Handle multi-value and sparse fields carefully: `propensity_events.supporting_txn_ids`, `hero_case_index.campaign_ids`, and `hero_case_index.key_txn_ids` are pipe-delimited; `fx_amount`, `forex_markup_paid_inr`, `decline_reason`, `emi_tenure_months`, and campaign conversion timestamps are mostly null and should be filtered with context-aware conditions.",
+  "summaryTableHint": "Query the `transactions` table directly for card spend and usage analysis, then join to `cards`, `customers`, `statements`, `campaign_history`, and event tables for lifecycle, credit, and campaign context.",
+  "agents": [
+    {
+      "id": "daily-metrics",
+      "queries": [
+        {
+          "description": "Daily transaction volume, approved volume, and approved spend trend",
+          "hint": "Use `date_trunc('day', t.txn_ts)` as the grain; compute `COUNT(*)`, `SUM(CASE WHEN t.response='APPROVED' THEN 1 ELSE 0 END)`, and `SUM(CASE WHEN t.response='APPROVED' THEN t.amount_inr ELSE 0 END)` from `transactions t` grouped by day."
+        },
+        {
+          "description": "Monthly spend and transaction trend by channel",
+          "hint": "Group `transactions t` by `date_trunc('month', t.txn_ts)` and `t.channel`; aggregate `COUNT(*)` and `SUM(t.amount_inr)`; keep `t.channel` qualified because other tables also have `channel`."
+        },
+        {
+          "description": "International vs domestic trend over time",
+          "hint": "Group `transactions t` by `date_trunc('month', t.txn_ts)` and `t.is_intl_flag`; compare `SUM(t.amount_inr)`, `AVG(t.amount_inr)`, and approval rate using `AVG(CASE WHEN t.response='APPROVED' THEN 1.0 ELSE 0.0 END)`."
+        },
+        {
+          "description": "Statement cycle trend for billed spend, payments, revolve rate, and utilization",
+          "hint": "Use `statements s`; group by `date_trunc('month', s.cycle_end)` or raw `s.cycle_end`; aggregate `SUM(s.total_spend_inr)`, `SUM(s.payments_received_inr)`, `AVG(CASE WHEN s.revolve_flag THEN 1.0 ELSE 0.0 END)`, and `AVG(s.utilization_pct)`."
+        },
+        {
+          "description": "Campaign delivery and conversion trend by month",
+          "hint": "From `campaign_history ch`, group by `date_trunc('month', ch.sent_ts)` and optionally `ch.channel`; calculate sent, delivered, opened, clicked, and converted counts with conditional `COUNT`/`SUM(CASE WHEN ... IS NOT NULL ...)`."
+        },
+        {
+          "description": "Card issuance, activation, closure, and upgrade event trend",
+          "hint": "Use `card_lifecycle_events cle`; group by `date_trunc('month', cle.event_ts)` and `cle.event_type`; count events to show lifecycle momentum over time."
+        }
+      ]
+    },
+    {
+      "id": "rev-opt",
+      "queries": [
+        {
+          "description": "Spend and approval breakdown by card product and tier",
+          "hint": "Join `transactions t` to `cards c` on `t.card_id = c.card_id`; group by `c.product, c.tier`; compute `SUM(t.amount_inr)`, `COUNT(*)`, approval rate, and average ticket size."
+        },
+        {
+          "description": "Forex markup revenue by product, network, and international channel",
+          "hint": "Filter `transactions t` where `t.is_intl_flag = true`; join `cards c`; group by `c.product, c.network, t.channel`; aggregate `SUM(t.forex_markup_paid_inr)` and `SUM(t.amount_inr)`."
+        },
+        {
+          "description": "Fee and interest revenue by delinquency and revolve behavior",
+          "hint": "Use `statements s`; group by `s.dpd_bucket, s.revolve_flag`; aggregate `SUM(s.fees_inr)`, `SUM(s.interest_charged_inr)`, `AVG(s.closing_balance_inr)`, and sort `dpd_bucket` with a CASE expression rather than lexicographically."
+        },
+        {
+          "description": "EMI conversion economics by tenure and product",
+          "hint": "Join `transactions t` to `cards c`; filter `t.emi_converted_flag = true OR t.txn_type='EMI_CONVERSION'`; group by `c.product, CAST(t.emi_tenure_months AS BIGINT)`; aggregate count and `SUM(t.amount_inr)`."
+        },
+        {
+          "description": "Surcharge burden by merchant category and utility-like behavior",
+          "hint": "From `transactions t`, cast `t.surcharge_levied_inr` to DOUBLE; group by `t.mcc` and optionally join `merchants m` on `merchant_id` for `m.mcc_description`; aggregate `SUM(CAST(t.surcharge_levied_inr AS DOUBLE))`."
+        },
+        {
+          "description": "Top merchants by approved spend and transaction count",
+          "hint": "Join `transactions t` to `merchants m` on `t.merchant_id = m.merchant_id`; filter `t.response='APPROVED'`; group by `m.merchant_name, m.category`; order by `SUM(t.amount_inr) DESC` and `LIMIT 20`."
+        }
+      ]
+    },
+    {
+      "id": "user-segmentation",
+      "queries": [
+        {
+          "description": "Customer RFM segmentation using transaction history",
+          "hint": "Aggregate `transactions t` by `t.customer_id`; compute recency from `MAX(t.txn_ts)`, frequency as approved transaction count, monetary as `SUM(CASE WHEN t.response='APPROVED' THEN t.amount_inr ELSE 0 END)`; bucket with CASE statements."
+        },
+        {
+          "description": "Customer segments by card product mix and spend intensity",
+          "hint": "Join `customers cu`, `cards c`, and `transactions t`; aggregate by `cu.customer_id` to get count distinct `c.card_id`, count distinct `c.product`, approved spend, and average monthly spend."
+        },
+        {
+          "description": "Inactive and dormant customer identification",
+          "hint": "Find customers/cards with no recent transactions using `MAX(t.txn_ts)` by `customer_id` or `card_id`; combine with `cards.status` and `propensity_events` where `event_type='DORMANCY_ONSET'`."
+        },
+        {
+          "description": "Segment performance by income band, CIBIL band, and employment type",
+          "hint": "Join `customers cu` to `transactions t` and/or `statements s`; group by `cu.monthly_income_band, cu.cibil_band, cu.employment_type`; compute spend, approval rate, revolve rate, and utilization."
+        },
+        {
+          "description": "UPI-linked versus non-UPI-linked card behavior",
+          "hint": "Join `cards c` to `transactions t`; group by `c.upi_linked_flag`; compare `SUM(CASE WHEN t.channel='UPI' THEN t.amount_inr ELSE 0 END)`, total spend, and active card rates."
+        },
+        {
+          "description": "Rewards plan segment comparison",
+          "hint": "Join `cards c` to `transactions t`; group by `c.rewards_subscription_plan`; compare average spend, contactless share, travel/international share, and statement revolve behavior via optional join to `statements s`."
+        }
+      ]
+    },
+    {
+      "id": "cohort-retention",
+      "queries": [
+        {
+          "description": "Card vintage cohort retention by issue month",
+          "hint": "Use `cards c` as cohort anchor with `date_trunc('month', c.issue_date)`; join to `transactions t` and count cards with approved transactions in each months-since-issue bucket."
+        },
+        {
+          "description": "Customer repeat purchase behavior after first approved transaction",
+          "hint": "Find first approved `txn_ts` per `customer_id` from `transactions`; self-join or use window functions to measure time to second approved transaction and repeat rates by month."
+        },
+        {
+          "description": "Campaign conversion to first use lag",
+          "hint": "From `campaign_history ch`, filter rows with `ch.outcome='CONVERTED'` or non-null `first_use_ts`; compute `datediff('day', ch.fulfilled_ts, ch.first_use_ts)` and summarize by `ch.channel` or `offer_id`."
+        },
+        {
+          "description": "Dormancy reactivation rate after propensity signals",
+          "hint": "Use `propensity_events pe` filtered to `event_type='DORMANCY_ONSET'`; join future `transactions t` on `customer_id` or `card_id` with `t.txn_ts > pe.event_ts`; calculate share with a subsequent approved transaction within 30/60/90 days."
+        },
+        {
+          "description": "Upgrade cohort behavior before and after card upgrade",
+          "hint": "Use `card_lifecycle_events cle` where `event_type='UPGRADED_TO'`; compare approved transaction spend in pre/post 30- or 90-day windows around `cle.event_ts` using `transactions t` joined on `card_id` or `linked_card_id`."
+        },
+        {
+          "description": "Statement revolve persistence across cycles",
+          "hint": "From `statements s`, order by `s.card_id, s.cycle_end`; use window functions like `lag(revolve_flag)` to measure consecutive revolve sequences and retention into future delinquency buckets."
+        }
+      ]
+    },
+    {
+      "id": "geographic",
+      "queries": [
+        {
+          "description": "Approved spend and transaction count by transaction city and country",
+          "hint": "Group `transactions t` by `t.txn_city, t.txn_country`; filter or split by `t.response='APPROVED'`; aggregate spend and counts."
+        },
+        {
+          "description": "Customer residence geography versus transaction geography comparison",
+          "hint": "Join `transactions t` to `customers cu` on `t.customer_id = cu.customer_id`; compare `cu.city/cu.state` against `t.txn_city/t.txn_country`; group by customer and transaction regions."
+        },
+        {
+          "description": "Merchant geography performance by category and risk tier",
+          "hint": "Join `transactions t` to `merchants m` on `t.merchant_id = m.merchant_id`; group by `m.city, m.state, m.country, m.category, m.risk_tier`; aggregate approved spend and decline rate."
+        },
+        {
+          "description": "International corridor analysis by currency and country",
+          "hint": "From `transactions t`, filter `t.is_intl_flag = true`; group by `t.txn_country, t.currency, t.channel`; aggregate `SUM(t.amount_inr)`, `SUM(t.fx_amount)`, and `SUM(t.forex_markup_paid_inr)`."
+        },
+        {
+          "description": "Home branch city distribution of high-value customers",
+          "hint": "Join `customers cu` to `transactions t` or `statements s`; define high-value using approved spend or closing balance thresholds; group by `cu.home_branch_city`."
+        }
+      ]
+    },
+    {
+      "id": "data-quality",
+      "queries": [
+        {
+          "description": "NULL rates for all key fields",
+          "hint": "COUNT(*) - COUNT(col) for each column"
+        },
+        {
+          "description": "Daily volume anomaly detection",
+          "hint": "COUNT(*) GROUP BY date, look for drops"
+        },
+        {
+          "description": "Duplicate record check",
+          "hint": "COUNT(*) vs COUNT(DISTINCT id)"
+        },
+        {
+          "description": "Value range validation",
+          "hint": "MIN/MAX/AVG for numeric columns, check for outliers"
+        },
+        {
+          "description": "Referential integrity across core joins",
+          "hint": "Left join `transactions.card_id` to `cards.card_id`, `transactions.customer_id` to `customers.customer_id`, `transactions.merchant_id` to `merchants.merchant_id`; count unmatched rows."
+        },
+        {
+          "description": "Consistency checks for international and EMI fields",
+          "hint": "Validate rows where `is_intl_flag=true` but `currency='INR'` or missing `forex_markup_paid_inr`/`fx_amount`; validate `emi_converted_flag=true` with null `emi_tenure_months`."
+        }
+      ]
+    }
+  ],
+  "multiAgentPrompt": "daily-metrics|1| — Daily transaction volume, approved volume, and approved spend trend\ndaily-metrics|2| — Monthly spend and transaction trend by channel\ndaily-metrics|3| — International vs domestic trend over time\ndaily-metrics|4| — Statement cycle trend for billed spend, payments, revolve rate, and utilization\ndaily-metrics|5| — Campaign delivery and conversion trend by month\ndaily-metrics|6| — Card issuance, activation, closure, and upgrade event trend\nrev-opt|1| — Spend and approval breakdown by card product and tier\nrev-opt|2| — Forex markup revenue by product, network, and international channel\nrev-opt|3| — Fee and interest revenue by delinquency and revolve behavior\nrev-opt|4| — EMI conversion economics by tenure and product\nrev-opt|5| — Surcharge burden by merchant category and utility-like behavior\nrev-opt|6| — Top merchants by approved spend and transaction count\nuser-segmentation|1| — Customer RFM segmentation using transaction history\nuser-segmentation|2| — Customer segments by card product mix and spend intensity\nuser-segmentation|3| — Inactive and dormant customer identification\nuser-segmentation|4| — Segment performance by income band, CIBIL band, and employment type\nuser-segmentation|5| — UPI-linked versus non-UPI-linked card behavior\nuser-segmentation|6| — Rewards plan segment comparison\ncohort-retention|1| — Card vintage cohort retention by issue month\ncohort-retention|2| — Customer repeat purchase behavior after first approved transaction\ncohort-retention|3| — Campaign conversion to first use lag\ncohort-retention|4| — Dormancy reactivation rate after propensity signals\ncohort-retention|5| — Upgrade cohort behavior before and after card upgrade\ncohort-retention|6| — Statement revolve persistence across cycles\ngeographic|1| — Approved spend and transaction count by transaction city and country\ngeographic|2| — Customer residence geography versus transaction geography comparison\ngeographic|3| — Merchant geography performance by category and risk tier\ngeographic|4| — International corridor analysis by currency and country\ngeographic|5| — Home branch city distribution of high-value customers\ndata-quality|1| — NULL rates for all key fields\ndata-quality|2| — Daily volume anomaly detection\ndata-quality|3| — Duplicate record check\ndata-quality|4| — Value range validation\ndata-quality|5| — Referential integrity across core joins\ndata-quality|6| — Consistency checks for international and EMI fields",
+  "queryDescriptions": {
+    "daily-metrics": [
+      "Daily transaction volume, approved volume, and approved spend trend",
+      "Monthly spend and transaction trend by channel",
+      "International vs domestic trend over time",
+      "Statement cycle trend for billed spend, payments, revolve rate, and utilization",
+      "Campaign delivery and conversion trend by month",
+      "Card issuance, activation, closure, and upgrade event trend"
+    ],
+    "rev-opt": [
+      "Spend and approval breakdown by card product and tier",
+      "Forex markup revenue by product, network, and international channel",
+      "Fee and interest revenue by delinquency and revolve behavior",
+      "EMI conversion economics by tenure and product",
+      "Surcharge burden by merchant category and utility-like behavior",
+      "Top merchants by approved spend and transaction count"
+    ],
+    "user-segmentation": [
+      "Customer RFM segmentation using transaction history",
+      "Customer segments by card product mix and spend intensity",
+      "Inactive and dormant customer identification",
+      "Segment performance by income band, CIBIL band, and employment type",
+      "UPI-linked versus non-UPI-linked card behavior",
+      "Rewards plan segment comparison"
+    ],
+    "cohort-retention": [
+      "Card vintage cohort retention by issue month",
+      "Customer repeat purchase behavior after first approved transaction",
+      "Campaign conversion to first use lag",
+      "Dormancy reactivation rate after propensity signals",
+      "Upgrade cohort behavior before and after card upgrade",
+      "Statement revolve persistence across cycles"
+    ],
+    "geographic": [
+      "Approved spend and transaction count by transaction city and country",
+      "Customer residence geography versus transaction geography comparison",
+      "Merchant geography performance by category and risk tier",
+      "International corridor analysis by currency and country",
+      "Home branch city distribution of high-value customers"
+    ],
+    "data-quality": [
+      "NULL rates for all key fields",
+      "Daily volume anomaly detection",
+      "Duplicate record check",
+      "Value range validation",
+      "Referential integrity across core joins",
+      "Consistency checks for international and EMI fields"
+    ]
+  },
+  "annotatedSchemaContext": "DATABASE ENGINE: DuckDB\n\nPRIMARY TABLE: transactions (~1,351,919 rows)\n  - txn_id                 VARCHAR                     -- unique transaction identifier\n  - card_id                VARCHAR                     -- card identifier; joins to cards.card_id\n  - txn_ts                 TIMESTAMP WITH TIME ZONE    -- transaction timestamp; preserve timezone in filtering/truncation\n  - amount_inr             DOUBLE                      -- transaction amount in INR\n  - currency               VARCHAR                     -- original transaction currency code (AED, GBP, INR, SGD, THB, USD)\n  - fx_amount              DOUBLE                      -- original foreign-currency amount; mostly null for INR transactions\n  - merchant_id            VARCHAR                     -- merchant identifier; joins to merchants.merchant_id\n  - mcc                    BIGINT                      -- merchant category code; categorical, not arithmetic\n  - channel                VARCHAR                     -- transaction channel (ATM_CASH_AD, CONTACTLESS, ECOM, INTL_ECOM, INTL_POS, POS, UPI)\n  - pos_entry_mode         VARCHAR                     -- POS entry mode (CHIP, SWIPE, TAP); high nulls for non-POS/ecom\n  - auth_method            VARCHAR                     -- auth method (OTP_3DS, PIN, TAP_NO_PIN)\n  - otp_attempts           DOUBLE                      -- OTP attempts; logically integer-like (1.0, 2.0, 3.0)\n  - token_used_flag        BOOLEAN                     -- whether tokenization was used; may be null\n  - txn_city               VARCHAR                     -- transaction city\n  - txn_country            VARCHAR                     -- transaction country code (AE, FR, GB, ID, IN, MY, SG, TH, US)\n  - device_id              VARCHAR                     -- device identifier for digital transactions; often null\n  - ip_address             VARCHAR                     -- IP address string for digital session analysis\n  - txn_type               VARCHAR                     -- transaction type (AUTOPAY, EMI_CONVERSION, FEE, PURCHASE, REFUND, REVERSAL)\n  - response               VARCHAR                     -- auth outcome (APPROVED, DECLINED)\n  - decline_reason         VARCHAR                     -- decline reason for declined rows (3DS_FAILED, EXPIRED_CARD, INCORRECT_CVV, INSUFFICIENT_LIMIT, ISSUER_DECLINE)\n  - emi_converted_flag     BOOLEAN                     -- EMI conversion flag (false, true)\n  - emi_tenure_months      DOUBLE                      -- EMI tenure months; discrete-like (3.0, 6.0, 9.0, 12.0, 18.0, 24.0)\n  - is_intl_flag           BOOLEAN                     -- international transaction flag (false, true)\n  - forex_markup_paid_inr  DOUBLE                      -- forex markup paid in INR; mostly null\n  - surcharge_levied_inr   VARCHAR                     -- surcharge amount in INR stored as VARCHAR; cast before aggregation\n  - original_txn_id        VARCHAR                     -- original transaction reference for refunds/reversals\n  - customer_id            VARCHAR                     -- customer identifier; joins to customers.customer_id\n\nTABLE: statements (~95,825 rows)\n  - statement_id           VARCHAR    -- statement cycle identifier\n  - card_id                VARCHAR    -- card identifier; joins to cards.card_id\n  - cycle_start            DATE       -- billing cycle start date\n  - cycle_end              DATE       -- billing cycle end date\n  - due_date               DATE       -- payment due date\n  - total_spend_inr        DOUBLE     -- billed spend in statement cycle\n  - payments_received_inr  DOUBLE     -- payments received against statement\n  - min_due_inr            DOUBLE     -- minimum due amount\n  - revolve_flag           BOOLEAN    -- revolver flag (false, true)\n  - interest_charged_inr   DOUBLE     -- statement interest charged\n  - fees_inr               DOUBLE     -- statement fees\n  - closing_balance_inr    DOUBLE     -- closing balance at cycle end\n  - utilization_pct        DOUBLE     -- utilization percentage; likely on 0-100 scale\n  - dpd_bucket             VARCHAR    -- delinquency bucket (CURRENT, 1-29, 30-59, 60-89, 90+); use custom sort order\n  - customer_id            VARCHAR    -- customer identifier\n\nTABLE: campaign_history (~53,227 rows)\n  - campaign_id            VARCHAR                     -- campaign/contact identifier\n  - offer_id               VARCHAR                     -- offer identifier; joins to offers_catalog.offer_id\n  - customer_id            VARCHAR                     -- customer identifier\n  - card_id                VARCHAR                     -- targeted card identifier\n  - channel                VARCHAR                     -- contact channel (APP_PUSH, EMAIL, IVR, RM_CALL, SMS)\n  - contact_cost_inr       DOUBLE                      -- contact execution cost in INR\n  - created_ts             TIMESTAMP WITH TIME ZONE    -- campaign record creation timestamp\n  - sent_ts                TIMESTAMP WITH TIME ZONE    -- send timestamp\n  - delivered_ts           TIMESTAMP WITH TIME ZONE    -- delivery timestamp; may be null\n  - opened_ts              TIMESTAMP WITH TIME ZONE    -- open timestamp; qualify because service_tickets also has opened_ts\n  - clicked_ts             TIMESTAMP WITH TIME ZONE    -- click timestamp; mostly null\n  - outcome                VARCHAR                     -- outcome (CLICKED_NO_CONVERT, CONVERTED, IGNORED, OPTED_OUT)\n  - outcome_ts             TIMESTAMP WITH TIME ZONE    -- outcome timestamp\n  - application_ts         TIMESTAMP WITH TIME ZONE    -- application timestamp; mostly null\n  - approved_ts            TIMESTAMP WITH TIME ZONE    -- approval timestamp; mostly null\n  - fulfilled_ts           TIMESTAMP WITH TIME ZONE    -- fulfillment timestamp; mostly null\n  - first_use_ts           TIMESTAMP WITH TIME ZONE    -- first use after fulfillment; mostly null\n  - conversion_value_inr   DOUBLE                      -- value from conversion; mostly null except converted cases\n\nTABLE: card_lifecycle_events (~12,365 rows)\n  - event_id               VARCHAR                     -- lifecycle event identifier\n  - card_id                VARCHAR                     -- card identifier\n  - event_ts               TIMESTAMP WITH TIME ZONE    -- event timestamp\n  - event_type             VARCHAR                     -- lifecycle type (ACTIVATED, CLOSED, ISSUED, LIMIT_INCREASED, REWARDS_PLAN_CHANGED, UPGRADED_TO)\n  - old_value              VARCHAR                     -- previous value; interpretation depends on event_type\n  - new_value              VARCHAR                     -- new value; interpretation depends on event_type\n  - linked_card_id         VARCHAR                     -- related card id for upgrades/replacements\n  - reason                 VARCHAR                     -- encoded event reason\n  - initiated_by           VARCHAR                     -- initiator (CUSTOMER_APP, CUSTOMER_NETBANKING, SYSTEM)\n  - customer_id            VARCHAR                     -- customer identifier\n\nTABLE: propensity_events (~10,356 rows)\n  - event_id               VARCHAR                     -- propensity event identifier\n  - customer_id            VARCHAR                     -- customer identifier\n  - card_id                VARCHAR                     -- card identifier\n  - event_ts               TIMESTAMP WITH TIME ZONE    -- event timestamp\n  - event_type             VARCHAR                     -- propensity event type (DORMANCY_ONSET, EMI_ELIGIBLE_BIGTICKET, FIRST_INTL_TXN, LIFE_EVENT_WEDDING_PATTERN, MILESTONE_SPEND, RENT_PAYMENT_ONSET, SALARY_JUMP_DETECTED, SPEND_TRAJECTORY_CROSS, TRAVEL_BOOKING_CLUSTER, UTILITY_SURCHARGE_HIT)\n  - supporting_txn_ids     VARCHAR                     -- pipe-delimited supporting transaction ids; split before joining to transactions\n  - detail_json            VARCHAR                     -- JSON payload stored as text; parse with JSON functions\n\nTABLE: product_holdings (~5,666 rows)\n  - holding_id             VARCHAR    -- product holding identifier\n  - customer_id            VARCHAR    -- customer identifier\n  - product_type           VARCHAR    -- held product type (DEMAT, FD, INSURANCE_HEALTH, INSURANCE_LIFE, PERSONAL_LOAN, RD, SALARY_ACCT, SAVINGS)\n  - opened_date            DATE       -- product opening date\n  - value_band             VARCHAR    -- product value band (<50K, 50K-1L, 1L-2L, 2L-5L, 5L-10L); ordered text\n  - status                 VARCHAR    -- product holding status (ACTIVE, CLOSED)\n  - source_campaign_id     VARCHAR    -- originating campaign id; joins to campaign_history.campaign_id\n\nTABLE: cards (~5,139 rows)\n  - card_id                         VARCHAR    -- card identifier\n  - customer_id                     VARCHAR    -- customer identifier\n  - previous_card_id                VARCHAR    -- predecessor card id for replacement/upgrade chains\n  - masked_pan                      VARCHAR    -- masked PAN; not guaranteed globally unique over time\n  - network                         VARCHAR    -- network (MASTERCARD, RUPAY, VISA)\n  - product                         VARCHAR    -- card product (BankBazaar FinBooster, ELITE+, Klick, MARQUEE, POP-CLUB, RESERV, Select, YES ELITE, YES PREMIA)\n  - tier                            VARCHAR    -- tier (Co-brand-LTF, Digital, Entry-premium, Legacy, Mid-premium, Premium-travel, Super-premium, UPI-cashback)\n  - annual_fee                      BIGINT     -- annual fee amount\n  - fee_waived_flag                 BOOLEAN    -- annual fee waived flag\n  - credit_limit_current            BIGINT     -- current credit limit\n  - issue_date                      DATE       -- issue date\n  - rewards_subscription_plan       VARCHAR    -- rewards plan label (3X, 5X, NONE); treat as encoded category\n  - upi_linked_flag                 BOOLEAN    -- card linked for UPI\n  - status                          VARCHAR    -- card status (ACTIVE, CLOSED, DORMANT)\n  - legacy_migration_pending_flag   BOOLEAN    -- pending migration from legacy portfolio\n  - closure_reason                  VARCHAR    -- closure reason (BT_TO_COMPETITOR, FEE, INACTIVITY, SERVICE_ISSUE)\n\nTABLE: customers (~4,000 rows)\n  - customer_id                     VARCHAR    -- customer identifier\n  - full_name                       VARCHAR    -- synthetic full name\n  - gender                          VARCHAR    -- gender (F, M)\n  - dob                             DATE       -- date of birth\n  - age                             BIGINT     -- age in years; snapshot-style derived field\n  - city                            VARCHAR    -- customer residence city; qualify because merchants also has city\n  - state                           VARCHAR    -- customer residence state abbreviation\n  - pincode                         BIGINT     -- postal code; categorical geography, not arithmetic\n  - masked_mobile                   VARCHAR    -- masked mobile number\n  - email                           VARCHAR    -- email address; lowercase if doing exact text comparisons\n  - relationship_since              DATE       -- relationship start date\n  - kyc_status                      VARCHAR    -- KYC status (RE_KYC_DUE, VERIFIED)\n  - home_branch_city                VARCHAR    -- home branch city\n  - salary_account_with_yes_flag    BOOLEAN    -- salary account with Credit Bank flag\n  - cibil_band                      VARCHAR    -- credit score band (650-699, 700-749, 750-799, 800+); ordered text\n  - employment_type                 VARCHAR    -- employment type (Professional, Retired, Salaried, Self-employed)\n  - monthly_income_band             VARCHAR    -- monthly income band (25K-50K, 50K-1L, 1L-2L, 2L-4L, 4L+); ordered text\n  - tenure_months                   BIGINT     -- relationship tenure in months\n  - rm_assigned_flag                BOOLEAN    -- relationship manager assigned flag\n  - email_opt_in_flag               BOOLEAN    -- email marketing consent\n  - sms_opt_in_flag                 BOOLEAN    -- SMS marketing consent\n  - push_opt_in_flag                BOOLEAN    -- push marketing consent\n  - dnd_flag                        BOOLEAN    -- do-not-disturb suppression flag\n\nTABLE: service_tickets (~2,407 rows)\n  - ticket_id               VARCHAR                     -- service ticket identifier\n  - customer_id             VARCHAR                     -- customer identifier\n  - opened_ts               TIMESTAMP WITH TIME ZONE    -- ticket open timestamp; qualify because campaign_history also has opened_ts\n  - channel                 VARCHAR                     -- service channel (APP, BRANCH, EMAIL, PHONEBANKING, SOCIAL)\n  - category                VARCHAR                     -- ticket category (CARD_DELIVERY, FEE_DISPUTE, OFFER_SPAM_COMPLAINT, OTHER, REWARDS_ISSUE, SURCHARGE_COMPLAINT)\n  - linked_campaign_id      VARCHAR                     -- linked campaign id when applicable\n  - resolved_ts             TIMESTAMP WITH TIME ZONE    -- resolution timestamp\n  - csat_1_5                DOUBLE                      -- CSAT score 1-5 stored as DOUBLE\n\nTABLE: merchants (~2,001 rows)\n  - merchant_id             VARCHAR    -- merchant identifier\n  - merchant_name           VARCHAR    -- merchant display name\n  - mcc                     BIGINT     -- merchant category code\n  - mcc_description         VARCHAR    -- MCC description\n  - category                VARCHAR    -- merchant category label\n  - city                    VARCHAR    -- merchant city\n  - state                   VARCHAR    -- merchant state\n  - country                 VARCHAR    -- merchant country code (AE, FR, GB, ID, IN, MY, SG, TH, US)\n  - channel                 VARCHAR    -- merchant channel (ECOM, MIXED, POS, UPI_QR)\n  - risk_tier               VARCHAR    -- merchant risk tier (HIGH, LOW, MEDIUM)\n  - onboarded_since         DATE       -- merchant onboarding date\n\nTABLE: data_dictionary (~164 rows)\n  - table                   VARCHAR    -- documented table name; may need quoting because `table` can be reserved\n  - column                  VARCHAR    -- documented column name; may need quoting because `column` can be reserved\n  - dtype                   VARCHAR    -- documented dtype (bool, datetime64[ns], datetime64[us], float64, int64, object, str)\n  - description             VARCHAR    -- column description text\n  - valid_values            VARCHAR    -- allowed values; may be pipe-delimited\n  - joins_to                VARCHAR    -- suggested join target as text like `cards.card_id`\n\nTABLE: calendar_events (~28 rows)\n  - event_name              VARCHAR    -- calendar/seasonal event name\n  - start_date              VARCHAR    -- event start date as YYYY-MM-DD string; cast to DATE\n  - end_date                VARCHAR    -- event end date as YYYY-MM-DD string; cast to DATE\n  - overall_multiplier      DOUBLE     -- demand/activity multiplier\n  - category_effects        VARCHAR    -- pipe-delimited key:value category multipliers; parse when needed\n  - note                    VARCHAR    -- narrative note about event effects\n\nTABLE: offers_catalog (~25 rows)\n  - offer_id                VARCHAR    -- offer identifier\n  - offer_name              VARCHAR    -- offer name\n  - offer_type              VARCHAR    -- offer type (CARD_UPGRADE, CROSS_SELL_CARD, EMI_CONVERSION, FD, FOREX_REPOSITIONING, INSURANCE_ATTACH, LIMIT_ENHANCEMENT, PERSONAL_LOAN_PREAPPROVED, REWARDS_SUBSCRIPTION_UPSELL, WINBACK)\n  - source_product          VARCHAR    -- source product(s); may be pipe-delimited multi-product values\n  - target_product          VARCHAR    -- target product (ELITE+, Klick, MARQUEE, POP-CLUB, RESERV, Select)\n  - eligibility_rule_text   VARCHAR    -- human-readable eligibility rule\n  - eligibility_rule_json   VARCHAR    -- JSON eligibility rule stored as text\n  - expected_value_inr      BIGINT     -- expected offer value in INR\n  - validity_window         VARCHAR    -- free-form period label (FY25-FY26, Jan-Mar, Jan-Mar heavy, Sep-Nov, always-on, post-Jan-2026)\n\nTABLE: hero_case_index (~12 rows)\n  - hero_id                 VARCHAR    -- curated hero case id (Y1-Y12)\n  - title                   VARCHAR    -- hero case title\n  - customer_id             VARCHAR    -- customer identifier\n  - card_id                 VARCHAR    -- card identifier\n  - campaign_ids            VARCHAR    -- pipe-delimited campaign ids; split before joining to campaign_history\n  - key_txn_ids             VARCHAR    -- pipe-delimited transaction ids; split before joining to transactions\n  - window_start            DATE       -- hero case analysis window start\n  - window_end              DATE       -- hero case analysis window end\n  - expected_outcome        VARCHAR    -- expected business storyline/outcome\n  - narrative               VARCHAR    -- narrative explanation\n\nDATA CONTEXT:\n- This is a credit-card growth analytics dataset centered on transaction behavior, statement outcomes, lifecycle changes, propensity triggers, and campaign performance.\n- `transactions` is the operational fact table for spend, approvals/declines, EMI, UPI, forex, surcharge, and merchant behavior.\n- `statements` supports repayment, utilization, revolve, fees, interest, and delinquency analysis at billing-cycle grain.\n- `campaign_history` plus `offers_catalog` supports outreach funnel, conversion, cost, and ROI analysis.\n- `cards` and `customers` provide product, credit-limit, consent, and demographic segmentation.\n- `card_lifecycle_events` and `propensity_events` capture upgrade, activation, dormancy, travel, big-ticket, salary-jump, and surcharge-related triggers.\n- Geographic analysis is available via transaction city/country, customer city/state, merchant city/state/country, and home branch city.\n- Several columns are sparse, encoded, or multi-valued; use careful filters, casting, and parsing before analysis.\n\nENTITY METADATA:\n  Primary entity identifier: customer_id — use this column for SELECT DISTINCT, COUNT(DISTINCT), segment definitions, cohort analysis, and entity-level joins.\n  Primary date column: txn_ts — use this column for time-series analysis, DATE_TRUNC, trend charts, and period filtering. May be stored as VARCHAR — cast with ::TIMESTAMP or strptime() as needed.",
+  "suggestedPrompts": [
+    "How have approved transaction count and approved `amount_inr` trended month over month by `channel`?",
+    "Which `cards.product` and `cards.tier` generate the highest approved spend, and how do their approval rates compare?",
+    "What is the conversion funnel from `sent_ts` to `opened_ts`, `clicked_ts`, and `outcome='CONVERTED'` by `campaign_history.channel` and `offers_catalog.offer_type`?",
+    "Do customers with high `utilization_pct` and `revolve_flag=true` show higher `interest_charged_inr` and worse `dpd_bucket` outcomes?",
+    "Which customers or cards showed a `DORMANCY_ONSET` propensity event and then reactivated within 30 or 60 days with an approved transaction?",
+    "How much forex markup and surcharge revenue comes from international transactions, and which `txn_country`, `currency`, and `cards.product` contribute the most?"
+  ],
+  "welcomeSubtitle": "Ask about card spend, campaigns, customer segments, statements, and growth drivers."
+}

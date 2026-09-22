@@ -1,0 +1,312 @@
+{
+  "numbers": [
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4",
+      "title": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4",
+      "contentLength": 6856
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f",
+      "title": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f",
+      "contentLength": 6941
+    },
+    {
+      "url": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf",
+      "title": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf",
+      "contentLength": 13870
+    },
+    {
+      "url": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf",
+      "title": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf",
+      "contentLength": 13855
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf",
+      "title": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf",
+      "contentLength": 13861
+    },
+    {
+      "url": "https://www.aavas.in/uploads/pdf/finaloutcome25042024-1252982600.pdf",
+      "title": "https://www.aavas.in/uploads/pdf/finaloutcome25042024-1252982600.pdf",
+      "contentLength": 6935
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf",
+      "title": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf",
+      "contentLength": 6653
+    },
+    {
+      "url": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf",
+      "title": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf",
+      "contentLength": 6845
+    },
+    {
+      "url": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf",
+      "title": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf",
+      "contentLength": 6779
+    },
+    {
+      "url": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf",
+      "title": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf",
+      "contentLength": 4859
+    },
+    {
+      "url": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf",
+      "title": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf",
+      "contentLength": 6791
+    },
+    {
+      "url": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf",
+      "title": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf",
+      "contentLength": 5940
+    }
+  ],
+  "strategy": [
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4",
+      "title": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4",
+      "contentLength": 7908
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f",
+      "title": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f",
+      "contentLength": 7920
+    },
+    {
+      "url": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf",
+      "title": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf",
+      "contentLength": 13844
+    },
+    {
+      "url": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf",
+      "title": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf",
+      "contentLength": 13944
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf",
+      "title": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf",
+      "contentLength": 10621
+    },
+    {
+      "url": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf",
+      "title": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf",
+      "contentLength": 6782
+    },
+    {
+      "url": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf",
+      "title": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf",
+      "contentLength": 6908
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf",
+      "title": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf",
+      "contentLength": 4960
+    },
+    {
+      "url": "https://www.aavas.in/uploads/pdf/finaloutcome25042024-1252982600.pdf",
+      "title": "https://www.aavas.in/uploads/pdf/finaloutcome25042024-1252982600.pdf",
+      "contentLength": 6939
+    },
+    {
+      "url": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf",
+      "title": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf",
+      "contentLength": 6902
+    },
+    {
+      "url": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf",
+      "title": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf",
+      "contentLength": 6803
+    },
+    {
+      "url": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf",
+      "title": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf",
+      "contentLength": 6664
+    }
+  ],
+  "performance": [
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4",
+      "title": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4",
+      "contentLength": 9640
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f",
+      "title": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f",
+      "contentLength": 14546
+    },
+    {
+      "url": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf",
+      "title": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf",
+      "contentLength": 3937
+    },
+    {
+      "url": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf",
+      "title": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf",
+      "contentLength": 11858
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf",
+      "title": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf",
+      "contentLength": 5912
+    },
+    {
+      "url": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf",
+      "title": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf",
+      "contentLength": 2962
+    },
+    {
+      "url": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf",
+      "title": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf",
+      "contentLength": 3864
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf",
+      "title": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf",
+      "contentLength": 14568
+    },
+    {
+      "url": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf",
+      "title": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf",
+      "contentLength": 977
+    },
+    {
+      "url": "https://www.aavas.in/uploads/pdf/finaloutcome25042024-1252982600.pdf",
+      "title": "https://www.aavas.in/uploads/pdf/finaloutcome25042024-1252982600.pdf",
+      "contentLength": 1989
+    },
+    {
+      "url": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf",
+      "title": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf",
+      "contentLength": 15656
+    },
+    {
+      "url": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf",
+      "title": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf",
+      "contentLength": 14458
+    }
+  ],
+  "risk_outlook": [
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4",
+      "title": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4",
+      "contentLength": 8806
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f",
+      "title": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f",
+      "contentLength": 8821
+    },
+    {
+      "url": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf",
+      "title": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf",
+      "contentLength": 11919
+    },
+    {
+      "url": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf",
+      "title": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf",
+      "contentLength": 15853
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf",
+      "title": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf",
+      "contentLength": 15560
+    },
+    {
+      "url": "https://www.aavas.in/uploads/pdf/finaloutcome25042024-1252982600.pdf",
+      "title": "https://www.aavas.in/uploads/pdf/finaloutcome25042024-1252982600.pdf",
+      "contentLength": 7308
+    },
+    {
+      "url": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf",
+      "title": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf",
+      "contentLength": 1957
+    },
+    {
+      "url": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf",
+      "title": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf",
+      "contentLength": 8749
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf",
+      "title": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf",
+      "contentLength": 1978
+    },
+    {
+      "url": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf",
+      "title": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf",
+      "contentLength": 7845
+    },
+    {
+      "url": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf",
+      "title": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf",
+      "contentLength": 2942
+    },
+    {
+      "url": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf",
+      "title": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf",
+      "contentLength": 7837
+    }
+  ],
+  "mix_and_geography": [
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4",
+      "title": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=334ee62a2114200a29a73bdaae02396324b914268d001b7406a7e73e6a0ba7b4",
+      "contentLength": 7773
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f",
+      "title": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T090724Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=424bb3fbbef2d3b1ae3a20fc74f60f666495521b907a803f7a11d14060f2550f",
+      "contentLength": 6846
+    },
+    {
+      "url": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf",
+      "title": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf",
+      "contentLength": 13903
+    },
+    {
+      "url": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf",
+      "title": "https://homefirstindia.com/files/Annual%20Report%202023-24.pdf",
+      "contentLength": 13926
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf",
+      "title": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf",
+      "contentLength": 14565
+    },
+    {
+      "url": "https://www.aavas.in/uploads/pdf/finaloutcome25042024-1252982600.pdf",
+      "title": "https://www.aavas.in/uploads/pdf/finaloutcome25042024-1252982600.pdf",
+      "contentLength": 6919
+    },
+    {
+      "url": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf",
+      "title": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf",
+      "contentLength": 6887
+    },
+    {
+      "url": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf",
+      "title": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf",
+      "contentLength": 6814
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf",
+      "title": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf",
+      "contentLength": 1966
+    },
+    {
+      "url": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf",
+      "title": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf",
+      "contentLength": 6942
+    },
+    {
+      "url": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf",
+      "title": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf",
+      "contentLength": 6768
+    },
+    {
+      "url": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf",
+      "title": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf",
+      "contentLength": 6953
+    }
+  ]
+}

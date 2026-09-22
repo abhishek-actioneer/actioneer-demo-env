@@ -1,0 +1,13 @@
+[build]
+builder = "NIXPACKS"
+buildCommand = "pnpm install && pnpm rebuild better-sqlite3 && pnpm build"
+
+[deploy]
+startCommand = "bash scripts/startup.sh"
+healthcheckPath = "/api/health"
+healthcheckTimeout = 1500
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
+
+[[volumes]]
+mountPath = "/app/data"

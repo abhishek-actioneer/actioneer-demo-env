@@ -1,0 +1,42 @@
+{
+  "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Result-for-quarter-and-year-ended-31st-March-2026.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T071225Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=7a0b3c2e10d3a7d0fb054edb31e369e80e116ce2d1b309cbfa34829a39faf297",
+  "title": "Audited Financial Result for quarter and year ended 31st March 2026",
+  "type": "quarterly_results",
+  "period": "FY26",
+  "reason": "This provides the most recent audited full-year financials for the year ended March 31, 2026.",
+  "runId": "trun_93dd22543b05411a99ad35475f255ad8",
+  "status": "completed",
+  "durationMs": 135814,
+  "citations": [
+    {
+      "field": "content",
+      "citations": [
+        {
+          "title": "Aptus Value Housing Finance FY26 results news",
+          "url": "http://scanx.trade/stock-market-news/companies/aptus-value-housing-finance-board-approves-fy26-results-declares-second-interim-dividend-of-2-50-per-share/39638077",
+          "excerpts": [
+            "11 hours ago · Aptus Value Housing Finance India Limited reported strong Q4FY26 and FY26 results with AUM growing 21% to ₹13,107 Cr and consolidated PAT rising 26% YoY to",
+            "11 hours ago — AUM grew 21% to ₹13,107 Cr in Q4 FY26 , driven by highest ever quarterly disbursements of ₹1,242 Cr, reflecting growth of 21% QoQ and 17% YoY."
+          ]
+        },
+        {
+          "title": "APTUS Value Press Release Q4 FY26",
+          "url": "http://nsearchives.nseindia.com/corporate/APTUS_06052026205815_Aptus_Value_Press_release__Q4_FY26_sd.pdf",
+          "excerpts": [
+            "AUM as of Mar 6 was at 13,107 Cr, growth of 21% Y-o-Y.",
+            "Disbursements in Q4 FY26 were at 1,242 Cr, growth of 17% Y-o-Y.",
+            "Gross NPA (%)\n1.5%",
+            "Net NPA (%)\n1.2%",
+            "Net Profit for Q4 FY26 was at 261 Cr, growth of 26% Y-o-Y. FY26 Net Profit was at 943\nCr, growth of 26% Y-o-Y.",
+            "The RoA/RoE for Q4 FY26 was at 8.2%/21.2%. The RoA/RoE for FY26 was at 7.9%/20.1%,\namongst the best in the industry.",
+            "We expanded our presence in the newer states of Maharashtra and Odisha and strengthened\nour presence in existing states, leading to a branch network of 339.",
+            "Disbursements in Q4 FY26 were at 1,242 Cr, growth of 17% Y-o-Y. FY26 disbursements were at 4,009 Cr, growth of 11% Y-o-Y. The total Income for FY26 was at 2,246 "
+          ]
+        }
+      ],
+      "reasoning": "The report correctly concludes that no financial metrics or strategic moves could be extracted for Vastu Housing Finance. This is supported by the provided citations, which exclusively contain financial data for a different company, Aptus Value Housing Finance (sourced from the Aptus Value Housing Finance FY26 results news and the APTUS Value Press Release Q4 FY26). Because the citations lack any information regarding Vastu Housing Finance, the report's assertion that the requested data could not be accessed within the provided research context is entirely accurate and justified.",
+      "confidence": "high"
+    }
+  ],
+  "rawMarkdown": "\n# Financial Data Extraction: Vastu Housing Finance FY26\n\n## Executive Summary\nThe requested financial document (Audited Financial Result for quarter and year ended 31st March 2026) could not be accessed or processed within the provided research context. Consequently, no financial metrics, strategic moves, or management discussion highlights could be extracted from the specified URL. \n\n## Financial Metrics Overview\nDue to the lack of accessible document text, all requested financial and operational metrics yielded null results.\n\n| Metric | Value | Document Quote |\n|---|---|---|\n| **AUM (INR Cr)** | null | null |\n| **AUM YoY Growth** | null | null |\n| **Disbursements (INR Cr)** | null | null |\n| **Net Worth (INR Cr)** | null | null |\n| **Total Income (INR Cr)** | null | null |\n| **Net Interest Income (INR Cr)** | null | null |\n| **Profit After Tax (INR Cr)** | null | null |\n| **PAT YoY Growth** | null | null |\n| **Gross NPA %** | null | null |\n| **Net NPA %** | null | null |\n| **Net Interest Margin %** | null | null |\n| **Return on Assets %** | null | null |\n| **Return on Equity %** | null | null |\n| **CRAR %** | null | null |\n| **Branches** | null | null |\n| **Employees** | null | null |\n| **Avg Ticket Size (INR Lakh)** | null | null |\n| **Customers** | null | null |\n| **Reporting Period** | null | null |\n\n## Strategic Moves & MDA Highlights\n\n### Strategic Initiatives\nNo recent strategic actions (such as capital raises, M&A, leadership changes, geographic expansion, regulatory actions, or new product launches) could be identified.\n\n### Management Discussion & Analysis\nNo Management Discussion & Analysis (MD&A) points or earnings-call narrative beats were available for summarization."
+}

@@ -1,0 +1,2065 @@
+{
+  "rootMetricId": "m-net-gmv-after-refunds",
+  "metrics": [
+    {
+      "id": "m-total-gmv",
+      "name": "Total GMV",
+      "description": "Total gross merchandise value across all orders.",
+      "type": "kpi",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(gmv_inr) AS value FROM orders",
+      "timeSeriesSql": "SELECT CAST(order_ts AS DATE) AS date, SUM(gmv_inr) AS value FROM orders GROUP BY 1 ORDER BY date",
+      "table": "orders",
+      "column": "gmv_inr",
+      "timeColumn": "order_ts",
+      "formula": "SUM(orders.gmv_inr)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "order_status",
+        "channel",
+        "device",
+        "payment_method",
+        "state"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-net-gmv-after-refunds",
+          "metricName": "Net GMV After Refunds",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-total-orders",
+      "name": "Total Orders",
+      "description": "Count of all orders placed regardless of final status.",
+      "type": "kpi",
+      "category": "Revenue",
+      "valueFormat": "integer",
+      "aggregation": "count",
+      "valueSql": "SELECT COUNT(*) AS value FROM orders",
+      "timeSeriesSql": "SELECT CAST(order_ts AS DATE) AS date, COUNT(*) AS value FROM orders GROUP BY 1 ORDER BY date",
+      "table": "orders",
+      "column": "order_id",
+      "timeColumn": "order_ts",
+      "formula": "COUNT(order_id)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "order_status",
+        "channel",
+        "device",
+        "browser",
+        "payment_method"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-gmv",
+          "metricName": "Total GMV",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-delivered-orders",
+      "name": "Delivered Orders",
+      "description": "Count of orders with delivered status.",
+      "type": "kpi",
+      "category": "Operations",
+      "valueFormat": "integer",
+      "aggregation": "count",
+      "valueSql": "SELECT COUNT(*) AS value FROM orders WHERE order_status = 'Delivered'",
+      "timeSeriesSql": "SELECT CAST(order_ts AS DATE) AS date, COUNT(*) AS value FROM orders WHERE order_status = 'Delivered' GROUP BY 1 ORDER BY date",
+      "table": "orders",
+      "column": "order_id",
+      "timeColumn": "order_ts",
+      "formula": "COUNT(order_id) WHERE order_status = 'Delivered'",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "device",
+        "payment_method",
+        "state",
+        "city"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-order-completion-rate",
+          "metricName": "Order Completion Rate",
+          "direction": "drives",
+          "type": "component"
+        },
+        {
+          "metricId": "m-return-rate",
+          "metricName": "Return Rate",
+          "direction": "drives",
+          "type": "component"
+        },
+        {
+          "metricId": "m-total-refund-amount",
+          "metricName": "Total Refund Amount",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-order-completion-rate",
+      "name": "Order Completion Rate",
+      "description": "Share of orders that were delivered.",
+      "type": "kpi",
+      "category": "Operations",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT CAST(COUNT(*) FILTER (WHERE order_status = 'Delivered') AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM orders",
+      "timeSeriesSql": "SELECT CAST(order_ts AS DATE) AS date, CAST(COUNT(*) FILTER (WHERE order_status = 'Delivered') AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM orders GROUP BY 1 ORDER BY date",
+      "table": "orders",
+      "column": "order_status",
+      "timeColumn": "order_ts",
+      "formula": "COUNT(Delivered orders) / COUNT(all orders)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "device",
+        "browser",
+        "payment_method",
+        "state"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-gmv",
+          "metricName": "Total GMV",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-cancelled-orders",
+      "name": "Cancelled Orders",
+      "description": "Count of orders cancelled before completion.",
+      "type": "kpi",
+      "category": "Operations",
+      "valueFormat": "integer",
+      "aggregation": "count",
+      "valueSql": "SELECT COUNT(*) AS value FROM orders WHERE order_status = 'Cancelled'",
+      "timeSeriesSql": "SELECT CAST(order_ts AS DATE) AS date, COUNT(*) AS value FROM orders WHERE order_status = 'Cancelled' GROUP BY 1 ORDER BY date",
+      "table": "orders",
+      "column": "order_id",
+      "timeColumn": "order_ts",
+      "formula": "COUNT(order_id) WHERE order_status = 'Cancelled'",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "device",
+        "payment_method",
+        "state",
+        "city"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-cancellation-rate",
+          "metricName": "Cancellation Rate",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-cancellation-rate",
+      "name": "Cancellation Rate",
+      "description": "Share of all orders that were cancelled.",
+      "type": "kpi",
+      "category": "Operations",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT CAST(COUNT(*) FILTER (WHERE order_status = 'Cancelled') AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM orders",
+      "timeSeriesSql": "SELECT CAST(order_ts AS DATE) AS date, CAST(COUNT(*) FILTER (WHERE order_status = 'Cancelled') AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM orders GROUP BY 1 ORDER BY date",
+      "table": "orders",
+      "column": "order_status",
+      "timeColumn": "order_ts",
+      "formula": "COUNT(Cancelled orders) / COUNT(all orders)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "device",
+        "browser",
+        "payment_method",
+        "state"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-order-completion-rate",
+          "metricName": "Order Completion Rate",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-marketplace-commission-revenue",
+      "name": "Marketplace Commission Revenue",
+      "description": "Total marketplace take-rate revenue earned from order items.",
+      "type": "kpi",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(commission_inr) AS value FROM order_items",
+      "timeSeriesSql": "SELECT CAST(order_ts AS DATE) AS date, SUM(commission_inr) AS value FROM order_items GROUP BY 1 ORDER BY date",
+      "table": "order_items",
+      "column": "commission_inr",
+      "timeColumn": "order_ts",
+      "formula": "SUM(order_items.commission_inr)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "category",
+        "brand",
+        "seller_id",
+        "item_status"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-effective-take-rate",
+          "metricName": "Effective Take Rate",
+          "direction": "drives",
+          "type": "component"
+        },
+        {
+          "metricId": "m-net-gmv-after-refunds",
+          "metricName": "Net GMV After Refunds",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-total-payment-amount",
+      "name": "Total Payment Amount",
+      "description": "Total amount attempted or collected in payments including shipping and net of discounts.",
+      "type": "kpi",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(amount_inr) AS value FROM payments",
+      "timeSeriesSql": "SELECT CAST(payment_ts AS DATE) AS date, SUM(amount_inr) AS value FROM payments GROUP BY 1 ORDER BY date",
+      "table": "payments",
+      "column": "amount_inr",
+      "timeColumn": "payment_ts",
+      "formula": "SUM(payments.amount_inr)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "method",
+        "payment_status",
+        "gateway",
+        "emi_tenure_months"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-gmv",
+          "metricName": "Total GMV",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-total-refund-amount",
+      "name": "Total Refund Amount",
+      "description": "Total refund amount issued for returns.",
+      "type": "kpi",
+      "category": "Quality",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(refund_inr) AS value FROM returns",
+      "timeSeriesSql": "SELECT CAST(requested_ts AS DATE) AS date, SUM(refund_inr) AS value FROM returns GROUP BY 1 ORDER BY date",
+      "table": "returns",
+      "column": "refund_inr",
+      "timeColumn": "requested_ts",
+      "formula": "SUM(returns.refund_inr)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "reason",
+        "return_type",
+        "resolution",
+        "category"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-net-gmv-after-refunds",
+          "metricName": "Net GMV After Refunds",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-net-gmv-after-refunds",
+      "name": "Net GMV After Refunds",
+      "description": "GMV net of refund amounts from returns.",
+      "type": "kpi",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "derived_ratio",
+      "valueSql": "SELECT (SELECT SUM(gmv_inr) FROM orders) - COALESCE((SELECT SUM(refund_inr) FROM returns), 0) AS value",
+      "timeSeriesSql": "SELECT d.date AS date, COALESCE(g.gmv, 0) - COALESCE(r.refunds, 0) AS value FROM (SELECT date FROM (SELECT CAST(order_ts AS DATE) AS date FROM orders UNION SELECT CAST(requested_ts AS DATE) AS date FROM returns) u GROUP BY 1) d LEFT JOIN (SELECT CAST(order_ts AS DATE) AS date, SUM(gmv_inr) AS gmv FROM orders GROUP BY 1) g ON d.date = g.date LEFT JOIN (SELECT CAST(requested_ts AS DATE) AS date, SUM(refund_inr) AS refunds FROM returns GROUP BY 1) r ON d.date = r.date ORDER BY date",
+      "table": "orders",
+      "column": "gmv_inr",
+      "timeColumn": "order_ts",
+      "formula": "SUM(orders.gmv_inr) - SUM(returns.refund_inr)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "order_status",
+        "channel",
+        "state"
+      ],
+      "relationships": []
+    },
+    {
+      "id": "m-monthly-active-buyers",
+      "name": "Monthly Active Buyers",
+      "description": "Distinct buyers who placed at least one order in a month.",
+      "type": "kpi",
+      "category": "Growth",
+      "valueFormat": "integer",
+      "aggregation": "unique_count",
+      "valueSql": "SELECT COUNT(DISTINCT customer_id) AS value FROM orders",
+      "timeSeriesSql": "SELECT strftime(order_ts, '%Y-%m') AS date, COUNT(DISTINCT customer_id) AS value FROM orders GROUP BY 1 ORDER BY date",
+      "table": "orders",
+      "column": "customer_id",
+      "timeColumn": "order_ts",
+      "formula": "COUNT(DISTINCT orders.customer_id)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "channel",
+        "device",
+        "payment_method",
+        "state"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-gmv-per-active-buyer",
+          "metricName": "GMV per Active Buyer",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-total-sessions",
+      "name": "Total Sessions",
+      "description": "Count of browsing sessions across the platform.",
+      "type": "kpi",
+      "category": "Growth",
+      "valueFormat": "integer",
+      "aggregation": "count",
+      "valueSql": "SELECT COUNT(*) AS value FROM sessions",
+      "timeSeriesSql": "SELECT CAST(session_ts AS DATE) AS date, COUNT(*) AS value FROM sessions GROUP BY 1 ORDER BY date",
+      "table": "sessions",
+      "column": "session_id",
+      "timeColumn": "session_ts",
+      "formula": "COUNT(session_id)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "device",
+        "browser"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-session-to-order-conversion-rate",
+          "metricName": "Session to Order Conversion Rate",
+          "direction": "drives",
+          "type": "component"
+        },
+        {
+          "metricId": "m-product-view-rate",
+          "metricName": "Product View Rate",
+          "direction": "drives",
+          "type": "component"
+        },
+        {
+          "metricId": "m-cart-add-rate",
+          "metricName": "Cart Add Rate",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-average-order-value",
+      "name": "Average Order Value",
+      "description": "Average GMV per order.",
+      "type": "indicator",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "ratio",
+      "valueSql": "SELECT AVG(gmv_inr) AS value FROM orders",
+      "timeSeriesSql": "SELECT CAST(order_ts AS DATE) AS date, AVG(gmv_inr) AS value FROM orders GROUP BY 1 ORDER BY date",
+      "table": "orders",
+      "column": "gmv_inr",
+      "timeColumn": "order_ts",
+      "formula": "AVG(orders.gmv_inr)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "order_status",
+        "channel",
+        "device",
+        "payment_method",
+        "state"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-gmv",
+          "metricName": "Total GMV",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-average-items-per-order",
+      "name": "Average Items per Order",
+      "description": "Average number of items in each order.",
+      "type": "indicator",
+      "category": "Revenue",
+      "valueFormat": "number",
+      "aggregation": "ratio",
+      "valueSql": "SELECT AVG(items_count) AS value FROM orders",
+      "timeSeriesSql": "SELECT CAST(order_ts AS DATE) AS date, AVG(items_count) AS value FROM orders GROUP BY 1 ORDER BY date",
+      "table": "orders",
+      "column": "items_count",
+      "timeColumn": "order_ts",
+      "formula": "AVG(orders.items_count)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "order_status",
+        "channel",
+        "device",
+        "payment_method"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-average-order-value",
+          "metricName": "Average Order Value",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-average-discount-per-order",
+      "name": "Average Discount per Order",
+      "description": "Average discount amount applied per order.",
+      "type": "indicator",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "ratio",
+      "valueSql": "SELECT AVG(discount_inr) AS value FROM orders",
+      "timeSeriesSql": "SELECT CAST(order_ts AS DATE) AS date, AVG(discount_inr) AS value FROM orders GROUP BY 1 ORDER BY date",
+      "table": "orders",
+      "column": "discount_inr",
+      "timeColumn": "order_ts",
+      "formula": "AVG(orders.discount_inr)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "device",
+        "coupon_code",
+        "payment_method"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-average-order-value",
+          "metricName": "Average Order Value",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-average-shipping-fee",
+      "name": "Average Shipping Fee",
+      "description": "Average shipping fee charged per order.",
+      "type": "indicator",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "ratio",
+      "valueSql": "SELECT AVG(shipping_fee_inr) AS value FROM orders",
+      "timeSeriesSql": "SELECT CAST(order_ts AS DATE) AS date, AVG(shipping_fee_inr) AS value FROM orders GROUP BY 1 ORDER BY date",
+      "table": "orders",
+      "column": "shipping_fee_inr",
+      "timeColumn": "order_ts",
+      "formula": "AVG(orders.shipping_fee_inr)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "device",
+        "state",
+        "city"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-payment-amount",
+          "metricName": "Total Payment Amount",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-on-time-delivery-rate",
+      "name": "On-Time Delivery Rate",
+      "description": "Share of delivered orders that met the promised SLA.",
+      "type": "indicator",
+      "category": "Operations",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT CAST(COUNT(*) FILTER (WHERE sla_met_flag = TRUE AND order_status = 'Delivered') AS DOUBLE) / NULLIF(COUNT(*) FILTER (WHERE order_status = 'Delivered'), 0) AS value FROM orders",
+      "timeSeriesSql": "SELECT CAST(order_ts AS DATE) AS date, CAST(COUNT(*) FILTER (WHERE sla_met_flag = TRUE AND order_status = 'Delivered') AS DOUBLE) / NULLIF(COUNT(*) FILTER (WHERE order_status = 'Delivered'), 0) AS value FROM orders GROUP BY 1 ORDER BY date",
+      "table": "orders",
+      "column": "sla_met_flag",
+      "timeColumn": "order_ts",
+      "formula": "COUNT(Delivered orders with sla_met_flag=TRUE) / COUNT(Delivered orders)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "device",
+        "state",
+        "city",
+        "delivery_promised_days"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-order-completion-rate",
+          "metricName": "Order Completion Rate",
+          "direction": "drives",
+          "type": "influence"
+        },
+        {
+          "metricId": "m-return-rate",
+          "metricName": "Return Rate",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-average-delivery-delay-days",
+      "name": "Average Delivery Delay Days",
+      "description": "Average difference between actual and promised delivery days for delivered orders.",
+      "type": "indicator",
+      "category": "Operations",
+      "valueFormat": "number",
+      "aggregation": "ratio",
+      "valueSql": "SELECT AVG(CAST(delivery_actual_days - delivery_promised_days AS DOUBLE)) AS value FROM orders WHERE order_status = 'Delivered'",
+      "timeSeriesSql": "SELECT CAST(order_ts AS DATE) AS date, AVG(CAST(delivery_actual_days - delivery_promised_days AS DOUBLE)) AS value FROM orders WHERE order_status = 'Delivered' GROUP BY 1 ORDER BY date",
+      "table": "orders",
+      "column": "delivery_actual_days",
+      "timeColumn": "order_ts",
+      "formula": "AVG(delivery_actual_days - delivery_promised_days) for delivered orders",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "device",
+        "state",
+        "city"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-on-time-delivery-rate",
+          "metricName": "On-Time Delivery Rate",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-average-unit-price",
+      "name": "Average Unit Price",
+      "description": "Average listed unit selling price per order item.",
+      "type": "indicator",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "ratio",
+      "valueSql": "SELECT AVG(unit_price_inr) AS value FROM order_items",
+      "timeSeriesSql": "SELECT CAST(order_ts AS DATE) AS date, AVG(unit_price_inr) AS value FROM order_items GROUP BY 1 ORDER BY date",
+      "table": "order_items",
+      "column": "unit_price_inr",
+      "timeColumn": "order_ts",
+      "formula": "AVG(order_items.unit_price_inr)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "category",
+        "brand",
+        "seller_id",
+        "item_status"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-average-order-value",
+          "metricName": "Average Order Value",
+          "direction": "drives",
+          "type": "influence"
+        },
+        {
+          "metricId": "m-attributed-aov-from-ads",
+          "metricName": "Attributed AOV from Ads",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-average-item-discount",
+      "name": "Average Item Discount",
+      "description": "Average item-level discount per order line.",
+      "type": "indicator",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "ratio",
+      "valueSql": "SELECT AVG(item_discount_inr) AS value FROM order_items",
+      "timeSeriesSql": "SELECT CAST(order_ts AS DATE) AS date, AVG(item_discount_inr) AS value FROM order_items GROUP BY 1 ORDER BY date",
+      "table": "order_items",
+      "column": "item_discount_inr",
+      "timeColumn": "order_ts",
+      "formula": "AVG(order_items.item_discount_inr)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "category",
+        "brand",
+        "seller_id"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-average-unit-price",
+          "metricName": "Average Unit Price",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-average-payment-amount",
+      "name": "Average Payment Amount",
+      "description": "Average payment amount per order-level payment record.",
+      "type": "indicator",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "ratio",
+      "valueSql": "SELECT AVG(amount_inr) AS value FROM payments",
+      "timeSeriesSql": "SELECT CAST(payment_ts AS DATE) AS date, AVG(amount_inr) AS value FROM payments GROUP BY 1 ORDER BY date",
+      "table": "payments",
+      "column": "amount_inr",
+      "timeColumn": "payment_ts",
+      "formula": "AVG(payments.amount_inr)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "method",
+        "payment_status",
+        "gateway",
+        "emi_tenure_months"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-payment-amount",
+          "metricName": "Total Payment Amount",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-successful-payment-rate",
+      "name": "Successful Payment Rate",
+      "description": "Share of payments that are successful or collected.",
+      "type": "indicator",
+      "category": "Operations",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT CAST(COUNT(*) FILTER (WHERE payment_status IN ('Success', 'Collected')) AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM payments",
+      "timeSeriesSql": "SELECT CAST(payment_ts AS DATE) AS date, CAST(COUNT(*) FILTER (WHERE payment_status IN ('Success', 'Collected')) AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM payments GROUP BY 1 ORDER BY date",
+      "table": "payments",
+      "column": "payment_status",
+      "timeColumn": "payment_ts",
+      "formula": "COUNT(payments with status Success or Collected) / COUNT(all payments)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "method",
+        "gateway",
+        "emi_tenure_months"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-order-completion-rate",
+          "metricName": "Order Completion Rate",
+          "direction": "drives",
+          "type": "influence"
+        },
+        {
+          "metricId": "m-total-payment-amount",
+          "metricName": "Total Payment Amount",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-product-view-rate",
+      "name": "Product View Rate",
+      "description": "Share of sessions in which a product was viewed.",
+      "type": "indicator",
+      "category": "Growth",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT CAST(COUNT(*) FILTER (WHERE viewed_product_flag = TRUE) AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM sessions",
+      "timeSeriesSql": "SELECT CAST(session_ts AS DATE) AS date, CAST(COUNT(*) FILTER (WHERE viewed_product_flag = TRUE) AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM sessions GROUP BY 1 ORDER BY date",
+      "table": "sessions",
+      "column": "viewed_product_flag",
+      "timeColumn": "session_ts",
+      "formula": "COUNT(sessions with viewed_product_flag=TRUE) / COUNT(all sessions)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "device",
+        "browser"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-cart-add-rate",
+          "metricName": "Cart Add Rate",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-cart-add-rate",
+      "name": "Cart Add Rate",
+      "description": "Share of sessions that added at least one product to cart.",
+      "type": "indicator",
+      "category": "Growth",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT CAST(COUNT(*) FILTER (WHERE added_to_cart_flag = TRUE) AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM sessions",
+      "timeSeriesSql": "SELECT CAST(session_ts AS DATE) AS date, CAST(COUNT(*) FILTER (WHERE added_to_cart_flag = TRUE) AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM sessions GROUP BY 1 ORDER BY date",
+      "table": "sessions",
+      "column": "added_to_cart_flag",
+      "timeColumn": "session_ts",
+      "formula": "COUNT(sessions with added_to_cart_flag=TRUE) / COUNT(all sessions)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "device",
+        "browser"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-checkout-start-rate",
+          "metricName": "Checkout Start Rate",
+          "direction": "drives",
+          "type": "influence"
+        },
+        {
+          "metricId": "m-cart-abandonment-rate",
+          "metricName": "Cart Abandonment Rate",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-checkout-start-rate",
+      "name": "Checkout Start Rate",
+      "description": "Share of sessions that reached checkout.",
+      "type": "indicator",
+      "category": "Growth",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT CAST(COUNT(*) FILTER (WHERE started_checkout_flag = TRUE) AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM sessions",
+      "timeSeriesSql": "SELECT CAST(session_ts AS DATE) AS date, CAST(COUNT(*) FILTER (WHERE started_checkout_flag = TRUE) AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM sessions GROUP BY 1 ORDER BY date",
+      "table": "sessions",
+      "column": "started_checkout_flag",
+      "timeColumn": "session_ts",
+      "formula": "COUNT(sessions with started_checkout_flag=TRUE) / COUNT(all sessions)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "device",
+        "browser"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-session-to-order-conversion-rate",
+          "metricName": "Session to Order Conversion Rate",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-session-to-order-conversion-rate",
+      "name": "Session to Order Conversion Rate",
+      "description": "Share of sessions that resulted in an order placement.",
+      "type": "kpi",
+      "category": "Growth",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT CAST(COUNT(*) FILTER (WHERE placed_order_flag = TRUE) AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM sessions",
+      "timeSeriesSql": "SELECT CAST(session_ts AS DATE) AS date, CAST(COUNT(*) FILTER (WHERE placed_order_flag = TRUE) AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM sessions GROUP BY 1 ORDER BY date",
+      "table": "sessions",
+      "column": "placed_order_flag",
+      "timeColumn": "session_ts",
+      "formula": "COUNT(sessions with placed_order_flag=TRUE) / COUNT(all sessions)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "device",
+        "browser"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-orders",
+          "metricName": "Total Orders",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-cart-abandonment-rate",
+      "name": "Cart Abandonment Rate",
+      "description": "Share of cart sessions that did not result in an order.",
+      "type": "diagnostic",
+      "category": "Growth",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT CAST(COUNT(*) FILTER (WHERE added_to_cart_flag = TRUE AND placed_order_flag = FALSE) AS DOUBLE) / NULLIF(COUNT(*) FILTER (WHERE added_to_cart_flag = TRUE), 0) AS value FROM sessions",
+      "timeSeriesSql": "SELECT CAST(session_ts AS DATE) AS date, CAST(COUNT(*) FILTER (WHERE added_to_cart_flag = TRUE AND placed_order_flag = FALSE) AS DOUBLE) / NULLIF(COUNT(*) FILTER (WHERE added_to_cart_flag = TRUE), 0) AS value FROM sessions GROUP BY 1 ORDER BY date",
+      "table": "sessions",
+      "column": "added_to_cart_flag",
+      "timeColumn": "session_ts",
+      "formula": "COUNT(added_to_cart_flag=TRUE AND placed_order_flag=FALSE) / COUNT(added_to_cart_flag=TRUE)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "device",
+        "browser"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-session-to-order-conversion-rate",
+          "metricName": "Session to Order Conversion Rate",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-return-rate",
+      "name": "Return Rate",
+      "description": "Share of delivered items that were returned.",
+      "type": "kpi",
+      "category": "Quality",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT CAST(COUNT(*) FILTER (WHERE item_status = 'Returned') AS DOUBLE) / NULLIF(COUNT(*) FILTER (WHERE item_status IN ('Delivered', 'Returned')), 0) AS value FROM order_items",
+      "timeSeriesSql": "SELECT CAST(order_ts AS DATE) AS date, CAST(COUNT(*) FILTER (WHERE item_status = 'Returned') AS DOUBLE) / NULLIF(COUNT(*) FILTER (WHERE item_status IN ('Delivered', 'Returned')), 0) AS value FROM order_items GROUP BY 1 ORDER BY date",
+      "table": "order_items",
+      "column": "item_status",
+      "timeColumn": "order_ts",
+      "formula": "COUNT(items with status Returned) / COUNT(items with status Delivered or Returned)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "category",
+        "brand",
+        "seller_id"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-refund-amount",
+          "metricName": "Total Refund Amount",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-average-return-resolution-days",
+      "name": "Average Return Resolution Days",
+      "description": "Average time taken to resolve returns with a recorded resolution duration.",
+      "type": "indicator",
+      "category": "Quality",
+      "valueFormat": "number",
+      "aggregation": "ratio",
+      "valueSql": "SELECT AVG(CAST(resolution_days AS DOUBLE)) AS value FROM returns WHERE resolution_days IS NOT NULL",
+      "timeSeriesSql": "SELECT CAST(requested_ts AS DATE) AS date, AVG(CAST(resolution_days AS DOUBLE)) AS value FROM returns WHERE resolution_days IS NOT NULL GROUP BY 1 ORDER BY date",
+      "table": "returns",
+      "column": "resolution_days",
+      "timeColumn": "requested_ts",
+      "formula": "AVG(returns.resolution_days) where not null",
+      "timeGrain": "daily",
+      "dimensions": [
+        "reason",
+        "return_type",
+        "resolution",
+        "category"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-return-completion-rate",
+          "metricName": "Return Completion Rate",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-return-completion-rate",
+      "name": "Return Completion Rate",
+      "description": "Share of returns that have been completed.",
+      "type": "indicator",
+      "category": "Quality",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT CAST(COUNT(*) FILTER (WHERE resolution = 'Completed') AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM returns",
+      "timeSeriesSql": "SELECT CAST(requested_ts AS DATE) AS date, CAST(COUNT(*) FILTER (WHERE resolution = 'Completed') AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM returns GROUP BY 1 ORDER BY date",
+      "table": "returns",
+      "column": "resolution",
+      "timeColumn": "requested_ts",
+      "formula": "COUNT(returns with resolution='Completed') / COUNT(all returns)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "reason",
+        "return_type",
+        "category"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-refund-amount",
+          "metricName": "Total Refund Amount",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-average-review-rating",
+      "name": "Average Review Rating",
+      "description": "Average star rating across verified product reviews.",
+      "type": "indicator",
+      "category": "Quality",
+      "valueFormat": "number",
+      "aggregation": "ratio",
+      "valueSql": "SELECT AVG(CAST(rating AS DOUBLE)) AS value FROM reviews WHERE verified_purchase_flag = TRUE",
+      "timeSeriesSql": "SELECT CAST(review_ts AS DATE) AS date, AVG(CAST(rating AS DOUBLE)) AS value FROM reviews WHERE verified_purchase_flag = TRUE GROUP BY 1 ORDER BY date",
+      "table": "reviews",
+      "column": "rating",
+      "timeColumn": "review_ts",
+      "formula": "AVG(reviews.rating) where verified_purchase_flag=TRUE",
+      "timeGrain": "daily",
+      "dimensions": [
+        "category",
+        "seller_id",
+        "product_id",
+        "has_text_flag"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-average-product-rating",
+          "metricName": "Average Product Rating",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-review-volume",
+      "name": "Review Volume",
+      "description": "Count of product reviews submitted.",
+      "type": "indicator",
+      "category": "Quality",
+      "valueFormat": "integer",
+      "aggregation": "count",
+      "valueSql": "SELECT COUNT(*) AS value FROM reviews",
+      "timeSeriesSql": "SELECT CAST(review_ts AS DATE) AS date, COUNT(*) AS value FROM reviews GROUP BY 1 ORDER BY date",
+      "table": "reviews",
+      "column": "review_id",
+      "timeColumn": "review_ts",
+      "formula": "COUNT(review_id)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "category",
+        "seller_id",
+        "product_id",
+        "verified_purchase_flag"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-average-product-rating-count",
+          "metricName": "Average Product Rating Count",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-negative-review-rate",
+      "name": "Negative Review Rate",
+      "description": "Share of reviews with ratings of 1 or 2 stars.",
+      "type": "diagnostic",
+      "category": "Quality",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT CAST(COUNT(*) FILTER (WHERE rating <= 2) AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM reviews",
+      "timeSeriesSql": "SELECT CAST(review_ts AS DATE) AS date, CAST(COUNT(*) FILTER (WHERE rating <= 2) AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM reviews GROUP BY 1 ORDER BY date",
+      "table": "reviews",
+      "column": "rating",
+      "timeColumn": "review_ts",
+      "formula": "COUNT(reviews.rating <= 2) / COUNT(all reviews)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "category",
+        "seller_id",
+        "product_id",
+        "verified_purchase_flag"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-average-review-rating",
+          "metricName": "Average Review Rating",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-active-sellers",
+      "name": "Active Sellers",
+      "description": "Count of sellers currently marked active.",
+      "type": "kpi",
+      "category": "Operations",
+      "valueFormat": "integer",
+      "aggregation": "count",
+      "valueSql": "SELECT COUNT(*) AS value FROM sellers WHERE status = 'Active'",
+      "timeSeriesSql": "SELECT strftime(onboarded_date, '%Y-%m') AS date, COUNT(*) FILTER (WHERE status = 'Active') AS value FROM sellers GROUP BY 1 ORDER BY date",
+      "table": "sellers",
+      "column": "seller_id",
+      "timeColumn": "onboarded_date",
+      "formula": "COUNT(seller_id) WHERE status = 'Active'",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "seller_tier",
+        "fulfilment_model",
+        "primary_category",
+        "assured_flag",
+        "state"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-product-count",
+          "metricName": "Product Count",
+          "direction": "drives",
+          "type": "influence"
+        },
+        {
+          "metricId": "m-total-gmv",
+          "metricName": "Total GMV",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-seller-count",
+      "name": "Seller Count",
+      "description": "Total number of sellers onboarded on the marketplace.",
+      "type": "indicator",
+      "category": "Operations",
+      "valueFormat": "integer",
+      "aggregation": "count",
+      "valueSql": "SELECT COUNT(*) AS value FROM sellers",
+      "timeSeriesSql": "SELECT strftime(onboarded_date, '%Y-%m') AS date, COUNT(*) AS value FROM sellers GROUP BY 1 ORDER BY date",
+      "table": "sellers",
+      "column": "seller_id",
+      "timeColumn": "onboarded_date",
+      "formula": "COUNT(seller_id)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "seller_tier",
+        "fulfilment_model",
+        "primary_category",
+        "status",
+        "state"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-active-sellers",
+          "metricName": "Active Sellers",
+          "direction": "drives",
+          "type": "component"
+        },
+        {
+          "metricId": "m-seller-churn-rate",
+          "metricName": "Seller Churn Rate",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-seller-churn-rate",
+      "name": "Seller Churn Rate",
+      "description": "Share of sellers marked churned out of all sellers.",
+      "type": "diagnostic",
+      "category": "Operations",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT CAST(COUNT(*) FILTER (WHERE status = 'Churned') AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM sellers",
+      "timeSeriesSql": "SELECT strftime(onboarded_date, '%Y-%m') AS date, CAST(COUNT(*) FILTER (WHERE status = 'Churned') AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM sellers GROUP BY 1 ORDER BY date",
+      "table": "sellers",
+      "column": "status",
+      "timeColumn": "onboarded_date",
+      "formula": "COUNT(sellers with status='Churned') / COUNT(all sellers)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "seller_tier",
+        "fulfilment_model",
+        "primary_category",
+        "state"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-active-sellers",
+          "metricName": "Active Sellers",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-average-seller-rating",
+      "name": "Average Seller Rating",
+      "description": "Average marketplace seller rating.",
+      "type": "indicator",
+      "category": "Quality",
+      "valueFormat": "number",
+      "aggregation": "ratio",
+      "valueSql": "SELECT AVG(seller_rating) AS value FROM sellers",
+      "timeSeriesSql": "SELECT strftime(onboarded_date, '%Y-%m') AS date, AVG(seller_rating) AS value FROM sellers GROUP BY 1 ORDER BY date",
+      "table": "sellers",
+      "column": "seller_rating",
+      "timeColumn": "onboarded_date",
+      "formula": "AVG(sellers.seller_rating)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "seller_tier",
+        "fulfilment_model",
+        "primary_category",
+        "assured_flag",
+        "status"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-return-rate",
+          "metricName": "Return Rate",
+          "direction": "drives",
+          "type": "influence"
+        },
+        {
+          "metricId": "m-average-review-rating",
+          "metricName": "Average Review Rating",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-product-count",
+      "name": "Product Count",
+      "description": "Total number of listed products.",
+      "type": "indicator",
+      "category": "Operations",
+      "valueFormat": "integer",
+      "aggregation": "count",
+      "valueSql": "SELECT COUNT(*) AS value FROM products",
+      "timeSeriesSql": "SELECT strftime(launch_date, '%Y-%m') AS date, COUNT(*) AS value FROM products GROUP BY 1 ORDER BY date",
+      "table": "products",
+      "column": "product_id",
+      "timeColumn": "launch_date",
+      "formula": "COUNT(product_id)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "category",
+        "subcategory",
+        "brand",
+        "seller_id",
+        "is_assured"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-product-view-rate",
+          "metricName": "Product View Rate",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-average-product-rating",
+      "name": "Average Product Rating",
+      "description": "Average SKU rating across the product catalog.",
+      "type": "indicator",
+      "category": "Quality",
+      "valueFormat": "number",
+      "aggregation": "ratio",
+      "valueSql": "SELECT AVG(rating_avg) AS value FROM products",
+      "timeSeriesSql": "SELECT strftime(launch_date, '%Y-%m') AS date, AVG(rating_avg) AS value FROM products GROUP BY 1 ORDER BY date",
+      "table": "products",
+      "column": "rating_avg",
+      "timeColumn": "launch_date",
+      "formula": "AVG(products.rating_avg)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "category",
+        "subcategory",
+        "brand",
+        "seller_id",
+        "is_assured"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-average-review-rating",
+          "metricName": "Average Review Rating",
+          "direction": "drives",
+          "type": "component"
+        },
+        {
+          "metricId": "m-return-rate",
+          "metricName": "Return Rate",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-average-product-rating-count",
+      "name": "Average Product Rating Count",
+      "description": "Average number of ratings per product.",
+      "type": "indicator",
+      "category": "Quality",
+      "valueFormat": "number",
+      "aggregation": "ratio",
+      "valueSql": "SELECT AVG(CAST(rating_count AS DOUBLE)) AS value FROM products",
+      "timeSeriesSql": "SELECT strftime(launch_date, '%Y-%m') AS date, AVG(CAST(rating_count AS DOUBLE)) AS value FROM products GROUP BY 1 ORDER BY date",
+      "table": "products",
+      "column": "rating_count",
+      "timeColumn": "launch_date",
+      "formula": "AVG(products.rating_count)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "category",
+        "subcategory",
+        "brand",
+        "seller_id"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-average-product-rating",
+          "metricName": "Average Product Rating",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-average-list-price",
+      "name": "Average List Price",
+      "description": "Average current list price across products.",
+      "type": "indicator",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "ratio",
+      "valueSql": "SELECT AVG(list_price_inr) AS value FROM products",
+      "timeSeriesSql": "SELECT strftime(launch_date, '%Y-%m') AS date, AVG(list_price_inr) AS value FROM products GROUP BY 1 ORDER BY date",
+      "table": "products",
+      "column": "list_price_inr",
+      "timeColumn": "launch_date",
+      "formula": "AVG(products.list_price_inr)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "category",
+        "subcategory",
+        "brand",
+        "seller_id"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-average-unit-price",
+          "metricName": "Average Unit Price",
+          "direction": "drives",
+          "type": "influence"
+        },
+        {
+          "metricId": "m-average-catalog-discount-rate",
+          "metricName": "Average Catalog Discount Rate",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-average-mrp",
+      "name": "Average MRP",
+      "description": "Average MRP across products.",
+      "type": "indicator",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "ratio",
+      "valueSql": "SELECT AVG(mrp_inr) AS value FROM products",
+      "timeSeriesSql": "SELECT strftime(launch_date, '%Y-%m') AS date, AVG(mrp_inr) AS value FROM products GROUP BY 1 ORDER BY date",
+      "table": "products",
+      "column": "mrp_inr",
+      "timeColumn": "launch_date",
+      "formula": "AVG(products.mrp_inr)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "category",
+        "subcategory",
+        "brand",
+        "seller_id"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-average-catalog-discount-rate",
+          "metricName": "Average Catalog Discount Rate",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-average-catalog-discount-rate",
+      "name": "Average Catalog Discount Rate",
+      "description": "Average markdown from MRP to list price across the catalog.",
+      "type": "diagnostic",
+      "category": "Revenue",
+      "valueFormat": "percent",
+      "aggregation": "derived_ratio",
+      "valueSql": "SELECT AVG((mrp_inr - list_price_inr) / NULLIF(mrp_inr, 0)) AS value FROM products",
+      "timeSeriesSql": "SELECT strftime(launch_date, '%Y-%m') AS date, AVG((mrp_inr - list_price_inr) / NULLIF(mrp_inr, 0)) AS value FROM products GROUP BY 1 ORDER BY date",
+      "table": "products",
+      "column": "mrp_inr",
+      "timeColumn": "launch_date",
+      "formula": "AVG((mrp_inr - list_price_inr) / mrp_inr)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "category",
+        "subcategory",
+        "brand",
+        "seller_id"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-average-item-discount",
+          "metricName": "Average Item Discount",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-total-ad-spend",
+      "name": "Total Seller Ad Spend",
+      "description": "Total Flipkart Ads spend by sellers.",
+      "type": "kpi",
+      "category": "Growth",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(spend_inr) AS value FROM ad_campaigns",
+      "timeSeriesSql": "SELECT month AS date, SUM(spend_inr) AS value FROM ad_campaigns GROUP BY 1 ORDER BY date",
+      "table": "ad_campaigns",
+      "column": "spend_inr",
+      "timeColumn": "month",
+      "formula": "SUM(ad_campaigns.spend_inr)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "campaign_type",
+        "seller_id"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-ad-roas",
+          "metricName": "Ad ROAS",
+          "direction": "drives",
+          "type": "component"
+        },
+        {
+          "metricId": "m-average-cpc",
+          "metricName": "Average CPC",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-attributed-ad-gmv",
+      "name": "Attributed Ad GMV",
+      "description": "Total GMV attributed to seller ad campaigns.",
+      "type": "kpi",
+      "category": "Growth",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(attributed_gmv_inr) AS value FROM ad_campaigns",
+      "timeSeriesSql": "SELECT month AS date, SUM(attributed_gmv_inr) AS value FROM ad_campaigns GROUP BY 1 ORDER BY date",
+      "table": "ad_campaigns",
+      "column": "attributed_gmv_inr",
+      "timeColumn": "month",
+      "formula": "SUM(ad_campaigns.attributed_gmv_inr)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "campaign_type",
+        "seller_id"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-ad-roas",
+          "metricName": "Ad ROAS",
+          "direction": "drives",
+          "type": "component"
+        },
+        {
+          "metricId": "m-attributed-aov-from-ads",
+          "metricName": "Attributed AOV from Ads",
+          "direction": "drives",
+          "type": "component"
+        },
+        {
+          "metricId": "m-total-gmv",
+          "metricName": "Total GMV",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-attributed-orders",
+      "name": "Attributed Orders",
+      "description": "Total orders attributed to seller ad campaigns.",
+      "type": "indicator",
+      "category": "Growth",
+      "valueFormat": "integer",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(attributed_orders) AS value FROM ad_campaigns",
+      "timeSeriesSql": "SELECT month AS date, SUM(attributed_orders) AS value FROM ad_campaigns GROUP BY 1 ORDER BY date",
+      "table": "ad_campaigns",
+      "column": "attributed_orders",
+      "timeColumn": "month",
+      "formula": "SUM(ad_campaigns.attributed_orders)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "campaign_type",
+        "seller_id"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-attributed-aov-from-ads",
+          "metricName": "Attributed AOV from Ads",
+          "direction": "drives",
+          "type": "component"
+        },
+        {
+          "metricId": "m-total-orders",
+          "metricName": "Total Orders",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-ad-roas",
+      "name": "Ad ROAS",
+      "description": "Return on ad spend from seller campaigns.",
+      "type": "diagnostic",
+      "category": "Growth",
+      "valueFormat": "number",
+      "aggregation": "derived_ratio",
+      "valueSql": "SELECT SUM(attributed_gmv_inr) / NULLIF(SUM(spend_inr), 0) AS value FROM ad_campaigns",
+      "timeSeriesSql": "SELECT month AS date, SUM(attributed_gmv_inr) / NULLIF(SUM(spend_inr), 0) AS value FROM ad_campaigns GROUP BY 1 ORDER BY date",
+      "table": "ad_campaigns",
+      "column": "roas",
+      "timeColumn": "month",
+      "formula": "SUM(attributed_gmv_inr) / SUM(spend_inr)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "campaign_type",
+        "seller_id"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-attributed-ad-gmv",
+          "metricName": "Attributed Ad GMV",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-average-cpc",
+      "name": "Average CPC",
+      "description": "Blended average cost per click across seller ad campaigns.",
+      "type": "indicator",
+      "category": "Growth",
+      "valueFormat": "currency",
+      "aggregation": "derived_ratio",
+      "valueSql": "SELECT SUM(spend_inr) / NULLIF(SUM(clicks), 0) AS value FROM ad_campaigns",
+      "timeSeriesSql": "SELECT month AS date, SUM(spend_inr) / NULLIF(SUM(clicks), 0) AS value FROM ad_campaigns GROUP BY 1 ORDER BY date",
+      "table": "ad_campaigns",
+      "column": "avg_cpc_inr",
+      "timeColumn": "month",
+      "formula": "SUM(spend_inr) / SUM(clicks)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "campaign_type",
+        "seller_id"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-ad-spend",
+          "metricName": "Total Seller Ad Spend",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-ad-ctr",
+      "name": "Ad CTR",
+      "description": "Click-through rate across seller ad campaigns.",
+      "type": "indicator",
+      "category": "Growth",
+      "valueFormat": "percent",
+      "aggregation": "derived_ratio",
+      "valueSql": "SELECT CAST(SUM(clicks) AS DOUBLE) / NULLIF(SUM(impressions), 0) AS value FROM ad_campaigns",
+      "timeSeriesSql": "SELECT month AS date, CAST(SUM(clicks) AS DOUBLE) / NULLIF(SUM(impressions), 0) AS value FROM ad_campaigns GROUP BY 1 ORDER BY date",
+      "table": "ad_campaigns",
+      "column": "ctr",
+      "timeColumn": "month",
+      "formula": "SUM(clicks) / SUM(impressions)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "campaign_type",
+        "seller_id"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-attributed-orders",
+          "metricName": "Attributed Orders",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-total-acquisition-spend",
+      "name": "Total Buyer Acquisition Spend",
+      "description": "Total marketing spend to acquire buyers across channels.",
+      "type": "kpi",
+      "category": "Growth",
+      "valueFormat": "currency",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(marketing_spend_inr) AS value FROM acquisition_spend",
+      "timeSeriesSql": "SELECT month AS date, SUM(marketing_spend_inr) AS value FROM acquisition_spend GROUP BY 1 ORDER BY date",
+      "table": "acquisition_spend",
+      "column": "marketing_spend_inr",
+      "timeColumn": "month",
+      "formula": "SUM(acquisition_spend.marketing_spend_inr)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "channel"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-blended-cac",
+          "metricName": "Blended CAC",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-new-buyers-acquired",
+      "name": "New Buyers Acquired",
+      "description": "Total new buyers acquired across acquisition channels.",
+      "type": "kpi",
+      "category": "Growth",
+      "valueFormat": "integer",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(new_buyers_acquired) AS value FROM acquisition_spend",
+      "timeSeriesSql": "SELECT month AS date, SUM(new_buyers_acquired) AS value FROM acquisition_spend GROUP BY 1 ORDER BY date",
+      "table": "acquisition_spend",
+      "column": "new_buyers_acquired",
+      "timeColumn": "month",
+      "formula": "SUM(acquisition_spend.new_buyers_acquired)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "channel"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-blended-cac",
+          "metricName": "Blended CAC",
+          "direction": "drives",
+          "type": "component"
+        },
+        {
+          "metricId": "m-customer-count",
+          "metricName": "Customer Count",
+          "direction": "drives",
+          "type": "component"
+        },
+        {
+          "metricId": "m-monthly-active-buyers",
+          "metricName": "Monthly Active Buyers",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-blended-cac",
+      "name": "Blended CAC",
+      "description": "Average paid cost to acquire a new buyer across all channels.",
+      "type": "diagnostic",
+      "category": "Growth",
+      "valueFormat": "currency",
+      "aggregation": "derived_ratio",
+      "valueSql": "SELECT SUM(marketing_spend_inr) / NULLIF(SUM(new_buyers_acquired), 0) AS value FROM acquisition_spend",
+      "timeSeriesSql": "SELECT month AS date, SUM(marketing_spend_inr) / NULLIF(SUM(new_buyers_acquired), 0) AS value FROM acquisition_spend GROUP BY 1 ORDER BY date",
+      "table": "acquisition_spend",
+      "column": "cac_inr",
+      "timeColumn": "month",
+      "formula": "SUM(marketing_spend_inr) / SUM(new_buyers_acquired)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "channel"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-ltv-to-cac",
+          "metricName": "LTV to CAC",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-acquisition-ctr",
+      "name": "Buyer Acquisition CTR",
+      "description": "Click-through rate on buyer acquisition marketing.",
+      "type": "indicator",
+      "category": "Growth",
+      "valueFormat": "percent",
+      "aggregation": "derived_ratio",
+      "valueSql": "SELECT CAST(SUM(clicks) AS DOUBLE) / NULLIF(SUM(impressions), 0) AS value FROM acquisition_spend",
+      "timeSeriesSql": "SELECT month AS date, CAST(SUM(clicks) AS DOUBLE) / NULLIF(SUM(impressions), 0) AS value FROM acquisition_spend GROUP BY 1 ORDER BY date",
+      "table": "acquisition_spend",
+      "column": "clicks",
+      "timeColumn": "month",
+      "formula": "SUM(clicks) / SUM(impressions)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "channel"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-new-buyers-acquired",
+          "metricName": "New Buyers Acquired",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-repeat-buyer-rate",
+      "name": "Repeat Buyer Rate",
+      "description": "Share of ordering buyers who placed more than one order.",
+      "type": "diagnostic",
+      "category": "Growth",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT CAST(COUNT(*) FILTER (WHERE order_count > 1) AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM (SELECT customer_id, COUNT(*) AS order_count FROM orders GROUP BY customer_id) t",
+      "timeSeriesSql": "SELECT order_month AS date, CAST(COUNT(*) FILTER (WHERE cumulative_orders > 1) AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM (SELECT strftime(order_ts, '%Y-%m') AS order_month, customer_id, COUNT(*) OVER (PARTITION BY customer_id ORDER BY strftime(order_ts, '%Y-%m') ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_orders FROM (SELECT DISTINCT strftime(order_ts, '%Y-%m') AS order_month, customer_id FROM orders) x) t GROUP BY 1 ORDER BY date",
+      "table": "orders",
+      "column": "customer_id",
+      "timeColumn": "order_ts",
+      "formula": "COUNT(buyers with >1 order) / COUNT(buyers with >=1 order)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "channel",
+        "device",
+        "state"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-average-customer-lifetime-orders",
+          "metricName": "Average Customer Lifetime Orders",
+          "direction": "drives",
+          "type": "influence"
+        },
+        {
+          "metricId": "m-gmv-per-active-buyer",
+          "metricName": "GMV per Active Buyer",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-first-order-rate",
+      "name": "First Order Rate",
+      "description": "Share of orders that are the buyer's first ever order.",
+      "type": "indicator",
+      "category": "Growth",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT CAST(COUNT(*) FILTER (WHERE is_first_order_flag = TRUE) AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM orders",
+      "timeSeriesSql": "SELECT CAST(order_ts AS DATE) AS date, CAST(COUNT(*) FILTER (WHERE is_first_order_flag = TRUE) AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM orders GROUP BY 1 ORDER BY date",
+      "table": "orders",
+      "column": "is_first_order_flag",
+      "timeColumn": "order_ts",
+      "formula": "COUNT(orders where is_first_order_flag=TRUE) / COUNT(all orders)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "channel",
+        "device",
+        "state",
+        "payment_method"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-repeat-buyer-rate",
+          "metricName": "Repeat Buyer Rate",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-gmv-per-active-buyer",
+      "name": "GMV per Active Buyer",
+      "description": "Average GMV generated per distinct ordering buyer.",
+      "type": "diagnostic",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "derived_ratio",
+      "valueSql": "SELECT SUM(gmv_inr) / NULLIF(COUNT(DISTINCT customer_id), 0) AS value FROM orders",
+      "timeSeriesSql": "SELECT strftime(order_ts, '%Y-%m') AS date, SUM(gmv_inr) / NULLIF(COUNT(DISTINCT customer_id), 0) AS value FROM orders GROUP BY 1 ORDER BY date",
+      "table": "orders",
+      "column": "gmv_inr",
+      "timeColumn": "order_ts",
+      "formula": "SUM(orders.gmv_inr) / COUNT(DISTINCT orders.customer_id)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "channel",
+        "device",
+        "state"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-gmv",
+          "metricName": "Total GMV",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-effective-take-rate",
+      "name": "Effective Take Rate",
+      "description": "Commission revenue as a share of line GMV.",
+      "type": "diagnostic",
+      "category": "Revenue",
+      "valueFormat": "percent",
+      "aggregation": "derived_ratio",
+      "valueSql": "SELECT SUM(commission_inr) / NULLIF(SUM(line_gmv_inr), 0) AS value FROM order_items",
+      "timeSeriesSql": "SELECT CAST(order_ts AS DATE) AS date, SUM(commission_inr) / NULLIF(SUM(line_gmv_inr), 0) AS value FROM order_items GROUP BY 1 ORDER BY date",
+      "table": "order_items",
+      "column": "commission_inr",
+      "timeColumn": "order_ts",
+      "formula": "SUM(order_items.commission_inr) / SUM(order_items.line_gmv_inr)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "category",
+        "brand",
+        "seller_id",
+        "seller_id"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-marketplace-commission-revenue",
+          "metricName": "Marketplace Commission Revenue",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-attributed-aov-from-ads",
+      "name": "Attributed AOV from Ads",
+      "description": "Average attributed GMV per attributed order from seller ads.",
+      "type": "diagnostic",
+      "category": "Growth",
+      "valueFormat": "currency",
+      "aggregation": "derived_ratio",
+      "valueSql": "SELECT SUM(attributed_gmv_inr) / NULLIF(SUM(attributed_orders), 0) AS value FROM ad_campaigns",
+      "timeSeriesSql": "SELECT month AS date, SUM(attributed_gmv_inr) / NULLIF(SUM(attributed_orders), 0) AS value FROM ad_campaigns GROUP BY 1 ORDER BY date",
+      "table": "ad_campaigns",
+      "column": "attributed_gmv_inr",
+      "timeColumn": "month",
+      "formula": "SUM(attributed_gmv_inr) / SUM(attributed_orders)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "campaign_type",
+        "seller_id"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-attributed-ad-gmv",
+          "metricName": "Attributed Ad GMV",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-customer-count",
+      "name": "Customer Count",
+      "description": "Total number of customers in the buyer base.",
+      "type": "indicator",
+      "category": "Growth",
+      "valueFormat": "integer",
+      "aggregation": "count",
+      "valueSql": "SELECT COUNT(*) AS value FROM customers",
+      "timeSeriesSql": "SELECT strftime(signup_date, '%Y-%m') AS date, COUNT(*) AS value FROM customers GROUP BY 1 ORDER BY date",
+      "table": "customers",
+      "column": "customer_id",
+      "timeColumn": "signup_date",
+      "formula": "COUNT(customer_id)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "acquisition_channel",
+        "city_tier",
+        "age_band",
+        "gender",
+        "plus_member_flag",
+        "segment"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-monthly-active-buyers",
+          "metricName": "Monthly Active Buyers",
+          "direction": "drives",
+          "type": "component"
+        },
+        {
+          "metricId": "m-plus-member-rate",
+          "metricName": "Plus Member Rate",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-average-customer-lifetime-orders",
+      "name": "Average Customer Lifetime Orders",
+      "description": "Average recorded lifetime orders per customer profile.",
+      "type": "indicator",
+      "category": "Growth",
+      "valueFormat": "number",
+      "aggregation": "ratio",
+      "valueSql": "SELECT AVG(CAST(lifetime_orders AS DOUBLE)) AS value FROM customers",
+      "timeSeriesSql": "SELECT strftime(signup_date, '%Y-%m') AS date, AVG(CAST(lifetime_orders AS DOUBLE)) AS value FROM customers GROUP BY 1 ORDER BY date",
+      "table": "customers",
+      "column": "lifetime_orders",
+      "timeColumn": "signup_date",
+      "formula": "AVG(customers.lifetime_orders)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "acquisition_channel",
+        "city_tier",
+        "age_band",
+        "gender",
+        "segment"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-average-customer-lifetime-gmv",
+          "metricName": "Average Customer Lifetime GMV",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-average-customer-lifetime-gmv",
+      "name": "Average Customer Lifetime GMV",
+      "description": "Average recorded lifetime GMV per customer.",
+      "type": "indicator",
+      "category": "Revenue",
+      "valueFormat": "currency",
+      "aggregation": "ratio",
+      "valueSql": "SELECT AVG(lifetime_gmv_inr) AS value FROM customers",
+      "timeSeriesSql": "SELECT strftime(signup_date, '%Y-%m') AS date, AVG(lifetime_gmv_inr) AS value FROM customers GROUP BY 1 ORDER BY date",
+      "table": "customers",
+      "column": "lifetime_gmv_inr",
+      "timeColumn": "signup_date",
+      "formula": "AVG(customers.lifetime_gmv_inr)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "acquisition_channel",
+        "city_tier",
+        "age_band",
+        "gender",
+        "segment",
+        "plus_member_flag"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-ltv-to-cac",
+          "metricName": "LTV to CAC",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-plus-member-rate",
+      "name": "Plus Member Rate",
+      "description": "Share of customers who are Flipkart Plus members.",
+      "type": "indicator",
+      "category": "Growth",
+      "valueFormat": "percent",
+      "aggregation": "ratio",
+      "valueSql": "SELECT CAST(COUNT(*) FILTER (WHERE plus_member_flag = TRUE) AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM customers",
+      "timeSeriesSql": "SELECT strftime(signup_date, '%Y-%m') AS date, CAST(COUNT(*) FILTER (WHERE plus_member_flag = TRUE) AS DOUBLE) / NULLIF(COUNT(*), 0) AS value FROM customers GROUP BY 1 ORDER BY date",
+      "table": "customers",
+      "column": "plus_member_flag",
+      "timeColumn": "signup_date",
+      "formula": "COUNT(customers where plus_member_flag=TRUE) / COUNT(all customers)",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "acquisition_channel",
+        "city_tier",
+        "age_band",
+        "gender",
+        "segment"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-repeat-buyer-rate",
+          "metricName": "Repeat Buyer Rate",
+          "direction": "drives",
+          "type": "influence"
+        },
+        {
+          "metricId": "m-average-customer-lifetime-gmv",
+          "metricName": "Average Customer Lifetime GMV",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-ltv-to-cac",
+      "name": "LTV to CAC",
+      "description": "Ratio of average customer lifetime GMV to blended acquisition cost.",
+      "type": "diagnostic",
+      "category": "Revenue",
+      "valueFormat": "number",
+      "aggregation": "derived_ratio",
+      "valueSql": "SELECT (SELECT AVG(lifetime_gmv_inr) FROM customers) / NULLIF((SELECT SUM(marketing_spend_inr) / NULLIF(SUM(new_buyers_acquired), 0) FROM acquisition_spend), 0) AS value",
+      "timeSeriesSql": "SELECT c.month AS date, c.avg_ltv / NULLIF(a.cac, 0) AS value FROM (SELECT strftime(signup_date, '%Y-%m') AS month, AVG(lifetime_gmv_inr) AS avg_ltv FROM customers GROUP BY 1) c LEFT JOIN (SELECT month, SUM(marketing_spend_inr) / NULLIF(SUM(new_buyers_acquired), 0) AS cac FROM acquisition_spend GROUP BY 1) a ON c.month = a.month ORDER BY date",
+      "table": "customers",
+      "column": "lifetime_gmv_inr",
+      "timeColumn": "signup_date",
+      "formula": "AVG(customers.lifetime_gmv_inr) / blended CAC",
+      "timeGrain": "monthly",
+      "dimensions": [
+        "acquisition_channel",
+        "city_tier",
+        "segment"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-average-customer-lifetime-gmv",
+          "metricName": "Average Customer Lifetime GMV",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    },
+    {
+      "id": "m-festival-days",
+      "name": "Festival Event Days",
+      "description": "Total number of event calendar days covered by marketplace seasonal events.",
+      "type": "indicator",
+      "category": "Operations",
+      "valueFormat": "integer",
+      "aggregation": "sum",
+      "valueSql": "SELECT SUM(date_diff('day', start_date, end_date) + 1) AS value FROM calendar_events",
+      "timeSeriesSql": "SELECT start_date AS date, date_diff('day', start_date, end_date) + 1 AS value FROM calendar_events ORDER BY date",
+      "table": "calendar_events",
+      "column": "start_date",
+      "timeColumn": "start_date",
+      "formula": "SUM(date_diff('day', start_date, end_date) + 1)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "event_name"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-average-event-multiplier",
+          "metricName": "Average Event Multiplier",
+          "direction": "drives",
+          "type": "component"
+        }
+      ]
+    },
+    {
+      "id": "m-average-event-multiplier",
+      "name": "Average Event Multiplier",
+      "description": "Average overall demand multiplier across calendar events.",
+      "type": "indicator",
+      "category": "Operations",
+      "valueFormat": "number",
+      "aggregation": "ratio",
+      "valueSql": "SELECT AVG(overall_multiplier) AS value FROM calendar_events",
+      "timeSeriesSql": "SELECT start_date AS date, overall_multiplier AS value FROM calendar_events ORDER BY date",
+      "table": "calendar_events",
+      "column": "overall_multiplier",
+      "timeColumn": "start_date",
+      "formula": "AVG(calendar_events.overall_multiplier)",
+      "timeGrain": "daily",
+      "dimensions": [
+        "event_name"
+      ],
+      "relationships": [
+        {
+          "metricId": "m-total-sessions",
+          "metricName": "Total Sessions",
+          "direction": "drives",
+          "type": "influence"
+        },
+        {
+          "metricId": "m-total-orders",
+          "metricName": "Total Orders",
+          "direction": "drives",
+          "type": "influence"
+        }
+      ]
+    }
+  ]
+}

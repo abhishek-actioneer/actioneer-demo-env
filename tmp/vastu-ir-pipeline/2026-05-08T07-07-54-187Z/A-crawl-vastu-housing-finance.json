@@ -1,0 +1,432 @@
+{
+  "source": "footer",
+  "homepageUrl": "https://vastuhfc.com",
+  "irIndexUrl": "https://www.vastuhfc.com/financial-reports",
+  "documents": [
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Result-for-quarter-and-year-ended-31st-March-2026.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=97448a469fbf6e34b7363d4d257552040508c05252b04dd5f7e45246a5cacd5e",
+      "title": "Audited Financial Result for quarter and year ended 31st March 2026",
+      "period": "March 2026",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Results-for-the-quarter-ended-31st-December-2025.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=24387112b86ccb17181b3661418859475fcc008e076004aed5f0b8947d96f7c0",
+      "title": "Audited Financial Results for the quarter ended 31st December, 2025",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Results-for-the-quarter-ended-30th-September-2025.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=b5e3b014dc16c2790a6fc811efa3e19046e0808f6501e5b520866105cddeaa78",
+      "title": "Audited Financial Results for the quarter ended 30th September, 2025",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Results-for-the-quarter-ended-30th-June-2025.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=b3a2768d7c224e275a0b28bc319082e8e16ce95495de78742306865e4c60620b",
+      "title": "Audited Financial Results for the quarter ended 30th June, 2025",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Results-for-the-quarter-and-year-ended-31st-March-2025.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=5fbcc8d8612ae55ce77367d06738bcfc0cfd16d9657cb01532d97279935bc28d",
+      "title": "Audited Financial Results for the quarter and year ended 31st March, 2025",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Results-for-the-quarter-ended-31st-December-2024.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=baa408f178d8e4a49997098edf47e749a288bbbd66d3e09fcdad30cc96fad0c0",
+      "title": "Audited Financial Results for the quarter ended 31st December, 2024",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Results-for-the-quarter-ended-30th-September-2024.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=8b07de2e2c3f69ba42f8c85341a31ff80dc4100bab8f63a7fab4be538df4ef40",
+      "title": "Audited Financial Results for the quarter ended 30th September, 2024",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Financial-Results-June-30-2024.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=b39d3f9c67c35e777072c55874efac28f32588ec9ebefc42a1e1e9dca6ffb52c",
+      "title": "Audited Financial Results for the quarter ended 30th June, 2024",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Results-for-the-quarter-and-year-ended-31st-March-2024.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=a4668bf424025dbd74293da12b7121f53060c7331461288d0a1cd7c112229430",
+      "title": "Audited Financial Results for the quarter and year ended 31st March, 2024",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Results-for-the-quarter-and-nine-months-ended-31st-December-2023.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=3fc89243de45168912ec292662d0f7bf93b70c28e76dbea346ceeb471e7b1497",
+      "title": "Audited Financial Results for the quarter and nine months ended 31st December, 2023",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Results-for-the-quarter-and-half-year-ended-30th-September-2023.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=7d109b5be98035382901b2e31c8dd82fdb3a1ac0e23d8cb20d2b2e9952cbae32",
+      "title": "Audited Financial Results for the quarter and half year ended 30th September, 2023",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Results-for-Quarter-ended-30th-June-2023.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=3bd34f29158a8839a824c5043553dcb5b2fd73f4a3e41a135f025b2b996def04",
+      "title": "Audited Financial Results for Quarter ended 30th June, 2023",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Results-for-Quarter-and-year-ended-31st-March-2023.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=b81c4c41b85a9ea1791f2688090201aff30dcf9a905584f418dae5e72fc42093",
+      "title": "Audited Financial Results for Quarter and year ended 31st March, 2023",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Financial-Results-December-31-2022.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=df68886a550d9e510386d21a4d50365820258c0bb74fa1d8a445deb5a21178bc",
+      "title": "Audited Financial Results for Quarter and Nine Months ended 31st December, 2022",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Results-for-Quarter-and-Half-year-ended-30th-September-2022.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=e3b6013f0679ee47aa9b0de2f7e3d989938b0fd5269dbc6718e143151fa11fda",
+      "title": "Audited Financial Results for Quarter and Half year ended 30th September, 2022",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Unaudited-Financial-Results-for-Quarter-ended-30th-June-2022.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=dc008d54645d8b93bf159626508277f8eb961249ab0e7472d1d49c5270072a28",
+      "title": "Unaudited Financial Results for Quarter ended 30th June, 2022",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Results-for-year-ended-31st-March-2022.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=8a86927971c9fa68404288ea4da558afcfd1f7f664282d33b2309b8322adcbe7",
+      "title": "Audited Financial Results for year ended 31st March 2022",
+      "period": "March 2022",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Results-for-the-half-year-ended-30th-September-2021.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=ec40a3f2f6f5cde1af44d3d06b9f7d1b5c7a499d77ecd604b0a18de7d440f966",
+      "title": "Audited Financial Results for half year ended 30th September 2021",
+      "period": "September 2021",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Unaudited-Financial-Results-for-Quarter-ended-31st-December-2021.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=d3e47e83796d48394a6480c1c1e0332221c656f22a7d78b0c08e9ab0f53365bd",
+      "title": "Unaudited Financial Results for Quarter ended 31st December 2021",
+      "period": "December 2021",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Results-FY-20-21.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=29f742af9d19272e5a655dc6c6864e8756083acc1e3805608b3735d4d9a3fa1b",
+      "title": "Audited Financial Results FY 20-21",
+      "period": "FY 20-21",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited%20Financial%20Results%20for%20half%20year%20ended%2030th%20September%202020.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=cb47be86e7d374e56f2ef04571bf8c34e9f579a54a96df3b030879385c97b734",
+      "title": "Audited Financial Results for half year ended 30th September 2020",
+      "period": "September 2020",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited%20Financial%20Results%20FY%2019-20.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=ca8aea85e281defd53bfb98c201d278412f04d58bcc8e32dec7a33e7a3085af3",
+      "title": "Audited Financial Results FY 19-20",
+      "period": "FY 19-20",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/unaudited_financial_results_for_half_year_ended_september_30_2019.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=f11d79042335e88968a4df76a8656bd3bb9375adbfa082b577fdeaa4327764b6",
+      "title": "Unaudited Financial Results for half year ended 30th September 2019",
+      "period": "September 2019",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited_Financial_Results_FY_18-19.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=07d21ab8cc81484cf89e8cc9ade41fef117d8c2a5cfb6251a5a1bb92b28acaf6",
+      "title": "Audited Financial Results FY 18-19",
+      "period": "FY 18-19",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/unaudited_financial_results_for_half_year_ended_sepember_30_2018.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=a16a1ae68ad7605dee51369429f10fb5eadeaff0b8094d74f73c44bd88a9c9ee",
+      "title": "Unaudited Financial Results for half year ended 30th September 2018",
+      "period": "September 2018",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Financial_Results_FY_2017-18.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=f4ba081cf63f3c83c6eefee5bfc0c9e137abf37d13f3e608dddbdd8dbe533e08",
+      "title": "Audited Financial Results FY 17-18",
+      "period": "FY 17-18",
+      "type": "quarterly_results"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=289524040c18123e379488f9467ab336673f2047d9b8586e7a8c54c90e4601e7",
+      "title": "ANNUAL REPORT 2024-25",
+      "period": "2024-25",
+      "type": "annual_report"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=2222fcecebafac73dc3f87515a45636176c6f39339de0e154490c68c315918a1",
+      "title": "ANNUAL REPORT 2023-24",
+      "period": "2023-24",
+      "type": "annual_report"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-22-23.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=278582ebca47085c0853dbd3eccaf9b529fdbc7b833cee88e2f13218d558f0c5",
+      "title": "ANNUAL REPORT 2022-23",
+      "period": "2022-23",
+      "type": "annual_report"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-21-22.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=0126e184322343cbc1b900f1cb60d48464cec5e54f923fb4ff722c01b76644ad",
+      "title": "ANNUAL REPORT 2021-22",
+      "period": "2021-22",
+      "type": "annual_report"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-2020-2021.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=81b5e7e910f77700c3fb575dcfa7f1f2d1ff2a3d6d2e5546332916799b5f53ad",
+      "title": "ANNUAL REPORT 2020-21",
+      "period": "2020-21",
+      "type": "annual_report"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-2019-2020.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=048d1da13cf4d945bb1e6252bd9e5294ae0b9b67cca75dd9335f7c62e872392b",
+      "title": "ANNUAL REPORT 2019-20",
+      "period": "2019-20",
+      "type": "annual_report"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/Annual_Report_FY_2018-19.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=fe51039224f950c7e5024cd30546b8324250ba52d1f499c5f72074dad9201510",
+      "title": "ANNUAL REPORT 2018-19",
+      "period": "2018-19",
+      "type": "annual_report"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/Annual_Report_FY_2017_18.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=74daa7163881e523354338ece7e0f693a5b9593e22a9de2d92d42b6e644d6818",
+      "title": "ANNUAL REPORT 2017-18",
+      "period": "2017-18",
+      "type": "annual_report"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/VHFCL-MGT-7-2025.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=f2bc6f093bf6d1f8c931b8eb67dc85513d7058f9c9069ad0f147bc0852a04d5e",
+      "title": "VHFCL - MGT-7 2025",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/VHFCL-MGT-7-2024.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=11dc7d61b8296c7dfcc8821ef7a303ea87e2ee1ab7b0319bfc44b3413af2f06d",
+      "title": "VHFCL - MGT-7 2024",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/VHFCL-MGT-7-2023.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=ea8f5144dc6a2004242c271e4607c55f4828e1f4fb7ba9a123f5fdbd05011c9f",
+      "title": "VHFCL - MGT-7 2023",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/VHFCL-MGT-7-2022.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=f7216d34d42f42dd131db3babf16c419f02ac8d01419f758e9638f8be95aed55",
+      "title": "VHFCL - MGT-7 2022",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/VHFCL-MGT-7-2021.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=961531b9e50481ab922f10d9cca6b4cf718f7c02b56b0e644ed8cdeb7ca7203e",
+      "title": "VHFCL - MGT-7 2021",
+      "type": "annual_report"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/Extract%20of%20Annual%20Return%20-%20FY%202019-20.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=3151ef5e56e113651602f797c5da259a756185afe96acc672cdcf8dac4286190",
+      "title": "Extract of Annual Return - FY 2019-20",
+      "period": "FY 2019-20",
+      "type": "annual_report"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/Extract_of_Annual_Return_FY_2018-19.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=7e36aaa330b18b7ca2bed7c420fe591fc89ef8c2a3b56672189688e0249b9180",
+      "title": "Extract of Annual Return - FY 2018-19",
+      "period": "FY 2018-19",
+      "type": "annual_report"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-mar-26-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=5f7fe78d60072044352685398f3f1e1dfadac63daf663c3a49d99120ccec6d69",
+      "title": "Liquidity Risk Management- Mar 26",
+      "period": "Mar 26",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LCR-Mar-26-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=f27ee5420c45498015266a8a487dcc53fa4a14cf05e28e44660f1b2994c441cf",
+      "title": "Liquidity Coverage Ratio- Mar 26",
+      "period": "Mar 26",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-dec-25-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=4192316a4a2a10771b3af653cffde51da9ce8a5982b8f08c00c63631cf35298e",
+      "title": "Liquidity Risk Management- Dec 25",
+      "period": "Dec 25",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LCR-Dec-25-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=4d3bb9b6dec98969fa624143f2b163aa69d666dba386df262d716e5e05dbb4e2",
+      "title": "Liquidity Coverage Ratio- Dec 25",
+      "period": "Dec 25",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-sept-25-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=13f91e75e564c1abfc5df33db18bba2f8385679660070e19155e8bef88e8ecf5",
+      "title": "Liquidity Risk Management- Sept 25",
+      "period": "Sept 25",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LCR-sept-25-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=5e2403f58ef7d7e9174ac13a241ccb718bb5504c41bea40bce3acbe31764367c",
+      "title": "Liquidity Coverage Ratio- sept 25",
+      "period": "sept 25",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-jun-25-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=af81061cd732aac86a230e514ff20644e28d2e8325023a7ac97c5cb01766ebac",
+      "title": "Liquidity Risk Management- June 25",
+      "period": "June 25",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LCR-jun-25-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=3fc80c852a3a1129c580c4050fd7e4e8d84069f984030609f266bd7f11e08b88",
+      "title": "Liquidity Coverage Ratio- June 25",
+      "period": "June 25",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-mar-25-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=c2d350339c3f877101f63fbae73923193bfbca3fc22c3273911a17288f0269ea",
+      "title": "Liquidity Risk Management- March 25",
+      "period": "March 25",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LCR-mar-25-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=75c601ca216399f25a4381b49e8c48b5946170313745d98888f8cbae731b0d0b",
+      "title": "Liquidity Coverage Ratio- March 25",
+      "period": "March 25",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LCR-dec-24-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=a20980aef401827e7a307007784819f1d67f9e6b2170ace88cfea372fb32665d",
+      "title": "Liquidity Coverage Ratio- December 24",
+      "period": "December 24",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-dec-24-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=3d80ff31ed687baa1ed3609e1e93ea0ff8704106350b4e214645aa39e149b7f5",
+      "title": "Liquidity Risk Management- December 24",
+      "period": "December 24",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LCR-sept-24-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=3989da8aa7b418c831b24bcaff33c46e1f8be55a9ee38bc77d1f2cc7f086efba",
+      "title": "Liquidity Coverage Ratio- September 24",
+      "period": "September 24",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-sept-24-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=b530035cdcd882a4cd798546b2b0da73acd80584875d5e1493d58ad0a3906bce",
+      "title": "Liquidity Risk Management- September 24",
+      "period": "September 24",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LCR-june-24-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=c079fdb1ba9e9a8eb40c17182d47b85e5d10b5d352ad42aaa9256b9801f1076b",
+      "title": "Liquidity Coverage Ratio- June 24",
+      "period": "June 24",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-june-24-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=3ed9d6e918d661b7bd8d27c8a4318bcbc65b3a034c1c095fbea86b092173bd7a",
+      "title": "Liquidity Risk Management- June 24",
+      "period": "June 24",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LCR-MAR-24-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=370c7dcb9fe03f5c5d78dc2c67b8c84950cb2f37c319d10aecc95ee77b33547a",
+      "title": "Liquidity Coverage Ratio- March 24",
+      "period": "March 24",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-MAR-24-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=27332b4d5a9ebb6d1ba06f1648c106f91b3cb9be5c1d56f1892af6beba65170a",
+      "title": "Liquidity Risk Management- March 24",
+      "period": "March 24",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LCR-DEC-23-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=2e38498466a0fbb3003cd5079d76283229f9155eabb8048126ec0edce566c3a4",
+      "title": "Liquidity Coverage Ratio- December 23",
+      "period": "December 23",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-DEC-23-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=e0dca6448174da9a9a530282ca42a5c177ddae2f3252ed7eb568c774a1c1e023",
+      "title": "Liquidity Risk Management- December 23",
+      "period": "December 23",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LCR-sept-23-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=9a57ce968a0e451afee6e6c5c08c86bdcbbe220ecadca8d82c643cc390aafe8f",
+      "title": "Liquidity Coverage Ratio- September 23",
+      "period": "September 23",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-sept-23-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=db7ac823d1a03e26a579fd520b39d6f991d54483f24311591697186c848cf586",
+      "title": "Liquidity Risk Management- September 23",
+      "period": "September 23",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LCR-JUN-23-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=417e2ff60d3f85300d2bf1542e1cad46c15a406db508ebfeb51e84503da143a2",
+      "title": "Liquidity Coverage Ratio - June 23",
+      "period": "June 23",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-JUN-23-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=09b4e8dff86a9dec2e281860bf938ecd8984503965d8588daa50f1a014a1e3d3",
+      "title": "Liquidity Risk Management- June 23",
+      "period": "June 23",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-MAR-23-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=c3696998b5be5da4d72c60282bed4f1f35fb7c4602770da926e24c24865b112e",
+      "title": "Liquidity Risk Management- Mar 23",
+      "period": "Mar 23",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-DEC-22-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=bbb131c0b990e5077a9e75a5e9b1fdf594f8735513a701e4a03586e88cbf3c54",
+      "title": "Liquidity Risk Management- Dec 22",
+      "period": "Dec 22",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-Sept-22-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=c29316964539b876b0abff3e3af110e71fb2ebe0910f510001c11621f2309600",
+      "title": "Liquidity Risk Management- Sept 22",
+      "period": "Sept 22",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-June-22-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=6a9f22b4bfc85f9f6119eaa8aae2cab5a570bb31b7e25c56ed9d3b41e99a1c35",
+      "title": "Liquidity Risk Management- June 22",
+      "period": "June 22",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-March-22-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=57964a6c75d54cd64a26aa3e687b2fec6a075beef8b102229b012754e6859d48",
+      "title": "Liquidity Risk Management- March 22",
+      "period": "March 22",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-Dec-21-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=d40f1f3e48e22357209bb6baf1b079869376a36c94845fe07b2bde1ed13a9345",
+      "title": "Liquidity Risk Management- Dec 21",
+      "period": "Dec 21",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-Sept-21-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=ca4dd719c7fb2b29efeaab7e75c9bba102063758348a6736b02369a32e760c61",
+      "title": "Liquidity Risk Management- Sept 21",
+      "period": "Sept 21",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-June-21-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=521775bbe1e8f03cead03692beefe4a1b0e2958b14d2b869cbd8a8c6c9d16555",
+      "title": "Liquidity Risk Management- June 21",
+      "period": "June 21",
+      "type": "other"
+    },
+    {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/LRM-March-21-VHFC.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=c3196646a6f5daa1fc5ebd98fa6618d8619726b82eafd9908257d8a68b4c2088",
+      "title": "Liquidity Risk Management- March 21",
+      "period": "March 21",
+      "type": "other"
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,158 @@
+name: Tests
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review]
+
+env:
+  APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
+  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+jobs:
+  lint-and-typecheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: "10.27.0"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+      - run: pnpm install
+      - run: pnpm lint
+      - run: npx tsc --noEmit
+
+  setup-test-db:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: "10.27.0"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+      - run: pnpm install
+      - name: Create data directory
+        run: mkdir -p data
+      - name: Seed test DuckDB
+        run: npx tsx scripts/setup-test-data.ts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: test-duckdb
+          path: data/ecommerce.duckdb
+          retention-days: 1
+
+  api-tests:
+    needs: [lint-and-typecheck, setup-test-db]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: "10.27.0"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+      - run: pnpm install
+      - name: Download test DuckDB
+        uses: actions/download-artifact@v4
+        with:
+          name: test-duckdb
+          path: data/
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Run API tests
+        run: pnpm test:api
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: api-test-report
+          path: playwright-report/
+          retention-days: 7
+
+  e2e-tests:
+    needs: [lint-and-typecheck, setup-test-db]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: "10.27.0"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+      - run: pnpm install
+      - name: Download test DuckDB
+        uses: actions/download-artifact@v4
+        with:
+          name: test-duckdb
+          path: data/
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Run E2E tests
+        run: pnpm test:e2e
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: e2e-test-report
+          path: playwright-report/
+          retention-days: 7
+
+  visual-tests:
+    needs: [setup-test-db]
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.head_ref }}
+      - uses: pnpm/action-setup@v4
+        with:
+          version: "10.27.0"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+      - run: pnpm install
+      - name: Download test DuckDB
+        uses: actions/download-artifact@v4
+        with:
+          name: test-duckdb
+          path: data/
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Generate baselines if missing, otherwise compare
+        run: |
+          SNAPSHOT_DIR="tests/visual/pages.spec.ts-snapshots"
+          if [ -z "$(ls "$SNAPSHOT_DIR"/*.png 2>/dev/null)" ]; then
+            echo "No baselines found — generating with --update-snapshots"
+            pnpm test:visual:update || true
+          else
+            pnpm test:visual
+          fi
+      - name: Commit new baselines if generated
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add tests/visual/pages.spec.ts-snapshots/
+          git diff --staged --quiet && exit 0
+          git commit -m "chore: seed visual test baselines [skip ci]"
+          git push
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: visual-test-report
+          path: playwright-report/
+          retention-days: 7

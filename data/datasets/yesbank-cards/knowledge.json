@@ -1,0 +1,202 @@
+[
+  {
+    "id": "yesbank-k-001",
+    "content": "The Credit Cards dataset covers 1,351,919 transactions across 5,139 cards held by 4,000 customers, recorded between June 1, 2024 and May 31, 2026 (24 months).",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "yesbank-k-002",
+    "content": "The transactions table keys on card_id, not customer_id. To analyze spend or campaigns by customer (CIBIL band, income band, tenure), join transactions → cards → customers on card_id then customer_id.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "yesbank-k-003",
+    "content": "Card portfolio status: 3,783 active (73.6%), 942 closed (18.3%), and 414 dormant (8.1%) of 5,139 cards. Closed + dormant together represent ~26% attrition/inactivity — a core retention metric.",
+    "level": "global",
+    "category": "Metric range",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "yesbank-k-004",
+    "content": "Product mix is led by Select (1,294 cards), POP-CLUB (975), and ELITE+ (926), then Klick (837) and BankBazaar FinBooster (470). Premium tiers YES PREMIA (223), YES ELITE (148), and MARQUEE (33) are deliberately small, high-value cohorts.",
+    "level": "global",
+    "category": "Segment",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "yesbank-k-005",
+    "content": "Campaign funnel: of 53,227 contacts, 50,690 were ignored, 1,311 clicked without converting, 307 opted out, and 919 converted — a 1.7% conversion rate. This is a realistic range for credit-card cross-sell/upgrade campaigns.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "yesbank-k-006",
+    "content": "Card revenue has four engines: interest on revolved balances, annual/late fees, foreign-exchange markup, and interchange on spend. In this data, ₹3.92 crore interest and ₹1.01 crore fees come from statements, plus ₹5.6 lakh forex markup from 3,667 international transactions.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "Critical",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "yesbank-k-007",
+    "content": "27.6% of statements carry a revolving balance, and average credit utilization is 12.5%. Revolvers are a minority of accounts but drive the large majority of interest revenue, so revolve rate is the single most important profitability lever.",
+    "level": "global",
+    "category": "Metric range",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "yesbank-k-008",
+    "content": "A clean cross-sell/upgrade journey for this data is: card issued → activated → spend begins → propensity signal fires → campaign sent → converted → upgrade or product cross-sell. Attribute conversions back to the originating propensity signal and campaign channel.",
+    "level": "global",
+    "category": "Reporting",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "yesbank-k-009",
+    "content": "Propensity events (salary jump, travel-booking cluster, EMI-eligible big ticket, first international transaction, dormancy onset) are behavioral triggers that should precede a campaign. Conversion is far higher when a contact follows a fresh propensity signal than when it is sent cold.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "yesbank-k-010",
+    "content": "Contactability is gated by consent flags: never count or target customers with dnd_flag set, and respect email/SMS/push opt-ins. Reachable base, not total base, is the correct denominator for campaign reach and conversion.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "yesbank-k-011",
+    "content": "Card upgrades show up as UPGRADED_TO events in card_lifecycle_events. To measure post-upgrade spend lift, compare a card's monthly transaction value for the three months before vs. after the upgrade event.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "yesbank-k-012",
+    "content": "A utility/rent surcharge applies only to transactions on or after 15 January 2026 (surcharge_levied_inr). Any analysis of surcharge revenue or its spend impact must filter to that date onward, or it will understate per-transaction surcharge.",
+    "level": "global",
+    "category": "Data validation",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "yesbank-k-013",
+    "content": "Cross-sell whitespace = cardholders who hold no other bank product (no SAVINGS/SALARY/FD/loan in product_holdings). These single-product customers are the highest-value targets for deepening the relationship.",
+    "level": "global",
+    "category": "Segment",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "yesbank-k-014",
+    "content": "Rewards economics: points liability and redemption rate (rewards_summary) directly affect card profitability. Points expiring in 90 days are a natural nudge trigger; high unredeemed balances signal disengagement risk.",
+    "level": "global",
+    "category": "Insight",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "yesbank-k-015",
+    "content": "Industry benchmark: Indian credit-card revolve rates run materially below the US (~40–50%); a 25–35% revolve rate is healthy for an Indian issuer. This portfolio's 27.6% sits squarely in that band.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "yesbank-k-016",
+    "content": "Industry benchmark: lifecycle/cross-sell campaign conversion typically lands at 1–3% for credit-card portfolios; RM-assisted (phone) channels convert several times higher than SMS or email. Compare per-channel conversion against this range before judging a campaign.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "yesbank-k-017",
+    "content": "Industry benchmark: average credit utilization of 10–30% is considered healthy; utilization persistently above ~80% is an early delinquency signal. The portfolio average of 12.5% is low and conservative.",
+    "level": "global",
+    "category": "External benchmark",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "yesbank-k-018",
+    "content": "Dormancy is a leading indicator of attrition. A card with no purchase transactions for 90+ days (DORMANCY_ONSET propensity event) should be flagged for reactivation before it moves to CLOSED.",
+    "level": "global",
+    "category": "Segment",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "yesbank-k-019",
+    "content": "When computing spend, exclude non-purchase transaction types (REFUND, REVERSAL, FEE, AUTOPAY) and filter response = 'APPROVED'. Including reversals or declines double-counts or inflates spend.",
+    "level": "global",
+    "category": "Metric",
+    "priority": "High",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  },
+  {
+    "id": "yesbank-k-020",
+    "content": "CIBIL band and monthly-income band are the primary credit-quality segments. Higher CIBIL/income cohorts justify higher limits, premium products, and EMI offers, while lower bands warrant tighter limits — always segment growth campaigns by these before recommending an offer.",
+    "level": "global",
+    "category": "Segment",
+    "priority": "Good to have",
+    "source": "auto-generated",
+    "dateAdded": "2026-06-22T10:00:00.000Z",
+    "addedBy": "Actioneer AI"
+  }
+]

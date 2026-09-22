@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Help — Weekly Report</title>
+
+    <!-- Fonts: Manrope from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===========================================
+           CSS CUSTOM PROPERTIES (ELECTRIC STUDIO THEME)
+           Change these to change the whole look
+           =========================================== */
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-white: #ffffff;
+            --accent-blue: #4361ee;
+            --accent-blue-light: #6b83f5;
+            --accent-blue-glow: rgba(67, 97, 238, 0.15);
+            --text-dark: #0a0a0a;
+            --text-light: #ffffff;
+            --text-muted: rgba(255,255,255,0.5);
+            --text-muted-dark: #6b7280;
+            --border-light: rgba(255,255,255,0.08);
+            --border-dark: rgba(0,0,0,0.08);
+            --positive: #10b981;
+            --negative: #ef4444;
+            --warning: #f59e0b;
+
+            --font-display: 'Manrope', sans-serif;
+            --font-body: 'Manrope', sans-serif;
+
+            --title-size: clamp(2rem, 5.5vw, 4.5rem);
+            --h2-size: clamp(1.4rem, 3.5vw, 2.5rem);
+            --h3-size: clamp(1rem, 2vw, 1.5rem);
+            --body-size: clamp(0.75rem, 1.3vw, 1rem);
+            --small-size: clamp(0.6rem, 1vw, 0.8rem);
+            --stat-size: clamp(2rem, 5vw, 4rem);
+
+            --slide-padding: clamp(1.5rem, 4vw, 4rem);
+            --content-gap: clamp(1rem, 2vw, 2rem);
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --duration-normal: 0.6s;
+        }
+
+        /* ===========================================
+           BASE STYLES
+           =========================================== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* === VIEWPORT BASE (MANDATORY) === */
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+        }
+        html {
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            height: 100dvh;
+            overflow: hidden;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            font-family: var(--font-body);
+        }
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-height: 100%;
+            overflow: hidden;
+            padding: var(--slide-padding);
+        }
+        img, .image-container {
+            max-width: 100%;
+            max-height: min(50vh, 400px);
+            object-fit: contain;
+        }
+
+        /* Short viewports */
+        @media (max-height: 700px) {
+            :root {
+                --slide-padding: clamp(0.75rem, 3vw, 2rem);
+                --content-gap: clamp(0.4rem, 1.5vw, 1rem);
+                --title-size: clamp(1.25rem, 4.5vw, 2.5rem);
+                --h2-size: clamp(1rem, 3vw, 1.75rem);
+                --stat-size: clamp(1.5rem, 4vw, 3rem);
+            }
+        }
+        @media (max-height: 600px) {
+            :root {
+                --slide-padding: clamp(0.5rem, 2.5vw, 1.5rem);
+                --content-gap: clamp(0.3rem, 1vw, 0.75rem);
+                --title-size: clamp(1.1rem, 4vw, 2rem);
+                --body-size: clamp(0.7rem, 1.2vw, 0.95rem);
+            }
+            .nav-dots, .keyboard-hint, .decorative { display: none; }
+        }
+        @media (max-height: 500px) {
+            :root {
+                --slide-padding: clamp(0.4rem, 2vw, 1rem);
+                --title-size: clamp(1rem, 3.5vw, 1.5rem);
+                --h2-size: clamp(0.9rem, 2.5vw, 1.25rem);
+                --body-size: clamp(0.65rem, 1vw, 0.85rem);
+            }
+        }
+        @media (max-width: 600px) {
+            :root { --title-size: clamp(1.25rem, 7vw, 2.5rem); }
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr !important; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.2s !important;
+            }
+            html { scroll-behavior: auto; }
+        }
+
+        /* ===========================================
+           ELECTRIC STUDIO LAYOUT SYSTEM
+           =========================================== */
+
+        /* --- Split Panel Slides --- */
+        .split-slide {
+            display: grid;
+            grid-template-rows: 1fr;
+        }
+        .split-slide.top-bottom {
+            grid-template-rows: 55% 45%;
+        }
+        .split-slide.even {
+            grid-template-rows: 1fr 1fr;
+        }
+        .split-slide.bottom-heavy {
+            grid-template-rows: 40% 60%;
+        }
+
+        .panel {
+            padding: clamp(20px, 3.5vh, 48px) clamp(28px, 4.5vw, 72px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .panel-white {
+            background: var(--bg-white);
+            color: var(--text-dark);
+        }
+        .panel-blue {
+            background: var(--accent-blue);
+            color: var(--text-light);
+        }
+        .panel-dark {
+            background: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        /* Blue accent bar between panels */
+        .panel-white + .panel-blue::before,
+        .panel-white + .panel-dark::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--accent-blue);
+        }
+        .panel-dark + .panel-white::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--accent-blue);
+        }
+
+        /* --- Typography --- */
+        h1 {
+            font-size: var(--title-size);
+            font-weight: 800;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+        }
+        h2 {
+            font-size: var(--h2-size);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+        }
+        h3 {
+            font-size: var(--h3-size);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .accent { color: var(--accent-blue); }
+        .accent-on-dark { color: var(--accent-blue-light); }
+
+        .eyebrow {
+            font-size: var(--small-size);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .eyebrow.muted { opacity: 0.5; }
+
+        .body-text {
+            font-size: var(--body-size);
+            line-height: 1.55;
+            font-weight: 400;
+        }
+
+        /* --- Brand Mark --- */
+        .brand-mark {
+            width: clamp(28px, 3.5vw, 44px);
+            height: clamp(28px, 3.5vw, 44px);
+            background: var(--accent-blue);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .brand-mark.on-blue {
+            background: var(--bg-white);
+        }
+        .brand-mark.on-dark {
+            background: var(--accent-blue);
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        /* --- Stat Blocks --- */
+        .stat-row {
+            display: flex;
+            gap: clamp(20px, 4vw, 56px);
+            flex-wrap: wrap;
+        }
+        .stat-block {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(2px, 0.4vh, 6px);
+        }
+        .stat-value {
+            font-size: var(--stat-size);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: var(--small-size);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0.6;
+            font-weight: 600;
+        }
+        .stat-delta {
+            font-size: var(--small-size);
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .stat-delta.up { color: var(--positive); }
+        .stat-delta.down { color: var(--negative); }
+
+        /* --- Grids --- */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(12px, 2vw, 24px);
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(12px, 2vw, 24px);
+        }
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: clamp(10px, 1.5vw, 20px);
+        }
+
+        /* --- Metric Cards --- */
+        .metric-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid var(--border-light);
+            border-radius: clamp(8px, 1vw, 12px);
+            padding: clamp(14px, 2vw, 24px);
+            display: flex;
+            flex-direction: column;
+            gap: clamp(6px, 1vh, 12px);
+        }
+        .metric-card.on-white {
+            background: rgba(0,0,0,0.03);
+            border-color: var(--border-dark);
+        }
+        .metric-card .card-label {
+            font-size: var(--small-size);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.5;
+        }
+        .metric-card .card-value {
+            font-size: clamp(1.4rem, 3vw, 2.2rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1;
+        }
+
+        /* --- Bar Charts (CSS-only) --- */
+        .bar-chart {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(6px, 1vh, 12px);
+        }
+        .bar-row {
+            display: grid;
+            grid-template-columns: clamp(80px, 12vw, 140px) 1fr clamp(40px, 5vw, 60px);
+            align-items: center;
+            gap: clamp(8px, 1vw, 16px);
+        }
+        .bar-label {
+            font-size: var(--small-size);
+            font-weight: 500;
+            text-align: right;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .bar-track {
+            height: clamp(16px, 2vh, 24px);
+            background: rgba(255,255,255,0.06);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .bar-track.on-white { background: rgba(0,0,0,0.05); }
+        .bar-fill {
+            height: 100%;
+            background: var(--accent-blue);
+            border-radius: 4px;
+            transition: width 1s var(--ease-out-expo);
+        }
+        .bar-fill.positive { background: var(--positive); }
+        .bar-fill.warning { background: var(--warning); }
+        .bar-value {
+            font-size: var(--small-size);
+            font-weight: 700;
+            text-align: right;
+        }
+
+        /* --- Table --- */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: var(--small-size);
+        }
+        .data-table th {
+            text-align: left;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: clamp(6px, 1vh, 12px) clamp(8px, 1vw, 16px);
+            border-bottom: 2px solid var(--accent-blue);
+            opacity: 0.5;
+        }
+        .data-table td {
+            padding: clamp(5px, 0.8vh, 10px) clamp(8px, 1vw, 16px);
+            border-bottom: 1px solid var(--border-light);
+            font-weight: 400;
+        }
+        .data-table .on-white td { border-bottom-color: var(--border-dark); }
+        .data-table td.num {
+            font-weight: 700;
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* --- Bullet Lists --- */
+        .bullet-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(8px, 1.2vh, 16px);
+        }
+        .bullet-list li {
+            font-size: var(--body-size);
+            line-height: 1.45;
+            padding-left: clamp(16px, 2vw, 24px);
+            position: relative;
+        }
+        .bullet-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: clamp(6px, 0.8vh, 10px);
+            width: 6px;
+            height: 6px;
+            background: var(--accent-blue);
+            border-radius: 50%;
+        }
+        .bullet-list.on-white li::before { background: var(--accent-blue); }
+
+        /* --- Footer --- */
+        .panel-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            font-size: var(--small-size);
+            opacity: 0.4;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* ===========================================
+           ANIMATIONS
+           =========================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity var(--duration-normal) var(--ease-out-expo),
+                        transform var(--duration-normal) var(--ease-out-expo);
+        }
+        .slide.visible .reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal:nth-child(1) { transition-delay: 0.1s; }
+        .reveal:nth-child(2) { transition-delay: 0.2s; }
+        .reveal:nth-child(3) { transition-delay: 0.3s; }
+        .reveal:nth-child(4) { transition-delay: 0.4s; }
+        .reveal:nth-child(5) { transition-delay: 0.5s; }
+
+        .reveal-bar .bar-fill { width: 0 !important; }
+        .slide.visible .reveal-bar .bar-fill { width: var(--bar-width); }
+
+        /* Blue bar expand animation */
+        .bar-expand {
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.8s var(--ease-out-expo) 0.3s;
+        }
+        .slide.visible .bar-expand {
+            transform: scaleX(1);
+        }
+
+        /* Progress bar at top of page */
+        .progress-bar {
+            position: fixed;
+            top: 0; left: 0;
+            height: 3px;
+            background: var(--accent-blue);
+            z-index: 9999;
+            transition: width 0.3s ease;
+        }
+
+        /* Nav dots */
+        .nav-dots {
+            position: fixed;
+            right: clamp(12px, 2vw, 24px);
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: clamp(6px, 1vh, 10px);
+            z-index: 9998;
+        }
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            padding: 0;
+        }
+        .nav-dot.active {
+            background: var(--accent-blue);
+            transform: scale(1.3);
+        }
+
+        /* ===========================================
+           INLINE EDITING (OPT-IN)
+           =========================================== */
+        .edit-hotzone {
+            position: fixed;
+            top: 0; left: 0;
+            width: 80px; height: 80px;
+            z-index: 10000;
+            cursor: pointer;
+        }
+        .edit-toggle {
+            position: fixed;
+            top: clamp(12px, 2vh, 20px);
+            left: clamp(12px, 2vw, 20px);
+            background: var(--accent-blue);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: clamp(6px, 1vh, 10px) clamp(10px, 1.5vw, 16px);
+            font-family: var(--font-body);
+            font-size: var(--small-size);
+            font-weight: 600;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 10001;
+            letter-spacing: 0.05em;
+        }
+        .edit-toggle.show,
+        .edit-toggle.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .editing-active [contenteditable="true"] {
+            outline: 2px dashed var(--accent-blue);
+            outline-offset: 4px;
+            cursor: text;
+        }
+        .edit-banner {
+            position: fixed;
+            bottom: clamp(12px, 2vh, 20px);
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-blue);
+            color: white;
+            padding: clamp(8px, 1vh, 12px) clamp(16px, 2vw, 24px);
+            border-radius: 8px;
+            font-size: var(--small-size);
+            font-weight: 600;
+            z-index: 10001;
+            display: none;
+            letter-spacing: 0.05em;
+        }
+        .editing-active .edit-banner { display: block; }
+    </style>
+</head>
+<body>
+    <!-- Progress bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation dots -->
+    <nav class="nav-dots" id="navDots" aria-label="Slide navigation"></nav>
+
+    <!-- Edit controls -->
+    <div class="edit-hotzone" id="editHotzone"></div>
+    <button class="edit-toggle" id="editToggle">Edit Mode</button>
+    <div class="edit-banner">Editing — Click text to change &bull; Press E or Ctrl+S to save</div>
+
+    <!-- ===========================================
+         SLIDE 1: TITLE
+         =========================================== -->
+    <section class="slide split-slide top-bottom" aria-label="Title">
+        <div class="panel panel-white">
+            <div class="panel-header">
+                <div class="brand-mark"></div>
+                <span class="eyebrow muted" style="color: var(--text-dark);">Quick Help</span>
+            </div>
+            <div>
+                <h1 class="reveal" contenteditable="false">Weekly<br>Operations<br><span class="accent">Report</span></h1>
+            </div>
+        </div>
+        <div class="panel panel-blue">
+            <div class="stat-row reveal">
+                <div class="stat-block">
+                    <div class="stat-value">W4</div>
+                    <div class="stat-label">Week of Jan 20–26</div>
+                </div>
+                <div class="stat-block">
+                    <div class="stat-value">2025</div>
+                    <div class="stat-label">Fiscal Year</div>
+                </div>
+            </div>
+            <div class="panel-footer reveal">
+                <span>Bangalore, India</span>
+                <span>18 Service Hubs</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 2: WEEKLY SNAPSHOT
+         =========================================== -->
+    <section class="slide split-slide even" aria-label="Weekly Snapshot">
+        <div class="panel panel-dark">
+            <div class="panel-header">
+                <span class="eyebrow" style="opacity:0.4;">01</span>
+                <span class="eyebrow" style="opacity:0.4;">Weekly Snapshot</span>
+            </div>
+            <div>
+                <h2 class="reveal" contenteditable="false">This Week<br><span class="accent-on-dark">At a Glance</span></h2>
+            </div>
+            <div class="panel-footer reveal">
+                <span>Jan 20 — Jan 26, 2025</span>
+            </div>
+        </div>
+        <div class="panel panel-white" style="position:relative;">
+            <div class="bar-expand" style="position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent-blue);"></div>
+            <div class="grid-4 reveal" style="align-self:center;">
+                <div class="metric-card on-white">
+                    <div class="card-label">Bookings</div>
+                    <div class="card-value" style="color:var(--text-dark);" contenteditable="false">9,412</div>
+                    <div class="stat-delta up">&#9650; 6.2% WoW</div>
+                </div>
+                <div class="metric-card on-white">
+                    <div class="card-label">Revenue</div>
+                    <div class="card-value" style="color:var(--text-dark);" contenteditable="false">&#8377;41.8L</div>
+                    <div class="stat-delta up">&#9650; 4.8% WoW</div>
+                </div>
+                <div class="metric-card on-white">
+                    <div class="card-label">On-Time SLA</div>
+                    <div class="card-value" style="color:var(--text-dark);" contenteditable="false">87.3%</div>
+                    <div class="stat-delta down">&#9660; 1.1% WoW</div>
+                </div>
+                <div class="metric-card on-white">
+                    <div class="card-label">New Customers</div>
+                    <div class="card-value" style="color:var(--text-dark);" contenteditable="false">842</div>
+                    <div class="stat-delta up">&#9650; 12.4% WoW</div>
+                </div>
+            </div>
+            <div class="panel-footer" style="color:var(--text-muted-dark);">
+                <span>vs. W3 (Jan 13–19)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 3: REVENUE BREAKDOWN
+         =========================================== -->
+    <section class="slide split-slide top-bottom" aria-label="Revenue">
+        <div class="panel panel-white">
+            <div class="panel-header">
+                <span class="eyebrow muted" style="color:var(--text-dark);">02</span>
+                <span class="eyebrow muted" style="color:var(--text-dark);">Revenue</span>
+            </div>
+            <div>
+                <h2 class="reveal" style="color:var(--text-dark);" contenteditable="false">Revenue by<br><span class="accent">Service Tier</span></h2>
+            </div>
+        </div>
+        <div class="panel panel-dark">
+            <div class="bar-chart reveal reveal-bar" style="align-self:center;width:100%;max-width:700px;">
+                <div class="bar-row">
+                    <div class="bar-label">Premium (120m)</div>
+                    <div class="bar-track"><div class="bar-fill" style="--bar-width:92%;width:92%;"></div></div>
+                    <div class="bar-value">&#8377;14.2L</div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label">Extended (90m)</div>
+                    <div class="bar-track"><div class="bar-fill" style="--bar-width:74%;width:74%;"></div></div>
+                    <div class="bar-value">&#8377;11.4L</div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label">Standard (60m)</div>
+                    <div class="bar-track"><div class="bar-fill" style="--bar-width:85%;width:85%;"></div></div>
+                    <div class="bar-value">&#8377;13.1L</div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label">Quick (30m)</div>
+                    <div class="bar-track"><div class="bar-fill" style="--bar-width:20%;width:20%;"></div></div>
+                    <div class="bar-value">&#8377;3.1L</div>
+                </div>
+            </div>
+            <div class="panel-footer reveal">
+                <span>Total: &#8377;41.8L</span>
+                <span>AOV: &#8377;444</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 4: TOP SERVICES
+         =========================================== -->
+    <section class="slide split-slide even" aria-label="Top Services">
+        <div class="panel panel-blue">
+            <div class="panel-header">
+                <div class="brand-mark on-blue"></div>
+                <span class="eyebrow" style="opacity:0.6;">03 &bull; Services</span>
+            </div>
+            <div>
+                <h2 class="reveal" contenteditable="false">Top 5 Services<br>This Week</h2>
+            </div>
+        </div>
+        <div class="panel panel-dark">
+            <div class="bar-chart reveal reveal-bar" style="align-self:center;width:100%;max-width:650px;">
+                <div class="bar-row">
+                    <div class="bar-label">Sweeping & Mopping</div>
+                    <div class="bar-track"><div class="bar-fill" style="--bar-width:100%;width:100%;"></div></div>
+                    <div class="bar-value">1,840</div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label">Bathroom Cleaning</div>
+                    <div class="bar-track"><div class="bar-fill" style="--bar-width:78%;width:78%;"></div></div>
+                    <div class="bar-value">1,435</div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label">Deep Cleaning</div>
+                    <div class="bar-track"><div class="bar-fill" style="--bar-width:62%;width:62%;"></div></div>
+                    <div class="bar-value">1,140</div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label">Kitchen Cleaning</div>
+                    <div class="bar-track"><div class="bar-fill" style="--bar-width:55%;width:55%;"></div></div>
+                    <div class="bar-value">1,012</div>
+                </div>
+                <div class="bar-row">
+                    <div class="bar-label">Dishes & Utensils</div>
+                    <div class="bar-track"><div class="bar-fill" style="--bar-width:47%;width:47%;"></div></div>
+                    <div class="bar-value">865</div>
+                </div>
+            </div>
+            <div class="panel-footer reveal">
+                <span>Top 5 = 66.8% of volume</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 5: HUB PERFORMANCE
+         =========================================== -->
+    <section class="slide split-slide top-bottom" aria-label="Hub Performance">
+        <div class="panel panel-dark">
+            <div class="panel-header">
+                <span class="eyebrow" style="opacity:0.4;">04</span>
+                <span class="eyebrow" style="opacity:0.4;">Hub Performance</span>
+            </div>
+            <div>
+                <h2 class="reveal" contenteditable="false">Hub<br><span class="accent-on-dark">Leaderboard</span></h2>
+            </div>
+        </div>
+        <div class="panel panel-white">
+            <table class="data-table reveal" style="color:var(--text-dark);">
+                <thead>
+                    <tr>
+                        <th>Hub</th>
+                        <th>Bookings</th>
+                        <th>Revenue</th>
+                        <th>On-Time %</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Koramangala</td>
+                        <td class="num" contenteditable="false">892</td>
+                        <td class="num" contenteditable="false">&#8377;4.2L</td>
+                        <td class="num" contenteditable="false">91.2%</td>
+                        <td class="num" contenteditable="false">4.6</td>
+                    </tr>
+                    <tr>
+                        <td>Indiranagar</td>
+                        <td class="num" contenteditable="false">847</td>
+                        <td class="num" contenteditable="false">&#8377;3.9L</td>
+                        <td class="num" contenteditable="false">89.5%</td>
+                        <td class="num" contenteditable="false">4.5</td>
+                    </tr>
+                    <tr>
+                        <td>HSR Layout</td>
+                        <td class="num" contenteditable="false">780</td>
+                        <td class="num" contenteditable="false">&#8377;3.4L</td>
+                        <td class="num" contenteditable="false">88.1%</td>
+                        <td class="num" contenteditable="false">4.4</td>
+                    </tr>
+                    <tr>
+                        <td>Whitefield</td>
+                        <td class="num" contenteditable="false">715</td>
+                        <td class="num" contenteditable="false">&#8377;3.1L</td>
+                        <td class="num" contenteditable="false">85.3%</td>
+                        <td class="num" contenteditable="false">4.3</td>
+                    </tr>
+                    <tr>
+                        <td>Electronic City</td>
+                        <td class="num" contenteditable="false">668</td>
+                        <td class="num" contenteditable="false">&#8377;2.8L</td>
+                        <td class="num" contenteditable="false">84.7%</td>
+                        <td class="num" contenteditable="false">4.2</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="panel-footer" style="color:var(--text-muted-dark);">
+                <span>Top 5 of 18 hubs shown</span>
+                <span>Rating out of 5.0</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 6: SLA PERFORMANCE
+         =========================================== -->
+    <section class="slide split-slide even" aria-label="SLA Performance">
+        <div class="panel panel-white">
+            <div class="panel-header">
+                <span class="eyebrow muted" style="color:var(--text-dark);">05 &bull; Operations</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:clamp(8px,1.5vh,20px);">
+                <h2 class="reveal" style="color:var(--text-dark);" contenteditable="false">SLA &<br><span class="accent">Fulfillment</span></h2>
+                <p class="body-text reveal" style="color:var(--text-muted-dark);max-width:40ch;" contenteditable="false">On-time arrival rate dipped 1.1% this week, driven by rain disruptions in South Bangalore hubs on Wed–Thu.</p>
+            </div>
+        </div>
+        <div class="panel panel-dark">
+            <div class="grid-2 reveal" style="align-self:center;">
+                <div class="metric-card">
+                    <div class="card-label">Avg Arrival Time</div>
+                    <div class="card-value" contenteditable="false">9.2 min</div>
+                    <div class="stat-delta down">&#9660; 0.4 min vs target (10m)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="card-label">SLA Breach Rate</div>
+                    <div class="card-value" contenteditable="false">12.7%</div>
+                    <div class="stat-delta down" style="color:var(--warning);">&#9650; 1.1% WoW</div>
+                </div>
+                <div class="metric-card">
+                    <div class="card-label">Rescheduling Rate</div>
+                    <div class="card-value" contenteditable="false">6.8%</div>
+                    <div class="stat-delta up">&#9660; 0.3% WoW</div>
+                </div>
+                <div class="metric-card">
+                    <div class="card-label">Partner Reassign</div>
+                    <div class="card-value" contenteditable="false">4.1%</div>
+                    <div class="stat-delta up">&#9660; 0.5% WoW</div>
+                </div>
+            </div>
+            <div class="panel-footer reveal">
+                <span>SLA Target: 10 min arrival</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 7: PARTNER UTILIZATION
+         =========================================== -->
+    <section class="slide split-slide top-bottom" aria-label="Partner Utilization">
+        <div class="panel panel-blue">
+            <div class="panel-header">
+                <div class="brand-mark on-blue"></div>
+                <span class="eyebrow" style="opacity:0.6;">06 &bull; Partners</span>
+            </div>
+            <div>
+                <h2 class="reveal" contenteditable="false">Partner<br>Utilization</h2>
+            </div>
+            <div class="panel-footer reveal" style="opacity:0.5;">
+                <span>6,240 shifts logged this week</span>
+            </div>
+        </div>
+        <div class="panel panel-dark">
+            <div class="grid-3 reveal" style="align-self:center;">
+                <div class="metric-card">
+                    <div class="card-label">Productivity</div>
+                    <div class="card-value" contenteditable="false">1.51</div>
+                    <div class="body-text" style="opacity:0.5;">bookings / shift hr</div>
+                </div>
+                <div class="metric-card">
+                    <div class="card-label">Avg Rating</div>
+                    <div class="card-value" contenteditable="false">4.38</div>
+                    <div class="body-text" style="opacity:0.5;">out of 5.0</div>
+                </div>
+                <div class="metric-card">
+                    <div class="card-label">No-Show Rate</div>
+                    <div class="card-value" contenteditable="false">3.2%</div>
+                    <div class="stat-delta up">&#9660; 0.6% WoW</div>
+                </div>
+            </div>
+            <div class="panel-footer reveal">
+                <span>Active Partners: 1,840</span>
+                <span>Avg 3.4 shifts / partner</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 8: CUSTOMER ACQUISITION
+         =========================================== -->
+    <section class="slide split-slide even" aria-label="Customer Acquisition">
+        <div class="panel panel-dark">
+            <div class="panel-header">
+                <span class="eyebrow" style="opacity:0.4;">07</span>
+                <span class="eyebrow" style="opacity:0.4;">Customers</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:clamp(12px,2vh,24px);">
+                <h2 class="reveal" contenteditable="false">Customer<br><span class="accent-on-dark">Acquisition</span></h2>
+                <div class="stat-row reveal">
+                    <div class="stat-block">
+                        <div class="stat-value">842</div>
+                        <div class="stat-label">New This Week</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-value">3,610</div>
+                        <div class="stat-label">Active Customers</div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer reveal">
+                <span>23.3% first-booking ratio</span>
+            </div>
+        </div>
+        <div class="panel panel-white" style="position:relative;">
+            <div class="bar-expand" style="position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent-blue);"></div>
+            <div style="display:flex;flex-direction:column;gap:clamp(12px,2vh,20px);justify-content:center;flex:1;">
+                <h3 class="reveal" style="color:var(--text-dark);" contenteditable="false">Acquisition by Channel</h3>
+                <div class="bar-chart reveal reveal-bar" style="max-width:500px;">
+                    <div class="bar-row">
+                        <div class="bar-label" style="color:var(--text-dark);">Organic</div>
+                        <div class="bar-track on-white"><div class="bar-fill" style="--bar-width:48%;width:48%;"></div></div>
+                        <div class="bar-value" style="color:var(--text-dark);">48%</div>
+                    </div>
+                    <div class="bar-row">
+                        <div class="bar-label" style="color:var(--text-dark);">Referral</div>
+                        <div class="bar-track on-white"><div class="bar-fill" style="--bar-width:26%;width:26%;"></div></div>
+                        <div class="bar-value" style="color:var(--text-dark);">26%</div>
+                    </div>
+                    <div class="bar-row">
+                        <div class="bar-label" style="color:var(--text-dark);">Campaign</div>
+                        <div class="bar-track on-white"><div class="bar-fill" style="--bar-width:18%;width:18%;"></div></div>
+                        <div class="bar-value" style="color:var(--text-dark);">18%</div>
+                    </div>
+                    <div class="bar-row">
+                        <div class="bar-label" style="color:var(--text-dark);">Other</div>
+                        <div class="bar-track on-white"><div class="bar-fill" style="--bar-width:8%;width:8%;"></div></div>
+                        <div class="bar-value" style="color:var(--text-dark);">8%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer" style="color:var(--text-muted-dark);">
+                <span>Republic Day Offer driving campaign spike</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 9: CAMPAIGN PERFORMANCE
+         =========================================== -->
+    <section class="slide split-slide top-bottom" aria-label="Campaigns">
+        <div class="panel panel-white">
+            <div class="panel-header">
+                <span class="eyebrow muted" style="color:var(--text-dark);">08 &bull; Campaigns</span>
+            </div>
+            <div>
+                <h2 class="reveal" style="color:var(--text-dark);" contenteditable="false">Active<br><span class="accent">Campaigns</span></h2>
+            </div>
+        </div>
+        <div class="panel panel-dark">
+            <table class="data-table reveal">
+                <thead>
+                    <tr>
+                        <th>Campaign</th>
+                        <th>Type</th>
+                        <th>Bookings</th>
+                        <th>Revenue</th>
+                        <th>New Cust.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td contenteditable="false">Republic Day Offer</td>
+                        <td>20% discount</td>
+                        <td class="num" contenteditable="false">1,240</td>
+                        <td class="num" contenteditable="false">&#8377;4.8L</td>
+                        <td class="num" contenteditable="false">312</td>
+                    </tr>
+                    <tr>
+                        <td contenteditable="false">Refer & Earn Jan</td>
+                        <td>Referral</td>
+                        <td class="num" contenteditable="false">680</td>
+                        <td class="num" contenteditable="false">&#8377;3.1L</td>
+                        <td class="num" contenteditable="false">218</td>
+                    </tr>
+                    <tr>
+                        <td contenteditable="false">Weekend Deep Clean</td>
+                        <td>Cashback</td>
+                        <td class="num" contenteditable="false">445</td>
+                        <td class="num" contenteditable="false">&#8377;2.6L</td>
+                        <td class="num" contenteditable="false">89</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="panel-footer reveal">
+                <span>3 active campaigns</span>
+                <span>25.1% of weekly bookings campaign-attributed</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 10: KEY RISKS & ISSUES
+         =========================================== -->
+    <section class="slide split-slide even" aria-label="Risks">
+        <div class="panel panel-dark">
+            <div class="panel-header">
+                <span class="eyebrow" style="opacity:0.4;">09</span>
+                <span class="eyebrow" style="opacity:0.4;">Attention Required</span>
+            </div>
+            <div>
+                <h2 class="reveal" contenteditable="false">Risks &<br><span class="accent-on-dark">Issues</span></h2>
+            </div>
+        </div>
+        <div class="panel panel-white">
+            <ul class="bullet-list on-white reveal" style="color:var(--text-dark);justify-content:center;flex:1;display:flex;flex-direction:column;gap:clamp(12px,2vh,20px);">
+                <li contenteditable="false"><strong>SLA dip in South hubs</strong> — Rain on Wed–Thu caused 14.2% breach rate in Jayanagar, JP Nagar, Banashankari. Avg arrival 12.1 min vs 10 min target.</li>
+                <li contenteditable="false"><strong>Peenya hub underperforming</strong> — Lowest booking volume (284) and rating (3.9). Partner churn up 8% month-over-month.</li>
+                <li contenteditable="false"><strong>Premium tier supply gap</strong> — Deep Cleaning wait times averaging 2.3 days in Koramangala & Indiranagar. Demand exceeds partner capacity.</li>
+                <li contenteditable="false"><strong>Payment failures</strong> — UPI failures spiked to 4.1% on Thursday (platform-wide bank maintenance). &#8377;1.2L in delayed settlements.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 11: PRIORITIES NEXT WEEK
+         =========================================== -->
+    <section class="slide split-slide top-bottom" aria-label="Next Week Priorities">
+        <div class="panel panel-blue">
+            <div class="panel-header">
+                <div class="brand-mark on-blue"></div>
+                <span class="eyebrow" style="opacity:0.6;">10 &bull; Next Week</span>
+            </div>
+            <div>
+                <h2 class="reveal" contenteditable="false">W5 Priorities</h2>
+            </div>
+        </div>
+        <div class="panel panel-dark">
+            <ul class="bullet-list reveal" style="justify-content:center;flex:1;display:flex;flex-direction:column;gap:clamp(12px,2vh,20px);">
+                <li contenteditable="false"><strong>Expand premium partner pool</strong> — Recruit 15 Deep Cleaning certified partners for Koramangala & Indiranagar to reduce wait times below 1 day.</li>
+                <li contenteditable="false"><strong>Peenya hub intervention</strong> — Partner engagement session + incentive pilot. Target: 350+ bookings and 4.1+ rating by W6.</li>
+                <li contenteditable="false"><strong>Republic Day campaign wrap-up</strong> — Offer ends Jan 28. Prepare retention flow for campaign-acquired customers (312 new this week).</li>
+                <li contenteditable="false"><strong>Rainy-day SLA playbook</strong> — Deploy dynamic ETA adjustments for South Bangalore during monsoon forecasts. Reduce breach rate to &lt;10%.</li>
+            </ul>
+            <div class="panel-footer reveal">
+                <span>Target: 10K bookings &bull; &#8377;44L revenue &bull; 89% SLA</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+         SLIDE 12: CLOSING
+         =========================================== -->
+    <section class="slide split-slide even" aria-label="Closing">
+        <div class="panel panel-white">
+            <div class="panel-header">
+                <div class="brand-mark"></div>
+            </div>
+            <div>
+                <h1 class="reveal" style="color:var(--text-dark);" contenteditable="false">Thank<br><span class="accent">You</span></h1>
+            </div>
+            <div class="panel-footer reveal" style="color:var(--text-muted-dark);">
+                <span>Weekly Ops Report &bull; W4 2025</span>
+            </div>
+        </div>
+        <div class="panel panel-blue">
+            <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(16px,3vh,32px);">
+                <div class="reveal">
+                    <div class="stat-label" style="margin-bottom:clamp(4px,0.5vh,8px);">Week Highlights</div>
+                    <p class="body-text" style="opacity:0.8;max-width:36ch;" contenteditable="false">Strong booking growth and new customer acquisition offset by SLA softness in rain-affected hubs.</p>
+                </div>
+                <div class="stat-row reveal">
+                    <div class="stat-block">
+                        <div class="stat-value" style="font-size:clamp(1.5rem,3vw,2.5rem);">9,412</div>
+                        <div class="stat-label">Bookings</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-value" style="font-size:clamp(1.5rem,3vw,2.5rem);">&#8377;41.8L</div>
+                        <div class="stat-label">Revenue</div>
+                    </div>
+                    <div class="stat-block">
+                        <div class="stat-value" style="font-size:clamp(1.5rem,3vw,2.5rem);">87.3%</div>
+                        <div class="stat-label">SLA</div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer reveal" style="opacity:0.5;">
+                <span>Quick Help &bull; Bangalore</span>
+                <span>Confidential</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================================
+       JAVASCRIPT: PRESENTATION CONTROLLER
+       =========================================== -->
+    <script>
+        /* === SLIDE PRESENTATION CONTROLLER === */
+        class SlidePresentation {
+            constructor() {
+                this.slides = document.querySelectorAll('.slide');
+                this.currentSlide = 0;
+                this.isScrolling = false;
+                this.setupIntersectionObserver();
+                this.setupKeyboardNav();
+                this.setupTouchNav();
+                this.setupWheelNav();
+                this.setupProgressBar();
+                this.setupNavDots();
+            }
+
+            /* --- Intersection Observer: triggers .visible class --- */
+            setupIntersectionObserver() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            const idx = Array.from(this.slides).indexOf(entry.target);
+                            if (idx !== -1) {
+                                this.currentSlide = idx;
+                                this.updateProgressBar();
+                                this.updateNavDots();
+                            }
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                this.slides.forEach(slide => observer.observe(slide));
+            }
+
+            /* --- Keyboard Navigation --- */
+            setupKeyboardNav() {
+                document.addEventListener('keydown', (e) => {
+                    if (e.target.getAttribute('contenteditable') === 'true') return;
+                    switch(e.key) {
+                        case 'ArrowDown':
+                        case 'ArrowRight':
+                        case ' ':
+                        case 'PageDown':
+                            e.preventDefault();
+                            this.goToSlide(this.currentSlide + 1);
+                            break;
+                        case 'ArrowUp':
+                        case 'ArrowLeft':
+                        case 'PageUp':
+                            e.preventDefault();
+                            this.goToSlide(this.currentSlide - 1);
+                            break;
+                        case 'Home':
+                            e.preventDefault();
+                            this.goToSlide(0);
+                            break;
+                        case 'End':
+                            e.preventDefault();
+                            this.goToSlide(this.slides.length - 1);
+                            break;
+                    }
+                });
+            }
+
+            /* --- Touch/Swipe Navigation --- */
+            setupTouchNav() {
+                let startY = 0;
+                document.addEventListener('touchstart', (e) => {
+                    startY = e.touches[0].clientY;
+                }, { passive: true });
+                document.addEventListener('touchend', (e) => {
+                    const diff = startY - e.changedTouches[0].clientY;
+                    if (Math.abs(diff) > 50) {
+                        this.goToSlide(this.currentSlide + (diff > 0 ? 1 : -1));
+                    }
+                }, { passive: true });
+            }
+
+            /* --- Mouse Wheel Navigation --- */
+            setupWheelNav() {
+                document.addEventListener('wheel', (e) => {
+                    if (this.isScrolling) return;
+                    this.isScrolling = true;
+                    if (e.deltaY > 30) {
+                        this.goToSlide(this.currentSlide + 1);
+                    } else if (e.deltaY < -30) {
+                        this.goToSlide(this.currentSlide - 1);
+                    }
+                    setTimeout(() => { this.isScrolling = false; }, 800);
+                }, { passive: true });
+            }
+
+            /* --- Progress Bar --- */
+            setupProgressBar() {
+                this.progressBar = document.getElementById('progressBar');
+                this.updateProgressBar();
+            }
+            updateProgressBar() {
+                if (!this.progressBar) return;
+                const pct = ((this.currentSlide + 1) / this.slides.length) * 100;
+                this.progressBar.style.width = pct + '%';
+            }
+
+            /* --- Navigation Dots --- */
+            setupNavDots() {
+                const container = document.getElementById('navDots');
+                if (!container) return;
+                this.slides.forEach((_, i) => {
+                    const dot = document.createElement('button');
+                    dot.classList.add('nav-dot');
+                    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => this.goToSlide(i));
+                    container.appendChild(dot);
+                });
+                this.navDotEls = container.querySelectorAll('.nav-dot');
+            }
+            updateNavDots() {
+                if (!this.navDotEls) return;
+                this.navDotEls.forEach((d, i) => {
+                    d.classList.toggle('active', i === this.currentSlide);
+                });
+            }
+
+            /* --- Go to Slide --- */
+            goToSlide(index) {
+                if (index < 0 || index >= this.slides.length) return;
+                this.currentSlide = index;
+                this.slides[index].scrollIntoView({ behavior: 'smooth' });
+                this.updateProgressBar();
+                this.updateNavDots();
+            }
+        }
+
+        /* === INLINE EDITING CONTROLLER === */
+        class InlineEditor {
+            constructor() {
+                this.isActive = false;
+                this.editToggle = document.getElementById('editToggle');
+                this.storageKey = 'quickhelp-weekly-edits';
+                this.setup();
+                this.loadEdits();
+            }
+
+            setup() {
+                // Click handler on toggle
+                this.editToggle.addEventListener('click', () => this.toggleEditMode());
+
+                // Hotzone hover with 400ms grace period
+                const hotzone = document.getElementById('editHotzone');
+                let hideTimeout = null;
+
+                hotzone.addEventListener('mouseenter', () => {
+                    clearTimeout(hideTimeout);
+                    this.editToggle.classList.add('show');
+                });
+                hotzone.addEventListener('mouseleave', () => {
+                    hideTimeout = setTimeout(() => {
+                        if (!this.isActive) this.editToggle.classList.remove('show');
+                    }, 400);
+                });
+                this.editToggle.addEventListener('mouseenter', () => {
+                    clearTimeout(hideTimeout);
+                });
+                this.editToggle.addEventListener('mouseleave', () => {
+                    hideTimeout = setTimeout(() => {
+                        if (!this.isActive) this.editToggle.classList.remove('show');
+                    }, 400);
+                });
+
+                // Hotzone direct click
+                hotzone.addEventListener('click', () => this.toggleEditMode());
+
+                // Keyboard shortcut
+                document.addEventListener('keydown', (e) => {
+                    if ((e.key === 'e' || e.key === 'E') && !e.target.getAttribute('contenteditable')) {
+                        this.toggleEditMode();
+                    }
+                    if (e.ctrlKey && e.key === 's') {
+                        e.preventDefault();
+                        this.saveEdits();
+                    }
+                });
+            }
+
+            toggleEditMode() {
+                this.isActive = !this.isActive;
+                document.body.classList.toggle('editing-active', this.isActive);
+                this.editToggle.classList.toggle('active', this.isActive);
+                this.editToggle.textContent = this.isActive ? 'Exit Edit' : 'Edit Mode';
+
+                const editables = document.querySelectorAll('[contenteditable]');
+                editables.forEach(el => {
+                    el.setAttribute('contenteditable', this.isActive ? 'true' : 'false');
+                });
+
+                if (!this.isActive) this.saveEdits();
+            }
+
+            saveEdits() {
+                const editables = document.querySelectorAll('[contenteditable]');
+                const edits = {};
+                editables.forEach((el, i) => {
+                    edits[i] = el.innerHTML;
+                });
+                localStorage.setItem(this.storageKey, JSON.stringify(edits));
+            }
+
+            loadEdits() {
+                const saved = localStorage.getItem(this.storageKey);
+                if (!saved) return;
+                try {
+                    const edits = JSON.parse(saved);
+                    const editables = document.querySelectorAll('[contenteditable]');
+                    editables.forEach((el, i) => {
+                        if (edits[i] !== undefined) el.innerHTML = edits[i];
+                    });
+                } catch(e) { /* ignore parse errors */ }
+            }
+        }
+
+        /* Initialize */
+        const presentation = new SlidePresentation();
+        const editor = new InlineEditor();
+    </script>
+</body>
+</html>

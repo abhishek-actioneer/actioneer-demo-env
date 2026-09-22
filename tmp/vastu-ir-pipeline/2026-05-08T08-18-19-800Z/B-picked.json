@@ -1,0 +1,155 @@
+[
+  {
+    "company": "Vastu Housing Finance",
+    "doc": {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Result-for-quarter-and-year-ended-31st-March-2026.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T081820Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=5b5325d82d647f2dc136cde3f00a826845055fc61941f72a051ca986626d9163",
+      "title": "Audited Financial Result for quarter and year ended 31st March 2026",
+      "type": "quarterly_results",
+      "period": "FY26",
+      "reason": "Most recent audited financial results covering the full fiscal year 2025-26."
+    }
+  },
+  {
+    "company": "Vastu Housing Finance",
+    "doc": {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-24-25.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T081820Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=6f24c1166dca0f21531eb88892bc77b7c3b419ac3bae5ee6c2de97337b443d6d",
+      "title": "ANNUAL REPORT 2024-25",
+      "type": "annual_report",
+      "period": "FY25",
+      "reason": "Comprehensive annual report for the previous fiscal year containing detailed MD&A and audited financials."
+    }
+  },
+  {
+    "company": "Vastu Housing Finance",
+    "doc": {
+      "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/annual-reports/annual-report-23-24.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T081820Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=5bbb9fccd646b2252d36b19dd00a233fd5f7168fb10928ff457d58b978bf59b7",
+      "title": "ANNUAL REPORT 2023-24",
+      "type": "annual_report",
+      "period": "FY24",
+      "reason": "Provides full-year historical financials and strategy for the year preceding the immediate comparison period."
+    }
+  },
+  {
+    "company": "Aavas Financiers",
+    "doc": {
+      "url": "https://www.aavas.in/uploads/pdf/financials-85794283.pdf",
+      "title": "Financial Result approved by the Board of Directors",
+      "sectionContext": "Quarterly, Half Yearly and Yearly Financial Results",
+      "type": "quarterly_results",
+      "period": "FY26 Q4",
+      "reason": "Most recent audited financial results for the full year ending March 2026, containing the most current annual performance data."
+    }
+  },
+  {
+    "company": "Aavas Financiers",
+    "doc": {
+      "url": "https://www.aavas.in/uploads/pdf/outcome-of-board-meetingq4-42612506.pdf",
+      "title": "Financial Result approved by the Board of Directors",
+      "sectionContext": "Quarterly, Half Yearly and Yearly Financial Results",
+      "type": "quarterly_results",
+      "period": "FY25 Q4",
+      "reason": "Audited financial results for the full year ending March 2025, providing the necessary comparative data for the prior fiscal year."
+    }
+  },
+  {
+    "company": "Aavas Financiers",
+    "doc": {
+      "url": "https://www.aavas.in/uploads/pdf/finaloutcome25042024-1252982600.pdf",
+      "title": "Financial Result approved by the Board of Directors",
+      "sectionContext": "Quarterly, Half Yearly and Yearly Financial Results",
+      "type": "quarterly_results",
+      "period": "FY24 Q4",
+      "reason": "Audited financial results for the year ending March 2024, which serves as the historical baseline for analyzing the last two years of growth."
+    }
+  },
+  {
+    "company": "Aptus Value Housing Finance",
+    "doc": {
+      "url": "https://aptusindia.s3.us-east-1.amazonaws.com/Aptus_AR_Mar+2025.pdf",
+      "title": "Annual Report 2024-2025",
+      "type": "annual_report",
+      "period": "FY25",
+      "reason": "This is the most recent full-year report available in the list, covering the financial results and strategy for the fiscal year ended March 2025."
+    }
+  },
+  {
+    "company": "Aptus Value Housing Finance",
+    "doc": {
+      "url": "https://aptusindia.s3.amazonaws.com/Aptus+Value+Housing+Finance+India+Ltd_Annual+Report+FY24.pdf",
+      "title": "Annual Report 2023-2024",
+      "type": "annual_report",
+      "period": "FY24",
+      "reason": "This document covers the prior fiscal year (FY24), providing the necessary historical comparison for a two-year analysis."
+    }
+  },
+  {
+    "company": "Aptus Value Housing Finance",
+    "doc": {
+      "url": "https://aptusindia.s3.amazonaws.com/Aptus_AR_2022-23.pdf",
+      "title": "Annual Report 2022-2023",
+      "type": "annual_report",
+      "period": "FY23",
+      "reason": "This provides a third year of comprehensive financial data and narrative to establish a clear growth and asset quality trend."
+    }
+  },
+  {
+    "company": "Home First Finance",
+    "doc": {
+      "url": "https://homefirstindia.com/files/Integrated%20Annual%20Report%20FY25.pdf",
+      "title": "Annual Report 2024-25",
+      "type": "annual_report",
+      "period": "FY25",
+      "reason": "This is the most recent full integrated annual report, providing audited financials and strategic overview for the 2024-25 fiscal year."
+    }
+  },
+  {
+    "company": "Home First Finance",
+    "doc": {
+      "url": "https://homefirstindia.com/files/Investor%20Deck%20Q4FY26.pdf",
+      "title": "Investor Presentation",
+      "type": "investor_presentation",
+      "period": "FY26 Q4",
+      "reason": "Provides the most recent narrative, AUM growth, and key performance metrics for the full year ended March 31, 2026."
+    }
+  },
+  {
+    "company": "Home First Finance",
+    "doc": {
+      "url": "https://homefirstindia.com/files/HomeFirst_Q4FY26_Press_Release.pdf",
+      "title": "Investor Press Release",
+      "type": "press_release",
+      "period": "FY26 Q4",
+      "reason": "Provides a summary of the audited financial results for the full year FY26, serving as the primary source for the most recent year-end numbers."
+    }
+  },
+  {
+    "company": "India Shelter Finance",
+    "doc": {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf",
+      "title": "Financial Results March 2026",
+      "type": "quarterly_results",
+      "period": "FY26",
+      "reason": "This document contains the audited financial results for the full year ended March 31, 2026, serving as the primary source for FY26 financials."
+    }
+  },
+  {
+    "company": "India Shelter Finance",
+    "doc": {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1751527210017-Integrated+Annual+Report-+2024-25.pdf",
+      "title": "Integrated Annual Report- 2024-25",
+      "type": "annual_report",
+      "period": "FY25",
+      "reason": "This is the complete integrated annual report for the previous fiscal year (FY25), providing comprehensive strategy and financial detail."
+    }
+  },
+  {
+    "company": "India Shelter Finance",
+    "doc": {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf",
+      "title": "Investor Presentation March 2026",
+      "type": "investor_presentation",
+      "period": "FY26 Q4",
+      "reason": "This is the most recent investor presentation, providing the narrative, AUM growth, and asset quality metrics for the end of FY26."
+    }
+  }
+]

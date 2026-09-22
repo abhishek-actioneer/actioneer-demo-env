@@ -1,0 +1,20 @@
+{
+  "queries": [
+    {
+      "lane": "ir_landing",
+      "query": "Avanse Financial Services investor relations site:avanse.com"
+    },
+    {
+      "lane": "latest_results",
+      "query": "Avanse Financial Services FY24 annual report AUM GNPA pdf"
+    },
+    {
+      "lane": "historical_results",
+      "query": "Avanse Financial Services FY23 audited financial statements pdf"
+    },
+    {
+      "lane": "strategy_news",
+      "query": "Avanse Financial Services 2024 equity capital raise expansion"
+    }
+  ]
+}

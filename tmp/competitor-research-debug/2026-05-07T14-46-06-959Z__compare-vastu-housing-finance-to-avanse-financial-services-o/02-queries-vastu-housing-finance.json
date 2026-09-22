@@ -1,0 +1,20 @@
+{
+  "queries": [
+    {
+      "lane": "ir_landing",
+      "query": "Vastu Housing Finance investor relations financial results site:vastuhfc.com"
+    },
+    {
+      "lane": "latest_results",
+      "query": "Vastu Housing Finance FY24 annual report AUM GNPA site:vastuhfc.com"
+    },
+    {
+      "lane": "historical_results",
+      "query": "Vastu Housing Finance FY23 annual report audited financial statements"
+    },
+    {
+      "lane": "strategy_news",
+      "query": "Vastu Housing Finance 2024 strategic expansion funding leadership news"
+    }
+  ]
+}

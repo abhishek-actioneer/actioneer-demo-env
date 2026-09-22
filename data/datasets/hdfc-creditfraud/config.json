@@ -1,0 +1,254 @@
+{
+  "id": "hdfc-creditfraud",
+  "label": "HDFC Credit Fraud Ops",
+  "dbFile": "data/datasets/hdfc-creditfraud/hdfc-creditfraud.duckdb",
+  "primaryTable": "transactions",
+  "userIdField": "customer_id",
+  "dateField": "txn_ts",
+  "dateRange": {
+    "start": "2024-06-01 00:01:06+05:30",
+    "end": "2026-05-31 23:59:58+05:30"
+  },
+  "isDynamic": true,
+  "sourceType": "csv",
+  "sourceFiles": [
+    "transactions.csv",
+    "statements.csv",
+    "fraud_alerts.csv",
+    "card_lifecycle_events.csv",
+    "case_events.csv",
+    "cards.csv",
+    "customers.csv",
+    "service_interactions.csv",
+    "merchants.csv",
+    "case_resolutions.csv",
+    "blocking_actions.csv",
+    "fraud_episodes.csv",
+    "data_dictionary.csv",
+    "calendar_events.csv",
+    "hero_case_index.csv",
+    "analyst_roster.csv",
+    "benchmarks.csv",
+    "device_intelligence.csv",
+    "fraud_rules.csv"
+  ],
+  "schemaContext": "DATABASE ENGINE: DuckDB\n\nPRIMARY TABLE: transactions (~1928413 rows)\n  - txn_id VARCHAR -- unique transaction authorization/posting identifier\n  - card_id VARCHAR -- card identifier; join to cards.card_id\n  - txn_ts TIMESTAMP WITH TIME ZONE -- transaction timestamp; timezone-aware filtering required\n  - amount_inr DOUBLE -- transaction amount normalized to INR\n  - currency VARCHAR -- original currency code (AED, GBP, INR, SGD, THB, USD)\n  - fx_amount DOUBLE -- original foreign amount; mostly null for INR transactions\n  - merchant_id VARCHAR -- merchant identifier; join to merchants.merchant_id\n  - mcc BIGINT -- merchant category code; categorical, not additive\n  - channel VARCHAR -- transaction channel (ATM_CASH_AD, CONTACTLESS, ECOM, INTL_ECOM, INTL_POS, POS, UPI)\n  - pos_entry_mode VARCHAR -- POS capture mode (CHIP, SWIPE, TAP); often null outside card-present\n  - auth_method VARCHAR -- authentication method (OTP_3DS, PIN, TAP_NO_PIN)\n  - otp_attempts DOUBLE -- OTP attempts; integer-like but stored as double (1.0, 2.0, 3.0)\n  - token_used_flag BOOLEAN -- whether tokenized credentials were used\n  - txn_city VARCHAR -- free-text transaction city/location\n  - txn_country VARCHAR -- country code (AE, FR, GB, ID, IN, MY, SG, TH, US)\n  - device_id VARCHAR -- device identifier for digital transactions; often null elsewhere\n  - ip_address VARCHAR -- IP address string for online transactions\n  - txn_type VARCHAR -- business transaction type (AUTOPAY, EMI_CONVERSION, FEE, PURCHASE, REFUND, REVERSAL)\n  - response VARCHAR -- processing outcome (APPROVED, DECLINED, HELD_FOR_CONFIRMATION)\n  - decline_reason VARCHAR -- decline reason when non-approved (3DS_FAILED, EXPIRED_CARD, INCORRECT_CVV, INSUFFICIENT_LIMIT, ISSUER_DECLINE, SUSPECTED_FRAUD)\n  - is_fraud_flag BOOLEAN -- confirmed fraud label\n  - fraud_episode_id VARCHAR -- fraud episode linkage; join to fraud_episodes.episode_id\n  - original_txn_id VARCHAR -- self-reference for refund/reversal/EMI-linked events; join to transactions.txn_id\n\nTABLE: statements (~137436 rows)\n  - statement_id VARCHAR -- statement cycle identifier\n  - card_id VARCHAR -- card identifier; join to cards.card_id\n  - cycle_start DATE -- billing cycle start date\n  - cycle_end DATE -- billing cycle end date\n  - due_date DATE -- statement due date\n  - total_spend_inr DOUBLE -- billed spend in cycle\n  - payments_received_inr DOUBLE -- payments received\n  - min_due_inr DOUBLE -- minimum due amount\n  - revolve_flag BOOLEAN -- whether balance revolved\n  - interest_charged_inr DOUBLE -- interest charged\n  - fees_inr DOUBLE -- fees charged\n  - closing_balance_inr DOUBLE -- closing balance\n  - utilization_pct DOUBLE -- utilization percentage, likely 0-100 scale\n  - dpd_bucket VARCHAR -- delinquency bucket (1-29, 30-59, 60-89, 90+, CURRENT)\n\nTABLE: fraud_alerts (~32857 rows)\n  - alert_id VARCHAR -- fraud alert identifier\n  - txn_id VARCHAR -- alerted transaction; join to transactions.txn_id\n  - card_id VARCHAR -- card identifier\n  - customer_id VARCHAR -- customer identifier\n  - fraud_episode_id VARCHAR -- episode identifier; join to fraud_episodes.episode_id\n  - risk_score BIGINT -- fraud system score\n  - trigger_reasons VARCHAR -- pipe-delimited triggered rules/reasons\n  - severity VARCHAR -- alert severity (CRITICAL, HIGH, LOW, MEDIUM)\n  - alert_channel VARCHAR -- outbound contact channel (APP_PUSH, IVR_CALL, SMS, SMS+IVR)\n  - risk_scored_ts TIMESTAMP WITH TIME ZONE -- score timestamp\n  - alert_sent_ts TIMESTAMP WITH TIME ZONE -- alert sent timestamp\n  - alert_delivered_ts TIMESTAMP WITH TIME ZONE -- alert delivery timestamp\n  - delivery_status VARCHAR -- communication result (DELIVERED, FAILED_RETRIED)\n  - customer_response VARCHAR -- customer reply (CONFIRMED_GENUINE, NO_RESPONSE, REPORTED_FRAUD)\n  - customer_response_ts TIMESTAMP WITH TIME ZONE -- response timestamp; null if none\n  - response_latency_s DOUBLE -- seconds from delivery to response\n  - auto_disposed_flag BOOLEAN -- auto disposition flag\n  - queue_entered_ts TIMESTAMP WITH TIME ZONE -- analyst queue entry timestamp\n  - analyst_id VARCHAR -- analyst handler id\n  - analyst_picked_ts TIMESTAMP WITH TIME ZONE -- analyst pickup timestamp\n  - analyst_decision VARCHAR -- analyst decision (CLEAR_GENUINE, CONFIRM_FRAUD, ESCALATE)\n  - analyst_decision_ts TIMESTAMP WITH TIME ZONE -- analyst decision timestamp\n  - handle_time_s DOUBLE -- handling time in seconds\n  - shift VARCHAR -- ops shift (DAY, EVENING, NIGHT)\n  - sla_target_min BIGINT -- SLA target in minutes (5, 30, 240, 1440)\n  - sla_breached_flag BOOLEAN -- SLA breach flag\n  - disposition VARCHAR -- final alert outcome (FALSE_POSITIVE, TRUE_POSITIVE, UNRESOLVED)\n\nTABLE: card_lifecycle_events (~14060 rows)\n  - event_id VARCHAR -- lifecycle event identifier\n  - card_id VARCHAR -- card identifier\n  - event_ts TIMESTAMP WITH TIME ZONE -- lifecycle event timestamp\n  - event_type VARCHAR -- event type (ACTIVATED, HOTLISTED, ISSUED, LIMIT_INCREASED, REISSUED)\n  - old_value VARCHAR -- previous value; context-dependent\n  - new_value VARCHAR -- new value; context-dependent\n  - linked_card_id VARCHAR -- predecessor/successor card in reissue chain\n  - reason VARCHAR -- business reason (CONFIRMED_FRAUD, CUSTOMER_ACTIVATION, FRAUD_REISSUE, NEW_ISSUANCE, PERIODIC_REVIEW)\n  - initiated_by VARCHAR -- initiator (CUSTOMER_APP, PHONEBANKING_AGENT, SYSTEM)\n\nTABLE: case_events (~7279 rows)\n  - case_event_id VARCHAR -- case event identifier\n  - case_id VARCHAR -- case identifier; join to case_resolutions.case_id\n  - event_ts TIMESTAMP WITH TIME ZONE -- case workflow timestamp\n  - from_status VARCHAR -- prior status (CHARGEBACK_RAISED, OPENED, PROVISIONAL_CREDIT_ISSUED, REPRESENTMENT_RECEIVED, RESOLVED, UNDER_INVESTIGATION)\n  - to_status VARCHAR -- new status (CHARGEBACK_RAISED, CLOSED, OPENED, PROVISIONAL_CREDIT_ISSUED, REPRESENTMENT_RECEIVED, RESOLVED, UNDER_INVESTIGATION)\n  - actor VARCHAR -- actor (ANALYST, NETWORK, SYSTEM)\n  - note_code VARCHAR -- categorical note/reason code; includes values like DC 4752, MC 4837, VISA 10.4\n\nTABLE: cards (~6492 rows)\n  - card_id VARCHAR -- card identifier\n  - customer_id VARCHAR -- customer identifier; join to customers.customer_id\n  - previous_card_id VARCHAR -- predecessor card id for reissue lineage\n  - masked_pan VARCHAR -- masked PAN; not guaranteed unique across replacements\n  - bin BIGINT -- issuer BIN; categorical\n  - network VARCHAR -- network (DINERS, MASTERCARD, RUPAY, VISA)\n  - product VARCHAR -- card product (BizFirst, Diners Club Privilege, IndianOil HDFC Bank, Infinia Metal, Millennia, MoneyBack+, Pixel Play, Regalia Gold, Swiggy HDFC Bank, Tata Neu Infinity, Tata Neu Plus)\n  - card_tier VARCHAR -- tier (Business, Co-brand, Co-brand premium, Digital, Entry, Mass-premium, Premium, Super-premium)\n  - credit_limit_current BIGINT -- current credit limit in INR\n  - issue_date DATE -- issue date\n  - expiry VARCHAR -- expiry in YYYY-MM text form\n  - intl_enabled_flag BOOLEAN -- international enabled flag\n  - contactless_enabled_flag BOOLEAN -- contactless enabled flag\n  - upi_linked_flag BOOLEAN -- UPI linked flag\n  - status VARCHAR -- current card status (ACTIVE, BLOCKED, DORMANT, REISSUED)\n\nTABLE: customers (~5000 rows)\n  - customer_id VARCHAR -- customer identifier\n  - full_name VARCHAR -- synthetic customer name\n  - gender VARCHAR -- gender (F, M)\n  - dob DATE -- date of birth\n  - age BIGINT -- age in years\n  - city VARCHAR -- residence city\n  - state VARCHAR -- residence state abbreviation\n  - pincode BIGINT -- postal PIN code; categorical\n  - segment VARCHAR -- bank segment (Classic, Imperia, Preferred)\n  - occupation VARCHAR -- occupation (Professional, Retired, Salaried, Self-employed)\n  - income_band VARCHAR -- income bucket (12-25L, 25-50L, 3-6L, 50L+, 6-12L)\n  - masked_mobile VARCHAR -- masked mobile; not guaranteed unique\n  - email VARCHAR -- customer email\n  - relationship_since DATE -- relationship start date\n  - kyc_status VARCHAR -- KYC state (RE_KYC_DUE, VERIFIED)\n  - home_branch_city VARCHAR -- home branch city\n  - repeat_fraud_victim_flag BOOLEAN -- prior repeated victimization flag\n\nTABLE: service_interactions (~2829 rows)\n  - ticket_id VARCHAR -- service ticket identifier\n  - customer_id VARCHAR -- customer identifier\n  - opened_ts TIMESTAMP WITH TIME ZONE -- ticket opened timestamp\n  - channel VARCHAR -- service channel (APP, BRANCH, EMAIL, PHONEBANKING, SOCIAL)\n  - category VARCHAR -- interaction category (ALERT_FATIGUE_COMPLAINT, DISPUTE_STATUS_QUERY, FALSE_DECLINE_COMPLAINT, OTHER)\n  - linked_alert_id VARCHAR -- related alert id; join to fraud_alerts.alert_id\n  - linked_txn_id VARCHAR -- related transaction id; join to transactions.txn_id\n  - resolved_ts TIMESTAMP WITH TIME ZONE -- resolution timestamp\n  - resolution_days DOUBLE -- days to resolve service interaction\n  - csat_1_5 BIGINT -- satisfaction score 1-5\n\nTABLE: merchants (~2512 rows)\n  - merchant_id VARCHAR -- merchant identifier\n  - merchant_name VARCHAR -- merchant display name\n  - mcc BIGINT -- merchant category code; categorical\n  - mcc_description VARCHAR -- MCC description\n  - category VARCHAR -- merchant category label\n  - city VARCHAR -- merchant city\n  - state VARCHAR -- merchant state\n  - country VARCHAR -- merchant country (AE, FR, GB, ID, IN, MY, SG, TH, US)\n  - channel VARCHAR -- merchant channel (ECOM, MIXED, POS, UPI_QR)\n  - risk_tier VARCHAR -- merchant risk tier (HIGH, LOW, MEDIUM)\n  - onboarded_since DATE -- onboarding date\n\nTABLE: case_resolutions (~1594 rows)\n  - case_id VARCHAR -- case identifier\n  - alert_id VARCHAR -- related alert id\n  - customer_id VARCHAR -- customer identifier\n  - fraud_episode_id VARCHAR -- related episode id\n  - case_opened_ts TIMESTAMP WITH TIME ZONE -- case opened timestamp\n  - reporting_delay_bucket VARCHAR -- reporting delay bucket (4_7_DAYS, BEYOND_7_DAYS, WITHIN_3_DAYS)\n  - liability_outcome VARCHAR -- liability outcome (CUSTOMER_LIABLE, LIMITED_LIABILITY, ZERO_LIABILITY)\n  - provisional_credit_ts TIMESTAMP WITH TIME ZONE -- provisional credit timestamp\n  - chargeback_raised_flag BOOLEAN -- whether chargeback was raised\n  - chargeback_reason_code VARCHAR -- reason code (DC 4752, MC 4837, RP-FRD-01, VISA 10.4)\n  - chargeback_status VARCHAR -- chargeback status (LOST, NA, REPRESENTED, WON)\n  - cybercrime_1930_referred_flag BOOLEAN -- 1930 referral flag\n  - resolution_days DOUBLE -- days to case resolution\n  - final_status VARCHAR -- final resolution status (PENDING, RESOLVED_BANK_FAVOUR, RESOLVED_CUSTOMER_FAVOUR, WRITTEN_OFF)\n  - amount_recovered_inr DOUBLE -- amount recovered\n\nTABLE: blocking_actions (~1388 rows)\n  - action_id VARCHAR -- blocking/mitigation action identifier\n  - alert_id VARCHAR -- related alert id\n  - card_id VARCHAR -- card identifier\n  - action_type VARCHAR -- action type (CARD_HOTLISTED, CARD_REISSUED, TXN_DECLINED_INFLIGHT, TXN_HELD, UNBLOCKED_AFTER_CONFIRMATION)\n  - action_ts TIMESTAMP WITH TIME ZONE -- action timestamp\n  - initiated_by VARCHAR -- initiator (CUSTOMER_APP, PHONEBANKING_AGENT, SYSTEM_AUTO)\n  - amount_at_risk_inr DOUBLE -- estimated amount at risk\n  - amount_prevented_inr DOUBLE -- amount prevented\n  - amount_lost_inr DOUBLE -- amount lost despite action\n\nTABLE: fraud_episodes (~382 rows)\n  - episode_id VARCHAR -- confirmed fraud episode id\n  - typology VARCHAR -- fraud typology (CARD_TESTING, CNP_INTL, LOST_STOLEN, MERCHANT_COLLUSION_FIRST_PARTY, MULE_CYCLING, OTP_SOCIAL_ENGINEERING_ATO, SKIMMING_CLONE, SUBSCRIPTION_DRAIN)\n  - detection_source VARCHAR -- detection source (CUSTOMER_REPORTED, NETWORK_COMPROMISE_ALERT, SYSTEM_BATCH, SYSTEM_REALTIME)\n  - first_fraud_txn_ts TIMESTAMP WITH TIME ZONE -- first known fraud txn timestamp\n  - detected_ts TIMESTAMP WITH TIME ZONE -- detection/confirmation timestamp\n  - time_to_detect_s DOUBLE -- seconds to detect from first fraud txn\n  - txns_attempted BIGINT -- attempted fraudulent txn count\n  - txns_before_block BIGINT -- fraudulent txn count before controls\n  - amount_attempted_inr DOUBLE -- attempted fraud amount\n  - amount_prevented_inr DOUBLE -- prevented amount\n  - amount_lost_inr DOUBLE -- realized loss\n  - cards_involved_count BIGINT -- affected card count\n  - common_point_of_purchase_merchant_id VARCHAR -- suspected compromise merchant id; join to merchants.merchant_id\n  - status VARCHAR -- episode status (CONFIRMED)\n\nTABLE: analyst_roster (~25 rows)\n  - analyst_id VARCHAR -- analyst identifier; join to fraud_alerts.analyst_id\n  - analyst_name VARCHAR -- analyst full name\n  - primary_shift VARCHAR -- shift assignment (DAY, EVENING, NIGHT)\n  - team VARCHAR -- team name (Real-Time Triage, Evening Queue, Night Watch)\n  - seniority VARCHAR -- seniority level (Junior Analyst, Analyst, Senior Analyst, Team Lead)\n  - tenure_months BIGINT -- months with the team\n  - fully_loaded_hourly_cost_inr BIGINT -- fully loaded cost per hour in INR including benefits\n  - fraud_cert VARCHAR -- certification held (CAMS, Internal-L2)\n  - location VARCHAR -- office location (Chennai DLF, Bengaluru ITPL)\n\nTABLE: benchmarks (~5 rows)\n  - metric VARCHAR -- metric name\n  - your_value DOUBLE -- HDFC's current value for this metric\n  - industry_median DOUBLE -- industry median benchmark value\n  - better_direction VARCHAR -- whether lower or higher is better (lower, higher)\n  - source VARCHAR -- data source reference\n\nTABLE: device_intelligence (~3142 rows)\n  - device_id VARCHAR -- device identifier; join to transactions.device_id\n  - cards_seen BIGINT -- distinct cards seen on this device\n  - customers_seen BIGINT -- distinct customers seen on this device\n  - txns BIGINT -- total transactions from this device\n  - fraud_txns BIGINT -- confirmed fraud transactions from this device\n  - first_seen TIMESTAMP WITH TIME ZONE -- first transaction timestamp\n  - last_seen TIMESTAMP WITH TIME ZONE -- most recent transaction timestamp\n  - device_risk_tier VARCHAR -- risk classification (CRITICAL, HIGH, MEDIUM, LOW)\n  - shared_device_flag BOOLEAN -- true if device seen across multiple customers (mule device indicator)\n  - device_risk_score BIGINT -- numeric risk score 0-1000; 1000 = highest risk\n\nTABLE: fraud_rules (~10 rows)\n  - trigger_reason VARCHAR -- rule code; matches fraud_alerts.trigger_reasons values\n  - rule_description VARCHAR -- plain-language description of what triggers this rule\n  - severity_band VARCHAR -- alert severity this rule produces (CRITICAL, HIGH, MEDIUM, LOW)\n  - live_alerts BIGINT -- total alerts fired by this rule in the dataset\n  - false_positive_share_pct DOUBLE -- percentage of alerts that were false positives (0-100)\n  - recommended_action VARCHAR -- tuning recommendation (keep, retune, tighten, soften)\n  - rule_owner VARCHAR -- team responsible for this rule\n  - last_tuned DATE -- date rule was last calibrated\n\nTABLE: customer_spend_profiles (~4996 rows)\n  - customer_id VARCHAR -- customer identifier; join to customers.customer_id\n  - txn_count_90d BIGINT -- purchase transaction count in dataset window\n  - avg_amt_90d DOUBLE -- average purchase amount in INR\n  - p95_amt_90d DOUBLE -- 95th percentile purchase amount; use for deviation_factor = amount / p95_amt_90d\n  - max_amt_90d DOUBLE -- maximum single purchase amount\n  - min_amt_90d DOUBLE -- minimum single purchase amount\n  - usual_channel VARCHAR -- most frequent transaction channel (ECOM, POS, etc.)\n  - usual_country VARCHAR -- most frequent transaction country; 'IN' = domestic-only customer\n  - usual_hour INTEGER -- most frequent transaction hour (0-23)\n  - cities_count BIGINT -- distinct cities where customer has transacted\n  - merchants_count BIGINT -- distinct merchants used\n  - intl_txn_count BIGINT -- count of international transactions; 0 = never transacted internationally\n  - night_txn_count BIGINT -- count of transactions between 00:00-05:59\n\nVIEW: fraud_call_context\n  Pre-joined view of fraud_alerts + transactions + merchants + customers + cards + fraud_episodes + device_intelligence + fraud_rules + customer_spend_profiles\n  Filtered to HIGH and CRITICAL severity alerts only\n  Key computed field: deviation_factor = ROUND(amount_inr / p95_amt_90d, 1) — how many times larger than normal this transaction is\n  Use this view as the primary source for fraud alert analysis and voice agent context\n\nTABLE: voice_verification_calls (~0 rows initially, grows as calls complete)\n  - call_id VARCHAR -- unique call identifier\n  - alert_id VARCHAR -- related fraud alert; join to fraud_alerts.alert_id\n  - customer_id VARCHAR -- customer called; join to customers.customer_id\n  - called_at TIMESTAMP -- call initiation timestamp\n  - duration_s INTEGER -- call duration in seconds\n  - status VARCHAR -- call outcome (completed, no_answer, failed)\n  - recommendation VARCHAR -- AI recommendation (clear, block, escalate)\n  - final_action VARCHAR -- Gemini tool invoked (clear_transaction, block_card, escalate_to_specialist)\n  - duress_score DOUBLE -- 0-1 score; higher = more signs of coached/coerced response\n  - verification_score DOUBLE -- 0-1 score; higher = customer correctly verified transaction details\n  - voice_onset_ms DOUBLE -- milliseconds from agent stop to customer start; >800ms suggests coaching\n  - elaboration_ratio DOUBLE -- customer words beyond direct answer; <0.3 suggests scripted response\n  - echo_score DOUBLE -- cosine similarity between agent utterance and customer response; >0.75 suggests verbatim repetition\n  - amount_at_risk_inr DOUBLE -- transaction amount at stake in this call\n  - transcript JSON -- full timestamped transcript\n  - transcript_summary TEXT -- one-paragraph call summary\n\nTABLE: data_dictionary (~189 rows)\n  - \"table\" VARCHAR -- documented table name; reserved word, quote it\n  - \"column\" VARCHAR -- documented column name; reserved word, quote it\n  - dtype VARCHAR -- source metadata dtype (bool, datetime64[ns], datetime64[us], float64, int64, object, str)\n  - description VARCHAR -- field description\n  - valid_values VARCHAR -- allowed values, often pipe-delimited\n  - joins_to VARCHAR -- textual join target (cards.card_id, case_resolutions.case_id, customers.customer_id, fraud_alerts.alert_id, fraud_episodes.episode_id, merchants.merchant_id, transactions.txn_id)\n\nTABLE: calendar_events (~28 rows)\n  - event_name VARCHAR -- seasonal/calendar event name\n  - start_date VARCHAR -- start date in YYYY-MM-DD text; parse to DATE\n  - end_date VARCHAR -- end date in YYYY-MM-DD text; parse to DATE\n  - overall_multiplier DOUBLE -- expected overall activity multiplier\n  - category_effects VARCHAR -- pipe-delimited key:value multiplier list\n  - note VARCHAR -- narrative explanation of seasonal behavior\n\nTABLE: hero_case_index (~15 rows)\n  - hero_id VARCHAR -- curated hero case id (H1-H15)\n  - title VARCHAR -- short scenario title\n  - customer_id VARCHAR -- linked customer id\n  - card_id VARCHAR -- linked card id\n  - episode_id VARCHAR -- linked fraud episode id\n  - key_txn_ids VARCHAR -- pipe-delimited transaction ids\n  - alert_ids VARCHAR -- pipe-delimited alert ids\n  - case_ids VARCHAR -- pipe-delimited case ids\n  - window_start DATE -- analysis window start\n  - window_end DATE -- analysis window end\n  - expected_outcome VARCHAR -- expected analytical takeaway\n  - narrative VARCHAR -- story-like scenario description\n\nDATA CONTEXT:\n- This is a credit card fraud operations dataset spanning transactions, fraud alerts, customer/card master data, case handling, and blocking outcomes.\n- `transactions` is the atomic fact table for spend and fraud behavior; not every transaction has an alert, and not every alert becomes a confirmed fraud case.\n- Fraud labels exist at multiple grains: `transactions.is_fraud_flag`, `fraud_alerts.disposition`, and `fraud_episodes` confirmed-episode summaries.\n- Operational performance can be measured via alert queues, analyst handling, SLA breach flags, customer response latency, and blocking actions.\n- Business spend analysis should usually isolate `transactions.txn_type = 'PURCHASE'` and handle `REFUND`, `REVERSAL`, `FEE`, `AUTOPAY`, and `EMI_CONVERSION` separately.\n- International and digital fraud analysis is supported by `currency`, `txn_country`, `channel`, `device_id`, `ip_address`, `auth_method`, and `token_used_flag`.\n- Geographic fields are available at transaction, merchant, and customer levels, but text normalization may be needed for city-level work.\n- Several fields are multi-value encoded strings requiring `string_split`, especially for alert reasons and hero-case joins.\n- Time columns are timezone-aware in event tables, so day/week aggregations should preserve or explicitly normalize time zone semantics.\n\nENTITY METADATA:\n  Primary entity identifier: customer_id — use this column for SELECT DISTINCT, COUNT(DISTINCT), segment definitions, cohort analysis, and entity-level joins.\n  Primary date column: txn_ts — use this column for time-series analysis, DATE_TRUNC, trend charts, and period filtering. May be stored as VARCHAR — cast with ::TIMESTAMP or strptime() as needed.\nNOTE: customer_id has been denormalized onto transactions, statements, blocking_actions, card_lifecycle_events, and fraud_episodes — use it directly for customer-level grouping on those tables (no JOIN through cards needed).",
+  "systemContext": "You are Actioneer, an AI-powered credit fraud operations analytics assistant. You are analyzing data for: HDFC Credit Fraud Ops.\nDomain: credit card fraud operations\nCurrency: INR\n\nFocus on transaction fraud detection performance, alert/analyst operations, customer impact, and recovery outcomes. Key questions include which behaviors and merchants drive fraud, how quickly fraud is detected and blocked, where false positives create friction or complaints, and how liability, chargebacks, and losses evolve across customers, cards, and fraud typologies.\n\nResponse guidelines:\n- Use markdown: headers (##, ###), tables, bullet points, bold for emphasis\n- Cite specific numbers from the query results — never hallucinate data\n- Be analytical and actionable — what should the business do?\n- Note any limitations in the data\n- Do NOT include suggested follow-up questions in your response — they are generated separately\n- Never use emojis",
+  "agents": [
+    {
+      "id": "daily-metrics",
+      "queries": [
+        {
+          "description": "Daily transaction volume, approved amount, decline rate, and fraud rate trend",
+          "hint": "Use `date_trunc('day', transactions.txn_ts)` as txn_day; compute `COUNT(*)`, `SUM(amount_inr)`, `AVG(CASE WHEN response = 'DECLINED' THEN 1 ELSE 0 END)`, and `AVG(CASE WHEN is_fraud_flag THEN 1 ELSE 0 END)` grouped by day."
+        },
+        {
+          "description": "Weekly fraud alert operations trend by severity and disposition",
+          "hint": "Aggregate `fraud_alerts` by `date_trunc('week', alert_sent_ts)` and `severity`; include `COUNT(*)`, `AVG(risk_score)`, and conditional counts for `disposition = 'TRUE_POSITIVE'` and `sla_breached_flag = true`."
+        },
+        {
+          "description": "Monthly prevented vs lost fraud amount trend",
+          "hint": "Use `fraud_episodes` grouped by `date_trunc('month', detected_ts)` with `SUM(amount_attempted_inr)`, `SUM(amount_prevented_inr)`, `SUM(amount_lost_inr)`, and prevention ratio `SUM(amount_prevented_inr) / NULLIF(SUM(amount_attempted_inr),0)`."
+        },
+        {
+          "description": "Daily response outcome mix for transactions",
+          "hint": "Group `transactions` by `date_trunc('day', txn_ts)` and `response`; calculate `COUNT(*)` and `SUM(amount_inr)` to track mix shifts between `APPROVED`, `DECLINED`, and `HELD_FOR_CONFIRMATION`."
+        },
+        {
+          "description": "Moving-average trend for fraud losses",
+          "hint": "Build a daily series from `fraud_episodes.detected_ts`, sum `amount_lost_inr` by day, then apply `AVG(daily_loss) OVER (ORDER BY day ROWS BETWEEN 6 PRECEDING AND CURRENT ROW)` for a 7-day moving average."
+        },
+        {
+          "description": "Shift-wise operational workload trend",
+          "hint": "Aggregate `fraud_alerts` by `date_trunc('day', COALESCE(analyst_decision_ts, alert_sent_ts))` and `shift`; compute alert counts, `AVG(handle_time_s)`, and `AVG(CASE WHEN sla_breached_flag THEN 1 ELSE 0 END)`."
+        }
+      ]
+    },
+    {
+      "id": "user-segmentation",
+      "queries": [
+        {
+          "description": "Customer spending and fraud exposure segments",
+          "hint": "Join `customers` -> `cards` -> `transactions`; group by `customers.customer_id`, then derive total `PURCHASE` spend, txn count, fraud txn count, and assign spend tiers with `CASE` expressions."
+        },
+        {
+          "description": "Fraud risk by customer segment, income_band, and repeat_fraud_victim_flag",
+          "hint": "Join `customers`, `cards`, and `transactions`; group by `customers.segment`, `customers.income_band`, `customers.repeat_fraud_victim_flag`; compute fraud rate as `AVG(CASE WHEN transactions.is_fraud_flag THEN 1 ELSE 0 END)`."
+        },
+        {
+          "description": "RFM-style cardholder behavior analysis",
+          "hint": "At `customer_id` or `card_id` grain, compute recency using `max(transactions.txn_ts)`, frequency as `COUNT(*)`, monetary as `SUM(amount_inr)` for `txn_type = 'PURCHASE'`; bucket with `ntile(5)` window functions."
+        },
+        {
+          "description": "Inactive or dormant cardholder identification",
+          "hint": "Left join `cards` to `transactions`, group by `cards.card_id`, and flag cards where `MAX(transactions.txn_ts)` is old or null; include `cards.status`, `product`, and `card_tier`."
+        },
+        {
+          "description": "Statement revolve behavior by customer and card attributes",
+          "hint": "Join `statements` to `cards` and `customers`; group by `cards.product`, `cards.card_tier`, `customers.segment`, `customers.income_band`; compute `AVG(CASE WHEN revolve_flag THEN 1 ELSE 0 END)`, `AVG(utilization_pct)`, and average `interest_charged_inr`."
+        },
+        {
+          "description": "High-risk repeat fraud victim profile",
+          "hint": "Join `customers`, `cards`, `transactions`, and optionally `fraud_alerts`; compare customers where `repeat_fraud_victim_flag = true` vs false on fraud rate, alert count, response behavior, and chargeback outcomes."
+        }
+      ]
+    },
+    {
+      "id": "geographic",
+      "queries": [
+        {
+          "description": "Fraud rate and loss by transaction city and country",
+          "hint": "Group `transactions` by `txn_country` and `txn_city`; compute `COUNT(*)`, `SUM(amount_inr)`, and fraud rate via `AVG(CASE WHEN is_fraud_flag THEN 1 ELSE 0 END)`; normalize city text cautiously because `txn_city` is free text."
+        },
+        {
+          "description": "Customer residence geography vs fraud incidence",
+          "hint": "Join `customers` -> `cards` -> `transactions`; group by `customers.state`, `customers.city`, `customers.home_branch_city`; compute transaction count, fraud txn count, and average amount."
+        },
+        {
+          "description": "Merchant geography concentration of fraud",
+          "hint": "Join `transactions` to `merchants` on `merchant_id`; group by `merchants.country`, `merchants.state`, `merchants.city`, `merchants.risk_tier`; rank by fraudulent amount and fraud count."
+        },
+        {
+          "description": "Domestic vs international transaction and fraud comparison",
+          "hint": "Create a `CASE WHEN transactions.txn_country = 'IN' THEN 'DOMESTIC' ELSE 'INTERNATIONAL' END` flag; compare counts, approval rates, average amount, and fraud rates by flag and `channel`."
+        },
+        {
+          "description": "Geo-impossible or rapid cross-country activity candidates",
+          "hint": "Use window functions over `transactions` partitioned by `card_id` ordered by `txn_ts`; compare current and previous `txn_country`/`txn_city`, and calculate time gap with `datediff('minute', lag(txn_ts), txn_ts)` to find implausible jumps."
+        },
+        {
+          "description": "Branch city and customer city mismatch patterns for fraud victims",
+          "hint": "Join `customers`, `cards`, and fraudulent `transactions`; group by `customers.home_branch_city`, `customers.city`, and compare victim concentration where these differ."
+        }
+      ]
+    },
+    {
+      "id": "cohort-retention",
+      "queries": [
+        {
+          "description": "Card issuance cohort activity retention",
+          "hint": "Create monthly cohorts from `date_trunc('month', cards.issue_date)` and join to `transactions`; measure active cards per cohort by months since issue using `datediff('month', cards.issue_date, CAST(transactions.txn_ts AS DATE))`."
+        },
+        {
+          "description": "Repeat transaction behavior after first transaction",
+          "hint": "For each `card_id`, find first `txn_ts`, then count whether a second transaction occurs within 7, 30, and 90 days using self-joins or window functions."
+        },
+        {
+          "description": "Repeat fraud victim recurrence timing",
+          "hint": "For customers with fraudulent transactions, find first fraud date and subsequent fraud dates via `customers` -> `cards` -> `transactions`; compute time-to-next-fraud distributions."
+        },
+        {
+          "description": "Alert response retention by customer",
+          "hint": "Using `fraud_alerts`, analyze whether customers who responded once respond again; partition by `customer_id`, order by `alert_sent_ts`, and measure response presence and latency over successive alerts."
+        },
+        {
+          "description": "Post-reissue transaction resumption behavior",
+          "hint": "Join `card_lifecycle_events` where `event_type = 'REISSUED'` to old/new cards through `linked_card_id` or `cards.previous_card_id`; compare transaction activity before and after reissue."
+        },
+        {
+          "description": "Relationship-tenure cohorts and fraud incidence",
+          "hint": "Bucket `customers.relationship_since` into cohorts by year or quarter, join to cards and transactions, and compare fraud rates and average spend across tenure cohorts."
+        }
+      ]
+    },
+    {
+      "id": "data-quality",
+      "queries": [
+        {
+          "description": "NULL rates for all key fields",
+          "hint": "For each table, compute `COUNT(*) - COUNT(col)` and divide by `COUNT(*)`; prioritize nullable operational columns like `fx_amount`, `device_id`, `ip_address`, `decline_reason`, `fraud_episode_id`, `customer_response_ts`, and `analyst_id`."
+        },
+        {
+          "description": "Daily volume anomaly detection",
+          "hint": "Aggregate each major fact table by day using its event timestamp (`transactions.txn_ts`, `fraud_alerts.alert_sent_ts`, `blocking_actions.action_ts`); compare with 7-day moving average to detect sudden drops/spikes."
+        },
+        {
+          "description": "Duplicate record check",
+          "hint": "Compare `COUNT(*)` vs `COUNT(DISTINCT id)` for table keys like `txn_id`, `alert_id`, `statement_id`, `event_id`, `case_event_id`, `action_id`, `episode_id`, `customer_id`, `merchant_id`."
+        },
+        {
+          "description": "Value range validation",
+          "hint": "Check `MIN/MAX/AVG` for numeric columns like `amount_inr`, `fx_amount`, `otp_attempts`, `risk_score`, `response_latency_s`, `handle_time_s`, `utilization_pct`, `resolution_days`, `amount_lost_inr`; flag negatives or implausible highs."
+        },
+        {
+          "description": "Referential integrity across core joins",
+          "hint": "Left join child to parent and count misses: `transactions.card_id -> cards.card_id`, `transactions.merchant_id -> merchants.merchant_id`, `fraud_alerts.txn_id -> transactions.txn_id`, `case_resolutions.alert_id -> fraud_alerts.alert_id`, `transactions.fraud_episode_id -> fraud_episodes.episode_id`."
+        },
+        {
+          "description": "Encoded value conformance checks",
+          "hint": "Use `SELECT DISTINCT` or anti-join against expected sets for fields like `response`, `txn_type`, `severity`, `delivery_status`, `analyst_decision`, `liability_outcome`, `status`, and boolean-like flags."
+        },
+        {
+          "description": "Timestamp sequence consistency checks",
+          "hint": "Validate event ordering such as `risk_scored_ts <= alert_sent_ts <= alert_delivered_ts <= customer_response_ts`, `queue_entered_ts <= analyst_picked_ts <= analyst_decision_ts`, and `cycle_start <= cycle_end <= due_date`."
+        }
+      ]
+    }
+  ],
+  "queryDescriptions": {
+    "daily-metrics": [
+      "Daily transaction volume, approved amount, decline rate, and fraud rate trend",
+      "Weekly fraud alert operations trend by severity and disposition",
+      "Monthly prevented vs lost fraud amount trend",
+      "Daily response outcome mix for transactions",
+      "Moving-average trend for fraud losses",
+      "Shift-wise operational workload trend"
+    ],
+    "user-segmentation": [
+      "Customer spending and fraud exposure segments",
+      "Fraud risk by customer segment, income_band, and repeat_fraud_victim_flag",
+      "RFM-style cardholder behavior analysis",
+      "Inactive or dormant cardholder identification",
+      "Statement revolve behavior by customer and card attributes",
+      "High-risk repeat fraud victim profile"
+    ],
+    "geographic": [
+      "Fraud rate and loss by transaction city and country",
+      "Customer residence geography vs fraud incidence",
+      "Merchant geography concentration of fraud",
+      "Domestic vs international transaction and fraud comparison",
+      "Geo-impossible or rapid cross-country activity candidates",
+      "Branch city and customer city mismatch patterns for fraud victims"
+    ],
+    "cohort-retention": [
+      "Card issuance cohort activity retention",
+      "Repeat transaction behavior after first transaction",
+      "Repeat fraud victim recurrence timing",
+      "Alert response retention by customer",
+      "Post-reissue transaction resumption behavior",
+      "Relationship-tenure cohorts and fraud incidence"
+    ],
+    "data-quality": [
+      "NULL rates for all key fields",
+      "Daily volume anomaly detection",
+      "Duplicate record check",
+      "Value range validation",
+      "Referential integrity across core joins",
+      "Encoded value conformance checks",
+      "Timestamp sequence consistency checks"
+    ]
+  },
+  "multiAgentPrompt": "daily-metrics|1| — Daily transaction volume, approved amount, decline rate, and fraud rate trend\ndaily-metrics|2| — Weekly fraud alert operations trend by severity and disposition\ndaily-metrics|3| — Monthly prevented vs lost fraud amount trend\ndaily-metrics|4| — Daily response outcome mix for transactions\ndaily-metrics|5| — Moving-average trend for fraud losses\ndaily-metrics|6| — Shift-wise operational workload trend\nuser-segmentation|1| — Customer spending and fraud exposure segments\nuser-segmentation|2| — Fraud risk by customer segment, income_band, and repeat_fraud_victim_flag\nuser-segmentation|3| — RFM-style cardholder behavior analysis\nuser-segmentation|4| — Inactive or dormant cardholder identification\nuser-segmentation|5| — Statement revolve behavior by customer and card attributes\nuser-segmentation|6| — High-risk repeat fraud victim profile\ngeographic|1| — Fraud rate and loss by transaction city and country\ngeographic|2| — Customer residence geography vs fraud incidence\ngeographic|3| — Merchant geography concentration of fraud\ngeographic|4| — Domestic vs international transaction and fraud comparison\ngeographic|5| — Geo-impossible or rapid cross-country activity candidates\ngeographic|6| — Branch city and customer city mismatch patterns for fraud victims\ncohort-retention|1| — Card issuance cohort activity retention\ncohort-retention|2| — Repeat transaction behavior after first transaction\ncohort-retention|3| — Repeat fraud victim recurrence timing\ncohort-retention|4| — Alert response retention by customer\ncohort-retention|5| — Post-reissue transaction resumption behavior\ncohort-retention|6| — Relationship-tenure cohorts and fraud incidence\ndata-quality|1| — NULL rates for all key fields\ndata-quality|2| — Daily volume anomaly detection\ndata-quality|3| — Duplicate record check\ndata-quality|4| — Value range validation\ndata-quality|5| — Referential integrity across core joins\ndata-quality|6| — Encoded value conformance checks\ndata-quality|7| — Timestamp sequence consistency checks",
+  "domainHints": "12. `analyst_roster` joins to `fraud_alerts.analyst_id` — use this to compute analyst cost per alert: `ar.fully_loaded_hourly_cost_inr * fa.handle_time_s / 3600.0`. Seniority tiers: Junior Analyst < Analyst < Senior Analyst < Team Lead.\n13. `device_intelligence` joins to `transactions.device_id` — `shared_device_flag = true` AND `device_risk_tier = 'CRITICAL'` identifies mule devices (one device draining multiple customer cards). When `fraud_txns = txns`, every transaction from that device was fraudulent.\n14. `benchmarks` has no join keys — query it standalone for industry comparison. Use `your_value` vs `industry_median` with `better_direction` to determine if HDFC is above or below peer performance.\n15. `fraud_rules` joins to `fraud_alerts.trigger_reasons` but trigger_reasons is pipe-delimited — use `string_split(fa.trigger_reasons, '|')` and unnest to join individual rules. `false_positive_share_pct` is the FP rate for that specific rule.\n16. `voice_verification_calls` joins to `fraud_alerts.alert_id` and `customers.customer_id` — tracks Actioneer voice call outcomes. `duress_score > 0.6` indicates suspected coached response. `final_action` is the Gemini tool that was called (clear_transaction, block_card, escalate_to_specialist).\n6. Use DuckDB-friendly qualified column references when joining because names like `channel`, `status`, `city`, `state`, `category`, `initiated_by`, `event_ts`, and `resolution_days` appear in multiple tables with different meanings; always write `transactions.channel`, `service_interactions.channel`, `cards.status`, `fraud_episodes.status`, etc.\n7. Quote reserved/generic metadata columns in `data_dictionary`: `\"table\"`, `\"column\"`, and sometimes `description` if aliasing; prefer `SELECT dd.\"table\", dd.\"column\" FROM data_dictionary dd`.\n8. Time fields are mixed types: `transactions.txn_ts` and many ops fields are `TIMESTAMP WITH TIME ZONE`, while statement/customer/card dates are `DATE`, and `calendar_events.start_date` / `calendar_events.end_date` are VARCHAR in `YYYY-MM-DD`; parse with `CAST(calendar_events.start_date AS DATE)` or `strptime(calendar_events.start_date, '%Y-%m-%d')` before comparison.\n9. Encoded values are business-critical: filter spend with `transactions.txn_type = 'PURCHASE'` when needed, remember `transactions.response` can be `APPROVED`, `DECLINED`, or `HELD_FOR_CONFIRMATION`, and `decline_reason` is mostly populated only for non-approved transactions.\n10. Treat code-like numerics as dimensions, not measures: `transactions.mcc`, `merchants.mcc`, `cards.bin`, `customers.pincode`, and `fraud_alerts.sla_target_min` should usually be grouped/filtered, not summed or averaged except where analytically intentional.\n11. Multi-value text fields require splitting before reason-level analysis: `fraud_alerts.trigger_reasons`, `hero_case_index.key_txn_ids`, `hero_case_index.alert_ids`, `hero_case_index.case_ids`, and `calendar_events.category_effects` are pipe-delimited; use `unnest(string_split(col, '|'))` in DuckDB. Also note `transactions.fraud_episode_id` joins to `fraud_episodes.episode_id` despite different names.",
+  "reportMeta": {
+    "totalEvents": "19,28,413 rows",
+    "totalUsers": "5,000 unique customers",
+    "dateRangeLabel": "2024-06-01 00:01:06+05:30 to 2026-05-31 23:59:58+05:30",
+    "dbName": "hdfc-creditfraud.duckdb"
+  },
+  "summaryTableHint": "Query the `transactions` table directly for transaction/fraud behavior, and join to alerts, cards, customers, merchants, cases, and actions for operational and outcome analysis; no pre-aggregated summary fact table exists.",
+  "suggestedPrompts": [
+    "What is the daily trend of approved transactions, declined transactions, and confirmed fraud transactions over time?",
+    "Which `channel`, `auth_method`, and `txn_country` combinations have the highest fraud rate and average `amount_inr`?",
+    "How do `fraud_alerts.severity`, `risk_score`, and `trigger_reasons` relate to final `disposition` and `sla_breached_flag`?",
+    "Which merchants or MCCs have the highest fraudulent `amount_inr`, and how does that compare across `merchants.risk_tier` and `country`?",
+    "How much analyst cost is being spent per shift on false-positive alerts? Break down by team and seniority using analyst_roster.",
+    "Which fraud rules have the highest false positive rate and how many alerts do they generate? Which rules should be retuned?",
+    "How does HDFC's fraud rate, false-positive share, and SLA breach rate compare to industry benchmarks?",
+    "Which device_ids have shared_device_flag=true and how many customers and cards are affected — identify the mule device network.",
+    "During `calendar_events` windows such as festival periods, how do transaction volume, decline rate, and fraud losses change versus non-event periods?"
+  ],
+  "welcomeSubtitle": "Ask about card fraud trends, alerts, customer risk, cases, and loss prevention.",
+  "currency": "INR",
+  "isSample": true
+}

@@ -1,0 +1,97 @@
+{
+  "input": "/Users/vimarsh/Documents/baby-sentinel/data/voice-simulation-runs/kyc-450-2026-06-09/transcripts.jsonl",
+  "model": "gpt-5.4",
+  "calls": 450,
+  "signals": 450,
+  "clusters": 10,
+  "topClusters": [
+    {
+      "id": "cluster_01",
+      "title": "No customer connected",
+      "count": 79,
+      "share": 0.1756,
+      "outcomeMix": {
+        "no_answer": 49,
+        "failed": 30
+      }
+    },
+    {
+      "id": "cluster_02",
+      "title": "Stopped mid process, retry later",
+      "count": 70,
+      "share": 0.1556,
+      "outcomeMix": {
+        "neutral": 47,
+        "positive": 18,
+        "negative": 5
+      }
+    },
+    {
+      "id": "cluster_03",
+      "title": "Unclear flow and timing",
+      "count": 60,
+      "share": 0.1333,
+      "outcomeMix": {
+        "neutral": 33,
+        "positive": 21,
+        "negative": 5,
+        "busy": 1
+      }
+    },
+    {
+      "id": "cluster_04",
+      "title": "Not interested and stop calling",
+      "count": 54,
+      "share": 0.12,
+      "outcomeMix": {
+        "negative": 53,
+        "busy": 1
+      }
+    },
+    {
+      "id": "cluster_05",
+      "title": "Asked to call back later",
+      "count": 52,
+      "share": 0.1156,
+      "outcomeMix": {
+        "busy": 50,
+        "negative": 2
+      }
+    },
+    {
+      "id": "cluster_06",
+      "title": "Blocked at selfie or camera",
+      "count": 46,
+      "share": 0.1022,
+      "outcomeMix": {
+        "positive": 24,
+        "neutral": 22
+      }
+    },
+    {
+      "id": "cluster_07",
+      "title": "Name or address mismatch confusion",
+      "count": 40,
+      "share": 0.0889,
+      "outcomeMix": {
+        "positive": 26,
+        "neutral": 14
+      }
+    },
+    {
+      "id": "cluster_08",
+      "title": "Wrong contact number reached",
+      "count": 30,
+      "share": 0.0667,
+      "outcomeMix": {
+        "wrong_number": 30
+      }
+    }
+  ],
+  "files": {
+    "signals": "signals.json",
+    "clusters": "clusters.json",
+    "finalAnalysis": "final-analysis.json",
+    "report": "analysis-report.md"
+  }
+}

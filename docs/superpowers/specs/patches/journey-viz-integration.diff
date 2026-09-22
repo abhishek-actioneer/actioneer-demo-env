@@ -1,0 +1,522 @@
+8,26d7
+< import {
+<   AlertDialog,
+<   AlertDialogAction,
+<   AlertDialogCancel,
+<   AlertDialogContent,
+<   AlertDialogDescription,
+<   AlertDialogFooter,
+<   AlertDialogHeader,
+<   AlertDialogTitle,
+<   AlertDialogTrigger,
+< } from "@/components/ui/alert-dialog";
+< import { useVoiceJourney, type VoiceJourney } from "@/hooks/use-voice-journey";
+< import {
+<   reduceJourneyStates,
+<   type JourneyAction,
+<   type JourneyDispatch,
+<   type JourneyDispatchScope,
+<   type JourneyState,
+< } from "@/lib/voice-campaign-journey-types";
+96,97d76
+<   clusterIds: string[];
+<   callIds: string[];
+360,673d338
+< }
+< 
+< // ---------------------------------------------------------------------------
+< // Journey (dispatch → outcome loop). Per-call state is a pure reduction over
+< // journey events up to the demo clock; everything below derives from it.
+< // ---------------------------------------------------------------------------
+< 
+< const STATE_RANK: Record<JourneyState, number> = {
+<   analyzed: 0,
+<   held_out: 1,
+<   suppressed: 1,
+<   retry_scheduled: 1,
+<   routed_human: 1,
+<   dispatched: 2,
+<   delivered: 3,
+<   clicked: 4,
+<   completed: 5,
+< };
+< 
+< interface CallStateCounts {
+<   /** Cumulative link funnel over treated calls. */
+<   sent: number;
+<   delivered: number;
+<   clicked: number;
+<   completed: number;
+<   heldOut: number;
+<   completedHoldout: number;
+<   /** Suppressed / retry-scheduled / routed-to-human. */
+<   parked: number;
+< }
+< 
+< function countCallStates(
+<   callIds: string[],
+<   states: Map<string, JourneyState>,
+<   holdoutSet: Set<string>,
+< ): CallStateCounts {
+<   const counts: CallStateCounts = {
+<     sent: 0,
+<     delivered: 0,
+<     clicked: 0,
+<     completed: 0,
+<     heldOut: 0,
+<     completedHoldout: 0,
+<     parked: 0,
+<   };
+<   for (const callId of callIds) {
+<     const state = states.get(callId);
+<     if (!state) continue;
+<     if (holdoutSet.has(callId)) {
+<       counts.heldOut += 1;
+<       if (state === "completed") counts.completedHoldout += 1;
+<       continue;
+<     }
+<     if (state === "suppressed" || state === "retry_scheduled" || state === "routed_human") {
+<       counts.parked += 1;
+<       continue;
+<     }
+<     const rank = STATE_RANK[state];
+<     if (rank >= 2) counts.sent += 1;
+<     if (rank >= 3) counts.delivered += 1;
+<     if (rank >= 4) counts.clicked += 1;
+<     if (rank >= 5) counts.completed += 1;
+<   }
+<   return counts;
+< }
+< 
+< interface JourneyAggregates {
+<   counts: CallStateCounts;
+<   treatedTotal: number;
+<   holdoutTotal: number;
+<   /** Percentage points of completion lift vs holdout; null until holdout is meaningful. */
+<   liftPts: number | null;
+<   treatedRate: number;
+<   holdoutRate: number;
+<   inrRecovered: number;
+<   holdoutFraction: number;
+<   completedByCluster: Map<string, number>;
+< }
+< 
+< function computeJourneyAggregates(
+<   journey: VoiceJourney,
+<   states: Map<string, JourneyState>,
+<   clusters: ClusterDatum[],
+< ): JourneyAggregates | null {
+<   if (!journey.active || journey.virtualNow === null) return null;
+<   const virtualNow = journey.virtualNow;
+<   const live = journey.dispatches.filter((dispatch) => Date.parse(dispatch.createdAt) <= virtualNow);
+<   if (live.length === 0) return null;
+< 
+<   const linkDispatches = live.filter((dispatch) => dispatch.action === "send_kyc_link");
+<   const holdoutSet = new Set(linkDispatches.flatMap((dispatch) => dispatch.holdoutCallIds));
+<   const touched = [...new Set(live.flatMap((dispatch) => [...dispatch.callIds, ...dispatch.holdoutCallIds]))];
+<   const counts = countCallStates(touched, states, holdoutSet);
+< 
+<   const treatedTotal = linkDispatches.reduce((sum, dispatch) => sum + dispatch.callIds.length, 0);
+<   const holdoutTotal = holdoutSet.size;
+<   const treatedRate = treatedTotal > 0 ? counts.completed / treatedTotal : 0;
+<   const holdoutRate = holdoutTotal > 0 ? counts.completedHoldout / holdoutTotal : 0;
+< 
+<   const completedByCluster = new Map<string, number>();
+<   for (const cluster of clusters) {
+<     const done = cluster.callIds.reduce(
+<       (sum, callId) => sum + (states.get(callId) === "completed" ? 1 : 0),
+<       0,
+<     );
+<     if (done > 0) completedByCluster.set(cluster.id, done);
+<   }
+< 
+<   return {
+<     counts,
+<     treatedTotal,
+<     holdoutTotal,
+<     liftPts: holdoutTotal >= 10 ? (treatedRate - holdoutRate) * 100 : null,
+<     treatedRate,
+<     holdoutRate,
+<     inrRecovered: counts.completed * journey.profile.unitValueInr,
+<     holdoutFraction: linkDispatches[0]?.holdoutFraction ?? 0,
+<     completedByCluster,
+<   };
+< }
+< 
+< function formatInr(value: number): string {
+<   return new Intl.NumberFormat("en-IN", {
+<     style: "currency",
+<     currency: "INR",
+<     maximumFractionDigits: 0,
+<   }).format(value);
+< }
+< 
+< function formatVirtualOffset(ms: number): string {
+<   const hours = Math.floor(ms / 3_600_000);
+<   const minutes = Math.floor((ms % 3_600_000) / 60_000);
+<   return `T+${hours}h ${minutes.toString().padStart(2, "0")}m`;
+< }
+< 
+< const JOURNEY_ACTIONS: Array<{ action: JourneyAction; label: string }> = [
+<   { action: "send_kyc_link", label: "Send KYC link" },
+<   { action: "schedule_retry", label: "Retry later" },
+<   { action: "route_human", label: "Route to human" },
+<   { action: "suppress", label: "Suppress" },
+< ];
+< 
+< const PARKED_VERB: Record<string, string> = {
+<   suppress: "suppressed",
+<   schedule_retry: "scheduled for retry",
+<   route_human: "routed to human callers",
+< };
+< 
+< function DispatchButtons({
+<   scope,
+<   journey,
+<   actions = JOURNEY_ACTIONS,
+< }: {
+<   scope: JourneyDispatchScope;
+<   journey: VoiceJourney;
+<   actions?: Array<{ action: JourneyAction; label: string }>;
+< }) {
+<   const [error, setError] = useState<string | null>(null);
+< 
+<   const run = async (action: JourneyAction) => {
+<     setError(null);
+<     const result = await journey.dispatchAction(scope, action);
+<     if (!result.ok) setError(result.error ?? "Dispatch failed");
+<   };
+< 
+<   return (
+<     <div>
+<       <div className="flex flex-wrap items-center gap-1.5">
+<         {actions.map(({ action, label }, index) => (
+<           <button
+<             className={
+<               index === 0
+<                 ? "rounded-full bg-foreground px-3 py-1 text-xs font-medium text-background transition-opacity hover:opacity-85 disabled:opacity-40"
+<                 : "rounded-full px-3 py-1 text-xs text-muted-foreground shadow-[0_0_0_1px_var(--border)] transition-colors hover:text-foreground disabled:opacity-40"
+<             }
+<             disabled={journey.pending}
+<             key={action}
+<             onClick={() => void run(action)}
+<             type="button"
+<           >
+<             {label}
+<           </button>
+<         ))}
+<       </div>
+<       {error ? <p className="mt-1.5 text-xs text-rose-300">{error}</p> : null}
+<     </div>
+<   );
+< }
+< 
+< function JourneyMiniStatus({
+<   dispatch,
+<   callIds,
+<   callStates,
+< }: {
+<   dispatch: JourneyDispatch;
+<   callIds: string[];
+<   callStates: Map<string, JourneyState>;
+< }) {
+<   const counts = countCallStates(callIds, callStates, new Set(dispatch.holdoutCallIds));
+<   if (dispatch.action !== "send_kyc_link") {
+<     return (
+<       <p className="text-xs text-muted-foreground tabular-nums">
+<         {counts.parked} calls {PARKED_VERB[dispatch.action]}
+<       </p>
+<     );
+<   }
+<   return (
+<     <p className="text-xs text-muted-foreground tabular-nums">
+<       <span className="font-semibold text-foreground">{counts.sent}</span> sent ·{" "}
+<       {counts.clicked} clicked ·{" "}
+<       <span className="font-semibold text-foreground">{counts.completed}</span> KYC done
+<       {counts.heldOut > 0 ? ` · ${counts.heldOut} holdout` : ""}
+<     </p>
+<   );
+< }
+< 
+< function JourneyControlBar({
+<   journey,
+<   aggregates,
+< }: {
+<   journey: VoiceJourney;
+<   aggregates: JourneyAggregates;
+< }) {
+<   const { range, virtualNow } = journey;
+<   if (!range || virtualNow === null) return null;
+<   const atEnd = virtualNow >= range.end;
+< 
+<   return (
+<     <section className="bg-background px-6 py-4 shadow-[inset_0_-1px_0_0_var(--border)]">
+<       <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3">
+<         <div className="flex flex-wrap items-center gap-x-8 gap-y-2">
+<           <div>
+<             <p className="text-[11px] font-medium uppercase text-muted-foreground">
+<               Recovered value (est.)
+<             </p>
+<             <p className="text-2xl font-semibold leading-tight tabular-nums">
+<               {formatInr(aggregates.inrRecovered)}
+<             </p>
+<           </div>
+<           <div className="text-xs leading-relaxed text-muted-foreground tabular-nums">
+<             <p>
+<               <span className="font-semibold text-foreground">{aggregates.counts.sent}</span> links
+<               sent · {aggregates.counts.delivered} delivered · {aggregates.counts.clicked} clicked ·{" "}
+<               <span className="font-semibold text-foreground">{aggregates.counts.completed}</span>{" "}
+<               KYC done
+<               {aggregates.counts.parked > 0 ? ` · ${aggregates.counts.parked} parked` : ""}
+<             </p>
+<             <p>
+<               {aggregates.liftPts !== null
+<                 ? `${formatPercent(aggregates.treatedRate)} completion vs ${formatPercent(aggregates.holdoutRate)} holdout (+${Math.round(aggregates.liftPts)} pts)`
+<                 : "Holdout control accumulating…"}
+<             </p>
+<           </div>
+<         </div>
+< 
+<         <div className="flex flex-wrap items-center gap-3">
+<           <button
+<             className="rounded-full px-3 py-1 text-xs font-medium text-foreground shadow-[0_0_0_1px_var(--border)] transition-colors hover:bg-muted"
+<             onClick={() => (journey.playing ? journey.pause() : journey.play())}
+<             type="button"
+<           >
+<             {journey.playing ? "Pause" : atEnd ? "Replay" : "Play"}
+<           </button>
+<           <input
+<             aria-label="Demo clock"
+<             className="w-44 accent-foreground"
+<             max={range.end}
+<             min={range.start}
+<             onChange={(event) => journey.scrub(Number(event.target.value))}
+<             step={60_000}
+<             type="range"
+<             value={virtualNow}
+<           />
+<           <span className="w-24 text-xs text-muted-foreground tabular-nums">
+<             {formatVirtualOffset(virtualNow - range.start)}
+<           </span>
+<           <button
+<             className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+<             onClick={journey.jumpToEnd}
+<             type="button"
+<           >
+<             End
+<           </button>
+<           <AlertDialog>
+<             <AlertDialogTrigger asChild>
+<               <button
+<                 className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+<                 type="button"
+<               >
+<                 Reset
+<               </button>
+<             </AlertDialogTrigger>
+<             <AlertDialogContent>
+<               <AlertDialogHeader>
+<                 <AlertDialogTitle>Reset the outcome loop?</AlertDialogTitle>
+<                 <AlertDialogDescription>
+<                   Deletes every dispatch and simulated outcome for this run. The campaign analysis
+<                   itself is untouched.
+<                 </AlertDialogDescription>
+<               </AlertDialogHeader>
+<               <AlertDialogFooter>
+<                 <AlertDialogCancel>Cancel</AlertDialogCancel>
+<                 <AlertDialogAction onClick={() => void journey.reset()}>Reset</AlertDialogAction>
+<               </AlertDialogFooter>
+<             </AlertDialogContent>
+<           </AlertDialog>
+<         </div>
+<       </div>
+<       <p className="mt-2 text-[11px] text-muted-foreground">
+<         Simulated outcome feed (demo) · valued at {formatInr(journey.profile.unitValueInr)} per
+<         completed KYC · {Math.round(aggregates.holdoutFraction * 100)}% holdout control
+<       </p>
+<     </section>
+<   );
+689d353
+<   completedByCluster,
+695d358
+<   completedByCluster: Map<string, number> | null;
+781d443
+<         const done = completedByCluster?.get(cluster.id) ?? 0;
+822,832d483
+<             {done > 0 ? (
+<               // Bubble fills with completed KYCs — area-true: r ∝ √(done/count).
+<               <circle
+<                 cx={x}
+<                 cy={y}
+<                 fill="var(--foreground)"
+<                 opacity={0.92}
+<                 pointerEvents="none"
+<                 r={cluster.radius * Math.sqrt(Math.min(done / Math.max(cluster.count, 1), 1))}
+<               />
+<             ) : null}
+851d501
+<               {done > 0 ? ` · ${done} done` : ""}
+874d523
+<   callStates,
+885d533
+<   callStates: Map<string, JourneyState> | null;
+1025,1045d672
+< 
+<         // Journey state lights the dot up: ring when the link lands, solid
+<         // foreground core once the KYC completes, dashed for holdout, dimmed
+<         // when parked (suppressed / retry / human).
+<         const state = callStates?.get(point.callId);
+<         const done = state === "completed";
+<         const clicked = state === "clicked";
+<         const inFlight = state === "dispatched" || state === "delivered";
+<         const heldOut = state === "held_out";
+<         const parked =
+<           state === "suppressed" || state === "retry_scheduled" || state === "routed_human";
+< 
+<         const baseOpacity = active || zoneHighlighted ? 1 : zoneMuted ? 0.15 : dim ? 0.45 : 0.8;
+<         const stateStroke = done
+<           ? point.shade
+<           : clicked
+<             ? "var(--foreground)"
+<             : inFlight || heldOut
+<               ? "var(--muted-foreground)"
+<               : "transparent";
+< 
+1051c678
+<             fill={done ? "var(--foreground)" : point.shade}
+---
+>             fill={point.shade}
+1054,1058c681,684
+<             opacity={done ? Math.max(baseOpacity, 0.9) : parked ? Math.min(baseOpacity, 0.2) : baseOpacity}
+<             r={(active ? 6.5 : zoneHighlighted ? 5.5 : 4.5) + (done ? 1 : clicked ? 0.5 : 0)}
+<             stroke={active ? "var(--foreground)" : stateStroke}
+<             strokeDasharray={!active && heldOut ? "1.5 2" : undefined}
+<             strokeWidth={active ? 1.5 : done || clicked ? 1.25 : inFlight || heldOut ? 0.9 : 0}
+---
+>             opacity={active || zoneHighlighted ? 1 : zoneMuted ? 0.15 : dim ? 0.45 : 0.8}
+>             r={active ? 6.5 : zoneHighlighted ? 5.5 : 4.5}
+>             stroke={active ? "var(--foreground)" : "transparent"}
+>             strokeWidth={active ? 1.5 : 0}
+1060,1063c686
+<             <title>
+<               {(callDetails[point.callId]?.primarySignal ?? point.callId) +
+<                 (state ? ` — ${state.replace(/_/g, " ")}` : "")}
+<             </title>
+---
+>             <title>{callDetails[point.callId]?.primarySignal ?? point.callId}</title>
+1290,1291d912
+<   callStates,
+<   completedByCluster,
+1306,1307d926
+<   callStates: Map<string, JourneyState> | null;
+<   completedByCluster: Map<string, number> | null;
+1349,1354c968,969
+<               ? callStates
+<                 ? "Dots light up as outcomes land: ring = link delivered, solid = KYC done."
+<                 : "Each dot is one call, positioned by signal similarity."
+<               : completedByCluster
+<                 ? "Bubbles fill as KYC completions land."
+<                 : "Size and position encode affected call volume."}
+---
+>               ? "Each dot is one call, positioned by signal similarity."
+>               : "Size and position encode affected call volume."}
+1397d1011
+<                 callStates={callStates}
+1409d1022
+<                 completedByCluster={completedByCluster}
+1435,1449c1048
+< function SelectedSignal({
+<   cluster,
+<   journey,
+<   callStates,
+< }: {
+<   cluster: ClusterDatum;
+<   journey: VoiceJourney;
+<   callStates: Map<string, JourneyState>;
+< }) {
+<   const covering = journey.dispatches.find((dispatch) =>
+<     "clusterId" in dispatch.scope
+<       ? dispatch.scope.clusterId === cluster.id
+<       : dispatch.scope.laneId === cluster.laneId,
+<   );
+< 
+---
+> function SelectedSignal({ cluster }: { cluster: ClusterDatum }) {
+1477,1483d1075
+<         <div className="mt-3">
+<           {covering ? (
+<             <JourneyMiniStatus callIds={cluster.callIds} callStates={callStates} dispatch={covering} />
+<           ) : (
+<             <DispatchButtons journey={journey} scope={{ clusterId: cluster.id }} />
+<           )}
+<         </div>
+1527,1528d1118
+<         clusterIds: lane.clusters.map((cluster) => cluster.id),
+<         callIds: lane.clusters.flatMap((cluster) => cluster.callIds),
+1536,1537d1125
+<   journey,
+<   callStates,
+1541,1542d1128
+<   journey: VoiceJourney;
+<   callStates: Map<string, JourneyState>;
+1561,1565d1146
+<           const covering = journey.dispatches.find((dispatch) =>
+<             "laneId" in dispatch.scope
+<               ? dispatch.scope.laneId === step.laneId
+<               : step.clusterIds.includes(dispatch.scope.clusterId),
+<           );
+1591,1611c1172
+<               <div className="min-w-0">
+<                 <p className="text-sm leading-relaxed text-muted-foreground">{step.action}</p>
+<                 <div className="mt-2.5">
+<                   {covering ? (
+<                     <JourneyMiniStatus
+<                       callIds={step.callIds}
+<                       callStates={callStates}
+<                       dispatch={covering}
+<                     />
+<                   ) : (
+<                     <DispatchButtons
+<                       actions={[
+<                         { action: "send_kyc_link", label: `Send link · ${step.affected}` },
+<                         { action: "suppress", label: "Suppress" },
+<                       ]}
+<                       journey={journey}
+<                       scope={{ laneId: step.laneId }}
+<                     />
+<                   )}
+<                 </div>
+<               </div>
+---
+>               <p className="text-sm leading-relaxed text-muted-foreground">{step.action}</p>
+1643,1655d1203
+<   const journey = useVoiceJourney(insights.runId);
+<   const visibleEvents = useMemo(() => {
+<     const virtualNow = journey.virtualNow;
+<     if (virtualNow === null) return [];
+<     return journey.events.filter((event) => Date.parse(event.at) <= virtualNow);
+<   }, [journey.events, journey.virtualNow]);
+<   const callStates = useMemo(() => reduceJourneyStates(visibleEvents), [visibleEvents]);
+<   const aggregates = useMemo(
+<     () => computeJourneyAggregates(journey, callStates, clusters),
+<     // eslint-disable-next-line react-hooks/exhaustive-deps
+<     [journey.dispatches, journey.virtualNow, journey.active, journey.profile, callStates, clusters],
+<   );
+< 
+1690d1237
+<       {aggregates ? <JourneyControlBar aggregates={aggregates} journey={journey} /> : null}
+1695d1241
+<         callStates={aggregates ? callStates : null}
+1698d1243
+<         completedByCluster={aggregates ? aggregates.completedByCluster : null}
+1708,1714c1253,1254
+<       <SelectedSignal callStates={callStates} cluster={selectedCluster} journey={journey} />
+<       <InterventionWaterfall
+<         callStates={callStates}
+<         journey={journey}
+<         steps={interventionSteps}
+<         totalCalls={insights.calls}
+<       />
+---
+>       <SelectedSignal cluster={selectedCluster} />
+>       <InterventionWaterfall steps={interventionSteps} totalCalls={insights.calls} />

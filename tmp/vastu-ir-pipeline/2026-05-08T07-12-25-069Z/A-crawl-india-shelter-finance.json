@@ -1,0 +1,808 @@
+{
+  "source": "header",
+  "homepageUrl": "https://indiashelter.in",
+  "irIndexUrl": "https://indiashelter.in/investor-relations",
+  "documents": [
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1754566637373-1%20Board%20meeting%20outcome%20intimation.pdf",
+      "title": "Financial Results June 2025"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1762254819199-Financial%20Results%20September%202025.pdf",
+      "title": "Financial Results September 2025"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1770460259335-Financial+Results+December+31_+2025.pdf",
+      "title": "Financial Results December 2025"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777707511562-Financial+Results+March+2026.pdf",
+      "title": "Financial Results March 2026"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1723125718866-Financials%20Results%20June%2C%202024.pdf",
+      "title": "Financials Results June, 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1729947973116-Financial%20Results%20Sept%202024.pdf",
+      "title": "Financial Results Sept 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1738848559949-Financial%20Results%20December%2C%202024.pdf",
+      "title": "Financial Results December, 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1746805438261-Financial%20Results%20March%2C%202025.pdf",
+      "title": "Financial Results March 2025"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705492746796Financial%20Results%20Q-1%20FY24.pdf",
+      "title": "Financial Results Q-1 FY24"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705492759341Financial%20Results%20Q-2%20FY24.pdf",
+      "title": "Financial Results Q-2 FY24"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1707402018714-Financial%20Results%2C%20December%2031%2C%202023.pdf",
+      "title": "Financial Results, December 31, 2023"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1715188469927-Financial%20Results%20Mar%2724.pdf",
+      "title": "Financial Results Mar'24"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705492662756Financial%20Results%20Q-1%20FY23.pdf",
+      "title": "Financial Results Q-1 FY23"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705492678445Financial%20Results%20Q-2%20FY23.pdf",
+      "title": "Financial Results Q-2 FY23"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705492693458Financial%20Results%20Q-3%20FY23.pdf",
+      "title": "Financial Results Q-3 FY23"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705492710174Financial%20Results%20Q-4%20FY23.pdf",
+      "title": "Financial Results Q-4 FY23"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705573269673Audited_Standalone_Financial_Statements_March_31_2023.pdf",
+      "title": "Audited_Standalone_Financial_Statements_March_31_2023"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705492617376Financial%20Results%20Q-2%20FY22.pdf",
+      "title": "Financial Results Q-2 FY22"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705492633056Financial%20Results%20Q-3%20FY22.pdf",
+      "title": "Financial Results Q-3 FY22"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705492647168Financial%20Results%20Q-4%20FY22.pdf",
+      "title": "Financial Results Q-4 FY22"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705573195649Audited_Standalone_Financial_Statements_March_31_2022.pdf",
+      "title": "Audited_Standalone_Financial_Statements_March_31_2022"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705492550081Financial%20Results%20HY-1%20FY21.pdf",
+      "title": "Financial Results HY-1 FY21"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705492581680Financial%20Results%20HY-2%20FY21.pdf",
+      "title": "Financial Results HY-2 FY21"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705573107488Audited_Standalone_Financial_Statements_March_31_2021.pdf",
+      "title": "Audited_Standalone_Financial_Statements_March_31_2021"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705492487772Financial%20Results%20HY-1%20FY20.pdf",
+      "title": "Financial Results HY-1 FY20"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705492516893Financial%20Results%20HY-2%20FY20.pdf",
+      "title": "Financial Results HY-2 FY20"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705492124801Financial%20Results-FY19.pdf",
+      "title": "FY 2018-19"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1717398315787-Signed%20June%2723-ISCFL.pdf",
+      "title": "Signed June'23-ISCFL`"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1723532813628-Financials%20June%202024.pdf",
+      "title": "Financials June 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1730095587932-Financials%20September%202024.pdf",
+      "title": "Financials September 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1739250520920-Quarterly%20Results%20of%20India%20Shelter%20Capital%20Finance%20Limited_Q3FY25.pdf",
+      "title": "Quarterly Results of India Shelter Capital Finance Limited_Q3FY25"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1751883266175-India%20Shelter%20Capital_%20Financial%20Statement%20Mar%2725.pdf",
+      "title": "India Shelter Capital_ Financial Statement Mar'25"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1717398349546-Signed%20Results%20Sept%2723_ISCFL.pdf",
+      "title": "Signed Results Sept'23_ISCFL"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1717398378613-Signed%20Results%20Dec%2723_ISCFL.pdf",
+      "title": "Signed Results Dec'23_ISCFL"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1717398502677-Signed+Financial+Results_March_2024+%282%29.pdf",
+      "title": "Signed Financial Results_March_2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1717398540503-Standalone%20Financial%20Statements_March%2C%202024%20%282%29.pdf",
+      "title": "Standalone Financial Statements_March, 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1751527210017-Integrated+Annual+Report-+2024-25.pdf",
+      "title": "Integrated Annual Report- 2024-25"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1751527251387-27th%20AGM%20Notice.pdf",
+      "title": "27th AGM Notice"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1751883001900-Statement%20of%20disclosure%20of%20remuneration%20%282%29.pdf",
+      "title": "Statement of disclosure of remuneration"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1751883046217-ESOP-Disclosure%202024-25%20%281%29.pdf",
+      "title": "ESOP-Disclosure 2024-25"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1753870181388-Proceedings%20of%20AGM.pdf",
+      "title": "Proceedings of AGM"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1753870223694-AGM%20Voting%20results%20and%20Scrutinizers%20report.pdf",
+      "title": "AGM Voting results and Scrutinizers report"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1753870935804-Pre+Dispatch+AGM+notice.pdf",
+      "title": "Pre Dispatch AGM notice"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1753871014000-Post+dispatch+AGM+Notice.pdf",
+      "title": "Post dispatch AGM Notice"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1753871103830-Physical%20letters%20dispatch%20Reg%2036.pdf",
+      "title": "Physical letters dispatch Reg 36"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1753871342423-TDS%20Intimation.pdf",
+      "title": "TDS Intimation"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1716897286585-26%20Annual%20General%20Meeting%20Notice.pdf",
+      "title": "26 Annual General Meeting Notice"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1716899368028-ESOP-Disclosure%202023-24.pdf",
+      "title": "ESOP-Disclosure 2023-24"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1716902562572-Newspaper+Publication+Public+Notice+of+AGM+May+27+2024.pdf",
+      "title": "Newspaper Publication Public Notice of AGM May 27 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1717057451935-Intimation_Newspaper_publication_AGM_evoting.pdf",
+      "title": "Intimation_Newspaper_publication_AGM_evoting"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1717480031438-Annual+Report+2023-24.pdf",
+      "title": "Annual Report 2023-24"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1718018792079-Newspaper_publication_Annual_Report_Corrigendum.pdf",
+      "title": "Newspaper_publication_Annual_Report_Corrigendum"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1735904404974-Statement%20of%20disclosure%20of%20remuneration%20under%20Section%20197%2812%29%20of%20the%20CA%202013-V1.pdf",
+      "title": "Statement of disclosure of remuneration under Section 197(12) of the CA 2013-V1"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1707124997457-Annual+Report+2023.pdf",
+      "title": "Annual Report 2023"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1707124958739-Annual+Report+2022.pdf",
+      "title": "Annual Report 2022"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1707124915260-Annual%20Report%202021.pdf",
+      "title": "Annual Report 2021"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1707124882347-Annual+Report+2020.pdf",
+      "title": "Annual Report 2020"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1707124798808-Annual+Report+2019.pdf",
+      "title": "Annual Report 2019"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1707124747024-Annual+Report+2018.pdf",
+      "title": "Annual Report 2018"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1758873681155-Annual+Return-FY+2025+%282%29.pdf",
+      "title": "Annual Return-FY 2025"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1724219309420-Annual+Return+2024.pdf",
+      "title": "Annual Return 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1707123826138-Annual%20Return%202023.pdf",
+      "title": "Annual Return 2023"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1707123795388-Annual%20Return%202022.pdf",
+      "title": "Annual Return 2022"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1707123763713-Annual%20Return%202021.pdf",
+      "title": "Annual Return 2021"
+    },
+    {
+      "url": "https://india-shelter.s3.amazonaws.com/uploads/1707123687425-Annual%20Return%202020.pdf",
+      "title": "Annual Return 2020"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1754570911338-Investor%20presentation%20Intimation.pdf",
+      "title": "Investor Presentation_Q1FY26"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1762326786859-Investor%20Presentation%20Intimation%20%281%29.pdf",
+      "title": "Investor Presentation Intimation"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1770460813190-Investor%20Presentation%20Intimation%20%282%29.pdf",
+      "title": "Investor Presentation Intimation"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716210890-Investor%20Presentation%20intimation%20%283%29.pdf",
+      "title": "Investor Presentation March 2026"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1738859863636-Investor%20Presentation_Q3FY25.pdf",
+      "title": "Investor Presentation_Q3FY25"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1723125810754-Investor%20Presentation_Q1FY25.pdf",
+      "title": "Investor Presentation_Q1FY25"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1729948074378-Investor_presentation_Q2FY25.pdf",
+      "title": "Investor_presentation_Q2FY25"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1740372494287-Investor%20Day%20Feb%2024%2C%202025-%20Presentation.pdf",
+      "title": "Investor Day Feb 24, 2025- Presentation"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1746869069300-Investor%20Presentation_Q4FY25.pdf",
+      "title": "Investor Presentation_Q4FY25"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1709701741992-Investor%20Presentation_Q3FY24_Final_v2%20%281%29.pdf",
+      "title": "Investor Presentation_Q3FY24_Final_v2"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1715188363472-Investor%20Presentation_Q4FY24_Final.pdf",
+      "title": "Investor Presentation_Q4FY24"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1754570697824-Intimation%20Press%20release.pdf",
+      "title": "Q1FY26_Press Release"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1762326702587-Press%20Release%20Intimation.pdf",
+      "title": "Press Release Intimation"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1770460890983-Press%20Release%20intimation%20%281%29.pdf",
+      "title": "Press Release Intimation"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1777716261988-Press%20Release%20Intimation%20%282%29.pdf",
+      "title": "Press release March 2026"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1723125917708-Q1FY25_Press%20Release.pdf",
+      "title": "Q1FY25_Press Release"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1729948118200-Investor_press_release_Q2%20FY25.pdf",
+      "title": "Investor_press_release_Q2 FY25"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1738859968889-Press%20Release%20Q3FY25.pdf",
+      "title": "Press Release Q3FY25"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1740545977978-PR%20for%20Annual%20Report%20Excellence.pdf",
+      "title": "PR for Annual Report Excellence"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1747208946753-Q4FY25_Press%20Release.pdf",
+      "title": "Q4FY25_Press Release"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1715188279494-Q4FY24_Press%20Release_Final.pdf",
+      "title": "Q4FY24_Press Release"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1715236947724-Press%20Release%20%282%29.pdf",
+      "title": "Press Release"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1755083610176-Investor%20call%20transcript.pdf",
+      "title": "Investor call transcript"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1763376612979-Intimation_Transcript%20conference%20call.pdf",
+      "title": "Intimation_Transcript conference call"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1772016754865-1771226963381-Earnings%20call%20Transcript%20Intimation.pdf",
+      "title": "Earnings call Transcript Intimation"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1728473812585-Intimation%20Transcript%20Q1%20FY%2025.pdf",
+      "title": "Intimation Transcript Q1 FY 25"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1730283201310-Intimation_Transcript_Q2%20FY25.pdf",
+      "title": "Intimation_Transcript_Q2 FY25"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1740728035465-Intimation_Transcript_Q3FY25.pdf",
+      "title": "Intimation_Transcript_Q3FY25"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1747369584908-Intimation%20Transcript%20May%2012%202025.pdf",
+      "title": "Intimation Transcript May 12 2025"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1708087976466-Intimation_investor_call_Transcript_February16_2024.pdf",
+      "title": "Intimation_investor_call_Transcript_February16_2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1715835061603-Intimation_Earningscall_transcript_Q4_24.pdf",
+      "title": "Intimation_Earningscall_transcript_Q4_24"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1767675608030-PMAY%202.0%20Scheme%20details%20%281%29.pdf",
+      "title": "PMAY 2.0 Scheme details"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1748924992794-NCD%20Record%20date%20intimation_11%20June%202025.pdf",
+      "title": "NCD Record date intimation_11 June 2025"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1751548969676-Interest%20payment_26%20June%202025.pdf",
+      "title": "Interest payment_26 June 2025"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1756797493243-BSE%20Intimation%20Record%20date%2011.09.2025.pdf",
+      "title": "BSE Intimation Record date 11.09.2025"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1759466539739-BSE%20Intimation%20Int%20Payment_57_1_Sept%2026_2025.pdf",
+      "title": "BSE Intimation Int Payment_57_1_Sept 26_2025"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1763709716424-NCD%20issuance_Regulation%2030%20intimation%20%281%29.pdf",
+      "title": "NCD issuance_Regulation 30 intimation"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1764242715625-Intimation%20of%20NCD%20Allotment%20%281%29.pdf",
+      "title": "Intimation of NCD Allotment"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1764844859494-BSE%20Intimation%20Record%20date%2011_12_2025.pdf",
+      "title": "BSE Intimation Record date 11_12_2025"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1768567419136-BSE%20Intimation%20Int%20Payment_57%281%29%20Dec%2026%2C%202025.pdf",
+      "title": "BSE Intimation Int Payment_57(1) Dec 26, 2025"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1770114809525-BSE%20Intimation%20Record%20date%2012.02.2026.pdf",
+      "title": "BSE Intimation Record date 12.02.2026"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1772445864658-1.%20BSE%20Intimation%20Int%20Payment_57%281%29%20Feb%2027%2C%202026.pdf",
+      "title": "BSE Intimation Int Payment_57(1) Feb 27, 2026"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1772446144221-BSE%20Intimation%20Record%20date%2011.03.2026.pdf",
+      "title": "BSE Intimation Record date 11.03.2026"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1774499300674-BSE%20Intimation%20Int%20Payment_57%281%29%20Mar%2025%202026.pdf",
+      "title": "BSE Intimation Int Payment_57(1) Mar 25 2026"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1714741307281-BSE%20Intimation%20Int%20Payment_57%281%29_April%2030%2C%202024%20%281%29.pdf",
+      "title": "BSE Intimation Int Payment_57(1)_April 30, 2024 (1)"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1714741347909-BSE%20Intimation%20in%20terms%20of%20Regulations%20%2060%20%282%29%20%281%29.pdf",
+      "title": "BSE Intimation in terms of Regulations  60 (2)"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1717479205667-BSE%20Intimation%20Int%20Payment_57%281%29_May%2031%2C%202024.pdf",
+      "title": "BSE Intimation Int Payment_57(1)_May 31, 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1717479257237-BSE%20Intimation%20in%20terms%20of%20Regulations%20%2060%20%282%29%20%282%29.pdf",
+      "title": "BSE Intimation in terms of Regulations  60 (2) (2)"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1719828240065-BSE%20Intimation%20in%20terms%20of%20Regulations%20%2060%20%282%29%20%283%29.pdf",
+      "title": "BSE Intimation in terms of Regulations  60 (2) (3)"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1719828334440-BSE%20Intimation%20Int%20Payment_57%281%29_July%2001%2C%202024.pdf",
+      "title": "BSE Intimation Int Payment_57(1)_July 01, 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1722495413117-Interest%20Payment%2057%281%29%20July%2031%2C%202024.pdf",
+      "title": "Interest Payment 57(1) July 31, 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1722495500119-Record%20Date%20intimation%20under%2060%20%282%29.pdf",
+      "title": "Record Date intimation under 60 (2)"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1725251419530-1.%20BSE%20Intimation%20Int%20Payment%2057%281%29%20August%2031%2C%202024.pdf",
+      "title": "1. BSE Intimation Int Payment 57(1) August 31, 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1725251890236-BSE%20Intimation%20Record%20date.pdf",
+      "title": "BSE Intimation Record date"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1729771005301-Record%20date%20intimation%20October%2016%2C%202024.pdf",
+      "title": "Record date intimation October 16, 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1729771060411-BSE%20Intimation%20Int%20Payment%2057%281%29%20September%2030%2C%202024.pdf",
+      "title": "BSE Intimation Int Payment 57(1) September 30, 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1730274285726-Intimation%20Record%20date%20October%2030%2C%202024.pdf",
+      "title": "Intimation Record date October 30, 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1730274336101-BSE%20Intimation%20Int%20Payment_57%281%29_October%2030%2C%202024.pdf",
+      "title": "BSE Intimation Int Payment_57(1)_October 30, 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1732879799175-BSE%20Intimation%20Record%20date%20%281%29.pdf",
+      "title": "BSE Intimation Record date (1)"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1732879842799-BSE%20Intimation%20Int%20Payment_57%281%29_November%2029%2C%202024.pdf",
+      "title": "BSE Intimation Int Payment_57(1)_November 29, 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1735793630807-BSE%20Intimation%20Int%20Payment_57%281%29%20December%2031%2C%202024.pdf",
+      "title": "BSE Intimation Int Payment_57(1) December 31, 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1736936842162-Intimation%20of%20Record%20date_16-01-2025.pdf",
+      "title": "Intimation of Record date_16-01-2025"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1738315700801-BSE%20Intimation%20Int%20Payment_57%281%29%20January%2031%2C%202025.pdf",
+      "title": "BSE Intimation Int Payment_57(1) January 31, 2025"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1738665825498-BSE%20Intimation%20Record%20date%2013.02.2025.pdf",
+      "title": "BSE Intimation Record date 13.02.2025"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1740739606852-BSE%20Intimation%20Int%20Payment_57%281%29%20February%2028%2C%202025.pdf",
+      "title": "BSE Intimation Int Payment_57 February 28, 2025"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1740976642622-BSE%20Intimation%20Record%20date%20%283%29.pdf",
+      "title": "BSE Intimation Record date"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1741756264877-NCD%20issuance_Regulation%2030%20intimation.pdf",
+      "title": "NCD issuance_Regulation 30 intimation"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1742986787140-Intimation%20of%20NCD%20Allotment.pdf",
+      "title": "Intimation of NCD Allotment"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1743483189134-BSE%20Intimation_repurchase%20NCD.pdf",
+      "title": "BSE Intimation_repurchase NCD"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705557948092Intimation-Regulation%2057%281%29%20August%2024%2C%202023%20%287088%29.pdf",
+      "title": "Intimation-Regulation 57(1) August 24, 2023 (7088)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705558355686Intimation-Regulation%2057%281%29%20August%2031%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) August 31, 2023 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705558390661Intimation-Regulation%2057%281%29%20July%2031%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) July 31, 2023 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705558437433Intimation-Regulation%2057%281%29%20June%2012%2C%202023%20%287054%29.pdf",
+      "title": "Intimation-Regulation 57(1) June 12, 2023 (7054)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705558640302Intimation-Regulation%2057%281%29%20June%2030%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) June 30, 2023 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705558681937Intimation-Regulation%2057%281%29%20May%2002%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) May 02, 2023 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705558730640Intimation-Regulation%2057%281%29%20May%2023%2C%202023%20%287096%29.pdf",
+      "title": "Intimation-Regulation 57(1) May 23, 2023 (7096)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705558759115Intimation-Regulation%2057%281%29%20May%2031%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) May 31, 2023 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705558822405Intimation-Regulation%2057%284%29%20Q-1%20FY24.pdf",
+      "title": "Intimation-Regulation 57(4) Q-1 FY24"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705558851887Intimation-Regulation%2057%284%29%20Q-2%20FY24.pdf",
+      "title": "Intimation-Regulation 57(4) Q-2 FY24"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705558887536Intimation-Regulation%2057%284%29%20Q-3%20FY24.pdf",
+      "title": "Intimation-Regulation 57(4) Q-3 FY24"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705558923607Intimation-Regulation%2057%285%29%20Q-1%20FY%2024.pdf",
+      "title": "Intimation-Regulation 57(5) Q-1 FY 24"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705558981476Intimation-Regulation%2057%285%29%20Q-2%20FY%2024.pdf",
+      "title": "Intimation-Regulation 57(5) Q-2 FY 24"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705559045041Intimation-Regulation%2057%285%29%20Q-4%20FY%2023.pdf",
+      "title": "Intimation-Regulation 57(5) Q-4 FY 23"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705559119509Intimation-Regulation%2060%282%29%20April%2021%2C%202023%20%287096%29.pdf",
+      "title": "Intimation-Regulation 60(2) April 21, 2023 (7096)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705559163522Intimation-Regulation%2060%282%29%20August%2001%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 60(2) August 01, 2023 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705559204740Intimation-Regulation%2060%282%29%20July%2003%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 60(2) July 03, 2023 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705559240738Intimation-Regulation%2060%282%29%20June%2001%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 60(2) June 01, 2023 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705559319035Intimation-Regulation%2060%282%29%20May%2015%2C%202023%20%287054%29.pdf",
+      "title": "Intimation-Regulation 60(2) May 15, 2023 (7054)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705559345473Intimation-Regulation%2060%282%29%20September%2001%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 60(2) September 01, 2023 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705559470075Intimation-Regulation%2060%282%29%20May%2002%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 60(2) May 02, 2023 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705559624381Intimation-Regulation%2057%281%29%20December%2027%2C%202023%20%287062%29.pdf",
+      "title": "Intimation-Regulation 57(1) December 27, 2023 (7062)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705559677851Intimation-Regulation%2057%281%29%20January%2001%2C%202024%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) January 01, 2024 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705559710894Intimation-Regulation%2057%281%29%20March%2031%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) March 31, 2023 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705559747072Intimation-Regulation%2057%281%29%20November%2023%2C%202023%20%287096%29.pdf",
+      "title": "Intimation-Regulation 57(1) November 23, 2023 (7096)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705559805287Intimation-Regulation%2057%281%29%20November%2030%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) November 30, 2023 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705559835841Intimation-Regulation%2057%281%29%20October%2031%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) October 31, 2023 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705559891107Intimation-Regulation%2057%281%29%20September%2030%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) September 30, 2023 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705559933777Intimation-Regulation%2060%282%29%20December%2004%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 60(2) December 04, 2023 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705559966058Intimation-Regulation%2060%282%29%20January%2003%2C%202024%20%287070%29.pdf",
+      "title": "Intimation-Regulation 60(2) January 03, 2024 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705559999969Intimation-Regulation%2060%282%29%20November%2030%2C%202023%20%287062%29.pdf",
+      "title": "Intimation-Regulation 60(2) November 30, 2023 (7062)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705560032321Intimation-Regulation%2060%282%29%20October%2001%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 60(2) October 01, 2023 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705560062752Intimation-Regulation%2060%282%29%20October%2026%2C%202023%20%287096%29.pdf",
+      "title": "Intimation-Regulation 60(2) October 26, 2023 (7096)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705560089329Intimation-Regulation%2060%282%29%20October%2031%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 60(2) October 31, 2023 (7070)"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1706778348997-Intimation-Regulation%2057%281%29%20January%2031%2C%202024%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) January 31, 2024 (7070)"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1706778394632-Intimation-Regulation%2060%282%29%20January%2031%2C%202024%20%287070%29.pdf",
+      "title": "Intimation-Regulation 60(2) January 31, 2024 (7070)"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1709213343441-BSE%20Intimation%20Int%20Payment_57%281%29_February%2029%2C%202024.pdf",
+      "title": "BSE Intimation Int Payment_57(1)_February 29, 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1709616374910-BSE%20Intimation%20in%20terms%20of%20Regulations%20%2060%20%282%29.pdf",
+      "title": "BSE Intimation in terms of Regulations 60 (2)"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1710844956378-BSE%20Intimation_repurchase%20NCD_7096.pdf",
+      "title": "BSE Intimation_repurchase NCD_7096"
+    },
+    {
+      "url": "https://india-shelter.s3.amazonaws.com/uploads/1711946853534-Intimation%20Intrest%20Payment_57%281%29_March%2030%2C%202024.pdf",
+      "title": "Intimation Intrest Payment_57(1)_March 30, 2024"
+    },
+    {
+      "url": "https://india-shelter.s3.ap-south-1.amazonaws.com/uploads/1712034445782-Record%20date%20Intimation_Regulations%20%2060%20%282%29.pdf",
+      "title": "Record date Intimation_Regulations  60 (2)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705555213187Intimation-Regulation%2057%281%29%20April%2030%2C%202022%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) April 30, 2022 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705555289709Intimation-Regulation%2057%281%29%20August%2001%2C%202022%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) August 01, 2022 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705555327256Intimation-Regulation%2057%281%29%20December%2031%2C%202022%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) December 31, 2022 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705555361466Intimation-Regulation%2057%281%29%20February%2028%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) February 28, 2023 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705555387416Intimation-Regulation%2057%281%29%20January%2031%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) January 31, 2023 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705555422369Intimation-Regulation%2057%281%29%20June%2006%2C%202022%20%287096%29.pdf",
+      "title": "Intimation-Regulation 57(1) June 06, 2022 (7096)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705555446324Intimation-Regulation%2057%281%29%20June%2013%2C%202022%20%287054%29.pdf",
+      "title": "Intimation-Regulation 57(1) June 13, 2022 (7054)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705555488374Intimation-Regulation%2057%281%29%20June%2030%2C%202022%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) June 30, 2022 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705555577052Intimation-Regulation%2057%281%29%20May%2031%2C%202022%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) May 31, 2022 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705555623469Intimation-Regulation%2057%281%29%20November%2023%2C%202022%20%287096%29.pdf",
+      "title": "Intimation-Regulation 57(1) November 23, 2022 (7096)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705555659446Intimation-Regulation%2057%281%29%20November%2030%2C%202022%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) November 30, 2022 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705555716507Intimation-Regulation%2057%281%29%20October%2031%2C%202022%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) October 31, 2022 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705555760187Intimation-Regulation%2057%281%29%20September%2001%2C%202022%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) September 01, 2022 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705555802357Intimation-Regulation%2057%281%29%20September%2030%2C%202022%20%287070%29.pdf",
+      "title": "Intimation-Regulation 57(1) September 30, 2022 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705555838185Intimation-Regulation%2057%281%29%20September%2030%2C%202022%20%287088%29.pdf",
+      "title": "Intimation-Regulation 57(1) September 30, 2022 (7088)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705555870345Intimation-Regulation%2057%284%29%20Q-1%20FY23.pdf",
+      "title": "Intimation-Regulation 57(4) Q-1 FY23"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705555915063Intimation-Regulation%2057%284%29%20Q-2%20FY23.pdf",
+      "title": "Intimation-Regulation 57(4) Q-2 FY23"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705555956471Intimation-Regulation%2057%284%29%20Q-3%20FY%2023.pdf",
+      "title": "Intimation-Regulation 57(4) Q-3 FY 23"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705556020184Intimation-Regulation%2057%284%29%20Q-4%20FY23.pdf",
+      "title": "Intimation-Regulation 57(4) Q-4 FY23"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705556533871Intimation-Regulation%2057%285%29%20Q-1%20FY23.pdf",
+      "title": "Intimation-Regulation 57(5) Q-1 FY23"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705556584191Intimation-Regulation%2057%285%29%20Q-2%20FY23.pdf",
+      "title": "Intimation-Regulation 57(5) Q-2 FY23"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705556624262Intimation-Regulation%2057%285%29%20Q-3%20FY23.pdf",
+      "title": "Intimation-Regulation 57(5) Q-3 FY23"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705556669070Intimation-Regulation%2060%282%29%20August%2003%2C%202022%20%287070%29.pdf",
+      "title": "Intimation-Regulation 60(2) August 03, 2022 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705556705129Intimation-Regulation%2060%282%29%20December%2002%2C%202022%20%287070%29.pdf",
+      "title": "Intimation-Regulation 60(2) December 02, 2022 (7070)"
+    },
+    {
+      "url": "https://websites3prod.s3.ap-south-2.amazonaws.com/images/1705556911656Intimation-Regulation%2060%282%29%20January%2002%2C%202023%20%287070%29.pdf",
+      "title": "Intimation-Regulation 60(2) January 02, 2023 (7070)"
+    }
+  ],
+  "warnings": []
+}

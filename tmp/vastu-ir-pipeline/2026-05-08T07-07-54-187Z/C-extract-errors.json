@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://bmkzz2nd6igg.compat.objectstorage.ap-mumbai-1.oraclecloud.com/hfc-g-dc-vastu-website/uploads/public/assets/pdf/financial-reports/Audited-Financial-Result-for-quarter-and-year-ended-31st-March-2026.pdf?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=48ce50f1665892d0f174106dd175f7c1f6b9f25a%2F20260508%2Fap-mumbai-1%2Fs3%2Faws4_request&X-Amz-Date=20260508T070640Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Signature=97448a469fbf6e34b7363d4d257552040508c05252b04dd5f7e45246a5cacd5e",
+    "errorType": "fetch_error",
+    "httpStatusCode": 200,
+    "content": ""
+  },
+  {
+    "url": "https://www.aavas.in/uploads/pdf/financia-results-july-25-2024-853887582.pdf",
+    "errorType": "fetch_error",
+    "httpStatusCode": 200,
+    "content": ""
+  }
+]
