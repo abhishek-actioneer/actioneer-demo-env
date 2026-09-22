@@ -1,10 +1,11 @@
 import { WebSocket } from "ws";
 import type { IncomingMessage } from "http";
 import { resolveCallConfig } from "./voice-call-config-resolver";
-import { removeCallConfig, type CallConfig } from "./voice-call-state";
+import { removeCallConfig, storeCallConfig, type CallConfig } from "./voice-call-state";
 import { findCall, getCampaign, upsertCall } from "./voice-campaign-store";
 import { createVoiceBridgeRecorder, type VoiceBridgeRecorder } from "./voice-bridge-recorder";
 import { createVoiceForensicsSession, type BiomarkerKeySource } from "./voice-forensics";
+import { createVoiceBiometricLiveSession } from "./voice-biometric/session";
 import { DEFAULT_DATASET } from "./datasets/constants";
 import { ensureGeminiLiveConfig } from "./voice-agent-provider";
 import type {
@@ -233,6 +234,7 @@ export function handlePlivoGeminiLiveMediaStream(plivoWs: WebSocket, req: Incomi
     keySource: forensicsIdentity?.source,
     enrollOnce: forensicsIdentity?.source === "pinned-subject",
   });
+  let biometric: ReturnType<typeof createVoiceBiometricLiveSession> | undefined;
   let sileroVad: SileroVadSession | undefined;
   let latestTimestamp = 0;
   let outputTranscriptBuffer = "";
@@ -282,6 +284,50 @@ export function handlePlivoGeminiLiveMediaStream(plivoWs: WebSocket, req: Incomi
     clearCustomerSpeechMute: (reason) => bridgeCallbacks.clearCustomerSpeechMute?.(reason),
     sessionDump,
   });
+  if (callConfig?.isVoiceBiometricDemo && callConfig.userId) {
+    biometric = createVoiceBiometricLiveSession({
+      tenantUserId: callConfig.userId,
+      datasetId: callConfig.datasetId ?? "hdfc-creditfraud",
+      callbacks: {
+        onStatus: (stage, detail) => sessionDump.event("voice_biometric.status", { stage, ...detail }),
+        onChallenge: (challenge) => {
+          instructions.sendClientInstruction(
+            `VOICE_BIOMETRIC_SERVER CHALLENGE: Ask the caller to repeat exactly: "${challenge}". Do not reveal any profile yet.`,
+            "voice_biometric_challenge",
+          );
+        },
+        onIdentified: (enrollment, similarity) => {
+          callConfig.customerContext = {
+            source: "generic",
+            datasetId: callConfig.datasetId ?? "hdfc-creditfraud",
+            investorId: enrollment.subjectId,
+            firstName: enrollment.displayName.split(/\s+/)[0],
+            displayName: enrollment.displayName,
+          };
+          storeCallConfig(callId ?? enrollment.subjectId, callConfig);
+          const profile = enrollment.profile;
+          const transactions = profile.recentTransactions
+            .map((item) => `${item.label}: INR ${item.amountInr}`)
+            .join("; ");
+          instructions.sendClientInstruction(
+            `VOICE_BIOMETRIC_SERVER VERIFIED. The caller is ${profile.displayName}. This is simulated data: account ${profile.accountNumberMasked}, available balance INR ${profile.balanceInr}, recent transactions: ${transactions}. Greet them and offer balance or recent transaction help. Never describe the biometric score.`,
+            "voice_biometric_verified",
+          );
+          sessionDump.event("voice_biometric.identified", {
+            subjectId: enrollment.subjectId,
+            similarity,
+          });
+        },
+        onRejected: (reason) => {
+          instructions.sendClientInstruction(
+            "VOICE_BIOMETRIC_SERVER REJECTED. Say you could not reliably verify the caller and cannot open a profile. Do not reveal candidate names or scores.",
+            "voice_biometric_rejected",
+          );
+          sessionDump.event("voice_biometric.rejected", { reason });
+        },
+      },
+    });
+  }
 
   const callControl = createCallControlRuntime({
     sessionDump,
@@ -561,6 +607,7 @@ export function handlePlivoGeminiLiveMediaStream(plivoWs: WebSocket, req: Incomi
     sendPostInterruptAnswerNudge: (userTurnText) => bargeIn.sendPostInterruptAnswerNudge(userTurnText),
     isSubstantiveUserInterrupt: (text) => bargeIn.isSubstantiveUserInterrupt(text),
     scheduleAgentDisconnect,
+    onFinalUserTranscript: (text) => biometric?.noteTranscript(text),
   });
 
   function closeBoth(reason = "unspecified"): void {
@@ -582,6 +629,7 @@ export function handlePlivoGeminiLiveMediaStream(plivoWs: WebSocket, req: Incomi
     if (liveTranscriptFollowUpEnabled()) queuePostCallFollowUpFromLiveTranscript();
     outbound.stop();
     void forensics.finalize();
+    biometric?.close();
     bridgeRecorder?.finalize();
     if (sileroVad) {
       void sileroVad.destroy();
@@ -1175,6 +1223,7 @@ export function handlePlivoGeminiLiveMediaStream(plivoWs: WebSocket, req: Incomi
       // of the old gate-and-splice that stitched non-adjacent frames together.
       // Echo of the agent while it speaks is knowingly ignored for V1.
       forensics.feed(payload);
+      biometric?.feed(payload);
       // Client-controlled activity: barge-in VAD owns activityStart/End and only
       // forwards audio inside that window — continuous silence must not reach Gemini.
       if (!CLIENT_CONTROLLED_ACTIVITY_ENABLED || !LOCAL_BARGE_IN_VAD_ENABLED) {

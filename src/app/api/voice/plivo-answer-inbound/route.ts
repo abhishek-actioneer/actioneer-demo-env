@@ -30,6 +30,11 @@ import {
 } from "@/lib/plivo-gemini-live-bridge";
 import { inboundVoicePersonaForCampaign } from "@/lib/inbound-voice-personas";
 import { lookupVoiceCustomerByPhone } from "@/lib/server/voice-customer-context-repo";
+import {
+  shouldUseVoiceBiometricDemo,
+  voiceBiometricDemoGreeting,
+  voiceBiometricDemoPrompt,
+} from "@/lib/voice-biometric/config";
 /**
  * Inbound answer webhook. Unlike the outbound `plivo-answer` route, no callId is
  * pre-created — the caller dialed us cold. We mint a callId here, resolve the
@@ -66,11 +71,12 @@ async function inboundXmlResponse(
   const plivoCallUuid = (formData.get("CallUUID") as string) || "";
 
   const demoRouter = shouldUsePublicDemoRouter(toNumber);
+  const biometricDemo = shouldUseVoiceBiometricDemo(toNumber);
   const agent = resolveInboundAgentConfig(toNumber);
 
   // Demo router can answer even without a campaign binding (uses fixed ids).
   // Ordinary inbound still requires a resolved agent.
-  if (!demoRouter && !agent) {
+  if (!demoRouter && !biometricDemo && !agent) {
     console.error("[voice/plivo-answer-inbound] no inbound agent configured (campaign not found)");
     updateVoiceDump({
       dumpStorageKey,
@@ -102,14 +108,27 @@ async function inboundXmlResponse(
   let firstMessage: string;
   let linkFields: Pick<CallConfig, "linkDest" | "linkWindowDays" | "linkTemplate"> = {};
   let isPublicDemo = false;
-  let campaignId = agent?.campaignId || PUBLIC_DEMO_CAMPAIGN_ID;
-  let datasetId = agent?.datasetId || PUBLIC_DEMO_DATASET_ID;
-  const userId = agent?.userId;
+  let campaignId = biometricDemo
+    ? process.env.VOICE_BIOMETRIC_CAMPAIGN_ID?.trim() || "voice-biometric-demo"
+    : agent?.campaignId || PUBLIC_DEMO_CAMPAIGN_ID;
+  let datasetId = biometricDemo
+    ? process.env.VOICE_BIOMETRIC_DATASET_ID?.trim() || "hdfc-creditfraud"
+    : agent?.datasetId || PUBLIC_DEMO_DATASET_ID;
+  const userId = biometricDemo
+    ? process.env.VOICE_BIOMETRIC_OWNER_USER_ID?.trim()
+    : agent?.userId;
   let voice = agent?.voice || "Aoede";
   let voiceName = agent?.voiceName || agent?.agentName;
   let language = agent?.language || "Hinglish";
 
-  if (demoRouter) {
+  if (biometricDemo) {
+    if (!userId) return new Response("VOICE_BIOMETRIC_OWNER_USER_ID is not configured", { status: 500 });
+    voice = agent?.voice || "Aoede";
+    voiceName = agent?.voiceName || "Asha";
+    language = "Hindi, English, or Hinglish";
+    systemPrompt = voiceBiometricDemoPrompt();
+    firstMessage = voiceBiometricDemoGreeting();
+  } else if (demoRouter) {
     isPublicDemo = true;
     // Router attribution until host soft-routes to a persona campaign.
     campaignId = PUBLIC_DEMO_CAMPAIGN_ID;
@@ -148,14 +167,14 @@ async function inboundXmlResponse(
   // (e.g. "Am I speaking with Rahul Awasthi?"). Pin verificationSubjectId so
   // every call to this script enrolls/matches against THAT identity's voice,
   // not the caller's raw phone number — see voiceForensicsUserId().
-  const voicePersona = inboundVoicePersonaForCampaign(campaignId);
+  const voicePersona = biometricDemo ? null : inboundVoicePersonaForCampaign(campaignId);
 
   // No pinned persona: identify the caller by phone against the dataset's
   // entity table so their biomarker enrolls/matches under their own customer
   // identity. Identity-only context — the system prompt above is already built
   // and stays untouched. Null on no/ambiguous match (falls back to the caller's
   // phone number as the biomarker key).
-  const callerContext = !voicePersona && !isPublicDemo
+  const callerContext = !biometricDemo && !voicePersona && !isPublicDemo
     ? await lookupVoiceCustomerByPhone(datasetId, fromNumber)
     : null;
 
@@ -171,6 +190,7 @@ async function inboundXmlResponse(
     toNumber: fromNumber, // for inbound, the "other party" is the caller
     triggeredAtMs: Date.now(),
     isPublicDemo: isPublicDemo || undefined,
+    isVoiceBiometricDemo: biometricDemo || undefined,
     activePersonaId: isPublicDemo ? null : undefined,
     verificationSubjectId: voicePersona?.subjectId,
     customerContext: voicePersona

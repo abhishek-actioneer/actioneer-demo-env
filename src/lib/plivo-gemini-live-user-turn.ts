@@ -224,6 +224,8 @@ export interface UserTurnFlusherDeps {
   sendPostInterruptAnswerNudge(userTurnText: string): void;
   isSubstantiveUserInterrupt(text: string): boolean;
   scheduleAgentDisconnect(triggerText: string, reason: string): void;
+  /** Final accepted caller transcript, used by server-owned sidecar flows. */
+  onFinalUserTranscript?(text: string): void;
 }
 
 export interface UserTurnFlusher {
@@ -320,6 +322,7 @@ export function createUserTurnFlusher(deps: UserTurnFlusherDeps): UserTurnFlushe
       deps.setPendingUserTranscriptAcousticallyVerified?.(false);
       return;
     }
+    deps.onFinalUserTranscript?.(userTurnText);
     // Count each finalized customer turn once.
     deps.setCustomerTurnCount(deps.getCustomerTurnCount() + 1);
 

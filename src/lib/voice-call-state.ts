@@ -58,6 +58,8 @@ export interface CallConfig {
    * the call against the customer's reference but never enrolls.
    */
   voiceIdentityPhoneVerified?: boolean;
+  /** Inbound voice-only mock banking demo. Identity starts unknown and is set only by the biometric sidecar. */
+  isVoiceBiometricDemo?: boolean;
   /**
    * Public-demo soft route: null/undefined while in IVR; set after host routes
    * to a persona. WhatsApp / link attribution follows campaignId for this persona.

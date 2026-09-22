@@ -25,6 +25,7 @@ from embedder import get_embedding, cosine_similarity
 from speaker_store import save_bioprint, load_bioprint, has_bioprint, delete_bioprint, list_enrolled
 from baseline_store import update_baseline, compute_z_scores, get_baseline_summary
 from gender import classify_gender, warmup as gender_warmup
+from identity import classify_identification
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -345,6 +346,93 @@ def verify(req: VerifyRequest):
 
     result = _run_speaker_verify(samples, sr, req.customer_id, req.enroll_if_missing)
     return {"customer_id": req.customer_id, **result}
+
+
+# ── /identify ────────────────────────────────────────────────────────────────
+
+class IdentifyRequest(BaseModel):
+    wav_base64: str
+    threshold: float = 0.75
+    margin: float = 0.08
+    limit: int = 5
+    candidate_ids: Optional[list[str]] = None
+
+
+@app.post("/identify")
+def identify(req: IdentifyRequest):
+    """Open-set gallery search. This endpoint is deliberately read-only."""
+    try:
+        wav_bytes = base64.b64decode(req.wav_base64)
+    except Exception:
+        raise HTTPException(status_code=400, detail="Invalid base64 WAV")
+
+    try:
+        samples, sr = extract_customer_channel(wav_bytes)
+    except Exception as e:
+        raise HTTPException(status_code=422, detail=f"Audio decode failed: {e}")
+
+    duration_s = len(samples) / sr if sr else 0.0
+    if duration_s < 2.0:
+        return {
+            "status": "insufficient_audio",
+            "duration_s": round(duration_s, 2),
+            "matches": [],
+        }
+
+    rms = float((samples.astype("float64") ** 2).mean() ** 0.5) if len(samples) else 0.0
+    if rms < 0.003:
+        return {
+            "status": "insufficient_audio",
+            "duration_s": round(duration_s, 2),
+            "rms": round(rms, 6),
+            "matches": [],
+        }
+
+    enrolled_ids = (
+        [customer_id for customer_id in req.candidate_ids if has_bioprint(customer_id)]
+        if req.candidate_ids is not None
+        else list_enrolled()
+    )
+    if not enrolled_ids:
+        return {
+            "status": "empty_gallery",
+            "duration_s": round(duration_s, 2),
+            "rms": round(rms, 6),
+            "matches": [],
+        }
+
+    embedding = get_embedding(samples, sr)
+    matches = []
+    for customer_id in enrolled_ids:
+        reference = load_bioprint(customer_id)
+        if reference is None or reference.shape != embedding.shape:
+            continue
+        matches.append({
+            "customer_id": customer_id,
+            "similarity": round(cosine_similarity(reference, embedding), 4),
+        })
+
+    matches.sort(key=lambda item: item["similarity"], reverse=True)
+    matches = matches[:max(1, min(req.limit, 20))]
+    status = classify_identification(matches, req.threshold, req.margin)
+
+    logger.info(
+        "identify status=%s top=%s margin=%s gallery=%d",
+        status,
+        matches[0]["similarity"] if matches else "n/a",
+        round(matches[0]["similarity"] - matches[1]["similarity"], 4) if len(matches) > 1 else "n/a",
+        len(enrolled_ids),
+    )
+    return {
+        "status": status,
+        "duration_s": round(duration_s, 2),
+        "rms": round(rms, 6),
+        "threshold": req.threshold,
+        "margin": req.margin,
+        "model_version": "speechbrain/spkrec-ecapa-voxceleb",
+        "gallery_size": len(enrolled_ids),
+        "matches": matches,
+    }
 
 
 # ── /stream-verify ────────────────────────────────────────────────────────────
