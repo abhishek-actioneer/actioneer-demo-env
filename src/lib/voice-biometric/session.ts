@@ -115,7 +115,7 @@ export function createVoiceBiometricLiveSession(input: {
         wavBase64: wavFromMulaw(initialChunks),
         candidateIds,
       });
-      if (currentStage === "closed") return;
+      if ((currentStage as Stage) === "closed") return;
       const top = result.matches[0];
       if (result.status !== "candidate" || !top) return reject(result.status);
       candidateKey = top.customer_id;
@@ -137,7 +137,7 @@ export function createVoiceBiometricLiveSession(input: {
         wavBase64: wavFromMulaw(challengeChunks),
         subjectId: candidateKey,
       });
-      if (currentStage === "closed") return;
+      if ((currentStage as Stage) === "closed") return;
       if (!result.is_same_speaker || result.similarity == null) return reject("challenge_voice_mismatch");
       const enrollment = getVoiceBiometricEnrollmentByKey(input.tenantUserId, input.datasetId, candidateKey);
       if (!enrollment) return reject("enrollment_revoked");
