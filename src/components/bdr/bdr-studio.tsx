@@ -136,7 +136,15 @@ export function BdrStudio() {
 }
 
 function CallDetails({ recipient, onClose }: { recipient: BdrRecipient; onClose: () => void }) {
-  return <div className="mt-6 rounded-md border border-border p-4"><div className="mb-4 flex items-center justify-between"><h3 className="text-sm font-medium">Conversation with {recipient.firstName || "contact"}</h3><button className="text-xs underline" onClick={onClose}>Close</button></div>{recipient.providerSid && <p className="mb-4 break-all font-mono text-[11px] text-muted-foreground">Twilio call: {recipient.providerSid}</p>}{recipient.transcript?.map((turn, i) => <div key={i} className={`mb-3 rounded-md p-3 text-sm ${turn.role === "assistant" ? "bg-muted" : "border border-border"}`}><p className="mb-1 text-[11px] font-medium text-muted-foreground">{turn.role === "assistant" ? "AI agent" : "Prospect"}</p>{turn.text}</div>)}{!recipient.transcript?.length && <p className="text-xs text-muted-foreground">No transcript yet. Call completion does not by itself indicate qualification.</p>}</div>;
+  return <div className="mt-6 rounded-md border border-border p-4">
+    <div className="mb-4 flex items-center justify-between"><h3 className="text-sm font-medium">Conversation with {recipient.firstName || "contact"}</h3><button className="text-xs underline" onClick={onClose}>Close</button></div>
+    {recipient.providerSid && <p className="mb-4 break-all font-mono text-[11px] text-muted-foreground">Twilio call: {recipient.providerSid}</p>}
+    {recipient.transcript?.map((turn, i) => <div key={i} className={`mb-3 rounded-md p-3 text-sm ${turn.role === "assistant" ? "bg-muted" : "border border-border"}`}>
+      <p className="mb-1 text-[11px] font-medium text-muted-foreground">{turn.role === "assistant" ? "AI agent" : "Prospect"}{turn.delivery === "interrupted" ? " · Interrupted; playback may be incomplete" : ""}</p>
+      {turn.text}
+    </div>)}
+    {!recipient.transcript?.length && <p className="text-xs text-muted-foreground">No transcript yet. Call completion does not by itself indicate qualification.</p>}
+  </div>;
 }
 
 function SetupGuide({ readiness }: { readiness: Readiness }) {

@@ -18,7 +18,7 @@ export interface BdrRecipient extends BdrContact {
   startedAt?: string;
   endedAt?: string;
   detail?: string;
-  transcript?: Array<{ role: "user" | "assistant"; text: string }>;
+  transcript?: Array<{ role: "user" | "assistant"; text: string; delivery?: "played" | "interrupted" }>;
 }
 export interface BdrCampaign {
   id: string;
