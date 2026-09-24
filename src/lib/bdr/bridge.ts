@@ -33,7 +33,10 @@ export function handleBdrStream(socket: WebSocket): void {
   const pendingAudio: string[] = [];
   const completedItems = new Set<string>();
   const startTimeout = setTimeout(() => close(), 10_000);
+  let openingTimeout: ReturnType<typeof setTimeout> | undefined;
+  let realtimeTimeout: ReturnType<typeof setTimeout> | undefined;
   let hangupTimeout: ReturnType<typeof setTimeout> | undefined;
+  let openingPlayed = false;
 
   function send(ws: WebSocket | undefined, value: unknown) { if (ws?.readyState === WebSocket.OPEN) ws.send(JSON.stringify(value)); }
   function close() {
@@ -41,6 +44,8 @@ export function handleBdrStream(socket: WebSocket): void {
     closed = true;
     epoch += 1;
     clearTimeout(startTimeout);
+    if (openingTimeout) clearTimeout(openingTimeout);
+    if (realtimeTimeout) clearTimeout(realtimeTimeout);
     if (hangupTimeout) clearTimeout(hangupTimeout);
     realtime?.close();
     socket.close();
@@ -51,6 +56,7 @@ export function handleBdrStream(socket: WebSocket): void {
     updateBdrCall(callId, (row) => { row.transcript = [...(row.transcript || []), { role, text: text.slice(0, 8000) }].slice(-120); });
   }
   function fail(message: string) {
+    console.error("[bdr] call bridge failed", { callId, message });
     if (callId) updateBdrCall(callId, (row, campaign) => {
       row.detail = message;
       campaign.status = "paused";
@@ -59,18 +65,21 @@ export function handleBdrStream(socket: WebSocket): void {
     if (callSid) void bdrTwilio().calls(callSid).update({ status: "completed" }).catch(() => undefined);
     close();
   }
-  function speak(text: string, final = false) {
+  function speak(text: string, markName?: "bdr-opening" | "bdr-end") {
     const capturedEpoch = epoch;
     speech = speech.then(async () => {
       if (!context || closed || capturedEpoch !== epoch) return;
       const audio = await bdrSpeech(text, context.campaign.language, context.campaign.voiceId);
       if (closed || capturedEpoch !== epoch) return;
       send(socket, { event: "media", streamSid, media: { payload: audio.toString("base64") } });
-      if (final) {
-        send(socket, { event: "mark", streamSid, mark: { name: "bdr-end" } });
+      if (markName) send(socket, { event: "mark", streamSid, mark: { name: markName } });
+      if (markName === "bdr-end") {
         hangupTimeout = setTimeout(() => finishCall(), 15_000);
       }
-    }).catch(() => fail("Speech generation failed. Check Cartesia credentials, voice, and credits before resuming."));
+    }).catch((error: unknown) => {
+      console.error("[bdr] Cartesia speech failed", { callId, error: error instanceof Error ? error.message : "Unknown error" });
+      fail("Speech generation failed. Check Cartesia credentials, voice, and credits before resuming.");
+    });
   }
   function finishCall() {
     if (closed) return;
@@ -88,9 +97,10 @@ export function handleBdrStream(socket: WebSocket): void {
     }
   }
   function startRealtime() {
-    if (!context) return;
+    if (!context || closed || realtime) return;
     const model = process.env.BDR_REALTIME_MODEL || "gpt-realtime-mini";
     realtime = new WebSocket(`wss://api.openai.com/v1/realtime?model=${encodeURIComponent(model)}`, { headers: { Authorization: `Bearer ${process.env.OPENAI_API_KEY}` }, perMessageDeflate: false });
+    realtimeTimeout = setTimeout(() => fail("Conversation setup timed out. Check OpenAI Realtime access and Railway logs."), 10_000);
     realtime.on("open", () => {
       if (!context) return;
       send(realtime, { type: "session.update", session: {
@@ -109,12 +119,10 @@ export function handleBdrStream(socket: WebSocket): void {
       try { event = JSON.parse(raw.toString()); } catch { return; }
       if (event.type === "session.updated" && !ready) {
         ready = true;
-        clearTimeout(startTimeout);
+        if (realtimeTimeout) clearTimeout(realtimeTimeout);
         const opening = personalizeBdr(context.campaign.opening, context.recipient);
-        transcript("assistant", opening, "opening");
         // Let the model know what the prospect has already heard.
         send(realtime, { type: "conversation.item.create", item: { type: "message", role: "assistant", content: [{ type: "output_text", text: opening }] } });
-        speak(opening);
         for (const audio of pendingAudio.splice(0)) send(realtime, { type: "input_audio_buffer.append", audio });
       } else if (event.type === "response.created") {
         activeResponse = true;
@@ -143,13 +151,20 @@ export function handleBdrStream(socket: WebSocket): void {
           ? hindi ? "समझ गई। हम आपको दोबारा कॉल नहीं करेंगे। धन्यवाद।" : "Understood. We won't call you again. Goodbye."
           : hindi ? "आपके समय के लिए धन्यवाद। नमस्ते।" : "Thank you for your time. Goodbye.";
         transcript("assistant", farewell, "farewell");
-        speak(farewell, true);
+        speak(farewell, "bdr-end");
       } else if (event.type === "error") {
-        const error = event.error as { code?: string } | undefined;
-        if (error?.code !== "response_cancel_not_active") fail("Conversation service failed. Check the OpenAI key, model access, and credits.");
+        const error = event.error as { code?: string; message?: string } | undefined;
+        if (error?.code !== "response_cancel_not_active") {
+          console.error("[bdr] OpenAI Realtime error", { callId, code: error?.code, message: error?.message });
+          fail(`Conversation service failed${error?.code ? ` (${error.code})` : ""}. Check the OpenAI key, model access, and credits.`);
+        }
       }
     });
-    realtime.on("error", () => fail("Conversation connection failed."));
+    realtime.on("error", (error: Error) => {
+      console.error("[bdr] OpenAI Realtime connection error", { callId, message: error.message });
+      const status = /Unexpected server response: (\d{3})/.exec(error.message)?.[1];
+      fail(`Conversation connection failed${status ? ` (OpenAI HTTP ${status})` : ""}. Check the OpenAI key, billing, model access, and Railway logs.`);
+    });
     realtime.on("close", () => { if (!closed && !ending) fail("Conversation connection closed unexpectedly."); });
   }
   socket.on("message", (raw) => {
@@ -164,12 +179,20 @@ export function handleBdrStream(socket: WebSocket): void {
       streamSid = event.start?.streamSid || "";
       if (!context || !["dispatching", "calling", "connected"].includes(context.recipient.status) || !callSid || !streamSid || event.start?.accountSid !== process.env.TWILIO_ACCOUNT_SID || (context.recipient.providerSid && context.recipient.providerSid !== callSid)) { close(); return; }
       applyBdrCallStatus(callId, callSid, "in-progress");
-      startRealtime();
+      clearTimeout(startTimeout);
+      const opening = personalizeBdr(context.campaign.opening, context.recipient);
+      transcript("assistant", opening, "opening");
+      openingTimeout = setTimeout(() => fail("Opening audio was not acknowledged by Twilio. Check the media stream and Railway logs."), 35_000);
+      speak(opening, "bdr-opening");
     } else if (event.event === "media" && context && !ending) {
       const audio = event.media?.payload;
       if (typeof audio !== "string" || audio.length > 16_000) return;
       if (ready) send(realtime, { type: "input_audio_buffer.append", audio });
-      else if (pendingAudio.length < 100) pendingAudio.push(audio);
+      else if (pendingAudio.length < 500) pendingAudio.push(audio);
+    } else if (event.event === "mark" && event.mark?.name === "bdr-opening" && !openingPlayed) {
+      openingPlayed = true;
+      if (openingTimeout) clearTimeout(openingTimeout);
+      startRealtime();
     } else if (event.event === "mark" && event.mark?.name === "bdr-end") finishCall();
     else if (event.event === "stop") close();
   });
