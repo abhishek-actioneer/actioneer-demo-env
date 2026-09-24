@@ -29,6 +29,16 @@ export async function dialBdrContact(phone: string, callId: string): Promise<str
   });
   return call.sid;
 }
+export function describeBdrDialError(error: unknown): { rejected: boolean; detail: string; status?: number; code?: number } {
+  const cause = error && typeof error === "object" ? error as { status?: unknown; code?: unknown; message?: unknown } : undefined;
+  const status = typeof cause?.status === "number" ? cause.status : undefined;
+  const code = typeof cause?.code === "number" ? cause.code : undefined;
+  if (status !== undefined && status >= 400 && status < 500) {
+    const reason = typeof cause?.message === "string" ? cause.message.replace(/\s+/g, " ").trim().slice(0, 240) : "Check the Twilio Debugger for details.";
+    return { rejected: true, status, code, detail: `Twilio rejected the call (HTTP ${status}${code === undefined ? "" : `, code ${code}`}): ${reason}` };
+  }
+  return { rejected: false, status, code, detail: "Twilio dispatch returned an uncertain result. Check the Twilio call log before trying this contact again." };
+}
 export const TERMINAL_BDR_STATUSES = new Set<BdrCallStatus>(["completed", "failed", "no_answer", "excluded"]);
 export function applyBdrCallStatus(callId: string, sid: string, rawStatus: string): void {
   const mapped: Record<string, BdrCallStatus> = { queued: "calling", initiated: "calling", ringing: "calling", "in-progress": "connected", completed: "completed", busy: "no_answer", "no-answer": "no_answer", canceled: "failed", failed: "failed" };

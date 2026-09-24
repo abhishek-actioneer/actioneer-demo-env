@@ -42,4 +42,13 @@ describe("manual launch dispatcher", () => {
     await dispatchBdrTick(); await dispatchBdrTick();
     expect(mocks.dial).toHaveBeenCalledTimes(1); expect(getBdrCampaign("campaign")?.status).toBe("paused"); expect(getBdrCampaign("campaign")?.recipients[0].status).toBe("needs_review");
   });
+  it("shows a definite Twilio rejection without classifying it as an uncertain call", async () => {
+    seed("running"); mocks.dial.mockRejectedValue(Object.assign(new Error("The From number is not a Twilio number"), { status: 400, code: 21212 }));
+    await dispatchBdrTick(); await dispatchBdrTick();
+    const campaign = getBdrCampaign("campaign");
+    expect(mocks.dial).toHaveBeenCalledTimes(1);
+    expect(campaign?.status).toBe("paused");
+    expect(campaign?.recipients[0].status).toBe("failed");
+    expect(campaign?.error).toContain("code 21212");
+  });
 });

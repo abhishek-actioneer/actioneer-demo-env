@@ -1,7 +1,7 @@
 import { bdrReadiness } from "./config";
 import { claimBdrRecipient, getBdrCampaign, isBdrSuppressed, listBdrCampaigns, mutateBdrCampaign, updateBdrCall } from "./store";
 import { getMonacoContact } from "./monaco";
-import { applyBdrCallStatus, bdrTwilio, dialBdrContact } from "./telephony";
+import { applyBdrCallStatus, bdrTwilio, describeBdrDialError, dialBdrContact } from "./telephony";
 import { normalizeBdrPhone } from "./types";
 
 export async function dispatchBdrTick(): Promise<void> {
@@ -46,11 +46,18 @@ export async function dispatchBdrTick(): Promise<void> {
     attemptingDial = true;
     const sid = await dialBdrContact(recipient.phone, recipient.callId!);
     applyBdrCallStatus(recipient.callId!, sid, "initiated");
-  } catch {
+  } catch (error) {
+    const failure = attemptingDial ? describeBdrDialError(error) : undefined;
+    if (failure) console.error("[bdr] Twilio dispatch failed", {
+      callId: recipient.callId,
+      status: failure.status,
+      code: failure.code,
+      message: error instanceof Error ? error.message : "Unknown error",
+    });
     updateBdrCall(recipient.callId!, (row, current) => {
       // A transport timeout can happen after Twilio accepted the call.
-      if (row.status === "dispatching") row.status = attemptingDial ? "needs_review" : "pending";
-      row.detail = attemptingDial ? "Twilio dispatch failed or returned an uncertain result. Check Twilio before retrying." : "Could not recheck this contact in Monaco. Reconnect Monaco and resume.";
+      if (row.status === "dispatching") row.status = attemptingDial ? (failure?.rejected ? "failed" : "needs_review") : "pending";
+      row.detail = failure?.detail || "Could not recheck this contact in Monaco. Reconnect Monaco and resume.";
       current.status = "paused";
       current.error = row.detail;
     });
