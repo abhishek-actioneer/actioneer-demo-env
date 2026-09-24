@@ -16,6 +16,9 @@ const isPublicRoute = createRouteMatcher([
   "/api/dev/agent-login",
   // Twilio calls these endpoints without a Clerk session.
   "/api/voice/twiml",
+  // BDR callbacks validate Twilio signatures in their handlers.
+  "/api/bdr/twilio/answer",
+  "/api/bdr/twilio/status",
   "/api/voice/status",
   "/api/voice/stream-status",
   "/api/voice/recording",
@@ -52,6 +55,9 @@ const isPublicRoute = createRouteMatcher([
 
 // Routes exempt from onboarding check (user must be authed but may not have completed onboarding)
 const isOnboardingExempt = createRouteMatcher([
+  "/",
+  "/bdr(.*)",
+  "/api/bdr(.*)",
   "/onboarding(.*)",
   "/api/onboarding(.*)",
   "/api/datasets/upload",

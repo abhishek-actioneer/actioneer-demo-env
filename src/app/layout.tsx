@@ -23,10 +23,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "actioneer",
-  description: "Growth engine for apps",
+  description: "AI BDR campaigns with Monaco audiences and Cartesia voice",
   openGraph: {
     title: "actioneer",
-    description: "Growth engine for apps",
+    description: "AI BDR campaigns with Monaco audiences and Cartesia voice",
   },
 };
 

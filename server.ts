@@ -13,6 +13,8 @@ import { startCallEventDispatcher } from "./src/lib/server/call-event-dispatcher
 import { startVoiceEvalDispatcher } from "./src/lib/server/voice-eval-dispatcher";
 import { flushAllScheduledCallTranscriptJsonlPersists } from "./src/lib/voice-transcript-storage";
 import { assertVoiceRuntimeConfigForStartup } from "./src/lib/voice-runtime-config";
+import { startBdrDispatcher } from "./src/lib/bdr/runner";
+import { authorizeBdrUpgrade, handleBdrStream } from "./src/lib/bdr/bridge";
 
 const port = parseInt(process.env.PORT || "3000", 10);
 
@@ -29,6 +31,7 @@ const app = next({ dev, port });
 const handle = app.getRequestHandler();
 const PLIVO_STREAM_PATHS = ["/plivo-media-stream", "/api/voice/plivo-ws"];
 const UPGRADE_PATHS = new Set([
+  "/bdr-media-stream",
   "/media-stream",
   "/plivo-probe-stream",
   "/voice-live-transcribe",
@@ -50,10 +53,12 @@ app.prepare().then(() => {
   const server = createServer((req, res) => {
     handle(req, res, parse(req.url!, true));
   });
+  const stopBdrDispatcher = startBdrDispatcher();
   let shuttingDown = false;
   const gracefulShutdown = async (signal: string): Promise<void> => {
     if (shuttingDown) return;
     shuttingDown = true;
+    stopBdrDispatcher();
     console.log(`[server] graceful shutdown started signal=${signal}`);
 
     const forceExitTimer = setTimeout(() => {
@@ -94,6 +99,11 @@ app.prepare().then(() => {
   server.on("upgrade", (req: IncomingMessage, socket, head) => {
     console.log(`[server] Raw WebSocket upgrade attempt ${req.url}`);
     const { pathname } = parse(req.url || "/");
+    if (pathname === "/bdr-media-stream" && !authorizeBdrUpgrade(req)) {
+      socket.write("HTTP/1.1 403 Forbidden\r\nConnection: close\r\n\r\n");
+      socket.destroy();
+      return;
+    }
     if (UPGRADE_PATHS.has(pathname || "") || isPlivoStreamPath(pathname)) {
       console.log(
         `[server] WebSocket upgrade ${req.url} extensions=${req.headers["sec-websocket-extensions"] ?? "(none)"}`,
@@ -114,6 +124,10 @@ app.prepare().then(() => {
   wss.on("connection", (ws: WebSocket, req: IncomingMessage) => {
     console.log(`[server] WebSocket connected extensions=${ws.extensions || "(none)"}`);
     const { pathname } = parse(req.url || "/");
+    if (pathname === "/bdr-media-stream") {
+      handleBdrStream(ws);
+      return;
+    }
     if (pathname === "/plivo-probe-stream") {
       handlePlivoGeminiProbeStream(ws, req);
       return;

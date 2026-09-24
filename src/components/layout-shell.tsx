@@ -295,6 +295,8 @@ function ShortcutsModal({ onClose }: { onClose: () => void }) {
 export function LayoutShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
+  if (pathname === "/" || pathname.startsWith("/bdr")) return <>{children}</>;
+
   if (pathname.startsWith("/auth") || pathname.startsWith("/sign-in") || pathname.startsWith("/sign-up") || pathname.startsWith("/onboarding") || pathname.startsWith("/admin")) {
     return <>{children}</>;
   }
