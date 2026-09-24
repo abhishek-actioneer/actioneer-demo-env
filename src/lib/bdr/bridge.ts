@@ -72,6 +72,7 @@ export function handleBdrStream(socket: WebSocket): void {
       const audio = await bdrSpeech(text, context.campaign.language, context.campaign.voiceId);
       if (closed || capturedEpoch !== epoch) return;
       send(socket, { event: "media", streamSid, media: { payload: audio.toString("base64") } });
+      if (markName === "bdr-opening") console.info("[bdr] opening audio sent", { callId, bytes: audio.length });
       if (markName) send(socket, { event: "mark", streamSid, mark: { name: markName } });
       if (markName === "bdr-end") {
         hangupTimeout = setTimeout(() => finishCall(), 15_000);
@@ -179,6 +180,7 @@ export function handleBdrStream(socket: WebSocket): void {
       streamSid = event.start?.streamSid || "";
       if (!context || !["dispatching", "calling", "connected"].includes(context.recipient.status) || !callSid || !streamSid || event.start?.accountSid !== process.env.TWILIO_ACCOUNT_SID || (context.recipient.providerSid && context.recipient.providerSid !== callSid)) { close(); return; }
       applyBdrCallStatus(callId, callSid, "in-progress");
+      console.info("[bdr] media stream started", { callId, streamSid });
       clearTimeout(startTimeout);
       const opening = personalizeBdr(context.campaign.opening, context.recipient);
       transcript("assistant", opening, "opening");
@@ -191,11 +193,18 @@ export function handleBdrStream(socket: WebSocket): void {
       else if (pendingAudio.length < 500) pendingAudio.push(audio);
     } else if (event.event === "mark" && event.mark?.name === "bdr-opening" && !openingPlayed) {
       openingPlayed = true;
+      console.info("[bdr] opening playback acknowledged", { callId });
       if (openingTimeout) clearTimeout(openingTimeout);
       startRealtime();
     } else if (event.event === "mark" && event.mark?.name === "bdr-end") finishCall();
     else if (event.event === "stop") close();
   });
-  socket.on("close", close);
-  socket.on("error", close);
+  socket.on("close", (code: number) => {
+    console.info("[bdr] media stream closed", { callId, code, openingPlayed, conversationReady: ready });
+    close();
+  });
+  socket.on("error", (error: Error) => {
+    console.error("[bdr] media stream error", { callId, message: error.message });
+    close();
+  });
 }
