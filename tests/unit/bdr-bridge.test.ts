@@ -24,7 +24,13 @@ vi.mock("ws", () => {
   }
   return { WebSocket: FakeRealtimeSocket };
 });
-vi.mock("@/lib/bdr/cartesia", () => ({ bdrSpeechChunks: mocks.speech }));
+vi.mock("@/lib/bdr/cartesia-stream", () => ({ BdrCartesiaStream: class {
+  constructor(private language: string, private voiceId: string) {}
+  speak(text: string, _turnId: string, signal: AbortSignal) { return mocks.speech(text, this.language, this.voiceId, signal); }
+  finish() {}
+  cancel() {}
+  close() {}
+} }));
 vi.mock("@/lib/bdr/store", () => ({
   findBdrCall: () => ({
     campaign: { language: "English", opening: "Hi {{first_name}}, this is Daniel from Actioneer.", script: "Ask about customer calls.", voiceId: "voice", voicemail: "Daniel from Actioneer. We help with after-hours calls. Thank you for your time, and have a wonderful day." },
@@ -105,14 +111,18 @@ describe("BDR playback and turn-taking", () => {
 
   it("owns turn-taking and doesn't clear audio for brief speech or a listening acknowledgement", async () => {
     const socket = await ready();
-    const session = mocks.realtimeSockets[0].sent.find((m) => m.type === "session.update")!.session as { audio: { input: { turn_detection: object } } };
+    const session = mocks.realtimeSockets[0].sent.find((m) => m.type === "session.update")!.session as { instructions: string; audio: { input: { turn_detection: object } } };
     expect(session.audio.input.turn_detection).toMatchObject({ create_response: false, interrupt_response: false });
+    expect(session.instructions).toContain("Do not start consecutive replies with the same phrase");
+    expect(session.instructions).toContain("after the prospect finishes");
     user("Yes, go ahead"); reply("We help your team handle customer calls.");
     await vi.waitFor(() => expect(socket.sent.filter((m) => m.event === "mark")).toHaveLength(2));
     user("yeah", "user-2");
     expect(socket.sent.filter((m) => m.event === "clear")).toHaveLength(0);
     expect(mocks.realtimeSockets[0].sent.filter((m) => m.type === "response.create")).toHaveLength(1);
     expect(mocks.realtimeSockets[0].sent.filter((m) => m.type === "response.cancel")).toHaveLength(0);
+    const response = mocks.realtimeSockets[0].sent.find((m) => m.type === "response.create")!.response as { instructions: string };
+    expect(response.instructions).toContain("warm, attentive, and matter-of-fact");
   });
 
   it("treats yes after completed playback as an answer, not an ignored backchannel", async () => {
@@ -168,7 +178,7 @@ describe("BDR playback and turn-taking", () => {
 
   it("removes unheard model text on a real interruption and ignores late cancelled deltas/marks", async () => {
     const socket = await ready();
-    user("Go ahead"); reply("We answer missed calls. We also qualify leads.");
+    user("Go ahead"); reply("We answer missed calls when your office is closed. We also qualify leads.");
     await vi.waitFor(() => expect(socket.sent.filter((m) => m.event === "mark")).toHaveLength(3));
     acknowledge(socket, 1);
     user("Wait, how does that work?", "user-2");
@@ -176,7 +186,7 @@ describe("BDR playback and turn-taking", () => {
     ai({ type: "response.output_text.delta", response_id: "response-1", item_id: "assistant-1", delta: "Do not play this stale sentence." });
     ai({ type: "response.done", response: { id: "response-1", status: "cancelled" } });
     expect(mocks.realtimeSockets[0].sent).toContainEqual({ type: "conversation.item.delete", item_id: "assistant-1" });
-    expect(mocks.realtimeSockets[0].sent).toContainEqual(expect.objectContaining({ previous_item_id: "user-1", item: expect.objectContaining({ content: [{ type: "output_text", text: "We answer missed calls." }] }) }));
+    expect(mocks.realtimeSockets[0].sent).toContainEqual(expect.objectContaining({ previous_item_id: "user-1", item: expect.objectContaining({ content: [{ type: "output_text", text: "We answer missed calls when your office is closed." }] }) }));
     acknowledge(socket, 2); // cleared marks must not be marked as played
     expect(mocks.row.transcript?.filter((t) => t.text === "We also qualify leads.")).toEqual([expect.objectContaining({ delivery: "interrupted" })]);
     expect(mocks.speech.mock.calls.some(([text]) => String(text).includes("stale"))).toBe(false);

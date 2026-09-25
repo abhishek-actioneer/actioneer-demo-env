@@ -8,6 +8,7 @@ import { findBdrCall, suppressBdrPhone, updateBdrCall } from "./store";
 import { personalizeBdr } from "./types";
 import { BDR_SCREENING_IDENTITY, getBdrTemplate } from "./templates";
 import { detectBdrAnswerMode, isBdrScreeningHold } from "./answer-mode";
+import { BDR_SPEAKING_STYLE, takeBdrSpeechPhrase } from "./speaking-style";
 
 export function authorizeBdrUpgrade(req: IncomingMessage): boolean {
   const signature = req.headers["x-twilio-signature"];
@@ -148,11 +149,13 @@ export function handleBdrStream(socket: WebSocket): void {
     if (!context) return "";
     return `${personalizeBdr(context.campaign.script, context.recipient)}
 
+${BDR_SPEAKING_STYLE}
+
 Runtime speaking rules:
 - Your name is Daniel from Actioneer. Introduce yourself that way, not as "an AI assistant". If directly asked whether you are AI, answer truthfully that you are Actioneer's voice agent.
 - The opening is handled by the phone server. Do not repeat the introduction or ask permission twice.
 - Speak ${context.campaign.language}. Return only the words to say aloud, with no stage directions.
-- Follow the campaign script in order, keeping track of points actually covered. Acknowledge the answer briefly, then advance to the next relevant point. Do not restart the pitch.
+- Follow the campaign script in order, keeping track of points actually covered. Respond to the answer, then advance to the next relevant point. Do not restart the pitch.
 - Use one or two concise sentences per turn and at most one question; let the prospect answer before moving on.
 - If interrupted, answer the prospect's question, then resume the unfinished point naturally. Never assume unheard text was delivered. Do not repeatedly ask them to say the same thing.
 - Use opt_out when asked not to contact them again. Use end_call only after a clear decline, goodbye, or agreed follow-up outcome; never just because one response is finished.
@@ -177,12 +180,10 @@ Runtime speaking rules:
   function flush(force = false) {
     if (!reply || reply.interrupted) return;
     while (buffer) {
-      const boundary = buffer.search(/[.!?।](?:\s|$)/);
-      if (boundary < 0 && !force && buffer.length < 120) break;
-      const end = boundary >= 0 ? boundary + 1 : force ? buffer.length : Math.max(1, buffer.lastIndexOf(" ", 120));
-      const chunk = buffer.slice(0, end).trim();
-      buffer = buffer.slice(end).trimStart();
-      if (chunk) playback?.speak({ text: chunk, itemId: reply.itemId });
+      const phrase = takeBdrSpeechPhrase(buffer, force);
+      if (!phrase) break;
+      buffer = phrase.rest;
+      playback?.speak({ text: phrase.text, itemId: reply.itemId });
     }
   }
   function endConversation(optOut: boolean, followUp = false) {
@@ -190,7 +191,7 @@ Runtime speaking rules:
       interrupt();
       suppressBdrPhone(context!.recipient.phone);
       updateBdrCall(callId, (row) => { row.detail = "Prospect opted out. Suppressed from future Actioneer calls."; });
-    } else flush(true);
+    } else { flush(true); if (reply?.itemId) playback?.finishTurn(reply.itemId); }
     ending = true;
     clearTimeout(interruptionTimeout);
     const hindi = context!.campaign.language !== "English";
@@ -322,11 +323,13 @@ Runtime speaking rules:
         buffer += delta; flush();
       } else if (event.type === "response.output_text.done" && !ending && event.response_id === reply?.id && !reply?.interrupted) {
         flush(true);
+        if (reply?.itemId) playback?.finishTurn(reply.itemId);
       } else if (event.type === "response.done") {
         const response = event.response as { id: string; status: string };
         if (response.id !== reply?.id) return;
         responseActive = false;
         if (response.status === "failed") { failConversation("Conversation response failed. Check OpenAI credits and model limits."); return; }
+        if (!reply?.interrupted && !ending) { flush(true); if (reply?.itemId) playback?.finishTurn(reply.itemId); }
         repairInterruptedReply();
         respond();
       } else if (event.type === "input_audio_buffer.committed" && !ending) {

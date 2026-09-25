@@ -1,7 +1,13 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { BdrPlayback } from "@/lib/bdr/playback";
 const speech = vi.hoisted(() => vi.fn());
-vi.mock("@/lib/bdr/cartesia", () => ({ bdrSpeechChunks: speech }));
+vi.mock("@/lib/bdr/cartesia-stream", () => ({ BdrCartesiaStream: class {
+  constructor(private language: string, private voiceId: string) {}
+  speak(text: string, _turnId: string, signal: AbortSignal) { return speech(text, this.language, this.voiceId, signal); }
+  finish() {}
+  cancel() {}
+  close() {}
+} }));
 afterEach(() => { speech.mockReset(); });
 
 describe("BDR audio cancellation", () => {
