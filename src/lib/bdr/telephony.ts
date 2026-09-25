@@ -25,6 +25,9 @@ export async function dialBdrContact(phone: string, callId: string): Promise<str
     url: `${base}/api/bdr/twilio/answer?callId=${encodeURIComponent(callId)}`, method: "POST",
     statusCallback: `${base}/api/bdr/twilio/status?callId=${encodeURIComponent(callId)}`,
     statusCallbackMethod: "POST", statusCallbackEvent: ["initiated", "ringing", "answered", "completed"],
+    machineDetection: "DetectMessageEnd", asyncAmd: "true", machineDetectionTimeout: 45,
+    asyncAmdStatusCallback: `${base}/api/bdr/twilio/amd?callId=${encodeURIComponent(callId)}`,
+    asyncAmdStatusCallbackMethod: "POST",
     timeout: 30, timeLimit: 300,
   });
   return call.sid;

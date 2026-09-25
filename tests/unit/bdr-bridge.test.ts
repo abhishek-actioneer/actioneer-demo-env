@@ -27,8 +27,8 @@ vi.mock("ws", () => {
 vi.mock("@/lib/bdr/cartesia", () => ({ bdrSpeechChunks: mocks.speech }));
 vi.mock("@/lib/bdr/store", () => ({
   findBdrCall: () => ({
-    campaign: { language: "English", opening: "Hi {{first_name}}, this is Actioneer.", script: "Ask about customer calls.", voiceId: "voice" },
-    recipient: { firstName: "Abhishek", status: "calling", phone: "+16502509069" },
+    campaign: { language: "English", opening: "Hi {{first_name}}, this is Daniel from Actioneer.", script: "Ask about customer calls.", voiceId: "voice", voicemail: "Daniel from Actioneer. We help with after-hours calls. Thank you for your time, and have a wonderful day." },
+    recipient: { ...mocks.row, firstName: "Abhishek", status: "calling", phone: "+16502509069" },
   }),
   suppressBdrPhone: mocks.suppress,
   updateBdrCall: (_id: string, mutate: (row: BdrRecipient, campaign: object) => void) => mutate(mocks.row, {}),
@@ -80,6 +80,9 @@ function reply(text: string, id = "response-1", itemId = "assistant-1") {
 }
 beforeEach(() => {
   mocks.row.transcript = [];
+  mocks.row.answeredBy = undefined;
+  mocks.row.callOutcome = undefined;
+  mocks.row.followUpRequested = undefined;
   mocks.speech.mockImplementation(async function* () { yield Buffer.alloc(160, 0xff); });
   mocks.hangup.mockResolvedValue({});
 });
@@ -119,6 +122,12 @@ describe("BDR playback and turn-taking", () => {
 
   it("starts a normal reply from committed audio without waiting for transcription", async () => {
     const socket = await ready();
+    user("Hello", "greeting");
+    reply("Good to speak with you.", "greeting-response", "greeting-assistant");
+    ai({ type: "response.done", response: { id: "greeting-response", status: "completed" } });
+    await vi.waitFor(() => expect(socket.sent.filter((m) => m.event === "mark")).toHaveLength(2));
+    acknowledge(socket, 1);
+    mocks.realtimeSockets[0].sent.length = 0;
     ai({ type: "input_audio_buffer.speech_started", item_id: "user-1" });
     ai({ type: "input_audio_buffer.speech_stopped", item_id: "user-1" });
     ai({ type: "input_audio_buffer.committed", item_id: "user-1" });
@@ -194,5 +203,75 @@ describe("BDR playback and turn-taking", () => {
     expect(mocks.suppress).toHaveBeenCalledWith("+16502509069");
     expect(socket.sent.some((m) => m.event === "clear")).toBe(true);
     await vi.waitFor(() => expect(mocks.speech.mock.calls.some(([text]) => String(text).includes("won't call you again"))).toBe(true));
+  });
+
+  it("uses the requested team-follow-up closing and records the request", async () => {
+    const socket = await ready();
+    user("Yes, please have your team contact me"); reply("Sounds good.");
+    ai({ type: "response.function_call_arguments.done", response_id: "response-1", name: "end_call", arguments: JSON.stringify({ outcome: "follow_up" }) });
+    await vi.waitFor(() => expect(mocks.speech.mock.calls.some(([text]) => String(text).startsWith("Someone from my team shall reach out shortly."))).toBe(true));
+    expect(mocks.row.followUpRequested).toBe(true);
+    expect(mocks.hangup).not.toHaveBeenCalled();
+    expect(socket.sent.some((m) => m.event === "clear")).toBe(false);
+  });
+
+  it("identifies Daniel once to Apple's screener, waits through hold/AMD silence, then resumes for a person", async () => {
+    vi.useFakeTimers();
+    const socket = await ready();
+    user("Hi, if you record your name and reason for calling, I'll see if this person is available.", "screen");
+    await vi.waitFor(() => expect(mocks.speech.mock.calls.some(([text]) => text === "This is Daniel from Actioneer.")).toBe(true));
+    await vi.waitFor(() => expect(socket.sent.filter((m) => m.event === "mark")).toHaveLength(2));
+    acknowledge(socket, 1);
+    user("Please hold while I see if this person is available.", "hold");
+    user("Please state your name and reason for calling.", "repeat-screen");
+    expect(mocks.speech.mock.calls.filter(([text]) => text === "This is Daniel from Actioneer.")).toHaveLength(1);
+    expect(mocks.realtimeSockets[0].sent.filter((m) => m.type === "response.create")).toHaveLength(0);
+    mocks.row.answeredBy = "machine_end_silence";
+    await vi.advanceTimersByTimeAsync(3000);
+    expect(mocks.speech.mock.calls.some(([text]) => String(text).includes("after-hours calls"))).toBe(false);
+    expect(mocks.row.callOutcome).toBe("screening");
+    user("Hello, this is Abhishek", "person");
+    expect(mocks.row.callOutcome).toBe("conversation");
+    expect(mocks.realtimeSockets[0].sent.filter((m) => m.type === "response.create")).toHaveLength(1);
+    expect(mocks.row.transcript?.find((t) => t.text.startsWith("Please hold"))?.source).toBe("screening");
+  });
+
+  it("leaves one voicemail after the greeting and waits for playback before hanging up", async () => {
+    vi.useFakeTimers();
+    const socket = await ready();
+    user("Please leave a message after the beep.", "greeting");
+    await vi.advanceTimersByTimeAsync(1000);
+    expect(mocks.speech.mock.calls.some(([text]) => String(text).includes("after-hours calls"))).toBe(false);
+    mocks.row.answeredBy = "machine_end_beep";
+    await vi.advanceTimersByTimeAsync(3500);
+    expect(mocks.speech.mock.calls.filter(([text]) => String(text).includes("after-hours calls"))).toHaveLength(1);
+    expect(mocks.row.callOutcome).toBe("voicemail");
+    expect(mocks.hangup).not.toHaveBeenCalled();
+    acknowledge(socket, 1);
+    expect(mocks.hangup).toHaveBeenCalledWith({ status: "completed" });
+  });
+
+  it("does not let a late machine verdict cut off an established person", async () => {
+    vi.useFakeTimers();
+    await ready(); user("We run an HVAC business");
+    mocks.row.answeredBy = "machine_end_beep";
+    await vi.advanceTimersByTimeAsync(3000);
+    expect(mocks.row.callOutcome).toBe("conversation");
+    expect(mocks.speech.mock.calls.some(([text]) => String(text).includes("after-hours calls"))).toBe(false);
+    expect(mocks.hangup).not.toHaveBeenCalled();
+  });
+
+  it("uses the durable AMD beep result when no recognizable greeting transcript arrives", async () => {
+    vi.useFakeTimers();
+    const socket = await ready();
+    mocks.row.answeredBy = "machine_end_beep";
+    await vi.advanceTimersByTimeAsync(1000);
+    expect(mocks.row.callOutcome).toBeUndefined();
+    await vi.advanceTimersByTimeAsync(1500);
+    expect(mocks.row.callOutcome).toBe("voicemail");
+    expect(mocks.speech.mock.calls.filter(([text]) => String(text).includes("after-hours calls"))).toHaveLength(1);
+    expect(mocks.hangup).not.toHaveBeenCalled();
+    acknowledge(socket, 1);
+    expect(mocks.hangup).toHaveBeenCalledWith({ status: "completed" });
   });
 });

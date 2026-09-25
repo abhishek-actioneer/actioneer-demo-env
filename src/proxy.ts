@@ -19,6 +19,7 @@ const isPublicRoute = createRouteMatcher([
   // BDR callbacks validate Twilio signatures in their handlers.
   "/api/bdr/twilio/answer",
   "/api/bdr/twilio/status",
+  "/api/bdr/twilio/amd",
   // Next also routes custom-server upgrades through this middleware. The BDR
   // socket authenticates with Twilio's signature in server.ts and a call token.
   "/bdr-media-stream",

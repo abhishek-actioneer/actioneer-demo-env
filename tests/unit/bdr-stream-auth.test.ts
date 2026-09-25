@@ -27,7 +27,7 @@ beforeEach(() => { mocks.protect.mockReset(); });
 afterEach(() => { vi.unstubAllEnvs(); });
 
 describe("BDR WebSocket authentication boundary", () => {
-  it.each(["/bdr-media-stream", "/api/bdr/twilio/answer", "/api/bdr/twilio/status"])(
+  it.each(["/bdr-media-stream", "/api/bdr/twilio/answer", "/api/bdr/twilio/status", "/api/bdr/twilio/amd"])(
     "does not send Twilio through browser login at %s", async (path) => {
       await runProxy(new NextRequest(`https://example.com${path}`));
       expect(mocks.protect).not.toHaveBeenCalled();

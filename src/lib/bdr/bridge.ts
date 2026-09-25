@@ -6,6 +6,8 @@ import { BdrPlayback } from "./playback";
 import { applyBdrCallStatus, bdrTwilio, validBdrStreamToken } from "./telephony";
 import { findBdrCall, suppressBdrPhone, updateBdrCall } from "./store";
 import { personalizeBdr } from "./types";
+import { BDR_SCREENING_IDENTITY, getBdrTemplate } from "./templates";
+import { detectBdrAnswerMode, isBdrScreeningHold } from "./answer-mode";
 
 export function authorizeBdrUpgrade(req: IncomingMessage): boolean {
   const signature = req.headers["x-twilio-signature"];
@@ -53,6 +55,13 @@ export function handleBdrStream(socket: WebSocket): void {
   let lastUserId = "";
   let lastSpeechStoppedAt = 0;
   let responseActive = false;
+  let answerMode: "conversation" | "screening" | "voicemail_wait" | "voicemail" = "conversation";
+  let humanConfirmed = false;
+  let screeningIdentitySent = false;
+  let resumedFromScreening = false;
+  let lastAmdResult = "";
+  let pendingAmdResult = "";
+  let pendingAmdSince = 0;
   let reply: Reply | undefined;
   let buffer = "";
   let context: ReturnType<typeof findBdrCall>;
@@ -66,6 +75,9 @@ export function handleBdrStream(socket: WebSocket): void {
   let realtimeTimeout: ReturnType<typeof setTimeout> | undefined;
   let hangupTimeout: ReturnType<typeof setTimeout> | undefined;
   let interruptionTimeout: ReturnType<typeof setTimeout> | undefined;
+  let screeningTimeout: ReturnType<typeof setTimeout> | undefined;
+  let voicemailTimeout: ReturnType<typeof setTimeout> | undefined;
+  let amdPoll: ReturnType<typeof setInterval> | undefined;
 
   function send(ws: WebSocket | undefined, value: unknown) { if (ws?.readyState === WebSocket.OPEN) ws.send(JSON.stringify(value)); }
   function log(event: string, data: Record<string, unknown> = {}) { console.info(`[bdr] ${event}`, { callId, ...data }); }
@@ -77,14 +89,17 @@ export function handleBdrStream(socket: WebSocket): void {
     clearTimeout(realtimeTimeout);
     clearTimeout(hangupTimeout);
     clearTimeout(interruptionTimeout);
+    clearTimeout(screeningTimeout);
+    clearTimeout(voicemailTimeout);
+    clearInterval(amdPoll);
     playback?.clear(false);
     realtime?.close();
     socket.close();
   }
-  function transcript(role: "user" | "assistant", text: string, delivery?: "played" | "interrupted") {
+  function transcript(role: "user" | "assistant", text: string, delivery?: "played" | "interrupted", source?: "screening" | "voicemail") {
     if (!text.trim()) return;
     updateBdrCall(callId, (row) => {
-      row.transcript = [...(row.transcript || []), { role, text: text.slice(0, 8000), ...(delivery ? { delivery } : {}) }].slice(-120);
+      row.transcript = [...(row.transcript || []), { role, text: text.slice(0, 8000), ...(delivery ? { delivery } : {}), ...(source ? { source } : {}) }].slice(-120);
     });
   }
   function fail(message: string) {
@@ -134,16 +149,19 @@ export function handleBdrStream(socket: WebSocket): void {
     return `${personalizeBdr(context.campaign.script, context.recipient)}
 
 Runtime speaking rules:
+- Your name is Daniel from Actioneer. Introduce yourself that way, not as "an AI assistant". If directly asked whether you are AI, answer truthfully that you are Actioneer's voice agent.
 - The opening is handled by the phone server. Do not repeat the introduction or ask permission twice.
 - Speak ${context.campaign.language}. Return only the words to say aloud, with no stage directions.
 - Follow the campaign script in order, keeping track of points actually covered. Acknowledge the answer briefly, then advance to the next relevant point. Do not restart the pitch.
 - Use one or two concise sentences per turn and at most one question; let the prospect answer before moving on.
 - If interrupted, answer the prospect's question, then resume the unfinished point naturally. Never assume unheard text was delivered. Do not repeatedly ask them to say the same thing.
 - Use opt_out when asked not to contact them again. Use end_call only after a clear decline, goodbye, or agreed follow-up outcome; never just because one response is finished.
-- Never claim a meeting is booked or a message sent; those actions are not available.`;
+- For an agreed follow-up, call end_call with outcome="follow_up". The server says "Someone from my team shall reach out shortly." Do not refer to "a human colleague" or repeat that closing. A meeting has not been booked or a message sent.
+- Automated screening: call screen_call, then wait for the actual person. Voicemail greeting: call voicemail_detected; do not pitch until the server detects the greeting ending.
+- Current phone state: ${answerMode}.${resumedFromScreening ? " The person has now picked up after screening; greet them briefly and start the campaign discovery question." : ""}`;
   }
   function respond() {
-    if (!ready || closed || ending || speaking || awaitingTranscripts.size || responseActive || playback?.pending || !pendingTurn || (!openingPlayed && !openingInterrupted)) return;
+    if (!ready || closed || ending || answerMode !== "conversation" || speaking || awaitingTranscripts.size || responseActive || playback?.pending || !pendingTurn || (!openingPlayed && !openingInterrupted)) return;
     repairInterruptedReply();
     const interrupted = reply?.interrupted || (!reply && openingInterrupted);
     pendingTurn = false;
@@ -151,8 +169,9 @@ Runtime speaking rules:
     reply = { id: "", itemId: "", parentId: lastUserId, spoken: [], interrupted: false, repaired: false, firstAudio: false, requestedAt: Date.now(), inputEndedAt: lastSpeechStoppedAt, text: "" };
     send(realtime, { type: "response.create", response: {
       output_modalities: ["text"],
-      ...(interrupted ? { instructions: `${instructions()}\nThe previous spoken turn was interrupted. Only the retained assistant text was fully heard. Briefly address the prospect and continue the unfinished point.` } : {}),
+      instructions: `${instructions()}${interrupted ? "\nThe previous spoken turn was interrupted. Only the retained assistant text was fully heard. Briefly address the prospect and continue the unfinished point." : ""}`,
     } });
+    resumedFromScreening = false;
     log("response requested");
   }
   function flush(force = false) {
@@ -166,7 +185,7 @@ Runtime speaking rules:
       if (chunk) playback?.speak({ text: chunk, itemId: reply.itemId });
     }
   }
-  function endConversation(optOut: boolean) {
+  function endConversation(optOut: boolean, followUp = false) {
     if (optOut) {
       interrupt();
       suppressBdrPhone(context!.recipient.phone);
@@ -175,13 +194,82 @@ Runtime speaking rules:
     ending = true;
     clearTimeout(interruptionTimeout);
     const hindi = context!.campaign.language !== "English";
+    if (followUp && !optOut) updateBdrCall(callId, (row) => { row.followUpRequested = true; });
     const farewell = optOut
       ? hindi ? "समझ गया। हम आपको दोबारा कॉल नहीं करेंगे। धन्यवाद।" : "Understood. We won't call you again. Goodbye."
-      : hindi ? "आपके समय के लिए धन्यवाद। नमस्ते।" : "Thank you for your time. Goodbye.";
+      : followUp ? hindi ? "मेरी टीम से कोई जल्द ही आपसे संपर्क करेगा। आपके समय के लिए धन्यवाद। आपका दिन शुभ हो।" : "Someone from my team shall reach out shortly. Thank you for your time, and have a wonderful day."
+        : hindi ? "आपके समय के लिए धन्यवाद। आपका दिन शुभ हो।" : "Thank you for your time, and have a wonderful day.";
     // A normal hangup drains queued script audio and the farewell. It must not
     // clear the response that the model just generated but the caller hasn't heard.
     playback?.speak({ text: farewell, itemId: "farewell", kind: "farewell" });
     hangupTimeout = setTimeout(finishCall, 60_000);
+  }
+  function pausePitch() {
+    interrupt();
+    playback?.clear();
+    buffer = "";
+    pendingTurn = false;
+    openingInterrupted = true;
+    clearTimeout(openingTimeout);
+    clearTimeout(interruptionTimeout);
+  }
+  function screenCall() {
+    if (closed || ending || answerMode === "voicemail") return;
+    if (answerMode === "screening" && screeningIdentitySent) return;
+    pausePitch();
+    answerMode = "screening";
+    humanConfirmed = false;
+    updateBdrCall(callId, (row) => { row.callOutcome = "screening"; });
+    clearTimeout(voicemailTimeout);
+    if (!screeningIdentitySent) {
+      screeningIdentitySent = true;
+      playback?.speak({ text: BDR_SCREENING_IDENTITY, itemId: "screening_identity", kind: "screening" });
+    }
+    clearTimeout(screeningTimeout);
+    screeningTimeout = setTimeout(finishCall, 90_000);
+    log("waiting for person after screening");
+  }
+  function leaveVoicemail() {
+    if (closed || ending || !context) return;
+    pausePitch();
+    answerMode = "voicemail";
+    ending = true;
+    clearTimeout(screeningTimeout);
+    clearTimeout(voicemailTimeout);
+    updateBdrCall(callId, (row) => { row.callOutcome = "voicemail"; row.sentiment = undefined; row.sentimentState = "not_applicable"; });
+    const message = context.campaign.voicemail || getBdrTemplate(context.campaign.templateId).voicemail;
+    playback?.speak({ text: personalizeBdr(message, context.recipient), itemId: "voicemail", kind: "voicemail" });
+    hangupTimeout = setTimeout(finishCall, 60_000);
+    log("leaving voicemail");
+  }
+  function awaitVoicemailEnd() {
+    if (closed || ending) return;
+    pausePitch();
+    answerMode = "voicemail_wait";
+    humanConfirmed = false;
+    clearTimeout(screeningTimeout);
+    updateBdrCall(callId, (row) => { row.callOutcome = "voicemail"; });
+    scheduleVoicemailFallback();
+  }
+  function scheduleVoicemailFallback() {
+    clearTimeout(voicemailTimeout);
+    // AMD's beep/end result is preferred. A completed, recognized greeting
+    // followed by quiet is a fallback for machines AMD reports as unknown.
+    if (answerMode === "voicemail_wait" && !speaking && !awaitingTranscripts.size) {
+      voicemailTimeout = setTimeout(leaveVoicemail, 2500);
+    }
+  }
+  function checkAnsweringMachine() {
+    if (closed || ending) return;
+    const result = findBdrCall(callId)?.recipient.answeredBy;
+    if (!result || result === lastAmdResult) return;
+    if (result !== pendingAmdResult) { pendingAmdResult = result; pendingAmdSince = Date.now(); }
+    if (result.startsWith("machine_end_") && (speaking || awaitingTranscripts.size || Date.now() - pendingAmdSince < 1500)) return;
+    lastAmdResult = result;
+    // Silence while Apple is finding the person is not a voicemail greeting.
+    // Never let a late AMD verdict interrupt an established human conversation.
+    if (result.startsWith("machine_end_") && !humanConfirmed && (answerMode !== "screening" || result === "machine_end_beep")) leaveVoicemail();
+    else if (result === "fax" && !humanConfirmed) finishCall();
   }
   function startRealtime() {
     if (!context || closed || realtime) return;
@@ -199,7 +287,9 @@ Runtime speaking rules:
         } },
         tools: [
           { type: "function", name: "opt_out", description: "The prospect explicitly asked not to be contacted again. Stop the pitch and end the call.", parameters: { type: "object", properties: {}, additionalProperties: false } },
-          { type: "function", name: "end_call", description: "End after a clear goodbye, decline, or completed follow-up agreement. Never use this merely because a single reply is complete.", parameters: { type: "object", properties: {}, additionalProperties: false } },
+          { type: "function", name: "end_call", description: "End after a clear goodbye, decline, or agreed follow-up. Use follow_up only when the prospect explicitly accepts a team follow-up. The server speaks the closing.", parameters: { type: "object", properties: { outcome: { type: "string", enum: ["follow_up", "declined", "finished"] } }, required: ["outcome"], additionalProperties: false } },
+          { type: "function", name: "screen_call", description: "An automated Apple/Google call screener asked for name or reason. Identify Daniel once, then wait silently for the person. Not for a human asking about screening features.", parameters: { type: "object", properties: {}, additionalProperties: false } },
+          { type: "function", name: "voicemail_detected", description: "A recorded voicemail greeting asks to leave a message. Wait for the end of the greeting, then leave the campaign voicemail. Not for a human asking about voicemail features.", parameters: { type: "object", properties: {}, additionalProperties: false } },
         ], tool_choice: "auto",
       } });
     });
@@ -244,7 +334,7 @@ Runtime speaking rules:
         // For an ordinary caller turn, Realtime already has the audio. Start
         // the reply immediately; transcription is only a gate when deciding
         // whether overlapping speech is a backchannel or an interruption.
-        if (!speaking && openingPlayed && !overlappedItems.has(itemId) && !responseActive && !playback?.pending) {
+        if (humanConfirmed && answerMode === "conversation" && !speaking && openingPlayed && !overlappedItems.has(itemId) && !responseActive && !playback?.pending) {
           awaitingTranscripts.delete(itemId);
           respondedFromAudio.add(itemId);
           lastUserId = itemId;
@@ -259,6 +349,18 @@ Runtime speaking rules:
         completedItems.add(itemId);
         const overlapped = overlappedItems.delete(itemId);
         if (!text) { respond(); return; }
+        const detected = !humanConfirmed || answerMode !== "conversation" ? detectBdrAnswerMode(text) : undefined;
+        if (detected === "screening") { transcript("user", text, undefined, "screening"); screenCall(); return; }
+        if (detected === "voicemail") { transcript("user", text, undefined, "voicemail"); awaitVoicemailEnd(); return; }
+        if (answerMode === "screening" && isBdrScreeningHold(text)) { transcript("user", text, undefined, "screening"); return; }
+        if (answerMode === "voicemail_wait") { transcript("user", text, undefined, "voicemail"); scheduleVoicemailFallback(); return; }
+        if (answerMode === "screening") {
+          answerMode = "conversation";
+          resumedFromScreening = true;
+          clearTimeout(screeningTimeout);
+        }
+        humanConfirmed = true;
+        updateBdrCall(callId, (row) => { row.callOutcome = "conversation"; });
         transcript("user", text);
         if (respondedFromAudio.delete(itemId)) return;
         if (overlapped && isBackchannel(text) && !reply?.interrupted && !(openingInterrupted && !reply)) {
@@ -289,9 +391,10 @@ Runtime speaking rules:
         }
       } else if (event.type === "input_audio_buffer.speech_started" && !ending) {
         speaking = true;
+        clearTimeout(voicemailTimeout);
         awaitingTranscripts.add(String(event.item_id));
         clearTimeout(interruptionTimeout);
-        if (playback?.pending || responseActive) {
+        if (answerMode === "conversation" && (playback?.pending || responseActive)) {
           overlappedItems.add(String(event.item_id));
           // Wait through brief noises/backchannels. Longer speech can barge in
           // before its transcript arrives; short substantive speech interrupts
@@ -302,9 +405,19 @@ Runtime speaking rules:
         speaking = false;
         lastSpeechStoppedAt = Date.now();
         clearTimeout(interruptionTimeout);
+        scheduleVoicemailFallback();
         respond();
-      } else if (event.type === "response.function_call_arguments.done" && !ending && event.response_id === reply?.id && !reply?.interrupted && (event.name === "opt_out" || event.name === "end_call")) {
-        endConversation(event.name === "opt_out");
+      } else if (event.type === "response.function_call_arguments.done" && !ending && event.response_id === reply?.id && !reply?.interrupted) {
+        if (event.name === "screen_call" || event.name === "voicemail_detected") {
+          send(realtime, { type: "conversation.item.create", item: { type: "function_call_output", call_id: event.call_id, output: JSON.stringify({ status: "waiting", instruction: "The phone server handles this mode. Wait for the actual person or voicemail completion." }) } });
+          if (event.name === "screen_call") screenCall();
+          else awaitVoicemailEnd();
+        }
+        else if (event.name === "opt_out" || event.name === "end_call") {
+          let args: { outcome?: string } = {};
+          try { args = JSON.parse(String(event.arguments || "{}")); } catch { /* Missing outcome uses the generic closing. */ }
+          endConversation(event.name === "opt_out", args.outcome === "follow_up");
+        }
       } else if (event.type === "error") {
         const error = event.error as { code?: string; message?: string } | undefined;
         if (error?.code !== "response_cancel_not_active") {
@@ -338,7 +451,7 @@ Runtime speaking rules:
         language: context.campaign.language, voiceId: context.campaign.voiceId,
         send: (event) => { if (!closed) send(socket, { ...event, streamSid }); },
         played: (segment) => {
-          transcript("assistant", segment.text, "played");
+          transcript("assistant", segment.text, "played", segment.kind === "screening" || segment.kind === "voicemail" ? segment.kind : undefined);
           if (reply?.itemId === segment.itemId) reply.spoken.push(segment.text);
           if (segment.kind === "opening") {
             openingPlayed = true;
@@ -346,10 +459,10 @@ Runtime speaking rules:
             log("opening playback acknowledged");
             if (conversationFailure) fail(conversationFailure);
             else respond();
-          } else if (segment.kind === "farewell") finishCall();
+          } else if (segment.kind === "farewell" || segment.kind === "voicemail") finishCall();
           else respond();
         },
-        interrupted: (segment) => transcript("assistant", segment.text, "interrupted"),
+        interrupted: (segment) => transcript("assistant", segment.text, "interrupted", segment.kind === "screening" || segment.kind === "voicemail" ? segment.kind : undefined),
         firstAudio: (segment, synthesisMs) => {
           if (segment.kind === "opening") log("opening first audio", { synthesisMs });
           else if (reply && !reply.firstAudio && reply.itemId === segment.itemId) {
@@ -366,6 +479,8 @@ Runtime speaking rules:
       playback.speak({ text: personalizeBdr(context.campaign.opening, context.recipient), itemId: "bdr_opening", kind: "opening" });
       // Warm up the conversation connection while the opening is being spoken.
       startRealtime();
+      amdPoll = setInterval(checkAnsweringMachine, 500);
+      checkAnsweringMachine();
     } else if (event.event === "media" && context && !ending) {
       const audio = event.media?.payload;
       if (typeof audio !== "string" || audio.length > 16_000) return;

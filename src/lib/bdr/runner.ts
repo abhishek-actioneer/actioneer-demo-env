@@ -3,6 +3,7 @@ import { claimBdrRecipient, getBdrCampaign, isBdrSuppressed, listBdrCampaigns, m
 import { getMonacoContact } from "./monaco";
 import { applyBdrCallStatus, bdrTwilio, describeBdrDialError, dialBdrContact } from "./telephony";
 import { normalizeBdrPhone } from "./types";
+import { analyzeBdrSentimentsTick } from "./sentiment";
 
 export async function dispatchBdrTick(): Promise<void> {
   if (!bdrReadiness().calling) return;
@@ -66,11 +67,18 @@ export async function dispatchBdrTick(): Promise<void> {
 
 export function startBdrDispatcher(): () => void {
   let busy = false;
+  let analyzing = false;
+  const analysisTimer = setInterval(() => {
+    if (analyzing) return;
+    analyzing = true;
+    void analyzeBdrSentimentsTick().catch((error: unknown) => console.error("[bdr] sentiment job failed", error instanceof Error ? error.message : "Unknown error")).finally(() => { analyzing = false; });
+  }, 5000);
+  analysisTimer.unref();
   const timer = setInterval(() => {
     if (busy) return;
     busy = true;
     void dispatchBdrTick().catch((error: unknown) => console.error("[bdr] dispatcher failed", error instanceof Error ? error.message : "Unknown error")).finally(() => { busy = false; });
   }, 3000);
   timer.unref();
-  return () => clearInterval(timer);
+  return () => { clearInterval(timer); clearInterval(analysisTimer); };
 }

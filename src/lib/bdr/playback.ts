@@ -3,7 +3,7 @@ import { bdrSpeechChunks } from "./cartesia";
 export interface BdrSpeechSegment {
   text: string;
   itemId: string;
-  kind?: "opening" | "farewell";
+  kind?: "opening" | "farewell" | "screening" | "voicemail";
 }
 
 interface QueuedSegment extends BdrSpeechSegment { mark: string; bytes: number }

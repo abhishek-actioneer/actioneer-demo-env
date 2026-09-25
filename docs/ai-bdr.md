@@ -4,10 +4,19 @@ The home page and `/bdr` are the outbound sales workspace. The banking demo rema
 
 ## Workflow
 
-1. Load Monaco audiences, select one, and import it. This creates a **draft** and never places calls.
-2. Review contacts, edit the opening and conversation script, select a Cartesia voice ID, and listen to the opening.
+1. Load Monaco audiences, select one and a script template, and import it. This creates a **draft** and never places calls.
+2. Review contacts, edit the opening, conversation script and voicemail, select a Cartesia voice ID, and listen to the opening. Existing campaigns keep their saved scripts: under **Script & Voice**, choose **Apply template**, review, and save to use a new template.
 3. Save changes, then manually choose **Launch calls**. The server calls pending contacts sequentially, including after the browser is closed.
-4. Pause stops new dispatches; an already dispatched call finishes normally. Resume continues only with uncalled contacts. Call details show Twilio IDs and transcripts.
+4. Pause stops new dispatches; an already dispatched call finishes normally. Resume continues only with uncalled contacts. Call details show Twilio IDs, playback-aware transcripts, answer mode, follow-up requests, and post-call sentiment.
+
+## Script templates and call outcomes
+
+- **Credit unions & financial services:** B2B discovery around stalled mortgages and zero-to-five-days-past-due outreach. Branches by the leader's actual bottleneck, describes approved reminders and exception handoffs, and focuses on reducing work for lean teams. It is not a borrower collections script.
+- **HVAC, electrical, plumbing & field services:** discovers the trade and service mix first, then focuses on after-hours intake or technician productivity. Answers workflow questions with trade-specific examples, approved knowledge, integration requirements, and clear escalation boundaries.
+- Daniel introduces himself as **Daniel from Actioneer**. He answers honestly if asked whether he is AI. An accepted follow-up ends with **“Someone from my team shall reach out shortly.”** The request is visible in call details; an operator must actually arrange the follow-up. The app does not send a notification or book a meeting.
+- Recognized Apple/Google screening pauses the pitch, identifies Daniel once, and waits up to 90 seconds for a person. A human response resumes discovery. Screening-only calls are not classified as negative leads.
+- Recognized voicemail waits for the greeting to end, then plays the editable, template-specific voicemail and hangs up after Twilio acknowledges playback. Each template ends **“Thank you for your time, and have a wonderful day.”** Asynchronous Twilio answering-machine detection supplies beep/end results; recognized greeting plus quiet is a fallback. Detection can make mistakes, so test your actual phone/screening setup before a campaign. AMD may incur Twilio usage charges.
+- After a call, a separate background job attaches **positive** or **negative** sentiment with a short evidence-based reason. Voicemail, screening, greetings-only, and ambiguous conversations show no sentiment rather than invented interest. Classification uses the prospect's words and confirmed played speech, runs off the live audio path, and retries transient failures at most three times. Late transcript updates can trigger a new analysis.
 
 Phone numbers must include a country code. Opted-out contacts and duplicate or invalid numbers are excluded. Monaco opt-out and phone data are rechecked just before dispatch. A spoken opt-out, when recognized by the conversation model's `opt_out` tool, is recorded as an application-wide phone suppression. This does not change the Monaco record. Uncertain dispatches are never automatically redialed.
 
@@ -27,9 +36,9 @@ Open the existing project → **actioneer-web** → **Variables** → **New Vari
 | `VOICE_PUBLIC_BASE_URL` | `https://actioneer-web-production.up.railway.app` |
 | `VOICE_STORAGE_DIR` | `/app/data` on the existing persistent volume |
 
-Keep the existing Clerk variables. Optional: `CARTESIA_VOICE_ID` sets the initial voice; `BDR_CARTESIA_MODEL` defaults to `sonic-3.6`; `BDR_REALTIME_MODEL` defaults to `gpt-realtime-mini`.
+Keep the existing Clerk variables. Optional: `CARTESIA_VOICE_ID` sets the initial voice; `BDR_CARTESIA_MODEL` defaults to `sonic-3.6`; `BDR_REALTIME_MODEL` defaults to `gpt-realtime-mini`; `BDR_SENTIMENT_MODEL` defaults to `gpt-4o-mini` and uses the same OpenAI key with a small additional post-call API request.
 
-Deploy the staged variable changes. Use `pnpm start` as the service start command; it runs the custom WebSocket server and the durable queue dispatcher. Use one Railway replica with the persistent volume. No analytics dataset download or biometric matcher is required by BDR. Twilio answer/status webhook URLs are supplied automatically per call. Incoming calls to the Twilio number are not configured by this feature.
+Deploy the staged variable changes. Use `pnpm start` as the service start command; it runs the custom WebSocket server, durable queue dispatcher, and post-call sentiment worker. Use one Railway replica with the persistent volume. No analytics dataset download or biometric matcher is required by BDR. Twilio answer/status/AMD webhook URLs are supplied automatically per call; `/api/bdr/twilio/amd` skips browser login but verifies the Twilio signature, account and call SID. Incoming calls to the Twilio number are not configured by this feature.
 
 When the keys are ready, preview a voice first. Create a small Monaco test audience containing a number you control, import it, and launch that campaign before using prospect audiences. Twilio account permissions and trial restrictions determine which destinations it can reach.
 
@@ -42,7 +51,7 @@ When the keys are ready, preview a voice first. Create a small Monaco test audie
 - New assistant transcript entries are marked played only after Twilio acknowledges their audio. Cleared/unconfirmed sentences are labeled interrupted, and unheard text is removed from the model's conversation history. Earlier transcripts predate playback tracking. Runtime logs report first-audio synthesis/response timing without logging transcript contents.
 - SQLite on the volume persists campaigns, reservations, transcripts, and phone suppressions. Draft/paused campaigns cannot be claimed. Transactional claims prevent two workers from dialing the same pending contact. Call status callbacks cannot regress completed calls.
 - Calls run one at a time and are capped at five minutes; ringing times out after 30 seconds. An uncertain dispatch pauses the campaign and marks the contact for review instead of retrying. Review it in Twilio; resuming never redials that contact.
-- Qualification is guided by the script. Meeting booking, CRM outcome writeback, scheduled callbacks, automatic retries, voicemail detection, and recording downloads are not implemented. A completed call is not automatically a qualified lead.
+- Qualification is guided by the script. Meeting booking, CRM outcome writeback, scheduled callbacks, automatic call retries, and recording downloads are not implemented. A completed call or positive sentiment is not automatically a qualified lead.
 - Without configured provider keys, unit tests and the build can validate the integration code, but live calling, latency, and voice quality still require a real test call.
 
 References: [Monaco audiences](https://docs.monaco.com/api-reference/audiences/list-audiences), [audience contacts](https://docs.monaco.com/api-reference/audiences/list-audience-contacts), [Twilio Media Streams](https://www.twilio.com/docs/voice/media-streams/websocket-messages), [Cartesia TTS](https://docs.cartesia.ai/api-reference/tts/bytes), [OpenAI Realtime](https://developers.openai.com/api/docs/guides/realtime-conversations).
